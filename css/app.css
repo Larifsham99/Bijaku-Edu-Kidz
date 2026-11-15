@@ -480,3 +480,84 @@ button { font-family: inherit; color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* ================================================================
+   TEMA (html[data-theme]) — latar beranimasi + warna
+   ================================================================ */
+:root { --on-bg: var(--ink); --on-bg-soft: var(--ink-soft); }
+#scene { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+#app { position: relative; z-index: 1; }
+.sc { position: absolute; will-change: transform; }
+.topbar .title, .section-title, .tier-head, .play-title, .logo p { color: var(--on-bg); }
+.screen > .center.muted, .tier-head .muted { color: var(--on-bg-soft); }
+
+/* --- Taman Ceria --- */
+html[data-theme="taman"] { --bg: #cdeeff; --on-bg: #24406b; --on-bg-soft: #3f5f8c; }
+html[data-theme="taman"] body { background: linear-gradient(180deg, #8fd3ff 0%, #c9ecff 45%, #e9f9ff 100%); }
+html[data-theme="taman"] .sun { top: 26px; right: 26px; width: 92px; height: 92px; border-radius: 50%; background: radial-gradient(circle, #fff7b0 0 40%, #ffd84d 60%, rgba(255,216,77,0) 72%); animation: sunPulse 6s ease-in-out infinite; }
+html[data-theme="taman"] .cloud { left: -220px; width: 160px; height: 48px; background: #fff; border-radius: 40px; opacity: .92; animation: cloudMove linear infinite; }
+html[data-theme="taman"] .cloud::before, html[data-theme="taman"] .cloud::after { content: ""; position: absolute; background: #fff; border-radius: 50%; }
+html[data-theme="taman"] .cloud::before { width: 70px; height: 70px; left: 24px; top: -34px; }
+html[data-theme="taman"] .cloud::after { width: 54px; height: 54px; left: 78px; top: -24px; }
+html[data-theme="taman"] .hill { bottom: -60px; border-radius: 50% 50% 0 0; }
+html[data-theme="taman"] .h1 { left: -10%; width: 75%; height: 170px; background: #8ee07a; }
+html[data-theme="taman"] .h2 { right: -12%; width: 80%; height: 140px; background: #6fcf63; }
+html[data-theme="taman"] .flower { bottom: 18px; font-size: 30px; transform-origin: bottom center; animation: sway 3.5s ease-in-out infinite; }
+html[data-theme="taman"] .flutter { left: -60px; font-size: 30px; animation: flutter linear infinite; }
+html[data-theme="taman"] .mode-card::before { height: 70px; opacity: .35; }
+html[data-theme="taman"] .mode-card { border-bottom: 8px solid #7ad66b; }
+
+/* --- Dasar Laut --- */
+html[data-theme="laut"] { --bg: #7fd0f5; --on-bg: #06395c; --on-bg-soft: #0d5684; }
+html[data-theme="laut"] body { background: linear-gradient(180deg, #b6ecff 0%, #5cc2ef 50%, #2a8ccc 100%); }
+html[data-theme="laut"] .rays { inset: 0; background: repeating-linear-gradient(100deg, rgba(255,255,255,.14) 0 40px, transparent 40px 120px); animation: rays 12s ease-in-out infinite alternate; }
+html[data-theme="laut"] .swim { left: -80px; animation: swim linear infinite; }
+html[data-theme="laut"] .bubble { bottom: -30px; border-radius: 50%; border: 2px solid rgba(255,255,255,.75); background: rgba(255,255,255,.18); animation: rise linear infinite; }
+html[data-theme="laut"] .sand { left: 0; right: 0; bottom: -30px; height: 90px; background: #f6dfa4; border-radius: 50% 50% 0 0 / 30px 30px 0 0; }
+html[data-theme="laut"] .weed { bottom: 14px; font-size: 34px; transform-origin: bottom center; animation: sway 4s ease-in-out infinite; }
+
+/* --- Angkasa Malam --- */
+html[data-theme="angkasa"] { --bg: #1b1046; --on-bg: #fff; --on-bg-soft: #d9ccff; }
+html[data-theme="angkasa"] body { background: radial-gradient(ellipse at 70% 10%, #4b2a9a 0%, #2a1666 40%, #140b38 100%); }
+html[data-theme="angkasa"] .star { width: 4px; height: 4px; border-radius: 50%; background: #fff; box-shadow: 0 0 6px 2px rgba(255,255,255,.6); animation: twinkle ease-in-out infinite; }
+html[data-theme="angkasa"] .planet { right: 6%; top: 12%; font-size: 70px; animation: float 6s ease-in-out infinite; }
+html[data-theme="angkasa"] .moon { left: 5%; top: 6%; font-size: 52px; }
+html[data-theme="angkasa"] .drift { left: -60px; font-size: 34px; animation: drift linear infinite; }
+html[data-theme="angkasa"] .logo h1 { filter: drop-shadow(0 0 14px rgba(255,255,255,.35)); }
+html[data-theme="angkasa"] .boot-text { color: #fff; }
+
+/* --- Dunia Gula-gula --- */
+html[data-theme="gula"] { --bg: #ffe0f0; --on-bg: #8a1f5c; --on-bg-soft: #a83f7a; --orange: #ff7a3d; --green: #2fd67b; --blue: #3d8bff; --purple: #9b5cff; --pink: #ff5fa8; }
+html[data-theme="gula"] body { background: linear-gradient(160deg, #ffd1ea 0%, #ffe9c7 50%, #d9f1ff 100%); }
+html[data-theme="gula"] .drip { left: 0; right: 0; top: -10px; height: 46px; background: radial-gradient(circle at 20px 0, #ff8fc8 22px, transparent 23px) 0 0 / 60px 46px repeat-x; opacity: .7; }
+html[data-theme="gula"] .candy { animation: bob ease-in-out infinite; opacity: .85; }
+html[data-theme="gula"] .btn, html[data-theme="gula"] .tile-btn { position: relative; overflow: hidden; }
+html[data-theme="gula"] .btn::after, html[data-theme="gula"] .tile-btn::after { content: ""; position: absolute; left: 8%; right: 8%; top: 6%; height: 34%; border-radius: 999px; background: linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,0)); pointer-events: none; }
+html[data-theme="gula"] .tile-btn:active, html[data-theme="gula"] .choice:active { transform: scale(.92); }
+html[data-theme="gula"] .choice { border-radius: 34px; }
+html[data-theme="gula"] .mode-card { border-radius: 34px; }
+
+/* pratonton tema di kedai */
+.theme-prev { width: 100%; aspect-ratio: 4/3; border-radius: 16px; display: grid; place-items: center; font-size: 40px; font-family: var(--emoji); box-shadow: inset 0 0 0 3px rgba(255,255,255,.6); }
+.theme-prev.taman { background: linear-gradient(180deg, #8fd3ff 55%, #7ad66b 55%); }
+.theme-prev.klasik { background: linear-gradient(180deg, #fff6e5, #fef0f6); }
+.theme-prev.laut { background: linear-gradient(180deg, #b6ecff, #2a8ccc); }
+.theme-prev.angkasa { background: radial-gradient(circle at 70% 20%, #4b2a9a, #140b38); }
+.theme-prev.gula { background: linear-gradient(160deg, #ffd1ea, #ffe9c7); }
+
+@keyframes cloudMove { from { transform: translateX(0); } to { transform: translateX(calc(100vw + 440px)); } }
+@keyframes sunPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes sway { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+@keyframes flutter { 0% { transform: translate(0, 0); } 25% { transform: translate(28vw, -40px); } 50% { transform: translate(55vw, 10px); } 75% { transform: translate(82vw, -30px); } 100% { transform: translate(calc(100vw + 120px), 0); } }
+@keyframes swim { 0% { transform: translateX(0) translateY(0); } 50% { transform: translateX(55vw) translateY(-14px); } 100% { transform: translateX(calc(100vw + 160px)) translateY(0); } }
+@keyframes rise { from { transform: translateY(0); opacity: .9; } to { transform: translateY(-110vh); opacity: 0; } }
+@keyframes rays { from { transform: translateX(-30px); } to { transform: translateX(30px); } }
+@keyframes twinkle { 0%,100% { opacity: .25; } 50% { opacity: 1; } }
+@keyframes drift { from { transform: translateX(0) rotate(10deg); } to { transform: translateX(calc(100vw + 120px)) rotate(10deg); } }
+@keyframes bob { 0%,100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-18px) rotate(8deg); } }
+@media print { #scene { display: none; } }
+/* teks "kelabu" yang berada terus di atas latar mengikut warna tema; dalam kad kekal asal */
+.screen .muted { color: var(--on-bg-soft); }
+.panel .muted, .modal .muted, .coll-item .muted, .daily-item .muted, .player-card .muted, .stage .muted, .explore-card .muted, .parent .muted { color: var(--ink-soft); }
+html[data-theme="angkasa"] .parent .panel h3 { color: var(--ink); }
+html[data-theme="angkasa"] .coll-item.off { opacity: .75; }

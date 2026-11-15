@@ -30,7 +30,7 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
   const replay = h('button', { class: 'btn-round', type: 'button', 'aria-label': 'Dengar arahan semula' }, '🔊');
   const exitBtn = h('button', { class: 'btn-round', type: 'button', 'aria-label': 'Keluar' }, '✖️');
   const starPill = h('span', { class: 'pill' }, emo('⭐'), h('b', {}, '0'));
-  scr.appendChild(h('div', { class: 'play-head' }, exitBtn, h('div', { style: { flex: 1, display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' } }, h('div', { style: { fontWeight: 900, fontSize: '18px', textAlign: 'center' } }, title), progress), starPill, replay));
+  scr.appendChild(h('div', { class: 'play-head' }, exitBtn, h('div', { style: { flex: 1, display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' } }, h('div', { class: 'play-title', style: { fontWeight: 900, fontSize: '18px', textAlign: 'center' } }, title), progress), starPill, replay));
   const g = guide(charId, '');
   scr.appendChild(g.el);
   const stage = h('div', { class: 'stage' });

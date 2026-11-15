@@ -539,3 +539,15 @@ export const STICKERS = ['🦄', '🌈', '🍭', '🚀', '🦕', '🐳', '🌻',
 // ================== UCAPAN KARAKTER ==================
 export const PRAISE = ['Bagus!', 'Hebat!', 'Pandai!', 'Syabas!', 'Bijak!', 'Betul!', 'Wah, hebatnya!', 'Kamu semakin bijak!', 'Cemerlang!', 'Tahniah!'];
 export const ENCOURAGE = ['Bagus, cuba sekali lagi!', 'Tidak mengapa, kita cuba sama-sama!', 'Hampir betul! Cuba lagi.', 'Jangan risau, cuba lagi ya!', 'Kamu boleh! Cuba lagi.'];
+
+// ================== TEMA ==================
+// Tema boleh dipilih oleh setiap anak dalam menu Kostum; sebahagiannya dibuka dengan syiling.
+export const THEMES = [
+  { id: 'taman', e: '🌳', n: 'Taman Ceria', cost: 0, d: 'Langit biru, awan bergerak & rama-rama' },
+  { id: 'klasik', e: '🌈', n: 'Klasik Pastel', cost: 0, d: 'Warna pastel lembut' },
+  { id: 'laut', e: '🐠', n: 'Dasar Laut', cost: 120, d: 'Ikan berenang & buih naik' },
+  { id: 'angkasa', e: '🚀', n: 'Angkasa Malam', cost: 180, d: 'Bintang berkelip & planet' },
+  { id: 'gula', e: '🍭', n: 'Dunia Gula-gula', cost: 240, d: 'Warna terang & butang jeli berkilat' },
+];
+export const DEFAULT_THEME = 'taman';
+export const FREE_THEMES = THEMES.filter((t) => t.cost === 0).map((t) => t.id);

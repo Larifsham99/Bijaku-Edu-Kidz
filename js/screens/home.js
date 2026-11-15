@@ -58,7 +58,7 @@ export function homeScreen() {
       emo('▶️'), h('span', { style: { fontSize: '26px' } }, 'Mula Bermain'), h('span', { style: { fontSize: '15px', opacity: 0.9 } }, `${np.m.n} · Level ${np.L}`)) : null,
     h('button', { class: 'tile-btn', style: { background: 'linear-gradient(160deg,#ff9f43,#ff6b6b)' }, type: 'button', onclick: () => { sfx.tap(); go('/harian'); } }, emo('📅'), 'Cabaran Harian', dailyLeft ? h('span', { class: 'badge' }, dailyLeft) : h('span', { class: 'badge', style: { color: '#189a5a' } }, '✓')),
     h('button', { class: 'tile-btn', style: { background: 'linear-gradient(160deg,#feca57,#ff9f43)' }, type: 'button', onclick: () => { sfx.tap(); go('/trofi'); } }, emo('🏆'), 'Koleksi Trofi'),
-    h('button', { class: 'tile-btn', style: { background: 'linear-gradient(160deg,#ff8fab,#a77bff)' }, type: 'button', onclick: () => { sfx.tap(); go('/kedai'); } }, emo('👒'), 'Kostum & Avatar'),
+    h('button', { class: 'tile-btn', style: { background: 'linear-gradient(160deg,#ff8fab,#a77bff)' }, type: 'button', onclick: () => { sfx.tap(); go('/kedai'); } }, emo('👒'), 'Kostum & Tema'),
     h('button', { class: 'tile-btn', style: { background: 'linear-gradient(160deg,#48dbfb,#54a0ff)' }, type: 'button', onclick: () => { sfx.tap(); go('/bebas'); } }, emo('🎈'), 'Main Bebas'),
     h('button', { class: 'tile-btn', style: { background: 'linear-gradient(160deg,#8395a7,#576574)' }, type: 'button', onclick: () => { sfx.tap(); parentGate(() => go('/ibubapa/ringkasan')); } }, emo('👨‍👩‍👧'), 'Ruang Ibu Bapa')));
 

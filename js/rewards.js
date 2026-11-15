@@ -29,7 +29,7 @@ export const BADGES = [
   { id: 'master20', e: '🧠', n: 'Genius Cilik', d: 'Kuasai 20 kemahiran', test: (p) => Object.values(p.skills).filter((s) => mastery(s) === 3).length >= 20 },
   { id: 'cert1', e: '📜', n: 'Sijil Pertama', d: 'Tamatkan 50 level dalam satu mod', test: (p) => p.certs.length >= 1 },
   { id: 'free', e: '🎨', n: 'Seniman Bebas', d: 'Cuba Main Bebas', test: (p) => p.freeplay >= 1 },
-  { id: 'shop', e: '🛍️', n: 'Bergaya', d: 'Dapatkan kostum atau avatar baharu', test: (p) => p.owned.avatars.length > 5 || p.owned.costumes.length > 2 },
+  { id: 'shop', e: '🛍️', n: 'Bergaya', d: 'Dapatkan kostum, avatar atau tema baharu', test: (p) => p.owned.avatars.length > 5 || p.owned.costumes.length > 2 || (p.owned.themes || []).length > 2 },
 ];
 
 export function checkBadges(p) {

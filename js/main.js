@@ -15,6 +15,10 @@ import { parentScreen } from './screens/parent.js';
 import { timeoutScreen, overLimit } from './screens/timeout.js';
 import { MODES } from './modes/index.js';
 import { go } from './nav.js';
+import { applyTheme, ensureThemeFields } from './theme.js';
+
+let pendingReload = false;
+const inGame = () => /^#\/(main|harian\/)/.test(location.hash);
 
 const app = document.getElementById('app');
 
@@ -27,9 +31,13 @@ function route() {
   // tutup modal / toast yang masih terbuka (cth. apabila butang kembali Android ditekan)
   document.querySelectorAll('.modal-back, .toast, .drag-ghost').forEach((e) => e.remove());
   window.scrollTo(0, 0);
+  // versi baharu aplikasi sudah dimuat turun: muat semula di luar permainan
+  if (pendingReload && !inGame()) { location.reload(); return; }
   const st = getState();
-  if (!st.profiles.length && parts[0] !== 'ibubapa') { app.appendChild(onboardingScreen()); return; }
   const p = profile();
+  ensureThemeFields(p);
+  applyTheme(p?.theme);
+  if (!st.profiles.length && parts[0] !== 'ibubapa') { app.appendChild(onboardingScreen()); return; }
   // had masa: hanya ruang ibu bapa boleh dibuka apabila masa tamat
   if (p && overLimit(p) && parts[0] !== 'ibubapa') { app.appendChild(timeoutScreen()); return; }
   let el;
@@ -61,7 +69,16 @@ async function boot() {
   addEventListener('pointerdown', first);
   route();
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-    navigator.serviceWorker.register('sw.js').catch(() => { /* luar talian tidak tersedia */ });
+    // Kemas kini automatik: apabila versi baharu diterbitkan, ia diaktifkan terus
+    // dan aplikasi dimuat semula (tetapi tidak di tengah-tengah permainan).
+    let hadController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!hadController) { hadController = true; return; }
+      if (inGame()) pendingReload = true; else location.reload();
+    });
+    navigator.serviceWorker.register('sw.js').then((reg) => {
+      addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
+    }).catch(() => { /* luar talian tidak tersedia */ });
   }
   addEventListener('beforeunload', flush);
   window.__dc = { go, getState, MODES, session: currentSession };

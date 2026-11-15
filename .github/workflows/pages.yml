@@ -34,8 +34,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - name: Sediakan fail laman
         run: |
+          node tools/build-sw.mjs
           mkdir _site
           cp -r index.html manifest.webmanifest sw.js css js icons _site/
           touch _site/.nojekyll

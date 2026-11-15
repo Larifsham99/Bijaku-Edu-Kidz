@@ -67,7 +67,8 @@ export function newProfile({ name, age, avatar }) {
     stars: 0, coins: 0, totalStarsEarned: 0,
     modes: {}, // modeId -> { done: {lvl: stars}, plays: n, time: s }
     skills: {}, // skillId -> { rounds, firstTry, attempts, time, last }
-    owned: { avatars: ['mimi', 'bobo', 'coco', 'dino', 'lala'], costumes: ['none', 'anone'] },
+    owned: { avatars: ['mimi', 'bobo', 'coco', 'dino', 'lala'], costumes: ['none', 'anone'], themes: ['taman', 'klasik'] },
+    theme: 'taman',
     wear: { hat: 'none', acc: 'anone' },
     stickers: [], trophies: [], certs: [], badges: [],
     daily: {}, // dateKey -> { done: [idx], rewarded: bool }
