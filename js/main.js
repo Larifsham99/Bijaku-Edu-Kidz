@@ -1,0 +1,69 @@
+// =====================================================================
+//  DUNIA CILIK — titik mula aplikasi & penghala (router)
+// =====================================================================
+import { initStore, profile, getState, settings, flush } from './store.js';
+import { unlockAudio, startMusic } from './audio.js';
+import { clear } from './ui.js';
+import { homeScreen, onboardingScreen, profilesScreen } from './screens/home.js';
+import { modeScreen } from './screens/modemap.js';
+import { playScreen, dailyPlayScreen, stopPlay, currentSession } from './screens/play.js';
+import { dailyScreen } from './screens/daily.js';
+import { freeScreen } from './screens/free.js';
+import { trophyScreen, certScreen } from './screens/trophy.js';
+import { shopScreen } from './screens/shop.js';
+import { parentScreen } from './screens/parent.js';
+import { timeoutScreen, overLimit } from './screens/timeout.js';
+import { MODES } from './modes/index.js';
+import { go } from './nav.js';
+
+const app = document.getElementById('app');
+
+
+function route() {
+  stopPlay();
+  const path = (location.hash || '#/').slice(1) || '/';
+  const parts = path.split('/').filter(Boolean);
+  clear(app);
+  // tutup modal / toast yang masih terbuka (cth. apabila butang kembali Android ditekan)
+  document.querySelectorAll('.modal-back, .toast, .drag-ghost').forEach((e) => e.remove());
+  window.scrollTo(0, 0);
+  const st = getState();
+  if (!st.profiles.length && parts[0] !== 'ibubapa') { app.appendChild(onboardingScreen()); return; }
+  const p = profile();
+  // had masa: hanya ruang ibu bapa boleh dibuka apabila masa tamat
+  if (p && overLimit(p) && parts[0] !== 'ibubapa') { app.appendChild(timeoutScreen()); return; }
+  let el;
+  switch (parts[0]) {
+    case undefined: el = homeScreen(); break;
+    case 'profil': el = profilesScreen(); break;
+    case 'mod': el = MODES[parts[1]] ? modeScreen(parts[1]) : homeScreen(); break;
+    case 'main': el = MODES[parts[1]] ? playScreen(parts[1], Math.max(1, Math.min(50, +parts[2] || 1))) : homeScreen(); break;
+    case 'harian': el = parts[1] !== undefined ? dailyPlayScreen(+parts[1]) : dailyScreen(); break;
+    case 'bebas': el = freeScreen(parts[1], parts.slice(2)); break;
+    case 'trofi': el = trophyScreen(parts[1]); break;
+    case 'sijil': el = certScreen(parts[1]); break;
+    case 'kedai': el = shopScreen(parts[1]); break;
+    case 'ibubapa': el = parentScreen(parts[1]); break;
+    default: el = homeScreen();
+  }
+  app.appendChild(el);
+}
+
+async function boot() {
+  await initStore();
+  addEventListener('hashchange', route);
+  // buka kunci audio pada sentuhan pertama
+  const first = () => {
+    unlockAudio();
+    if (settings().music) startMusic();
+    removeEventListener('pointerdown', first);
+  };
+  addEventListener('pointerdown', first);
+  route();
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    navigator.serviceWorker.register('sw.js').catch(() => { /* luar talian tidak tersedia */ });
+  }
+  addEventListener('beforeunload', flush);
+  window.__dc = { go, getState, MODES, session: currentSession };
+}
+boot();

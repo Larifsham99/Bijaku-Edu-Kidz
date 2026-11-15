@@ -1,0 +1,49 @@
+// Peta level untuk setiap mod (50 level, 5 peringkat)
+import { h, emo } from '../ui.js';
+import { go } from '../nav.js';
+import { profile, isUnlocked, levelsDone, highestUnlocked, mastery, MASTERY_LABEL } from '../store.js';
+import { MODES, TIERS } from '../modes/index.js';
+import { topbar, guide } from './shared.js';
+import { speak, sfx } from '../audio.js';
+import { TROPHY_E } from '../rewards.js';
+
+export function modeScreen(modeId) {
+  const p = profile();
+  const m = MODES[modeId];
+  const prog = p.modes[modeId]?.done || {};
+  const cur = highestUnlocked(p, modeId);
+  const done = levelsDone(p, modeId);
+  const scr = h('div', { class: 'screen' });
+  scr.appendChild(topbar(`${m.e} ${m.n}`, '/'));
+  const g = guide(m.char, done >= 50 ? `Tahniah! Kamu sudah tamatkan semua level ${m.n}!` : `Jom main ${m.n}! Level ${cur} sedang menunggu kamu.`);
+  scr.appendChild(g.el);
+  setTimeout(() => g.repeat(), 300);
+  scr.appendChild(h('div', { class: 'row-wrap' },
+    h('button', { class: 'btn big green', type: 'button', onclick: () => { sfx.tap(); go(`/main/${modeId}/${Math.min(cur, 50)}`); } }, emo('▶️'), `Main Level ${Math.min(cur, 50)}`),
+    done >= 50 ? h('button', { class: 'btn purple', type: 'button', onclick: () => go('/sijil/' + modeId) }, emo('📜'), 'Sijil') : null));
+  // kemahiran mod ini
+  scr.appendChild(h('div', { class: 'panel' },
+    h('div', { style: { fontWeight: 900, marginBottom: '6px' } }, '🎯 Kemahiran dalam permainan ini'),
+    h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start' } }, Object.entries(m.skills).map(([id, n]) => {
+      const lv = mastery(p.skills[id]);
+      return h('span', { class: `mbadge mb${lv}`, title: MASTERY_LABEL[lv] }, `${['○', '◔', '◑', '●'][lv]} ${n}`);
+    }))));
+  TIERS.forEach((t, ti) => {
+    const trophyOk = p.trophies.includes(`${modeId}-${(ti + 1) * 10}`);
+    scr.appendChild(h('div', { class: 'tier-head' }, h('span', { class: 'tag', style: { background: t.c } }, `${t.e} ${t.n}`), h('span', { class: 'muted', style: { fontSize: '15px' } }, `Level ${ti * 10 + 1}–${ti * 10 + 10}`), h('span', { class: 'emo', style: { marginLeft: 'auto', fontSize: '28px', opacity: trophyOk ? 1 : 0.25, filter: trophyOk ? '' : 'grayscale(1)' }, title: 'Trofi peringkat' }, TROPHY_E[ti])));
+    const grid = h('div', { class: 'level-grid' });
+    for (let L = ti * 10 + 1; L <= ti * 10 + 10; L++) {
+      const un = isUnlocked(p, modeId, L);
+      const st = prog[L];
+      const cls = ['lvl'];
+      if (st !== undefined) cls.push('done'); else if (un) cls.push('current'); else cls.push('locked');
+      if (L % 5 === 0) cls.push('special');
+      grid.appendChild(h('button', { class: cls.join(' '), type: 'button', style: `--c:${m.c}`, 'aria-label': `Level ${L}${un ? '' : ' berkunci'}`, onclick: () => {
+        if (!un) { sfx.bump(); speak(`Selesaikan level ${L - 1} dahulu untuk membuka level ini.`); return; }
+        sfx.tap(); go(`/main/${modeId}/${L}`);
+      } }, un ? L : '🔒', st !== undefined ? h('span', { class: 'st' }, '⭐'.repeat(Math.min(5, st))) : null));
+    }
+    scr.appendChild(grid);
+  });
+  return scr;
+}

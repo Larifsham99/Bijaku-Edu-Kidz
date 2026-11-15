@@ -1,0 +1,13 @@
+{
+  "name": "dunia-cilik",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dunia Cilik — aplikasi permainan pendidikan interaktif untuk kanak-kanak 4–5 tahun",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "test": "node tests/generators.test.mjs && node tests/e2e.test.mjs",
+    "test:gen": "node tests/generators.test.mjs",
+    "test:e2e": "node tests/e2e.test.mjs"
+  }
+}

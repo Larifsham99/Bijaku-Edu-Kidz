@@ -1,0 +1,240 @@
+// =====================================================================
+//  SISTEM AUDIO
+//  - Suara Bahasa Melayu melalui Web Speech API (ms-MY, sandaran id-ID)
+//  - Kesan bunyi (betul, cuba lagi, ganjaran) disintesis dengan Web Audio
+//  - Bunyi haiwan / kenderaan / alam disintesis (berfungsi luar talian)
+//  - Muzik latar ringan
+// =====================================================================
+import { settings } from './store.js';
+
+let ctx = null;
+let master = null;
+let voice = null;
+let voicesReady = false;
+let musicTimer = null;
+let musicGain = null;
+
+function ac() {
+  if (!ctx) {
+    const C = self.AudioContext || self.webkitAudioContext;
+    if (!C) return null;
+    ctx = new C();
+    master = ctx.createGain();
+    master.gain.value = 0.7;
+    master.connect(ctx.destination);
+  }
+  if (ctx.state === 'suspended') ctx.resume();
+  return ctx;
+}
+// Buka kunci audio pada sentuhan pertama (keperluan pelayar mudah alih)
+export function unlockAudio() {
+  ac();
+  try { if ('speechSynthesis' in self && !speechSynthesis.speaking) speechSynthesis.resume(); } catch { /* */ }
+}
+
+// ---------------- SUARA (TTS) ----------------
+function pickVoice() {
+  if (!('speechSynthesis' in self)) return null;
+  const vs = speechSynthesis.getVoices();
+  if (!vs.length) return null;
+  voicesReady = true;
+  const by = (re) => vs.find((v) => re.test(v.lang.replace('_', '-')));
+  return by(/^ms(-|$)/i) || by(/^id(-|$)/i) || by(/^ms/i) || null;
+}
+if (typeof self !== 'undefined' && 'speechSynthesis' in self) {
+  voice = pickVoice();
+  speechSynthesis.onvoiceschanged = () => { voice = pickVoice(); };
+}
+export function voiceInfo() {
+  if (!('speechSynthesis' in self)) return 'Tiada sokongan suara pada peranti ini';
+  if (!voicesReady) voice = pickVoice();
+  return voice ? `${voice.name} (${voice.lang})` : 'Suara lalai peranti (pasang suara Bahasa Melayu/Indonesia untuk sebutan terbaik)';
+}
+
+let speakSeq = 0;
+export function speak(text, { lang, rate, interrupt = true } = {}) {
+  return new Promise((resolve) => {
+    const s = settings();
+    if (!s.voice || !text || !('speechSynthesis' in self)) return resolve();
+    try {
+      if (interrupt) speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(String(text));
+      if (lang === 'en') {
+        u.lang = 'en-GB';
+        const en = speechSynthesis.getVoices().find((v) => /^en/i.test(v.lang));
+        if (en) u.voice = en;
+      } else {
+        if (!voice) voice = pickVoice();
+        if (voice) u.voice = voice;
+        u.lang = voice ? voice.lang : 'ms-MY';
+      }
+      u.rate = rate || s.voiceRate || 0.9;
+      u.pitch = 1.15;
+      const id = ++speakSeq;
+      let done = false;
+      const fin = () => { if (!done) { done = true; resolve(); } };
+      u.onend = fin; u.onerror = fin;
+      // jaga-jaga jika onend tidak dipanggil
+      setTimeout(() => { if (id === speakSeq) fin(); else fin(); }, 600 + String(text).length * 110);
+      speechSynthesis.speak(u);
+    } catch { resolve(); }
+  });
+}
+export function stopSpeak() { try { speechSynthesis.cancel(); } catch { /* */ } }
+
+// Sebut BM dan (jika dwibahasa) English
+export async function speakWord(ms, en) {
+  await speak(ms);
+  if (en && settings().lang === 'dual') await speak(en, { lang: 'en', interrupt: false });
+}
+
+// ---------------- BLOK SINTESIS ----------------
+function env(g, t, a, d, peak, sus = 0) {
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(Math.max(peak, 0.0002), t + a);
+  g.gain.exponentialRampToValueAtTime(Math.max(sus, 0.0001), t + a + d);
+}
+function tone({ type = 'sine', f = 440, f2, t = 0, dur = 0.3, vol = 0.3, a = 0.01, filter, vib, out }) {
+  const c = ac(); if (!c) return;
+  const t0 = c.currentTime + t;
+  const o = c.createOscillator(); o.type = type;
+  o.frequency.setValueAtTime(f, t0);
+  if (f2) o.frequency.exponentialRampToValueAtTime(f2, t0 + dur);
+  const g = c.createGain();
+  env(g, t0, a, dur, vol);
+  let node = o;
+  if (vib) {
+    const l = c.createOscillator(); l.frequency.value = vib.rate;
+    const lg = c.createGain(); lg.gain.value = vib.depth;
+    l.connect(lg); lg.connect(o.frequency); l.start(t0); l.stop(t0 + dur + 0.1);
+  }
+  if (filter) {
+    const fl = c.createBiquadFilter(); fl.type = filter.type || 'lowpass'; fl.frequency.value = filter.f; fl.Q.value = filter.q || 1;
+    if (filter.f2) fl.frequency.exponentialRampToValueAtTime(filter.f2, t0 + dur);
+    node.connect(fl); node = fl;
+  }
+  node.connect(g); g.connect(out || master);
+  o.start(t0); o.stop(t0 + a + dur + 0.05);
+}
+let noiseBuf = null;
+function noise({ t = 0, dur = 0.3, vol = 0.3, a = 0.01, filter = { type: 'lowpass', f: 1000 }, out, lfo }) {
+  const c = ac(); if (!c) return;
+  if (!noiseBuf) {
+    noiseBuf = c.createBuffer(1, c.sampleRate * 2, c.sampleRate);
+    const d = noiseBuf.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+  }
+  const t0 = c.currentTime + t;
+  const s = c.createBufferSource(); s.buffer = noiseBuf; s.loop = true;
+  const fl = c.createBiquadFilter(); fl.type = filter.type; fl.frequency.value = filter.f; fl.Q.value = filter.q || 1;
+  if (filter.f2) fl.frequency.exponentialRampToValueAtTime(filter.f2, t0 + dur);
+  const g = c.createGain();
+  env(g, t0, a, dur, vol);
+  if (lfo) {
+    const l = c.createOscillator(); l.frequency.value = lfo.rate;
+    const lg = c.createGain(); lg.gain.value = lfo.depth;
+    const vca = c.createGain(); vca.gain.value = 1 - lfo.depth;
+    l.connect(lg); lg.connect(vca.gain); l.start(t0); l.stop(t0 + dur + a + 0.1);
+    s.connect(fl); fl.connect(vca); vca.connect(g);
+  } else { s.connect(fl); fl.connect(g); }
+  g.connect(out || master);
+  s.start(t0); s.stop(t0 + a + dur + 0.05);
+}
+
+// ---------------- KESAN BUNYI ----------------
+const sfxOn = () => settings().sound;
+export const sfx = {
+  tap() { if (!sfxOn()) return; tone({ type: 'sine', f: 660, f2: 880, dur: 0.07, vol: 0.12 }); },
+  pick() { if (!sfxOn()) return; tone({ type: 'triangle', f: 520, f2: 700, dur: 0.08, vol: 0.15 }); },
+  drop() { if (!sfxOn()) return; tone({ type: 'triangle', f: 400, f2: 300, dur: 0.1, vol: 0.15 }); },
+  correct() {
+    if (!sfxOn()) return;
+    [523, 659, 784, 1047].forEach((f, i) => tone({ type: 'triangle', f, t: i * 0.08, dur: 0.22, vol: 0.22 }));
+  },
+  wrong() { if (!sfxOn()) return; tone({ type: 'sine', f: 330, f2: 260, dur: 0.25, vol: 0.18 }); tone({ type: 'sine', f: 262, f2: 220, t: 0.18, dur: 0.3, vol: 0.14 }); },
+  flip() { if (!sfxOn()) return; noise({ dur: 0.06, vol: 0.12, filter: { type: 'highpass', f: 2500 } }); },
+  coin() { if (!sfxOn()) return; tone({ type: 'square', f: 988, dur: 0.07, vol: 0.08 }); tone({ type: 'square', f: 1319, t: 0.07, dur: 0.25, vol: 0.08 }); },
+  win() {
+    if (!sfxOn()) return;
+    const mel = [523, 587, 659, 784, 659, 784, 1047];
+    mel.forEach((f, i) => tone({ type: 'triangle', f, t: i * 0.12, dur: 0.25, vol: 0.2 }));
+    tone({ type: 'sine', f: 262, t: 0, dur: 0.9, vol: 0.12 });
+  },
+  reward() {
+    if (!sfxOn()) return;
+    for (let i = 0; i < 8; i++) tone({ type: 'sine', f: 1200 + i * 180, t: i * 0.05, dur: 0.18, vol: 0.1 });
+    sfx.win();
+  },
+  step() { if (!sfxOn()) return; tone({ type: 'sine', f: 440, f2: 520, dur: 0.05, vol: 0.08 }); },
+  bump() { if (!sfxOn()) return; tone({ type: 'sine', f: 140, f2: 90, dur: 0.12, vol: 0.2 }); },
+  pop() { if (!sfxOn()) return; tone({ type: 'sine', f: 300, f2: 900, dur: 0.08, vol: 0.18 }); },
+  note(i) { if (!sfxOn()) return; const sc = [262, 330, 392, 523, 587, 659, 784, 880]; tone({ type: 'triangle', f: sc[i % sc.length], dur: 0.35, vol: 0.22 }); },
+};
+
+// ---------------- BUNYI SEBENAR (sintesis) ----------------
+const SYN = {
+  kucing() { tone({ type: 'sawtooth', f: 520, f2: 760, dur: 0.25, vol: 0.18, filter: { type: 'bandpass', f: 1400, q: 3 } }); tone({ type: 'sawtooth', f: 760, f2: 430, t: 0.25, dur: 0.45, vol: 0.18, filter: { type: 'bandpass', f: 1200, f2: 800, q: 3 } }); return 0.8; },
+  anjing() { for (const t of [0, 0.38]) { noise({ t, dur: 0.12, vol: 0.35, filter: { type: 'bandpass', f: 700, q: 1.5 } }); tone({ type: 'sawtooth', f: 330, f2: 180, t, dur: 0.14, vol: 0.25, filter: { type: 'lowpass', f: 1200 } }); } return 0.7; },
+  lembu() { tone({ type: 'sawtooth', f: 130, f2: 105, dur: 1.3, vol: 0.32, a: 0.15, filter: { type: 'lowpass', f: 500, f2: 900, q: 4 }, vib: { rate: 5, depth: 3 } }); return 1.5; },
+  kambing() { tone({ type: 'sawtooth', f: 420, f2: 380, dur: 0.9, vol: 0.2, a: 0.05, filter: { type: 'bandpass', f: 1100, q: 2 }, vib: { rate: 11, depth: 35 } }); return 1.0; },
+  biri() { tone({ type: 'sawtooth', f: 320, f2: 300, dur: 0.85, vol: 0.2, a: 0.05, filter: { type: 'bandpass', f: 900, q: 2 }, vib: { rate: 8, depth: 22 } }); return 1.0; },
+  ayam() { const seq = [[500, 600, 0.12], [600, 650, 0.12], [650, 700, 0.14], [700, 900, 0.5]]; let t = 0; seq.forEach(([a, b, d]) => { tone({ type: 'sawtooth', f: a, f2: b, t, dur: d, vol: 0.18, filter: { type: 'bandpass', f: 1500, q: 2 } }); t += d + 0.03; }); tone({ type: 'sawtooth', f: 900, f2: 500, t, dur: 0.3, vol: 0.15, filter: { type: 'bandpass', f: 1300, q: 2 } }); return t + 0.4; },
+  itik() { for (const t of [0, 0.28, 0.56]) tone({ type: 'sawtooth', f: 260, f2: 220, t, dur: 0.16, vol: 0.25, filter: { type: 'bandpass', f: 1300, q: 6 } }); return 0.8; },
+  kuda() { tone({ type: 'sawtooth', f: 900, f2: 400, dur: 1.0, vol: 0.16, filter: { type: 'bandpass', f: 1600, q: 2 }, vib: { rate: 14, depth: 70 } }); noise({ t: 0.9, dur: 0.3, vol: 0.1, filter: { type: 'bandpass', f: 600 } }); return 1.3; },
+  singa() { noise({ dur: 1.1, vol: 0.4, a: 0.2, filter: { type: 'lowpass', f: 600, f2: 200, q: 3 } }); tone({ type: 'sawtooth', f: 110, f2: 70, dur: 1.1, vol: 0.25, a: 0.2, filter: { type: 'lowpass', f: 400 }, vib: { rate: 22, depth: 8 } }); return 1.3; },
+  katak() { for (const t of [0, 0.45]) { for (let i = 0; i < 4; i++) tone({ type: 'square', f: 180, f2: 140, t: t + i * 0.05, dur: 0.04, vol: 0.18, filter: { type: 'lowpass', f: 900 } }); } return 0.8; },
+  burung() { for (let i = 0; i < 5; i++) tone({ type: 'sine', f: 2600 + (i % 2) * 400, f2: 3800, t: i * 0.14, dur: 0.07, vol: 0.18 }); return 0.8; },
+  burunghantu() { tone({ type: 'sine', f: 420, f2: 380, dur: 0.35, vol: 0.3, a: 0.06 }); tone({ type: 'sine', f: 420, f2: 360, t: 0.55, dur: 0.6, vol: 0.3, a: 0.06 }); return 1.3; },
+  lebah() { tone({ type: 'sawtooth', f: 230, f2: 250, dur: 1.4, vol: 0.12, a: 0.1, filter: { type: 'bandpass', f: 600, q: 1 }, vib: { rate: 9, depth: 18 } }); return 1.5; },
+  gajah() { tone({ type: 'sawtooth', f: 500, f2: 760, dur: 0.8, vol: 0.18, a: 0.08, filter: { type: 'bandpass', f: 1400, q: 1.5 }, vib: { rate: 30, depth: 25 } }); noise({ dur: 0.8, vol: 0.12, filter: { type: 'bandpass', f: 1800, q: 2 } }); return 1.0; },
+  monyet() { for (let i = 0; i < 5; i++) tone({ type: 'square', f: 700 + i * 60, f2: 400, t: i * 0.16, dur: 0.1, vol: 0.12, filter: { type: 'bandpass', f: 1500, q: 2 } }); return 0.9; },
+  kereta() { for (const t of [0, 0.45]) { tone({ type: 'square', f: 400, t, dur: 0.3, vol: 0.12 }); tone({ type: 'square', f: 500, t, dur: 0.3, vol: 0.1 }); } return 0.9; },
+  ambulans() { for (let i = 0; i < 4; i++) tone({ type: 'square', f: i % 2 ? 960 : 770, t: i * 0.45, dur: 0.42, vol: 0.08, filter: { type: 'lowpass', f: 2500 } }); return 1.9; },
+  polis() { for (let i = 0; i < 2; i++) { tone({ type: 'sawtooth', f: 600, f2: 1300, t: i * 0.9, dur: 0.45, vol: 0.08, filter: { type: 'lowpass', f: 2500 } }); tone({ type: 'sawtooth', f: 1300, f2: 600, t: i * 0.9 + 0.45, dur: 0.45, vol: 0.08, filter: { type: 'lowpass', f: 2500 } }); } return 1.9; },
+  bomba() { for (let i = 0; i < 6; i++) { tone({ type: 'triangle', f: 1800, t: i * 0.22, dur: 0.2, vol: 0.18 }); tone({ type: 'sine', f: 2700, t: i * 0.22, dur: 0.15, vol: 0.08 }); } return 1.4; },
+  keretaapi() { tone({ type: 'sine', f: 740, dur: 0.6, vol: 0.18, a: 0.05 }); tone({ type: 'sine', f: 880, dur: 0.6, vol: 0.12, a: 0.05 }); for (let i = 0; i < 6; i++) noise({ t: 0.7 + i * 0.2, dur: 0.1, vol: 0.25, filter: { type: 'bandpass', f: 900, q: 1 } }); return 2.0; },
+  kapalterbang() { noise({ dur: 1.8, vol: 0.35, a: 0.6, filter: { type: 'bandpass', f: 300, f2: 2500, q: 1 } }); return 1.9; },
+  helikopter() { noise({ dur: 1.6, vol: 0.45, a: 0.1, filter: { type: 'lowpass', f: 500 }, lfo: { rate: 11, depth: 0.95 } }); return 1.7; },
+  motosikal() { tone({ type: 'sawtooth', f: 70, f2: 180, dur: 1.2, vol: 0.2, a: 0.05, filter: { type: 'lowpass', f: 700 }, vib: { rate: 26, depth: 12 } }); return 1.3; },
+  basikal() { for (const t of [0, 0.3]) { tone({ type: 'sine', f: 2100, t, dur: 0.25, vol: 0.2 }); tone({ type: 'sine', f: 3150, t, dur: 0.2, vol: 0.08 }); tone({ type: 'sine', f: 2120, t: t + 0.02, dur: 0.23, vol: 0.1, vib: { rate: 30, depth: 30 } }); } return 0.7; },
+  kapal() { tone({ type: 'sawtooth', f: 110, dur: 1.6, vol: 0.25, a: 0.15, filter: { type: 'lowpass', f: 450 } }); tone({ type: 'sawtooth', f: 165, dur: 1.6, vol: 0.15, a: 0.15, filter: { type: 'lowpass', f: 450 } }); return 1.8; },
+  hujan() { noise({ dur: 2.2, vol: 0.3, a: 0.3, filter: { type: 'highpass', f: 1800 } }); for (let i = 0; i < 18; i++) tone({ type: 'sine', f: 1500 + Math.random() * 2500, f2: 600, t: Math.random() * 2, dur: 0.03, vol: 0.06 }); return 2.3; },
+  guruh() { noise({ dur: 0.15, vol: 0.5, filter: { type: 'lowpass', f: 2500 } }); noise({ t: 0.1, dur: 2.0, vol: 0.6, a: 0.1, filter: { type: 'lowpass', f: 180, q: 1 } }); return 2.2; },
+  angin() { noise({ dur: 2.2, vol: 0.35, a: 0.6, filter: { type: 'bandpass', f: 400, f2: 1100, q: 6 } }); return 2.3; },
+  ombak() { for (const t of [0, 1.2]) noise({ t, dur: 1.1, vol: 0.3, a: 0.5, filter: { type: 'lowpass', f: 900, f2: 300 } }); return 2.4; },
+  jam() { for (let i = 0; i < 6; i++) tone({ type: 'square', f: i % 2 ? 1400 : 1900, t: i * 0.35, dur: 0.02, vol: 0.12, filter: { type: 'bandpass', f: 2000, q: 4 } }); return 2.1; },
+  loceng() { tone({ type: 'sine', f: 659, dur: 0.8, vol: 0.3 }); tone({ type: 'sine', f: 1318, dur: 0.4, vol: 0.06 }); tone({ type: 'sine', f: 523, t: 0.6, dur: 1.0, vol: 0.3 }); tone({ type: 'sine', f: 1046, t: 0.6, dur: 0.5, vol: 0.06 }); return 1.7; },
+  telefon() { for (const t of [0, 0.9]) tone({ type: 'square', f: 1200, t, dur: 0.6, vol: 0.06, vib: { rate: 20, depth: 200 } }); return 1.6; },
+  dram() { [0, 0.3, 0.6].forEach((t, i) => { if (i < 2) tone({ type: 'sine', f: 140, f2: 50, t, dur: 0.25, vol: 0.6 }); else noise({ t, dur: 0.15, vol: 0.4, filter: { type: 'highpass', f: 1500 } }); }); return 0.9; },
+  tepuk() { for (let i = 0; i < 5; i++) noise({ t: i * 0.22, dur: 0.05, vol: 0.5, filter: { type: 'bandpass', f: 1300, q: 1 } }); return 1.2; },
+  wisel() { tone({ type: 'sine', f: 2400, dur: 0.9, vol: 0.18, vib: { rate: 28, depth: 120 } }); return 1.0; },
+};
+export const hasSound = (id) => !!SYN[id];
+export async function playSound(id, { withOno = false, ono = '' } = {}) {
+  const c = ac();
+  if (!c || !SYN[id]) return;
+  const dur = SYN[id]();
+  await new Promise((r) => setTimeout(r, dur * 1000 + 150));
+  if (withOno && ono) await speak(ono, { interrupt: false });
+}
+
+// ---------------- MUZIK LATAR ----------------
+const SONG = [[0, 523], [1, 659], [2, 784], [3, 659], [4, 698], [5, 880], [6, 784], [8, 659], [9, 587], [10, 523], [11, 587], [12, 659], [13, 523], [14, 587]];
+const BASS = [[0, 131], [4, 175], [8, 196], [12, 131]];
+export function startMusic() {
+  stopMusic();
+  if (!settings().music) return;
+  const c = ac(); if (!c) return;
+  musicGain = c.createGain(); musicGain.gain.value = 0.18; musicGain.connect(master);
+  const beat = 0.28;
+  const play = () => {
+    SONG.forEach(([b, f]) => tone({ type: 'triangle', f, t: b * beat, dur: beat * 0.9, vol: 0.12, out: musicGain }));
+    BASS.forEach(([b, f]) => tone({ type: 'sine', f, t: b * beat, dur: beat * 3.5, vol: 0.12, out: musicGain }));
+  };
+  play();
+  musicTimer = setInterval(play, 16 * beat * 1000);
+}
+export function stopMusic() {
+  clearInterval(musicTimer); musicTimer = null;
+  if (musicGain) { try { musicGain.disconnect(); } catch { /* */ } musicGain = null; }
+}
