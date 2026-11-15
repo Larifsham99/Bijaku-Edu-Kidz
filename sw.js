@@ -1,5 +1,5 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-cf1fe64236';
+const VERSION = 'dunia-cilik-47374beab1';
 const ASSETS = [
   './',
   './index.html',

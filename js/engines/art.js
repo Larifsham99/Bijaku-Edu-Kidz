@@ -245,7 +245,8 @@ export function draw(stage, r, api, { free = false } = {}) {
   const pad = h('div', { class: 'draw-pad' });
   const cv = h('canvas');
   pad.appendChild(cv);
-  let g, scale = 2;
+  let scale = 2;
+  let g = cv.getContext('2d');
   const fit = () => {
     const b = pad.getBoundingClientRect();
     const old = cv.width ? cv.toDataURL() : null;

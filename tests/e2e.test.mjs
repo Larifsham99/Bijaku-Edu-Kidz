@@ -66,7 +66,8 @@ try {
     const p = st.profiles[0];
     for (const m of Object.keys(window.__dc.MODES)) { p.modes[m] = { done: {}, plays: 0, time: 0 }; for (let i = 1; i <= 49; i++) p.modes[m].done[i] = 3; }
   });
-  const levels = all ? Array.from({ length: 50 }, (_, i) => i + 1) : [1, 6, 15, 24, 33, 42, 50];
+  const only = process.argv.find((a) => a.startsWith('--only='))?.slice(7);
+  const levels = all ? Array.from({ length: 50 }, (_, i) => i + 1) : [1, 6, 15, 21, 24, 33, 42, 50];
   // jalankan beberapa halaman selari
   await page.waitForTimeout(600);
   const pages = [page, ...(await Promise.all([1, 2, 3].map(() => newPage(412, 900, page.context()))))];
@@ -75,7 +76,7 @@ try {
     await pg.waitForSelector('.mode-card');
     await pg.evaluate(() => { const p = window.__dc.getState().profiles[0]; for (const m of Object.keys(window.__dc.MODES)) { p.modes[m] = { done: {}, plays: 0, time: 0 }; for (let i = 1; i <= 49; i++) p.modes[m].done[i] = 3; } });
   }
-  const jobs = modes.flatMap((m) => levels.map((L) => [m, L]));
+  const jobs = (only ? modes.filter((m) => m === only) : modes).flatMap((m) => levels.map((L) => [m, L]));
   let n = 0;
   await Promise.all(pages.map(async (pg) => {
     while (jobs.length) {
