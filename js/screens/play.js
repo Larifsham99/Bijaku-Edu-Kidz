@@ -137,6 +137,8 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     stop() { stopped = true; clearInterval(ticker); if (engine?.cleanup) engine.cleanup(); },
     // digunakan oleh ujian automatik untuk menyelesaikan pusingan
     async solveRound() { if (engine?.solve) await engine.solve(); },
+    // jalan keluar jika berlaku ralat tidak dijangka dalam satu pusingan
+    skip() { if (!stopped && !api._done) api.finish(); },
     get index() { return idx; },
     get rounds() { return rounds; },
   };

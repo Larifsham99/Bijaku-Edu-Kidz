@@ -47,6 +47,14 @@ Tiada langkah binaan diperlukan. Aplikasi ini hanya menggunakan HTML, CSS dan Ja
 * **Ruang Ibu Bapa** (dilindungi soalan darab): ringkasan, pencapaian setiap mod, penguasaan setiap kemahiran (Belum dicuba, Sedang belajar, Hampir menguasai, Telah menguasai), cadangan permainan, rekod harian/mingguan, had masa bermain, kawalan bunyi/muzik/suara, bahasa (BM atau dwibahasa BM + English), akses mod, kunci kedai, pengurusan profil, serta sandaran dan pemulihan data.
 * **Keselamatan:** tiada iklan, pautan sosial, sembang atau pembelian. Hanya nama panggilan dan umur disimpan, dan data tidak pernah meninggalkan peranti.
 
+## Kemas kini & kestabilan
+
+* **Pautan kekal sama.** Setiap kali kod ditolak ke cabang utama, GitHub Actions menguji kesemua 750 level dan kemudian menerbitkan semula ke alamat yang sama. Pengguna sedia ada menerima versi baharu secara automatik apabila membuka aplikasi. Muat semula tidak berlaku di tengah-tengah level.
+* **Kemajuan tidak hilang** semasa kemas kini. Data disimpan dua kali dalam peranti (IndexedDB dan localStorage, dan salinan paling baharu digunakan), dan pelayar diminta untuk tidak memadamnya.
+* **Jangan tukar alamat** (nama repositori, nama pengguna GitHub atau domain). Data anak terikat pada alamat. Jika alamat berubah, pengguna perlu "Simpan sandaran" dan "Pulihkan sandaran" dari Ruang Ibu Bapa.
+* **Ralat tidak dijangka** semasa bermain memaparkan mesej "Teruskan" supaya anak tidak tersekat.
+* Ujian kemas kini (`npm run test:upgrade`) memasang versi pertama, bermain, menerbitkan versi terkini pada alamat yang sama (meniru cache GitHub Pages), dan mengesahkan kemajuan kekal, kemas kini automatik berfungsi, dan aplikasi boleh dimainkan tanpa internet.
+
 ## Struktur kod
 
 ```
@@ -72,6 +80,7 @@ js/screens/*                                skrin-skrin aplikasi
 npm run test:gen               # sahkan struktur kesemua 750 level (jawapan wujud, maze boleh diselesaikan, tiada level berulang)
 npm run test:e2e               # main 105 level sebenar dalam Chromium + uji semua skrin
 node tests/e2e.test.mjs --all  # main kesemua 750 level
+npm run test:upgrade           # uji kemas kini dari versi lama tanpa kehilangan data
 node tools/build-sw.mjs        # kemas kini senarai cache luar talian selepas menukar fail
 ```
 

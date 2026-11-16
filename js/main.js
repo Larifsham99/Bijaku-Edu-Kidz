@@ -86,5 +86,22 @@ async function boot() {
   }
   addEventListener('beforeunload', flush);
   window.__dc = { go, getState, MODES, session: currentSession };
+  // Pengawal ralat: jika berlaku ralat tidak dijangka semasa bermain, anak tidak tersekat
+  let guardOpen = false;
+  const onCrash = () => {
+    flush();
+    const s = currentSession();
+    if (!s || guardOpen || document.querySelector('.modal-back')) return;
+    guardOpen = true;
+    const back = document.createElement('div');
+    back.className = 'modal-back';
+    back.innerHTML = '<div class="modal"><div class="emo" style="font-size:56px">🙈</div><h2>Ops! Ada masalah kecil.</h2><p>Jangan risau, kita teruskan ke aktiviti seterusnya.</p><button class="btn green big" type="button">Teruskan</button></div>';
+    back.querySelector('button').addEventListener('click', () => { back.remove(); guardOpen = false; s.skip(); });
+    document.body.appendChild(back);
+  };
+  // hanya ralat daripada kod aplikasi sendiri (bukan sambungan pelayar / audio peranti)
+  const ours = (err) => err instanceof Error && /\/js\//.test(err.stack || '');
+  addEventListener('error', (e) => { if (ours(e.error)) onCrash(); });
+  addEventListener('unhandledrejection', (e) => { if (ours(e.reason)) onCrash(); });
 }
 boot();

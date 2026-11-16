@@ -86,10 +86,14 @@ function freshState() {
 
 export async function initStore() {
   db = await openDb();
-  let loaded = await idbGet('state');
-  if (!loaded) {
-    try { const raw = localStorage.getItem(LS_KEY); if (raw) loaded = JSON.parse(raw); } catch { /* abaikan */ }
-  }
+  // Minta pelayar tidak memadam data aplikasi apabila storan peranti hampir penuh
+  try { if (navigator.storage?.persist) navigator.storage.persist(); } catch { /* tidak disokong */ }
+  // Ambil salinan paling baharu antara IndexedDB dan localStorage (sandaran berganda)
+  const fromIdb = await idbGet('state');
+  let fromLs = null;
+  try { const raw = localStorage.getItem(LS_KEY); if (raw) fromLs = JSON.parse(raw); } catch { /* rosak: abaikan */ }
+  const valid = (x) => x && typeof x === 'object' && x.v && Array.isArray(x.profiles);
+  let loaded = [fromIdb, fromLs].filter(valid).sort((a, b) => (b.savedAt || 0) - (a.savedAt || 0))[0] || null;
   state = loaded && loaded.v ? loaded : freshState();
   state.settings = { ...defaultSettings(), ...(state.settings || {}) };
   state.profiles = (state.profiles || []).map((p) => ({ ...newProfile({}), ...p, id: p.id }));
@@ -112,6 +116,7 @@ export function save() {
 export function flush() {
   clearTimeout(saveTimer);
   if (!state) return;
+  state.savedAt = Date.now();
   const snapshot = JSON.parse(JSON.stringify(state));
   idbSet('state', snapshot);
   try { localStorage.setItem(LS_KEY, JSON.stringify(snapshot)); } catch { /* storan penuh */ }
