@@ -1,9 +1,10 @@
 // Skrin permainan: menjalankan pusingan level, maklum balas, bintang & ganjaran
 import { h, emo, clear, sleep, toast, confetti, modal } from '../ui.js';
+import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
 import { ENGINES } from '../engines/index.js';
 import { MODES, generateLevel, makeRound, TIERS } from '../modes/index.js';
-import { PRAISE, ENCOURAGE } from '../data/content.js';
+import { PRAISE, ENCOURAGE, ISLAMIC_PRAISE, ISLAMIC_ENCOURAGE } from '../data/content.js';
 import { speak, stopSpeak, sfx, playSound, speakWord, haptic } from '../audio.js';
 import { icon } from '../icons.js';
 import { profile, settings, save, recordSkill, addActivity, modeProg, isUnlocked } from '../store.js';
@@ -23,6 +24,10 @@ export function stopPlay() {
 export const currentSession = () => active;
 
 const pickOf = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const islamic = () => settings().islamic !== false;
+// Pujian & galakan: campuran ucapan biasa dan ucapan Islamik (jika dihidupkan)
+const praiseText = () => (islamic() && Math.random() < 0.45 ? pickOf(ISLAMIC_PRAISE) : pickOf(PRAISE));
+const encourageText = () => (islamic() && Math.random() < 0.35 ? pickOf(ISLAMIC_ENCOURAGE) : pickOf(ENCOURAGE));
 
 // Animasi bintang terbang dari tengah pentas ke kaunter bintang
 function flyStar(from, to, done) {
@@ -78,14 +83,14 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     good(el, { quiet = false, silent = false } = {}) {
       haptic(12);
       if (!silent) sfx.pick();
-      if (!quiet) toast(pickOf(PRAISE), 'good', '😊');
+      if (!quiet) toast(praiseText(), 'good', '😊');
     },
     bad(el, { soft = false } = {}) {
       mistakes++; attempts++; totalMistakes++;
       if (soft) { sfx.bump(); return mistakes; }
       haptic([30, 40, 30]);
       sfx.wrong();
-      const msg = pickOf(ENCOURAGE);
+      const msg = encourageText();
       toast(msg, 'try', '🤗');
       g.say(msg, '', { voice: true });
       return mistakes;
@@ -106,7 +111,7 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
       haptic(25);
       progress.children[idx].className = 'ok';
       sfx.correct();
-      const praise = pickOf(PRAISE);
+      const praise = praiseText();
       toast(praise, 'good', '⭐');
       speak(praise);
       confetti(12, ['⭐', '✨', '🌟']);
@@ -123,7 +128,10 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     [...progress.children].forEach((d, i) => { d.className = i < idx ? 'ok' : i === idx ? 'now' : ''; });
     mistakes = 0; attempts = 0; api._done = false;
     roundStart = Date.now();
-    g.say(r.say, idx === rounds.length - 1 && rounds.length > 1 ? 'Pusingan terakhir!' : `Pusingan ${idx + 1} / ${rounds.length}`);
+    const sub = idx === rounds.length - 1 && rounds.length > 1 ? 'Pusingan terakhir!' : `Pusingan ${idx + 1} / ${rounds.length}`;
+    // Mulakan dengan Bismillah
+    if (idx === 0 && islamic()) { toast('Bismillah', 'good', '🤲'); g.say(`Bismillah. ${r.say}`, sub); }
+    else g.say(r.say, sub);
     const fn = ENGINES[r.type];
     try {
       engine = fn(stage, r, api) || {};
@@ -179,7 +187,7 @@ export function playScreen(modeId, level) {
   }
   const lvl = generateLevel(modeId, level);
   const tierInfo = TIERS[lvl.tier - 1];
-  const title = `${mode.e} ${mode.n} · Level ${level}${lvl.special ? ' 🎁' : ''}`;
+  const title = [modeArt(mode, 'xs'), ` ${mode.n} · Level ${level}${lvl.special ? ' 🎁' : ''}`];
   const ses = session({
     title, charId: mode.char, color: mode.c, rounds: lvl.rounds, exitTo: '/mod/' + modeId, tag: modeId,
     onComplete: ({ stars, totalMistakes }) => {
@@ -198,10 +206,12 @@ function showLevelDone({ p, mode, level, stars, rewards, totalMistakes, special 
   const big = rewards.filter((r) => r.big);
   if (big.length) setTimeout(() => sfx.reward(), 900);
   const msg = totalMistakes === 0 ? 'Hebat! Kamu berjaya tanpa sebarang kesilapan!' : 'Bagus! Kamu berjaya! Kamu semakin bijak!';
-  speak(`Tahniah! Level ${level} selesai. ${msg}`);
+  const alh = settings().islamic !== false;
+  speak(`${alh ? 'Alhamdulillah! ' : ''}Tahniah! Level ${level} selesai. ${msg}`);
   const content = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' } },
     h('div', { class: 'win-head' },
       h('span', { class: 'emo float' }, special ? '🎁' : '🎉'),
+      alh ? h('div', { class: 'win-alh' }, 'Alhamdulillah!') : null,
       h('h2', {}, `Level ${level} Selesai!`),
       h('div', { class: 'win-stars' }, Array.from({ length: stars }, (_, i) => { const st = icon('star'); st.style.animationDelay = `${0.25 + i * 0.18}s`; return st; }))),
     h('p', {}, msg),
@@ -223,7 +233,7 @@ export function dailyPlayScreen(i) {
   const mode = MODES[item.mode];
   const round = makeRound(item.mode, item.level, item.seed, item.gens);
   const ses = session({
-    title: `📅 Cabaran Harian ${i + 1}/5 · ${item.label}`, charId: mode.char, color: mode.c, rounds: [round], exitTo: '/harian', tag: null,
+    title: [modeArt(mode, 'xs'), ` Cabaran Harian ${i + 1}/5`], charId: mode.char, color: mode.c, rounds: [round], exitTo: '/harian', tag: null,
     onComplete: () => {
       const d = p.daily[todayKey()] || (p.daily[todayKey()] = { done: [], rewarded: false });
       if (!d.done.includes(i)) d.done.push(i);
@@ -238,7 +248,7 @@ export function dailyPlayScreen(i) {
       save();
       if (all) {
         sfx.reward(); confetti(50);
-        speak('Hebat! Semua cabaran hari ini selesai! Ini hadiah khas untuk kamu!');
+        speak(`${settings().islamic !== false ? 'Alhamdulillah! ' : 'Hebat! '}Semua cabaran hari ini selesai! Ini hadiah khas untuk kamu!`);
         const m = modal(h('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' } },
           h('div', { class: 'emo float', style: { fontSize: '80px' } }, '🏅'),
           h('h2', {}, 'Cabaran Harian Selesai!'),

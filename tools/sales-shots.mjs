@@ -59,6 +59,7 @@ await shot(phone, '/trofi', 'trofi');
 await shot(phone, '/', 'home-laut', { theme: 'laut' });
 await shot(phone, '/', 'home-angkasa', { theme: 'angkasa' });
 await shot(phone, '/', 'home-gula', { theme: 'gula' });
+await shot(phone, '/', 'home-masjid', { theme: 'masjid' });
 const tab = await setup({ width: 1180, height: 820 });
 await shot(tab, '/', 'tablet-home');
 await tab.evaluate(() => { window.__dcParent = true; });

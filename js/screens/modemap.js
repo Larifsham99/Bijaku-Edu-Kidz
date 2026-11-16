@@ -1,5 +1,6 @@
 // Peta level untuk setiap mod (50 level, 5 peringkat)
 import { h, emo } from '../ui.js';
+import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
 import { profile, isUnlocked, levelsDone, highestUnlocked, mastery, MASTERY_LABEL } from '../store.js';
 import { MODES, TIERS } from '../modes/index.js';
@@ -18,7 +19,7 @@ export function modeScreen(modeId) {
   const cur = highestUnlocked(p, modeId);
   const done = levelsDone(p, modeId);
   const scr = h('div', { class: 'screen' });
-  scr.appendChild(topbar(`${m.e} ${m.n}`, '/'));
+  scr.appendChild(topbar([modeArt(m, 'sm'), m.n], '/'));
   const g = guide(m.char, done >= 50 ? `Tahniah! Kamu sudah tamatkan semua level ${m.n}!` : `Jom main ${m.n}! Level ${cur} sedang menunggu kamu.`);
   scr.appendChild(g.el);
   setTimeout(() => g.repeat(), 300);

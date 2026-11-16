@@ -1,5 +1,6 @@
 // Ruang Ibu Bapa: dashboard perkembangan, penilaian kemahiran, rekod aktiviti & tetapan
 import { h, emo, fmtTime, todayKey, toast } from '../ui.js';
+import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
 import { getState, profile, settings, save, flush, levelsDone, totalLevelsDone, totalPlaySeconds, mastery, MASTERY_LABEL, addProfile, deleteProfile, updateProfile, switchProfile, resetProfileProgress, exportData, highestUnlocked } from '../store.js';
 import { MODE_LIST, MODES, ALL_SKILLS } from '../modes/index.js';
@@ -71,7 +72,7 @@ function ringkasanTab(p) {
     h('div', {}, h('b', {}, fmtTime(totalPlaySeconds(p))), h('span', {}, 'Jumlah masa bermain')),
     h('div', {}, h('b', {}, fmtTime(p.activity[todayKey()]?.time || 0)), h('span', {}, 'Masa bermain hari ini')),
     h('div', {}, h('b', {}, `${totalLevelsDone(p)} / 750`), h('span', {}, 'Level selesai')),
-    h('div', {}, h('b', {}, top && top.plays ? `${top.m.e} ${top.m.n}` : '—'), h('span', {}, 'Mod paling kerap dimainkan')),
+    h('div', {}, h('b', {}, top && top.plays ? [modeArt(top.m, 'sm'), ' ', top.m.n] : '—'), h('span', {}, 'Mod paling kerap dimainkan')),
     h('div', {}, h('b', {}, `${p.stars} ⭐`), h('span', {}, 'Bintang')),
     h('div', {}, h('b', {}, `${p.coins} 🪙`), h('span', {}, 'Syiling')),
     h('div', {}, h('b', {}, `${p.trophies.length} 🏆`), h('span', {}, 'Trofi')),
@@ -81,12 +82,12 @@ function ringkasanTab(p) {
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '💡 Cadangan permainan'),
     rec.length ? h('div', { class: 'rec-list' }, rec.map((r) => {
       const m = MODES[r.mode];
-      return h('button', { type: 'button', onclick: () => { lockParent(); go(`/main/${m.id}/${highestUnlocked(p, m.id)}`); } }, `${m.e} ${r.n} — `, h('span', { class: 'muted' }, r.why), ' ▶');
+      return h('button', { type: 'button', onclick: () => { lockParent(); go(`/main/${m.id}/${highestUnlocked(p, m.id)}`); } }, modeArt(m, 'sm'), ` ${r.n} — `, h('span', { class: 'muted' }, r.why), ' ▶');
     })) : h('p', { class: 'muted' }, 'Mainkan beberapa level dahulu untuk mendapat cadangan.')));
   wrap.appendChild(h('div', { class: 'panel', style: { overflowX: 'auto' } }, h('h3', {}, 'Pencapaian setiap kategori'),
     h('table', { class: 'table' }, h('thead', {}, h('tr', {}, h('th', {}, 'Mod'), h('th', {}, 'Level'), h('th', {}, 'Ketepatan'), h('th', {}, 'Masa'), h('th', {}, 'Tahap'))),
       h('tbody', {}, ms.map((s) => h('tr', {},
-        h('td', {}, `${s.m.e} ${s.m.n}`),
+        h('td', {}, modeArt(s.m, 'sm'), ` ${s.m.n}`),
         h('td', {}, `${s.done}/50`, h('div', { class: 'lvl-bar', style: { width: '80px' } }, h('i', { style: { width: `${s.done * 2}%` } }))),
         h('td', {}, s.acc === null ? '—' : `${Math.round(s.acc * 100)}%`),
         h('td', {}, s.time ? fmtTime(s.time) : '—'),
@@ -99,14 +100,14 @@ function kemahiranTab(p) {
   const all = ALL_SKILLS.map((s) => ({ ...s, d: p.skills[s.id], lv: mastery(p.skills[s.id]) }));
   const mastered = all.filter((s) => s.lv === 3), need = all.filter((s) => s.lv === 1 || s.lv === 2);
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '✅ Kemahiran yang sudah dikuasai'),
-    mastered.length ? h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start' } }, mastered.map((s) => h('span', { class: 'mbadge mb3' }, `${MODES[s.mode].e} ${s.n}`))) : h('p', { class: 'muted' }, 'Belum ada lagi — teruskan bermain!')));
+    mastered.length ? h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start' } }, mastered.map((s) => h('span', { class: 'mbadge mb3' }, modeArt(MODES[s.mode], 'xs'), ` ${s.n}`))) : h('p', { class: 'muted' }, 'Belum ada lagi — teruskan bermain!')));
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '📌 Kemahiran yang memerlukan latihan'),
-    need.length ? h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start' } }, need.map((s) => h('span', { class: `mbadge mb${s.lv}` }, `${MODES[s.mode].e} ${s.n}`))) : h('p', { class: 'muted' }, 'Tiada buat masa ini.')));
+    need.length ? h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start' } }, need.map((s) => h('span', { class: `mbadge mb${s.lv}` }, modeArt(MODES[s.mode], 'xs'), ` ${s.n}`))) : h('p', { class: 'muted' }, 'Tiada buat masa ini.')));
   wrap.appendChild(h('div', { class: 'panel muted', style: { fontSize: '14px' } },
     'Penilaian berdasarkan: ketepatan jawapan pada cubaan pertama, bilangan cubaan, masa menyelesaikan, dan prestasi 10 pusingan terkini. ',
     'Tahap: Belum dicuba → Sedang belajar → Hampir menguasai (≥60%, ≥3 pusingan) → Telah menguasai (≥85%, ≥6 pusingan).'));
   MODE_LIST.forEach((m) => {
-    wrap.appendChild(h('div', { class: 'panel', style: { overflowX: 'auto' } }, h('h3', {}, `${m.e} ${m.n}`),
+    wrap.appendChild(h('div', { class: 'panel', style: { overflowX: 'auto' } }, h('h3', {}, modeArt(m, 'sm'), ` ${m.n}`),
       h('table', { class: 'table' }, h('thead', {}, h('tr', {}, h('th', {}, 'Kemahiran'), h('th', {}, 'Tahap'), h('th', {}, 'Ketepatan'), h('th', {}, 'Purata cubaan'), h('th', {}, 'Purata masa'), h('th', {}, 'Pusingan'))),
         h('tbody', {}, Object.entries(m.skills).map(([id, n]) => {
           const d = p.skills[id], lv = mastery(d);
@@ -160,6 +161,7 @@ function tetapanTab() {
     toggle('Kesan bunyi', s.sound, (v) => { s.sound = v; save(); }),
     toggle('Muzik latar', s.music, (v) => { s.music = v; save(); v ? startMusic() : stopMusic(); }),
     toggle('Suara arahan (Bahasa Melayu)', s.voice, (v) => { s.voice = v; save(); }, voiceInfo()),
+    toggle('Ucapan Islamik', s.islamic !== false, (v) => { s.islamic = v; save(); }, 'Salam, Bismillah sebelum bermula, Alhamdulillah & Masya-Allah apabila berjaya, dan Doa Hari Ini di halaman utama.'),
     toggle('Getaran apabila menjawab', s.vibrate !== false, (v) => { s.vibrate = v; save(); }, 'Untuk telefon Android yang menyokong getaran.'),
     h('div', { class: 'toggle-row' }, h('div', {}, 'Kelajuan suara'), sel([[0.7, 'Perlahan'], [0.9, 'Biasa'], [1.05, 'Laju']], s.voiceRate, (v) => { s.voiceRate = +v; save(); speak('Mari kita cari huruf A!'); })),
     h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start', marginTop: '8px' } }, h('button', { class: 'btn small blue', type: 'button', onclick: () => speak('Bagus! Kamu berjaya! Hebat! Kamu semakin bijak!') }, '▶ Uji suara'), h('button', { class: 'btn small ghost', type: 'button', onclick: () => sfx.win() }, '▶ Uji bunyi'))));

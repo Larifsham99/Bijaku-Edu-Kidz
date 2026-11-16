@@ -52,6 +52,7 @@ function idbSet(key, val) {
 export function defaultSettings() {
   return {
     sound: true, music: false, voice: true, voiceRate: 0.9, vibrate: true,
+    islamic: true, // ucapan Islamik: Bismillah, Alhamdulillah, Masya-Allah, Insya-Allah
     lang: 'ms', // 'ms' atau 'dual' (BM + English)
     timeLimit: 0, // minit sehari, 0 = tiada had
     disabledModes: [],

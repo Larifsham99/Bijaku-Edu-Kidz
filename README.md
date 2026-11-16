@@ -39,10 +39,11 @@ Tiada langkah binaan diperlukan. Aplikasi ini hanya menggunakan HTML, CSS dan Ja
 
 ## Ciri-ciri lain
 
-* **Ganjaran:** 1 bintang bagi setiap jawapan betul, syiling bagi setiap level, bonus dan pelekat setiap 5 level, trofi setiap 10 level, sijil (boleh dicetak) selepas 50 level, 17 lencana pencapaian, serta avatar dan kostum yang boleh ditukar dengan syiling. Tiada wang sebenar digunakan.
+* **Ganjaran:** 1 bintang bagi setiap jawapan betul, syiling bagi setiap level, bonus dan pelekat setiap 5 level, trofi setiap 10 level, sijil (boleh dicetak) selepas 50 level, 17 lencana pencapaian, serta avatar, kostum dan 6 tema yang boleh ditukar dengan syiling. Tiada wang sebenar digunakan.
 * **Tiada hukuman:** jawapan salah mendapat galakan ("Bagus, cuba sekali lagi!"). Selepas dua kali salah, jawapan yang betul akan diserlahkan sebagai petunjuk.
 * **Audio:** suara Bahasa Melayu melalui Web Speech API (`ms-MY`, dengan sandaran `id-ID`), kesan bunyi, dan 35 bunyi haiwan/kenderaan/alam yang disintesis dengan Web Audio supaya berfungsi luar talian. Muzik latar juga disediakan. Arahan boleh dimainkan semula (🔊 atau ketik karakter) dan semua bunyi boleh dimatikan.
 * **Cabaran Harian:** 5 permainan rawak setiap hari (ABC, nombor, memori, logik, pengetahuan am) dengan hadiah khas.
+* **Sentuhan Islamik** (boleh dimatikan di Ruang Ibu Bapa): salam di halaman utama, "Bismillah" sebelum memulakan level, "Alhamdulillah" dan "Masya-Allah" apabila berjaya, "Insya-Allah" sebagai galakan, kad Doa Hari Ini (doa sahih bersama sumber) dan tema Taman Masjid.
 * **Main Bebas:** mewarna, lukis, papan bunyi, susun objek, puzzle pilihan sendiri, dan teroka gambar. Tiada markah.
 * **Ruang Ibu Bapa** (dilindungi soalan darab): ringkasan, pencapaian setiap mod, penguasaan setiap kemahiran (Belum dicuba, Sedang belajar, Hampir menguasai, Telah menguasai), cadangan permainan, rekod harian/mingguan, had masa bermain, kawalan bunyi/muzik/suara, bahasa (BM atau dwibahasa BM + English), akses mod, kunci kedai, pengurusan profil, serta sandaran dan pemulihan data.
 * **Keselamatan:** tiada iklan, pautan sosial, sembang atau pembelian. Hanya nama panggilan dan umur disimpan, dan data tidak pernah meninggalkan peranti.

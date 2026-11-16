@@ -538,6 +538,11 @@ export const STICKERS = ['🦄', '🌈', '🍭', '🚀', '🦕', '🐳', '🌻',
 
 // ================== UCAPAN KARAKTER ==================
 export const PRAISE = ['Bagus!', 'Hebat!', 'Pandai!', 'Syabas!', 'Bijak!', 'Betul!', 'Wah, hebatnya!', 'Kamu semakin bijak!', 'Cemerlang!', 'Tahniah!'];
+// Ucapan Islamik (ejaan DBP). Digunakan mengikut adab:
+// Bismillah ketika memulakan, Alhamdulillah ketika berjaya, Masya-Allah ketika memuji,
+// Insya-Allah untuk usaha yang akan datang.
+export const ISLAMIC_PRAISE = ['Masya-Allah, pandainya!', 'Alhamdulillah, betul!', 'Masya-Allah, hebat!', 'Alhamdulillah!', 'Masya-Allah, bijaknya!'];
+export const ISLAMIC_ENCOURAGE = ['Tidak mengapa, cuba lagi. Insya-Allah boleh!', 'Sabar ya, cuba sekali lagi. Insya-Allah berjaya!'];
 export const ENCOURAGE = ['Bagus, cuba sekali lagi!', 'Tidak mengapa, kita cuba sama-sama!', 'Hampir betul! Cuba lagi.', 'Jangan risau, cuba lagi ya!', 'Kamu boleh! Cuba lagi.'];
 
 // ================== TEMA ==================
@@ -548,6 +553,7 @@ export const THEMES = [
   { id: 'laut', e: '🐠', n: 'Dasar Laut', cost: 120, d: 'Ikan berenang & buih naik' },
   { id: 'angkasa', e: '🚀', n: 'Angkasa Malam', cost: 180, d: 'Bintang berkelip & planet' },
   { id: 'gula', e: '🍭', n: 'Dunia Gula-gula', cost: 240, d: 'Warna terang & butang jeli berkilat' },
+  { id: 'masjid', e: '🕌', n: 'Taman Masjid', cost: 0, d: 'Bulan sabit, tanglung & corak Islamik' },
 ];
 export const DEFAULT_THEME = 'taman';
 export const FREE_THEMES = THEMES.filter((t) => t.cost === 0).map((t) => t.id);

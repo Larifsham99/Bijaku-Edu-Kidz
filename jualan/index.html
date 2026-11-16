@@ -103,7 +103,8 @@
   /* mod */
   .modes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 36px; }
   .mode { background: #fff; border-radius: 22px; padding: 16px 12px; text-align: center; box-shadow: var(--shadow-s); border-top: 6px solid var(--c); }
-  .mode .e { font-size: 38px; }
+  .mode .e { font-size: 38px; height: 64px; display: grid; place-items: center; }
+  .mode .e svg { filter: drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 4px 4px rgba(42,35,80,.15)); }
   .mode h3 { font-size: 18px; margin: 4px 0; }
   .mode p { margin: 0; font-size: 13.5px; color: var(--soft); line-height: 1.35; }
 
@@ -410,13 +411,14 @@
 <!-- ===================== TEMA ===================== -->
 <section>
   <div class="wrap center reveal">
-    <span class="eyebrow">5 tema</span>
+    <span class="eyebrow">6 tema</span>
     <h2 class="h2">Anak pilih dunia kegemaran mereka</h2>
-    <p class="lead">Taman Ceria, Dasar Laut, Angkasa Malam, Dunia Gula-gula dan Klasik Pastel, setiap satu dengan latar beranimasi. Tema baharu dibuka dengan syiling yang dikumpul daripada bermain.</p>
+    <p class="lead">Taman Ceria, Taman Masjid, Dasar Laut, Angkasa Malam, Dunia Gula-gula dan Klasik Pastel, setiap satu dengan latar beranimasi. Tema baharu dibuka dengan syiling yang dikumpul daripada bermain.</p>
   </div>
   <div class="wrap themes-row">
     <div class="phone sm reveal"><div class="scr"><img loading="lazy" src="img/home-laut.jpg" alt="Tema Dasar Laut"></div></div>
     <div class="phone sm reveal"><div class="scr"><img loading="lazy" src="img/home-angkasa.jpg" alt="Tema Angkasa Malam"></div></div>
+    <div class="phone sm reveal"><div class="scr"><img loading="lazy" src="img/home-masjid.jpg" alt="Tema Taman Masjid"></div></div>
     <div class="phone sm reveal"><div class="scr"><img loading="lazy" src="img/home-gula.jpg" alt="Tema Dunia Gula-gula"></div></div>
   </div>
 </section>
@@ -432,6 +434,9 @@
         <li>Doa hanya daripada <b>al-Quran &amp; hadis sahih</b>, setiap satu dengan rujukan sumbernya</li>
         <li>Tulisan Arab, rumi dan maksud dipaparkan bersama</li>
         <li>Langkah wuduk mengikut tertib fardu wuduk</li>
+        <li><b>Ucapan Islamik sepanjang permainan</b>: salam di halaman utama, Bismillah sebelum bermula, Alhamdulillah &amp; Masya-Allah apabila berjaya, dan Insya-Allah sebagai galakan</li>
+        <li><b>Doa Hari Ini</b> di halaman utama, bertukar setiap hari</li>
+        <li>Tema <b>Taman Masjid</b> dengan corak Islamik, bulan sabit dan tanglung</li>
       </ul>
     </div>
     <div class="doa-card reveal">
@@ -482,7 +487,7 @@
           <li><b>15 permainan</b> pendidikan dengan <b>750 level</b></li>
           <li>Arahan suara <b>Bahasa Melayu</b> &amp; pilihan dwibahasa</li>
           <li>Cabaran Harian &amp; Main Bebas</li>
-          <li>Trofi, sijil, pelekat, lencana, kostum &amp; 5 tema</li>
+          <li>Trofi, sijil, pelekat, lencana, kostum &amp; 6 tema</li>
           <li><b>Ruang Ibu Bapa</b> dengan laporan kemahiran &amp; had masa</li>
           <li>Profil untuk <b>ramai anak</b> dalam satu peranti</li>
           <li>Boleh dimainkan <b>tanpa internet</b>, tanpa iklan</li>
@@ -580,6 +585,15 @@
   };
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+</script>
+<script type="module">
+  // Gunakan ilustrasi ikon mod yang sama seperti dalam aplikasi
+  import { MODE_ART } from '../js/data/modeart.js';
+  const ids = ['abc', 'nombor', 'warna', 'bunyi', 'puzzle', 'ingatan', 'seni', 'bayang', 'maze', 'harian', 'kelas', 'soleh', 'haiwan', 'minda', 'misi'];
+  document.querySelectorAll('.modes .mode .e').forEach((el, i) => {
+    const art = MODE_ART[ids[i]];
+    if (art) el.innerHTML = `<svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">${art}</svg>`;
+  });
 </script>
 </body>
 </html>

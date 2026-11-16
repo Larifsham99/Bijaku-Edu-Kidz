@@ -4,10 +4,17 @@ import { icon } from '../icons.js';
 import { face, colsFor, hintEl, shakeEl } from './common.js';
 import { NUM_WORDS } from '../data/content.js';
 import { colorById } from '../data/content.js';
+import { SPEAKER_ART } from '../data/modeart.js';
 
 export function renderShow(show, api) {
   if (!show) return null;
   const k = show.k;
+  if (k === 'big' && show.e === '🔊') {
+    // butang pembesar suara berwarna (emoji 🔊 kelihatan kelabu pada Android)
+    const b = h('button', { class: 'speaker-art', type: 'button', 'aria-label': 'Dengar semula', html: SPEAKER_ART });
+    if (show.say) b.addEventListener('click', () => api.speak(show.say));
+    return b;
+  }
   if (k === 'big') {
     const el = h('div', { class: `prompt-big ${show.t !== undefined && !show.e ? 'letter' : ''}` }, face(show, { dual: api.dual }));
     if (show.color) el.style.color = colorById(show.color)?.hex || show.color;

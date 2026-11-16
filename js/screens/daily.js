@@ -1,5 +1,6 @@
 // Cabaran Harian: 5 permainan rawak setiap hari
 import { h, emo, todayKey } from '../ui.js';
+import { modeArt } from '../data/modeart.js';
 import { icon } from '../icons.js';
 import { go } from '../nav.js';
 import { profile, highestUnlocked } from '../store.js';
@@ -36,7 +37,7 @@ export function dailyScreen() {
   scr.appendChild(h('div', { class: 'daily-list' }, set.items.map((it, i) => {
     const done = set.done.includes(i);
     return h('button', { class: `daily-item ${done ? 'done' : ''}`, type: 'button', onclick: () => { sfx.tap(); go('/harian/' + i); } },
-      emo(it.e), h('div', {}, h('div', {}, it.label), h('div', { class: 'muted', style: { fontSize: '15px' } }, `${MODES[it.mode].n} · tahap level ${it.level}`)), h('span', { class: 'chk' }, icon(done ? 'check' : 'play')));
+      modeArt(MODES[it.mode], 'lg'), h('div', {}, h('div', {}, it.label), h('div', { class: 'muted', style: { fontSize: '15px' } }, `${MODES[it.mode].n} · tahap level ${it.level}`)), h('span', { class: 'chk' }, icon(done ? 'check' : 'play')));
   })));
   scr.appendChild(h('div', { class: 'panel center' },
     h('div', { style: { fontSize: '20px', fontWeight: 900 } }, 'Hadiah khas apabila kelima-lima cabaran selesai:'),

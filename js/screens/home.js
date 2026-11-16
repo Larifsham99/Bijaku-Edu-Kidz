@@ -1,9 +1,10 @@
 // Halaman utama, pendaftaran profil pertama & pemilihan profil
 import { h, emo } from '../ui.js';
+import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
 import { profile, getState, settings, addProfile, switchProfile, levelsDone, highestUnlocked, playerLevel, todayPlaySeconds } from '../store.js';
 import { MODE_LIST, MODES } from '../modes/index.js';
-import { AVATARS, CHARACTERS } from '../data/content.js';
+import { AVATARS, CHARACTERS, DOA } from '../data/content.js';
 import { icon } from '../icons.js';
 import { avatarEl, statPills, guide, parentGate } from './shared.js';
 import { dailySet } from './daily.js';
@@ -14,8 +15,22 @@ import { DEMO, DEMO_MAX, SALES_URL } from '../demo.js';
 const greet = (name) => {
   const hr = new Date().getHours();
   const t = hr < 12 ? 'Selamat pagi' : hr < 15 ? 'Selamat tengah hari' : hr < 19 ? 'Selamat petang' : 'Selamat malam';
+  if (settings().islamic !== false) return `Assalamualaikum, ${name}! ${t}. Jom belajar sambil bermain!`;
   return `${t}, ${name}! Jom belajar sambil bermain!`;
 };
+
+// Doa Hari Ini: bertukar setiap hari, hanya doa sahih daripada senarai DOA (dengan sumber)
+function doaCard() {
+  const list = DOA.filter((d) => !d.dupOf);
+  const day = Math.floor(Date.now() / 86400000);
+  const d = list[day % list.length];
+  return h('button', { class: 'doa-card', type: 'button', 'aria-label': `Doa hari ini: ${d.sit}`, onclick: () => { sfx.tap(); speak(`Doa ${d.sit.toLowerCase()}. Maksudnya: ${d.makna}.`); } },
+    h('div', { class: 'doa-top' }, h('span', { class: 'emo' }, '🤲'), h('b', {}, 'Doa Hari Ini'), h('span', { class: 'doa-sit' }, d.sit)),
+    h('div', { class: 'doa-ar', dir: 'rtl', lang: 'ar' }, d.ar),
+    h('div', { class: 'doa-rumi' }, d.rumi),
+    h('div', { class: 'doa-makna' }, `“${d.makna}”`),
+    h('div', { class: 'doa-src' }, `Sumber: ${d.src} · tekan untuk dengar maksud`));
+}
 
 // Cadangan permainan seterusnya: mod terakhir dimainkan atau mod pertama yang belum selesai
 export function nextPlay(p) {
@@ -67,7 +82,7 @@ export function homeScreen() {
   if (np) {
     side.appendChild(h('button', { class: 'play-cta', type: 'button', 'aria-label': `Mula bermain ${np.m.n} level ${np.L}`, onclick: () => { sfx.tap(); go(`/main/${np.m.id}/${np.L}`); } },
       h('span', { class: 'pc-play' }, icon('play')),
-      h('span', { class: 'pc-text' }, h('b', {}, 'Mula Bermain'), h('span', {}, `${np.m.e} ${np.m.n} · Level ${np.L}`)),
+      h('span', { class: 'pc-text' }, h('b', {}, 'Mula Bermain'), h('span', { class: 'pc-sub' }, modeArt(np.m, 'sm'), `${np.m.n} · Level ${np.L}`)),
       h('span', { class: 'pc-char emo' }, AVATARS.find((a) => a.id === p.avatar)?.e || '🐰')));
   }
   const tile = (cls, ic, label, onclick, extra = null) => h('button', { class: `tile-btn ${cls}`, type: 'button', onclick: () => { sfx.tap(); onclick(); } }, h('span', { class: 'tb-ico' }, icon(ic)), h('span', {}, label), extra);
@@ -76,6 +91,7 @@ export function homeScreen() {
     tile('t-yellow', 'trophy', 'Koleksi Trofi', () => go('/trofi')),
     tile('t-pink', 'wand', 'Kostum & Tema', () => go('/kedai')),
     tile('t-sky', 'balloon', 'Main Bebas', () => go('/bebas'))));
+  if (settings().islamic !== false) side.appendChild(doaCard());
   side.appendChild(h('div', { class: 'parent-row' },
     lim !== Infinity ? h('span', { class: 'time-chip' }, '⏰', `Baki masa hari ini: ${Math.max(0, Math.round((lim - todayPlaySeconds(p)) / 60))} minit`) : null,
     h('button', { class: 'tile-btn parent-link', type: 'button', onclick: () => { sfx.tap(); parentGate(() => go('/ibubapa/ringkasan')); } }, h('span', { class: 'tb-ico' }, icon('parent')), 'Ruang Ibu Bapa')));
@@ -90,7 +106,7 @@ export function homeScreen() {
       if (off) { speak('Permainan ini sedang dikunci oleh ibu bapa.'); return; }
       speak(m.n); go('/mod/' + m.id);
     } },
-      h('span', { class: 'mc-ico' }, h('span', { class: 'mc-ring' }), h('span', { class: 'emo' }, m.e), off ? h('span', { class: 'lock-ic' }, icon('lock')) : null),
+      h('span', { class: 'mc-ico' }, h('span', { class: 'mc-ring' }), modeArt(m), off ? h('span', { class: 'lock-ic' }, icon('lock')) : null),
       done >= 50 ? h('span', { class: 'done-badge' }, icon('medal')) : null,
       h('span', { class: 'name' }, m.n),
       h('span', { class: 'meta' }, icon('star'), `${done} / 50`)));

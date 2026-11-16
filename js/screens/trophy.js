@@ -1,5 +1,6 @@
 // Koleksi: trofi, pelekat, lencana, sijil
 import { h, emo } from '../ui.js';
+import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
 import { profile } from '../store.js';
 import { MODE_LIST, MODES } from '../modes/index.js';
@@ -20,7 +21,7 @@ export function trophyScreen(tab = 'trofi') {
     body.appendChild(h('div', { class: 'center muted' }, `${p.trophies.length} / 75 trofi · dapatkan trofi setiap 10 level`));
     MODE_LIST.forEach((m) => {
       body.appendChild(h('div', { class: 'panel', style: { display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' } },
-        h('span', { class: 'emo', style: { fontSize: '34px' } }, m.e), h('b', { style: { flex: 1, minWidth: '140px' } }, m.n),
+        modeArt(m, 'md'), h('b', { style: { flex: 1, minWidth: '140px' } }, m.n),
         h('div', { class: 'row-wrap' }, TROPHY_E.map((e, i) => {
           const got = p.trophies.includes(`${m.id}-${(i + 1) * 10}`);
           return h('button', { class: `coll-item ${got ? '' : 'off'}`, type: 'button', style: { padding: '6px', minWidth: '58px' }, onclick: () => speak(got ? `${TROPHY_NAMES[i]} ${m.n}` : `Selesaikan level ${(i + 1) * 10} untuk trofi ini.`) }, emo(e), h('span', { class: 'lbl' }, `Lv ${(i + 1) * 10}`));
@@ -73,7 +74,7 @@ export function certScreen(modeId) {
     h('div', { style: { display: 'flex', justifyContent: 'center' } }, avatarEl(p, 'lg')),
     h('div', { class: 'who' }, p.name),
     h('div', { style: { fontSize: '20px', fontWeight: 800 } }, `kerana berjaya menamatkan kesemua 50 level`),
-    h('div', { style: { fontSize: '28px', fontWeight: 900, color: m.c } }, `${m.e} ${m.n}`),
+    h('div', { style: { fontSize: '28px', fontWeight: 900, color: m.c, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' } }, modeArt(m, 'md'), m.n),
     h('div', { class: 'muted' }, `Dunia Cilik · ${todayKey()}`),
     h('div', { class: 'muted', style: { fontStyle: 'italic' } }, 'Belajar Sambil Bermain, Bijak Sambil Meneroka.')));
   scr.appendChild(h('div', { class: 'row-wrap' }, h('button', { class: 'btn blue', type: 'button', onclick: () => window.print() }, emo('🖨️'), 'Cetak sijil')));
