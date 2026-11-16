@@ -2,9 +2,9 @@
 import { readdirSync, statSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
-const roots = ['index.html', 'manifest.webmanifest', 'css', 'js', 'icons'];
+const roots = ['index.html', 'manifest.webmanifest', 'css', 'js', 'icons', 'fonts'];
 const out = [];
-const walk = (p) => { if (statSync(p).isDirectory()) readdirSync(p).sort().forEach((f) => walk(join(p, f))); else out.push(p); };
+const walk = (p) => { if (statSync(p).isDirectory()) readdirSync(p).sort().forEach((f) => walk(join(p, f))); else if (!p.endsWith('.md')) out.push(p); };
 roots.forEach(walk);
 const hash = createHash('sha1'); out.forEach((f) => hash.update(readFileSync(f)));
 const ver = 'dunia-cilik-' + hash.digest('hex').slice(0, 10);

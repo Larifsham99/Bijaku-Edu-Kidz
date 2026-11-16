@@ -160,6 +160,7 @@ function tetapanTab() {
     toggle('Kesan bunyi', s.sound, (v) => { s.sound = v; save(); }),
     toggle('Muzik latar', s.music, (v) => { s.music = v; save(); v ? startMusic() : stopMusic(); }),
     toggle('Suara arahan (Bahasa Melayu)', s.voice, (v) => { s.voice = v; save(); }, voiceInfo()),
+    toggle('Getaran apabila menjawab', s.vibrate !== false, (v) => { s.vibrate = v; save(); }, 'Untuk telefon Android yang menyokong getaran.'),
     h('div', { class: 'toggle-row' }, h('div', {}, 'Kelajuan suara'), sel([[0.7, 'Perlahan'], [0.9, 'Biasa'], [1.05, 'Laju']], s.voiceRate, (v) => { s.voiceRate = +v; save(); speak('Mari kita cari huruf A!'); })),
     h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start', marginTop: '8px' } }, h('button', { class: 'btn small blue', type: 'button', onclick: () => speak('Bagus! Kamu berjaya! Hebat! Kamu semakin bijak!') }, '▶ Uji suara'), h('button', { class: 'btn small ghost', type: 'button', onclick: () => sfx.win() }, '▶ Uji bunyi'))));
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '🌐 Bahasa'),

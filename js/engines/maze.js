@@ -1,5 +1,6 @@
 // Enjin maze: grid terbuka dengan halangan ATAU labirin berdinding; boleh kumpul objek
 import { h, sleep } from '../ui.js';
+import { icon } from '../icons.js';
 import { makeRng } from '../rng.js';
 
 // Jana labirin sempurna (recursive backtracker). walls[y][x] = {n,e,s,w}
@@ -160,11 +161,11 @@ export function maze(stage, r, api) {
     move(dx, dy);
   }
   const dpad = h('div', { class: 'dpad' },
-    h('button', { class: 'u', type: 'button', 'aria-label': 'atas', onclick: () => move(0, -1) }, '⬆'),
-    h('button', { class: 'l', type: 'button', 'aria-label': 'kiri', onclick: () => move(-1, 0) }, '⬅'),
-    h('button', { class: 'd', type: 'button', 'aria-label': 'bawah', onclick: () => move(0, 1) }, '⬇'),
-    h('button', { class: 'r', type: 'button', 'aria-label': 'kanan', onclick: () => move(1, 0) }, '➡'));
-  const hintBtn = h('button', { class: 'btn small ghost', type: 'button' }, h('span', { class: 'emo' }, '💡'), 'Bantuan');
+    h('button', { class: 'u', type: 'button', 'aria-label': 'atas', onclick: () => move(0, -1) }, icon('arrowUp')),
+    h('button', { class: 'l', type: 'button', 'aria-label': 'kiri', onclick: () => move(-1, 0) }, icon('arrowLeft')),
+    h('button', { class: 'd', type: 'button', 'aria-label': 'bawah', onclick: () => move(0, 1) }, icon('arrowDown')),
+    h('button', { class: 'r', type: 'button', 'aria-label': 'kanan', onclick: () => move(1, 0) }, icon('arrowRight')));
+  const hintBtn = h('button', { class: 'btn small ghost', type: 'button' }, icon('hint'), 'Bantuan');
   hintBtn.addEventListener('click', () => {
     const tgt = items.size ? [...items.keys()][0].split(',').map(Number) : r.goal;
     const p = bfs(r, walls, rocks, pos, tgt);

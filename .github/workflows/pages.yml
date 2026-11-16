@@ -41,7 +41,7 @@ jobs:
         run: |
           node tools/build-sw.mjs
           mkdir _site
-          cp -r index.html manifest.webmanifest sw.js css js icons jualan _site/
+          cp -r index.html manifest.webmanifest sw.js css js icons fonts jualan _site/
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
         with:

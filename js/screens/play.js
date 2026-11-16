@@ -4,7 +4,8 @@ import { go } from '../nav.js';
 import { ENGINES } from '../engines/index.js';
 import { MODES, generateLevel, makeRound, TIERS } from '../modes/index.js';
 import { PRAISE, ENCOURAGE } from '../data/content.js';
-import { speak, stopSpeak, sfx, playSound, speakWord } from '../audio.js';
+import { speak, stopSpeak, sfx, playSound, speakWord, haptic } from '../audio.js';
+import { icon } from '../icons.js';
 import { profile, settings, save, recordSkill, addActivity, modeProg, isUnlocked } from '../store.js';
 import { awardLevel, addStars, checkBadges } from '../rewards.js';
 import { guide, confirmBox } from './shared.js';
@@ -23,20 +24,34 @@ export const currentSession = () => active;
 
 const pickOf = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
+// Animasi bintang terbang dari tengah pentas ke kaunter bintang
+function flyStar(from, to, done) {
+  const a = from.getBoundingClientRect(), b = to.getBoundingClientRect();
+  const s = icon('star', 'fly-star');
+  s.style.left = `${a.left + a.width / 2 - 23}px`;
+  s.style.top = `${a.top + Math.min(a.height / 2, 200) - 23}px`;
+  document.body.appendChild(s);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    s.style.transform = `translate(${b.left + b.width / 2 - (a.left + a.width / 2)}px, ${b.top + b.height / 2 - (a.top + Math.min(a.height / 2, 200))}px) scale(.55) rotate(360deg)`;
+    s.style.opacity = '0.4';
+  }));
+  setTimeout(() => { s.remove(); done(); }, 780);
+}
+
 // Enjin sesi umum: menjalankan senarai pusingan dalam satu skrin
 function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
   const p = profile();
   const st = settings();
   const scr = h('div', { class: 'screen' });
   const progress = h('div', { class: 'progress' }, rounds.map(() => h('i')));
-  const replay = h('button', { class: 'btn-round', type: 'button', 'aria-label': 'Dengar arahan semula' }, '🔊');
-  const exitBtn = h('button', { class: 'btn-round', type: 'button', 'aria-label': 'Keluar' }, '✖️');
-  const starPill = h('span', { class: 'pill' }, emo('⭐'), h('b', {}, '0'));
-  scr.appendChild(h('div', { class: 'play-head' }, exitBtn, h('div', { style: { flex: 1, display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' } }, h('div', { class: 'play-title', style: { fontWeight: 900, fontSize: '18px', textAlign: 'center' } }, title), progress), starPill, replay));
+  const replay = h('button', { class: 'btn-round rb-sky', type: 'button', 'aria-label': 'Dengar arahan semula' }, icon('sound'));
+  const exitBtn = h('button', { class: 'btn-round rb-red', type: 'button', 'aria-label': 'Keluar' }, icon('close'));
+  const starPill = h('span', { class: 'pill star-pill' }, icon('star'), h('b', {}, '0'));
+  scr.appendChild(h('div', { class: 'play-head' }, exitBtn, h('div', { class: 'ph-mid' }, h('div', { class: 'play-title' }, title), progress), starPill, replay));
   const g = guide(charId, '');
   scr.appendChild(g.el);
   const stage = h('div', { class: 'stage' });
-  if (color) stage.style.borderTop = `8px solid ${color}`;
+  if (color) stage.style.setProperty('--mc', color);
   scr.appendChild(stage);
 
   let idx = 0, stars = 0, stopped = false, engine = null;
@@ -61,12 +76,14 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     speak: (t) => speak(t),
     say: (t) => g.say(t),
     good(el, { quiet = false, silent = false } = {}) {
+      haptic(12);
       if (!silent) sfx.pick();
       if (!quiet) toast(pickOf(PRAISE), 'good', '😊');
     },
     bad(el, { soft = false } = {}) {
       mistakes++; attempts++; totalMistakes++;
       if (soft) { sfx.bump(); return mistakes; }
+      haptic([30, 40, 30]);
       sfx.wrong();
       const msg = pickOf(ENCOURAGE);
       toast(msg, 'try', '🤗');
@@ -85,7 +102,8 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
       addActivity(p, { rounds: 1 });
       stars++;
       addStars(p, 1);
-      starPill.querySelector('b').textContent = stars;
+      flyStar(stage, starPill, () => { starPill.querySelector('b').textContent = stars; starPill.classList.remove('bump'); void starPill.offsetWidth; starPill.classList.add('bump'); });
+      haptic(25);
       progress.children[idx].className = 'ok';
       sfx.correct();
       const praise = pickOf(PRAISE);
@@ -181,16 +199,17 @@ function showLevelDone({ p, mode, level, stars, rewards, totalMistakes, special 
   if (big.length) setTimeout(() => sfx.reward(), 900);
   const msg = totalMistakes === 0 ? 'Hebat! Kamu berjaya tanpa sebarang kesilapan!' : 'Bagus! Kamu berjaya! Kamu semakin bijak!';
   speak(`Tahniah! Level ${level} selesai. ${msg}`);
-  const content = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' } },
-    h('div', { class: 'emo float', style: { fontSize: '74px' } }, special ? '🎁' : '🎉'),
-    h('h2', {}, `Level ${level} Selesai!`),
+  const content = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' } },
+    h('div', { class: 'win-head' },
+      h('span', { class: 'emo float' }, special ? '🎁' : '🎉'),
+      h('h2', {}, `Level ${level} Selesai!`),
+      h('div', { class: 'win-stars' }, Array.from({ length: stars }, (_, i) => { const st = icon('star'); st.style.animationDelay = `${0.25 + i * 0.18}s`; return st; }))),
     h('p', {}, msg),
-    h('div', { class: 'big-stars' }, Array.from({ length: stars }, () => h('span', {}, '⭐'))),
-    h('div', { class: 'reward-list' }, rewards.map((r) => h('span', { class: 'pill', style: r.big ? { background: '#fff3c4' } : null }, emo(r.e), r.n))),
+    h('div', { class: 'reward-list' }, rewards.map((r) => h('span', { class: 'pill', style: r.big ? { background: '#fff3c4' } : null }, r.e === '🪙' ? icon('coin') : emo(r.e), r.n))),
     h('div', { class: 'row' },
-      h('button', { class: 'btn ghost', type: 'button', onclick: () => { m.close(); go('/mod/' + mode.id); } }, emo('🗺️'), 'Peta'),
-      h('button', { class: 'btn blue', type: 'button', onclick: () => { m.close(); go(`/main/${mode.id}/${level}`); } }, emo('🔁'), 'Main lagi'),
-      level < 50 ? h('button', { class: 'btn green', type: 'button', onclick: () => { m.close(); go(`/main/${mode.id}/${level + 1}`); } }, emo('▶️'), 'Seterusnya') : null),
+      h('button', { class: 'btn ghost', type: 'button', onclick: () => { m.close(); go('/mod/' + mode.id); } }, icon('map'), 'Peta'),
+      h('button', { class: 'btn blue', type: 'button', onclick: () => { m.close(); go(`/main/${mode.id}/${level}`); } }, icon('replay'), 'Main lagi'),
+      level < 50 ? h('button', { class: 'btn green', type: 'button', onclick: () => { m.close(); go(`/main/${mode.id}/${level + 1}`); } }, 'Seterusnya', icon('next')) : null),
     rewards.find((r) => r.cert) ? h('button', { class: 'btn purple', type: 'button', onclick: () => { m.close(); go('/sijil/' + mode.id); } }, emo('📜'), 'Lihat sijil') : null);
   const m = modal(content, { dismissable: false });
 }

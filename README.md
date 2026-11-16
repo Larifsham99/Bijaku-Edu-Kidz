@@ -59,7 +59,9 @@ Tiada langkah binaan diperlukan. Aplikasi ini hanya menggunakan HTML, CSS dan Ja
 
 ```
 index.html, manifest.webmanifest, sw.js   PWA + luar talian
-css/app.css                                 reka bentuk
+css/app.css, css/ui2.css                    reka bentuk asas + lapisan antara muka v2 (butang 3D, responsif, tema)
+fonts/                                      fon Baloo 2 (disimpan untuk luar talian, lesen OFL)
+js/icons.js                                 set ikon SVG untuk butang (konsisten pada semua peranti)
 js/main.js, nav.js                          penghala (hash)
 js/store.js                                 IndexedDB + localStorage, profil, kemajuan, penilaian
 js/audio.js                                 TTS, kesan bunyi, bunyi sintesis, muzik

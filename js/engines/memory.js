@@ -1,5 +1,6 @@
 // Enjin ingatan: kad memori, ingat kedudukan, objek hilang, susunan, Simon (warna/bentuk)
 import { h, sleep } from '../ui.js';
+import { icon } from '../icons.js';
 import { face, hintEl, shakeEl } from './common.js';
 import { slots } from './dnd.js';
 import { choice } from './choice.js';
@@ -174,7 +175,7 @@ export function simon(stage, r, api) {
     return b;
   });
   const info = h('div', { class: 'prompt-text' }, 'Perhatikan...');
-  const again = h('button', { class: 'btn small ghost', type: 'button' }, h('span', { class: 'emo' }, '🔁'), 'Tunjuk lagi');
+  const again = h('button', { class: 'btn small ghost', type: 'button' }, icon('replay'), 'Tunjuk lagi');
   stage.appendChild(info); stage.appendChild(pads); stage.appendChild(h('div', { class: 'row-wrap' }, again));
   let phase = 'show', pos = 0, wrong = 0;
   const lit = async (i, ms = 520) => { els[i].classList.add('lit'); api.sfx.note(i); await sleep(ms); els[i].classList.remove('lit'); await sleep(180); };

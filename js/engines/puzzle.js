@@ -40,7 +40,9 @@ export function puzzle(stage, r, api) {
   if (r.variant === 'missing') return missing(stage, r, api);
   const avail = Math.min((stage.clientWidth || 360) - 24, 380);
   const n0 = r.rows * r.cols;
-  const W = Math.max(200, Math.min(avail, n0 <= 4 ? 260 : n0 <= 6 ? 300 : 340));
+  // ambil kira ketinggian skrin juga (telefon landskap)
+  const maxH = Math.max(170, (innerHeight || 700) - 230);
+  const W = Math.max(170, Math.min(avail, maxH, n0 <= 4 ? 260 : n0 <= 6 ? 300 : 340));
   const H = W;
   const url = picture(r.pic);
   const board = h('div', { class: 'puzzle-board', style: { gridTemplateColumns: `repeat(${r.cols}, ${W / r.cols}px)`, gridTemplateRows: `repeat(${r.rows}, ${H / r.rows}px)` } });

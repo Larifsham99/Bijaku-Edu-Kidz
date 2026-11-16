@@ -141,6 +141,11 @@ function noise({ t = 0, dur = 0.3, vol = 0.3, a = 0.01, filter = { type: 'lowpas
   s.start(t0); s.stop(t0 + a + dur + 0.05);
 }
 
+// ---------------- GETARAN (telefon yang menyokong) ----------------
+export function haptic(pattern = 15) {
+  try { if (settings().vibrate !== false && navigator.vibrate) navigator.vibrate(pattern); } catch { /* tidak disokong */ }
+}
+
 // ---------------- KESAN BUNYI ----------------
 const sfxOn = () => settings().sound;
 export const sfx = {

@@ -1,5 +1,6 @@
 // Enjin "Tap to select" / pilihan berganda / kira objek / teka bunyi / corak
 import { h, sleep } from '../ui.js';
+import { icon } from '../icons.js';
 import { face, colsFor, hintEl, shakeEl } from './common.js';
 import { NUM_WORDS } from '../data/content.js';
 import { colorById } from '../data/content.js';
@@ -47,7 +48,7 @@ export function renderShow(show, api) {
     return h('div', { class: 'strip' }, show.items.map((it) => it === '?' ? h('div', { class: 's q' }, '?') : h('div', { class: 's' }, face(it, { label: false }))));
   }
   if (k === 'sound') {
-    const btn = h('button', { class: 'btn big speak-btn', type: 'button', 'aria-label': 'Dengar bunyi' }, h('span', { class: 'emo' }, '🔊'), 'Dengar');
+    const btn = h('button', { class: 'btn big blue speak-btn', type: 'button', 'aria-label': 'Dengar bunyi' }, icon('sound'), 'Dengar');
     const play = async () => { btn.disabled = true; await api.playSound(show.id, { withOno: show.ono && show.withOno, ono: show.ono }); btn.disabled = false; };
     btn.addEventListener('click', play);
     if (show.auto !== false) setTimeout(play, show.delay ?? 1600);

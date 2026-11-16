@@ -1,5 +1,6 @@
 // Enjin seni: mewarna, sambung titik, surih jari, lukis bebas
 import { h, sleep } from '../ui.js';
+import { icon } from '../icons.js';
 import { COLORS, colorById } from '../data/content.js';
 import { COLORING, DOT_SHAPES, TRACE } from '../data/art.js';
 import { hintEl, shakeEl } from './common.js';
@@ -39,7 +40,7 @@ export function color(stage, r, api) {
   const colored = new Set();
   let gi = 0, done = false, wrong = 0;
   const guided = r.guided || [];
-  const doneBtn = h('button', { class: 'btn green', type: 'button', disabled: true }, h('span', { class: 'emo' }, '✅'), 'Siap!');
+  const doneBtn = h('button', { class: 'btn green', type: 'button', disabled: true }, icon('check'), 'Siap!');
   if (!guided.length) stage.appendChild(h('div', { class: 'row-wrap' }, doneBtn));
   doneBtn.addEventListener('click', () => { if (!done) { done = true; api.finish(); } });
 
@@ -232,7 +233,7 @@ export function trace(stage, r, api) {
   cv.addEventListener('pointermove', (e) => { if (!drawing) return; const p = pt(e); ink(last, p); last = p; mark(p); });
   const up = () => { drawing = false; };
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
-  const reset = h('button', { class: 'btn small ghost', type: 'button' }, h('span', { class: 'emo' }, '🔄'), 'Padam');
+  const reset = h('button', { class: 'btn small ghost', type: 'button' }, icon('replay'), 'Padam');
   reset.addEventListener('click', () => { checks.forEach((c) => { c.hit = false; }); drawGuide(); });
   stage.appendChild(h('div', { class: 'prompt-text', style: { fontSize: '22px' } }, `Surih ${tr.n} dengan jari kamu.`));
   stage.appendChild(h('div', { class: 'row-wrap' }, pad));
@@ -261,9 +262,9 @@ export function draw(stage, r, api, { free = false } = {}) {
     b.addEventListener('click', () => { size = s; eraser = false; api.sfx.tap(); });
     return b;
   }));
-  const er = h('button', { class: 'btn-round', type: 'button', 'aria-label': 'pemadam' }, '🧽');
+  const er = h('button', { class: 'btn-round rb-white', type: 'button', 'aria-label': 'pemadam' }, icon('eraser'));
   er.addEventListener('click', () => { eraser = true; api.sfx.tap(); });
-  const clr = h('button', { class: 'btn-round', type: 'button', 'aria-label': 'padam semua' }, '🗑️');
+  const clr = h('button', { class: 'btn-round rb-red', type: 'button', 'aria-label': 'padam semua' }, icon('trash'));
   clr.addEventListener('click', () => { g.fillStyle = '#fff'; g.fillRect(0, 0, cv.width, cv.height); ink = 0; });
   sizes.append(er, clr);
   let drawing = false, last = null;
@@ -278,7 +279,7 @@ export function draw(stage, r, api, { free = false } = {}) {
   cv.addEventListener('pointermove', (e) => { if (!drawing) return; const p = pt(e); line(last, p); last = p; });
   const up = () => { drawing = false; };
   cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
-  const doneBtn = h('button', { class: 'btn green', type: 'button', disabled: true }, h('span', { class: 'emo' }, '✅'), 'Siap!');
+  const doneBtn = h('button', { class: 'btn green', type: 'button', disabled: true }, icon('check'), 'Siap!');
   doneBtn.addEventListener('click', () => api.finish());
   if (r.prompt) stage.appendChild(h('div', { class: 'prompt-row' }, r.ref ? h('span', { class: 'prompt-big', style: { fontSize: '64px' } }, h('span', { class: 'emo' }, r.ref)) : null, h('div', { class: 'prompt-text' }, r.prompt)));
   stage.appendChild(h('div', { class: 'row-wrap' }, pad));

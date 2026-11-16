@@ -5,6 +5,7 @@ import { AVATARS, COSTUMES, CHARACTERS } from '../data/content.js';
 import { speak, sfx } from '../audio.js';
 import { playerLevel } from '../store.js';
 import { DEMO_MAX, SALES_URL } from '../demo.js';
+import { icon } from '../icons.js';
 
 export function avatarEl(p, cls = '') {
   const av = AVATARS.find((a) => a.id === p.avatar) || AVATARS[0];
@@ -17,7 +18,7 @@ export function avatarEl(p, cls = '') {
 
 export function topbar(title, backTo = '/', right = null) {
   return h('div', { class: 'topbar' },
-    backTo !== null ? h('button', { class: 'btn-round', type: 'button', 'aria-label': 'Kembali', onclick: () => { sfx.tap(); go(backTo); } }, '⬅️') : h('div', { class: 'spacer' }),
+    backTo !== null ? h('button', { class: 'btn-round', type: 'button', 'aria-label': 'Kembali', onclick: () => { sfx.tap(); go(backTo); } }, icon('back')) : h('div', { class: 'spacer' }),
     h('div', { class: 'title' }, title),
     right || h('div', { class: 'spacer' }));
 }
@@ -47,10 +48,10 @@ export function guide(charId, text = '', { speakNow = false } = {}) {
 export function statPills(p) {
   const lv = playerLevel(p);
   return h('div', { class: 'stats' },
-    h('span', { class: 'pill', title: 'Bintang' }, emo('⭐'), p.stars),
-    h('span', { class: 'pill', title: 'Syiling' }, emo('🪙'), p.coins),
-    h('span', { class: 'pill', title: 'Trofi' }, emo('🏆'), p.trophies.length),
-    h('span', { class: 'pill', title: 'Level pemain' }, emo('🎖️'), `Lv ${lv.lvl}`));
+    h('span', { class: 'pill', title: 'Bintang' }, icon('star'), p.stars),
+    h('span', { class: 'pill', title: 'Syiling' }, icon('coin'), p.coins),
+    h('span', { class: 'pill', title: 'Trofi' }, icon('trophy'), p.trophies.length),
+    h('span', { class: 'pill', title: 'Level pemain' }, icon('medal'), `Lv ${lv.lvl}`));
 }
 
 let parentOkAt = 0;

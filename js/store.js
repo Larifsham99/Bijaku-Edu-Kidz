@@ -51,7 +51,7 @@ function idbSet(key, val) {
 
 export function defaultSettings() {
   return {
-    sound: true, music: false, voice: true, voiceRate: 0.9,
+    sound: true, music: false, voice: true, voiceRate: 0.9, vibrate: true,
     lang: 'ms', // 'ms' atau 'dual' (BM + English)
     timeLimit: 0, // minit sehari, 0 = tiada had
     disabledModes: [],

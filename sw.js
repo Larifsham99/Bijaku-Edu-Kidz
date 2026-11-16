@@ -1,10 +1,11 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-41b48e9658';
+const VERSION = 'dunia-cilik-ef45c13f27';
 const ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
   './css/app.css',
+  './css/ui2.css',
   './js/audio.js',
   './js/data/art.js',
   './js/data/content.js',
@@ -18,6 +19,7 @@ const ASSETS = [
   './js/engines/maze.js',
   './js/engines/memory.js',
   './js/engines/puzzle.js',
+  './js/icons.js',
   './js/main.js',
   './js/modes/helpers.js',
   './js/modes/index.js',
@@ -42,6 +44,7 @@ const ASSETS = [
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon.svg',
+  './fonts/baloo2-latin.woff2',
 ];
 self.addEventListener('install', (e) => {
   // cache: 'reload' memastikan fail diambil terus dari pelayan, bukan salinan lama dalam cache HTTP pelayar
