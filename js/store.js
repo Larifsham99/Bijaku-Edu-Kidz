@@ -3,10 +3,11 @@
 //  Semua kemajuan disimpan secara automatik dan kekal walaupun aplikasi ditutup.
 // =====================================================================
 import { todayKey } from './ui.js';
+import { DEMO } from './demo.js';
 
-const DB_NAME = 'dunia-cilik';
+const DB_NAME = DEMO ? 'dunia-cilik-demo' : 'dunia-cilik';
 const STORE = 'kv';
-const LS_KEY = 'dunia-cilik-state-v1';
+const LS_KEY = DEMO ? 'dunia-cilik-demo-v1' : 'dunia-cilik-state-v1';
 const VERSION = 1;
 
 let db = null;

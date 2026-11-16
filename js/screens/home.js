@@ -8,6 +8,7 @@ import { avatarEl, statPills, guide, parentGate } from './shared.js';
 import { dailySet } from './daily.js';
 import { speak, sfx } from '../audio.js';
 import { limitSeconds } from './timeout.js';
+import { DEMO, DEMO_MAX, SALES_URL } from '../demo.js';
 
 const greet = (name) => {
   const hr = new Date().getHours();
@@ -21,7 +22,7 @@ export function nextPlay(p) {
   const recent = Object.entries(p.modes).filter(([id]) => enabled.find((m) => m.id === id)).sort((a, b) => (b[1].plays || 0) - (a[1].plays || 0));
   const m = recent.length ? MODES[recent[0][0]] : enabled[0];
   if (!m) return null;
-  let L = highestUnlocked(p, m.id);
+  let L = Math.min(highestUnlocked(p, m.id), DEMO ? DEMO_MAX : 50);
   if (levelsDone(p, m.id) >= 50) {
     const other = enabled.find((x) => levelsDone(p, x.id) < 50);
     if (other) return { m: other, L: highestUnlocked(p, other.id) };
@@ -44,6 +45,9 @@ export function homeScreen() {
         h('div', { class: 'player-sub' }, `Level ${lv.lvl} · ${p.age} tahun`),
         h('div', { class: 'lvl-bar' }, h('i', { style: { width: `${Math.round((lv.into / lv.need) * 100)}%` } })))),
     statPills(p)));
+  if (DEMO) scr.appendChild(h('div', { class: 'panel', style: { display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', textAlign: 'center' } },
+    h('b', {}, `🎮 Versi Demo · ${DEMO_MAX} level pertama setiap permainan`),
+    h('a', { class: 'btn small green', href: SALES_URL, target: '_top', style: { textDecoration: 'none' } }, 'Dapatkan versi penuh')));
   scr.appendChild(h('div', { class: 'logo' }, h('h1', {}, 'Dunia Cilik'), h('p', {}, 'Belajar Sambil Bermain, Bijak Sambil Meneroka.')));
   const ch = CHARACTERS[new Date().getDay() % CHARACTERS.length];
   const g = guide(ch.id, greet(p.name));
@@ -92,6 +96,9 @@ export function onboardingScreen({ addMode = false } = {}) {
   let step = 0, name = '', age = 4, avatar = 'mimi';
   const scr = h('div', { class: 'screen' });
   const body = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '18px', alignItems: 'center', textAlign: 'center' } });
+  if (DEMO) scr.appendChild(h('div', { class: 'panel', style: { display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', textAlign: 'center' } },
+    h('b', {}, `🎮 Versi Demo · ${DEMO_MAX} level pertama setiap permainan`),
+    h('a', { class: 'btn small green', href: SALES_URL, target: '_top', style: { textDecoration: 'none' } }, 'Dapatkan versi penuh')));
   scr.appendChild(h('div', { class: 'logo' }, h('h1', {}, 'Dunia Cilik'), h('p', {}, 'Belajar Sambil Bermain, Bijak Sambil Meneroka.')));
   scr.appendChild(body);
   const render = () => {

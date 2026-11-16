@@ -16,6 +16,8 @@ import { timeoutScreen, overLimit } from './screens/timeout.js';
 import { MODES } from './modes/index.js';
 import { go } from './nav.js';
 import { applyTheme, ensureThemeFields } from './theme.js';
+import { DEMO } from './demo.js';
+import { addProfile } from './store.js';
 
 let pendingReload = false;
 const inGame = () => /^#\/(main|harian\/)/.test(location.hash);
@@ -34,6 +36,8 @@ function route() {
   // versi baharu aplikasi sudah dimuat turun: muat semula di luar permainan
   if (pendingReload && !inGame()) { location.reload(); return; }
   const st = getState();
+  // demo: terus bermain tanpa pendaftaran
+  if (DEMO && !st.profiles.length) addProfile({ name: 'Kawan', age: 4, avatar: 'coco' });
   const p = profile();
   ensureThemeFields(p);
   applyTheme(p?.theme);
@@ -68,7 +72,7 @@ async function boot() {
   };
   addEventListener('pointerdown', first);
   route();
-  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  if (!DEMO && 'serviceWorker' in navigator && location.protocol !== 'file:') {
     // Kemas kini automatik: apabila versi baharu diterbitkan, ia diaktifkan terus
     // dan aplikasi dimuat semula (tetapi tidak di tengah-tengah permainan).
     let hadController = !!navigator.serviceWorker.controller;

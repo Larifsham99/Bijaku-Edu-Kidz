@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dunia Cilik — Aplikasi Belajar Sambil Bermain untuk Anak 4–5 Tahun</title>
+<meta name="description" content="15 permainan pendidikan, 750 level, suara Bahasa Melayu, tanpa iklan dan boleh dimainkan tanpa internet. Sekali bayar RM39.">
+<meta name="theme-color" content="#8fd3ff">
+<meta property="og:title" content="Dunia Cilik — Belajar Sambil Bermain, Bijak Sambil Meneroka">
+<meta property="og:description" content="15 permainan · 750 level · Bahasa Melayu · Tanpa iklan · Sekali bayar RM39">
+<meta property="og:image" content="img/home.jpg">
+<link rel="icon" href="../icons/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2a2350; --soft: #5e5880; --bg: #fffaf2; --card: #fff;
+    --sky: #8fd3ff; --green: #2fc77a; --green-d: #1fa45f; --orange: #ff9f43; --pink: #ff7eb3; --purple: #8d5cff; --yellow: #ffd84d;
+    --r: 26px; --shadow: 0 10px 30px rgba(42,35,80,.12); --shadow-s: 0 4px 0 rgba(42,35,80,.08);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: Nunito, system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.55; font-size: 17px; }
+  h1, h2, h3, .display { font-family: "Baloo 2", Nunito, sans-serif; line-height: 1.12; margin: 0; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { width: min(1120px, 100%); margin: 0 auto; padding: 0 20px; }
+  section { padding: 72px 0; position: relative; }
+  .eyebrow { display: inline-block; font-weight: 800; font-size: 14px; letter-spacing: .6px; text-transform: uppercase; color: var(--purple); background: #efe7ff; padding: 6px 14px; border-radius: 99px; }
+  .h2 { font-size: clamp(30px, 5vw, 46px); margin: 14px 0 12px; }
+  .lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--soft); max-width: 720px; }
+  .center { text-align: center; }
+  .center .lead { margin: 0 auto; }
+
+  /* butang */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 21px; text-decoration: none; border: 0; cursor: pointer; padding: 16px 30px; border-radius: 999px; transition: transform .12s, box-shadow .12s; }
+  .btn:active { transform: translateY(3px); }
+  .btn-buy { background: linear-gradient(180deg, #3ddc8a, var(--green-d)); color: #fff; box-shadow: 0 7px 0 #158048, 0 14px 30px rgba(31,164,95,.35); text-shadow: 0 2px 0 rgba(0,0,0,.15); }
+  .btn-buy:active { box-shadow: 0 3px 0 #158048; }
+  .btn-ghost { background: #fff; color: var(--ink); box-shadow: 0 6px 0 #e3dcf3; }
+  .btn-big { font-size: 24px; padding: 20px 40px; }
+  .btn small { font-family: Nunito; font-size: 14px; opacity: .9; }
+  .cta-note { font-size: 14px; color: var(--soft); margin-top: 10px; }
+
+  /* hero */
+  .hero { position: relative; background: linear-gradient(180deg, #8fd3ff 0%, #c9ecff 55%, var(--bg) 100%); padding: 28px 0 70px; overflow: hidden; }
+  .hero::after { content: ""; position: absolute; left: -10%; right: -10%; bottom: -120px; height: 220px; background: #8ee07a; border-radius: 50% 50% 0 0; z-index: 0; }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: relative; z-index: 2; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: "Baloo 2"; font-weight: 800; font-size: 24px; text-decoration: none; }
+  .brand img { width: 42px; height: 42px; border-radius: 12px; }
+  .nav .btn { font-size: 17px; padding: 10px 20px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; margin-top: 30px; position: relative; z-index: 1; }
+  .hero h1 { font-size: clamp(36px, 6.2vw, 64px); }
+  .hero h1 .hl { background: linear-gradient(90deg, #ff6b6b, #ff9f43, #ffc531, #2fc77a, #3d8bff, #8d5cff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p.lead { color: #2f4d73; margin: 16px 0 24px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; padding: 0; list-style: none; }
+  .chips li { background: rgba(255,255,255,.85); border-radius: 99px; padding: 7px 14px; font-weight: 800; font-size: 15px; box-shadow: var(--shadow-s); }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .price-tag { font-family: "Baloo 2"; font-weight: 800; font-size: 18px; color: #2f4d73; }
+  .price-tag b { font-size: 30px; color: var(--ink); }
+
+  /* mockup telefon & tablet */
+  .phone { position: relative; width: 290px; aspect-ratio: 390 / 844; border-radius: 44px; background: #1d1a2b; padding: 11px; box-shadow: 0 30px 60px rgba(29,26,43,.35), inset 0 0 0 2px #3a3550; margin: 0 auto; flex: none; }
+  .phone::before { content: ""; position: absolute; top: 19px; left: 50%; transform: translateX(-50%); width: 84px; height: 22px; background: #1d1a2b; border-radius: 99px; z-index: 3; }
+  .phone .scr { width: 100%; height: 100%; border-radius: 34px; overflow: hidden; background: #cdeeff; position: relative; }
+  .phone .scr img, .phone .scr iframe { width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0; }
+  .phone.sm { width: 220px; border-radius: 36px; padding: 9px; }
+  .phone.sm::before { top: 15px; width: 64px; height: 17px; }
+  .phone.sm .scr { border-radius: 28px; }
+  .tablet { width: 100%; max-width: 680px; aspect-ratio: 1180 / 820; border-radius: 34px; background: #1d1a2b; padding: 16px; box-shadow: 0 30px 60px rgba(29,26,43,.3); margin: 0 auto; }
+  .tablet .scr { width: 100%; height: 100%; border-radius: 20px; overflow: hidden; }
+  .tablet .scr img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .hero-visual { position: relative; display: flex; justify-content: center; }
+  .float-badge { position: absolute; background: #fff; border-radius: 18px; padding: 10px 14px; box-shadow: var(--shadow); font-weight: 800; font-size: 15px; display: flex; align-items: center; gap: 8px; animation: bob 4s ease-in-out infinite; z-index: 4; }
+  .float-badge .e { font-size: 26px; }
+  .fb1 { left: 0; top: 14%; } .fb2 { right: 0; top: 46%; animation-delay: -1.3s; } .fb3 { left: 4%; bottom: 10%; animation-delay: -2.4s; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+  /* masalah */
+  .pain { background: #fff; }
+  .pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 34px; }
+  .pain-card { background: #fff5f5; border-radius: var(--r); padding: 22px; border: 2px solid #ffe1e1; }
+  .pain-card .e { font-size: 36px; }
+  .pain-card h3 { font-size: 21px; margin: 8px 0 6px; }
+  .pain-card p { margin: 0; color: var(--soft); font-size: 15.5px; }
+  .turn { margin-top: 40px; background: linear-gradient(135deg, #2fc77a, #1fa45f); color: #fff; border-radius: var(--r); padding: 28px; display: flex; gap: 20px; align-items: center; }
+  .turn .e { font-size: 54px; }
+  .turn h3 { font-size: 28px; }
+  .turn p { margin: 6px 0 0; opacity: .95; }
+
+  /* demo */
+  .demo { background: linear-gradient(180deg, var(--bg), #efe7ff); }
+  .demo-grid { display: grid; grid-template-columns: 1fr 340px; gap: 50px; align-items: center; margin-top: 10px; }
+  .demo .phone { width: 320px; }
+  .demo-start { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 12px; background: linear-gradient(180deg, rgba(143,211,255,.0), rgba(42,35,80,.55)), url(img/home.jpg) top / cover; color: #fff; text-align: center; border: 0; cursor: pointer; font-family: "Baloo 2"; font-weight: 800; font-size: 22px; padding: 20px; }
+  .demo-start .play { width: 88px; height: 88px; border-radius: 50%; background: var(--green); display: grid; place-items: center; font-size: 40px; box-shadow: 0 6px 0 #158048, 0 0 0 10px rgba(255,255,255,.35); animation: pulse 1.6s infinite; }
+  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+  .steps { list-style: none; padding: 0; margin: 22px 0; display: grid; gap: 12px; }
+  .steps li { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 18px; padding: 14px 16px; box-shadow: var(--shadow-s); }
+  .steps li b { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--purple); color: #fff; font-family: "Baloo 2"; }
+
+  /* mod */
+  .modes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 36px; }
+  .mode { background: #fff; border-radius: 22px; padding: 16px 12px; text-align: center; box-shadow: var(--shadow-s); border-top: 6px solid var(--c); }
+  .mode .e { font-size: 38px; }
+  .mode h3 { font-size: 18px; margin: 4px 0; }
+  .mode p { margin: 0; font-size: 13.5px; color: var(--soft); line-height: 1.35; }
+
+  /* peringkat */
+  .tiers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 30px; }
+  .tier { border-radius: 20px; padding: 16px 14px; color: #fff; }
+  .tier .lv { font-size: 13px; font-weight: 800; opacity: .9; }
+  .tier h3 { font-size: 20px; margin: 2px 0 6px; }
+  .tier p { margin: 0; font-size: 14px; opacity: .95; line-height: 1.35; }
+
+  /* galeri mockup */
+  .gallery { display: flex; gap: 22px; overflow-x: auto; padding: 30px 20px 40px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .gallery figure { margin: 0; scroll-snap-align: center; text-align: center; flex: none; }
+  .gallery figcaption { margin-top: 14px; font-weight: 800; }
+  .gallery figcaption span { display: block; font-weight: 600; font-size: 14px; color: var(--soft); max-width: 220px; margin: 2px auto 0; }
+  .scroll-hint { font-size: 14px; color: var(--soft); }
+
+  /* ciri */
+  .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+  .feat { background: #fff; border-radius: var(--r); padding: 22px; box-shadow: var(--shadow-s); }
+  .feat .e { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; font-size: 30px; background: var(--b, #efe7ff); }
+  .feat h3 { font-size: 21px; margin: 12px 0 6px; }
+  .feat p { margin: 0; color: var(--soft); font-size: 15.5px; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .ticks { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+  .ticks li { padding-left: 34px; position: relative; }
+  .ticks li::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 24px; height: 24px; border-radius: 50%; background: var(--green); color: #fff; font-weight: 900; font-size: 14px; display: grid; place-items: center; }
+
+  .themes-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+
+  .soleh { background: linear-gradient(180deg, #e9fbf3, var(--bg)); }
+  .doa-card { background: #fff; border-radius: var(--r); padding: 24px; box-shadow: var(--shadow); text-align: center; }
+  .doa-card .ar { font-family: "Amiri", "Noto Naskh Arabic", "Traditional Arabic", serif; font-size: 34px; direction: rtl; line-height: 1.8; }
+  .doa-card .src { font-size: 13px; color: var(--soft); }
+
+  .safe { background: #2a2350; color: #fff; }
+  .safe .lead { color: #cfc7ee; }
+  .safe-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 34px; }
+  .safe-item { background: rgba(255,255,255,.08); border-radius: 20px; padding: 18px; }
+  .safe-item .e { font-size: 30px; }
+  .safe-item h3 { font-size: 19px; margin: 6px 0 4px; }
+  .safe-item p { margin: 0; font-size: 14.5px; color: #cfc7ee; }
+
+  /* harga */
+  .pricing { background: linear-gradient(180deg, var(--bg), #fff1d6); }
+  .price-card { max-width: 560px; margin: 36px auto 0; background: #fff; border-radius: 34px; box-shadow: 0 24px 60px rgba(42,35,80,.16); overflow: hidden; border: 4px solid var(--yellow); }
+  .price-head { background: linear-gradient(135deg, #ffd84d, #ff9f43); padding: 26px; text-align: center; }
+  .price-head h3 { font-size: 26px; }
+  .price-amt { font-family: "Baloo 2"; font-weight: 800; font-size: 76px; line-height: 1; margin: 6px 0 2px; }
+  .price-amt sup { font-size: 30px; vertical-align: top; position: relative; top: 14px; }
+  .price-sub { font-weight: 800; }
+  .price-body { padding: 26px 30px 30px; }
+  .price-body .ticks { margin: 0 0 24px; }
+  .price-body .btn { width: 100%; }
+  .per-level { text-align: center; background: #f4fff8; border-radius: 16px; padding: 12px; margin: 18px 0 0; font-weight: 700; color: #167a45; }
+  .pay-icons { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 14px; font-size: 13px; color: var(--soft); }
+  .pay-icons span { background: #f3f0fa; border-radius: 8px; padding: 4px 10px; font-weight: 700; }
+
+  .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+  .how div { background: #fff; border-radius: 22px; padding: 20px; box-shadow: var(--shadow-s); text-align: center; }
+  .how .e { font-size: 40px; }
+  .how h3 { font-size: 19px; margin: 6px 0 4px; }
+  .how p { margin: 0; font-size: 15px; color: var(--soft); }
+
+  /* soalan lazim */
+  .faq { max-width: 800px; margin: 30px auto 0; display: grid; gap: 12px; }
+  .faq details { background: #fff; border-radius: 18px; padding: 4px 20px; box-shadow: var(--shadow-s); }
+  .faq summary { cursor: pointer; font-weight: 800; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 10px; }
+  .faq summary::after { content: "+"; font-size: 24px; line-height: 1; color: var(--purple); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { margin: 0 0 16px; color: var(--soft); }
+
+  .final { background: linear-gradient(135deg, #8d5cff, #3d8bff); color: #fff; text-align: center; border-radius: 0; }
+  .final .lead { color: #e9e3ff; margin: 0 auto 26px; }
+  footer { padding: 30px 0 110px; text-align: center; font-size: 14px; color: var(--soft); }
+
+  /* bar CTA melekat (telefon) */
+  .sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); box-shadow: 0 -6px 24px rgba(42,35,80,.14); padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); display: none; align-items: center; gap: 12px; transform: translateY(110%); transition: transform .3s; }
+  .sticky.show { transform: none; }
+  .sticky .p { font-family: "Baloo 2"; font-weight: 800; line-height: 1.1; }
+  .sticky .p b { font-size: 24px; }
+  .sticky .btn { flex: 1; font-size: 19px; padding: 13px 16px; }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s, transform .6s; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 960px) {
+    .modes { grid-template-columns: repeat(3, 1fr); }
+    .pain-grid, .safe-grid { grid-template-columns: repeat(2, 1fr); }
+    .feat-grid { grid-template-columns: repeat(2, 1fr); }
+    .tiers { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 800px) {
+    section { padding: 56px 0; }
+    .hero-grid, .demo-grid, .split { grid-template-columns: 1fr; gap: 34px; }
+    .hero { text-align: center; }
+    .hero .chips, .hero-cta { justify-content: center; }
+    .hero .lead { margin-left: auto; margin-right: auto; }
+    .turn { flex-direction: column; text-align: center; }
+    .how { grid-template-columns: 1fr; }
+    .sticky { display: flex; }
+    .nav .btn { display: none; }
+    .demo-text { order: 2; }
+  }
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    .modes { grid-template-columns: repeat(2, 1fr); }
+    .pain-grid, .safe-grid, .feat-grid { grid-template-columns: 1fr; }
+    .tiers { grid-template-columns: 1fr; }
+    .phone { width: 260px; }
+    .demo .phone { width: min(320px, 88vw); }
+    .float-badge { font-size: 13px; padding: 8px 10px; }
+    .float-badge .e { font-size: 20px; }
+    .fb1 { left: -4px; } .fb2 { right: -4px; }
+    .btn-big { font-size: 21px; padding: 18px 26px; width: 100%; }
+    .hero-cta .btn { width: 100%; }
+    .price-amt { font-size: 64px; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#"><img src="../icons/icon-192.png" alt="">Dunia Cilik</a>
+      <a class="btn btn-buy" data-buy href="#harga">Dapatkan · RM39</a>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <h1>Anak belajar <span class="hl">ABC, nombor &amp; adab</span> sambil bermain.</h1>
+        <p class="lead">Dunia Cilik ialah aplikasi permainan pendidikan dalam <b>Bahasa Melayu</b> untuk kanak-kanak <b>4–5 tahun</b>. Ia ada 15 jenis permainan dan 750 level yang makin mencabar, tanpa iklan dan tanpa langganan bulanan.</p>
+        <ul class="chips">
+          <li>🎮 15 permainan</li><li>⭐ 750 level</li><li>🗣️ Suara Bahasa Melayu</li><li>📴 Boleh main tanpa internet</li><li>🚫 Tiada iklan</li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn btn-buy btn-big" data-buy href="#harga">Dapatkan Sekarang — RM39</a>
+          <a class="btn btn-ghost" href="#demo">▶ Cuba demo percuma</a>
+        </div>
+        <div class="cta-note">Sekali bayar · Telefon &amp; tablet · Bayaran FPX selamat melalui ToyyibPay</div>
+      </div>
+      <div class="hero-visual">
+        <div class="phone"><div class="scr"><img src="img/home.jpg" alt="Halaman utama Dunia Cilik" width="390" height="844"></div></div>
+        <div class="float-badge fb1"><span class="e">🏆</span>Trofi setiap 10 level</div>
+        <div class="float-badge fb2"><span class="e">🔊</span>Arahan bersuara</div>
+        <div class="float-badge fb3"><span class="e">😊</span>Salah? “Cuba lagi!”</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MASALAH ===================== -->
+<section class="pain">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Biasa berlaku?</span>
+    <h2 class="h2">Telefon di tangan anak, tapi apa yang mereka tonton?</h2>
+    <p class="lead">Kebanyakan ibu bapa bukan tidak mahu beri telefon. Kita cuma mahu masa skrin itu ada manfaatnya.</p>
+  </div>
+  <div class="wrap">
+    <div class="pain-grid">
+      <div class="pain-card reveal"><div class="e">📺</div><h3>Video tanpa henti</h3><p>Satu video bertukar jadi sepuluh. Anak menonton tetapi tidak berfikir.</p></div>
+      <div class="pain-card reveal"><div class="e">📢</div><h3>Iklan di mana-mana</h3><p>Aplikasi percuma penuh iklan dan butang yang membawa anak entah ke mana.</p></div>
+      <div class="pain-card reveal"><div class="e">🇬🇧</div><h3>Semuanya dalam Inggeris</h3><p>Susah mencari permainan yang mengajar dalam Bahasa Melayu, dengan nilai yang kita mahu.</p></div>
+      <div class="pain-card reveal"><div class="e">💸</div><h3>Langganan bulanan</h3><p>Bayaran setiap bulan, dan kandungannya dikunci di sebalik paywall.</p></div>
+    </div>
+    <div class="turn reveal">
+      <div class="e">🌈</div>
+      <div><h3>Dunia Cilik dibina untuk menyelesaikan semua ini.</h3>
+      <p>Setiap minit di skrin ialah aktiviti yang membuatkan anak berfikir, menyentuh, menyusun, mengira dan mendengar, dalam bahasa ibunda mereka.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEMO ===================== -->
+<section class="demo" id="demo">
+  <div class="wrap demo-grid">
+    <div class="demo-text reveal">
+      <span class="eyebrow">Cuba sendiri</span>
+      <h2 class="h2">Main demo sekarang, terus dalam halaman ini.</h2>
+      <p class="lead">Ini aplikasi sebenar, bukan video. Demo membuka 3 level pertama bagi setiap 15 permainan. Hidupkan bunyi untuk dengar arahan suara.</p>
+      <ol class="steps">
+        <li><b>1</b><div>Tekan butang <b>Main Demo</b> pada skrin telefon demo.</div></li>
+        <li><b>2</b><div>Pilih mana-mana permainan: huruf, nombor, puzzle, maze dan lain-lain.</div></li>
+        <li><b>3</b><div>Biar anak cuba sendiri. Lihat bagaimana mereka teruja!</div></li>
+      </ol>
+      <a class="btn btn-ghost" href="../index.html?demo" target="_blank" rel="noopener">⤢ Buka demo skrin penuh</a>
+    </div>
+    <div class="reveal">
+      <div class="phone">
+        <div class="scr" id="demoScreen">
+          <button class="demo-start" id="demoStart" type="button" aria-label="Main demo">
+            <span class="play">▶</span>Main Demo
+            <span style="font-family:Nunito;font-size:14px;font-weight:700;opacity:.9">Hidupkan bunyi 🔊</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 15 MOD ===================== -->
+<section>
+  <div class="wrap center reveal">
+    <span class="eyebrow">15 permainan · 750 level</span>
+    <h2 class="h2">Setiap permainan dengan cara bermain tersendiri</h2>
+    <p class="lead">Bukan sekadar soalan dan jawapan. Anak menyeret, memadan, menyusun, mewarna, mengira, mencari dan meneroka.</p>
+  </div>
+  <div class="wrap">
+    <div class="modes">
+      <div class="mode reveal" style="--c:#ff6b6b"><div class="e">🔤</div><h3>ABC Ceria</h3><p>Huruf A–Z, huruf besar &amp; kecil, eja perkataan</p></div>
+      <div class="mode reveal" style="--c:#54a0ff"><div class="e">🔢</div><h3>Dunia Nombor</h3><p>Kira 1–20, banding, tambah &amp; tolak bergambar</p></div>
+      <div class="mode reveal" style="--c:#feca57"><div class="e">🎨</div><h3>Warna &amp; Bentuk</h3><p>Kenal warna &amp; bentuk, kelaskan, lengkapkan corak</p></div>
+      <div class="mode reveal" style="--c:#48dbfb"><div class="e">🎵</div><h3>Teka Bunyi</h3><p>Bunyi haiwan, kenderaan &amp; alam</p></div>
+      <div class="mode reveal" style="--c:#1dd1a1"><div class="e">🧩</div><h3>Puzzle Pintar</h3><p>Jigsaw 2 hingga 12 keping</p></div>
+      <div class="mode reveal" style="--c:#a77bff"><div class="e">🧠</div><h3>Ingatan Hebat</h3><p>Kad memori, ingat kedudukan &amp; susunan</p></div>
+      <div class="mode reveal" style="--c:#ff8fab"><div class="e">🖍️</div><h3>Seni &amp; Mewarna</h3><p>Mewarna, sambung titik, surih &amp; lukis dengan jari</p></div>
+      <div class="mode reveal" style="--c:#576574"><div class="e">👤</div><h3>Cari Bayang</h3><p>Siluet, objek tersembunyi, cari perbezaan</p></div>
+      <div class="mode reveal" style="--c:#ff9f43"><div class="e">🧭</div><h3>Maze</h3><p>Bantu arnab cari lobak, elak halangan</p></div>
+      <div class="mode reveal" style="--c:#10ac84"><div class="e">🏡</div><h3>Kehidupan Harian</h3><p>Anggota badan, pakaian, rutin &amp; kebersihan</p></div>
+      <div class="mode reveal" style="--c:#5f27cd"><div class="e">🗂️</div><h3>Bijak Mengelaskan</h3><p>Buah &amp; sayur, besar &amp; kecil, kategori</p></div>
+      <div class="mode reveal" style="--c:#00b894"><div class="e">🕌</div><h3>Si Cilik Soleh</h3><p>Hijaiyah, rukun Islam &amp; Iman, wuduk, doa</p></div>
+      <div class="mode reveal" style="--c:#e17055"><div class="e">🦁</div><h3>Dunia Haiwan</h3><p>Nama, habitat, makanan &amp; anak haiwan</p></div>
+      <div class="mode reveal" style="--c:#fd9644"><div class="e">💡</div><h3>Asah Minda</h3><p>Teka-teki, corak, urutan &amp; logik</p></div>
+      <div class="mode reveal" style="--c:#6c5ce7"><div class="e">🚀</div><h3>Misi Pengembaraan</h3><p>Misi bercerita ke hutan, laut, angkasa &amp; ladang</p></div>
+    </div>
+
+    <div class="center reveal" style="margin-top:56px">
+      <h3 class="display" style="font-size:clamp(24px,3.6vw,32px)">Kesukaran naik sedikit demi sedikit, ikut tahap anak</h3>
+    </div>
+    <div class="tiers">
+      <div class="tier reveal" style="background:#2fc77a"><div class="lv">Level 1–10</div><h3>🌱 Kenali</h3><p>Gambar besar, 2–3 pilihan, arahan sangat mudah</p></div>
+      <div class="tier reveal" style="background:#3d8bff"><div class="lv">Level 11–20</div><h3>🌿 Fahami</h3><p>Lebih banyak pilihan, aktiviti padanan</p></div>
+      <div class="tier reveal" style="background:#ff9f43"><div class="lv">Level 21–30</div><h3>🌳 Cekap</h3><p>Cabaran memori, menyusun, gabungan kemahiran</p></div>
+      <div class="tier reveal" style="background:#8d5cff"><div class="lv">Level 31–40</div><h3>🦉 Bijak</h3><p>Lebih banyak objek, perlukan tumpuan</p></div>
+      <div class="tier reveal" style="background:#ff6b6b"><div class="lv">Level 41–50</div><h3>🏆 Juara Cilik</h3><p>Cabaran lanjutan &amp; cabaran khas setiap 5 level</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALERI MOCKUP ===================== -->
+<section style="background:#fff;padding-bottom:40px">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Lihat di dalam</span>
+    <h2 class="h2">Rupa sebenar aplikasi</h2>
+    <p class="scroll-hint">← Leret untuk lihat lagi →</p>
+  </div>
+  <div class="gallery">
+    <figure><div class="phone sm"><div class="scr"><img loading="lazy" src="img/abc.jpg" alt="Permainan ABC"></div></div><figcaption>ABC Ceria<span>Dengar arahan, tekan huruf yang betul</span></figcaption></figure>
+    <figure><div class="phone sm"><div class="scr"><img loading="lazy" src="img/nombor.jpg" alt="Permainan nombor"></div></div><figcaption>Dunia Nombor<span>Tekan setiap objek untuk mengira bersama</span></figcaption></figure>
+    <figure><div class="phone sm"><div class="scr"><img loading="lazy" src="img/puzzle.jpg" alt="Puzzle"></div></div><figcaption>Puzzle Pintar<span>Seret kepingan ke tempatnya</span></figcaption></figure>
+    <figure><div class="phone sm"><div class="scr"><img loading="lazy" src="img/maze.jpg" alt="Maze"></div></div><figcaption>Maze Pengembaraan<span>Seret watak atau guna butang arah</span></figcaption></figure>
+    <figure><div class="phone sm"><div class="scr"><img loading="lazy" src="img/seni.jpg" alt="Mewarna"></div></div><figcaption>Seni &amp; Mewarna<span>Mewarna berpandu dan bebas</span></figcaption></figure>
+    <figure><div class="phone sm"><div class="scr"><img loading="lazy" src="img/soleh.jpg" alt="Si Cilik Soleh"></div></div><figcaption>Si Cilik Soleh<span>Doa harian dengan rujukan sumber</span></figcaption></figure>
+    <figure><div class="phone sm"><div class="scr"><img loading="lazy" src="img/levels.jpg" alt="Peta level"></div></div><figcaption>Peta Level<span>50 level setiap permainan, buka satu demi satu</span></figcaption></figure>
+    <figure><div class="phone sm"><div class="scr"><img loading="lazy" src="img/trofi.jpg" alt="Koleksi trofi"></div></div><figcaption>Koleksi Trofi<span>Trofi, pelekat, lencana &amp; sijil</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- ===================== CIRI ===================== -->
+<section>
+  <div class="wrap center reveal">
+    <span class="eyebrow">Kenapa ibu bapa suka</span>
+    <h2 class="h2">Dibina khas untuk anak kecil</h2>
+  </div>
+  <div class="wrap feat-grid">
+    <div class="feat reveal" style="--b:#e3f4ff"><div class="e">🗣️</div><h3>Arahan bersuara</h3><p>Anak yang belum boleh membaca pun boleh bermain. Setiap arahan dibacakan dalam Bahasa Melayu dan boleh diulang dengan satu tekan.</p></div>
+    <div class="feat reveal" style="--b:#e6ffef"><div class="e">🤗</div><h3>Tiada hukuman</h3><p>Salah jawab? Watak comel akan kata “Bagus, cuba sekali lagi!”. Selepas dua kali salah, jawapan yang betul diserlahkan sebagai petunjuk.</p></div>
+    <div class="feat reveal" style="--b:#fff4d6"><div class="e">⭐</div><h3>Ganjaran yang memotivasikan</h3><p>Bintang, syiling, pelekat, trofi setiap 10 level, sijil boleh cetak, lencana pencapaian, serta kostum dan avatar.</p></div>
+    <div class="feat reveal" style="--b:#efe7ff"><div class="e">📅</div><h3>Cabaran Harian</h3><p>5 permainan baharu setiap hari dengan hadiah khas, supaya ada sebab untuk kembali belajar.</p></div>
+    <div class="feat reveal" style="--b:#ffe9f2"><div class="e">🎈</div><h3>Main Bebas</h3><p>Mewarna, melukis, papan bunyi haiwan, puzzle dan kamus bergambar. Tiada markah dan tiada tekanan.</p></div>
+    <div class="feat reveal" style="--b:#e3f4ff"><div class="e">📴</div><h3>Tanpa internet</h3><p>Selepas dibuka sekali, aplikasi boleh dimainkan di dalam kereta, kapal terbang atau di kampung tanpa data.</p></div>
+    <div class="feat reveal" style="--b:#e6ffef"><div class="e">👨‍👩‍👧‍👦</div><h3>Ramai anak, satu pembelian</h3><p>Buat profil berasingan untuk setiap anak dalam peranti yang sama, dengan kemajuan masing-masing.</p></div>
+    <div class="feat reveal" style="--b:#fff4d6"><div class="e">🌍</div><h3>Pilihan dwibahasa</h3><p>Hidupkan mod dwibahasa untuk paparkan dan sebut nama objek dalam Bahasa Inggeris juga.</p></div>
+    <div class="feat reveal" style="--b:#efe7ff"><div class="e">📲</div><h3>Pasang seperti aplikasi</h3><p>Tambah ke skrin utama telefon atau tablet dan buka terus seperti aplikasi biasa. Tidak perlu ke Play Store.</p></div>
+  </div>
+</section>
+
+<!-- ===================== RUANG IBU BAPA ===================== -->
+<section style="background:#fff">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">Ruang Ibu Bapa</span>
+      <h2 class="h2">Tahu apa yang anak sudah kuasai, dan apa yang perlu dilatih</h2>
+      <p class="lead">Penilaian bukan sekadar markah. Dunia Cilik merekod ketepatan, bilangan cubaan dan masa menjawab bagi setiap kemahiran.</p>
+      <ul class="ticks">
+        <li><b>Tahap penguasaan</b> bagi 77 kemahiran: Belum dicuba, Sedang belajar, Hampir menguasai, Telah menguasai</li>
+        <li><b>Cadangan permainan</b> berdasarkan kemahiran yang masih lemah</li>
+        <li>Rekod masa bermain <b>harian &amp; mingguan</b></li>
+        <li><b>Had masa bermain</b>: anak diminta berehat apabila masa tamat</li>
+        <li>Kawal bunyi, muzik, suara, bahasa dan permainan yang dibenarkan</li>
+        <li>Dilindungi soalan yang tidak mudah dijawab oleh kanak-kanak</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="tablet"><div class="scr"><img loading="lazy" src="img/tablet-parent.jpg" alt="Dashboard Ruang Ibu Bapa pada tablet"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEMA ===================== -->
+<section>
+  <div class="wrap center reveal">
+    <span class="eyebrow">5 tema</span>
+    <h2 class="h2">Anak pilih dunia kegemaran mereka</h2>
+    <p class="lead">Taman Ceria, Dasar Laut, Angkasa Malam, Dunia Gula-gula dan Klasik Pastel, setiap satu dengan latar beranimasi. Tema baharu dibuka dengan syiling yang dikumpul daripada bermain.</p>
+  </div>
+  <div class="wrap themes-row">
+    <div class="phone sm reveal"><div class="scr"><img loading="lazy" src="img/home-laut.jpg" alt="Tema Dasar Laut"></div></div>
+    <div class="phone sm reveal"><div class="scr"><img loading="lazy" src="img/home-angkasa.jpg" alt="Tema Angkasa Malam"></div></div>
+    <div class="phone sm reveal"><div class="scr"><img loading="lazy" src="img/home-gula.jpg" alt="Tema Dunia Gula-gula"></div></div>
+  </div>
+</section>
+
+<!-- ===================== SI CILIK SOLEH ===================== -->
+<section class="soleh">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">Si Cilik Soleh</span>
+      <h2 class="h2">Asas agama sejak kecil, daripada sumber yang sahih</h2>
+      <p class="lead">Huruf hijaiyah, nama 25 nabi, rukun Islam, rukun Iman, langkah wuduk, adab harian dan doa harian.</p>
+      <ul class="ticks">
+        <li>Doa hanya daripada <b>al-Quran &amp; hadis sahih</b>, setiap satu dengan rujukan sumbernya</li>
+        <li>Tulisan Arab, rumi dan maksud dipaparkan bersama</li>
+        <li>Langkah wuduk mengikut tertib fardu wuduk</li>
+      </ul>
+    </div>
+    <div class="doa-card reveal">
+      <div style="font-size:15px;font-weight:800;color:#00b894">Doa sebelum tidur</div>
+      <div class="ar">بِاسْمِكَ اللّٰهُمَّ أَمُوْتُ وَأَحْيَا</div>
+      <div style="font-weight:800;font-size:19px">Bismikallahumma amutu wa ahya</div>
+      <p style="color:var(--soft);margin:6px 0">“Dengan nama-Mu ya Allah, aku mati dan aku hidup”</p>
+      <div class="src">Sumber: Hadis riwayat al-Bukhari</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KESELAMATAN ===================== -->
+<section class="safe">
+  <div class="wrap center reveal">
+    <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff">Selamat untuk anak</span>
+    <h2 class="h2">Tenang hati bila anak bermain sendiri</h2>
+    <p class="lead" style="margin:0 auto">Tiada apa-apa dalam aplikasi ini yang boleh membawa anak keluar daripada dunia belajar.</p>
+  </div>
+  <div class="wrap safe-grid">
+    <div class="safe-item reveal"><div class="e">🚫</div><h3>Tiada iklan</h3><p>Langsung tiada iklan pihak ketiga.</p></div>
+    <div class="safe-item reveal"><div class="e">💬</div><h3>Tiada sembang</h3><p>Tiada fungsi chat dan tiada orang asing.</p></div>
+    <div class="safe-item reveal"><div class="e">🔗</div><h3>Tiada pautan sosial</h3><p>Anak tidak boleh “tersesat” ke YouTube atau media sosial.</p></div>
+    <div class="safe-item reveal"><div class="e">🛒</div><h3>Tiada pembelian dalam aplikasi</h3><p>Syiling hanyalah mata wang permainan. Tiada wang sebenar.</p></div>
+    <div class="safe-item reveal"><div class="e">🔒</div><h3>Data dalam peranti</h3><p>Hanya nama panggilan dan umur disimpan, dan tidak dihantar ke mana-mana.</p></div>
+    <div class="safe-item reveal"><div class="e">🌸</div><h3>Kandungan mesra kanak-kanak</h3><p>Tiada kandungan ganas atau menakutkan.</p></div>
+    <div class="safe-item reveal"><div class="e">🏅</div><h3>Tiada persaingan</h3><p>Tiada papan markah atau tekanan. Anak hanya bersaing dengan diri sendiri.</p></div>
+    <div class="safe-item reveal"><div class="e">⏰</div><h3>Had masa</h3><p>Ibu bapa tetapkan berapa lama anak boleh bermain sehari.</p></div>
+  </div>
+</section>
+
+<!-- ===================== HARGA ===================== -->
+<section class="pricing" id="harga">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Harga</span>
+    <h2 class="h2">Sekali bayar. Tiada langganan bulanan.</h2>
+    <p class="lead">Satu pembelian untuk semua 15 permainan dan 750 level.</p>
+  </div>
+  <div class="wrap">
+    <div class="price-card reveal">
+      <div class="price-head">
+        <h3>Dunia Cilik · Akses Penuh</h3>
+        <div class="price-amt"><sup>RM</sup>39</div>
+        <div class="price-sub">sekali bayar</div>
+      </div>
+      <div class="price-body">
+        <ul class="ticks">
+          <li><b>15 permainan</b> pendidikan dengan <b>750 level</b></li>
+          <li>Arahan suara <b>Bahasa Melayu</b> &amp; pilihan dwibahasa</li>
+          <li>Cabaran Harian &amp; Main Bebas</li>
+          <li>Trofi, sijil, pelekat, lencana, kostum &amp; 5 tema</li>
+          <li><b>Ruang Ibu Bapa</b> dengan laporan kemahiran &amp; had masa</li>
+          <li>Profil untuk <b>ramai anak</b> dalam satu peranti</li>
+          <li>Boleh dimainkan <b>tanpa internet</b>, tanpa iklan</li>
+          <li>Telefon &amp; tablet Android, iPhone &amp; iPad</li>
+        </ul>
+        <a class="btn btn-buy btn-big" data-buy href="#harga">Beli Sekarang — RM39</a>
+        <div class="pay-icons"><span>FPX</span><span>Perbankan dalam talian</span><span>ToyyibPay</span></div>
+        <div class="per-level">RM39 ÷ 750 level = kurang daripada <b>6 sen</b> setiap level 🎉</div>
+      </div>
+    </div>
+
+    <div class="center reveal" style="margin-top:56px"><h3 class="display" style="font-size:clamp(24px,3.6vw,32px)">Cara mendapatkan</h3></div>
+    <div class="how">
+      <div class="reveal"><div class="e">💳</div><h3>1. Bayar</h3><p>Tekan “Beli Sekarang” dan bayar dengan FPX melalui ToyyibPay.</p></div>
+      <div class="reveal"><div class="e">📩</div><h3>2. Terima pautan</h3><p>Selepas bayaran berjaya, anda akan menerima pautan akses aplikasi.</p></div>
+      <div class="reveal"><div class="e">📲</div><h3>3. Pasang &amp; main</h3><p>Buka pautan, pilih “Tambah ke skrin utama”, dan anak boleh mula bermain.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOALAN LAZIM ===================== -->
+<section style="background:#fff">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Soalan lazim</span>
+    <h2 class="h2">Ada soalan?</h2>
+  </div>
+  <div class="wrap faq">
+    <details class="reveal"><summary>Sesuai untuk umur berapa?</summary><p>Direka untuk kanak-kanak 4–5 tahun. Level awal sesuai untuk anak 3 tahun yang sudah biasa menyentuh skrin, dan level akhir masih mencabar untuk anak 6 tahun.</p></details>
+    <details class="reveal"><summary>Perlu muat turun dari Play Store atau App Store?</summary><p>Tidak. Dunia Cilik dibuka melalui pelayar (Chrome atau Safari). Selepas itu anda boleh pilih “Tambah ke skrin utama” dan ia akan muncul sebagai ikon seperti aplikasi biasa.</p></details>
+    <details class="reveal"><summary>Boleh main tanpa internet?</summary><p>Boleh. Internet hanya diperlukan semasa membuka aplikasi buat kali pertama. Selepas itu semua permainan berfungsi tanpa data.</p></details>
+    <details class="reveal"><summary>Suaranya dalam Bahasa Melayu?</summary><p>Ya. Arahan dibacakan menggunakan suara pada telefon atau tablet anda. Untuk sebutan terbaik, pastikan suara Bahasa Melayu (atau Bahasa Indonesia) dipasang dalam tetapan “Teks ke pertuturan” peranti. Semua arahan juga dipaparkan sebagai teks.</p></details>
+    <details class="reveal"><summary>Boleh guna untuk lebih daripada seorang anak?</summary><p>Boleh. Tambah profil untuk setiap anak dalam Ruang Ibu Bapa. Setiap anak ada bintang, level dan laporan masing-masing.</p></details>
+    <details class="reveal"><summary>Kalau tukar telefon, kemajuan anak hilang?</summary><p>Kemajuan disimpan dalam peranti untuk menjaga privasi. Sebelum tukar telefon, gunakan “Simpan sandaran” dalam Ruang Ibu Bapa, kemudian “Pulihkan sandaran” pada telefon baharu.</p></details>
+    <details class="reveal"><summary>Ada bayaran tersembunyi atau langganan?</summary><p>Tiada. RM39 sekali bayar. Tiada iklan dan tiada pembelian dalam aplikasi. Syiling dalam permainan hanya dikumpul dengan bermain.</p></details>
+    <details class="reveal"><summary>Bagaimana kandungan agama disemak?</summary><p>Doa harian hanya menggunakan lafaz daripada al-Quran dan hadis sahih, dan sumbernya dipaparkan bersama setiap doa. Suara sintetik tidak membacakan teks Arab, supaya tiada sebutan yang salah.</p></details>
+  </div>
+</section>
+
+<!-- ===================== CTA AKHIR ===================== -->
+<section class="final">
+  <div class="wrap reveal">
+    <div style="font-size:clamp(40px,11vw,60px)">🐱🐻🐰🦖🐼</div>
+    <h2 class="h2">Mimi, Bobo, Coco, Dino &amp; Lala sedang menunggu!</h2>
+    <p class="lead">Beri anak anda masa skrin yang membina, hari ini.</p>
+    <a class="btn btn-buy btn-big" data-buy href="#harga">Dapatkan Dunia Cilik — RM39</a>
+    <div class="cta-note" style="color:#e9e3ff">Sekali bayar · Tanpa iklan · Bahasa Melayu</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Dunia Cilik · Belajar Sambil Bermain, Bijak Sambil Meneroka.</div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="p">Dunia Cilik<br><b>RM39</b></div>
+  <a class="btn btn-buy" data-buy href="#harga">Beli Sekarang</a>
+</div>
+
+<script>
+  // ============================================================
+  //  PAUTAN PEMBAYARAN — tampal pautan bil ToyyibPay di sini.
+  //  Contoh: 'https://toyyibpay.com/xxxxxxxx'
+  //  Selagi kosong, semua butang beli akan membawa ke bahagian Harga.
+  // ============================================================
+  const PAYMENT_URL = '';
+
+  if (PAYMENT_URL) {
+    document.querySelectorAll('[data-buy]').forEach((a) => { a.href = PAYMENT_URL; a.rel = 'noopener'; });
+  }
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Demo: muatkan aplikasi sebenar (mod demo) hanya apabila ditekan
+  document.getElementById('demoStart').addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    f.src = '../index.html?demo#/';
+    f.title = 'Demo Dunia Cilik';
+    f.allow = 'autoplay';
+    const scr = document.getElementById('demoScreen');
+    scr.replaceChildren(f);
+  });
+
+  // Animasi muncul semasa skrol
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 }) : null;
+  document.querySelectorAll('.reveal').forEach((el) => (io ? io.observe(el) : el.classList.add('in')));
+
+  // Bar CTA melekat muncul selepas hero, sembunyi di bahagian harga
+  const sticky = document.getElementById('sticky');
+  const hero = document.querySelector('.hero');
+  const harga = document.getElementById('harga');
+  const onScroll = () => {
+    const pastHero = hero.getBoundingClientRect().bottom < 0;
+    const r = harga.getBoundingClientRect();
+    const atPrice = r.top < innerHeight && r.bottom > 0;
+    sticky.classList.toggle('show', pastHero && !atPrice);
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+</body>
+</html>

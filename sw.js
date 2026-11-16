@@ -1,5 +1,5 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-6dd2f8b891';
+const VERSION = 'dunia-cilik-25cfda95cf';
 const ASSETS = [
   './',
   './index.html',
@@ -8,6 +8,7 @@ const ASSETS = [
   './js/audio.js',
   './js/data/art.js',
   './js/data/content.js',
+  './js/demo.js',
   './js/engines/art.js',
   './js/engines/choice.js',
   './js/engines/common.js',
@@ -50,7 +51,10 @@ self.addEventListener('activate', (e) => {
 });
 self.addEventListener('fetch', (e) => {
   const req = e.request;
-  if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+  const url = new URL(req.url);
+  if (req.method !== 'GET' || url.origin !== location.origin) return;
+  // Halaman jualan & demo sentiasa diambil terus dari rangkaian (tidak di-cache)
+  if (url.pathname.includes('/jualan/') || url.searchParams.has('demo')) return;
   e.respondWith(
     caches.match(req, { ignoreSearch: true }).then((hit) => hit || fetch(req).then((res) => {
       if (res.ok) { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); }

@@ -11,6 +11,8 @@ import { guide, confirmBox } from './shared.js';
 import { overLimit } from './timeout.js';
 import { todayKey } from '../ui.js';
 import { dailySet, DAILY_REWARD } from './daily.js';
+import { demoLocked } from '../demo.js';
+import { demoUpgrade } from './shared.js';
 
 let active = null; // sesi aktif (untuk pembersihan dan ujian)
 export function stopPlay() {
@@ -147,6 +149,10 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
 export function playScreen(modeId, level) {
   const p = profile();
   const mode = MODES[modeId];
+  if (demoLocked(level)) {
+    setTimeout(() => { go('/mod/' + modeId); setTimeout(() => demoUpgrade(), 50); }, 0);
+    return h('div', { class: 'screen' });
+  }
   if (!isUnlocked(p, modeId, level) || settings().disabledModes.includes(modeId)) {
     setTimeout(() => go('/mod/' + modeId), 0);
     return h('div', { class: 'screen' });

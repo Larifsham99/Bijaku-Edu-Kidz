@@ -7,6 +7,7 @@ import { STICKERS } from '../data/content.js';
 import { hashStr } from '../rng.js';
 import { topbar, guide } from './shared.js';
 import { sfx } from '../audio.js';
+import { DEMO, DEMO_MAX } from '../demo.js';
 
 export const DAILY_REWARD = { coins: 30, sticker: (k) => STICKERS[hashStr('pelekat' + k) % STICKERS.length] };
 
@@ -19,7 +20,7 @@ export function dailySet(p, key = todayKey()) {
     { mode: 'minda', label: 'Permainan Logik', e: '💡' },
     day % 3 === 0 ? { mode: 'haiwan', label: 'Pengetahuan Am: Haiwan', e: '🦁' } : day % 3 === 1 ? { mode: 'harian', label: 'Pengetahuan Am: Harian', e: '🏡' } : { mode: 'kelas', label: 'Pengetahuan Am: Mengelaskan', e: '🗂️' },
   ];
-  const items = base.map((b, i) => ({ ...b, level: Math.max(1, Math.min(50, highestUnlocked(p, b.mode))), seed: `${key}-${p.id}-${i}` }));
+  const items = base.map((b, i) => ({ ...b, level: Math.max(1, Math.min(DEMO ? DEMO_MAX : 50, highestUnlocked(p, b.mode))), seed: `${key}-${p.id}-${i}` }));
   const d = p.daily[key] || { done: [], rewarded: false };
   return { key, items, done: d.done, rewarded: d.rewarded };
 }

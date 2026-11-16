@@ -4,6 +4,7 @@ import { go } from '../nav.js';
 import { AVATARS, COSTUMES, CHARACTERS } from '../data/content.js';
 import { speak, sfx } from '../audio.js';
 import { playerLevel } from '../store.js';
+import { DEMO_MAX, SALES_URL } from '../demo.js';
 
 export function avatarEl(p, cls = '') {
   const av = AVATARS.find((a) => a.id === p.avatar) || AVATARS[0];
@@ -88,5 +89,19 @@ export function confirmBox(text, onYes, { yes = 'Ya', no = 'Tidak', emoji = '�
     h('div', { class: 'row' },
       h('button', { class: 'btn ghost', type: 'button', onclick: () => m.close() }, no),
       h('button', { class: 'btn green', type: 'button', onclick: () => { m.close(); onYes(); } }, yes))));
+  return m;
+}
+
+// Mesej versi penuh (mod demo)
+export function demoUpgrade(text = `Versi demo membuka ${DEMO_MAX} level pertama setiap permainan.`) {
+  speak('Jom dapatkan versi penuh Dunia Cilik!');
+  const m = modal(h('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' } },
+    h('div', { class: 'emo float', style: { fontSize: '64px' } }, '🔓'),
+    h('h2', {}, 'Buka 750 Level!'),
+    h('p', {}, text),
+    h('p', {}, 'Versi penuh: 15 permainan × 50 level, Cabaran Harian, trofi, sijil dan Ruang Ibu Bapa.'),
+    h('div', { class: 'row' },
+      h('button', { class: 'btn ghost', type: 'button', onclick: () => m.close() }, 'Teruskan demo'),
+      h('a', { class: 'btn green', href: SALES_URL, target: '_top', style: { textDecoration: 'none' } }, 'Dapatkan versi penuh'))));
   return m;
 }
