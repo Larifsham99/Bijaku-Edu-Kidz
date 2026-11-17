@@ -39,7 +39,7 @@ Tiada langkah binaan diperlukan. Aplikasi ini hanya menggunakan HTML, CSS dan Ja
 
 ## Ciri-ciri lain
 
-* **Ganjaran:** 1 bintang bagi setiap jawapan betul, syiling bagi setiap level, bonus dan pelekat setiap 5 level, trofi setiap 10 level, sijil (boleh dicetak) selepas 50 level, 17 lencana pencapaian, serta avatar, kostum dan 6 tema yang boleh ditukar dengan syiling. Tiada wang sebenar digunakan.
+* **Ganjaran:** 1 bintang bagi setiap jawapan betul, syiling bagi setiap level, bonus dan pelekat setiap 5 level, trofi setiap 10 level, sijil (boleh dicetak) selepas 50 level, 17 lencana pencapaian, serta avatar, kostum dan 7 tema bercorak tempatan (Kampung Ceria, Taman Masjid, Batik Laut, Songket Diraja, Malam Bulan, Kuih-muih, Klasik Lembut) yang boleh ditukar dengan syiling. Tiada wang sebenar digunakan.
 * **Tiada hukuman:** jawapan salah mendapat galakan ("Bagus, cuba sekali lagi!"). Selepas dua kali salah, jawapan yang betul akan diserlahkan sebagai petunjuk.
 * **Audio:** suara Bahasa Melayu melalui Web Speech API (`ms-MY`, dengan sandaran `id-ID`), kesan bunyi, dan 35 bunyi haiwan/kenderaan/alam yang disintesis dengan Web Audio supaya berfungsi luar talian. Muzik latar juga disediakan. Arahan boleh dimainkan semula (🔊 atau ketik karakter) dan semua bunyi boleh dimatikan.
 * **Suara lembut keibuan:** aplikasi memilih suara wanita Bahasa Melayu yang terbaik pada peranti secara automatik (contohnya Yasmin Natural dalam Edge, Amira pada iPhone), dengan gaya "Lembut keibuan" dan jeda semula jadi antara ayat. Ibu bapa boleh mendengar dan memilih suara lain di Ruang Ibu Bapa → Tetapan.

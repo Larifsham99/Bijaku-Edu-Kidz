@@ -155,7 +155,7 @@ function recallOrder(stage, r, api) {
   (async () => {
     await sleep(r.showMs);
     stage.replaceChildren();
-    api.say('Susun semula mengikut urutan tadi!');
+    api.say('Sekarang, susun semula ikut urutan tadi, ya.');
     inner = slots(stage, { numbered: true, slots: r.items.map((f, i) => ({ v: f.v ?? i, face: f })), tiles: r.tiles }, api);
     ready = true;
   })();
@@ -183,7 +183,7 @@ export function simon(stage, r, api) {
     phase = 'show'; info.textContent = 'Perhatikan...'; pos = 0;
     await sleep(600);
     for (const i of r.seq) await lit(i);
-    phase = 'input'; info.textContent = 'Giliran kamu! Tekan mengikut urutan.';
+    phase = 'input'; info.textContent = 'Sekarang giliran kamu. Tekan ikut urutan, ya.';
   }
   again.addEventListener('click', () => { if (phase === 'input') demo(); });
   demo();
@@ -198,7 +198,7 @@ export function simon(stage, r, api) {
       api.bad(els[i]);
       phase = 'wait';
       await sleep(700);
-      if (wrong >= 2) info.textContent = 'Tak mengapa! Mari lihat sekali lagi.';
+      if (wrong >= 2) info.textContent = 'Tak apa. Jom tengok sekali lagi.';
       demo();
     }
   }

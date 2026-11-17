@@ -19,6 +19,12 @@ const greet = (name) => {
   return `${t}, ${name}! Jom belajar sambil bermain!`;
 };
 
+// Logo: wau kecil + "Dunia" (cili) "Cilik" (pandan)
+function logoH1() {
+  const wau = h('span', { class: 'logo-wau', html: '<svg viewBox="0 0 120 150" width="100%" height="100%"><path d="M60 4 C 44 26 30 30 6 34 C 24 46 44 50 58 58 C 40 64 22 72 12 92 C 34 86 50 84 60 92 C 70 84 86 86 108 92 C 98 72 80 64 62 58 C 76 50 96 46 114 34 C 90 30 76 26 60 4 Z" fill="#e2553f"/><path d="M60 14 C 50 30 40 34 24 37 C 38 45 50 49 60 54 C 70 49 82 45 96 37 C 80 34 70 30 60 14 Z" fill="#f2a922"/><path d="M60 62 C 48 68 36 74 28 86 C 42 82 52 82 60 88 C 68 82 78 82 92 86 C 84 74 72 68 60 62 Z" fill="#2e5aac"/><path d="M60 92 C 52 106 50 120 56 146" stroke="#e2553f" stroke-width="4" fill="none"/></svg>' });
+  return h('h1', { 'aria-label': 'Dunia Cilik' }, wau, h('span', {}, h('span', { class: 'l1' }, 'Dunia'), ' ', h('span', { class: 'l2' }, 'Cilik')));
+}
+
 // Doa Hari Ini: bertukar setiap hari, hanya doa sahih daripada senarai DOA (dengan sumber)
 function doaCard() {
   const list = DOA.filter((d) => !d.dupOf);
@@ -70,7 +76,7 @@ export function homeScreen() {
   if (DEMO) side.appendChild(h('div', { class: 'panel', style: { display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', textAlign: 'center' } },
     h('b', {}, `🎮 Versi Demo · ${DEMO_MAX} level pertama setiap permainan`),
     h('a', { class: 'btn small green', href: SALES_URL, target: '_top', style: { textDecoration: 'none' } }, 'Dapatkan versi penuh')));
-  side.appendChild(h('div', { class: 'logo' }, h('h1', {}, 'Dunia Cilik'), h('p', {}, 'Belajar Sambil Bermain, Bijak Sambil Meneroka.')));
+  side.appendChild(h('div', { class: 'logo' }, logoH1(), h('p', {}, 'Belajar Sambil Bermain, Bijak Sambil Meneroka.')));
   const ch = CHARACTERS[new Date().getDay() % CHARACTERS.length];
   const g = guide(ch.id, greet(p.name));
   side.appendChild(g.el);
@@ -89,8 +95,8 @@ export function homeScreen() {
   side.appendChild(h('div', { class: 'home-actions' },
     tile('t-orange', 'calendar', 'Cabaran Harian', () => go('/harian'), dailyLeft ? h('span', { class: 'badge' }, dailyLeft) : h('span', { class: 'badge', style: { color: '#189a5a' } }, '✓')),
     tile('t-yellow', 'trophy', 'Koleksi Trofi', () => go('/trofi')),
-    tile('t-pink', 'wand', 'Kostum & Tema', () => go('/kedai')),
-    tile('t-sky', 'balloon', 'Main Bebas', () => go('/bebas'))));
+    tile('t-pink', 'kain', 'Kostum & Tema', () => go('/kedai')),
+    tile('t-sky', 'wau', 'Main Bebas', () => go('/bebas'))));
   if (settings().islamic !== false) side.appendChild(doaCard());
   side.appendChild(h('div', { class: 'parent-row' },
     lim !== Infinity ? h('span', { class: 'time-chip' }, '⏰', `Baki masa hari ini: ${Math.max(0, Math.round((lim - todayPlaySeconds(p)) / 60))} minit`) : null,
@@ -124,7 +130,7 @@ export function onboardingScreen({ addMode = false } = {}) {
   if (DEMO) scr.appendChild(h('div', { class: 'panel', style: { display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', textAlign: 'center' } },
     h('b', {}, `🎮 Versi Demo · ${DEMO_MAX} level pertama setiap permainan`),
     h('a', { class: 'btn small green', href: SALES_URL, target: '_top', style: { textDecoration: 'none' } }, 'Dapatkan versi penuh')));
-  scr.appendChild(h('div', { class: 'logo' }, h('h1', {}, 'Dunia Cilik'), h('p', {}, 'Belajar Sambil Bermain, Bijak Sambil Meneroka.')));
+  scr.appendChild(h('div', { class: 'logo' }, logoH1(), h('p', {}, 'Belajar Sambil Bermain, Bijak Sambil Meneroka.')));
   scr.appendChild(body);
   const render = () => {
     body.replaceChildren();

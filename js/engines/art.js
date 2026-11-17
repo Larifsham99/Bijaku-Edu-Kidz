@@ -64,12 +64,12 @@ export function color(stage, r, api) {
     const hex = colorById(cid).hex;
     if (guided.length) {
       const g = guided[gi];
-      if (id !== g.region) { api.say(`Cuba warnakan ${art.regions.find((x) => x.id === g.region).n} dahulu.`); hintEl(null); regionEls.get(g.region).animate([{ opacity: 1 }, { opacity: 0.3 }, { opacity: 1 }], { duration: 700 }); return; }
+      if (id !== g.region) { api.say(`Warnakan ${art.regions.find((x) => x.id === g.region).n} dulu, ya.`); hintEl(null); regionEls.get(g.region).animate([{ opacity: 1 }, { opacity: 0.3 }, { opacity: 1 }], { duration: 700 }); return; }
       if (cid !== g.color) {
         wrong++;
         fillReg(el, hex);
         api.bad(el);
-        api.say(`Ini warna ${colorById(cid).n.toLowerCase()}. Cari warna ${colorById(g.color).n.toLowerCase()}!`);
+        api.say(`Ini warna ${colorById(cid).n.toLowerCase()}. Cuba cari warna ${colorById(g.color).n.toLowerCase()}.`);
         if (wrong >= 2) hintEl(pal.sws[pal.ids.indexOf(g.color)]);
         return;
       }
@@ -171,7 +171,7 @@ export function dots(stage, r, api) {
         path.push(pts[0]);
         lines.setAttribute('points', path.map((p) => p.join(',')).join(' '));
         done = true; pad.classList.add('done');
-        api.say(`Wah! Ia ${shp.n.toLowerCase()}!`);
+        api.say(`Wah, ${shp.n.toLowerCase()}!`);
         setTimeout(() => api.finish(), 900);
       }
     } else if (i > next) {

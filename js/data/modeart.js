@@ -6,71 +6,101 @@ const T = (x, y, txt, fill = '#fff', size = 17) => `<text x="${x}" y="${y}" text
 const BLOCK = (x, y, c, c2, letter, tc = '#fff', rot = 0) => `<g transform="rotate(${rot} ${x + 11.5} ${y + 11.5})"><rect x="${x}" y="${y + 2}" width="23" height="23" rx="6" fill="rgba(0,0,0,.15)"/><rect x="${x}" y="${y}" width="23" height="23" rx="6" fill="${c}"/><rect x="${x + 3}" y="${y + 2.5}" width="17" height="5" rx="2.5" fill="${c2}"/>${T(x + 11.5, y + 19.5, letter, tc)}</g>`;
 
 export const MODE_ART = {
-  abc: `${BLOCK(5, 30, '#ff5d5d', '#ff9a9a', 'A', '#fff', -8)}${BLOCK(36, 30, '#3d8bff', '#8cbcff', 'C', '#fff', 7)}${BLOCK(20.5, 6, '#ffc531', '#ffe28a', 'B', '#8a5300', -4)}`,
+  // Wau bulan membawa huruf A
+  abc: `<path d="M32 3C24 14 16 16 4 18c9 6 18 8 26 11-9 3-18 7-23 17 10-3 18-3 25 1 7-4 15-4 25-1-5-10-14-14-23-17 8-3 17-5 26-11-12-2-20-4-28-15z" fill="#e2553f"/>
+    <path d="M32 9c-5 8-10 10-18 11.5 6 3.5 12 5.4 18 7.6 6-2.2 12-4.1 18-7.6C42 19 37 17 32 9z" fill="#f2a922"/><path d="M32 33c-6 3-11 5.5-15 10 6-1.2 11-1 15 1.5 4-2.5 9-2.7 15-1.5-4-4.5-9-7-15-10z" fill="#2e5aac"/>
+    <path d="M32 47c-3 5-3.5 9-1.5 15M32 47c3 5 3.5 9 1.5 15" stroke="#e2553f" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="32" cy="26" r="10.5" fill="#fff6e6"/>${T(32, 32.5, 'A', '#b53a28', 17)}`,
 
-  nombor: `<path d="M15 38c-2 7 3 9 0 14M32 31c2 8-3 11 1 21M49 38c-2 7 3 9 0 14" stroke="#9b8fb8" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-    <ellipse cx="15" cy="25" rx="10" ry="11.5" fill="#22c36f"/><path d="M13.5 36.5h3l-1.5 2z" fill="#22c36f"/><ellipse cx="11.5" cy="19.5" rx="2.6" ry="4" fill="#fff" opacity=".35"/>${T(15, 30.5, '1', '#fff', 15)}
-    <ellipse cx="49" cy="26" rx="10" ry="11.5" fill="#8d5cff"/><path d="M47.5 37.5h3l-1.5 2z" fill="#8d5cff"/><ellipse cx="45.5" cy="20.5" rx="2.6" ry="4" fill="#fff" opacity=".35"/>${T(49, 31.5, '3', '#fff', 15)}
-    <ellipse cx="32" cy="18" rx="10.5" ry="12.5" fill="#ff8a2a"/><path d="M30.5 31h3l-1.5 2z" fill="#ff8a2a"/><ellipse cx="28" cy="12" rx="3" ry="4.5" fill="#fff" opacity=".35"/>${T(32, 24.5, '2')}`,
+  // Papan congkak dengan guli
+  nombor: `<path d="M4 28c0-6 6-10 14-10h28c8 0 14 4 14 10v8c0 6-6 10-14 10H18c-8 0-14-4-14-10z" fill="#9a5b34"/><path d="M6 27c1-5 6-8 12-8h28c6 0 11 3 12 8" stroke="#c48a5e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="9.5" cy="32" rx="4" ry="8" fill="#6f3f22"/><ellipse cx="54.5" cy="32" rx="4" ry="8" fill="#6f3f22"/>
+    <g fill="#6f3f22">${[0, 1, 2, 3, 4].map((k) => `<circle cx="${18 + k * 7}" cy="26" r="3.2"/><circle cx="${18 + k * 7}" cy="38" r="3.2"/>`).join('')}</g>
+    <g>${[['#f2a922', 18, 26], ['#e2553f', 25, 26], ['#2f9e6a', 39, 38], ['#2e5aac', 46, 26], ['#f2a922', 32, 38], ['#e2553f', 54.5, 30], ['#2f9e6a', 9.5, 34], ['#fff6e6', 53.5, 35]].map(([c, x, y]) => `<circle cx="${x}" cy="${y}" r="2" fill="${c}"/>`).join('')}</g>
+    ${T(32, 60, '1 2 3', '#9a5b34', 12)}`,
 
-  warna: `<path d="M32 8C17 8 6 18 6 31c0 12 10 22 22 22 4 0 5-3 4-6-1-4 1-7 5-7h6c8 0 15-6 15-14C58 15 46 8 32 8z" fill="#ffe7b8"/><path d="M32 8C17 8 6 18 6 31c0 3 .6 6 1.8 8.7C9 27 19 16 33 16c10 0 18 4 22 10C53 15 44 8 32 8z" fill="#fff3d6"/>
-    <circle cx="18" cy="31" r="5" fill="#ff5d5d"/><circle cx="24" cy="19.5" r="5" fill="#ffc531"/><circle cx="37" cy="17" r="5" fill="#22c36f"/><circle cx="48" cy="25" r="5" fill="#3d8bff"/><circle cx="21" cy="43" r="5" fill="#a96bff"/>
-    <path d="M58 40 44 54" stroke="#b9774a" stroke-width="5" stroke-linecap="round"/><path d="M45.5 52.5l-4 4.5c-1.5 1.6-4.5 1-4-1.5l1-4z" fill="#ff5fa8"/>`,
+  // Bentuk tempatan: ketupat, bulan & pucuk rebung
+  warna: `<path d="M20 6l13 15-13 15L7 21z" fill="#3fa66b"/><path d="M13.5 13.5l13 15M26.5 13.5l-13 15M10 17l13 15M30 17l-13 15" stroke="#2a7a4a" stroke-width="1.6"/><path d="M20 36c-1 4 1 6 3 7" stroke="#3fa66b" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="45" cy="19" r="12" fill="#f2a922"/><circle cx="41" cy="15" r="3.5" fill="#ffd56a"/>
+    <path d="M30 58l12-20 12 20z" fill="#e2553f"/><path d="M36 58l6-10 6 10z" fill="#f2a922"/>
+    <circle cx="13" cy="50" r="6" fill="#2e5aac"/><circle cx="24" cy="54" r="4" fill="#7a4eb0"/>`,
 
-  bunyi: `<circle cx="32" cy="32" r="26" fill="#e6f6ff"/><path d="M14 18a24 24 0 0 0 0 28M50 18a24 24 0 0 1 0 28" stroke="#48dbfb" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <path d="M27 42V17l18-4v24" stroke="#8d5cff" stroke-width="4" fill="none" stroke-linejoin="round"/><path d="M27 17l18-4v6l-18 4z" fill="#8d5cff"/>
-    <ellipse cx="22" cy="43" rx="7" ry="5.5" transform="rotate(-20 22 43)" fill="#ff5fa8"/><ellipse cx="40" cy="38.5" rx="7" ry="5.5" transform="rotate(-20 40 38.5)" fill="#ff8a2a"/>
-    <circle cx="20" cy="41.5" r="1.8" fill="#fff" opacity=".6"/><circle cx="38" cy="37" r="1.8" fill="#fff" opacity=".6"/>`,
+  // Kompang
+  bunyi: `<path d="M10 32a22 10 0 0 0 44 0v6a22 10 0 0 1-44 0z" fill="#9a5b34"/><ellipse cx="32" cy="32" rx="22" ry="10" fill="#fff1d6"/><ellipse cx="32" cy="32" rx="22" ry="10" fill="none" stroke="#9a5b34" stroke-width="3"/>
+    <path d="M12 36h40" stroke="#f2a922" stroke-width="2.5" stroke-dasharray="3 3"/><ellipse cx="27" cy="30" rx="7" ry="2.5" fill="#fff" opacity=".7"/>
+    <path d="M8 18c-3 4-3 8 0 12M56 18c3 4 3 8 0 12M4 13c-5 7-5 15 0 22M60 13c5 7 5 15 0 22" stroke="#e2553f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <path d="M34 8l-6 14" stroke="#c48a5e" stroke-width="4" stroke-linecap="round"/><circle cx="35" cy="6" r="3.5" fill="#e2553f"/>`,
 
-  puzzle: `<g transform="rotate(-8 32 32)"><rect x="32" y="24" width="25" height="25" rx="4" fill="#ff8a2a"/><circle cx="44.5" cy="24" r="5.5" fill="#ff8a2a"/><circle cx="44.5" cy="49" r="5.5" fill="#ff8a2a"/><rect x="35" y="27" width="19" height="4" rx="2" fill="#ffb46b"/>
-    <rect x="7" y="17" width="25" height="25" rx="4" fill="#22c36f"/><circle cx="19.5" cy="17" r="5.5" fill="#22c36f"/><circle cx="32" cy="29.5" r="5.5" fill="#22c36f"/><rect x="10" y="20" width="19" height="4" rx="2" fill="#6fe3a6"/></g>`,
+  // Kepingan puzzle bercorak songket
+  puzzle: `<g transform="rotate(-8 32 32)"><rect x="32" y="24" width="25" height="25" rx="4" fill="#f2a922"/><circle cx="44.5" cy="24" r="5.5" fill="#f2a922"/><circle cx="44.5" cy="49" r="5.5" fill="#f2a922"/>
+    <path d="M44.5 29l6 7.5-6 7.5-6-7.5z" fill="none" stroke="#c9820b" stroke-width="2"/><circle cx="44.5" cy="36.5" r="1.8" fill="#c9820b"/>
+    <rect x="7" y="17" width="25" height="25" rx="4" fill="#8f2531"/><circle cx="19.5" cy="17" r="5.5" fill="#8f2531"/><circle cx="32" cy="29.5" r="5.5" fill="#8f2531"/>
+    <path d="M19.5 22l6 7.5-6 7.5-6-7.5z" fill="none" stroke="#f2c14e" stroke-width="2"/><circle cx="19.5" cy="29.5" r="1.8" fill="#f2c14e"/><path d="M9 39h21" stroke="#f2c14e" stroke-width="1.6" stroke-dasharray="2 2"/></g>`,
 
-  ingatan: `<g transform="rotate(-12 24 34)"><rect x="9" y="14" width="28" height="38" rx="6" fill="#8d5cff"/><rect x="13" y="18" width="20" height="30" rx="4" fill="none" stroke="#c4a8ff" stroke-width="2" stroke-dasharray="3 3"/>${T(23, 39, '?', '#fff', 22)}</g>
-    <g transform="rotate(10 42 32)"><rect x="28" y="11" width="28" height="38" rx="6" fill="#fff" stroke="#e3daf3" stroke-width="2"/><path d="M42 18.5l3 6.1 6.7 1-4.9 4.7 1.2 6.7-6-3.2-6 3.2 1.2-6.7-4.9-4.7 6.7-1z" fill="#ffc531" stroke="#f29b05" stroke-width="1.2" stroke-linejoin="round"/></g>`,
+  // Kad memori: belakang songket & bunga raya
+  ingatan: `<g transform="rotate(-12 24 34)"><rect x="9" y="14" width="28" height="38" rx="6" fill="#7a1f2b"/><rect x="12" y="17" width="22" height="32" rx="4" fill="none" stroke="#f2c14e" stroke-width="1.5"/>
+    <path d="M23 24l7 9-7 9-7-9z" fill="none" stroke="#f2c14e" stroke-width="1.8"/><path d="M23 29l3 4-3 4-3-4z" fill="#f2c14e"/></g>
+    <g transform="rotate(10 42 32)"><rect x="28" y="11" width="28" height="38" rx="6" fill="#fffaf1" stroke="#ecdcc3" stroke-width="2"/>
+    <g transform="translate(42 30)">${[0, 72, 144, 216, 288].map((a) => `<ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="#e2553f" transform="rotate(${a})"/>`).join('')}<circle r="3" fill="#f2a922"/><path d="M0 0l2-9" stroke="#f2a922" stroke-width="1.4"/></g></g>`,
 
-  seni: `<g transform="rotate(-28 32 32)"><rect x="14" y="20" width="9" height="30" rx="2" fill="#ff5d5d"/><path d="M14 20l4.5-9 4.5 9z" fill="#ff9a9a"/><rect x="14" y="27" width="9" height="4" fill="#c93b3b"/></g>
-    <g transform="rotate(-4 32 32)"><rect x="27.5" y="18" width="9" height="32" rx="2" fill="#ffc531"/><path d="M27.5 18l4.5-9 4.5 9z" fill="#ffe28a"/><rect x="27.5" y="25" width="9" height="4" fill="#d99400"/></g>
-    <g transform="rotate(22 32 32)"><rect x="41" y="20" width="9" height="30" rx="2" fill="#3d8bff"/><path d="M41 20l4.5-9 4.5 9z" fill="#8cbcff"/><rect x="41" y="27" width="9" height="4" fill="#2463c9"/></g>
-    <path d="M8 56c6-5 10 3 16-2s10 3 16-2 10 3 16-1" stroke="#22c36f" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+  // Canting batik melukis bunga
+  seni: `<rect x="6" y="22" width="40" height="36" rx="4" fill="#fff1d6"/><rect x="6" y="22" width="40" height="36" rx="4" fill="none" stroke="#ecdcc3" stroke-width="2"/>
+    <g transform="translate(24 41)">${[0, 72, 144, 216, 288].map((a) => `<ellipse cx="0" cy="-6" rx="4.5" ry="6.5" fill="#2e5aac" transform="rotate(${a})"/>`).join('')}<circle r="3" fill="#f2a922"/></g>
+    <path d="M10 54c6-4 10-2 14-4M34 30c3 2 6 1 8 4" stroke="#2f9e6a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M60 4L44 22" stroke="#9a5b34" stroke-width="4.5" stroke-linecap="round"/><path d="M41 19h9l-1.5 5.5h-6z" fill="#d98a3a"/><path d="M44 24.5l-4 6" stroke="#b5642a" stroke-width="2" stroke-linecap="round"/><circle cx="39.5" cy="31.5" r="2" fill="#2e5aac"/>`,
 
-  bayang: `<circle cx="27" cy="27" r="19" fill="#d7f1ff"/><circle cx="27" cy="27" r="19" fill="none" stroke="#3d8bff" stroke-width="5"/>
-    <path d="M18 36c0-7 3-11 9-11s9 4 9 11z" fill="#3d3256"/><circle cx="27" cy="22.5" r="6.5" fill="#3d3256"/><path d="M21.5 19l-1-6 5 3.5zM32.5 19l1-6-5 3.5z" fill="#3d3256"/>
-    <path d="M40.5 40.5 54 54" stroke="#ff8a2a" stroke-width="7" stroke-linecap="round"/><ellipse cx="20" cy="17" rx="4" ry="2.5" transform="rotate(-35 20 17)" fill="#fff" opacity=".8"/>`,
+  // Wayang kulit di hadapan kelir bercahaya
+  bayang: `<circle cx="32" cy="30" r="27" fill="#ffe7b0"/><circle cx="32" cy="28" r="17" fill="#fff4d6"/>
+    <path d="M27 6l3-5 3 5 2 3c2 1 3 3 2 5l5 2-5 1c0 2-1 3-3 4v3c4 1 7 4 8 9l-2 13 4 12H21l4-12-2-13c1-5 4-8 8-9v-3c-3-1-5-4-5-7 0-3 1-5 1-8z" fill="#3b2a1f"/>
+    <path d="M40 27l12 9-2 2-11-7M25 28l-10 12 2 1 10-10" fill="#3b2a1f"/>
+    <path d="M51 37l3 22M16 40l-3 19M30 59v4M34 59v4" stroke="#9a5b34" stroke-width="1.8" stroke-linecap="round"/>
+    <g fill="#ffe7b0"><circle cx="32" cy="31" r="1.4"/><circle cx="29" cy="35" r="1.2"/><circle cx="35" cy="35" r="1.2"/><circle cx="32" cy="39" r="1.4"/><circle cx="30" cy="12" r="1.1"/><circle cx="33.5" cy="14" r="1"/></g>
+    <path d="M26 47h12M25 51h14" stroke="#ffe7b0" stroke-width="1.2" stroke-dasharray="2 2"/>`,
 
-  maze: `<rect x="6" y="6" width="52" height="52" rx="12" fill="#fff"/><rect x="6" y="6" width="52" height="52" rx="12" fill="none" stroke="#8d5cff" stroke-width="4"/>
-    <path d="M6 22h18M40 6v16M24 22v16M24 38h18M42 38v-8M58 42H48" stroke="#8d5cff" stroke-width="4" stroke-linecap="round"/>
-    <path d="M14 14v15h17v15h20" stroke="#ff8a2a" stroke-width="3" stroke-dasharray="1 5" stroke-linecap="round" fill="none"/>
-    <circle cx="14" cy="14" r="4.5" fill="#22c36f"/><path d="M50 52V38" stroke="#3d3256" stroke-width="2.4" stroke-linecap="round"/><path d="M50 38h9l-3 3.5 3 3.5h-9z" fill="#ff5d5d"/>`,
+  // Batas sawah menuju rumah
+  maze: `<rect x="5" y="5" width="54" height="54" rx="10" fill="#7fc36b"/>
+    <g fill="#9fd48a">${[[9, 9], [24, 9], [39, 24], [9, 39], [24, 39], [39, 47]].map(([x, y]) => `<rect x="${x}" y="${y}" width="${x === 39 && y === 47 ? 16 : 12}" height="${y === 47 ? 8 : 12}" rx="2.5"/>`).join('')}</g>
+    <g stroke="#a7d897" stroke-width="1">${[0, 1, 2, 3].map((k) => `<path d="M${10 + k * 3} 12v6M${25 + k * 3} 12v6M${10 + k * 3} 42v6M${25 + k * 3} 42v6"/>`).join('')}</g>
+    <path d="M13 26h24V14h15v24H37" stroke="#d8a46a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 26h24V14h15v24H37" stroke="#f2c14e" stroke-width="1.5" stroke-dasharray="1 4" fill="none" stroke-linecap="round"/>
+    <circle cx="13" cy="26" r="4.5" fill="#e2553f"/><path d="M28 40l6-5 6 5z" fill="#7a3f22"/><rect x="29" y="40" width="10" height="7" fill="#b77748"/>`,
 
-  harian: `<circle cx="49" cy="14" r="8" fill="#ffc531"/><path d="M49 1.5v3M61.5 14h-3M58 5l-2 2M40 5l2 2" stroke="#ffc531" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M8 30 30 12l22 18" fill="#ff5d5d"/><path d="M5 31 30 10l25 21" stroke="#e03c3c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="12" y="29" width="36" height="27" rx="3" fill="#ffe28a"/><rect x="25" y="39" width="10" height="17" rx="2" fill="#b9774a"/><circle cx="32.5" cy="48" r="1.2" fill="#fff"/>
-    <rect x="16" y="35" width="7" height="7" rx="1.5" fill="#6ec3ff"/><rect x="37" y="35" width="7" height="7" rx="1.5" fill="#6ec3ff"/><path d="M4 57h56" stroke="#22c36f" stroke-width="4" stroke-linecap="round"/>`,
+  // Rumah kampung bertiang
+  harian: `<circle cx="50" cy="12" r="7" fill="#f2a922"/>
+    <path d="M6 30L32 9l26 21z" fill="#7a3f22"/><path d="M32 9l-5 4M32 9l5 4" stroke="#f2a922" stroke-width="2.5" stroke-linecap="round"/><path d="M22 30L32 18l10 12" fill="#9a5b34"/>
+    <rect x="10" y="29" width="44" height="18" rx="1.5" fill="#c48a5e"/><path d="M10 34h44M10 40h44" stroke="#9a5b34" stroke-width="1.2"/>
+    <rect x="15" y="33" width="9" height="8" fill="#5a3a24"/><rect x="40" y="33" width="9" height="8" fill="#5a3a24"/><rect x="28" y="33" width="8" height="14" fill="#7a4a2a"/>
+    <path d="M14 47v11M50 47v11M32 47v11" stroke="#7a4a2a" stroke-width="2.6"/><path d="M36 47l8 11M39 51h4M41.5 54.5h4" stroke="#9a5b34" stroke-width="2" stroke-linecap="round"/><path d="M4 59h56" stroke="#7fc36b" stroke-width="3" stroke-linecap="round"/>`,
 
-  kelas: `<circle cx="20" cy="17" r="7" fill="#ff5d5d"/><path d="M32 6l8 13H24z" fill="#22c36f"/><rect x="38" y="10" width="13" height="13" rx="3" fill="#3d8bff" transform="rotate(12 44.5 16.5)"/>
-    <path d="M8 30h48l-4 26H12z" fill="#ff8a2a"/><path d="M8 30h48l-2 7H10z" fill="#d9660c"/><path d="M6 28h52" stroke="#ffb46b" stroke-width="5" stroke-linecap="round"/>
-    <path d="M24 43h16" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>`,
+  // Bakul anyaman dengan buah tempatan
+  kelas: `<circle cx="18" cy="21" r="7.5" fill="#e2553f"/><g stroke="#2f9e6a" stroke-width="1.4">${[0, 45, 90, 135, 180, 225, 270, 315].map((a) => `<path d="M${18 + 7.5 * Math.cos(a * Math.PI / 180)} ${21 + 7.5 * Math.sin(a * Math.PI / 180)}l${2.5 * Math.cos(a * Math.PI / 180)} ${2.5 * Math.sin(a * Math.PI / 180)}"/>`).join('')}</g>
+    <path d="M28 26c2-12 12-18 22-16-6 2-12 7-14 16z" fill="#f2c14e"/><circle cx="46" cy="22" r="7" fill="#6a2e5a"/><path d="M43 15.5h6l-1 2h-4z" fill="#2f9e6a"/>
+    <path d="M6 28h52l-5 28H11z" fill="#c48a5e"/><g stroke="#9a5b34" stroke-width="1.8"><path d="M9 34h46M10 40h44M11.5 46h41M12.5 52h39"/></g><g stroke="#e3b88f" stroke-width="1.8">${[0, 1, 2, 3, 4, 5, 6].map((k) => `<path d="M${14 + k * 6} 29l${-0.6 + k * 0.2} 26"/>`).join('')}</g>
+    <path d="M4 28h56" stroke="#9a5b34" stroke-width="4" stroke-linecap="round"/>`,
 
-  soleh: `<path d="M14 58V36h36v22z" fill="#fff4dc"/><path d="M14 36c0-10 8-17 18-19 10 2 18 9 18 19z" fill="#22c36f"/><path d="M19 33c1-7 6-11 13-13-4 3-7 7-8 13z" fill="#6fe3a6"/>
-    <path d="M32 17v-5" stroke="#d99400" stroke-width="2.2" stroke-linecap="round"/><path d="M33.5 4.5a4 4 0 1 0 2.5 7 4.7 4.7 0 1 1-2.5-7z" fill="#ffc531"/>
-    <path d="M26 58V47a6 6 0 0 1 12 0v11z" fill="#13985a"/><rect x="4" y="22" width="7" height="36" rx="2" fill="#fff4dc"/><path d="M4 22l3.5-8 3.5 8z" fill="#22c36f"/>
-    <rect x="53" y="22" width="7" height="36" rx="2" fill="#fff4dc"/><path d="M53 22l3.5-8 3.5 8z" fill="#22c36f"/><path d="M2 58h60" stroke="#d99400" stroke-width="3" stroke-linecap="round"/>`,
+  soleh: `<path d="M14 58V36h36v22z" fill="#fff6e6"/><path d="M14 36c0-10 8-17 18-19 10 2 18 9 18 19z" fill="#2f9e6a"/><path d="M19 33c1-7 6-11 13-13-4 3-7 7-8 13z" fill="#5fc28f"/>
+    <path d="M32 17v-5" stroke="#c9820b" stroke-width="2.2" stroke-linecap="round"/><path d="M33.5 4.5a4 4 0 1 0 2.5 7 4.7 4.7 0 1 1-2.5-7z" fill="#f2a922"/>
+    <path d="M26 58V47a6 6 0 0 1 12 0v11z" fill="#1f7a50"/><rect x="4" y="22" width="7" height="36" rx="2" fill="#fff6e6"/><path d="M4 22l3.5-8 3.5 8z" fill="#2f9e6a"/>
+    <rect x="53" y="22" width="7" height="36" rx="2" fill="#fff6e6"/><path d="M53 22l3.5-8 3.5 8z" fill="#2f9e6a"/><path d="M2 58h60" stroke="#c9820b" stroke-width="3" stroke-linecap="round"/>
+    <path d="M17 42h30" stroke="#f2a922" stroke-width="1.6" stroke-dasharray="3 2"/>`,
 
-  haiwan: `<g fill="#ff8a2a">${[0, 45, 90, 135, 180, 225, 270, 315].map((a) => `<circle cx="${32 + 20 * Math.cos(a * Math.PI / 180)}" cy="${33 + 20 * Math.sin(a * Math.PI / 180)}" r="9"/>`).join('')}</g><circle cx="32" cy="33" r="20" fill="#ff8a2a"/>
-    <circle cx="32" cy="34" r="15" fill="#ffd36b"/><circle cx="20" cy="22" r="4" fill="#ffd36b"/><circle cx="44" cy="22" r="4" fill="#ffd36b"/>
-    <circle cx="26" cy="31" r="2.6" fill="#3d3256"/><circle cx="38" cy="31" r="2.6" fill="#3d3256"/><circle cx="26.8" cy="30.2" r=".9" fill="#fff"/><circle cx="38.8" cy="30.2" r=".9" fill="#fff"/>
-    <path d="M29 37h6l-3 3z" fill="#b9574a"/><path d="M32 40c-1 3-5 3.5-6 1.5M32 40c1 3 5 3.5 6 1.5" stroke="#b9574a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-    <circle cx="22" cy="38" r="2.5" fill="#ff9a9a" opacity=".7"/><circle cx="42" cy="38" r="2.5" fill="#ff9a9a" opacity=".7"/>`,
+  // Harimau Malaya
+  haiwan: `<circle cx="14" cy="16" r="8" fill="#f28a24"/><circle cx="50" cy="16" r="8" fill="#f28a24"/><circle cx="14" cy="16" r="4" fill="#ffd9b0"/><circle cx="50" cy="16" r="4" fill="#ffd9b0"/>
+    <ellipse cx="32" cy="34" rx="24" ry="22" fill="#f28a24"/>
+    <g fill="#2b2140"><path d="M32 12l-3 8h6z"/><path d="M22 14l1 7 3-6z"/><path d="M42 14l-1 7-3-6z"/><path d="M8.5 30l8 2-8 4z"/><path d="M55.5 30l-8 2 8 4z"/><path d="M10 40l7 0-6 4z"/><path d="M54 40l-7 0 6 4z"/></g>
+    <ellipse cx="32" cy="43" rx="13" ry="10" fill="#fff6e6"/>
+    <circle cx="23" cy="31" r="3" fill="#2b2140"/><circle cx="41" cy="31" r="3" fill="#2b2140"/><circle cx="24" cy="30" r="1" fill="#fff"/><circle cx="42" cy="30" r="1" fill="#fff"/>
+    <path d="M28 38h8l-4 4z" fill="#e2553f"/><path d="M32 42v3M32 45c-2 2-5 2-6 0M32 45c2 2 5 2 6 0" stroke="#2b2140" stroke-width="1.6" fill="none" stroke-linecap="round"/>`,
 
-  minda: `<circle cx="32" cy="26" r="24" fill="#fff6c9" opacity=".8"/><path d="M32 6a17 17 0 0 0-10 30.8c2 1.6 3 3.4 3 5.7V45h14v-2.5c0-2.3 1-4.1 3-5.7A17 17 0 0 0 32 6z" fill="#ffc531"/>
-    <path d="M24 13a12 12 0 0 1 9-4" stroke="#fff3c4" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M28 40l4-10 4 10" stroke="#e08a00" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
-    <rect x="25" y="45" width="14" height="5" rx="2" fill="#9b8fb8"/><rect x="26" y="51" width="12" height="5" rx="2.5" fill="#7b6f98"/>
-    <path d="M7 26h4M53 26h4M12 9l3 3M52 9l-3 3" stroke="#ff8a2a" stroke-width="3" stroke-linecap="round"/>`,
+  // Pelita minyak tanah
+  minda: `<circle cx="32" cy="24" r="20" fill="#ffe7b0" opacity=".85"/>
+    <path d="M32 4c6 9 8 15 0 23-8-8-6-14 0-23z" fill="#f2a922"/><path d="M32 12c3 5 3 9 0 13-3-4-3-8 0-13z" fill="#fff3c4"/>
+    <path d="M30 27h4v5h-4z" fill="#6f3f22"/><path d="M20 32h24l-3 18H23z" fill="#c48a5e"/><path d="M20 32h24l-1 5H21z" fill="#9a5b34"/><path d="M25 38v10M32 38v10M39 38v10" stroke="#e3b88f" stroke-width="1.5"/>
+    <rect x="15" y="50" width="34" height="6" rx="3" fill="#7a4a2a"/><path d="M8 20h4M52 20h4M12 8l3 3M52 8l-3 3" stroke="#f2a922" stroke-width="2.6" stroke-linecap="round"/>`,
 
-  misi: `<path d="M8 12l1.2 2.6L12 16l-2.8 1.2L8 20l-1.2-2.8L4 16l2.8-1.4z" fill="#ffc531"/><circle cx="54" cy="50" r="2" fill="#ffc531"/><circle cx="12" cy="44" r="1.6" fill="#a96bff"/>
-    <g transform="rotate(35 32 32)"><path d="M32 4c9 7 12 18 9 32H23c-3-14 0-25 9-32z" fill="#fff" stroke="#e3daf3" stroke-width="1.5"/><path d="M32 4c4 3 7 7 8.5 12h-17C25 11 28 7 32 4z" fill="#ff5d5d"/>
-    <circle cx="32" cy="24" r="5" fill="#3d8bff" stroke="#e3daf3" stroke-width="2"/><path d="M23 30l-8 10 9-1zM41 30l8 10-9-1z" fill="#ff5d5d"/>
-    <path d="M26 37h12l-3 10-3-4-3 4z" fill="#ff8a2a"/><path d="M29 37h6l-3 6z" fill="#ffc531"/></g>`,
+  // Perahu layar di ombak
+  misi: `<path d="M31 6v36" stroke="#5a3a24" stroke-width="2.6"/><path d="M33 8c13 7 19 19 20 30H33z" fill="#fff6e6"/><path d="M33 8c13 7 19 19 20 30h-8c-2-10-6-18-12-24z" fill="#f2a922"/>
+    <path d="M29 12c-8 7-13 16-14 26h14z" fill="#e2553f"/><path d="M8 42h48c-3 8-11 12-20 12H28C19 54 11 50 8 42z" fill="#9a5b34"/><path d="M11 46h42" stroke="#f2a922" stroke-width="2.2"/>
+    <path d="M2 56c5-4 9-4 14 0s9 4 14 0 9-4 14 0 9 4 14 0" stroke="#2e5aac" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M8 61c5-3 9-3 14 0s9 3 14 0 9-3 14 0" stroke="#7fa7e6" stroke-width="2.5" fill="none" stroke-linecap="round"/>`,
 };
 
 // Elemen ikon mod; jatuh balik ke emoji jika tiada ilustrasi

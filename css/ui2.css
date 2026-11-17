@@ -20,9 +20,6 @@
   --ring-bg: #ece6f6;
   --press: 0 3px 0;
 }
-html[data-theme="laut"] { --primary: #1ea7ff; --primary-d: #0b77c4; --accent: #ffb020; --accent-d: #d88800; --hero1: #29b6ff; --hero2: #2563eb; }
-html[data-theme="angkasa"] { --primary: #8d5cff; --primary-d: #5e33c9; --accent: #ff5fa8; --accent-d: #c93a7d; --hero1: #8d5cff; --hero2: #e2459a; --chip: rgba(255, 255, 255, .95); }
-html[data-theme="gula"] { --primary: #ff4fa0; --primary-d: #cf2b77; --accent: #ffb020; --accent-d: #d88800; --hero1: #ff5fa8; --hero2: #ff9a3d; }
 html[data-theme="klasik"] { --primary: #ff9f43; --primary-d: #d9761c; --hero1: #4cd18a; --hero2: #1dd1a1; }
 
 body { font-family: var(--font); font-weight: 600; -webkit-font-smoothing: antialiased; }
@@ -346,8 +343,6 @@ b, strong, h1, h2, h3 { font-weight: 800; }
 }
 
 /* ---------- tema gelap: kekalkan kontras ---------- */
-html[data-theme="angkasa"] .stage { background: rgba(255, 255, 255, .94); }
-html[data-theme="angkasa"] .section-title, html[data-theme="angkasa"] .logo p { color: #fff; }
 
 @media (prefers-reduced-motion: reduce) { .play-cta::after { display: none; } }
 

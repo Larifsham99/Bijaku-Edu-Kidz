@@ -133,10 +133,10 @@ export function maze(stage, r, api) {
       items.delete(k);
       const el = itemEls.get(k); el.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.6)', opacity: 0 }], { duration: 400, fill: 'forwards' });
       api.sfx.coin(); updateInfo();
-      if (!items.size) { goalEl.style.opacity = '1'; api.say(r.goalSay || 'Hebat! Sekarang pergi ke destinasi!'); }
+      if (!items.size) { goalEl.style.opacity = '1'; api.say(r.goalSay || 'Pandainya! Sekarang jalan ke tempat yang dituju.'); }
     }
     if (pos[0] === r.goal[0] && pos[1] === r.goal[1]) {
-      if (items.size) { api.say(`Kutip semua ${r.itemE} dahulu!`); return; }
+      if (items.size) { api.say(`Kutip semua ${r.itemN || 'barang'} dulu, ya.`); return; }
       done = true;
       goalEl.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.4)' }, { transform: 'scale(1)' }], { duration: 600 });
       api.finish();

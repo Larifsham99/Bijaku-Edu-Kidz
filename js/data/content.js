@@ -499,10 +499,10 @@ export const DOA = [
 
 // ================== MISI PENGEMBARAAN ==================
 export const WORLDS = [
-  { id: 'hutan', n: 'Hutan', e: '🌳', bg: ['#d8f3dc', '#74c69d'], hero: '🐰', heroN: 'Coco', goal: '🏡', items: ['🍄', '🍌', '🌰', '🍓'], deco: ['🌳', '🌲', '🌿', '🦜', '🐒', '🦋', '🌺', '🐿️'], friends: ['🐒', '🦜', '🐿️', '🐻'], obstacle: '🪨' },
-  { id: 'laut', n: 'Laut', e: '🌊', bg: ['#caf0f8', '#0096c7'], hero: '🐢', heroN: 'Kura-kura', goal: '🪸', items: ['🐚', '⭐', '🦪', '🫧'], deco: ['🐟', '🐠', '🐡', '🦀', '🐙', '🪸', '🐬', '🦑'], friends: ['🐟', '🐙', '🦀', '🐬'], obstacle: '🪨' },
-  { id: 'angkasa', n: 'Angkasa', e: '🚀', bg: ['#240046', '#5a189a'], hero: '🚀', heroN: 'Roket Dino', goal: '🪐', items: ['⭐', '🌙', '☄️', '💎'], deco: ['✨', '🌍', '🛰️', '👽', '🌟', '🌕', '🪐', '☄️'], friends: ['👽', '🤖', '🛸', '👨‍🚀'], obstacle: '☄️' },
-  { id: 'ladang', n: 'Ladang', e: '🌾', bg: ['#fff3b0', '#b5e48c'], hero: '🐱', heroN: 'Mimi', goal: '🏠', items: ['🥕', '🥚', '🌽', '🍎'], deco: ['🐄', '🐔', '🐑', '🚜', '🌻', '🌾', '🐖', '🐐'], friends: ['🐄', '🐔', '🐑', '🐴'], obstacle: '🪵' },
+  { id: 'hutan', n: 'Hutan', e: '🌳', bg: ['#d8f3dc', '#74c69d'], hero: '🐰', heroN: 'Coco', goal: '🏡', goalN: 'rumah', items: ['🍄', '🍌', '🌰', '🍓'], itemsN: ['cendawan', 'pisang', 'kacang', 'strawberi'], friendsN: ['monyet', 'burung kakak tua', 'tupai', 'beruang'], deco: ['🌳', '🌲', '🌿', '🦜', '🐒', '🦋', '🌺', '🐿️'], friends: ['🐒', '🦜', '🐿️', '🐻'], obstacle: '🪨' },
+  { id: 'laut', n: 'Laut', e: '🌊', bg: ['#caf0f8', '#0096c7'], hero: '🐢', heroN: 'Kura-kura', goal: '🪸', goalN: 'batu karang', items: ['🐚', '⭐', '🦪', '🫧'], itemsN: ['kulit kerang', 'bintang laut', 'tiram', 'buih'], friendsN: ['ikan', 'gurita', 'ketam', 'ikan lumba-lumba'], deco: ['🐟', '🐠', '🐡', '🦀', '🐙', '🪸', '🐬', '🦑'], friends: ['🐟', '🐙', '🦀', '🐬'], obstacle: '🪨' },
+  { id: 'angkasa', n: 'Angkasa', e: '🚀', bg: ['#240046', '#5a189a'], hero: '🚀', heroN: 'Roket Dino', goal: '🪐', goalN: 'planet', items: ['⭐', '🌙', '☄️', '💎'], itemsN: ['bintang', 'bulan', 'komet', 'permata'], friendsN: ['kawan angkasa', 'robot', 'piring terbang', 'angkasawan'], deco: ['✨', '🌍', '🛰️', '👽', '🌟', '🌕', '🪐', '☄️'], friends: ['👽', '🤖', '🛸', '👨‍🚀'], obstacle: '☄️' },
+  { id: 'ladang', n: 'Ladang', e: '🌾', bg: ['#fff3b0', '#b5e48c'], hero: '🐱', heroN: 'Mimi', goal: '🏠', goalN: 'rumah', items: ['🥕', '🥚', '🌽', '🍎'], itemsN: ['lobak merah', 'telur', 'jagung', 'epal'], friendsN: ['lembu', 'ayam', 'biri-biri', 'kuda'], deco: ['🐄', '🐔', '🐑', '🚜', '🌻', '🌾', '🐖', '🐐'], friends: ['🐄', '🐔', '🐑', '🐴'], obstacle: '🪵' },
 ];
 
 // ================== KARAKTER, AVATAR & KOSTUM ==================
@@ -548,12 +548,16 @@ export const ENCOURAGE = ['Bagus, cuba sekali lagi!', 'Tidak mengapa, kita cuba 
 // ================== TEMA ==================
 // Tema boleh dipilih oleh setiap anak dalam menu Kostum; sebahagiannya dibuka dengan syiling.
 export const THEMES = [
-  { id: 'taman', e: '🌳', n: 'Taman Ceria', cost: 0, d: 'Langit biru, awan bergerak & rama-rama' },
-  { id: 'klasik', e: '🌈', n: 'Klasik Pastel', cost: 0, d: 'Warna pastel lembut' },
-  { id: 'laut', e: '🐠', n: 'Dasar Laut', cost: 120, d: 'Ikan berenang & buih naik' },
-  { id: 'angkasa', e: '🚀', n: 'Angkasa Malam', cost: 180, d: 'Bintang berkelip & planet' },
-  { id: 'gula', e: '🍭', n: 'Dunia Gula-gula', cost: 240, d: 'Warna terang & butang jeli berkilat' },
+  { id: 'kampung', e: '🏡', n: 'Kampung Ceria', cost: 0, d: 'Sawah padi, pokok kelapa & wau terbang' },
   { id: 'masjid', e: '🕌', n: 'Taman Masjid', cost: 0, d: 'Bulan sabit, tanglung & corak Islamik' },
+  { id: 'klasik', e: '🌈', n: 'Klasik Lembut', cost: 0, d: 'Warna krim yang tenang' },
+  { id: 'batik', e: '🐟', n: 'Batik Laut', cost: 120, d: 'Corak batik biru, ikan & perahu' },
+  { id: 'songket', e: '✨', n: 'Songket Diraja', cost: 150, d: 'Tenunan merah & emas yang anggun' },
+  { id: 'malam', e: '🌙', n: 'Malam Bulan', cost: 180, d: 'Bulan purnama, bintang & pelita' },
+  { id: 'kuih', e: '🍡', n: 'Kuih-muih', cost: 240, d: 'Kuih lapis, ketupat & onde-onde' },
 ];
-export const DEFAULT_THEME = 'taman';
+export const DEFAULT_THEME = 'kampung';
+// Tema lama dipetakan kepada tema baharu (pengguna sedia ada tidak kehilangan tema dibeli)
+export const LEGACY_THEMES = { taman: 'kampung', laut: 'batik', angkasa: 'malam', gula: 'kuih' };
+export const DARK_THEMES = ['songket', 'malam'];
 export const FREE_THEMES = THEMES.filter((t) => t.cost === 0).map((t) => t.id);

@@ -4,6 +4,11 @@ import { go } from '../nav.js';
 import { profile, save, settings } from '../store.js';
 import { AVATARS, COSTUMES, THEMES } from '../data/content.js';
 import { applyTheme } from '../theme.js';
+import { MODE_ART } from '../data/modeart.js';
+
+// Ilustrasi kecil untuk pratonton tema (gaya sama dengan ikon permainan)
+const THEME_ART = { kampung: 'harian', masjid: 'soleh', klasik: 'seni', batik: 'misi', songket: 'puzzle', malam: 'minda', kuih: 'warna' };
+const themeArt = (id) => h('span', { class: 'mode-art md', html: `<svg viewBox="0 0 64 64">${MODE_ART[THEME_ART[id]] || ''}</svg>` });
 import { topbar, avatarEl, parentGate, confirmBox } from './shared.js';
 import { speak, sfx } from '../audio.js';
 import { checkBadges } from '../rewards.js';
@@ -21,7 +26,7 @@ export function shopScreen(tab = 'avatar') {
       const owned = p.owned.themes.includes(t.id);
       const it = { ...t, kind: 'theme' };
       return h('button', { class: `coll-item ${p.theme === t.id ? 'on' : ''}`, type: 'button', onclick: () => act(it, owned) },
-        h('div', { class: `theme-prev ${t.id}` }, t.e), h('span', { class: 'lbl', style: { fontSize: '16px' } }, t.n), h('span', { class: 'lbl muted' }, t.d),
+        h('div', { class: `theme-prev ${t.id}` }, themeArt(t.id)), h('span', { class: 'lbl', style: { fontSize: '16px' } }, t.n), h('span', { class: 'lbl muted' }, t.d),
         h('span', { class: 'lbl', style: { color: owned ? '#189a5a' : '#d35400' } }, p.theme === t.id ? 'Sedang digunakan' : owned ? 'Milik saya' : `🪙 ${t.cost}`));
     })));
     return scr;

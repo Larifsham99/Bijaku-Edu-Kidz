@@ -68,14 +68,14 @@ try {
   await pg.goto(URL0);
   await pg.waitForSelector('.mode-card', { timeout: 15000 });
   await pg.waitForTimeout(500);
-  const isNew = await pg.evaluate(() => document.documentElement.dataset.theme === 'taman' && !!document.getElementById('scene'));
+  const isNew = await pg.evaluate(() => document.documentElement.dataset.theme === 'kampung' && !!document.getElementById('scene'));
   if (!isNew) { await pg.reload(); await pg.waitForSelector('.mode-card'); await pg.waitForTimeout(500); }
-  ok(await pg.evaluate(() => document.documentElement.dataset.theme === 'taman'), `versi baharu dimuatkan${isNew ? ' pada pembukaan pertama' : ' pada pembukaan kedua (SW lama tiada muat semula automatik)'}`);
+  ok(await pg.evaluate(() => document.documentElement.dataset.theme === 'kampung'), `versi baharu dimuatkan${isNew ? ' pada pembukaan pertama' : ' pada pembukaan kedua (SW lama tiada muat semula automatik)'}`);
   const after = await snap();
   console.log('  selepas kemas kini:', JSON.stringify(after));
   ok(after.name === before.name && after.stars === before.stars && after.coins === before.coins && after.done === before.done, 'kemajuan anak kekal (nama, bintang, syiling, level)');
   ok(await playLevel('abc', 3), 'versi baharu: level seterusnya boleh dimainkan');
-  ok(await pg.evaluate(() => window.__dc.getState().profiles[0].theme === 'taman'), 'profil lama menerima medan baharu (tema)');
+  ok(await pg.evaluate(() => window.__dc.getState().profiles[0].theme === 'kampung'), 'profil lama menerima medan baharu (tema)');
 
   // 3. Kemas kini seterusnya: dikesan & dimuat semula secara automatik
   await pg.evaluate(() => { location.hash = '/'; window.__marker = 1; });

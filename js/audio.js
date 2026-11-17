@@ -94,6 +94,7 @@ export function speechText(t) {
   return String(t)
     .replace(/Masya-Allah/g, 'Masya Allah').replace(/Insya-Allah/g, 'Insya Allah')
     .replace(/[\u{1F000}-\u{1FAFF}\u{2300}-\u{23FF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}\u{20E3}]/gu, '')
+    .replace(/\b([A-Z])([A-Z]{2,})\b/g, (m, a, b) => a + b.toLowerCase())
     .replace(/[·•➜→]/g, ',')
     .replace(/\s+/g, ' ')
     .trim();

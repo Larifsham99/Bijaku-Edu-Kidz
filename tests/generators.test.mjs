@@ -24,6 +24,8 @@ for (const m of MODE_LIST) {
       const w = `${where} R${i + 1} (${r.type}/${r.gen})`;
       typeCount[r.type] = (typeCount[r.type] || 0) + 1;
       if (!r.say) fail(w, 'tiada arahan suara');
+      if (/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}]/u.test(r.say)) fail(w, 'arahan suara mengandungi emoji: ' + r.say);
+      if (/\b[A-Z]{3,}\b/.test(r.say)) fail(w, 'arahan suara mengandungi perkataan HURUF BESAR: ' + r.say);
       if (!r.skill || !m.skills[r.skill]) fail(w, 'kemahiran tidak sah: ' + r.skill);
       try { check(r, w); } catch (e) { fail(w, e.message); }
     });
@@ -115,3 +117,12 @@ console.log(`Mod: ${MODE_LIST.length}, level: ${MODE_LIST.length * 50}, pusingan
 console.log('Jenis mekanik:', typeCount);
 if (errors) { console.error(`\n${errors} ralat`); process.exit(1); }
 console.log('✓ Semua level sah');
+
+// Pemindahan tema lama -> tema baharu (pengguna tidak kehilangan tema yang dibeli)
+{
+  const { ensureThemeFields } = await import('../js/theme.js');
+  const p = { theme: 'laut', owned: { themes: ['taman', 'klasik', 'laut', 'angkasa'] } };
+  ensureThemeFields(p);
+  const okMig = p.theme === 'batik' && ['kampung', 'batik', 'malam', 'masjid', 'klasik'].every((t) => p.owned.themes.includes(t)) && !p.owned.themes.includes('laut');
+  if (!okMig) { console.error('✗ pemindahan tema lama gagal', p); process.exitCode = 1; } else console.log('✓ Tema lama dipindahkan (laut→batik, angkasa→malam, taman→kampung)');
+}

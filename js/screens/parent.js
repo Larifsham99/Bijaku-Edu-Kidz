@@ -162,6 +162,9 @@ function voicePanel(s) {
     };
     box.replaceChildren(...[
       h('h3', {}, '🎙️ Pilih suara'),
+      autoV && /^id/i.test(autoV.lang) && !list.some((v) => /^ms/i.test(v.lang)) ? h('div', { class: 'voice-warn' },
+        h('b', {}, '⚠️ Peranti ini tiada suara Bahasa Melayu.'),
+        h('div', {}, 'Suara Bahasa Indonesia sedang digunakan, jadi rentak dan sebutan akan kedengaran seperti orang Indonesia. Pasang suara Bahasa Melayu mengikut panduan di bawah untuk rentak Melayu yang asli.')) : null,
       h('p', { class: 'muted', style: { fontSize: '14px', margin: '0 0 8px' } }, 'Senarai di bawah ialah suara Bahasa Melayu & Indonesia yang dipasang pada peranti ini. Tekan "Dengar" untuk mencuba, kemudian pilih suara yang paling lembut.'),
       row('auto', 'Automatik (disyorkan)', autoV ? `Memilih: ${autoV.name}` : 'Tiada suara Melayu ditemui', ''),
       ...list.map((v) => row(v.name, v.name, [v.lang, isFemaleVoice(v) ? 'wanita' : isMaleVoice(v) ? 'lelaki' : '', isQualityVoice(v) ? 'kualiti tinggi' : ''].filter(Boolean).join(' · '), v.name)),
