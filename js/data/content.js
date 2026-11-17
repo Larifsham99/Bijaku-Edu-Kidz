@@ -537,13 +537,13 @@ export const STICKERS = ['🦄', '🌈', '🍭', '🚀', '🦕', '🐳', '🌻',
   '🍒', '🚂', '🦒', '🎃', '🌙', '🐢', '🍪', '🛶', '🐼', '🎁'];
 
 // ================== UCAPAN KARAKTER ==================
-export const PRAISE = ['Bagus!', 'Hebat!', 'Pandai!', 'Syabas!', 'Bijak!', 'Betul!', 'Wah, hebatnya!', 'Kamu semakin bijak!', 'Cemerlang!', 'Tahniah!'];
+export const PRAISE = ['Bagus!', 'Hebat!', 'Pandai!', 'Syabas!', 'Bijak!', 'Betul!', 'Wah, hebatnya!', 'Kamu semakin bijak!', 'Cemerlang!', 'Tahniah!', 'Bagus, sayang!', 'Pandainya, sayang!'];
 // Ucapan Islamik (ejaan DBP). Digunakan mengikut adab:
 // Bismillah ketika memulakan, Alhamdulillah ketika berjaya, Masya-Allah ketika memuji,
 // Insya-Allah untuk usaha yang akan datang.
 export const ISLAMIC_PRAISE = ['Masya-Allah, pandainya!', 'Alhamdulillah, betul!', 'Masya-Allah, hebat!', 'Alhamdulillah!', 'Masya-Allah, bijaknya!'];
 export const ISLAMIC_ENCOURAGE = ['Tidak mengapa, cuba lagi. Insya-Allah boleh!', 'Sabar ya, cuba sekali lagi. Insya-Allah berjaya!'];
-export const ENCOURAGE = ['Bagus, cuba sekali lagi!', 'Tidak mengapa, kita cuba sama-sama!', 'Hampir betul! Cuba lagi.', 'Jangan risau, cuba lagi ya!', 'Kamu boleh! Cuba lagi.'];
+export const ENCOURAGE = ['Bagus, cuba sekali lagi!', 'Tidak mengapa, kita cuba sama-sama!', 'Hampir betul! Cuba lagi.', 'Jangan risau, cuba lagi ya!', 'Kamu boleh! Cuba lagi.', 'Tak apa, sayang. Kita cuba lagi, ya?'];
 
 // ================== TEMA ==================
 // Tema boleh dipilih oleh setiap anak dalam menu Kostum; sebahagiannya dibuka dengan syiling.

@@ -33,14 +33,45 @@ export function unlockAudio() {
 }
 
 // ---------------- SUARA (TTS) ----------------
+// Keutamaan: suara wanita Bahasa Melayu yang berkualiti tinggi (neural/natural),
+// kemudian Bahasa Indonesia. Ibu bapa boleh memilih suara sendiri dalam tetapan.
+const FEMALE = /yasmin|amira|damayanti|gadis|siti|nur\b|female|wanita|perempuan|woman/i;
+const MALE = /osman|ardi|rizwan|\bmale\b|lelaki|\bman\b/i;
+const QUALITY = /natural|neural|online|enhanced|premium|wavenet|studio|dipertingkat/i;
+const langOf = (v) => (v.lang || '').replace('_', '-').toLowerCase();
+export function voiceScore(v) {
+  const l = langOf(v);
+  // Bahasa Melayu sentiasa didahulukan (sebutan lebih penting daripada kualiti suara)
+  let sc = l.startsWith('ms-my') ? 200 : l.startsWith('ms') ? 190 : l.startsWith('id') ? 60 : -999;
+  const n = `${v.name} ${v.voiceURI || ''}`;
+  if (FEMALE.test(n)) sc += 25;
+  else if (MALE.test(n)) sc -= 40;
+  if (QUALITY.test(n)) sc += 30;
+  if (v.localService === false) sc += 5;
+  return sc;
+}
+export const isFemaleVoice = (v) => FEMALE.test(`${v.name} ${v.voiceURI || ''}`) && !/\bmale\b/i.test(v.name.replace(/female/ig, ''));
+export const isMaleVoice = (v) => !isFemaleVoice(v) && MALE.test(`${v.name} ${v.voiceURI || ''}`) || /osman|ardi|rizwan/i.test(v.name);
+export const isQualityVoice = (v) => QUALITY.test(`${v.name} ${v.voiceURI || ''}`);
+// Senarai suara Melayu/Indonesia, terbaik dahulu
+export function rankVoices(list) {
+  return list.filter((v) => voiceScore(v) > -900).sort((a, b) => voiceScore(b) - voiceScore(a));
+}
+export function malayVoices() {
+  if (typeof speechSynthesis === 'undefined') return [];
+  return rankVoices(speechSynthesis.getVoices());
+}
+const prefs = () => { try { return settings(); } catch { return {}; } };
 function pickVoice() {
-  if (!('speechSynthesis' in self)) return null;
+  if (typeof speechSynthesis === 'undefined') return null;
   const vs = speechSynthesis.getVoices();
   if (!vs.length) return null;
   voicesReady = true;
-  const by = (re) => vs.find((v) => re.test(v.lang.replace('_', '-')));
-  return by(/^ms(-|$)/i) || by(/^id(-|$)/i) || by(/^ms/i) || null;
+  const list = rankVoices(vs);
+  const want = prefs().voiceName;
+  return (want && list.find((v) => v.name === want)) || list[0] || null;
 }
+export function refreshVoice() { voice = pickVoice(); return voice; }
 if (typeof self !== 'undefined' && 'speechSynthesis' in self) {
   voice = pickVoice();
   speechSynthesis.onvoiceschanged = () => { voice = pickVoice(); };
@@ -51,36 +82,68 @@ export function voiceInfo() {
   return voice ? `${voice.name} (${voice.lang})` : 'Suara lalai peranti (pasang suara Bahasa Melayu/Indonesia untuk sebutan terbaik)';
 }
 
+// Gaya suara: pic & kelajuan. "Lembut keibuan" ialah lalai.
+export const VOICE_STYLES = {
+  lembut: { n: 'Lembut keibuan', pitch: 1.0, rate: 0.86 },
+  biasa: { n: 'Biasa', pitch: 1.05, rate: 0.93 },
+  ceria: { n: 'Ceria', pitch: 1.15, rate: 0.98 },
+};
+
+// Teks lebih semula jadi untuk dibaca: buang emoji/simbol, sesuaikan ejaan untuk sebutan
+export function speechText(t) {
+  return String(t)
+    .replace(/Masya-Allah/g, 'Masya Allah').replace(/Insya-Allah/g, 'Insya Allah')
+    .replace(/[\u{1F000}-\u{1FAFF}\u{2300}-\u{23FF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}\u{20E3}]/gu, '')
+    .replace(/[·•➜→]/g, ',')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+// Pecah kepada ayat supaya ada jeda semula jadi (dan elak ayat panjang terpotong pada Android)
+export function splitSentences(t) {
+  const parts = t.match(/[^.!?]+[.!?]*/g) || [t];
+  return parts.map((x) => x.trim()).filter(Boolean);
+}
+
 let speakSeq = 0;
-export function speak(text, { lang, rate, interrupt = true } = {}) {
+function sayOne(text, { lang, rate, pitch, id }) {
   return new Promise((resolve) => {
-    const s = settings();
-    if (!s.voice || !text || !('speechSynthesis' in self)) return resolve();
-    try {
-      if (interrupt) speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(String(text));
-      if (lang === 'en') {
-        u.lang = 'en-GB';
-        const en = speechSynthesis.getVoices().find((v) => /^en/i.test(v.lang));
-        if (en) u.voice = en;
-      } else {
-        if (!voice) voice = pickVoice();
-        if (voice) u.voice = voice;
-        u.lang = voice ? voice.lang : 'ms-MY';
-      }
-      u.rate = rate || s.voiceRate || 0.9;
-      u.pitch = 1.15;
-      const id = ++speakSeq;
-      let done = false;
-      const fin = () => { if (!done) { done = true; resolve(); } };
-      u.onend = fin; u.onerror = fin;
-      // jaga-jaga jika onend tidak dipanggil
-      setTimeout(() => { if (id === speakSeq) fin(); else fin(); }, 600 + String(text).length * 110);
-      speechSynthesis.speak(u);
-    } catch { resolve(); }
+    if (id !== speakSeq) return resolve();
+    const u = new SpeechSynthesisUtterance(text);
+    if (lang === 'en') {
+      u.lang = 'en-GB';
+      const en = speechSynthesis.getVoices().filter((v) => /^en/i.test(v.lang)).sort((a, b) => (FEMALE.test(b.name) - FEMALE.test(a.name)))[0];
+      if (en) u.voice = en;
+    } else {
+      if (!voice) voice = pickVoice();
+      if (voice) u.voice = voice;
+      u.lang = voice ? voice.lang : 'ms-MY';
+    }
+    u.rate = rate; u.pitch = pitch; u.volume = 1;
+    let done = false;
+    const fin = () => { if (!done) { done = true; resolve(); } };
+    u.onend = fin; u.onerror = fin;
+    // jaga-jaga jika onend tidak dipanggil
+    setTimeout(fin, 700 + text.length * 120);
+    speechSynthesis.speak(u);
   });
 }
-export function stopSpeak() { try { speechSynthesis.cancel(); } catch { /* */ } }
+export function speak(text, { lang, rate, interrupt = true } = {}) {
+  const s = prefs();
+  if (!s.voice || !text || typeof speechSynthesis === 'undefined') return Promise.resolve();
+  try {
+    if (interrupt) { speechSynthesis.cancel(); speakSeq++; }
+    const id = speakSeq;
+    const st = VOICE_STYLES[s.voiceStyle] || VOICE_STYLES.lembut;
+    const r = rate || st.rate;
+    const parts = splitSentences(speechText(text));
+    return parts.reduce((p, part, i) => p.then(async () => {
+      if (id !== speakSeq) return;
+      if (i > 0) await new Promise((res) => setTimeout(res, 140)); // jeda kecil antara ayat
+      await sayOne(part, { lang, rate: r, pitch: st.pitch, id });
+    }), Promise.resolve()).catch(() => {});
+  } catch { return Promise.resolve(); }
+}
+export function stopSpeak() { try { speakSeq++; speechSynthesis.cancel(); } catch { /* */ } }
 
 // Sebut BM dan (jika dwibahasa) English
 export async function speakWord(ms, en) {

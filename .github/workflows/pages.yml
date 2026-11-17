@@ -25,6 +25,8 @@ jobs:
           node-version: 22
       - name: Sahkan kesemua 750 level
         run: node tests/generators.test.mjs
+      - name: Uji pemilihan suara
+        run: node tests/voice.test.mjs
 
   deploy:
     needs: test

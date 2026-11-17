@@ -1,5 +1,5 @@
 // Peta level untuk setiap mod (50 level, 5 peringkat)
-import { h, emo } from '../ui.js';
+import { h, emo, later } from '../ui.js';
 import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
 import { profile, isUnlocked, levelsDone, highestUnlocked, mastery, MASTERY_LABEL } from '../store.js';
@@ -22,7 +22,7 @@ export function modeScreen(modeId) {
   scr.appendChild(topbar([modeArt(m, 'sm'), m.n], '/'));
   const g = guide(m.char, done >= 50 ? `Tahniah! Kamu sudah tamatkan semua level ${m.n}!` : `Jom main ${m.n}! Level ${cur} sedang menunggu kamu.`);
   scr.appendChild(g.el);
-  setTimeout(() => g.repeat(), 300);
+  later(() => g.repeat(), 300);
   scr.appendChild(h('div', { class: 'row-wrap' },
     h('button', { class: 'btn big green', type: 'button', onclick: () => { sfx.tap(); if (demoLocked(cur)) { demoUpgrade(); return; } go(`/main/${modeId}/${Math.min(cur, 50)}`); } }, icon('play'), `Main Level ${Math.min(cur, 50)}`),
     done >= 50 ? h('button', { class: 'btn purple', type: 'button', onclick: () => go('/sijil/' + modeId) }, emo('📜'), 'Sijil') : null));

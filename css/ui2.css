@@ -484,3 +484,14 @@ html[data-theme="masjid"] .mode-card { border-bottom: 0; }
 .doa-src { font-size: 12px; color: #4f8f7b; font-weight: 700; position: relative; }
 
 .win-alh { font-size: clamp(20px, 5vw, 26px); font-weight: 800; color: #fff; opacity: .95; letter-spacing: .5px; text-shadow: 0 2px 0 rgba(0, 0, 0, .15); }
+
+/* ---------- pilihan suara (Ruang Ibu Bapa) ---------- */
+.voice-row { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 16px; border: 2px solid transparent; }
+.voice-row.on { border-color: var(--primary); background: #f0fbf6; }
+.voice-pick { flex: 1; display: flex; align-items: center; gap: 10px; text-align: left; background: none; border: 0; cursor: pointer; padding: 4px; color: var(--ink); font: inherit; min-width: 0; }
+.voice-pick b { word-break: break-word; }
+.voice-dot { width: 22px; height: 22px; border-radius: 50%; border: 3px solid #cfc3e6; flex: none; }
+.voice-row.on .voice-dot { border-color: var(--primary); background: radial-gradient(circle, var(--primary) 0 45%, #fff 50%); }
+.voice-help { margin-top: 10px; font-size: 14px; }
+.voice-help summary { cursor: pointer; font-weight: 700; color: var(--primary-d); }
+.voice-help li { margin: 6px 0; }

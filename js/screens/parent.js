@@ -6,7 +6,7 @@ import { getState, profile, settings, save, flush, levelsDone, totalLevelsDone, 
 import { MODE_LIST, MODES, ALL_SKILLS } from '../modes/index.js';
 import { AVATARS } from '../data/content.js';
 import { parentGate, parentOkRecently, lockParent, avatarEl, confirmBox } from './shared.js';
-import { speak, voiceInfo, startMusic, stopMusic, sfx } from '../audio.js';
+import { speak, voiceInfo, startMusic, stopMusic, sfx, malayVoices, refreshVoice, VOICE_STYLES, isFemaleVoice, isMaleVoice, isQualityVoice } from '../audio.js';
 
 const TABS = [['ringkasan', '📊 Ringkasan'], ['kemahiran', '🎯 Kemahiran'], ['aktiviti', '📅 Aktiviti'], ['tetapan', '⚙️ Tetapan'], ['profil', '👧 Profil']];
 
@@ -144,6 +144,39 @@ function aktivitiTab(p) {
   return wrap;
 }
 
+const SAMPLE = 'Assalamualaikum, sayang. Mari kita cari huruf A! Bagus, kamu semakin bijak.';
+
+// Pilih suara daripada suara yang dipasang pada peranti ini
+function voicePanel(s) {
+  const box = h('div', { class: 'panel' });
+  const draw = () => {
+    const list = malayVoices();
+    refreshVoice();
+    const autoV = list[0];
+    const row = (name, label, tags, val) => {
+      const on = (s.voiceName || '') === val;
+      return h('div', { class: `voice-row ${on ? 'on' : ''}` },
+        h('button', { class: 'voice-pick', type: 'button', role: 'radio', 'aria-checked': String(on), onclick: () => { s.voiceName = val; save(); refreshVoice(); draw(); speak(SAMPLE); } },
+          h('span', { class: 'voice-dot' }), h('span', {}, h('b', {}, label), h('div', { class: 'muted', style: { fontSize: '13px' } }, tags))),
+        h('button', { class: 'btn small ghost', type: 'button', 'aria-label': `Dengar ${label}`, onclick: () => { const prev = s.voiceName; s.voiceName = val; refreshVoice(); speak(SAMPLE).then(() => { s.voiceName = prev; refreshVoice(); }); } }, '▶ Dengar'));
+    };
+    box.replaceChildren(...[
+      h('h3', {}, '🎙️ Pilih suara'),
+      h('p', { class: 'muted', style: { fontSize: '14px', margin: '0 0 8px' } }, 'Senarai di bawah ialah suara Bahasa Melayu & Indonesia yang dipasang pada peranti ini. Tekan "Dengar" untuk mencuba, kemudian pilih suara yang paling lembut.'),
+      row('auto', 'Automatik (disyorkan)', autoV ? `Memilih: ${autoV.name}` : 'Tiada suara Melayu ditemui', ''),
+      ...list.map((v) => row(v.name, v.name, [v.lang, isFemaleVoice(v) ? 'wanita' : isMaleVoice(v) ? 'lelaki' : '', isQualityVoice(v) ? 'kualiti tinggi' : ''].filter(Boolean).join(' · '), v.name)),
+      list.length ? null : h('p', { class: 'muted' }, 'Tiada suara Bahasa Melayu pada peranti ini. Lihat panduan di bawah.'),
+      h('details', { class: 'voice-help' }, h('summary', {}, 'Cara mendapatkan suara yang lebih semula jadi'),
+        h('ul', {},
+          h('li', {}, h('b', {}, 'Android: '), 'Tetapan → cari "Teks ke pertuturan" (Text-to-speech) → pilih enjin Google → Pasang data suara → Bahasa Melayu. Beberapa pilihan suara tersedia, pilih suara wanita. Kemudian kembali ke sini dan tekan "Dengar".'),
+          h('li', {}, h('b', {}, 'iPhone / iPad: '), 'Tetapan → Kebolehcapaian → Kandungan Dituturkan → Suara → Bahasa Melayu → muat turun "Amira (Dipertingkat)".'),
+          h('li', {}, h('b', {}, 'Komputer: '), 'Pelayar Microsoft Edge menyediakan suara wanita semula jadi "Microsoft Yasmin Online (Natural)" (perlukan internet).')))].filter(Boolean));
+  };
+  draw();
+  if (typeof speechSynthesis !== 'undefined') speechSynthesis.addEventListener?.('voiceschanged', draw);
+  return box;
+}
+
 function toggle(label, on, onChange, sub = '') {
   const b = h('button', { class: `switch ${on ? 'on' : ''}`, type: 'button', role: 'switch', 'aria-checked': String(on), 'aria-label': label });
   b.addEventListener('click', () => { on = !on; b.classList.toggle('on', on); b.setAttribute('aria-checked', String(on)); onChange(on); });
@@ -163,8 +196,10 @@ function tetapanTab() {
     toggle('Suara arahan (Bahasa Melayu)', s.voice, (v) => { s.voice = v; save(); }, voiceInfo()),
     toggle('Ucapan Islamik', s.islamic !== false, (v) => { s.islamic = v; save(); }, 'Salam, Bismillah sebelum bermula, Alhamdulillah & Masya-Allah apabila berjaya, dan Doa Hari Ini di halaman utama.'),
     toggle('Getaran apabila menjawab', s.vibrate !== false, (v) => { s.vibrate = v; save(); }, 'Untuk telefon Android yang menyokong getaran.'),
-    h('div', { class: 'toggle-row' }, h('div', {}, 'Kelajuan suara'), sel([[0.7, 'Perlahan'], [0.9, 'Biasa'], [1.05, 'Laju']], s.voiceRate, (v) => { s.voiceRate = +v; save(); speak('Mari kita cari huruf A!'); })),
-    h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start', marginTop: '8px' } }, h('button', { class: 'btn small blue', type: 'button', onclick: () => speak('Bagus! Kamu berjaya! Hebat! Kamu semakin bijak!') }, '▶ Uji suara'), h('button', { class: 'btn small ghost', type: 'button', onclick: () => sfx.win() }, '▶ Uji bunyi'))));
+    h('div', { class: 'toggle-row' }, h('div', {}, 'Gaya suara', h('div', { class: 'muted', style: { fontSize: '13px' } }, '"Lembut keibuan" lebih perlahan dan tenang.')),
+      sel(Object.entries(VOICE_STYLES).map(([k, v]) => [k, v.n]), s.voiceStyle || 'lembut', (v) => { s.voiceStyle = v; save(); speak(SAMPLE); })),
+    h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start', marginTop: '8px' } }, h('button', { class: 'btn small blue', type: 'button', onclick: () => speak(SAMPLE) }, '▶ Uji suara'), h('button', { class: 'btn small ghost', type: 'button', onclick: () => sfx.win() }, '▶ Uji bunyi'))));
+  wrap.appendChild(voicePanel(s));
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '🌐 Bahasa'),
     h('div', { class: 'toggle-row' }, h('div', {}, 'Bahasa permainan', h('div', { class: 'muted', style: { fontSize: '13px' } }, 'Dwibahasa memaparkan dan menyebut nama objek dalam Bahasa Inggeris juga.')),
       sel([['ms', 'Bahasa Melayu'], ['dual', 'Dwibahasa (BM + English)']], s.lang, (v) => { s.lang = v; save(); toast('Disimpan', 'good', '✅'); }))));

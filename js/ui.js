@@ -123,3 +123,9 @@ export function todayKey(d = new Date()) {
   const p = (n) => String(n).padStart(2, '0');
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
 }
+
+// Jalankan fn selepas ms, hanya jika pengguna masih di skrin (hash) yang sama
+export function later(fn, ms) {
+  const here = location.hash;
+  return setTimeout(() => { if (location.hash === here) fn(); }, ms);
+}

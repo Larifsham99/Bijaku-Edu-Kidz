@@ -1,5 +1,5 @@
 // Halaman utama, pendaftaran profil pertama & pemilihan profil
-import { h, emo } from '../ui.js';
+import { h, emo, later } from '../ui.js';
 import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
 import { profile, getState, settings, addProfile, switchProfile, levelsDone, highestUnlocked, playerLevel, todayPlaySeconds } from '../store.js';
@@ -74,7 +74,7 @@ export function homeScreen() {
   const ch = CHARACTERS[new Date().getDay() % CHARACTERS.length];
   const g = guide(ch.id, greet(p.name));
   side.appendChild(g.el);
-  setTimeout(() => speak(greet(p.name)), 400);
+  later(() => speak(greet(p.name)), 400);
 
   const np = nextPlay(p);
   const dailyLeft = 5 - d.done.length;
