@@ -11,7 +11,8 @@
 //
 //  B) Rakaman suara manusia
 //     node tools/gen-voice.mjs --export-script           # audio/ms-MY/skrip-rakaman.csv
-//     node tools/gen-voice.mjs --from-recordings=DIR     # tukar DIR/<id>.(wav|m4a|mp3) -> klip aplikasi (perlu ffmpeg)
+//     node tools/gen-voice.mjs --from-recordings=DIR     # tukar DIR/<id>.(wav|m4a|mp3|webm|ogg) -> klip aplikasi (perlu ffmpeg)
+//     node tools/gen-voice.mjs --from-zip=rakaman/       # semua ZIP dari Studio Rakaman (studio/index.html) dalam folder itu
 //
 //  Sebelum menjana: node tools/voice-catalog.mjs --capture
 // =====================================================================
@@ -19,6 +20,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, unlink
 import { execFileSync, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
+import { tmpdir } from 'node:os';
 
 const DIR = 'audio/ms-MY';
 const arg = (k) => process.argv.find((a) => a.startsWith(`--${k}=`))?.split('=').slice(1).join('=');
@@ -99,12 +101,20 @@ if (has('list')) {
   const csv = ['id,ekspresi,teks', ...rows.map((r) => `${idOf(r.key)},${r.mood},"${r.text.replace(/"/g, '""')}"`)].join('\n');
   writeFileSync(`${DIR}/skrip-rakaman.csv`, '﻿' + csv);
   console.log(`Skrip rakaman: ${rows.length} ayat -> ${DIR}/skrip-rakaman.csv (simpan setiap rakaman sebagai <id>.wav / .m4a / .mp3)`);
-} else if (arg('from-recordings')) {
-  const src = arg('from-recordings');
+} else if (arg('from-recordings') || arg('from-zip')) {
+  let src = arg('from-recordings');
+  if (arg('from-zip')) {
+    // ekstrak semua ZIP (yang lebih baharu menimpa rakaman lama bagi ayat yang sama)
+    const z = arg('from-zip');
+    const zips = statSync(z).isDirectory() ? readdirSync(z).filter((f) => f.endsWith('.zip')).map((f) => join(z, f)).sort((a, b) => statSync(a).mtimeMs - statSync(b).mtimeMs) : [z];
+    src = join(tmpdir(), `dc-rakaman-${Date.now()}`);
+    mkdirSync(src, { recursive: true });
+    for (const f of zips) { execFileSync('unzip', ['-o', '-q', f, '-d', src]); console.log('  ZIP: ' + f); }
+  }
   let n = 0;
   for (const it of catalog()) {
     const id = idOf(it.key);
-    const inp = ['wav', 'm4a', 'mp3', 'ogg', 'aac'].map((e) => join(src, `${id}.${e}`)).find(existsSync);
+    const inp = ['wav', 'm4a', 'mp3', 'webm', 'ogg', 'aac'].map((e) => join(src, `${id}.${e}`)).find(existsSync);
     if (!inp) continue;
     // mono, potong senyap di awal/akhir, seimbangkan kekuatan bunyi
     execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', inp, '-ac', '1', '-ar', '24000', '-af', 'silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,loudnorm=I=-16:TP=-1.5', '-b:a', '48k', join(DIR, `${id}.mp3`)]);

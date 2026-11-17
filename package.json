@@ -14,6 +14,7 @@
     "test:voice": "node tests/voice.test.mjs",
     "voice:catalog": "node tools/voice-catalog.mjs --capture",
     "voice:generate": "node tools/gen-voice.mjs",
-    "voice:script": "node tools/gen-voice.mjs --export-script"
+    "voice:script": "node tools/gen-voice.mjs --export-script",
+    "voice:import": "node tools/gen-voice.mjs --from-zip=rakaman/"
   }
 }

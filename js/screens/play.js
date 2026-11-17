@@ -209,7 +209,7 @@ function showLevelDone({ p, mode, level, stars, rewards, totalMistakes, special 
   if (big.length) setTimeout(() => sfx.reward(), 900);
   const msg = totalMistakes === 0 ? 'Hebat! Kamu berjaya tanpa sebarang kesilapan!' : 'Bagus! Kamu berjaya! Kamu semakin bijak!';
   const alh = settings().islamic !== false;
-  speak(`${alh ? 'Alhamdulillah! ' : ''}Tahniah! Level ${level} selesai. ${msg}`, { mood: 'pujian' });
+  speak(`${alh ? 'Alhamdulillah! ' : ''}Tahniah! Satu lagi level selesai. ${msg}`, { mood: 'pujian' });
   const content = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' } },
     h('div', { class: 'win-head' },
       h('span', { class: 'emo float' }, special ? '🎁' : '🎉'),

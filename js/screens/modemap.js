@@ -20,7 +20,7 @@ export function modeScreen(modeId) {
   const done = levelsDone(p, modeId);
   const scr = h('div', { class: 'screen' });
   scr.appendChild(topbar([modeArt(m, 'sm'), m.n], '/'));
-  const g = guide(m.char, done >= 50 ? `Tahniah! Kamu sudah tamatkan semua level ${m.n}!` : `Jom main ${m.n}! Level ${cur} sedang menunggu kamu.`);
+  const g = guide(m.char, done >= 50 ? `Tahniah! Kamu sudah tamatkan semua level ${m.n}!` : `Jom main ${m.n}! Ada level baharu sedang menunggu kamu.`);
   scr.appendChild(g.el);
   later(() => g.repeat(), 300);
   scr.appendChild(h('div', { class: 'row-wrap' },
@@ -56,7 +56,7 @@ export function modeScreen(modeId) {
           L % 5 === 0 ? h('span', { class: 'gift emo' }, '🎁') : null,
           h('button', { class: cls.join(' '), type: 'button', style: `--c:${m.c}`, 'aria-label': `Level ${L}${un ? '' : ' berkunci'}`, onclick: () => {
             if (demoLock) { sfx.tap(); demoUpgrade(); return; }
-            if (!un) { sfx.bump(); speak(`Selesaikan level ${L - 1} dahulu untuk membuka level ini.`); return; }
+            if (!un) { sfx.bump(); speak('Selesaikan level sebelumnya dahulu, ya.'); return; }
             sfx.tap(); go(`/main/${modeId}/${L}`);
           } }, un ? L : icon('lock')),
           h('span', { class: 'lv-stars' }, st !== undefined ? [icon('star'), icon('star'), icon('star')] : null));

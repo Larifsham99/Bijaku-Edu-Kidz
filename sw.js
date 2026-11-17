@@ -1,5 +1,5 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-8f8f704f18';
+const VERSION = 'dunia-cilik-204ff20994';
 const ASSETS = [
   './',
   './index.html',
@@ -61,7 +61,7 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   if (req.method !== 'GET' || url.origin !== location.origin) return;
   // Halaman jualan & demo sentiasa diambil terus dari rangkaian (tidak di-cache)
-  if (url.pathname.includes('/jualan/') || url.searchParams.has('demo')) return;
+  if (url.pathname.includes('/jualan/') || url.pathname.includes('/studio/') || url.searchParams.has('demo')) return;
   // Manifest pakej suara: rangkaian dahulu (supaya pakej baharu dikesan), cache sebagai sandaran luar talian
   if (url.pathname.endsWith('/audio/ms-MY/manifest.json')) {
     e.respondWith(fetch(req).then((res) => { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); return res; }).catch(() => caches.match(req)));
