@@ -197,7 +197,7 @@ function tetapanTab() {
     toggle('Kesan bunyi', s.sound, (v) => { s.sound = v; save(); }),
     toggle('Muzik latar', s.music, (v) => { s.music = v; save(); v ? startMusic() : stopMusic(); }),
     toggle('Suara arahan (Bahasa Melayu)', s.voice, (v) => { s.voice = v; save(); }, voiceInfo()),
-    toggle('Ucapan Islamik', s.islamic !== false, (v) => { s.islamic = v; save(); }, 'Salam, Bismillah sebelum bermula, Alhamdulillah & Masya-Allah apabila berjaya, dan Doa Hari Ini di halaman utama.'),
+    toggle('Ucapan Islamik', s.islamic !== false, (v) => { s.islamic = v; save(); }, 'Salam, Bismillah sebelum bermula, Alhamdulillah apabila berjaya, dan Doa Hari Ini di halaman utama.'),
     toggle('Getaran apabila menjawab', s.vibrate !== false, (v) => { s.vibrate = v; save(); }, 'Untuk telefon Android yang menyokong getaran.'),
     h('div', { class: 'toggle-row' }, h('div', {}, 'Gaya suara', h('div', { class: 'muted', style: { fontSize: '13px' } }, '"Lembut keibuan" lebih perlahan dan tenang.')),
       sel(Object.entries(VOICE_STYLES).map(([k, v]) => [k, v.n]), s.voiceStyle || 'lembut', (v) => { s.voiceStyle = v; save(); speak(SAMPLE); })),

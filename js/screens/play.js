@@ -26,7 +26,7 @@ export const currentSession = () => active;
 const pickOf = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const islamic = () => settings().islamic !== false;
 // Pujian & galakan: campuran ucapan biasa dan ucapan Islamik (jika dihidupkan)
-const praiseText = () => (islamic() && Math.random() < 0.45 ? pickOf(ISLAMIC_PRAISE) : pickOf(PRAISE));
+const praiseText = () => (islamic() && Math.random() < 0.2 ? pickOf(ISLAMIC_PRAISE) : pickOf(PRAISE));
 const encourageText = () => (islamic() && Math.random() < 0.35 ? pickOf(ISLAMIC_ENCOURAGE) : pickOf(ENCOURAGE));
 
 // Animasi bintang terbang dari tengah pentas ke kaunter bintang

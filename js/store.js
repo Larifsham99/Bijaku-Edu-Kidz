@@ -54,7 +54,7 @@ export function defaultSettings() {
     sound: true, music: false, voice: true, voiceRate: 0.9, vibrate: true,
     voiceStyle: 'lembut', // gaya suara: lembut (keibuan) / biasa / ceria
     voiceName: '', // kosong = pilih suara wanita terbaik secara automatik
-    islamic: true, // ucapan Islamik: Bismillah, Alhamdulillah, Masya-Allah, Insya-Allah
+    islamic: true, // ucapan Islamik: Bismillah, Alhamdulillah, Insya-Allah
     lang: 'ms', // 'ms' atau 'dual' (BM + English)
     timeLimit: 0, // minit sehari, 0 = tiada had
     disabledModes: [],
