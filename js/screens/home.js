@@ -8,15 +8,16 @@ import { AVATARS, CHARACTERS, DOA } from '../data/content.js';
 import { icon } from '../icons.js';
 import { avatarEl, statPills, guide, parentGate } from './shared.js';
 import { dailySet } from './daily.js';
-import { speak, sfx } from '../audio.js';
+import { speak, sfx, voicePack } from '../audio.js';
 import { limitSeconds } from './timeout.js';
 import { DEMO, DEMO_MAX, SALES_URL } from '../demo.js';
 
 const greet = (name) => {
   const hr = new Date().getHours();
   const t = hr < 12 ? 'Selamat pagi' : hr < 15 ? 'Selamat tengah hari' : hr < 19 ? 'Selamat petang' : 'Selamat malam';
-  if (settings().islamic !== false) return `Assalamualaikum, ${name}! ${t}. Jom belajar sambil bermain!`;
-  return `${t}, ${name}! Jom belajar sambil bermain!`;
+  const nm = name ? `, ${name}` : '';
+  if (settings().islamic !== false) return `Assalamualaikum${nm}! ${t}. Jom belajar sambil bermain!`;
+  return `${t}${nm}! Jom belajar sambil bermain!`;
 };
 
 // Logo: wau kecil + "Dunia" (cili) "Cilik" (pandan)
@@ -30,7 +31,7 @@ function doaCard() {
   const list = DOA.filter((d) => !d.dupOf);
   const day = Math.floor(Date.now() / 86400000);
   const d = list[day % list.length];
-  return h('button', { class: 'doa-card', type: 'button', 'aria-label': `Doa hari ini: ${d.sit}`, onclick: () => { sfx.tap(); speak(`Doa ${d.sit.toLowerCase()}. Maksudnya: ${d.makna}.`); } },
+  return h('button', { class: 'doa-card', type: 'button', 'aria-label': `Doa hari ini: ${d.sit}`, onclick: () => { sfx.tap(); speak(`Doa ${d.sit.toLowerCase()}. Maksudnya, ${d.makna}.`, { mood: 'tenang' }); } },
     h('div', { class: 'doa-top' }, h('span', { class: 'emo' }, '🤲'), h('b', {}, 'Doa Hari Ini'), h('span', { class: 'doa-sit' }, d.sit)),
     h('div', { class: 'doa-ar', dir: 'rtl', lang: 'ar' }, d.ar),
     h('div', { class: 'doa-rumi' }, d.rumi),
@@ -80,7 +81,7 @@ export function homeScreen() {
   const ch = CHARACTERS[new Date().getDay() % CHARACTERS.length];
   const g = guide(ch.id, greet(p.name));
   side.appendChild(g.el);
-  later(() => speak(greet(p.name)), 400);
+  later(() => speak(voicePack() && settings().voiceEngine !== 'peranti' ? greet('') : greet(p.name)), 400);
 
   const np = nextPlay(p);
   const dailyLeft = 5 - d.done.length;

@@ -2,7 +2,7 @@
 //  DUNIA CILIK — titik mula aplikasi & penghala (router)
 // =====================================================================
 import { initStore, profile, getState, settings, flush } from './store.js';
-import { unlockAudio, startMusic } from './audio.js';
+import { unlockAudio, startMusic, loadVoicePack, speak } from './audio.js';
 import { clear } from './ui.js';
 import { homeScreen, onboardingScreen, profilesScreen } from './screens/home.js';
 import { modeScreen } from './screens/modemap.js';
@@ -63,6 +63,7 @@ function route() {
 
 async function boot() {
   await initStore();
+  loadVoicePack(); // pakej suara neural (jika dipasang)
   addEventListener('hashchange', route);
   // buka kunci audio pada sentuhan pertama
   const first = () => {
@@ -85,7 +86,7 @@ async function boot() {
     }).catch(() => { /* luar talian tidak tersedia */ });
   }
   addEventListener('beforeunload', flush);
-  window.__dc = { go, getState, MODES, session: currentSession };
+  window.__dc = { go, getState, MODES, session: currentSession, speak };
   // Pengawal ralat: jika berlaku ralat tidak dijangka semasa bermain, anak tidak tersekat
   let guardOpen = false;
   const onCrash = () => {

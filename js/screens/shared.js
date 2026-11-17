@@ -32,17 +32,17 @@ export function guide(charId, text = '', { speakNow = false } = {}) {
   const sub = h('small', {});
   const charBtn = h('button', { class: 'char', type: 'button', 'aria-label': ch.n }, ch.e);
   const el = h('div', { class: 'guide' }, charBtn, h('div', { class: 'bubble' }, bubbleText, sub));
-  let last = text;
-  charBtn.addEventListener('click', () => { if (last) speak(last); });
-  const say = (t, s = '', { voice = true } = {}) => {
-    last = t;
+  let last = text, lastMood = 'arahan';
+  charBtn.addEventListener('click', () => { if (last) speak(last, { mood: lastMood }); });
+  const say = (t, s = '', { voice = true, mood = 'arahan' } = {}) => {
+    last = t; lastMood = mood;
     bubbleText.textContent = t;
     sub.textContent = s;
     el.querySelector('.bubble').animate([{ transform: 'scale(.96)' }, { transform: 'scale(1)' }], { duration: 200 });
-    if (voice) speak(t);
+    if (voice) speak(t, { mood });
   };
   if (speakNow && text) speak(text);
-  return { el, say, repeat: () => last && speak(last) };
+  return { el, say, repeat: () => last && speak(last, { mood: lastMood }) };
 }
 
 export function statPills(p) {

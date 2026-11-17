@@ -92,7 +92,7 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
       sfx.wrong();
       const msg = encourageText();
       toast(msg, 'try', '🤗');
-      g.say(msg, '', { voice: true });
+      g.say(msg, '', { voice: true, mood: 'galakan' });
       return mistakes;
     },
     finish() {
@@ -113,7 +113,7 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
       sfx.correct();
       const praise = praiseText();
       toast(praise, 'good', '⭐');
-      speak(praise);
+      speak(praise, { mood: 'pujian' });
       confetti(12, ['⭐', '✨', '🌟']);
       save();
       sleep(1500).then(() => { if (!stopped) next(); });
@@ -130,8 +130,10 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     roundStart = Date.now();
     const sub = idx === rounds.length - 1 && rounds.length > 1 ? 'Pusingan terakhir!' : `Pusingan ${idx + 1} / ${rounds.length}`;
     // Mulakan dengan Bismillah
-    if (idx === 0 && islamic()) { toast('Bismillah', 'good', '🤲'); g.say(`Bismillah. ${r.say}`, sub); }
-    else g.say(r.say, sub);
+    // doa & kandungan agama dibaca dengan nada tenang
+    const mood = String(r.skill || '').startsWith('soleh.') ? 'tenang' : 'arahan';
+    if (idx === 0 && islamic()) { toast('Bismillah', 'good', '🤲'); g.say(`Bismillah. ${r.say}`, sub, { mood }); }
+    else g.say(r.say, sub, { mood });
     const fn = ENGINES[r.type];
     try {
       engine = fn(stage, r, api) || {};
@@ -207,7 +209,7 @@ function showLevelDone({ p, mode, level, stars, rewards, totalMistakes, special 
   if (big.length) setTimeout(() => sfx.reward(), 900);
   const msg = totalMistakes === 0 ? 'Hebat! Kamu berjaya tanpa sebarang kesilapan!' : 'Bagus! Kamu berjaya! Kamu semakin bijak!';
   const alh = settings().islamic !== false;
-  speak(`${alh ? 'Alhamdulillah! ' : ''}Tahniah! Level ${level} selesai. ${msg}`);
+  speak(`${alh ? 'Alhamdulillah! ' : ''}Tahniah! Level ${level} selesai. ${msg}`, { mood: 'pujian' });
   const content = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' } },
     h('div', { class: 'win-head' },
       h('span', { class: 'emo float' }, special ? '🎁' : '🎉'),
@@ -248,7 +250,7 @@ export function dailyPlayScreen(i) {
       save();
       if (all) {
         sfx.reward(); confetti(50);
-        speak(`${settings().islamic !== false ? 'Alhamdulillah! ' : 'Hebat! '}Semua cabaran hari ini selesai! Ini hadiah khas untuk kamu!`);
+        speak(`${settings().islamic !== false ? 'Alhamdulillah! ' : 'Hebat! '}Semua cabaran hari ini selesai! Ini hadiah khas untuk kamu!`, { mood: 'pujian' });
         const m = modal(h('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' } },
           h('div', { class: 'emo float', style: { fontSize: '80px' } }, '🏅'),
           h('h2', {}, 'Cabaran Harian Selesai!'),

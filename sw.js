@@ -1,5 +1,5 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-0e6c013ad7';
+const VERSION = 'dunia-cilik-8f8f704f18';
 const ASSETS = [
   './',
   './index.html',
@@ -23,6 +23,7 @@ const ASSETS = [
   './js/engines/puzzle.js',
   './js/icons.js',
   './js/main.js',
+  './js/malay-text.js',
   './js/modes/helpers.js',
   './js/modes/index.js',
   './js/modes/modesA.js',
@@ -61,6 +62,13 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET' || url.origin !== location.origin) return;
   // Halaman jualan & demo sentiasa diambil terus dari rangkaian (tidak di-cache)
   if (url.pathname.includes('/jualan/') || url.searchParams.has('demo')) return;
+  // Manifest pakej suara: rangkaian dahulu (supaya pakej baharu dikesan), cache sebagai sandaran luar talian
+  if (url.pathname.endsWith('/audio/ms-MY/manifest.json')) {
+    e.respondWith(fetch(req).then((res) => { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); return res; }).catch(() => caches.match(req)));
+    return;
+  }
+  // Katalog hanya untuk alat pembangunan
+  if (url.pathname.endsWith('/audio/ms-MY/catalog.json')) return;
   e.respondWith(
     caches.match(req, { ignoreSearch: true }).then((hit) => hit || fetch(req).then((res) => {
       if (res.ok) { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); }

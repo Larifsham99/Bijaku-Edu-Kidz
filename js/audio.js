@@ -6,6 +6,7 @@
 //  - Muzik latar ringan
 // =====================================================================
 import { settings } from './store.js';
+import { normalizeMalay, splitSentences, clipKey } from './malay-text.js';
 
 let ctx = null;
 let master = null;
@@ -82,33 +83,97 @@ export function voiceInfo() {
   return voice ? `${voice.name} (${voice.lang})` : 'Suara lalai peranti (pasang suara Bahasa Melayu/Indonesia untuk sebutan terbaik)';
 }
 
-// Gaya suara: pic & kelajuan. "Lembut keibuan" ialah lalai.
+// ---------------- KAWALAN SUARA ----------------
+// Kelajuan, nada & tahap ekspresi boleh diubah secara berasingan oleh ibu bapa.
+export const VOICE_RATES = { perlahan: { n: 'Perlahan', v: 0.8 }, sederhana: { n: 'Sederhana', v: 0.88 }, biasa: { n: 'Biasa', v: 0.95 }, laju: { n: 'Laju', v: 1.05 } };
+export const VOICE_PITCHES = { rendah: { n: 'Rendah', v: 0.92 }, sederhana: { n: 'Sederhana', v: 1.0 }, tinggi: { n: 'Tinggi', v: 1.1 } };
+export const VOICE_EXPR = { tenang: { n: 'Tenang', k: 0.4 }, sederhana: { n: 'Sederhana', k: 1 }, ceria: { n: 'Ceria', k: 1.6 } };
+// Gaya lama (dikekalkan untuk keserasian tetapan lama)
 export const VOICE_STYLES = {
   lembut: { n: 'Lembut keibuan', pitch: 1.0, rate: 0.86 },
   biasa: { n: 'Biasa', pitch: 1.05, rate: 0.93 },
   ceria: { n: 'Ceria', pitch: 1.15, rate: 0.98 },
 };
-
-// Teks lebih semula jadi untuk dibaca: buang emoji/simbol, sesuaikan ejaan untuk sebutan
-export function speechText(t) {
-  return String(t)
-    .replace(/Masya-Allah/g, 'Masya Allah').replace(/Insya-Allah/g, 'Insya Allah')
-    .replace(/[\u{1F000}-\u{1FAFF}\u{2300}-\u{23FF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}\u{20E3}]/gu, '')
-    .replace(/\b([A-Z])([A-Z]{2,})\b/g, (m, a, b) => a + b.toLowerCase())
-    .replace(/[·•➜→]/g, ',')
-    .replace(/\s+/g, ' ')
-    .trim();
+// Ekspresi mengikut konteks: perubahan relatif kelajuan & nada
+export const MOODS = {
+  arahan: { rate: 0, pitch: 0 }, // lembut ketika memberi penerangan
+  pujian: { rate: 0.05, pitch: 0.08 }, // ceria apabila berjaya
+  galakan: { rate: -0.03, pitch: 0.03 }, // lembut & memujuk
+  tenang: { rate: -0.07, pitch: -0.03 }, // doa & kandungan agama
+};
+function voiceParams(mood = 'arahan') {
+  const s = prefs();
+  const legacy = VOICE_STYLES[s.voiceStyle] || VOICE_STYLES.lembut;
+  const rate = VOICE_RATES[s.voiceRateLvl]?.v ?? legacy.rate;
+  const pitch = VOICE_PITCHES[s.voicePitchLvl]?.v ?? legacy.pitch;
+  const k = VOICE_EXPR[s.voiceExpr]?.k ?? 1;
+  const m = MOODS[mood] || MOODS.arahan;
+  return { rate: Math.max(0.6, rate + m.rate * k), pitch: Math.max(0.6, pitch + m.pitch * k), base: rate };
 }
-// Pecah kepada ayat supaya ada jeda semula jadi (dan elak ayat panjang terpotong pada Android)
-export function splitSentences(t) {
-  const parts = t.match(/[^.!?]+[.!?]*/g) || [t];
-  return parts.map((x) => x.trim()).filter(Boolean);
+
+export { splitSentences } from './malay-text.js';
+// Teks lebih semula jadi untuk dibaca (nombor, tarikh, simbol, singkatan -> bacaan BM)
+export function speechText(t) { return normalizeMalay(t); }
+
+// ---------------- PAKEJ SUARA NEURAL / RAKAMAN ----------------
+// Jika audio/ms-MY/manifest.json wujud, setiap ayat yang ada rakaman dimainkan
+// daripada fail audio; ayat lain jatuh balik ke suara peranti.
+let pack = null;
+const clipCache = new Map();
+export async function loadVoicePack(base = 'audio/ms-MY/') {
+  try {
+    const r = await fetch(base + 'manifest.json', { cache: 'no-cache' });
+    if (!r.ok) return null;
+    const m = await r.json();
+    if (!m || !m.clips || !Object.keys(m.clips).length) return null;
+    pack = { base, voice: m.voice, clips: m.clips, count: Object.keys(m.clips).length };
+    return pack;
+  } catch { return null; }
+}
+export const voicePack = () => pack;
+const usePack = () => pack && prefs().voiceEngine !== 'peranti';
+async function clipUrl(file) {
+  if (clipCache.has(file)) return clipCache.get(file);
+  const res = await fetch(pack.base + file); // fetch penuh (bukan julat) supaya boleh di-cache untuk luar talian
+  if (!res.ok) throw new Error('klip tiada');
+  const url = URL.createObjectURL(await res.blob());
+  clipCache.set(file, url);
+  if (clipCache.size > 80) { const [k, u] = clipCache.entries().next().value; URL.revokeObjectURL(u); clipCache.delete(k); }
+  return url;
+}
+let currentAudio = null;
+function playClip(file, { rate, id }) {
+  return new Promise((resolve) => {
+    if (id !== speakSeq) return resolve();
+    clipUrl(file).then((url) => {
+      if (id !== speakSeq) return resolve();
+      const a = new Audio(url);
+      currentAudio = a;
+      a.preservesPitch = true; a.mozPreservesPitch = true; a.webkitPreservesPitch = true;
+      a.playbackRate = Math.min(1.25, Math.max(0.75, rate));
+      let done = false;
+      const fin = () => { if (!done) { done = true; resolve(); } };
+      a.onended = fin; a.onerror = fin;
+      a.play().catch(fin);
+    }).catch(() => resolve(false));
+  });
+}
+// Muat turun semua klip supaya boleh digunakan tanpa internet
+export async function downloadVoicePack(onProgress) {
+  if (!pack) return 0;
+  const files = [...new Set(Object.values(pack.clips))];
+  let n = 0;
+  for (let i = 0; i < files.length; i += 6) {
+    await Promise.all(files.slice(i, i + 6).map((f) => fetch(pack.base + f).then(() => { n++; }).catch(() => {})));
+    onProgress && onProgress(n, files.length);
+  }
+  return n;
 }
 
 let speakSeq = 0;
 function sayOne(text, { lang, rate, pitch, id }) {
   return new Promise((resolve) => {
-    if (id !== speakSeq) return resolve();
+    if (id !== speakSeq || typeof speechSynthesis === 'undefined') return resolve();
     const u = new SpeechSynthesisUtterance(text);
     if (lang === 'en') {
       u.lang = 'en-GB';
@@ -128,23 +193,35 @@ function sayOne(text, { lang, rate, pitch, id }) {
     speechSynthesis.speak(u);
   });
 }
-export function speak(text, { lang, rate, interrupt = true } = {}) {
+// mood: 'arahan' | 'pujian' | 'galakan' | 'tenang'
+export function speak(text, { lang, rate, interrupt = true, mood = 'arahan' } = {}) {
   const s = prefs();
-  if (!s.voice || !text || typeof speechSynthesis === 'undefined') return Promise.resolve();
+  if (!s.voice || !text) return Promise.resolve();
   try {
-    if (interrupt) { speechSynthesis.cancel(); speakSeq++; }
+    if (interrupt) stopSpeak();
     const id = speakSeq;
-    const st = VOICE_STYLES[s.voiceStyle] || VOICE_STYLES.lembut;
-    const r = rate || st.rate;
-    const parts = splitSentences(speechText(text));
+    const vp = voiceParams(mood);
+    const r = rate || vp.rate;
+    const parts = lang === 'en' ? [String(text)] : splitSentences(normalizeMalay(text));
+    if (globalThis.__dcCapture && lang !== 'en') parts.forEach((p) => globalThis.__dcCapture.push({ text: p, mood }));
     return parts.reduce((p, part, i) => p.then(async () => {
       if (id !== speakSeq) return;
-      if (i > 0) await new Promise((res) => setTimeout(res, 140)); // jeda kecil antara ayat
-      await sayOne(part, { lang, rate: r, pitch: st.pitch, id });
+      if (i > 0) await new Promise((res) => setTimeout(res, 160)); // jeda semula jadi antara ayat
+      const file = lang !== 'en' && usePack() ? pack.clips[clipKey(part)] : null;
+      if (file) {
+        // klip neural sudah mengandungi ekspresi; hanya kelajuan pilihan ibu bapa digunakan
+        const ok = await playClip(file, { rate: vp.base / 0.88, id });
+        if (ok !== false) return;
+      }
+      if (typeof speechSynthesis !== 'undefined') await sayOne(part, { lang, rate: r, pitch: vp.pitch, id });
     }), Promise.resolve()).catch(() => {});
   } catch { return Promise.resolve(); }
 }
-export function stopSpeak() { try { speakSeq++; speechSynthesis.cancel(); } catch { /* */ } }
+export function stopSpeak() {
+  speakSeq++;
+  try { if (currentAudio) { currentAudio.pause(); currentAudio = null; } } catch { /* */ }
+  try { speechSynthesis.cancel(); } catch { /* */ }
+}
 
 // Sebut BM dan (jika dwibahasa) English
 export async function speakWord(ms, en) {

@@ -1,3 +1,5 @@
 node_modules/
 tests/out-*.png
 .DS_Store
+tests/out-capture.json
+audio/samples/

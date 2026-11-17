@@ -45,7 +45,7 @@ export function shopScreen(tab = 'avatar') {
     if (it.kind === 'avatar') p.avatar = it.id;
     else if (it.kind === 'theme') { p.theme = it.id; applyTheme(it.id); }
     else p.wear[it.slot] = it.id;
-    save(); sfx.pop(); speak(it.kind === 'theme' ? `Tema ${it.n}!` : 'Cantiknya!'); go('/kedai/' + tab);
+    save(); sfx.pop(); speak(it.kind === 'theme' ? `Tema ${it.n}!` : 'Cantiknya!', { mood: 'pujian' }); go('/kedai/' + tab);
   }
   function buy(it) {
     p.coins -= it.cost;

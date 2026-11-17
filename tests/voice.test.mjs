@@ -24,5 +24,31 @@ ok(speechText('Insya-Allah boleh 🤲') === 'Insya Allah boleh', 'Insya-Allah di
 const parts = splitSentences('Bismillah. Mari kita cari huruf A! Boleh?');
 ok(parts.length === 3 && parts[0] === 'Bismillah.' && parts[2] === 'Boleh?', 'ayat dipecah untuk jeda semula jadi');
 ok(splitSentences('Cari huruf A').length === 1, 'ayat tanpa tanda baca kekal satu');
+// Penormal teks Bahasa Melayu
+const { normalizeMalay: N, nombor } = await import('../js/malay-text.js');
+const eq = (inp, out) => ok(N(inp) === out, `"${inp}" → "${N(inp)}"${N(inp) === out ? '' : `  (dijangka: "${out}")`}`);
+ok(nombor(0) === 'kosong' && nombor(11) === 'sebelas' && nombor(19) === 'sembilan belas' && nombor(21) === 'dua puluh satu', 'nombor asas');
+ok(nombor(100) === 'seratus' && nombor(150) === 'seratus lima puluh' && nombor(1000) === 'seribu' && nombor(2026) === 'dua ribu dua puluh enam', 'ratus & ribu (seratus, seribu)');
+ok(nombor(1000000) === 'satu juta' && nombor(250000) === 'dua ratus lima puluh ribu', 'juta & ratus ribu');
+eq('Level 25 selesai.', 'Level dua puluh lima selesai.');
+eq('Pusingan 1 / 3', 'Pusingan satu daripada tiga');
+eq('Harga RM39 sahaja', 'Harga tiga puluh sembilan ringgit sahaja');
+eq('RM 12.50', 'dua belas ringgit lima puluh sen');
+eq('Diskaun 50%', 'Diskaun lima puluh peratus');
+eq('Tarikh 17/11/2026', 'Tarikh tujuh belas November dua ribu dua puluh enam');
+eq('Pukul 8:30 pagi', 'Pukul lapan tiga puluh pagi');
+eq('Kelas mula 8.30 pagi', 'Kelas mula pukul lapan tiga puluh pagi');
+eq('Jumpa 9:00', 'Jumpa pukul sembilan');
+eq('Ini kali ke-2', 'Ini kali kedua');
+eq('Juara ke-1', 'Juara pertama');
+eq('3 + 2 = 5', 'tiga tambah dua sama dengan lima');
+eq('Buah, sayur dll.', 'Buah, sayur dan lain-lain');
+eq('Main Puzzle Pintar', 'Main Pazel Pintar');
+eq('Tekan SEMUA huruf', 'Tekan Semua huruf');
+eq('Berat 1.5 kg', 'Berat satu perpuluhan lima kilogram');
+eq('Jarak 3km', 'Jarak tiga kilometer');
+eq('Hebat! ⭐🎉', 'Hebat!');
+eq('Jom main ABC Ceria!', 'Jom main A, B, C Ceria!');
+
 console.log(fails ? `\n✗ ${fails} kegagalan` : '\n✓ Ujian suara lulus');
 process.exit(fails ? 1 : 0);

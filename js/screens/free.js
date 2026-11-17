@@ -43,7 +43,7 @@ function freeApi(g, onFinish) {
     say: (t) => g.say(t),
     good() { sfx.pick(); },
     bad() { sfx.bump(); },
-    finish() { sfx.win(); confetti(20); toast('Hebat!', 'good', '🌟'); speak('Hebat!'); onFinish && setTimeout(onFinish, 1300); },
+    finish() { sfx.win(); confetti(20); toast('Hebat!', 'good', '🌟'); speak('Hebat!', { mood: 'pujian' }); onFinish && setTimeout(onFinish, 1300); },
   };
 }
 

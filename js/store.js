@@ -52,7 +52,9 @@ function idbSet(key, val) {
 export function defaultSettings() {
   return {
     sound: true, music: false, voice: true, voiceRate: 0.9, vibrate: true,
-    voiceStyle: 'lembut', // gaya suara: lembut (keibuan) / biasa / ceria
+    voiceStyle: 'lembut', // (lama) gaya suara
+    voiceRateLvl: 'sederhana', voicePitchLvl: 'sederhana', voiceExpr: 'sederhana', // kawalan suara
+    voiceEngine: 'auto', // 'auto' = suara neural jika pakej dipasang, 'peranti' = suara telefon
     voiceName: '', // kosong = pilih suara wanita terbaik secara automatik
     islamic: true, // ucapan Islamik: Bismillah, Alhamdulillah, Insya-Allah
     lang: 'ms', // 'ms' atau 'dual' (BM + English)

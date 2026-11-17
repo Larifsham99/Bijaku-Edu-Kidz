@@ -10,6 +10,9 @@ const BASE = `http://localhost:${PORT}/index.html`;
 const errors = [];
 const browser = await chromium.launch();
 const all = process.argv.includes('--all');
+// --capture=fail.json : rekod setiap ayat yang disebut (untuk katalog suara)
+const captureFile = process.argv.find((a) => a.startsWith('--capture='))?.slice(10);
+const captured = [];
 
 async function newPage(width = 412, height = 900, ctx = null) {
   ctx = ctx || await browser.newContext({ viewport: { width, height }, hasTouch: true });
@@ -17,6 +20,10 @@ async function newPage(width = 412, height = 900, ctx = null) {
   page.on('pageerror', (e) => errors.push('pageerror: ' + e.stack + ' @ ' + page.url()));
   page.on('console', (m) => { if (m.type() === 'error') errors.push('console: ' + m.text()); });
   await page.addInitScript(() => { globalThis.__dcTimeScale = 0.03; });
+  if (captureFile) {
+    await page.exposeFunction('__dcCapSend', (x) => { captured.push(x); });
+    await page.addInitScript(() => { globalThis.__dcCapture = { push: (x) => window.__dcCapSend(x) }; });
+  }
   return page;
 }
 
@@ -154,6 +161,12 @@ try {
 } finally {
   await browser.close();
   server.kill();
+}
+if (captureFile) {
+  const { writeFileSync } = await import('node:fs');
+  const uniq = [...new Map(captured.map((c) => [c.text + '|' + c.mood, c])).values()];
+  writeFileSync(captureFile, JSON.stringify(uniq));
+  console.log(`Tangkapan suara: ${uniq.length} ayat unik -> ${captureFile}`);
 }
 const real = errors.filter((e) => !/favicon|speech|AudioContext/i.test(e));
 real.slice(0, 20).forEach((e) => console.error('  ', e));

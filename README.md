@@ -57,6 +57,24 @@ Tiada langkah binaan diperlukan. Aplikasi ini hanya menggunakan HTML, CSS dan Ja
 * **Ralat tidak dijangka** semasa bermain memaparkan mesej "Teruskan" supaya anak tidak tersekat.
 * Ujian kemas kini (`npm run test:upgrade`) memasang versi pertama, bermain, menerbitkan versi terkini pada alamat yang sama (meniru cache GitHub Pages), dan mengesahkan kemajuan kekal, kemas kini automatik berfungsi, dan aplikasi boleh dimainkan tanpa internet.
 
+## Suara neural Bahasa Melayu (pakej suara)
+
+Aplikasi boleh memainkan **fail audio suara neural** (atau rakaman suara manusia) untuk setiap ayat. Dengan cara ini suara kekal sama pada semua peranti dan berfungsi tanpa internet. Ayat yang tiada klip, contohnya yang mengandungi nama anak, dibaca oleh suara peranti.
+
+1. **Katalog ayat:** `npm run voice:catalog`. Arahan ini memainkan kesemua 750 level dan merekod setiap ayat yang disebut. Hasilnya `audio/ms-MY/catalog.json` (±2,450 ayat, ±65,000 aksara).
+2. **Jana suara neural (Google Cloud Text-to-Speech):**
+   ```bash
+   export GOOGLE_TTS_API_KEY=...                # atau rahsia rangkaian untuk texttospeech.googleapis.com
+   node tools/gen-voice.mjs --list              # senarai suara ms-MY
+   node tools/gen-voice.mjs --sample            # sampel setiap suara wanita -> audio/samples/
+   node tools/gen-voice.mjs --voice=NAMA_SUARA  # jana semua klip + audio/ms-MY/manifest.json
+   ```
+   Setiap ayat dijana dengan ekspresi mengikut konteks: arahan lembut, pujian ceria, galakan memujuk, dan doa serta kandungan agama tenang. Penjanaan bersifat tokokan, jadi hanya ayat baharu dijana apabila kandungan berubah. Gunakan `--prune` untuk membuang klip lama.
+3. **Atau rakam suara manusia:** `npm run voice:script` menghasilkan `audio/ms-MY/skrip-rakaman.csv` (id, ekspresi, teks). Simpan setiap rakaman sebagai `<id>.wav`/`.m4a`/`.mp3`, kemudian jalankan `node tools/gen-voice.mjs --from-recordings=FOLDER` (memerlukan ffmpeg). Senyap dipotong dan kekuatan bunyi diseimbangkan secara automatik.
+4. Commit `audio/ms-MY/*.mp3` dan `manifest.json`. Aliran kerja menerbitkannya bersama aplikasi.
+
+Teks dinormalkan sebelum dibaca (`js/malay-text.js`): nombor, tarikh, masa, RM, peratus, pecahan, ordinal, unit, singkatan dan simbol ditukar kepada bacaan Bahasa Melayu. Ibu bapa boleh mengawal kelajuan, nada dan tahap ekspresi, serta memilih antara suara neural dan suara peranti, di Ruang Ibu Bapa → Tetapan.
+
 ## Struktur kod
 
 ```
