@@ -111,7 +111,10 @@ export function choice(stage, r, api) {
   async function pick(id, b) {
     if (locked || found.has(id)) return;
     const opt = r.options.find((o) => o.id === id);
-    if (opt?.say && r.sayOnTap) api.speak(opt.say);
+    // nama ringkas akan disebut semula sebagai sebahagian maklum balas;
+    // label panjang (cth. rukun Islam) dibaca terus apabila ditekan
+    const echo = opt?.say && String(opt.say).length <= 24 ? opt.say : null;
+    if (opt?.say && r.sayOnTap && !echo) api.speak(opt.say);
     if (answers.has(id)) {
       found.add(id);
       b.classList.add('right');
@@ -119,12 +122,12 @@ export function choice(stage, r, api) {
         locked = true;
         btns.forEach((x, k) => { if (!answers.has(k)) x.classList.add('dim'); });
         if (r.reveal) await r.reveal(stage);
-        api.finish();
-      } else api.good(b, { quiet: true });
+        api.finish({ echo });
+      } else api.good(b, { quiet: true, echo });
     } else {
       shakeEl(b);
       wrongs++;
-      api.bad(b);
+      api.bad(b, { echo, hint: wrongs === 2 });
       if (wrongs >= 2) [...answers].filter((a) => !found.has(a)).slice(0, 1).forEach((a) => hintEl(btns.get(a)));
     }
   }

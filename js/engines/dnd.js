@@ -68,10 +68,11 @@ export function match(stage, r, api) {
       row._slot.appendChild(h('span', {}, face(r.pairs.find((p) => p.id === t.dataset.id).src, { label: false })));
       t.classList.add('placed');
       left--;
-      if (left === 0) api.finish(); else api.good(row._slot, { quiet: true });
+      const say = r.pairs.find((p) => p.id === t.dataset.id).src.say;
+      if (left === 0) api.finish({ echo: say }); else api.good(row._slot, { quiet: true });
     } else {
       bounce(t); wrong++;
-      api.bad(t);
+      api.bad(t, { echo: r.pairs.find((p) => p.id === t.dataset.id).src.say });
       if (wrong >= 2) hintEl(rows.get(t.dataset.id)?._slot);
     }
   }
@@ -122,11 +123,11 @@ export function sort(stage, r, api) {
       z._items.appendChild(h('span', {}, face(it, { label: false })));
       z.classList.add('filled'); setTimeout(() => z.classList.remove('filled'), 300);
       left--;
-      if (left === 0) api.finish(); else api.good(z, { quiet: true });
+      if (left === 0) api.finish({ echo: it.say || it.lbl }); else api.good(z, { quiet: true });
     } else {
       bounce(t);
       const m = (misses.get(t) || 0) + 1; misses.set(t, m);
-      api.bad(t);
+      api.bad(t, { echo: it.say || it.lbl });
       if (m >= 2) hintEl(zones.get(it.bin));
     }
   }
@@ -152,6 +153,7 @@ export function slots(stage, r, api) {
   const tiles = r.tiles.map((tv) => {
     const t = tile(tv.face, api, 'seq-card');
     t._v = tv.v;
+    t._say = tv.face.say;
     draggable(t, {
       getZones: () => sl.filter((z) => !z.dataset.done),
       onStart: () => api.sfx.pick(),
@@ -182,7 +184,7 @@ export function slots(stage, r, api) {
       if (sl.every((x) => x.dataset.done)) api.finish(); else api.good(z, { quiet: true });
     } else {
       bounce(t); wrong++;
-      api.bad(t);
+      api.bad(t, { echo: t._say });
       if (wrong >= 2) {
         const first = sl.find((x) => !x.dataset.done);
         const right = tiles.find((x) => !x.classList.contains('placed') && x._v === first?._s.v);

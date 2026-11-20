@@ -1,13 +1,13 @@
 {
  "lang": "ms-MY",
- "count": 1842,
+ "count": 1846,
  "items": [
   {
    "key": "bismillah.",
    "text": "Bismillah.",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 3022
+   "freq": 3027
   },
   {
    "key": "dengar baik-baik, ya.",
@@ -26,170 +26,170 @@
   {
    "key": "lima",
    "text": "lima",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 105
+   "freq": 107
   },
   {
    "key": "empat",
    "text": "empat",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 100
+   "freq": 101
   },
   {
    "key": "enam",
    "text": "enam",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 88
+   "freq": 90
   },
   {
    "key": "kucing",
    "text": "Kucing",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 88
+   "freq": 89
   },
   {
    "key": "segi empat sama",
    "text": "Segi empat sama",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 85
+   "freq": 86
   },
   {
    "key": "anjing",
    "text": "Anjing",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 83
+   "freq": 84
   },
   {
    "key": "gajah",
    "text": "Gajah",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 83
+   "freq": 84
   },
   {
    "key": "tujuh",
    "text": "tujuh",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 83
+   "freq": 84
   },
   {
    "key": "itik",
    "text": "Itik",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 81
+   "freq": 82
   },
   {
    "key": "bulatan",
    "text": "Bulatan",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 80
+   "freq": 81
   },
   {
    "key": "tiga",
    "text": "tiga",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 80
+   "freq": 81
   },
   {
    "key": "burung",
    "text": "Burung",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 79
+   "freq": 80
   },
   {
    "key": "segi tiga",
    "text": "Segi tiga",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 79
+   "freq": 80
   },
   {
    "key": "lebah",
    "text": "Lebah",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 76
+   "freq": 77
   },
   {
    "key": "lembu",
    "text": "Lembu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 75
+   "freq": 76
   },
   {
    "key": "hati",
    "text": "Hati",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 71
+   "freq": 72
   },
   {
    "key": "kuda",
    "text": "Kuda",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 70
+   "freq": 71
   },
   {
    "key": "bintang",
    "text": "Bintang",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 68
+   "freq": 69
   },
   {
    "key": "biri-biri",
    "text": "Biri-biri",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 68
+   "freq": 69
   },
   {
    "key": "dua",
    "text": "dua",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 68
+   "freq": 69
   },
   {
    "key": "singa",
    "text": "Singa",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 68
+   "freq": 69
   },
   {
    "key": "berlian",
    "text": "Berlian",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 66
+   "freq": 67
   },
   {
    "key": "burung hantu",
    "text": "Burung hantu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 66
+   "freq": 67
   },
   {
    "key": "sepuluh",
    "text": "sepuluh",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 66
+   "freq": 67
   },
   {
    "key": "tengok betul-betul.",
@@ -201,97 +201,111 @@
   {
    "key": "bujur",
    "text": "Bujur",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 62
+   "freq": 63
   },
   {
    "key": "lapan",
    "text": "lapan",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 62
+   "freq": 63
   },
   {
    "key": "satu",
    "text": "satu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 61
+   "freq": 62
   },
   {
    "key": "kambing",
    "text": "Kambing",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 58
+   "freq": 59
   },
   {
    "key": "katak",
    "text": "Katak",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 58
+   "freq": 59
   },
   {
    "key": "sembilan",
    "text": "sembilan",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 55
+   "freq": 56
   },
   {
    "key": "gurita",
    "text": "Gurita",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 54
+   "freq": 55
   },
   {
    "key": "segi empat tepat",
    "text": "Segi empat tepat",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 54
+   "freq": 55
   },
   {
    "key": "bulan sabit",
    "text": "Bulan sabit",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 53
+   "freq": 54
   },
   {
    "key": "burung helang",
    "text": "Burung helang",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 53
+   "freq": 54
+  },
+  {
+   "key": "rama-rama",
+   "text": "Rama-rama",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 54
   },
   {
    "key": "monyet",
    "text": "Monyet",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 52
+   "freq": 53
   },
   {
    "key": "huruf i",
    "text": "Huruf I",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 52
+  },
+  {
+   "key": "huruf e",
+   "text": "Huruf E",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 51
+  },
+  {
+   "key": "ikan",
+   "text": "Ikan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 51
   },
   {
    "key": "kira sama-sama, ya.",
    "text": "Kira sama-sama, ya.",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 51
-  },
-  {
-   "key": "rama-rama",
-   "text": "Rama-rama",
    "mood": "arahan",
    "group": "teras",
    "freq": 51
@@ -304,9 +318,16 @@
    "freq": 50
   },
   {
-   "key": "ikan",
-   "text": "Ikan",
-   "mood": "arahan",
+   "key": "huruf a",
+   "text": "Huruf A",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 50
+  },
+  {
+   "key": "huruf k",
+   "text": "Huruf K",
+   "mood": "pujian",
    "group": "teras",
    "freq": 50
   },
@@ -318,25 +339,11 @@
    "freq": 50
   },
   {
-   "key": "huruf k",
-   "text": "Huruf K",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 49
-  },
-  {
    "key": "ayam",
    "text": "Ayam",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 48
-  },
-  {
-   "key": "huruf e",
-   "text": "Huruf E",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 48
+   "freq": 49
   },
   {
    "key": "ingat semua gambar ini.",
@@ -360,13 +367,6 @@
    "freq": 48
   },
   {
-   "key": "huruf a",
-   "text": "Huruf A",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 47
-  },
-  {
    "key": "ingat di mana gambar-gambar ini, ya.",
    "text": "Ingat di mana gambar-gambar ini, ya.",
    "mood": "arahan",
@@ -383,16 +383,16 @@
   {
    "key": "ikan paus",
    "text": "Ikan paus",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 45
+   "freq": 46
   },
   {
    "key": "panda",
    "text": "Panda",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 45
+   "freq": 46
   },
   {
    "key": "tekan satu-satu sambil kira, ya.",
@@ -404,14 +404,35 @@
   {
    "key": "kapal terbang",
    "text": "Kapal terbang",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 44
+  },
+  {
+   "key": "huruf h",
+   "text": "Huruf H",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 43
+  },
+  {
+   "key": "oren",
+   "text": "Oren",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 42
   },
   {
    "key": "tekan gambar untuk dengar.",
    "text": "Tekan gambar untuk dengar.",
    "mood": "tenang",
+   "group": "teras",
+   "freq": 42
+  },
+  {
+   "key": "tikus",
+   "text": "Tikus",
+   "mood": "pujian",
    "group": "teras",
    "freq": 42
   },
@@ -423,51 +444,58 @@
    "freq": 41
   },
   {
-   "key": "oren",
-   "text": "Oren",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 41
-  },
-  {
-   "key": "tikus",
-   "text": "Tikus",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 41
-  },
-  {
-   "key": "huruf h",
-   "text": "Huruf H",
-   "mood": "arahan",
+   "key": "huruf g",
+   "text": "Huruf G",
+   "mood": "pujian",
    "group": "teras",
    "freq": 40
   },
   {
    "key": "pisang",
    "text": "Pisang",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 39
+   "freq": 40
   },
   {
    "key": "zebra",
    "text": "Zebra",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 40
+  },
+  {
+   "key": "huruf c",
+   "text": "Huruf C",
+   "mood": "pujian",
    "group": "teras",
    "freq": 39
   },
   {
    "key": "huruf m",
    "text": "Huruf M",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 39
+  },
+  {
+   "key": "huruf t",
+   "text": "Huruf T",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 38
+  },
+  {
+   "key": "ikan lumba-lumba",
+   "text": "Ikan lumba-lumba",
+   "mood": "pujian",
    "group": "teras",
    "freq": 38
   },
   {
    "key": "kereta bomba",
    "text": "Kereta bomba",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 38
   },
@@ -502,42 +530,49 @@
   {
    "key": "hon kereta",
    "text": "Hon kereta",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 37
   },
   {
-   "key": "huruf g",
-   "text": "Huruf G",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 37
-  },
-  {
-   "key": "ikan lumba-lumba",
-   "text": "Ikan lumba-lumba",
-   "mood": "arahan",
+   "key": "ikan yu",
+   "text": "Ikan yu",
+   "mood": "pujian",
    "group": "teras",
    "freq": 37
   },
   {
    "key": "kereta polis",
    "text": "Kereta polis",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 37
   },
   {
-   "key": "huruf c",
-   "text": "Huruf C",
-   "mood": "arahan",
+   "key": "zirafah",
+   "text": "Zirafah",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 37
+  },
+  {
+   "key": "huruf d",
+   "text": "Huruf D",
+   "mood": "pujian",
    "group": "teras",
    "freq": 36
   },
   {
-   "key": "ikan yu",
-   "text": "Ikan yu",
-   "mood": "arahan",
+   "key": "huruf l.",
+   "text": "Huruf L.",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 36
+  },
+  {
+   "key": "huruf n",
+   "text": "Huruf N",
+   "mood": "pujian",
    "group": "teras",
    "freq": 36
   },
@@ -549,6 +584,13 @@
    "freq": 36
   },
   {
+   "key": "ketam",
+   "text": "Ketam",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 36
+  },
+  {
    "key": "lepas ini, apa pula yang datang?",
    "text": "Lepas ini, apa pula yang datang?",
    "mood": "arahan",
@@ -556,23 +598,23 @@
    "freq": 36
   },
   {
-   "key": "zirafah",
-   "text": "Zirafah",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 36
-  },
-  {
    "key": "helikopter",
    "text": "Helikopter",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 35
   },
   {
-   "key": "huruf t",
-   "text": "Huruf T",
-   "mood": "arahan",
+   "key": "huruf o",
+   "text": "Huruf O",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 35
+  },
+  {
+   "key": "huruf u.",
+   "text": "Huruf U.",
+   "mood": "pujian",
    "group": "teras",
    "freq": 35
   },
@@ -584,79 +626,58 @@
    "freq": 35
   },
   {
-   "key": "ketam",
-   "text": "Ketam",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 35
-  },
-  {
    "key": "hon kapal",
    "text": "Hon kapal",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 34
   },
   {
-   "key": "huruf o",
-   "text": "Huruf O",
-   "mood": "arahan",
+   "key": "huruf f",
+   "text": "Huruf F",
+   "mood": "pujian",
    "group": "teras",
    "freq": 34
   },
   {
    "key": "malam",
    "text": "Malam",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 34
   },
   {
    "key": "motosikal",
    "text": "Motosikal",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 34
   },
   {
    "key": "petang",
    "text": "Petang",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 34
   },
   {
-   "key": "huruf d",
-   "text": "Huruf D",
-   "mood": "arahan",
+   "key": "pic",
+   "text": "Pic",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 33
+   "freq": 34
   },
   {
-   "key": "huruf l",
-   "text": "Huruf L",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 33
-  },
-  {
-   "key": "huruf n",
-   "text": "Huruf N",
-   "mood": "arahan",
+   "key": "hijau",
+   "text": "Hijau",
+   "mood": "pujian",
    "group": "teras",
    "freq": 33
   },
   {
    "key": "kereta api",
    "text": "Kereta api",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 33
-  },
-  {
-   "key": "pic",
-   "text": "Pic",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 33
   },
@@ -670,7 +691,7 @@
   {
    "key": "tengah hari",
    "text": "Tengah hari",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 33
   },
@@ -682,23 +703,37 @@
    "freq": 33
   },
   {
+   "key": "udang",
+   "text": "Udang",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 33
+  },
+  {
    "key": "ambulans",
    "text": "Ambulans",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 32
   },
   {
-   "key": "hijau",
-   "text": "Hijau",
-   "mood": "arahan",
+   "key": "arnab",
+   "text": "Arnab",
+   "mood": "pujian",
    "group": "teras",
    "freq": 32
   },
   {
-   "key": "huruf u",
-   "text": "Huruf U",
-   "mood": "arahan",
+   "key": "ayam jantan",
+   "text": "Ayam jantan",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 32
+  },
+  {
+   "key": "kelawar",
+   "text": "Kelawar",
+   "mood": "pujian",
    "group": "teras",
    "freq": 32
   },
@@ -710,51 +745,37 @@
    "freq": 32
   },
   {
-   "key": "udang",
-   "text": "Udang",
-   "mood": "arahan",
+   "key": "unta",
+   "text": "Unta",
+   "mood": "pujian",
    "group": "teras",
    "freq": 32
   },
   {
-   "key": "arnab",
-   "text": "Arnab",
-   "mood": "arahan",
+   "key": "huruf q",
+   "text": "Huruf Q",
+   "mood": "pujian",
    "group": "teras",
    "freq": 31
   },
   {
-   "key": "ayam jantan",
-   "text": "Ayam jantan",
-   "mood": "arahan",
+   "key": "huruf s",
+   "text": "Huruf S",
+   "mood": "pujian",
    "group": "teras",
    "freq": 31
   },
   {
-   "key": "huruf f",
-   "text": "Huruf F",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 31
-  },
-  {
-   "key": "kelawar",
-   "text": "Kelawar",
-   "mood": "arahan",
+   "key": "kura-kura",
+   "text": "Kura-kura",
+   "mood": "pujian",
    "group": "teras",
    "freq": 31
   },
   {
    "key": "pagi",
    "text": "Pagi",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 31
-  },
-  {
-   "key": "unta",
-   "text": "Unta",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 31
   },
@@ -773,16 +794,30 @@
    "freq": 30
   },
   {
-   "key": "huruf q",
-   "text": "Huruf Q",
-   "mood": "arahan",
+   "key": "harimau",
+   "text": "Harimau",
+   "mood": "pujian",
    "group": "teras",
    "freq": 30
   },
   {
-   "key": "huruf s",
-   "text": "Huruf S",
-   "mood": "arahan",
+   "key": "huruf p",
+   "text": "Huruf P",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 30
+  },
+  {
+   "key": "huruf x",
+   "text": "Huruf X",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 30
+  },
+  {
+   "key": "huruf z",
+   "text": "Huruf Z",
+   "mood": "pujian",
    "group": "teras",
    "freq": 30
   },
@@ -794,9 +829,9 @@
    "freq": 30
   },
   {
-   "key": "kura-kura",
-   "text": "Kura-kura",
-   "mood": "arahan",
+   "key": "lemon",
+   "text": "Lemon",
+   "mood": "pujian",
    "group": "teras",
    "freq": 30
   },
@@ -815,23 +850,23 @@
    "freq": 29
   },
   {
-   "key": "harimau",
-   "text": "Harimau",
+   "key": "epal",
+   "text": "Epal",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 29
+  },
+  {
+   "key": "huruf b",
+   "text": "Huruf B",
    "mood": "arahan",
    "group": "teras",
    "freq": 29
   },
   {
-   "key": "huruf p",
-   "text": "Huruf P",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 29
-  },
-  {
-   "key": "huruf x",
-   "text": "Huruf X",
-   "mood": "arahan",
+   "key": "huruf y",
+   "text": "Huruf Y",
+   "mood": "pujian",
    "group": "teras",
    "freq": 29
   },
@@ -845,13 +880,6 @@
   {
    "key": "kelaskan haiwan mengikut tempat tinggal.",
    "text": "Kelaskan haiwan mengikut tempat tinggal.",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 29
-  },
-  {
-   "key": "lemon",
-   "text": "Lemon",
    "mood": "arahan",
    "group": "teras",
    "freq": 29
@@ -878,16 +906,37 @@
    "freq": 29
   },
   {
-   "key": "epal",
-   "text": "Epal",
-   "mood": "arahan",
+   "key": "biru",
+   "text": "Biru",
+   "mood": "pujian",
    "group": "teras",
    "freq": 28
   },
   {
    "key": "gigi",
    "text": "Gigi",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 28
+  },
+  {
+   "key": "huruf j",
+   "text": "Huruf J",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 28
+  },
+  {
+   "key": "huruf v",
+   "text": "Huruf V",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 28
+  },
+  {
+   "key": "kiwi",
+   "text": "Kiwi",
+   "mood": "pujian",
    "group": "teras",
    "freq": 28
   },
@@ -906,29 +955,8 @@
    "freq": 28
   },
   {
-   "key": "biru",
-   "text": "Biru",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 27
-  },
-  {
    "key": "eh, ada huruf yang hilang!",
    "text": "Eh, ada huruf yang hilang!",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 27
-  },
-  {
-   "key": "huruf v",
-   "text": "Huruf V",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 27
-  },
-  {
-   "key": "huruf z",
-   "text": "Huruf Z",
    "mood": "arahan",
    "group": "teras",
    "freq": 27
@@ -941,16 +969,16 @@
    "freq": 27
   },
   {
-   "key": "kiwi",
-   "text": "Kiwi",
-   "mood": "arahan",
+   "key": "loceng basikal",
+   "text": "Loceng basikal",
+   "mood": "pujian",
    "group": "teras",
    "freq": 27
   },
   {
-   "key": "loceng basikal",
-   "text": "Loceng basikal",
-   "mood": "arahan",
+   "key": "sotong",
+   "text": "Sotong",
+   "mood": "pujian",
    "group": "teras",
    "freq": 27
   },
@@ -962,22 +990,15 @@
    "freq": 27
   },
   {
+   "key": "tembikai",
+   "text": "Tembikai",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 27
+  },
+  {
    "key": "ada sembilan keping.",
    "text": "Ada sembilan keping.",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 26
-  },
-  {
-   "key": "huruf b",
-   "text": "Huruf B",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 26
-  },
-  {
-   "key": "huruf y",
-   "text": "Huruf Y",
    "mood": "arahan",
    "group": "teras",
    "freq": 26
@@ -997,6 +1018,13 @@
    "freq": 26
   },
   {
+   "key": "penguin",
+   "text": "Penguin",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 26
+  },
+  {
    "key": "pilih semua yang sesuai.",
    "text": "Pilih semua yang sesuai.",
    "mood": "arahan",
@@ -1004,22 +1032,8 @@
    "freq": 26
   },
   {
-   "key": "sotong",
-   "text": "Sotong",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 26
-  },
-  {
    "key": "susun dari yang paling kecil, sampai yang paling besar.",
    "text": "Susun dari yang paling kecil, sampai yang paling besar.",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 26
-  },
-  {
-   "key": "tembikai",
-   "text": "Tembikai",
    "mood": "arahan",
    "group": "teras",
    "freq": 26
@@ -1041,14 +1055,7 @@
   {
    "key": "hidung",
    "text": "Hidung",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 25
-  },
-  {
-   "key": "huruf j",
-   "text": "Huruf J",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 25
   },
@@ -1062,44 +1069,37 @@
   {
    "key": "mata",
    "text": "Mata",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 25
-  },
-  {
-   "key": "penguin",
-   "text": "Penguin",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
    "freq": 25
   },
   {
    "key": "merah",
    "text": "Merah",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 23
+   "freq": 24
   },
   {
    "key": "ungu",
    "text": "Ungu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 22
+   "freq": 23
   },
   {
    "key": "sebelas",
    "text": "sebelas",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 21
+   "freq": 22
   },
   {
    "key": "dua belas",
    "text": "dua belas",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 18
+   "freq": 19
   },
   {
    "key": "tahniah!",
@@ -1111,23 +1111,23 @@
   {
    "key": "merah jambu",
    "text": "Merah jambu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 15
+   "freq": 16
   },
   {
    "key": "empat belas",
    "text": "empat belas",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 12
+   "freq": 13
   },
   {
    "key": "coklat",
    "text": "Coklat",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "teras",
-   "freq": 11
+   "freq": 12
   },
   {
    "key": "kuning",
@@ -1137,18 +1137,18 @@
    "freq": 11
   },
   {
+   "key": "lima belas",
+   "text": "lima belas",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 11
+  },
+  {
    "key": "tiga belas",
    "text": "tiga belas",
    "mood": "arahan",
    "group": "teras",
    "freq": 11
-  },
-  {
-   "key": "lima belas",
-   "text": "lima belas",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 10
   },
   {
    "key": "jom belajar sambil bermain!",
@@ -1165,11 +1165,25 @@
    "freq": 7
   },
   {
+   "key": "bagus!",
+   "text": "Bagus!",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 6
+  },
+  {
    "key": "lapan belas",
    "text": "lapan belas",
    "mood": "arahan",
    "group": "teras",
    "freq": 6
+  },
+  {
+   "key": "assalamualaikum!",
+   "text": "Assalamualaikum!",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 5
   },
   {
    "key": "dua puluh",
@@ -1200,9 +1214,9 @@
    "freq": 5
   },
   {
-   "key": "assalamualaikum!",
-   "text": "Assalamualaikum!",
-   "mood": "arahan",
+   "key": "alhamdulillah",
+   "text": "Alhamdulillah",
+   "mood": "pujian",
    "group": "teras",
    "freq": 4
   },
@@ -1214,23 +1228,72 @@
    "freq": 4
   },
   {
-   "key": "bagus!",
-   "text": "Bagus!",
-   "mood": "pujian",
-   "group": "teras",
-   "freq": 3
-  },
-  {
    "key": "kamu semakin bijak!",
    "text": "Kamu semakin bijak!",
    "mood": "pujian",
    "group": "teras",
-   "freq": 3
+   "freq": 4
   },
   {
    "key": "terbaik!",
    "text": "Terbaik!",
    "mood": "pujian",
+   "group": "teras",
+   "freq": 4
+  },
+  {
+   "key": "jom sambung.",
+   "text": "Jom sambung.",
+   "mood": "tenang",
+   "group": "teras",
+   "freq": 3
+  },
+  {
+   "key": "okey, jom seterusnya.",
+   "text": "Okey, jom seterusnya.",
+   "mood": "tenang",
+   "group": "teras",
+   "freq": 3
+  },
+  {
+   "key": "satu lagi, ini yang terakhir!",
+   "text": "Satu lagi, ini yang terakhir!",
+   "mood": "tenang",
+   "group": "teras",
+   "freq": 3
+  },
+  {
+   "key": "sekarang, yang ini pula.",
+   "text": "Sekarang, yang ini pula.",
+   "mood": "tenang",
+   "group": "teras",
+   "freq": 3
+  },
+  {
+   "key": "selamat pagi.",
+   "text": "Selamat pagi.",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 3
+  },
+  {
+   "key": "seterusnya, ya.",
+   "text": "Seterusnya, ya.",
+   "mood": "tenang",
+   "group": "teras",
+   "freq": 3
+  },
+  {
+   "key": "tinggal satu lagi!",
+   "text": "Tinggal satu lagi!",
+   "mood": "tenang",
+   "group": "teras",
+   "freq": 3
+  },
+  {
+   "key": "yang terakhir, jom!",
+   "text": "Yang terakhir, jom!",
+   "mood": "tenang",
    "group": "teras",
    "freq": 3
   },
@@ -1244,13 +1307,6 @@
   {
    "key": "alhamdulillah, terbaik!",
    "text": "Alhamdulillah, terbaik!",
-   "mood": "pujian",
-   "group": "teras",
-   "freq": 2
-  },
-  {
-   "key": "alhamdulillah!",
-   "text": "Alhamdulillah!",
    "mood": "pujian",
    "group": "teras",
    "freq": 2
@@ -1305,6 +1361,13 @@
    "freq": 2
   },
   {
+   "key": "hebatnya, semua betul!",
+   "text": "Hebatnya, semua betul!",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 2
+  },
+  {
    "key": "hitam",
    "text": "Hitam",
    "mood": "arahan",
@@ -1319,15 +1382,22 @@
    "freq": 2
   },
   {
-   "key": "kamu berjaya tanpa sebarang kesilapan!",
-   "text": "Kamu berjaya tanpa sebarang kesilapan!",
-   "mood": "pujian",
+   "key": "kamu boleh!",
+   "text": "Kamu boleh!",
+   "mood": "galakan",
    "group": "teras",
    "freq": 2
   },
   {
    "key": "mantap!",
    "text": "Mantap!",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 2
+  },
+  {
+   "key": "pandai sungguh.",
+   "text": "Pandai sungguh.",
    "mood": "pujian",
    "group": "teras",
    "freq": 2
@@ -1354,9 +1424,9 @@
    "freq": 2
   },
   {
-   "key": "satu lagi level selesai.",
-   "text": "Satu lagi level selesai.",
-   "mood": "pujian",
+   "key": "selamat malam.",
+   "text": "Selamat malam.",
+   "mood": "arahan",
    "group": "teras",
    "freq": 2
   },
@@ -1364,6 +1434,20 @@
    "key": "selamat petang.",
    "text": "Selamat petang.",
    "mood": "arahan",
+   "group": "teras",
+   "freq": 2
+  },
+  {
+   "key": "selamat tengah hari.",
+   "text": "Selamat tengah hari.",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 2
+  },
+  {
+   "key": "semua betul!",
+   "text": "Semua betul!",
+   "mood": "pujian",
    "group": "teras",
    "freq": 2
   },
@@ -1398,6 +1482,13 @@
   {
    "key": "wah, pandainya!",
    "text": "Wah, pandainya!",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 2
+  },
+  {
+   "key": "wah, semua betul!",
+   "text": "Wah, semua betul!",
    "mood": "pujian",
    "group": "teras",
    "freq": 2
@@ -1438,6 +1529,13 @@
    "freq": 1
   },
   {
+   "key": "bukan yang itu.",
+   "text": "Bukan yang itu.",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
    "key": "cantiknya!",
    "text": "Cantiknya!",
    "mood": "pujian",
@@ -1448,6 +1546,55 @@
    "key": "cari bayang",
    "text": "Cari Bayang",
    "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "cuba lagi, ya.",
+   "text": "Cuba lagi, ya.",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "cuba pilih satu, ya.",
+   "text": "Cuba pilih satu, ya.",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "cuba sekali lagi.",
+   "text": "Cuba sekali lagi.",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "cuba tekan satu.",
+   "text": "Cuba tekan satu.",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "cuba tengok yang ini.",
+   "text": "Cuba tengok yang ini.",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "cuba yang lain pula, ya.",
+   "text": "Cuba yang lain pula, ya.",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "dah siap!",
+   "text": "Dah siap!",
+   "mood": "pujian",
    "group": "teras",
    "freq": 1
   },
@@ -1468,6 +1615,13 @@
   {
    "key": "hampir betul!",
    "text": "Hampir betul!",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "hmm, bukan yang itu.",
+   "text": "Hmm, bukan yang itu.",
    "mood": "galakan",
    "group": "teras",
    "freq": 1
@@ -1606,6 +1760,20 @@
    "freq": 1
   },
   {
+   "key": "jom, cuba dulu.",
+   "text": "Jom, cuba dulu.",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "kamu berjaya tanpa sebarang kesilapan!",
+   "text": "Kamu berjaya tanpa sebarang kesilapan!",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 1
+  },
+  {
    "key": "kamu berjaya!",
    "text": "Kamu berjaya!",
    "mood": "pujian",
@@ -1613,15 +1781,8 @@
    "freq": 1
   },
   {
-   "key": "kamu boleh!",
-   "text": "Kamu boleh!",
-   "mood": "galakan",
-   "group": "teras",
-   "freq": 1
-  },
-  {
-   "key": "kamu semakin bijak.",
-   "text": "Kamu semakin bijak.",
+   "key": "kamu makin pandai!",
+   "text": "Kamu makin pandai!",
    "mood": "pujian",
    "group": "teras",
    "freq": 1
@@ -1655,9 +1816,23 @@
    "freq": 1
   },
   {
+   "key": "pandainya kamu.",
+   "text": "Pandainya kamu.",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 1
+  },
+  {
    "key": "pazel pintar",
    "text": "Pazel Pintar",
    "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "psst, cuba yang bersinar itu.",
+   "text": "Psst, cuba yang bersinar itu.",
+   "mood": "galakan",
    "group": "teras",
    "freq": 1
   },
@@ -1669,51 +1844,16 @@
    "freq": 1
   },
   {
-   "key": "selamat malam!",
-   "text": "Selamat malam!",
-   "mood": "arahan",
+   "key": "salah pun tak apa.",
+   "text": "Salah pun tak apa.",
+   "mood": "galakan",
    "group": "teras",
    "freq": 1
   },
   {
-   "key": "selamat malam.",
-   "text": "Selamat malam.",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 1
-  },
-  {
-   "key": "selamat pagi!",
-   "text": "Selamat pagi!",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 1
-  },
-  {
-   "key": "selamat pagi.",
-   "text": "Selamat pagi.",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 1
-  },
-  {
-   "key": "selamat petang!",
-   "text": "Selamat petang!",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 1
-  },
-  {
-   "key": "selamat tengah hari!",
-   "text": "Selamat tengah hari!",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 1
-  },
-  {
-   "key": "selamat tengah hari.",
-   "text": "Selamat tengah hari.",
-   "mood": "arahan",
+   "key": "satu lagi level selesai.",
+   "text": "Satu lagi level selesai.",
+   "mood": "pujian",
    "group": "teras",
    "freq": 1
   },
@@ -1735,6 +1875,34 @@
    "key": "si cilik soleh",
    "text": "Si Cilik Soleh",
    "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "syabas, dah habis satu level!",
+   "text": "Syabas, dah habis satu level!",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "tahniah, level ini selesai.",
+   "text": "Tahniah, level ini selesai.",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "tak apa, ambil masa.",
+   "text": "Tak apa, ambil masa.",
+   "mood": "galakan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "tak apa, cuba lagi.",
+   "text": "Tak apa, cuba lagi.",
+   "mood": "galakan",
    "group": "teras",
    "freq": 1
   },
@@ -1776,7 +1944,7 @@
   {
    "key": "jam",
    "text": "Jam",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 24
   },
@@ -1790,23 +1958,37 @@
   {
    "key": "kaki",
    "text": "Kaki",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 24
   },
   {
    "key": "lengan",
    "text": "Lengan",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 24
+  },
+  {
+   "key": "pear",
+   "text": "Pear",
+   "mood": "pujian",
    "group": "awal",
    "freq": 24
   },
   {
    "key": "tangan",
    "text": "Tangan",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 24
+  },
+  {
+   "key": "anggur",
+   "text": "Anggur",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 23
   },
   {
    "key": "bilakah kita membacanya?",
@@ -1823,30 +2005,30 @@
    "freq": 23
   },
   {
-   "key": "pear",
-   "text": "Pear",
-   "mood": "arahan",
+   "key": "nanas",
+   "text": "Nanas",
+   "mood": "pujian",
    "group": "awal",
    "freq": 23
   },
   {
-   "key": "anggur",
-   "text": "Anggur",
-   "mood": "arahan",
+   "key": "kelapa",
+   "text": "Kelapa",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 22
+  },
+  {
+   "key": "mangga",
+   "text": "Mangga",
+   "mood": "pujian",
    "group": "awal",
    "freq": 22
   },
   {
    "key": "mulut",
    "text": "Mulut",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 22
-  },
-  {
-   "key": "nanas",
-   "text": "Nanas",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 22
   },
@@ -1858,30 +2040,23 @@
    "freq": 22
   },
   {
-   "key": "kelapa",
-   "text": "Kelapa",
-   "mood": "arahan",
+   "key": "gosok gigi.",
+   "text": "Gosok gigi.",
+   "mood": "pujian",
    "group": "awal",
    "freq": 21
   },
   {
    "key": "kereta",
    "text": "Kereta",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 21
   },
   {
    "key": "lidah",
    "text": "Lidah",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 21
-  },
-  {
-   "key": "mangga",
-   "text": "Mangga",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 21
   },
@@ -1889,6 +2064,13 @@
    "key": "mengucap dua kalimah syahadah",
    "text": "Mengucap dua kalimah syahadah",
    "mood": "tenang",
+   "group": "awal",
+   "freq": 21
+  },
+  {
+   "key": "strawberi",
+   "text": "Strawberi",
+   "mood": "pujian",
    "group": "awal",
    "freq": 21
   },
@@ -1902,14 +2084,14 @@
   {
    "key": "ombak",
    "text": "Ombak",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 20
   },
   {
-   "key": "strawberi",
-   "text": "Strawberi",
-   "mood": "arahan",
+   "key": "otak",
+   "text": "Otak",
+   "mood": "pujian",
    "group": "awal",
    "freq": 20
   },
@@ -1924,13 +2106,6 @@
    "key": "beriman kepada kitab-kitab",
    "text": "Beriman kepada kitab-kitab",
    "mood": "tenang",
-   "group": "awal",
-   "freq": 19
-  },
-  {
-   "key": "otak",
-   "text": "Otak",
-   "mood": "arahan",
    "group": "awal",
    "freq": 19
   },
@@ -1963,6 +2138,13 @@
    "freq": 17
   },
   {
+   "key": "lobak merah",
+   "text": "Lobak merah",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 17
+  },
+  {
    "key": "membasuh kedua-dua tangan hingga siku",
    "text": "Membasuh kedua-dua tangan hingga siku",
    "mood": "tenang",
@@ -1986,7 +2168,7 @@
   {
    "key": "telinga",
    "text": "Telinga",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 17
   },
@@ -2012,13 +2194,6 @@
    "freq": 16
   },
   {
-   "key": "gosok gigi",
-   "text": "Gosok gigi",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 16
-  },
-  {
    "key": "jangan langgar batu, ya.",
    "text": "Jangan langgar batu, ya.",
    "mood": "arahan",
@@ -2026,23 +2201,23 @@
    "freq": 16
   },
   {
-   "key": "lobak merah",
-   "text": "Lobak merah",
-   "mood": "arahan",
+   "key": "ceri",
+   "text": "Ceri",
+   "mood": "pujian",
    "group": "awal",
-   "freq": 16
+   "freq": 15
   },
   {
-   "key": "buluh",
-   "text": "Buluh",
-   "mood": "arahan",
+   "key": "anak anjing",
+   "text": "Anak anjing",
+   "mood": "pujian",
    "group": "awal",
    "freq": 14
   },
   {
-   "key": "ceri",
-   "text": "Ceri",
-   "mood": "arahan",
+   "key": "buluh",
+   "text": "Buluh",
+   "mood": "pujian",
    "group": "awal",
    "freq": 14
   },
@@ -2050,6 +2225,13 @@
    "key": "cuaca sejuk.",
    "text": "Cuaca sejuk.",
    "mood": "arahan",
+   "group": "awal",
+   "freq": 14
+  },
+  {
+   "key": "cuci tangan",
+   "text": "Cuci tangan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 14
   },
@@ -2091,7 +2273,14 @@
   {
    "key": "madu",
    "text": "Madu",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 14
+  },
+  {
+   "key": "ro",
+   "text": "Ro",
+   "mood": "pujian",
    "group": "awal",
    "freq": 14
   },
@@ -2103,9 +2292,30 @@
    "freq": 14
   },
   {
-   "key": "anak anjing",
-   "text": "Anak anjing",
-   "mood": "arahan",
+   "key": "anak biri-biri",
+   "text": "Anak biri-biri",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 13
+  },
+  {
+   "key": "anak panda",
+   "text": "Anak panda",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 13
+  },
+  {
+   "key": "huruf q kecil",
+   "text": "Huruf Q kecil",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 13
+  },
+  {
+   "key": "jim",
+   "text": "Jim",
+   "mood": "pujian",
    "group": "awal",
    "freq": 13
   },
@@ -2124,16 +2334,9 @@
    "freq": 13
   },
   {
-   "key": "ro",
-   "text": "Ro",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 13
-  },
-  {
    "key": "rumput",
    "text": "Rumput",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 13
   },
@@ -2145,23 +2348,16 @@
    "freq": 12
   },
   {
-   "key": "anak biri-biri",
-   "text": "Anak biri-biri",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 12
-  },
-  {
-   "key": "anak panda",
-   "text": "Anak panda",
-   "mood": "arahan",
+   "key": "ba",
+   "text": "Ba",
+   "mood": "pujian",
    "group": "awal",
    "freq": 12
   },
   {
    "key": "bas",
    "text": "Bas",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 12
   },
@@ -2173,9 +2369,16 @@
    "freq": 12
   },
   {
+   "key": "bot laju",
+   "text": "Bot laju",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 12
+  },
+  {
    "key": "bunga",
    "text": "Bunga",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 12
   },
@@ -2189,21 +2392,14 @@
   {
    "key": "daging",
    "text": "Daging",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 12
   },
   {
-   "key": "huruf q kecil",
-   "text": "Huruf Q kecil",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 12
-  },
-  {
-   "key": "jim",
-   "text": "Jim",
-   "mood": "tenang",
+   "key": "huruf m kecil",
+   "text": "Huruf M kecil",
+   "mood": "pujian",
    "group": "awal",
    "freq": 12
   },
@@ -2231,41 +2427,27 @@
   {
    "key": "lori",
    "text": "Lori",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 12
+  },
+  {
+   "key": "tsa",
+   "text": "Tsa",
+   "mood": "pujian",
    "group": "awal",
    "freq": 12
   },
   {
    "key": "tulang",
    "text": "Tulang",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 12
   },
   {
-   "key": "ba",
-   "text": "Ba",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 11
-  },
-  {
-   "key": "bot laju",
-   "text": "Bot laju",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 11
-  },
-  {
    "key": "hari panas di pantai.",
    "text": "Hari panas di pantai.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 11
-  },
-  {
-   "key": "huruf m kecil",
-   "text": "Huruf M kecil",
    "mood": "arahan",
    "group": "awal",
    "freq": 11
@@ -2315,7 +2497,7 @@
   {
    "key": "keju",
    "text": "Keju",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 11
   },
@@ -2343,7 +2525,7 @@
   {
    "key": "semut",
    "text": "Semut",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 11
   },
@@ -2362,11 +2544,25 @@
    "freq": 11
   },
   {
-   "key": "tsa",
-   "text": "Tsa",
-   "mood": "tenang",
+   "key": "ain",
+   "text": "Ain",
+   "mood": "pujian",
    "group": "awal",
-   "freq": 11
+   "freq": 10
+  },
+  {
+   "key": "baju",
+   "text": "Baju",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 10
+  },
+  {
+   "key": "bulan",
+   "text": "Bulan",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 10
   },
   {
    "key": "cari huruf yang sama!",
@@ -2379,6 +2575,34 @@
    "key": "hari hujan.",
    "text": "Hari hujan.",
    "mood": "arahan",
+   "group": "awal",
+   "freq": 10
+  },
+  {
+   "key": "huruf a kecil",
+   "text": "Huruf A kecil",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 10
+  },
+  {
+   "key": "huruf d kecil",
+   "text": "Huruf D kecil",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 10
+  },
+  {
+   "key": "huruf k kecil",
+   "text": "Huruf K kecil",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 10
+  },
+  {
+   "key": "huruf l kecil",
+   "text": "Huruf L kecil",
+   "mood": "pujian",
    "group": "awal",
    "freq": 10
   },
@@ -2411,13 +2635,6 @@
    "freq": 10
   },
   {
-   "key": "ain",
-   "text": "Ain",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 9
-  },
-  {
    "key": "anak kucing",
    "text": "Anak kucing",
    "mood": "arahan",
@@ -2425,9 +2642,9 @@
    "freq": 9
   },
   {
-   "key": "baju",
-   "text": "Baju",
-   "mood": "tenang",
+   "key": "basikal",
+   "text": "Basikal",
+   "mood": "pujian",
    "group": "awal",
    "freq": 9
   },
@@ -2448,34 +2665,6 @@
   {
    "key": "bola",
    "text": "Bola",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 9
-  },
-  {
-   "key": "huruf a kecil",
-   "text": "Huruf A kecil",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 9
-  },
-  {
-   "key": "huruf d kecil",
-   "text": "Huruf D kecil",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 9
-  },
-  {
-   "key": "huruf k kecil",
-   "text": "Huruf K kecil",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 9
-  },
-  {
-   "key": "huruf l kecil",
-   "text": "Huruf L kecil",
    "mood": "arahan",
    "group": "awal",
    "freq": 9
@@ -2504,7 +2693,7 @@
   {
    "key": "kanan",
    "text": "Kanan",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 9
   },
@@ -2518,49 +2707,49 @@
   {
    "key": "keluar tandas",
    "text": "Keluar tandas",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 9
   },
   {
    "key": "kiri",
    "text": "Kiri",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 9
   },
   {
    "key": "laut",
    "text": "Laut",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 9
   },
   {
    "key": "nabi adam",
    "text": "Nabi Adam",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 9
   },
   {
    "key": "nabi ismail",
    "text": "Nabi Ismail",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 9
   },
   {
    "key": "sebelum tidur",
    "text": "Sebelum tidur",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 9
   },
   {
    "key": "tangan hingga siku",
    "text": "Tangan hingga siku",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 9
   },
@@ -2579,6 +2768,27 @@
    "freq": 8
   },
   {
+   "key": "alif",
+   "text": "Alif",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 8
+  },
+  {
+   "key": "anak itik",
+   "text": "Anak itik",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 8
+  },
+  {
+   "key": "anak lembu",
+   "text": "Anak lembu",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 8
+  },
+  {
    "key": "anak patung",
    "text": "Anak patung",
    "mood": "tenang",
@@ -2588,20 +2798,6 @@
   {
    "key": "asingkan kenderaan darat dengan kenderaan udara.",
    "text": "Asingkan kenderaan darat dengan kenderaan udara.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 8
-  },
-  {
-   "key": "basikal",
-   "text": "Basikal",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 8
-  },
-  {
-   "key": "cuci tangan",
-   "text": "Cuci tangan",
    "mood": "arahan",
    "group": "awal",
    "freq": 8
@@ -2642,6 +2838,27 @@
    "freq": 8
   },
   {
+   "key": "huruf b kecil",
+   "text": "Huruf B kecil",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 8
+  },
+  {
+   "key": "huruf f kecil",
+   "text": "Huruf F kecil",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 8
+  },
+  {
+   "key": "huruf g kecil",
+   "text": "Huruf G kecil",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 8
+  },
+  {
    "key": "ini anak lembu.",
    "text": "Ini anak lembu.",
    "mood": "arahan",
@@ -2670,9 +2887,16 @@
    "freq": 8
   },
   {
+   "key": "kapal",
+   "text": "Kapal",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 8
+  },
+  {
    "key": "kapal layar",
    "text": "Kapal layar",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 8
   },
@@ -2686,7 +2910,7 @@
   {
    "key": "kunci",
    "text": "Kunci",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 8
   },
@@ -2707,49 +2931,49 @@
   {
    "key": "mandi",
    "text": "Mandi",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 8
   },
   {
    "key": "muka",
    "text": "Muka",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 8
   },
   {
    "key": "nabi ibrahim",
    "text": "Nabi Ibrahim",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 8
   },
   {
    "key": "nabi idris",
    "text": "Nabi Idris",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 8
   },
   {
    "key": "roket",
    "text": "Roket",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 8
   },
   {
    "key": "sampan",
    "text": "Sampan",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 8
   },
   {
    "key": "sebelum belajar",
    "text": "Sebelum belajar",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 8
   },
@@ -2761,25 +2985,25 @@
    "freq": 8
   },
   {
-   "key": "alif",
-   "text": "Alif",
-   "mood": "tenang",
+   "key": "sod",
+   "text": "Sod",
+   "mood": "pujian",
    "group": "awal",
-   "freq": 7
+   "freq": 8
   },
   {
-   "key": "anak itik",
-   "text": "Anak itik",
-   "mood": "arahan",
+   "key": "syin",
+   "text": "Syin",
+   "mood": "pujian",
    "group": "awal",
-   "freq": 7
+   "freq": 8
   },
   {
-   "key": "anak lembu",
-   "text": "Anak lembu",
-   "mood": "arahan",
+   "key": "topi",
+   "text": "Topi",
+   "mood": "pujian",
    "group": "awal",
-   "freq": 7
+   "freq": 8
   },
   {
    "key": "apa kita perlu buat?",
@@ -2803,16 +3027,9 @@
    "freq": 7
   },
   {
-   "key": "bulan.",
-   "text": "Bulan.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 7
-  },
-  {
    "key": "cuci dengan sabun",
    "text": "Cuci dengan sabun",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 7
   },
@@ -2831,23 +3048,9 @@
    "freq": 7
   },
   {
-   "key": "huruf b kecil",
-   "text": "Huruf B kecil",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 7
-  },
-  {
-   "key": "huruf f kecil",
-   "text": "Huruf F kecil",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 7
-  },
-  {
-   "key": "huruf g kecil",
-   "text": "Huruf G kecil",
-   "mood": "arahan",
+   "key": "huruf p kecil",
+   "text": "Huruf P kecil",
+   "mood": "pujian",
    "group": "awal",
    "freq": 7
   },
@@ -2882,21 +3085,14 @@
   {
    "key": "kaki hingga buku lali",
    "text": "Kaki hingga buku lali",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 7
-  },
-  {
-   "key": "kapal",
-   "text": "Kapal",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 7
   },
   {
    "key": "keluar rumah",
    "text": "Keluar rumah",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 7
   },
@@ -2945,7 +3141,21 @@
   {
    "key": "potong kuku",
    "text": "Potong kuku",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 7
+  },
+  {
+   "key": "sarung tangan",
+   "text": "Sarung tangan",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 7
+  },
+  {
+   "key": "selipar",
+   "text": "Selipar",
+   "mood": "pujian",
    "group": "awal",
    "freq": 7
   },
@@ -2957,16 +3167,9 @@
    "freq": 7
   },
   {
-   "key": "sod",
-   "text": "Sod",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 7
-  },
-  {
-   "key": "syin",
-   "text": "Syin",
-   "mood": "tenang",
+   "key": "stoking",
+   "text": "Stoking",
+   "mood": "pujian",
    "group": "awal",
    "freq": 7
   },
@@ -2980,7 +3183,7 @@
   {
    "key": "telur",
    "text": "Telur",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 7
   },
@@ -2992,16 +3195,9 @@
    "freq": 7
   },
   {
-   "key": "topi",
-   "text": "Topi",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 7
-  },
-  {
    "key": "traktor",
    "text": "Traktor",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 7
   },
@@ -3009,6 +3205,13 @@
    "key": "warnakan hujung pisang dengan warna coklat.",
    "text": "Warnakan hujung pisang dengan warna coklat.",
    "mood": "arahan",
+   "group": "awal",
+   "freq": 7
+  },
+  {
+   "key": "zai",
+   "text": "Zai",
+   "mood": "pujian",
    "group": "awal",
    "freq": 7
   },
@@ -3023,6 +3226,13 @@
    "key": "ada berapa tiram dalam bakul?",
    "text": "Ada berapa tiram dalam bakul?",
    "mood": "arahan",
+   "group": "awal",
+   "freq": 6
+  },
+  {
+   "key": "anak gajah",
+   "text": "Anak gajah",
+   "mood": "pujian",
    "group": "awal",
    "freq": 6
   },
@@ -3064,7 +3274,7 @@
   {
    "key": "cili",
    "text": "Cili",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 6
   },
@@ -3111,6 +3321,20 @@
    "freq": 6
   },
   {
+   "key": "dua puluh lima",
+   "text": "dua puluh lima",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 6
+  },
+  {
+   "key": "gaun",
+   "text": "Gaun",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 6
+  },
+  {
    "key": "ha",
    "text": "Ha",
    "mood": "tenang",
@@ -3118,9 +3342,9 @@
    "freq": 6
   },
   {
-   "key": "huruf p kecil",
-   "text": "Huruf P kecil",
-   "mood": "arahan",
+   "key": "huruf j kecil",
+   "text": "Huruf J kecil",
+   "mood": "pujian",
    "group": "awal",
    "freq": 6
   },
@@ -3128,6 +3352,13 @@
    "key": "huruf s kecil",
    "text": "Huruf S kecil",
    "mood": "arahan",
+   "group": "awal",
+   "freq": 6
+  },
+  {
+   "key": "jaket",
+   "text": "Jaket",
+   "mood": "pujian",
    "group": "awal",
    "freq": 6
   },
@@ -3183,7 +3414,7 @@
   {
    "key": "kolam",
    "text": "Kolam",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 6
   },
@@ -3239,7 +3470,7 @@
   {
    "key": "payung terjun",
    "text": "Payung terjun",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 6
   },
@@ -3274,14 +3505,7 @@
   {
    "key": "sarang",
    "text": "Sarang",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 6
-  },
-  {
-   "key": "sarung tangan",
-   "text": "Sarung tangan",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 6
   },
@@ -3295,27 +3519,13 @@
   {
    "key": "selepas makan",
    "text": "Selepas makan",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 6
-  },
-  {
-   "key": "selipar",
-   "text": "Selipar",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 6
   },
   {
    "key": "separuh",
    "text": "Separuh",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 6
-  },
-  {
-   "key": "stoking",
-   "text": "Stoking",
    "mood": "arahan",
    "group": "awal",
    "freq": 6
@@ -3351,14 +3561,7 @@
   {
    "key": "yarhamukallah",
    "text": "Yarhamukallah",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 6
-  },
-  {
-   "key": "zai",
-   "text": "Zai",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 6
   },
@@ -3372,13 +3575,6 @@
   {
    "key": "ada berapa strawberi dalam bakul?",
    "text": "Ada berapa strawberi dalam bakul?",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 5
-  },
-  {
-   "key": "anak gajah",
-   "text": "Anak gajah",
    "mood": "arahan",
    "group": "awal",
    "freq": 5
@@ -3426,30 +3622,16 @@
    "freq": 5
   },
   {
-   "key": "dua puluh lima",
-   "text": "dua puluh lima",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 5
-  },
-  {
-   "key": "gaun",
-   "text": "Gaun",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 5
-  },
-  {
-   "key": "gosok gigi.",
-   "text": "Gosok gigi.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 5
-  },
-  {
    "key": "gua",
    "text": "Gua",
    "mood": "arahan",
+   "group": "awal",
+   "freq": 5
+  },
+  {
+   "key": "huruf e kecil",
+   "text": "Huruf E kecil",
+   "mood": "pujian",
    "group": "awal",
    "freq": 5
   },
@@ -3461,22 +3643,8 @@
    "freq": 5
   },
   {
-   "key": "huruf j kecil",
-   "text": "Huruf J kecil",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 5
-  },
-  {
    "key": "ini anak ayam.",
    "text": "Ini anak ayam.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 5
-  },
-  {
-   "key": "jaket",
-   "text": "Jaket",
    "mood": "arahan",
    "group": "awal",
    "freq": 5
@@ -3540,7 +3708,7 @@
   {
    "key": "kepala",
    "text": "Kepala",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 5
   },
@@ -3603,14 +3771,14 @@
   {
    "key": "nabi isa",
    "text": "Nabi Isa",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 5
   },
   {
    "key": "nabi yunus",
    "text": "Nabi Yunus",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 5
   },
@@ -3713,6 +3881,13 @@
    "freq": 4
   },
   {
+   "key": "dhod",
+   "text": "Dhod",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 4
+  },
+  {
    "key": "di mana anjing?",
    "text": "Di mana Anjing?",
    "mood": "arahan",
@@ -3764,13 +3939,6 @@
   {
    "key": "hu, hu!",
    "text": "Hu, hu!",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 4
-  },
-  {
-   "key": "huruf e kecil",
-   "text": "Huruf E kecil",
    "mood": "arahan",
    "group": "awal",
    "freq": 4
@@ -3834,7 +4002,7 @@
   {
    "key": "jagung",
    "text": "Jagung",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 4
   },
@@ -4058,14 +4226,14 @@
   {
    "key": "nabi ilyasa",
    "text": "Nabi Ilyasa",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 4
   },
   {
    "key": "nabi muhammad",
    "text": "Nabi Muhammad",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 4
   },
@@ -4140,9 +4308,16 @@
    "freq": 4
   },
   {
+   "key": "topi bunga",
+   "text": "Topi bunga",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 4
+  },
+  {
    "key": "ubi",
    "text": "Ubi",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 4
   },
@@ -4231,6 +4406,13 @@
    "freq": 3
   },
   {
+   "key": "air bergas",
+   "text": "Air bergas",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 3
+  },
+  {
    "key": "anjing suka makan apa, ya?",
    "text": "Anjing suka makan apa, ya?",
    "mood": "arahan",
@@ -4261,7 +4443,7 @@
   {
    "key": "bercakap dengan sopan",
    "text": "Bercakap dengan sopan",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 3
   },
@@ -4275,13 +4457,6 @@
   {
    "key": "beruang suka makan apa, ya?",
    "text": "Beruang suka makan apa, ya?",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 3
-  },
-  {
-   "key": "bulan",
-   "text": "Bulan",
    "mood": "arahan",
    "group": "awal",
    "freq": 3
@@ -4303,13 +4478,6 @@
   {
    "key": "dengar dan cari: nabi idris.",
    "text": "Dengar dan cari: Nabi Idris.",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 3
-  },
-  {
-   "key": "dhod",
-   "text": "Dhod",
    "mood": "tenang",
    "group": "awal",
    "freq": 3
@@ -4373,21 +4541,14 @@
   {
    "key": "gitar",
    "text": "Gitar",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 3
   },
   {
    "key": "gurun",
    "text": "Gurun",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 3
-  },
-  {
-   "key": "huruf b.",
-   "text": "Huruf B.",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 3
   },
@@ -4525,6 +4686,13 @@
    "freq": 3
   },
   {
+   "key": "kentang goreng",
+   "text": "Kentang goreng",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 3
+  },
+  {
    "key": "kita tutup mulut dengan,",
    "text": "Kita tutup mulut dengan,",
    "mood": "arahan",
@@ -4555,7 +4723,14 @@
   {
    "key": "kutub",
    "text": "Kutub",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 3
+  },
+  {
+   "key": "lolipop",
+   "text": "Lolipop",
+   "mood": "pujian",
    "group": "awal",
    "freq": 3
   },
@@ -4758,7 +4933,7 @@
   {
    "key": "nabi sulaiman",
    "text": "Nabi Sulaiman",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "awal",
    "freq": 3
   },
@@ -4828,7 +5003,7 @@
   {
    "key": "tisu / siku",
    "text": "Tisu / siku",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 3
   },
@@ -4856,13 +5031,6 @@
   {
    "key": "tolong kumpul tiga tiram untuk kura-kura.",
    "text": "Tolong kumpul tiga tiram untuk Kura-kura.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 3
-  },
-  {
-   "key": "topi bunga",
-   "text": "Topi bunga",
    "mood": "arahan",
    "group": "awal",
    "freq": 3
@@ -4952,13 +5120,6 @@
    "freq": 2
   },
   {
-   "key": "air bergas",
-   "text": "Air bergas",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
    "key": "ayam suka makan apa, ya?",
    "text": "Ayam suka makan apa, ya?",
    "mood": "arahan",
@@ -5003,7 +5164,7 @@
   {
    "key": "dadu",
    "text": "Dadu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 2
   },
@@ -5052,14 +5213,14 @@
   {
    "key": "elang",
    "text": "Elang",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 2
   },
   {
    "key": "flamingo",
    "text": "Flamingo",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 2
   },
@@ -5120,22 +5281,15 @@
    "freq": 2
   },
   {
+   "key": "gula-gula",
+   "text": "Gula-gula",
+   "mood": "pujian",
+   "group": "awal",
+   "freq": 2
+  },
+  {
    "key": "helikopter bermula dengan huruf apa, ya?",
    "text": "Helikopter bermula dengan huruf apa, ya?",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
-   "key": "huruf c.",
-   "text": "Huruf C.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
-   "key": "huruf d.",
-   "text": "Huruf D.",
    "mood": "arahan",
    "group": "awal",
    "freq": 2
@@ -5144,48 +5298,6 @@
    "key": "huruf dhod",
    "text": "Huruf Dhod",
    "mood": "tenang",
-   "group": "awal",
-   "freq": 2
-  },
-  {
-   "key": "huruf e.",
-   "text": "Huruf E.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
-   "key": "huruf f.",
-   "text": "Huruf F.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
-   "key": "huruf g.",
-   "text": "Huruf G.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
-   "key": "huruf h.",
-   "text": "Huruf H.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
-   "key": "huruf j.",
-   "text": "Huruf J.",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
-   "key": "huruf l.",
-   "text": "Huruf L.",
-   "mood": "arahan",
    "group": "awal",
    "freq": 2
   },
@@ -5477,13 +5589,6 @@
    "freq": 2
   },
   {
-   "key": "kentang goreng",
-   "text": "Kentang goreng",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
    "key": "kucing suka makan apa, ya?",
    "text": "Kucing suka makan apa, ya?",
    "mood": "arahan",
@@ -5591,20 +5696,13 @@
   {
    "key": "lampu",
    "text": "Lampu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 2
   },
   {
    "key": "lebah suka makan apa, ya?",
    "text": "Lebah suka makan apa, ya?",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 2
-  },
-  {
-   "key": "lolipop",
-   "text": "Lolipop",
    "mood": "arahan",
    "group": "awal",
    "freq": 2
@@ -5871,7 +5969,7 @@
   {
    "key": "nasi",
    "text": "Nasi",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 2
   },
@@ -5990,7 +6088,7 @@
   {
    "key": "susu",
    "text": "Susu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "awal",
    "freq": 2
   },
@@ -6114,13 +6212,6 @@
    "freq": 2
   },
   {
-   "key": "gula-gula",
-   "text": "Gula-gula",
-   "mood": "arahan",
-   "group": "awal",
-   "freq": 1
-  },
-  {
    "key": "gunung",
    "text": "Gunung",
    "mood": "arahan",
@@ -6205,6 +6296,13 @@
    "freq": 1
   },
   {
+   "key": "huruf r.",
+   "text": "Huruf R.",
+   "mood": "arahan",
+   "group": "lengkap",
+   "freq": 24
+  },
+  {
    "key": "jom bawa haiwan balik ke tempat tinggalnya.",
    "text": "Jom bawa haiwan balik ke tempat tinggalnya.",
    "mood": "arahan",
@@ -6221,7 +6319,7 @@
   {
    "key": "wisel",
    "text": "Wisel",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 24
   },
@@ -6235,7 +6333,7 @@
   {
    "key": "angin",
    "text": "Angin",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 23
   },
@@ -6249,20 +6347,13 @@
   {
    "key": "telefon",
    "text": "Telefon",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 23
   },
   {
    "key": "hantar setiap benda ke tempat asalnya.",
    "text": "Hantar setiap benda ke tempat asalnya.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 22
-  },
-  {
-   "key": "huruf r",
-   "text": "Huruf R",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 22
@@ -6284,7 +6375,7 @@
   {
    "key": "beriman kepada malaikat",
    "text": "Beriman kepada malaikat",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 20
   },
@@ -6310,9 +6401,16 @@
    "freq": 19
   },
   {
+   "key": "beri biru",
+   "text": "Beri biru",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 19
+  },
+  {
    "key": "dram",
    "text": "Dram",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 19
   },
@@ -6331,16 +6429,9 @@
    "freq": 18
   },
   {
-   "key": "beri biru",
-   "text": "Beri biru",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 18
-  },
-  {
    "key": "beriman kepada allah",
    "text": "Beriman kepada Allah",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 18
   },
@@ -6354,14 +6445,14 @@
   {
    "key": "guruh",
    "text": "Guruh",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 18
   },
   {
    "key": "hujan",
    "text": "Hujan",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 18
   },
@@ -6382,7 +6473,7 @@
   {
    "key": "tepuk tangan",
    "text": "Tepuk tangan",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 18
   },
@@ -6396,7 +6487,7 @@
   {
    "key": "loceng pintu",
    "text": "Loceng pintu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 17
   },
@@ -6515,7 +6606,7 @@
   {
    "key": "menunaikan zakat",
    "text": "Menunaikan zakat",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 11
   },
@@ -6527,6 +6618,13 @@
    "freq": 11
   },
   {
+   "key": "huruf v kecil",
+   "text": "Huruf V kecil",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 10
+  },
+  {
    "key": "kutip semua kacang dulu, ya.",
    "text": "Kutip semua kacang dulu, ya.",
    "mood": "arahan",
@@ -6536,7 +6634,7 @@
   {
    "key": "bangun tidur",
    "text": "Bangun tidur",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 9
   },
@@ -6618,9 +6716,9 @@
    "freq": 9
   },
   {
-   "key": "huruf v kecil",
-   "text": "Huruf V kecil",
-   "mood": "arahan",
+   "key": "dengan nama allah",
+   "text": "Dengan nama Allah",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 9
   },
@@ -6718,7 +6816,7 @@
   {
    "key": "anak ayam",
    "text": "Anak ayam",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 8
   },
@@ -6730,9 +6828,9 @@
    "freq": 8
   },
   {
-   "key": "dengan nama allah",
-   "text": "Dengan nama Allah",
-   "mood": "tenang",
+   "key": "dal",
+   "text": "Dal",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 8
   },
@@ -6740,6 +6838,13 @@
    "key": "haiwan mana yang ada empat kaki?",
    "text": "Haiwan mana yang ada empat kaki?",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 8
+  },
+  {
+   "key": "huruf r kecil",
+   "text": "Huruf R kecil",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 8
   },
@@ -6807,15 +6912,15 @@
    "freq": 8
   },
   {
-   "key": "beriman kepada hari akhirat",
-   "text": "Beriman kepada hari akhirat",
-   "mood": "tenang",
+   "key": "aku memohon keampunan-mu",
+   "text": "Aku memohon keampunan-Mu",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 7
   },
   {
-   "key": "dal",
-   "text": "Dal",
+   "key": "beriman kepada hari akhirat",
+   "text": "Beriman kepada hari akhirat",
    "mood": "tenang",
    "group": "lengkap",
    "freq": 7
@@ -6828,9 +6933,9 @@
    "freq": 7
   },
   {
-   "key": "huruf r kecil",
-   "text": "Huruf R kecil",
-   "mood": "arahan",
+   "key": "huruf i kecil",
+   "text": "Huruf I kecil",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 7
   },
@@ -6905,22 +7010,15 @@
    "freq": 6
   },
   {
-   "key": "aku memohon keampunan-mu",
-   "text": "Aku memohon keampunan-Mu",
-   "mood": "tenang",
+   "key": "anak kuda",
+   "text": "Anak kuda",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 6
   },
   {
    "key": "apa dia?",
    "text": "Apa dia?",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 6
-  },
-  {
-   "key": "cuci tangan.",
-   "text": "Cuci tangan.",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 6
@@ -6933,9 +7031,16 @@
    "freq": 6
   },
   {
-   "key": "huruf i kecil",
-   "text": "Huruf I kecil",
-   "mood": "arahan",
+   "key": "huruf n kecil",
+   "text": "Huruf N kecil",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 6
+  },
+  {
+   "key": "huruf u kecil",
+   "text": "Huruf U kecil",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 6
   },
@@ -6943,6 +7048,13 @@
    "key": "huruf w kecil",
    "text": "Huruf W kecil",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 6
+  },
+  {
+   "key": "huruf y kecil",
+   "text": "Huruf Y kecil",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 6
   },
@@ -6977,7 +7089,7 @@
   {
    "key": "masuk tandas",
    "text": "Masuk tandas",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 6
   },
@@ -7038,13 +7150,6 @@
    "freq": 5
   },
   {
-   "key": "anak kuda",
-   "text": "Anak kuda",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 5
-  },
-  {
    "key": "basahkan tangan",
    "text": "Basahkan tangan",
    "mood": "arahan",
@@ -7055,13 +7160,6 @@
    "key": "bilas air",
    "text": "Bilas air",
    "mood": "arahan",
-   "group": "lengkap",
-   "freq": 5
-  },
-  {
-   "key": "bismillah",
-   "text": "Bismillah",
-   "mood": "tenang",
    "group": "lengkap",
    "freq": 5
   },
@@ -7122,6 +7220,13 @@
    "freq": 5
   },
   {
+   "key": "feri",
+   "text": "Feri",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 5
+  },
+  {
    "key": "gosok tangan",
    "text": "Gosok tangan",
    "mood": "arahan",
@@ -7131,27 +7236,6 @@
   {
    "key": "hari panas terik.",
    "text": "Hari panas terik.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 5
-  },
-  {
-   "key": "huruf n kecil",
-   "text": "Huruf N kecil",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 5
-  },
-  {
-   "key": "huruf u kecil",
-   "text": "Huruf U kecil",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 5
-  },
-  {
-   "key": "huruf y kecil",
-   "text": "Huruf Y kecil",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 5
@@ -7167,6 +7251,13 @@
    "key": "jom tolong coco berkemas!",
    "text": "Jom tolong Coco berkemas!",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 5
+  },
+  {
+   "key": "kaf",
+   "text": "Kaf",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 5
   },
@@ -7222,7 +7313,7 @@
   {
    "key": "nabi soleh",
    "text": "Nabi Soleh",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 5
   },
@@ -7272,6 +7363,13 @@
    "key": "yang mana satu bukan mainan?",
    "text": "Yang mana satu bukan mainan?",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 5
+  },
+  {
+   "key": "zho",
+   "text": "Zho",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 5
   },
@@ -7334,7 +7432,7 @@
   {
    "key": "doa untuk ibu bapa",
    "text": "Doa untuk ibu bapa",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 4
   },
@@ -7342,13 +7440,6 @@
    "key": "fa",
    "text": "Fa",
    "mood": "tenang",
-   "group": "lengkap",
-   "freq": 4
-  },
-  {
-   "key": "feri",
-   "text": "Feri",
-   "mood": "arahan",
    "group": "lengkap",
    "freq": 4
   },
@@ -7384,6 +7475,13 @@
    "key": "hamzah",
    "text": "Hamzah",
    "mood": "tenang",
+   "group": "lengkap",
+   "freq": 4
+  },
+  {
+   "key": "huruf c kecil",
+   "text": "Huruf C kecil",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 4
   },
@@ -7440,13 +7538,6 @@
    "key": "jom susun pazel kereta di bandar.",
    "text": "Jom susun pazel kereta di bandar.",
    "mood": "arahan",
-   "group": "lengkap",
-   "freq": 4
-  },
-  {
-   "key": "kaf",
-   "text": "Kaf",
-   "mood": "tenang",
    "group": "lengkap",
    "freq": 4
   },
@@ -7530,7 +7621,7 @@
   {
    "key": "nabi hud",
    "text": "Nabi Hud",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 4
   },
@@ -7566,6 +7657,20 @@
    "key": "saya ada empat roda dan membawa ramai orang ke sekolah.",
    "text": "Saya ada empat roda dan membawa ramai orang ke sekolah.",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 4
+  },
+  {
+   "key": "segala puji bagi allah",
+   "text": "Segala puji bagi Allah",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 4
+  },
+  {
+   "key": "seluar",
+   "text": "Seluar",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 4
   },
@@ -7621,7 +7726,7 @@
   {
    "key": "tong sampah",
    "text": "Tong sampah",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 4
   },
@@ -7650,13 +7755,6 @@
    "key": "yang mana satu bukan alat tulis?",
    "text": "Yang mana satu bukan alat tulis?",
    "mood": "arahan",
-   "group": "lengkap",
-   "freq": 4
-  },
-  {
-   "key": "zho",
-   "text": "Zho",
-   "mood": "tenang",
    "group": "lengkap",
    "freq": 4
   },
@@ -7692,13 +7790,6 @@
    "key": "ada tujuh biji belon.",
    "text": "Ada tujuh biji belon.",
    "mood": "arahan",
-   "group": "lengkap",
-   "freq": 3
-  },
-  {
-   "key": "alhamdulillah",
-   "text": "Alhamdulillah",
-   "mood": "tenang",
    "group": "lengkap",
    "freq": 3
   },
@@ -7769,6 +7860,13 @@
    "key": "bunga kembang",
    "text": "Bunga kembang",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 3
+  },
+  {
+   "key": "but",
+   "text": "But",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 3
   },
@@ -7901,13 +7999,6 @@
   {
    "key": "gelap",
    "text": "Gelap",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 3
-  },
-  {
-   "key": "huruf c kecil",
-   "text": "Huruf C kecil",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 3
@@ -8076,7 +8167,7 @@
   {
    "key": "ketuk dan minta izin",
    "text": "Ketuk dan minta izin",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 3
   },
@@ -8244,7 +8335,7 @@
   {
    "key": "nabi yahya",
    "text": "Nabi Yahya",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 3
   },
@@ -8396,13 +8487,6 @@
    "freq": 3
   },
   {
-   "key": "segala puji bagi allah",
-   "text": "Segala puji bagi Allah",
-   "mood": "tenang",
-   "group": "lengkap",
-   "freq": 3
-  },
-  {
    "key": "segala puji bagi allah yang menghidupkan kami setelah mematikan kami, dan kepada-nya kami kembali",
    "text": "Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami, dan kepada-Nya kami kembali",
    "mood": "tenang",
@@ -8413,13 +8497,6 @@
    "key": "selepas makan, kita mengucap,",
    "text": "Selepas makan, kita mengucap,",
    "mood": "tenang",
-   "group": "lengkap",
-   "freq": 3
-  },
-  {
-   "key": "seluar",
-   "text": "Seluar",
-   "mood": "arahan",
    "group": "lengkap",
    "freq": 3
   },
@@ -8482,7 +8559,7 @@
   {
    "key": "terima kasih",
    "text": "Terima kasih",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 3
   },
@@ -8991,6 +9068,13 @@
    "freq": 2
   },
   {
+   "key": "bawang putih",
+   "text": "Bawang putih",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 2
+  },
+  {
    "key": "beee!",
    "text": "Beee!",
    "mood": "arahan",
@@ -9000,7 +9084,14 @@
   {
    "key": "belon",
    "text": "Belon",
-   "mood": "arahan",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 2
+  },
+  {
+   "key": "belon udara",
+   "text": "Belon udara",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -9012,9 +9103,9 @@
    "freq": 2
   },
   {
-   "key": "but",
-   "text": "But",
-   "mood": "arahan",
+   "key": "brokoli",
+   "text": "Brokoli",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -9327,13 +9418,6 @@
    "freq": 2
   },
   {
-   "key": "huruf a.",
-   "text": "Huruf A.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
    "key": "huruf ain",
    "text": "Huruf Ain",
    "mood": "tenang",
@@ -9341,51 +9425,9 @@
    "freq": 2
   },
   {
-   "key": "huruf n.",
-   "text": "Huruf N.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
-   "key": "huruf r.",
-   "text": "Huruf R.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
    "key": "huruf ro",
    "text": "Huruf Ro",
    "mood": "tenang",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
-   "key": "huruf t.",
-   "text": "Huruf T.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
-   "key": "huruf u.",
-   "text": "Huruf U.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
-   "key": "huruf y.",
-   "text": "Huruf Y.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
-   "key": "huruf z.",
-   "text": "Huruf Z.",
-   "mood": "arahan",
    "group": "lengkap",
    "freq": 2
   },
@@ -9950,6 +9992,13 @@
    "freq": 2
   },
   {
+   "key": "kentang",
+   "text": "Kentang",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 2
+  },
+  {
    "key": "ketam tinggal di mana, ya?",
    "text": "Ketam tinggal di mana, ya?",
    "mood": "arahan",
@@ -10086,6 +10135,13 @@
    "key": "kutip semua telur dulu, ya.",
    "text": "Kutip semua telur dulu, ya.",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 2
+  },
+  {
+   "key": "lada benggala",
+   "text": "Lada benggala",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -10372,14 +10428,14 @@
   {
    "key": "mendengar",
    "text": "Mendengar",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
   {
    "key": "minta maaf",
    "text": "Minta maaf",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -10470,7 +10526,7 @@
   {
    "key": "nyamuk",
    "text": "Nyamuk",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -10484,7 +10540,7 @@
   {
    "key": "padang rumput",
    "text": "Padang rumput",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -10601,16 +10657,9 @@
    "freq": 2
   },
   {
-   "key": "rama-rama.",
-   "text": "Rama-rama.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
    "key": "salam",
    "text": "Salam",
-   "mood": "tenang",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -10653,6 +10702,13 @@
    "key": "satu kuntum dah diambil.",
    "text": "Satu kuntum dah diambil.",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 2
+  },
+  {
+   "key": "sawi",
+   "text": "Sawi",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -10986,6 +11042,13 @@
    "freq": 2
   },
   {
+   "key": "timun",
+   "text": "Timun",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 2
+  },
+  {
    "key": "ting, ting, ting!",
    "text": "Ting, ting, ting!",
    "mood": "arahan",
@@ -11086,7 +11149,7 @@
   {
    "key": "tomato",
    "text": "Tomato",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -11429,7 +11492,7 @@
   {
    "key": "yu",
    "text": "Yu",
-   "mood": "arahan",
+   "mood": "pujian",
    "group": "lengkap",
    "freq": 2
   },
@@ -11504,13 +11567,6 @@
    "freq": 1
   },
   {
-   "key": "assalamualaikum.",
-   "text": "Assalamualaikum.",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
    "key": "awan",
    "text": "Awan",
    "mood": "arahan",
@@ -11539,20 +11595,6 @@
    "freq": 1
   },
   {
-   "key": "bawang putih",
-   "text": "Bawang putih",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
-   "key": "belon udara",
-   "text": "Belon udara",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
    "key": "berapa umur kamu?",
    "text": "Berapa umur kamu?",
    "mood": "arahan",
@@ -11562,13 +11604,6 @@
   {
    "key": "biji benih",
    "text": "Biji benih",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
-   "key": "brokoli",
-   "text": "Brokoli",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
@@ -11973,13 +12008,6 @@
    "freq": 1
   },
   {
-   "key": "kentang",
-   "text": "Kentang",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
    "key": "kepompong",
    "text": "Kepompong",
    "mood": "arahan",
@@ -12066,13 +12094,6 @@
   {
    "key": "l untuk lebah",
    "text": "L untuk Lebah",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
-   "key": "lada benggala",
-   "text": "Lada benggala",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
@@ -12225,6 +12246,13 @@
    "freq": 1
   },
   {
+   "key": "pandainya, aisyah!",
+   "text": "Pandainya, Aisyah!",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 1
+  },
+  {
    "key": "permainan ini sedang dikunci oleh ibu bapa.",
    "text": "Permainan ini sedang dikunci oleh ibu bapa.",
    "mood": "arahan",
@@ -12288,13 +12316,6 @@
    "freq": 1
   },
   {
-   "key": "sawi",
-   "text": "Sawi",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
    "key": "sekolah",
    "text": "Sekolah",
    "mood": "arahan",
@@ -12304,6 +12325,13 @@
   {
    "key": "selamat datang ke dunia cilik, aisyah!",
    "text": "Selamat datang ke Dunia Cilik, Aisyah!",
+   "mood": "arahan",
+   "group": "lengkap",
+   "freq": 1
+  },
+  {
+   "key": "sembilan ekor rama-rama, tambah satu ekor lagi.",
+   "text": "Sembilan ekor rama-rama, tambah satu ekor lagi.",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
@@ -12491,6 +12519,13 @@
    "freq": 1
   },
   {
+   "key": "terbaik, aisyah!",
+   "text": "Terbaik, Aisyah!",
+   "mood": "pujian",
+   "group": "lengkap",
+   "freq": 1
+  },
+  {
    "key": "terung",
    "text": "Terung",
    "mood": "arahan",
@@ -12500,13 +12535,6 @@
   {
    "key": "tik, tok, tik, tok!",
    "text": "Tik, tok, tik, tok!",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
-   "key": "timun",
-   "text": "Timun",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1

@@ -13,16 +13,22 @@ import { MODE_LIST, generateLevel } from '../js/modes/index.js';
 import * as C from '../js/data/content.js';
 import { COLORING, DOT_SHAPES } from '../js/data/art.js';
 import { normalizeMalay, splitSentences, clipKey } from '../js/malay-text.js';
+import { TALK } from '../js/talk.js';
 
 const OUT = 'audio/ms-MY';
 const cat = new Map(); // kunci -> { text, mood, freq, minL, core }
+const baseOf = new Map(); // kunci tanpa tanda baca akhir -> kunci
 const PRIORITY = { pujian: 3, galakan: 2, tenang: 1, arahan: 0 };
 // L = level tempat ayat muncul (untuk keutamaan); core = ayat teras yang didengar di mana-mana
 function add(text, mood = 'arahan', { L = 99, core = false } = {}) {
   if (!text) return;
   for (const s of splitSentences(normalizeMalay(text))) {
-    const k = clipKey(s);
+    let k = clipKey(s);
     if (!k || !/[a-z]/i.test(k)) continue;
+    // ayat yang hanya berbeza tanda baca akhir berkongsi satu rakaman (aplikasi mencari kedua-duanya)
+    const base = k.replace(/[.!?,]+$/, '');
+    if (!cat.has(k) && baseOf.has(base)) k = baseOf.get(base);
+    else if (!baseOf.has(base)) baseOf.set(base, k);
     const prev = cat.get(k) || { text: s, mood, freq: 0, minL: 99, core: false };
     // satu klip bagi setiap ayat; jika ayat sama muncul dalam beberapa konteks, ekspresi paling "berperasaan" dipilih
     if (PRIORITY[mood] > PRIORITY[prev.mood]) prev.mood = mood;
@@ -58,6 +64,11 @@ for (const t of ['Selamat pagi', 'Selamat tengah hari', 'Selamat petang', 'Selam
   add(`Assalamualaikum! ${t}. Jom belajar sambil bermain!`, 'arahan', CORE);
   add(`${t}! Jom belajar sambil bermain!`, 'arahan', CORE);
 }
+
+// percakapan semula jadi (penyambung, pujukan, petunjuk, penutup)
+[...TALK.next, ...TALK.last].forEach((t) => add(t, 'arahan', CORE));
+[...TALK.notThis, ...TALK.retry, ...TALK.hint, ...TALK.idle].forEach((t) => add(t, 'galakan', CORE));
+[...TALK.doneAll, ...TALK.done].forEach((t) => add(t, 'pujian', CORE));
 
 // ---------- 3. nombor, warna, bunyi, nama ----------
 for (let n = 0; n <= 20; n++) add(String(n), 'arahan', CORE);

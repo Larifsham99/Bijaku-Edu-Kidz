@@ -141,6 +141,14 @@ async function clipUrl(file) {
   if (clipCache.size > 80) { const [k, u] = clipCache.entries().next().value; URL.revokeObjectURL(u); clipCache.delete(k); }
   return url;
 }
+// Cari klip; ayat yang hanya berbeza tanda baca akhir (cth. "Kucing!" / "Kucing.") berkongsi rakaman
+function findClip(sentence) {
+  const k = clipKey(sentence);
+  if (pack.clips[k]) return pack.clips[k];
+  const base = k.replace(/[.!?,]+$/, '');
+  for (const end of ['.', '!', '?', '']) if (pack.clips[base + end]) return pack.clips[base + end];
+  return null;
+}
 let currentAudio = null;
 function playClip(file, { rate, id }) {
   return new Promise((resolve) => {
@@ -207,7 +215,7 @@ export function speak(text, { lang, rate, interrupt = true, mood = 'arahan' } = 
     return parts.reduce((p, part, i) => p.then(async () => {
       if (id !== speakSeq) return;
       if (i > 0) await new Promise((res) => setTimeout(res, 160)); // jeda semula jadi antara ayat
-      const file = lang !== 'en' && usePack() ? pack.clips[clipKey(part)] : null;
+      const file = lang !== 'en' && usePack() ? findClip(part) : null;
       if (file) {
         // klip neural sudah mengandungi ekspresi; hanya kelajuan pilihan ibu bapa digunakan
         const ok = await playClip(file, { rate: vp.base / 0.88, id });

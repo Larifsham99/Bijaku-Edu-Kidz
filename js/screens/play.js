@@ -5,7 +5,8 @@ import { go } from '../nav.js';
 import { ENGINES } from '../engines/index.js';
 import { MODES, generateLevel, makeRound, TIERS } from '../modes/index.js';
 import { PRAISE, ENCOURAGE, ISLAMIC_PRAISE, ISLAMIC_ENCOURAGE } from '../data/content.js';
-import { speak, stopSpeak, sfx, playSound, speakWord, haptic } from '../audio.js';
+import { speak, stopSpeak, sfx, playSound, speakWord, haptic, voicePack } from '../audio.js';
+import { TALK, pick, echoable } from '../talk.js';
 import { icon } from '../icons.js';
 import { profile, settings, save, recordSkill, addActivity, modeProg, isUnlocked } from '../store.js';
 import { awardLevel, addStars, checkBadges } from '../rewards.js';
@@ -26,8 +27,8 @@ export const currentSession = () => active;
 const pickOf = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const islamic = () => settings().islamic !== false;
 // Pujian & galakan: campuran ucapan biasa dan ucapan Islamik (jika dihidupkan)
-const praiseText = () => (islamic() && Math.random() < 0.2 ? pickOf(ISLAMIC_PRAISE) : pickOf(PRAISE));
-const encourageText = () => (islamic() && Math.random() < 0.35 ? pickOf(ISLAMIC_ENCOURAGE) : pickOf(ENCOURAGE));
+const praiseText = () => (islamic() && Math.random() < 0.2 ? pick(ISLAMIC_PRAISE) : pick(PRAISE));
+const encourageText = () => (islamic() && Math.random() < 0.35 ? pick(ISLAMIC_ENCOURAGE) : pick(ENCOURAGE));
 
 // Animasi bintang terbang dari tengah pentas ke kaunter bintang
 function flyStar(from, to, done) {
@@ -80,23 +81,31 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     sfx, playSound, speakWord,
     speak: (t) => speak(t),
     say: (t) => g.say(t),
-    good(el, { quiet = false, silent = false } = {}) {
+    good(el, { quiet = false, silent = false, echo } = {}) {
       haptic(12);
       if (!silent) sfx.pick();
       if (!quiet) toast(praiseText(), 'good', '😊');
+      // sebut semula pilihan yang betul (cth. jawapan berbilang): "Kucing!"
+      const e = echoable(echo);
+      if (e) speak(`${e}!`, { mood: 'pujian' });
     },
-    bad(el, { soft = false } = {}) {
+    bad(el, { soft = false, echo, hint = false } = {}) {
       mistakes++; attempts++; totalMistakes++;
       if (soft) { sfx.bump(); return mistakes; }
       haptic([30, 40, 30]);
       sfx.wrong();
-      const msg = encourageText();
-      toast(msg, 'try', '🤗');
+      // seperti cikgu: sebut apa yang dipilih, kemudian pujuk dengan lembut
+      const e = echoable(echo);
+      // selepas beberapa kali salah, ganti "cuba lagi" dengan petunjuk lembut
+      const tail = hint ? pick(TALK.hint) : pick(TALK.retry);
+      const msg = e ? `${e}? ${pick(TALK.notThis)} ${tail}` : hint ? `${encourageText()} ${pick(TALK.hint)}` : encourageText();
+      toast(e ? tail : msg, 'try', '🤗');
       g.say(msg, '', { voice: true, mood: 'galakan' });
       return mistakes;
     },
-    finish() {
+    finish({ echo } = {}) {
       if (stopped || api._done) return;
+      clearTimeout(idleTimer);
       api._done = true;
       attempts++;
       const r = rounds[idx];
@@ -113,10 +122,13 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
       sfx.correct();
       const praise = praiseText();
       toast(praise, 'good', '⭐');
-      speak(praise, { mood: 'pujian' });
+      // sebut semula jawapan yang betul, kemudian puji: "Kucing! Pandainya!"
+      const e = echoable(echo);
+      const spoken = speak(e ? `${e}! ${praise}` : praise, { mood: 'pujian' });
       confetti(12, ['⭐', '✨', '🌟']);
       save();
-      sleep(1500).then(() => { if (!stopped) next(); });
+      // tunggu pujian habis (maksimum ~4 saat) supaya soalan seterusnya tidak memotongnya
+      Promise.all([sleep(1500), Promise.race([spoken, sleep(4000)])]).then(() => { if (!stopped) next(); });
     },
     _done: false,
   };
@@ -128,12 +140,17 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     [...progress.children].forEach((d, i) => { d.className = i < idx ? 'ok' : i === idx ? 'now' : ''; });
     mistakes = 0; attempts = 0; api._done = false;
     roundStart = Date.now();
-    const sub = idx === rounds.length - 1 && rounds.length > 1 ? 'Pusingan terakhir!' : `Pusingan ${idx + 1} / ${rounds.length}`;
-    // Mulakan dengan Bismillah
+    const isLast = idx === rounds.length - 1 && rounds.length > 1;
+    const sub = isLast ? 'Pusingan terakhir!' : `Pusingan ${idx + 1} / ${rounds.length}`;
     // doa & kandungan agama dibaca dengan nada tenang
     const mood = String(r.skill || '').startsWith('soleh.') ? 'tenang' : 'arahan';
-    if (idx === 0 && islamic()) { toast('Bismillah', 'good', '🤲'); g.say(`Bismillah. ${r.say}`, sub, { mood }); }
-    else g.say(r.say, sub, { mood });
+    // penyambung semula jadi antara soalan; mulakan level dengan Bismillah
+    let lead = '';
+    if (idx === 0 && islamic()) { toast('Bismillah', 'good', '🤲'); lead = 'Bismillah.'; }
+    else if (isLast) lead = pick(TALK.last);
+    else if (idx > 0 && Math.random() < 0.45) lead = pick(TALK.next);
+    g.say(lead ? `${lead} ${r.say}` : r.say, sub, { mood });
+    armIdle();
     const fn = ENGINES[r.type];
     try {
       engine = fn(stage, r, api) || {};
@@ -144,6 +161,20 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
       setTimeout(() => api.finish(), 1200);
     }
   }
+  // Pujukan lembut jika anak tidak menyentuh skrin terlalu lama (maksimum 2 kali setiap soalan)
+  let idleTimer = null, idleCount = 0;
+  function armIdle(reset = true) {
+    clearTimeout(idleTimer);
+    if (reset) idleCount = 0;
+    idleTimer = setTimeout(() => {
+      if (stopped || api._done || idleCount >= 2 || document.visibilityState !== 'visible') return;
+      idleCount++;
+      g.say(`${pick(TALK.idle)} ${rounds[idx].say}`, '', { mood: 'galakan' });
+      armIdle(false);
+    }, 16000);
+  }
+  stage.addEventListener('pointerdown', () => { if (!api._done) armIdle(false); });
+
   function next() {
     idx++;
     if (idx >= rounds.length) { finishAll(); return; }
@@ -162,7 +193,7 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
   });
   const ses = {
     el: scr,
-    stop() { stopped = true; clearInterval(ticker); if (engine?.cleanup) engine.cleanup(); },
+    stop() { stopped = true; clearInterval(ticker); clearTimeout(idleTimer); if (engine?.cleanup) engine.cleanup(); },
     // digunakan oleh ujian automatik untuk menyelesaikan pusingan
     async solveRound() { if (engine?.solve) await engine.solve(); },
     // jalan keluar jika berlaku ralat tidak dijangka dalam satu pusingan
@@ -207,9 +238,12 @@ function showLevelDone({ p, mode, level, stars, rewards, totalMistakes, special 
   confetti(40);
   const big = rewards.filter((r) => r.big);
   if (big.length) setTimeout(() => sfx.reward(), 900);
-  const msg = totalMistakes === 0 ? 'Hebat! Kamu berjaya tanpa sebarang kesilapan!' : 'Bagus! Kamu berjaya! Kamu semakin bijak!';
+  // ucapan penutup yang ringkas & mesra; sekali-sekala sebut nama anak (hanya dengan suara peranti,
+  // supaya suara kekal konsisten apabila pakej suara rakaman digunakan)
   const alh = settings().islamic !== false;
-  speak(`${alh ? 'Alhamdulillah! ' : ''}Tahniah! Satu lagi level selesai. ${msg}`, { mood: 'pujian' });
+  const msg = totalMistakes === 0 ? pick(TALK.doneAll) : pick(TALK.done);
+  const nameLine = !voicePack() && Math.random() < 0.35 ? ` ${pick(TALK.doneName(p.name))}` : '';
+  speak(`${alh ? 'Alhamdulillah! ' : ''}${msg}${nameLine}`, { mood: 'pujian' });
   const content = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' } },
     h('div', { class: 'win-head' },
       h('span', { class: 'emo float' }, special ? '🎁' : '🎉'),
