@@ -43,7 +43,7 @@ jobs:
         run: |
           node tools/build-sw.mjs
           mkdir _site
-          cp -r index.html manifest.webmanifest sw.js css js icons fonts jualan _site/
+          cp -r index.html manifest.webmanifest sw.js css js icons fonts visual-assets jualan _site/
           mkdir -p _site/audio/ms-MY && cp audio/ms-MY/manifest.json audio/ms-MY/catalog.json _site/audio/ms-MY/
           cp -r studio _site/
           find audio/ms-MY -name '*.mp3' -exec cp {} _site/audio/ms-MY/ \;

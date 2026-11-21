@@ -52,7 +52,7 @@ export function modeScreen(modeId) {
         if (st !== undefined) cls.push('done'); else if (un) cls.push('current'); else cls.push('locked');
         if (L % 5 === 0) cls.push('special');
         const node = h('div', { class: 'lv-node' },
-          isCur ? h('span', { class: 'me emo' }, me) : null,
+          isCur ? h('span', { class: 'me emo', 'data-avatar': p.avatar }, me) : null,
           L % 5 === 0 ? h('span', { class: 'gift emo' }, '🎁') : null,
           h('button', { class: cls.join(' '), type: 'button', style: `--c:${m.c}`, 'aria-label': `Level ${L}${un ? '' : ' berkunci'}`, onclick: () => {
             if (demoLock) { sfx.tap(); demoUpgrade(); return; }

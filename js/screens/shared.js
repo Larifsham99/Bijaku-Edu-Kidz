@@ -11,7 +11,7 @@ export function avatarEl(p, cls = '') {
   const av = AVATARS.find((a) => a.id === p.avatar) || AVATARS[0];
   const hat = COSTUMES.find((c) => c.id === p.wear?.hat);
   const acc = COSTUMES.find((c) => c.id === p.wear?.acc);
-  return h('div', { class: `avatar ${cls}` }, av.e,
+  return h('div', { class: `avatar ${cls}`, 'data-avatar': av.id }, av.e,
     hat && hat.e ? h('span', { class: 'hat emo' }, hat.show || hat.e) : null,
     acc && acc.e ? h('span', { class: 'acc emo' }, acc.e) : null);
 }

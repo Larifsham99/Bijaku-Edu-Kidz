@@ -37,7 +37,7 @@ export function shopScreen(tab = 'avatar') {
     const owned = it.kind === 'avatar' ? p.owned.avatars.includes(it.id) : p.owned.costumes.includes(it.id);
     const wearing = it.kind === 'avatar' ? p.avatar === it.id : p.wear[it.slot] === it.id;
     grid.appendChild(h('button', { class: `coll-item ${wearing ? 'on' : ''}`, type: 'button', onclick: () => act(it, owned) },
-      h('span', { class: 'emo' }, it.e || '🚫'), h('span', { class: 'lbl' }, it.n),
+      h('span', { class: 'emo', 'data-avatar': it.kind === 'avatar' ? it.id : null }, it.e || '🚫'), h('span', { class: 'lbl' }, it.n),
       h('span', { class: 'lbl', style: { color: owned ? '#189a5a' : '#d35400' } }, wearing ? 'Dipakai' : owned ? 'Milik saya' : `🪙 ${it.cost}`)));
   });
   scr.appendChild(grid);

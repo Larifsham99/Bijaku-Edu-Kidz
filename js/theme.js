@@ -29,23 +29,43 @@ const piece = (cls, html, style) => {
 // ---------- elemen lukisan ----------
 const WAU = '<svg viewBox="0 0 120 150"><path d="M60 4 C 44 26 30 30 6 34 C 24 46 44 50 58 58 C 40 64 22 72 12 92 C 34 86 50 84 60 92 C 70 84 86 86 108 92 C 98 72 80 64 62 58 C 76 50 96 46 114 34 C 90 30 76 26 60 4 Z" fill="#e2553f"/><path d="M60 14 C 50 30 40 34 24 37 C 38 45 50 49 60 54 C 70 49 82 45 96 37 C 80 34 70 30 60 14 Z" fill="#f2a922"/><path d="M60 62 C 48 68 36 74 28 86 C 42 82 52 82 60 88 C 68 82 78 82 92 86 C 84 74 72 68 60 62 Z" fill="#2e5aac"/><path d="M60 92 C 52 106 50 120 56 146 M60 92 C 68 106 70 120 64 146" stroke="#e2553f" stroke-width="3" fill="none"/><path d="M60 4 V 96" stroke="#7a2e1f" stroke-width="2"/><circle cx="60" cy="56" r="5" fill="#fff6e6"/></svg>';
 const CLOUD = '<svg viewBox="0 0 160 60"><path d="M20 52 h120 a20 20 0 0 0 -10 -36 a28 28 0 0 0 -50 -6 a22 22 0 0 0 -40 14 a16 16 0 0 0 -20 28 z" fill="#fff" opacity=".95"/></svg>';
-const KAMPUNG = `<svg viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice">
-  <path d="M0 150 C 180 70 320 110 470 80 C 640 46 760 120 930 80 C 1050 54 1130 90 1200 70 V320 H0 Z" fill="#9fd48a"/>
-  <path d="M0 200 C 220 150 420 190 640 160 C 860 130 1020 180 1200 150 V320 H0 Z" fill="#7fc36b"/>
-  <g stroke="#a9de8f" stroke-width="3" fill="none" opacity=".9"><path d="M0 232 C 300 205 600 230 1200 196"/><path d="M0 262 C 320 238 640 258 1200 228"/><path d="M0 292 C 340 270 680 288 1200 260"/></g>
-  <path d="M0 250 C 300 228 600 250 1200 216 V320 H0 Z" fill="#62b35a" opacity=".55"/>
-  <g transform="translate(905 92)">
+const KAMPUNG = `<svg viewBox="0 0 1200 340" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <linearGradient id="kgM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9b6e8"/><stop offset="1" stop-color="#e9d9f2"/></linearGradient>
+    <linearGradient id="kgH1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b6e39a"/><stop offset="1" stop-color="#8fd07a"/></linearGradient>
+    <linearGradient id="kgH2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86cf6c"/><stop offset="1" stop-color="#5fb85a"/></linearGradient>
+    <linearGradient id="kgR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9fd6ff"/><stop offset=".5" stop-color="#cfeaff"/><stop offset="1" stop-color="#8cc8f5"/></linearGradient>
+  </defs>
+  <path d="M0 150 L120 92 L210 128 L330 70 L450 124 L560 84 L690 130 L820 76 L940 120 L1060 88 L1200 126 V340 H0 Z" fill="url(#kgM)" opacity=".8"/>
+  <path d="M330 70 l-26 18 h52 z M820 76 l-24 17 h48 z" fill="#fff" opacity=".7"/>
+  <path d="M0 176 C 180 112 330 150 480 122 C 650 92 780 156 950 120 C 1070 96 1140 122 1200 110 V340 H0 Z" fill="url(#kgH1)"/>
+  <g fill="#7fc36b" opacity=".55"><ellipse cx="160" cy="150" rx="40" ry="16"/><ellipse cx="720" cy="140" rx="46" ry="15"/><ellipse cx="1010" cy="128" rx="38" ry="13"/></g>
+  <path d="M0 214 C 230 168 440 206 660 178 C 880 150 1030 198 1200 168 V340 H0 Z" fill="url(#kgH2)"/>
+  <g stroke="#b6e39a" stroke-width="3" fill="none" opacity=".85"><path d="M0 244 C 300 214 600 240 1200 204"/><path d="M0 270 C 320 246 640 266 1200 234"/><path d="M0 298 C 340 276 680 294 1200 262"/></g>
+  <g fill="#cfeaff" opacity=".55"><path d="M60 252 C 260 234 420 246 560 238 L560 244 C 420 252 260 240 60 258 Z"/><path d="M700 240 C 860 226 1000 232 1160 220 L1160 226 C 1000 238 860 232 700 246 Z"/></g>
+  <path d="M520 340 C 560 300 640 292 660 266 C 680 240 760 236 820 214 C 860 200 900 196 960 188 L 990 190 C 920 202 880 210 840 226 C 780 248 700 254 684 278 C 664 306 600 316 572 340 Z" fill="url(#kgR)"/>
+  <path d="M600 322 c 14 -6 28 -6 40 -2 M700 268 c 12 -5 24 -5 34 -1 M840 226 c 10 -4 20 -4 28 -1" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".9"/>
+  <g transform="translate(880 92)">
     <rect x="18" y="74" width="5" height="44" fill="#7a4a2a"/><rect x="92" y="74" width="5" height="44" fill="#7a4a2a"/><rect x="55" y="74" width="5" height="44" fill="#7a4a2a"/>
-    <rect x="10" y="44" width="96" height="34" rx="2" fill="#b77748"/><path d="M10 52h96M10 62h96M10 70h96" stroke="#9a5b34" stroke-width="1.5"/>
-    <rect x="24" y="52" width="16" height="14" fill="#5a3a24"/><rect x="72" y="52" width="16" height="14" fill="#5a3a24"/><path d="M24 59h16M80 52v14" stroke="#b77748" stroke-width="1.5"/>
-    <path d="M0 46 L58 4 L116 46 Z" fill="#7a3f22"/><path d="M58 4 L48 12 M58 4 L68 12" stroke="#f2a922" stroke-width="3"/><path d="M40 46 L58 20 L76 46" fill="#9a5b34"/>
+    <rect x="10" y="44" width="96" height="34" rx="2" fill="#c48a5e"/><path d="M10 52h96M10 62h96M10 70h96" stroke="#9a5b34" stroke-width="1.5"/>
+    <rect x="24" y="52" width="16" height="14" fill="#ffd98a"/><rect x="72" y="52" width="16" height="14" fill="#ffd98a"/><path d="M24 59h16M80 52v14" stroke="#c48a5e" stroke-width="1.5"/>
+    <path d="M0 46 L58 4 L116 46 Z" fill="#8a4a26"/><path d="M8 46 L58 10 L108 46" fill="none" stroke="#b5642a" stroke-width="3"/><path d="M58 4 L48 12 M58 4 L68 12" stroke="#f2a922" stroke-width="3"/><path d="M40 46 L58 20 L76 46" fill="#a86a3f"/>
     <path d="M100 78 l18 40 M108 78 l18 40 M102 88h8 M106 98h8 M110 108h8" stroke="#7a4a2a" stroke-width="3"/>
+    <g fill="#e2553f"><circle cx="2" cy="112" r="5"/><circle cx="14" cy="116" r="4"/></g><g fill="#3f9a52"><ellipse cx="8" cy="120" rx="12" ry="5"/></g>
   </g>
-  <g fill="none" stroke-linecap="round"><path d="M180 230 C 176 170 184 120 206 84" stroke="#8a5a34" stroke-width="9"/>
-    <g stroke="#3f9a52" stroke-width="7"><path d="M206 84 C 176 70 150 76 132 96"/><path d="M206 84 C 196 56 172 44 150 46"/><path d="M206 84 C 222 56 248 48 270 56"/><path d="M206 84 C 238 76 262 90 274 112"/><path d="M206 84 C 214 100 214 118 206 134"/></g>
-    <path d="M1090 220 C 1094 170 1086 130 1066 100" stroke="#8a5a34" stroke-width="8"/>
-    <g stroke="#3f9a52" stroke-width="6"><path d="M1066 100 C 1040 86 1018 92 1002 110"/><path d="M1066 100 C 1058 74 1036 62 1016 64"/><path d="M1066 100 C 1080 74 1102 66 1122 74"/><path d="M1066 100 C 1094 94 1114 106 1124 126"/></g></g>
-  <g fill="#8a5a34"><circle cx="202" cy="92" r="6"/><circle cx="212" cy="94" r="6"/><circle cx="1062" cy="106" r="5"/></g>
+  <g transform="translate(330 126) scale(.62)">
+    <rect x="18" y="74" width="5" height="44" fill="#7a4a2a"/><rect x="92" y="74" width="5" height="44" fill="#7a4a2a"/>
+    <rect x="10" y="44" width="96" height="34" rx="2" fill="#d9a273"/><rect x="40" y="52" width="16" height="14" fill="#ffd98a"/>
+    <path d="M0 46 L58 4 L116 46 Z" fill="#7a3f22"/><path d="M58 4 L48 12 M58 4 L68 12" stroke="#f2a922" stroke-width="3"/>
+  </g>
+  <g fill="none" stroke-linecap="round"><path d="M170 240 C 166 180 174 128 196 92" stroke="#8a5a34" stroke-width="10"/>
+    <g stroke="#3f9a52" stroke-width="8"><path d="M196 92 C 166 78 140 84 122 104"/><path d="M196 92 C 186 64 162 52 140 54"/><path d="M196 92 C 212 64 238 56 260 64"/><path d="M196 92 C 228 84 252 98 264 120"/><path d="M196 92 C 204 108 204 126 196 142"/></g>
+    <path d="M1100 230 C 1104 180 1096 140 1076 110" stroke="#8a5a34" stroke-width="8"/>
+    <g stroke="#3f9a52" stroke-width="6.5"><path d="M1076 110 C 1050 96 1028 102 1012 120"/><path d="M1076 110 C 1068 84 1046 72 1026 74"/><path d="M1076 110 C 1090 84 1112 76 1132 84"/><path d="M1076 110 C 1104 104 1124 116 1134 136"/></g>
+    <path d="M560 196 C 558 166 562 140 574 120" stroke="#8a5a34" stroke-width="6"/>
+    <g stroke="#4fab5f" stroke-width="5"><path d="M574 120 C 556 112 542 116 532 128"/><path d="M574 120 C 568 102 554 94 540 96"/><path d="M574 120 C 584 102 600 96 614 102"/><path d="M574 120 C 594 116 606 126 612 140"/></g></g>
+  <g fill="#8a5a34"><circle cx="192" cy="100" r="7"/><circle cx="203" cy="102" r="7"/><circle cx="1072" cy="116" r="5.5"/></g>
+  <g>${[[60, 300], [120, 312], [420, 292], [470, 306], [760, 300], [1150, 290], [1010, 306]].map(([x, y], i) => `<g transform="translate(${x} ${y})"><path d="M0 0 v12" stroke="#3f9a52" stroke-width="2.5"/><g fill="${['#e2553f', '#f2a922', '#ff8fab'][i % 3]}">${[0, 72, 144, 216, 288].map((a) => `<ellipse cx="0" cy="-5" rx="3.6" ry="5.2" transform="rotate(${a})"/>`).join('')}</g><circle r="2" fill="#fff3c4"/></g>`).join('')}</g>
 </svg>`;
 const WAVES = `<svg viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice">
   <path d="M0 70 C 100 40 200 100 300 70 C 400 40 500 100 600 70 C 700 40 800 100 900 70 C 1000 40 1100 100 1200 70 V220 H0 Z" fill="#3f78c9"/>

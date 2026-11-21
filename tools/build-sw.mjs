@@ -2,7 +2,7 @@
 import { readdirSync, statSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
-const roots = ['index.html', 'manifest.webmanifest', 'css', 'js', 'icons', 'fonts'];
+const roots = ['index.html', 'manifest.webmanifest', 'css', 'js', 'icons', 'fonts', 'visual-assets'];
 const out = [];
 const walk = (p) => { if (statSync(p).isDirectory()) readdirSync(p).sort().forEach((f) => walk(join(p, f))); else if (!p.endsWith('.md')) out.push(p); };
 roots.forEach(walk);

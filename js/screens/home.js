@@ -90,7 +90,7 @@ export function homeScreen() {
     side.appendChild(h('button', { class: 'play-cta', type: 'button', 'aria-label': `Mula bermain ${np.m.n} level ${np.L}`, onclick: () => { sfx.tap(); go(`/main/${np.m.id}/${np.L}`); } },
       h('span', { class: 'pc-play' }, icon('play')),
       h('span', { class: 'pc-text' }, h('b', {}, 'Mula Bermain'), h('span', { class: 'pc-sub' }, modeArt(np.m, 'sm'), `${np.m.n} · Level ${np.L}`)),
-      h('span', { class: 'pc-char emo' }, AVATARS.find((a) => a.id === p.avatar)?.e || '🐰')));
+      h('span', { class: 'pc-char emo', 'data-avatar': p.avatar }, AVATARS.find((a) => a.id === p.avatar)?.e || '🐰')));
   }
   const tile = (cls, ic, label, onclick, extra = null) => h('button', { class: `tile-btn ${cls}`, type: 'button', onclick: () => { sfx.tap(); onclick(); } }, h('span', { class: 'tb-ico' }, icon(ic)), h('span', {}, label), extra);
   side.appendChild(h('div', { class: 'home-actions' },
@@ -137,7 +137,7 @@ export function onboardingScreen({ addMode = false } = {}) {
     body.replaceChildren();
     if (step === 0) {
       body.append(
-        h('div', { style: { fontSize: '64px' } }, CHARACTERS.map((c) => h('span', { class: 'emo float', style: { display: 'inline-block', animationDelay: Math.random() + 's' } }, c.e))),
+        h('div', { style: { fontSize: '64px' } }, CHARACTERS.map((c) => h('span', { class: 'emo float', 'data-avatar': c.id, style: { display: 'inline-block', animationDelay: Math.random() + 's' } }, c.e))),
         h('div', { class: 'guide', style: { maxWidth: '560px' } }, h('div', { class: 'bubble' }, 'Hai! Kami Mimi, Bobo, Coco, Dino dan Lala. Siapa nama kamu?', h('small', {}, 'Ibu bapa boleh bantu menaip nama anak.'))),
         (() => {
           const inp = h('input', { type: 'text', maxlength: '16', placeholder: 'Nama', 'aria-label': 'Nama pemain', value: name, style: { fontSize: '30px', textAlign: 'center', padding: '14px', borderRadius: '22px', border: '4px solid #e1d8ef', width: 'min(360px, 90vw)', fontWeight: 900 } });
@@ -158,7 +158,7 @@ export function onboardingScreen({ addMode = false } = {}) {
     } else {
       body.append(
         h('div', { class: 'guide' }, h('div', { class: 'bubble' }, 'Pilih kawan bermain kamu!')),
-        h('div', { class: 'grid-coll', style: { width: '100%', maxWidth: '640px' } }, AVATARS.filter((a) => a.cost === 0).map((a) => h('button', { class: `coll-item ${a.id === avatar ? 'on' : ''}`, type: 'button', onclick: () => { avatar = a.id; sfx.tap(); speak(CHARACTERS.find((c) => c.id === a.id)?.n || a.n); render(); } }, emo(a.e), h('span', { class: 'lbl' }, CHARACTERS.find((c) => c.id === a.id)?.n || a.n)))),
+        h('div', { class: 'grid-coll', style: { width: '100%', maxWidth: '640px' } }, AVATARS.filter((a) => a.cost === 0).map((a) => h('button', { class: `coll-item ${a.id === avatar ? 'on' : ''}`, type: 'button', onclick: () => { avatar = a.id; sfx.tap(); speak(CHARACTERS.find((c) => c.id === a.id)?.n || a.n); render(); } }, h('span', { class: 'emo', 'data-avatar': a.id }, a.e), h('span', { class: 'lbl' }, CHARACTERS.find((c) => c.id === a.id)?.n || a.n)))),
         h('button', { class: 'btn big green', type: 'button', onclick: () => {
           addProfile({ name, age, avatar });
           sfx.win();
