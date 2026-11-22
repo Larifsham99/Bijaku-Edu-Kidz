@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skrip Iklan BIJAKU</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--ink:#241d52;--soft:#6b628c;--bg:#f4f1ff;--card:#fff;--brand:#5b3dff;--green:#1fa45f;--gold:#ffd43b}
+*{box-sizing:border-box}body{margin:0;font-family:"Baloo 2","Nunito",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+header{background:linear-gradient(135deg,#33267f,#5b3dff);color:#fff;padding:18px 16px 16px}
+header h1{margin:0;font-size:26px}header p{margin:4px 0 0;opacity:.9}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.chips span{background:rgba(255,255,255,.18);padding:3px 10px;border-radius:99px;font-size:13px;font-weight:700}
+nav{position:sticky;top:0;z-index:5;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
+nav a{flex:none;text-decoration:none;color:var(--ink);font-weight:800;font-size:14px;background:#efeaff;padding:6px 12px;border-radius:99px}
+main{max-width:920px;margin:0 auto;padding:14px 16px 80px;display:grid;gap:16px}
+section{background:var(--card);border-radius:22px;padding:16px;box-shadow:0 3px 0 rgba(36,29,82,.08)}
+h2{margin:0 0 4px;font-size:22px}h3{margin:14px 0 6px;font-size:16px;color:var(--brand)}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}.meta span{font-size:13px;font-weight:800;padding:3px 10px;border-radius:99px;background:#fff3bf;color:#7a4a00}.meta span.b{background:#e7f5ff;color:#1c5fa8}.meta span.g{background:#e6fcf0;color:#13804a}
+.goal{color:var(--soft);margin:0}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid #eee}th{font-size:12px;color:var(--soft);text-transform:uppercase;letter-spacing:.4px}
+td:first-child{white-space:nowrap;font-weight:800;color:var(--brand)}td.ost{font-weight:800}
+.box{position:relative;background:#f8f6ff;border:2px dashed #d6ccff;border-radius:16px;padding:12px 12px 10px;white-space:pre-wrap;font-size:15px}
+.box.cap{background:#f1fbf5;border-color:#b2f2bb}
+.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
+button{font:inherit;font-weight:800;border:0;border-radius:14px;padding:9px 16px;cursor:pointer;background:var(--green);color:#fff}
+button.done{background:#868e96}.cnt{font-size:13px;color:var(--soft);font-weight:700}
+.tip{background:#fff9db;border-radius:14px;padding:10px 12px;font-size:14px;margin-top:10px}
+ul,ol{margin:6px 0;padding-left:20px}li{margin:3px 0}
+.hooks li{margin:8px 0}.hooks .row{margin-top:2px}
+.tag{font-family:ui-monospace,monospace;background:#efeaff;padding:0 4px;border-radius:5px}
+@media (max-width:600px){table,thead,tbody,tr,td{display:block}thead{display:none}tr{border-bottom:2px solid #eee;padding:6px 0}td{border:0;padding:3px 0}td:first-child{white-space:normal}}
+</style></head><body>
+<header>
+  <h1>Skrip Iklan BIJAKU</h1>
+  <p>oleh Mawar Ikhlas · untuk TikTok, Instagram Reels, Facebook &amp; YouTube Shorts</p>
+  <div class="chips"><span>Harga: RM19 sekali bayar</span><span>22 permainan · 1,850 level</span><span>Umur 4–6 tahun</span><span>Suara TTS: ElevenLabs v3</span></div>
+</header>
+<nav id="nav"></nav>
+<main id="main"></main>
+<script>
+// =====================================================================
+//  DATA SKRIP — semua fakta mesti benar tentang aplikasi:
+//  22 permainan, 1,850 level, suara BM, tiada iklan, tiada pembelian dalam apl,
+//  boleh main tanpa internet selepas dibuka kali pertama, ramai profil anak dalam
+//  satu peranti, Ruang Ibu Bapa (laporan kemahiran & had masa), RM19 sekali bayar.
+//  Nombor & harga ditulis dalam perkataan supaya sebutan TTS tepat.
+// =====================================================================
+const VIDEOS = [
+  {
+    id: 'v1', t: 'Video 1 · Hook Pantas', dur: '15 saat', plat: 'TikTok · Reels · Shorts', aim: 'Hentikan scroll & bawa trafik. Iklan utama untuk diuji dengan hook berbeza.',
+    tts: '[curious] Anak suka main telefon? [warmly] Apa kata setiap minit itu jadi masa belajar. Bijaku ada dua puluh dua permainan pendidikan, bersuara Bahasa Melayu, dan tanpa iklan. [excited] Sekali bayar, sembilan belas ringgit sahaja. Tekan link sekarang!',
+    scenes: [
+      ['0–2s', 'Tangan anak menekan skrin tablet (dekat). Mula terus dengan gerakan.', 'ANAK SUKA MAIN TELEFON?'],
+      ['2–5s', 'Rakaman skrin: skrin utama BIJAKU, leret rak permainan.', 'Jadikan masa skrin = masa belajar'],
+      ['5–10s', 'Montaj pantas (1 saat setiap satu): Robot Kod Cilik bergerak, Kedai Runcit (bayar RM), Jom Berwuduk, Cilik Racing.', '22 permainan · Suara BM · Tanpa iklan'],
+      ['10–15s', 'Reben "Hebat!" tamat level, kemudian kad harga + logo BIJAKU oleh Mawar Ikhlas.', 'RM19 SEKALI BAYAR · Link di bio'],
+    ],
+    cap: 'Masa skrin anak boleh jadi masa belajar 📚✨\n\nBIJAKU: 22 permainan pendidikan untuk anak 4–6 tahun.\n✅ Suara Bahasa Melayu\n✅ Tanpa iklan, tiada pembelian dalam aplikasi\n✅ Boleh main tanpa internet\n\nRM19 sahaja, sekali bayar. Link di bio 👆\n\n#bijaku #mawarikhlas #belajarsambilbermain #anakpintar #ibubapamalaysia #prasekolah #apppendidikan #parentingmalaysia',
+  },
+  {
+    id: 'v2', t: 'Video 2 · "Rasa Bersalah"', dur: '30 saat', plat: 'Facebook · Instagram · TikTok', aim: 'Iklan penukaran utama: masalah → penyelesaian → tawaran. Paling sesuai untuk iklan berbayar.',
+    tts: '[sincere] Mak ayah, pernah tak rasa bersalah bila anak lama sangat main telefon? Kebanyakan aplikasi penuh iklan, dalam bahasa Inggeris, dan anak cuma tekan-tekan tanpa belajar. [warmly] Sebab itu kami bina Bijaku. Dua puluh dua permainan, lebih seribu lapan ratus level. Huruf, nombor, sains, kenal duit, sampai asas pengekodan. Semuanya bersuara Bahasa Melayu, tanpa iklan, dan boleh main tanpa internet. [excited] Sekali bayar sembilan belas ringgit sahaja. Tekan link, dan cuba demo percuma dulu!',
+    scenes: [
+      ['0–3s', 'Anak memegang telefon, ibu memandang dari belakang (tanpa menunjukkan aplikasi lain secara jelas).', 'PERNAH RASA BERSALAH?'],
+      ['3–8s', 'Skrin kabur dengan ikon "iklan" generik (jangan guna logo jenama lain).', 'Penuh iklan · Bahasa Inggeris · Tekan-tekan sahaja'],
+      ['8–11s', 'Logo BIJAKU muncul, skrin utama BIJAKU.', 'Sebab itu kami bina BIJAKU'],
+      ['11–20s', 'Montaj: ABC Ceria → Dunia Nombor → Makmal Cilik (campur warna) → Kedai Runcit → Robot Kod Cilik.', '22 permainan · 1,850 level'],
+      ['20–25s', 'Ikon/teks besar: Suara BM, Tanpa iklan, Tanpa internet.', '🔊 Bahasa Melayu · 🚫 Iklan · 📴 Internet'],
+      ['25–30s', 'Kad harga + butang "Cuba demo percuma" + logo.', 'RM19 SEKALI BAYAR · Cuba demo percuma'],
+    ],
+    cap: 'Mak ayah, ini untuk anda yang selalu rasa bersalah bila anak main telefon 💛\n\nBIJAKU oleh Mawar Ikhlas:\n🎮 22 permainan, 1,850 level\n🔊 Suara Bahasa Melayu\n🚫 Tiada iklan & tiada pembelian dalam aplikasi\n📴 Boleh main tanpa internet\n👨‍👩‍👧 Satu peranti, ramai profil anak\n\nSekali bayar RM19. Cuba demo percuma dulu 👇\n\n#bijaku #mawarikhlas #ibubapamalaysia #anak4tahun #anak5tahun #belajarsambilbermain #skrintime',
+  },
+  {
+    id: 'v3', t: 'Video 3 · Jelajah Permainan', dur: '55–60 saat', plat: 'Facebook · YouTube · TikTok (tontonan penuh)', aim: 'Tunjuk nilai lengkap untuk ibu bapa yang sedang menimbang. Sesuai juga sebagai video pin di profil.',
+    tts: '[excited] Ini bukan aplikasi kartun biasa. Ini Bijaku, oleh Mawar Ikhlas. [warmly] Di Kedai Runcit Cilik, anak belajar kenal duit ringgit dan bayar dengan tepat. Di Makmal Cilik, mereka campur warna, uji benda yang timbul atau tenggelam, dan kenal kuasa magnet. Robot Kod Cilik pula mengajar asas pengekodan, tanpa perlu pandai membaca. [softly] Untuk didikan Islam, ada Jom Berwuduk, ikut tertib langkah demi langkah, dan Taman Akhlak, di mana setiap pilihan yang baik menanam bunga di kebun. [excited] Suka laju? Cilik Racing, jawab soalan sambil berlumba! [warmly] Salah jawab? Tiada hukuman. Watak comel akan beri galakan untuk cuba lagi. Ibu bapa pula boleh lihat laporan kemahiran dan tetapkan had masa harian. Dua puluh dua permainan, lebih seribu lapan ratus level, sekali bayar sembilan belas ringgit sahaja. Tekan link sekarang.',
+    scenes: [
+      ['0–4s', 'Logo BIJAKU timbul + skrin utama bergerak.', 'BUKAN APLIKASI KARTUN BIASA'],
+      ['4–10s', 'Kedai Runcit Cilik: tekan duit RM1/RM5 ke dulang, pelanggan gembira.', 'Kenal duit Ringgit'],
+      ['10–17s', 'Makmal Cilik: campur merah + kuning → oren; benda jatuh ke dalam air; magnet menarik paku.', 'Sains: warna · timbul tenggelam · magnet'],
+      ['17–23s', 'Robot Kod Cilik: susun anak panah, tekan Jalan, robot sampai ke bintang.', 'Asas pengekodan'],
+      ['23–32s', 'Jom Berwuduk (titisan air, langkah bercahaya) → Taman Akhlak (bunga tumbuh di kebun).', 'Didikan Islam & akhlak'],
+      ['32–37s', 'Cilik Racing: kereta memecut, kutip jawapan betul.', 'Belajar sambil berlumba'],
+      ['37–45s', 'Jawapan salah → galakan lembut; kemudian reben "Hebat!" bersayap.', 'Tiada hukuman, banyak galakan'],
+      ['45–52s', 'Ruang Ibu Bapa: laporan kemahiran & had masa harian (tablet).', 'Laporan kemahiran · Had masa'],
+      ['52–60s', 'Kad akhir: logo, RM19, "Link di bio / Ketahui Lebih Lanjut".', 'RM19 SEKALI BAYAR'],
+    ],
+    cap: 'Jelajah BIJAKU dalam 60 saat 🎒\n\n🛒 Kedai Runcit Cilik: kenal duit Ringgit\n🧪 Makmal Cilik: warna, timbul tenggelam & magnet\n🤖 Robot Kod Cilik: asas pengekodan\n💧 Jom Berwuduk & 🌷 Taman Akhlak\n🏎️ Cilik Racing: jawab sambil berlumba\n👨‍👩‍👧 Laporan kemahiran & had masa untuk ibu bapa\n\n22 permainan, 1,850 level. RM19 sekali bayar.\n\n#bijaku #mawarikhlas #apppendidikan #belajarsains #pengekodan #didikanislam #anakpintar',
+  },
+  {
+    id: 'v4', t: 'Video 4 · Didikan Islam', dur: '20 saat', plat: 'Facebook · Instagram · TikTok', aim: 'Sasaran ibu bapa Muslim yang mahukan nilai Islam. Ketengahkan wuduk, rukun, doa & adab.',
+    tts: '[warmly] Nak anak kenal wuduk, doa harian dan adab sejak kecil? Dalam Bijaku, anak belajar berwuduk ikut tertib, kenal rukun Islam dan rukun iman, dan memilih akhlak yang baik. [softly] Semuanya dalam Bahasa Melayu, dibina dengan berhati-hati, tanpa menggambarkan Allah, malaikat atau nabi. [warmly] Sembilan belas ringgit, sekali bayar. Tekan link sekarang.',
+    scenes: [
+      ['0–3s', 'Jom Berwuduk: watak kanak-kanak, air mengalir dari paip, bahagian badan bercahaya.', 'NAK ANAK KENAL WUDUK?'],
+      ['3–9s', 'Langkah wuduk ditanda WAJIB; susun tertib; kad Doa Hari Ini.', 'Wuduk ikut tertib · Doa harian'],
+      ['9–14s', 'Taman Akhlak: pilih tindakan baik, bunga tumbuh. Si Cilik Soleh: rukun Islam.', 'Rukun Islam · Rukun Iman · Akhlak'],
+      ['14–17s', 'Teks tenang di atas latar lembut.', 'Tanpa menggambarkan Allah, malaikat atau nabi'],
+      ['17–20s', 'Kad harga + logo.', 'RM19 SEKALI BAYAR'],
+    ],
+    cap: 'Didikan Islam sejak kecil, dengan cara yang menyeronokkan 🤲\n\nDalam BIJAKU, anak belajar:\n💧 Wuduk ikut tertib\n📖 Rukun Islam & rukun iman\n🤲 Doa harian (dengan sumber)\n🌷 Memilih akhlak yang baik\n\nDibina dengan berhati-hati: tiada gambaran Allah, malaikat atau nabi.\nRM19 sekali bayar.\n\n#bijaku #mawarikhlas #didikanislam #anaksoleh #wuduk #doaharian #ibubapamuslim',
+  },
+  {
+    id: 'v5', t: 'Video 5 · Harga Berbaloi', dur: '15 saat', plat: 'TikTok · Reels', aim: 'Atasi bantahan harga. Bagus untuk penonton yang sudah kenal (retargeting).',
+    tts: '[playful] Sembilan belas ringgit. Lebih kurang harga dua cawan kopi. [warmly] Tapi dengan Bijaku, anak dapat dua puluh dua permainan pendidikan dan lebih seribu lapan ratus level. Bukan langganan bulanan, dan tiada iklan. [excited] Sekali bayar sahaja. Tekan link!',
+    scenes: [
+      ['0–3s', 'Dua cawan kopi di atas meja (bahan stok), tangan meletakkan wang kertas.', 'RM19 = 2 CAWAN KOPI?'],
+      ['3–9s', 'Leret pantas rak permainan BIJAKU + peta Dunia 22 pulau.', '22 permainan · 1,850 level'],
+      ['9–12s', 'Ikon "langganan" dipangkah; ikon "iklan" dipangkah.', 'Bukan langganan · Tiada iklan'],
+      ['12–15s', 'Kad harga + logo.', 'SEKALI BAYAR RM19'],
+    ],
+    cap: 'RM19 ≈ dua cawan kopi ☕☕\nTapi anak dapat 22 permainan pendidikan & 1,850 level 🎮\n\nBukan langganan bulanan. Tiada iklan. Sekali bayar.\n\n#bijaku #mawarikhlas #berbaloi #apppendidikan #ibubapamalaysia #belajarsambilbermain',
+  },
+  {
+    id: 'v6', t: 'Video 6 · Balik Kampung (Tanpa Internet)', dur: '15 saat', plat: 'TikTok · Reels · Facebook', aim: 'Sudut musim cuti sekolah & perayaan. Ketengahkan boleh main tanpa internet.',
+    tts: '[curious] Balik kampung, internet perlahan, anak mula bosan? [warmly] Bijaku boleh dimainkan tanpa internet selepas dibuka kali pertama. Dua puluh dua permainan, bersuara Bahasa Melayu, dan tanpa iklan. [excited] Sembilan belas ringgit, sekali bayar. Tekan link sekarang!',
+    scenes: [
+      ['0–3s', 'Dalam kereta / rumah kampung; ikon isyarat internet lemah.', 'INTERNET TAKDE?'],
+      ['3–8s', 'Telefon dalam mod kapal terbang; BIJAKU tetap dibuka dan dimainkan.', 'Boleh main tanpa internet'],
+      ['8–12s', 'Montaj: Teka Silang Cilik, Cilik Racing, Makmal Cilik.', '22 permainan · Suara BM'],
+      ['12–15s', 'Kad harga + logo.', 'RM19 SEKALI BAYAR'],
+    ],
+    cap: 'Balik kampung, internet perlahan? Anak tetap boleh belajar sambil bermain 🏡📴\n\nBIJAKU boleh dimainkan tanpa internet selepas dibuka kali pertama.\n22 permainan · Suara BM · Tanpa iklan\nRM19 sekali bayar.\n\n#bijaku #mawarikhlas #balikkampung #cutisekolah #tanpainternet #belajarsambilbermain',
+  },
+];
+const HOOKS = [
+  ['Anak umur empat hingga enam tahun? Jangan scroll dulu.', 'ANAK 4–6 TAHUN? JANGAN SCROLL DULU'],
+  ['Aplikasi belajar, dalam Bahasa Melayu, tanpa iklan. Ada lagi ke?', 'BM + TANPA IKLAN. ADA LAGI KE?'],
+  ['Robot ini hanya bergerak bila anak susun arahan yang betul.', 'ROBOT INI IKUT ARAHAN ANAK'],
+  ['Boleh ke anak kenal duit ringgit melalui permainan kedai?', 'KENAL DUIT MELALUI PERMAINAN'],
+  ['Main sambil belajar wuduk? Boleh.', 'MAIN SAMBIL BELAJAR WUDUK'],
+  ['Kalau anak salah jawab, apa yang berlaku? Tengok ini.', 'KALAU ANAK SALAH JAWAB…'],
+  ['Sembilan belas ringgit, untuk dua puluh dua permainan.', 'RM19 = 22 PERMAINAN'],
+  ['Mak ayah yang selalu rasa bersalah bagi anak main telefon, ini untuk anda.', 'UNTUK MAK AYAH YANG RASA BERSALAH'],
+  ['Merah campur kuning, jadi warna apa? Anak boleh uji sendiri.', 'MERAH + KUNING = ?'],
+  ['Tiga perkara yang ibu bapa cari: tiada iklan, Bahasa Melayu, dan nilai Islam.', '3 PERKARA YANG IBU BAPA CARI'],
+];
+const TIPS = `<h3>Tetapan ElevenLabs</h3>
+<ul>
+<li>Model <b>Eleven v3</b>: tag dalam kurungan seperti <span class="tag">[warmly]</span> <span class="tag">[excited]</span> mengawal emosi dan <b>tidak</b> dibaca. Jika guna model lain, padam semua tag.</li>
+<li>Guna suara yang sama seperti suara dalam aplikasi supaya iklan dan aplikasi rasa konsisten.</li>
+<li>Jana 2–3 versi bagi setiap skrip, kemudian pilih yang paling semula jadi. Nombor dan harga sudah ditulis dalam perkataan supaya sebutannya tepat.</li>
+<li>Kalau sebutan "Bijaku" kurang tepat, cuba tulis "Bi-ja-ku".</li>
+</ul>
+<h3>Penyuntingan video</h3>
+<ul>
+<li>Format menegak <b>9:16 (1080×1920)</b>. Untuk Facebook feed, buat juga versi <b>4:5</b>.</li>
+<li><b>Sari kata wajib</b>, kerana kebanyakan orang menonton tanpa bunyi. Teks skrin (lajur "Teks skrin") mesti besar dan berwarna terang.</li>
+<li>Gerakan atau wajah anak mesti ada dalam <b>2 saat pertama</b>. Jangan mula dengan logo.</li>
+<li>Muzik latar perlahan (sekitar −20 dB di bawah suara). Bunyi "ding" dan pujian daripada aplikasi menambah rasa.</li>
+<li>Rakaman skrin: guna rakam skrin telefon. Laluan berguna: <span class="tag">#/g/kedai/1</span> <span class="tag">#/g/makmal/1</span> <span class="tag">#/g/robot/1</span> <span class="tag">#/g/wuduk/1</span> <span class="tag">#/dunia</span> <span class="tag">#/akhlak</span> <span class="tag">#/lumba</span>.</li>
+<li>Kad akhir 2–3 saat: logo BIJAKU oleh Mawar Ikhlas, <b>RM19 sekali bayar</b>, dan arahan "Link di bio" (TikTok/IG) atau butang "Ketahui Lebih Lanjut" (Facebook).</li>
+</ul>
+<h3>Strategi iklan berbayar</h3>
+<ol>
+<li>Mula dengan <b>Video 2</b> sebagai badan iklan. Gantikan 3 saat pertama dengan 3–5 hook berbeza dari Bank Hook.</li>
+<li>Selepas 2–3 hari, simpan hook dengan kadar tontonan 3 saat dan klik paling tinggi; hentikan yang lemah.</li>
+<li>Guna <b>Video 5</b> (harga) untuk retargeting orang yang sudah menonton atau melawat halaman jualan.</li>
+<li><b>Video 4</b> sesuai untuk minat "parenting Islam"; <b>Video 6</b> untuk musim cuti sekolah dan balik kampung.</li>
+<li>Sasarkan <b>ibu bapa</b> (umur 25–45, minat parenting, prasekolah), bukan kanak-kanak.</li>
+</ol>
+<div class="tip"><b>Penting:</b> semua fakta dalam skrip ini benar tentang aplikasi (22 permainan, 1,850 level, suara BM, tiada iklan, tiada pembelian dalam aplikasi, boleh main tanpa internet selepas dibuka kali pertama, Ruang Ibu Bapa). <b>Jangan</b> tambah testimoni rekaan, dakwaan "nombor 1" atau "disahkan pakar" tanpa bukti; platform iklan boleh menolak iklan sebegitu.</div>`;
+
+const $ = (t, a = {}, ...k) => { const e = document.createElement(t); Object.entries(a).forEach(([x, y]) => (x === 'html' ? (e.innerHTML = y) : e.setAttribute(x, y))); k.flat().forEach((c) => c != null && e.append(c)); return e; };
+async function copy(text, btn) {
+  try { await navigator.clipboard.writeText(text); } catch { const ta = $('textarea'); ta.value = text; document.body.append(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+  btn.textContent = '✓ Disalin'; btn.classList.add('done'); setTimeout(() => { btn.textContent = btn.dataset.l; btn.classList.remove('done'); }, 1600);
+}
+const btn = (label, text) => { const b = $('button', { type: 'button' }, label); b.dataset.l = label; b.onclick = () => copy(text, b); return b; };
+const spoken = (t) => t.replace(/\[[^\]]+\]\s*/g, '');
+const secs = (t) => Math.round(spoken(t).split(/\s+/).filter(Boolean).length / 2.6);
+const nav = document.getElementById('nav'), main = document.getElementById('main');
+VIDEOS.forEach((v) => {
+  nav.append($('a', { href: '#' + v.id }, v.t.split(' · ')[0] + ' · ' + v.dur));
+  main.append($('section', { id: v.id },
+    $('h2', {}, v.t),
+    $('div', { class: 'meta' }, $('span', {}, '⏱ ' + v.dur), $('span', { class: 'b' }, v.plat), $('span', { class: 'g' }, `Suara ≈ ${secs(v.tts)} saat`)),
+    $('p', { class: 'goal' }, v.aim),
+    $('h3', {}, 'Teks untuk ElevenLabs (TTS)'),
+    $('div', { class: 'box' }, v.tts),
+    $('div', { class: 'row' }, btn('Salin teks TTS', v.tts), $('span', { class: 'cnt' }, `${v.tts.length} aksara (kredit ElevenLabs) · ${spoken(v.tts).split(/\s+/).length} patah perkataan`)),
+    $('h3', {}, 'Papan cerita (visual & teks skrin)'),
+    $('table', {}, $('thead', {}, $('tr', {}, $('th', {}, 'Masa'), $('th', {}, 'Visual'), $('th', {}, 'Teks skrin'))),
+      $('tbody', {}, v.scenes.map(([t, vis, ost]) => $('tr', {}, $('td', {}, t), $('td', {}, vis), $('td', { class: 'ost' }, ost))))),
+    $('h3', {}, 'Kapsyen & hashtag'),
+    $('div', { class: 'box cap' }, v.cap),
+    $('div', { class: 'row' }, btn('Salin kapsyen', v.cap))));
+});
+nav.append($('a', { href: '#hook' }, 'Bank Hook'), $('a', { href: '#tips' }, 'Tips'));
+main.append($('section', { id: 'hook' }, $('h2', {}, 'Bank Hook (3 saat pertama)'), $('p', { class: 'goal' }, 'Gantikan ayat pertama mana-mana video dengan hook ini untuk ujian A/B. Jana setiap hook sebagai klip suara berasingan.'),
+  $('ol', { class: 'hooks' }, HOOKS.map(([say, ost]) => $('li', {}, $('div', {}, say), $('div', { class: 'row' }, $('span', { class: 'cnt' }, 'Teks skrin: ' + ost), btn('Salin', '[excited] ' + say)))))),
+  $('section', { id: 'tips', html: '<h2>Tips penerbitan</h2>' + TIPS }));
+const total = VIDEOS.reduce((a, v) => a + v.tts.length, 0) + HOOKS.reduce((a, h) => a + h[0].length + 10, 0);
+main.prepend($('section', {}, $('h2', {}, 'Ringkasan'), $('p', { class: 'goal', html: `6 skrip video + 10 hook. Jumlah keseluruhan lebih kurang <b>${total.toLocaleString('ms-MY')} aksara</b> kredit ElevenLabs (untuk satu kali jana setiap skrip).` })));
+</script>
+</body></html>
