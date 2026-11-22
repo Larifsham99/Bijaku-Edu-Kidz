@@ -103,6 +103,10 @@ export function homeScreen() {
     lim !== Infinity ? h('span', { class: 'time-chip' }, '⏰', `Baki masa hari ini: ${Math.max(0, Math.round((lim - todayPlaySeconds(p)) / 60))} minit`) : null,
     h('button', { class: 'tile-btn parent-link', type: 'button', onclick: () => { sfx.tap(); parentGate(() => go('/ibubapa/ringkasan')); } }, h('span', { class: 'tb-ico' }, icon('parent')), 'Ruang Ibu Bapa')));
 
+  // CILIK RACING (permainan ke-16, modul berasingan)
+  main.appendChild(h('button', { class: 'rc-entry', type: 'button', 'aria-label': 'Cilik Racing', onclick: () => { sfx.tap(); speak('Cilik Racing!'); go('/lumba'); } },
+    h('span', { class: 'rc-entry-txt' }, h('small', {}, 'BAHARU'), h('b', {}, 'Cilik Racing'), h('span', {}, 'Belajar, Pecut, Teroka!')),
+    h('img', { class: 'rc-entry-art', src: 'visual-assets/racing/kereta.png', alt: '' })));
   main.appendChild(h('div', { class: 'section-title' }, icon('grid'), 'Pilih Permainan'));
   const grid = h('div', { class: 'mode-grid' });
   MODE_LIST.forEach((m) => {

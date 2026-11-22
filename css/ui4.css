@@ -214,3 +214,21 @@ html[data-theme="kampung"] .land { height: min(34vh, 290px) !important; }
   .play-cta .pc-text span { font-size: 14px; }
   .play-cta .pc-sub { flex-wrap: nowrap; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 }
+
+/* ---------- Kad masuk CILIK RACING (laman utama) ---------- */
+.rc-entry {
+  position: relative; display: flex; align-items: center; width: 100%; min-height: 128px; margin: 4px 0 14px; padding: 14px 18px; overflow: hidden; cursor: pointer; text-align: left;
+  border-radius: 30px; border: 4px solid #fff; color: #fff;
+  background: linear-gradient(120deg, #2e5aac 0%, #4dabf7 55%, #8fd6ff 100%);
+  box-shadow: inset 0 -7px 0 rgba(0, 0, 0, .14), 0 8px 0 #1f3f7a, 0 16px 28px rgba(46, 90, 172, .3);
+}
+.rc-entry::before { content: ""; position: absolute; left: -10%; right: -10%; bottom: -40px; height: 90px; background: repeating-linear-gradient(90deg, #26262b 0 22px, #fff 22px 44px); transform: perspective(200px) rotateX(55deg); opacity: .22; }
+.rc-entry:active { transform: translateY(5px); box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .14), 0 3px 0 #1f3f7a; }
+.rc-entry-txt { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 2px; }
+.rc-entry-txt small { align-self: flex-start; background: #ffd23a; color: #7a4a00; font-weight: 800; font-size: 13px; padding: 2px 10px; border-radius: 99px; letter-spacing: 1px; box-shadow: 0 2px 0 #c99512; }
+.rc-entry-txt b { font-size: clamp(26px, 6.6vw, 36px); line-height: 1; text-shadow: 0 3px 0 rgba(0, 0, 0, .2); font-style: italic; }
+.rc-entry-txt span { font-weight: 700; font-size: 15px; opacity: .95; }
+.rc-entry-art { position: absolute; right: -6px; bottom: -4px; height: 128px; width: auto; z-index: 0; animation: rcEntry 1.6s ease-in-out infinite; filter: drop-shadow(0 6px 4px rgba(0, 0, 0, .18)); }
+@keyframes rcEntry { 50% { transform: translateY(-4px); } }
+@media (max-width: 420px) { .rc-entry-art { height: 104px; right: -30px; } }
+@media (prefers-reduced-motion: reduce) { .rc-entry-art { animation: none; } }

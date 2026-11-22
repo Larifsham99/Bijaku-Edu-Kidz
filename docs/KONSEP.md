@@ -35,6 +35,18 @@ Prinsip utama:
 | 13 | Dunia Haiwan | Nama, habitat, makanan dan anak haiwan, kelaskan haiwan | Pilih, padan, asingkan |
 | 14 | Asah Minda | Cari yang berbeza, corak, teka-teki, selesaikan masalah, urutan | Pilih, padan, susun |
 | 15 | Misi Pengembaraan | Misi bercerita ke hutan, laut, angkasa dan ladang | Gabungan: cari, kira, maze, asingkan, puzzle |
+| 16 | **Cilik Racing** | Berlumba sambil belajar: huruf, nombor, warna, bentuk, haiwan, ejaan, memori, adab | Lumba 2.5D: tukar lorong, pintu jawapan, kutip, elak, pit stop |
+
+### Cilik Racing — "Belajar, Pecut, Teroka!"
+- Modul **berasingan** (`js/racing/`, gaya `css/racing.css`), dimuat hanya apabila dibuka melalui laluan `#/lumba`. Jika modul ini gagal dimuatkan, 15 permainan asal tetap boleh dimainkan.
+- **10 dunia × 50 level = 500 level**: Litar Kampung, Lembah Buah, Hutan Haiwan, Bandar Warna, Taman Dinosaur, Pulau Ombak, Angkasa Ria, Negeri Gula-gula, Tapak Binaan Cilik dan Pulau Juara. Dunia seterusnya dibuka selepas 10 level di dunia sebelumnya.
+- Kereta bergerak sendiri. Anak menukar lorong (butang ◀ ▶, leret, atau ketik sebelah kiri/kanan) dan boleh menekan butang Turbo.
+- Mekanik pembelajaran: pintu huruf/nombor/jawapan, lorong warna, kutip objek mengikut bilangan, kutip bentuk, isyarat memori (kutip ikut urutan), pit stop ejaan, puzzle corak, checkpoint haiwan (soalan habitat, bunyi, makanan dan anak haiwan) serta misi campuran.
+- **Tiada hukuman berat.** Jika anak melanggar halangan, kereta perlahan dan melantun sebentar. Jika jawapan salah, pintu baharu muncul di depan; selepas itu jawapan betul diberi cahaya dan anak panah. Ujian automatik memastikan semua 500 level boleh ditamatkan walaupun dipandu secara rawak.
+- Level 1–10 ialah Pemandu Cilik (2 lorong), dan level 11–49 semakin mencabar (3–4 lorong, 2–5 cabaran). **Level 50 ialah Level Juara**: 5 cabaran, pusingan akhir dan trofi juara dunia.
+- Ganjaran racing berasingan daripada ganjaran asal: bintang lumba, pingat gangsa/perak/emas bagi setiap dunia, trofi juara, 15 kereta mainan, cat, pelekat dan rim tayar. Tiada pembelian, kotak rawak atau leaderboard.
+- Visual: jalan pseudo-3D berperspektif dengan bukit, selekoh, terowong, jambatan dan jalan terapung. Kereta, hiasan dan halangan dilukis sendiri dalam Canvas, dengan latar paralaks serta kesan zarah ringan. Muzik dunia dan bunyi enjin kartun mematuhi tetapan bunyi.
+- Kemajuan disimpan dalam kunci storan sendiri (`dc-racing-v1`) dengan sandaran IndexedDB. Masa bermain racing dikira dalam had masa harian ibu bapa.
 
 ## 3. Sistem level
 - **50 level setiap permainan**, dibahagi kepada 5 peringkat:

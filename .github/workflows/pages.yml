@@ -27,6 +27,8 @@ jobs:
         run: node tests/generators.test.mjs
       - name: Uji pemilihan suara
         run: node tests/voice.test.mjs
+      - name: Sahkan 500 level Cilik Racing
+        run: node tests/racing.test.mjs --data
 
   deploy:
     needs: test

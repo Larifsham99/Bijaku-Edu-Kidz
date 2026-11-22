@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "python3 -m http.server 8080",
-    "test": "node tests/generators.test.mjs && node tests/voice.test.mjs && node tests/voicepack.test.mjs && node tests/e2e.test.mjs && node tests/upgrade.test.mjs",
+    "test": "node tests/generators.test.mjs && node tests/voice.test.mjs && node tests/voicepack.test.mjs && node tests/e2e.test.mjs && node tests/upgrade.test.mjs && node tests/racing.test.mjs",
     "test:gen": "node tests/generators.test.mjs",
+    "test:racing": "node tests/racing.test.mjs",
     "test:e2e": "node tests/e2e.test.mjs",
     "test:upgrade": "node tests/upgrade.test.mjs",
     "test:all": "node tests/e2e.test.mjs --all",

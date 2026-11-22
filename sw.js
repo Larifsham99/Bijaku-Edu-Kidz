@@ -1,10 +1,11 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-c214a76512';
+const VERSION = 'dunia-cilik-d37705c657';
 const ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
   './css/app.css',
+  './css/racing.css',
   './css/ui2.css',
   './css/ui3.css',
   './css/ui4.css',
@@ -30,6 +31,17 @@ const ASSETS = [
   './js/modes/modesA.js',
   './js/modes/modesB.js',
   './js/nav.js',
+  './js/racing/cars.js',
+  './js/racing/data.js',
+  './js/racing/education.js',
+  './js/racing/engine.js',
+  './js/racing/levels.js',
+  './js/racing/main.js',
+  './js/racing/render.js',
+  './js/racing/sound.js',
+  './js/racing/sprites.js',
+  './js/racing/store.js',
+  './js/racing/ui.js',
   './js/rewards.js',
   './js/rng.js',
   './js/screens/daily.js',
@@ -61,6 +73,7 @@ const ASSETS = [
   './visual-assets/mascots/dino.svg',
   './visual-assets/mascots/lala.svg',
   './visual-assets/mascots/mimi.svg',
+  './visual-assets/racing/kereta.png',
 ];
 self.addEventListener('install', (e) => {
   // cache: 'reload' memastikan fail diambil terus dari pelayan, bukan salinan lama dalam cache HTTP pelayar
