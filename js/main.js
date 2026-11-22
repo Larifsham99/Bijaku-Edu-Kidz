@@ -20,7 +20,7 @@ import { DEMO } from './demo.js';
 import { addProfile } from './store.js';
 
 let pendingReload = false;
-const inGame = () => /^#\/(main|harian\/|lumba\/main|silang\/main)/.test(location.hash);
+const inGame = () => /^#\/(main|harian\/|lumba\/main|silang\/main|akhlak\/kisah\/)/.test(location.hash);
 
 // CILIK RACING: modul terasing yang dimuat secara malas. Jika ia gagal dimuat,
 // hanya skrin racing terjejas — 15 permainan asal tidak disentuh.
@@ -49,6 +49,26 @@ function silangView(args) {
     });
   return el;
 }
+// TAMAN AKHLAK: modul terasing yang dimuat secara malas (corak yang sama)
+let akhlakCleanup = null, akhlakToken = 0;
+function stopAkhlak() {
+  akhlakToken++;
+  if (akhlakCleanup) { const c = akhlakCleanup; akhlakCleanup = null; try { c(); } catch { /* */ } }
+}
+function akhlakView(args) {
+  const el = document.createElement('div');
+  el.className = 'ak-host';
+  const tok = ++akhlakToken;
+  import('./akhlak/main.js')
+    .then((m) => m.mount(el, args))
+    .then((cl) => { if (tok === akhlakToken && el.isConnected) akhlakCleanup = cl; else cl(); })
+    .catch((err) => {
+      console.warn('Taman Akhlak:', err);
+      if (tok !== akhlakToken) return;
+      el.innerHTML = '<div class="screen" style="text-align:center;padding:40px 16px"><h2>Taman Akhlak belum dapat dibuka.</h2><p>Permainan lain masih boleh dimainkan seperti biasa.</p><a class="btn green" href="#/">Kembali</a></div>';
+    });
+  return el;
+}
 function racingView(args) {
   const el = document.createElement('div');
   el.className = 'rc-host';
@@ -71,6 +91,7 @@ function route() {
   stopPlay();
   stopRacing();
   stopSilang();
+  stopAkhlak();
   const path = (location.hash || '#/').slice(1) || '/';
   const parts = path.split('/').filter(Boolean);
   clear(app);
@@ -102,6 +123,7 @@ function route() {
     case 'ibubapa': el = parentScreen(parts[1]); break;
     case 'lumba': el = racingView(parts.slice(1)); break;
     case 'silang': el = silangView(parts.slice(1)); break;
+    case 'akhlak': el = akhlakView(parts.slice(1)); break;
     default: el = homeScreen();
   }
   app.appendChild(el);

@@ -113,12 +113,23 @@ export function homeScreen() {
     h('span', { class: 'rc-entry-txt' }, h('small', {}, tsOff ? 'DIKUNCI' : 'BAHARU'), h('b', {}, 'Teka Silang Cilik'), h('span', {}, 'Susun huruf, cari jawapan!')),
     h('img', { class: 'rc-entry-art', src: 'visual-assets/tekasilang/papan.svg', alt: '' }),
     tsOff ? h('span', { class: 'lock-ic' }, icon('lock')) : null);
+  // TAMAN AKHLAK (modul berasingan)
+  const akOff = settings().disabledModes.includes('akhlak');
+  const akCard = (where) => h('button', { class: `rc-entry ak-entry in-${where} ${akOff ? 'locked' : ''}`, type: 'button', 'aria-label': 'Taman Akhlak', onclick: () => {
+    sfx.tap();
+    if (akOff) { speak('Permainan ini sedang dikunci oleh ibu bapa.'); return; }
+    go('/akhlak');
+  } },
+    h('span', { class: 'rc-entry-txt' }, h('small', {}, akOff ? 'DIKUNCI' : 'BAHARU'), h('b', {}, 'Taman Akhlak'), h('span', {}, 'Pilih yang baik, kebun pun mekar!')),
+    h('img', { class: 'rc-entry-art', src: 'visual-assets/akhlak/kebun.svg', alt: '' }),
+    akOff ? h('span', { class: 'lock-ic' }, icon('lock')) : null);
   const tile = (cls, ic, label, onclick, extra = null) => h('button', { class: `tile-btn ${cls}`, type: 'button', onclick: () => { sfx.tap(); onclick(); } }, h('span', { class: 'tb-ico' }, icon(ic)), h('span', {}, label), extra);
   side.appendChild(h('div', { class: 'home-actions' },
     tile('t-orange', 'calendar', 'Cabaran Harian', () => go('/harian'), dailyLeft ? h('span', { class: 'badge' }, dailyLeft) : h('span', { class: 'badge', style: { color: '#189a5a' } }, '✓')),
     tile('t-yellow', 'trophy', 'Koleksi Trofi', () => go('/trofi')),
     tile('t-pink', 'kain', 'Kostum & Tema', () => go('/kedai')),
     tile('t-sky', 'wau', 'Main Bebas', () => go('/bebas'))));
+  side.appendChild(akCard('side'));
   side.appendChild(rcCard('side'));
   side.appendChild(tsCard('side'));
   if (settings().islamic !== false) side.appendChild(doaCard());
@@ -126,6 +137,7 @@ export function homeScreen() {
     lim !== Infinity ? h('span', { class: 'time-chip' }, '⏰', `Baki masa hari ini: ${Math.max(0, Math.round((lim - todayPlaySeconds(p)) / 60))} minit`) : null,
     h('button', { class: 'tile-btn parent-link', type: 'button', onclick: () => { sfx.tap(); parentGate(() => go('/ibubapa/ringkasan')); } }, h('span', { class: 'tb-ico' }, icon('parent')), 'Ruang Ibu Bapa')));
 
+  main.appendChild(akCard('main'));
   main.appendChild(rcCard('main'));
   main.appendChild(tsCard('main'));
   main.appendChild(h('div', { class: 'section-title' }, icon('grid'), 'Pilih Permainan'));

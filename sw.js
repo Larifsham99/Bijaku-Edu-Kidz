@@ -1,15 +1,21 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-9a9254b586';
+const VERSION = 'dunia-cilik-653c0b76ad';
 const ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
+  './css/akhlak.css',
   './css/app.css',
   './css/racing.css',
   './css/tekasilang.css',
   './css/ui2.css',
   './css/ui3.css',
   './css/ui4.css',
+  './js/akhlak/data.js',
+  './js/akhlak/main.js',
+  './js/akhlak/scene.js',
+  './js/akhlak/store.js',
+  './js/akhlak/ui.js',
   './js/audio.js',
   './js/data/art.js',
   './js/data/content.js',
@@ -70,6 +76,7 @@ const ASSETS = [
   './icons/icon-512.png',
   './icons/icon.svg',
   './fonts/baloo2-latin.woff2',
+  './visual-assets/akhlak/kebun.svg',
   './visual-assets/icons/bunyi.svg',
   './visual-assets/icons/lukis.svg',
   './visual-assets/icons/mewarna.svg',

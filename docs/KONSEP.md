@@ -49,6 +49,13 @@ Prinsip utama:
 - Visual: jalan pseudo-3D berperspektif dengan bukit, selekoh, terowong, jambatan dan jalan terapung. Kereta, hiasan dan halangan dilukis sendiri dalam Canvas, dengan latar paralaks serta kesan zarah ringan. Muzik dunia dan bunyi enjin kartun mematuhi tetapan bunyi.
 - Kemajuan disimpan dalam kunci storan sendiri (`dc-racing-v1`) dengan sandaran IndexedDB. Masa bermain racing dikira dalam had masa harian ibu bapa.
 
+### Taman Akhlak — "Pilih yang baik, kebun pun mekar!"
+- Modul **berasingan** (`js/akhlak/`, gaya `css/akhlak.css`) dengan laluan `#/akhlak`.
+- **Kisah Pilihan (30 kisah):** situasi harian bergambar dan bersuara, seperti beri salam, makan dengan tangan kanan, berkongsi, jujur, minta maaf, tolong ibu, sayang haiwan, beratur, solat, bersedekah dan menjaga kebersihan. Anak memilih tindakan. Pilihan yang baik membuat watak gembira dan diikuti pengajaran ringkas. Pilihan yang kurang baik tidak dihukum; watak berasa sedih dan anak diajak cuba lagi.
+- **Kebun Amal:** setiap kisah yang selesai menanam bunga mengikut kategori akhlak (sopan, rajin, keluarga, ibadah, jujur, alam). Pencapaian kebun: rama-rama, burung, kolam, pelangi, pondok dan "Kebun Mekar". Kebun ini tidak pernah layu (tiada tekanan, tiada streak).
+- **Amal Hari Ini:** 10 kebaikan sebenar di rumah, contohnya beri salam, kemas mainan dan gosok gigi. Ibu atau bapa mengesahkannya melalui pintu ibu bapa, dan setiap amal menjadi buah di pokok kebun.
+- Kemajuan disimpan dalam kunci sendiri (`dc-akhlak-v1`) dengan sandaran IndexedDB. Ibu bapa boleh mengunci modul ini dan set semula kemajuannya.
+
 ### Teka Silang Cilik — "Susun huruf, cari jawapan!"
 - Modul **berasingan** (`js/tekasilang/`, gaya `css/tekasilang.css`) dengan laluan `#/silang`, dimuat hanya apabila dibuka.
 - **15 chapter × 30 level = 450 level** pendidikan awal Islam, dari Allah Tuhan Kita hingga Si Cilik Soleh. Chapter seterusnya dibuka selepas 10 level di chapter sebelumnya.

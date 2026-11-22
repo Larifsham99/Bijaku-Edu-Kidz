@@ -31,6 +31,8 @@ jobs:
         run: node tests/racing.test.mjs --data
       - name: Sahkan 450 level Teka Silang Cilik
         run: node tests/silang.test.mjs --data
+      - name: Sahkan 30 kisah Taman Akhlak
+        run: node tests/akhlak.test.mjs --data
 
   deploy:
     needs: test
