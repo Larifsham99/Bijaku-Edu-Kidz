@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semak Klip Suara · Dunia Cilik</title>
+<style>
+  :root { --ink: #2b2350; --bg: #fff6e6; --card: #fff; --acc: #2f9e6a; --bad: #e2553f; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Baloo 2", "Nunito", system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+  header { position: sticky; top: 0; background: #fff; padding: 12px 16px; box-shadow: 0 2px 10px rgba(0,0,0,.08); z-index: 2; }
+  h1 { margin: 0 0 6px; font-size: 22px; }
+  .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  input { flex: 1; min-width: 180px; padding: 10px 14px; border-radius: 14px; border: 2px solid #e6e0f2; font: inherit; }
+  button { font: inherit; cursor: pointer; border-radius: 14px; border: 0; padding: 9px 14px; font-weight: 700; }
+  .play-all { background: var(--acc); color: #fff; }
+  .copy { background: #ece6fa; color: var(--ink); }
+  main { padding: 12px 16px 60px; max-width: 900px; margin: 0 auto; display: grid; gap: 8px; }
+  .row { display: flex; align-items: center; gap: 10px; background: var(--card); border-radius: 16px; padding: 8px 10px; box-shadow: 0 2px 0 rgba(43,35,80,.08); }
+  .row.on { outline: 3px solid #ffd23a; }
+  .row.bad { background: #ffe9e5; }
+  .row .t { flex: 1; font-size: 17px; }
+  .row .n { color: #8a80a8; font-size: 13px; width: 36px; text-align: right; }
+  .pl { width: 44px; height: 44px; border-radius: 50%; background: #4dabf7; color: #fff; font-size: 18px; padding: 0; }
+  .flag { background: #fff; border: 2px solid #f2c1b8; color: var(--bad); padding: 6px 10px; }
+  .row.bad .flag { background: var(--bad); color: #fff; }
+  .note { font-size: 14px; color: #6b628c; margin: 4px 0 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Semak Klip Suara</h1>
+  <div class="bar">
+    <input id="q" type="search" placeholder="Cari ayat…" aria-label="Cari ayat">
+    <button class="play-all" id="all" type="button">▶ Main semua</button>
+    <button class="copy" id="copy" type="button">Salin senarai salah</button>
+  </div>
+  <p class="note" id="info">Memuatkan…</p>
+</header>
+<main id="list"></main>
+<script>
+const base = '../audio/ms-MY/';
+const audio = new Audio();
+let rows = [], playing = -1, auto = false;
+const bad = new Set(JSON.parse(localStorage.getItem('dc-semak-salah') || '[]'));
+const saveBad = () => { try { localStorage.setItem('dc-semak-salah', JSON.stringify([...bad])); } catch {} };
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+function play(i) {
+  rows.forEach((r) => r.el.classList.remove('on'));
+  const r = rows[i]; if (!r) { auto = false; return; }
+  playing = i; r.el.classList.add('on'); r.el.scrollIntoView({ block: 'nearest' });
+  audio.src = base + r.file; audio.play().catch(() => {});
+}
+audio.addEventListener('ended', () => { if (auto) setTimeout(() => play(playing + 1), 350); });
+fetch(base + 'manifest.json', { cache: 'no-cache' }).then((r) => r.json()).then((m) => {
+  const list = document.getElementById('list');
+  rows = Object.entries(m.clips).map(([key, file], i) => {
+    const el = document.createElement('div'); el.className = 'row' + (bad.has(key) ? ' bad' : '');
+    el.innerHTML = `<span class="n">${i + 1}</span><button class="pl" type="button" aria-label="Main">▶</button><span class="t"></span><button class="flag" type="button">Salah</button>`;
+    el.querySelector('.t').textContent = cap(key);
+    el.querySelector('.pl').onclick = () => { auto = false; play(i); };
+    el.querySelector('.flag').onclick = () => { bad.has(key) ? bad.delete(key) : bad.add(key); el.classList.toggle('bad', bad.has(key)); saveBad(); };
+    list.appendChild(el);
+    return { key, file, el };
+  });
+  document.getElementById('info').textContent = `${rows.length} klip · Tekan ▶ untuk dengar. Jika suara tidak sama dengan teks, tekan "Salah", kemudian "Salin senarai salah" dan hantar kepada pembangun.`;
+});
+document.getElementById('all').onclick = () => { auto = true; play(Math.max(0, playing)); };
+document.getElementById('q').oninput = (e) => { const q = e.target.value.toLowerCase(); rows.forEach((r) => { r.el.style.display = r.key.includes(q) ? '' : 'none'; }); };
+document.getElementById('copy').onclick = () => { const t = [...bad].map(cap).join('\n') || '(tiada)'; navigator.clipboard?.writeText(t); alert('Disalin:\n' + t); };
+</script>
+</body>
+</html>
