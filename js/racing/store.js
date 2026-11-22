@@ -104,3 +104,10 @@ export function recordRace(rp, level, stars) {
   rsave();
   return res;
 }
+
+// dipanggil dari Ruang Ibu Bapa (set semula / padam profil)
+export function resetRacing(pid) {
+  if (!all) load();
+  delete all[String(pid)];
+  rsave();
+}

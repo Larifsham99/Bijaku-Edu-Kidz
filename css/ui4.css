@@ -232,3 +232,12 @@ html[data-theme="kampung"] .land { height: min(34vh, 290px) !important; }
 @keyframes rcEntry { 50% { transform: translateY(-4px); } }
 @media (max-width: 420px) { .rc-entry-art { height: 104px; right: -30px; } }
 @media (prefers-reduced-motion: reduce) { .rc-entry-art { animation: none; } }
+/* satu lajur (telefon): kad dalam lajur sisi; dua lajur: kad dalam lajur utama */
+.rc-entry.in-main { display: none; }
+@media (min-width: 980px), (orientation: landscape) and (min-width: 700px) and (max-width: 979px) {
+  .rc-entry.in-side { display: none; }
+  .rc-entry.in-main { display: flex; }
+}
+.rc-entry.locked { filter: grayscale(.75); opacity: .8; }
+.rc-entry .lock-ic { position: absolute; top: 10px; right: 12px; z-index: 2; width: 36px; height: 36px; border-radius: 50%; background: #fff; display: grid; place-items: center; color: #6b628c; }
+.rc-entry .lock-ic svg { width: 22px; height: 22px; }

@@ -92,21 +92,30 @@ export function homeScreen() {
       h('span', { class: 'pc-text' }, h('b', {}, 'Mula Bermain'), h('span', { class: 'pc-sub' }, modeArt(np.m, 'sm'), `${np.m.n} · Level ${np.L}`)),
       h('span', { class: 'pc-char emo', 'data-avatar': p.avatar }, AVATARS.find((a) => a.id === p.avatar)?.e || '🐰')));
   }
+  // CILIK RACING (permainan ke-16, modul berasingan). Kad muncul dalam lajur sisi
+  // (telefon, satu lajur) atau lajur utama (tablet/desktop) — CSS memilih satu.
+  const rcOff = settings().disabledModes.includes('lumba');
+  const rcCard = (where) => h('button', { class: `rc-entry in-${where} ${rcOff ? 'locked' : ''}`, type: 'button', 'aria-label': 'Cilik Racing', onclick: () => {
+    sfx.tap();
+    if (rcOff) { speak('Permainan ini sedang dikunci oleh ibu bapa.'); return; }
+    speak('Cilik Racing!'); go('/lumba');
+  } },
+    h('span', { class: 'rc-entry-txt' }, h('small', {}, rcOff ? 'DIKUNCI' : 'BAHARU'), h('b', {}, 'Cilik Racing'), h('span', {}, 'Belajar, Pecut, Teroka!')),
+    h('img', { class: 'rc-entry-art', src: 'visual-assets/racing/kereta.png', alt: '' }),
+    rcOff ? h('span', { class: 'lock-ic' }, icon('lock')) : null);
   const tile = (cls, ic, label, onclick, extra = null) => h('button', { class: `tile-btn ${cls}`, type: 'button', onclick: () => { sfx.tap(); onclick(); } }, h('span', { class: 'tb-ico' }, icon(ic)), h('span', {}, label), extra);
   side.appendChild(h('div', { class: 'home-actions' },
     tile('t-orange', 'calendar', 'Cabaran Harian', () => go('/harian'), dailyLeft ? h('span', { class: 'badge' }, dailyLeft) : h('span', { class: 'badge', style: { color: '#189a5a' } }, '✓')),
     tile('t-yellow', 'trophy', 'Koleksi Trofi', () => go('/trofi')),
     tile('t-pink', 'kain', 'Kostum & Tema', () => go('/kedai')),
     tile('t-sky', 'wau', 'Main Bebas', () => go('/bebas'))));
+  side.appendChild(rcCard('side'));
   if (settings().islamic !== false) side.appendChild(doaCard());
   side.appendChild(h('div', { class: 'parent-row' },
     lim !== Infinity ? h('span', { class: 'time-chip' }, '⏰', `Baki masa hari ini: ${Math.max(0, Math.round((lim - todayPlaySeconds(p)) / 60))} minit`) : null,
     h('button', { class: 'tile-btn parent-link', type: 'button', onclick: () => { sfx.tap(); parentGate(() => go('/ibubapa/ringkasan')); } }, h('span', { class: 'tb-ico' }, icon('parent')), 'Ruang Ibu Bapa')));
 
-  // CILIK RACING (permainan ke-16, modul berasingan)
-  main.appendChild(h('button', { class: 'rc-entry', type: 'button', 'aria-label': 'Cilik Racing', onclick: () => { sfx.tap(); speak('Cilik Racing!'); go('/lumba'); } },
-    h('span', { class: 'rc-entry-txt' }, h('small', {}, 'BAHARU'), h('b', {}, 'Cilik Racing'), h('span', {}, 'Belajar, Pecut, Teroka!')),
-    h('img', { class: 'rc-entry-art', src: 'visual-assets/racing/kereta.png', alt: '' })));
+  main.appendChild(rcCard('main'));
   main.appendChild(h('div', { class: 'section-title' }, icon('grid'), 'Pilih Permainan'));
   const grid = h('div', { class: 'mode-grid' });
   MODE_LIST.forEach((m) => {

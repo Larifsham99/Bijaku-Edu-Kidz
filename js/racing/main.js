@@ -6,6 +6,8 @@
 // =====================================================================
 import { homeScreen, mapScreen, worldScreen, garageScreen, collectionScreen, raceScreen } from './ui.js';
 import { restoreBackup } from './store.js';
+import { settings } from '../store.js';
+import { h } from '../ui.js';
 
 let cssReady = null;
 function ensureCss() {
@@ -30,6 +32,10 @@ export async function mount(el, args = []) {
   if (dead || !el.isConnected) return cleanup;
   const [a, b, c] = args;
   let scr;
+  if (settings().disabledModes?.includes('lumba')) {
+    el.appendChild(h('div', { class: 'rc-screen', style: { textAlign: 'center', paddingTop: '60px' } }, h('h2', {}, 'Cilik Racing sedang dikunci oleh ibu bapa.'), h('a', { class: 'rc-btn green', href: '#/' }, 'Kembali')));
+    return cleanup;
+  }
   if (a === 'peta') scr = mapScreen();
   else if (a === 'dunia') scr = worldScreen(+b || 0);
   else if (a === 'garaj') scr = garageScreen(onClean);

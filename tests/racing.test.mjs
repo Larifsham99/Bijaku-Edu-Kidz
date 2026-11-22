@@ -98,6 +98,10 @@ S.recordRace(rp, buildLevel(0, 1), 1);
 ok(S.levelStars(rp, 'kampung', 1) === 3, 'ulang main tidak mengurangkan bintang terbaik');
 const saved = JSON.parse(localStorage.getItem('dc-racing-v1'));
 ok(saved.ujian && saved.ujian.done.kampung[10] === 3, 'kemajuan disimpan dalam kunci storan sendiri (dc-racing-v1)');
+S.rprof('lain'); S.recordRace(S.rprof('lain'), buildLevel(0, 1), 2);
+S.resetRacing('ujian');
+const after = JSON.parse(localStorage.getItem('dc-racing-v1'));
+ok(!after.ujian && after.lain?.done.kampung[1] === 2 && S.totalStars(S.rprof('ujian')) === 0, 'set semula ibu bapa memadam kemajuan racing profil itu sahaja');
 
 if (process.argv.includes('--data')) { console.log(failures ? `\n✗ ${failures} ujian gagal` : '\n✓ Ujian data racing lulus'); process.exit(failures ? 1 : 0); }
 
@@ -165,6 +169,16 @@ try {
   await page.locator('.rc-g-item.car:not(.locked)').nth(2).click();
   const car = await page.evaluate(() => { const d = JSON.parse(localStorage.getItem('dc-racing-v1')); return d[window.__dc.getState().currentId].car; });
   ok(car && car !== 'tomato', `kereta baharu boleh dipilih di garaj (${car})`);
+  // kunci ibu bapa
+  await page.evaluate(() => { window.__dc.getState().settings.disabledModes.push('lumba'); location.hash = '/'; });
+  await page.waitForSelector('.mode-card');
+  ok(await page.locator('.rc-entry.locked:visible').count() === 1, 'kad racing dipaparkan sebagai dikunci apabila ibu bapa mengunci');
+  await page.evaluate(() => { location.hash = '/lumba/main/0/1'; });
+  await page.waitForSelector('text=sedang dikunci oleh ibu bapa', { timeout: 8000 });
+  ok(await page.locator('.rc-race').count() === 0, 'laluan racing disekat semasa dikunci');
+  await page.evaluate(() => { const st = window.__dc.getState().settings; st.disabledModes = st.disabledModes.filter((x) => x !== 'lumba'); location.hash = '/'; });
+  await page.waitForSelector('.mode-card');
+  ok(await page.locator('.rc-entry:not(.locked):visible').count() === 1, 'hanya satu kad racing kelihatan pada telefon');
   // luar talian
   await page.goto(BASE);
   await page.evaluate(() => navigator.serviceWorker && navigator.serviceWorker.ready);

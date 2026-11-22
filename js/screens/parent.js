@@ -2,6 +2,8 @@
 import { h, emo, fmtTime, todayKey, toast } from '../ui.js';
 import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
+// kemajuan Cilik Racing disimpan berasingan; dipadam bersama apabila ibu bapa set semula / padam profil
+const resetRacing = (id) => import('../racing/store.js').then((m) => m.resetRacing(id)).catch(() => {});
 import { getState, profile, settings, save, flush, levelsDone, totalLevelsDone, totalPlaySeconds, mastery, MASTERY_LABEL, addProfile, deleteProfile, updateProfile, switchProfile, resetProfileProgress, exportData, highestUnlocked } from '../store.js';
 import { MODE_LIST, MODES, ALL_SKILLS } from '../modes/index.js';
 import { AVATARS } from '../data/content.js';
@@ -226,7 +228,7 @@ function tetapanTab() {
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '🔐 Akses aplikasi'),
     toggle('Kedai kostum perlu kebenaran ibu bapa', s.lockShop, (v) => { s.lockShop = v; save(); }, 'Syiling hanya mata wang permainan. Tiada pembelian wang sebenar dalam aplikasi ini.'),
     h('div', { class: 'muted', style: { fontSize: '14px', margin: '10px 0 4px' } }, 'Mod permainan yang dibenarkan:'),
-    ...MODE_LIST.map((m) => toggle(`${m.e} ${m.n}`, !s.disabledModes.includes(m.id), (v) => { s.disabledModes = v ? s.disabledModes.filter((x) => x !== m.id) : [...s.disabledModes, m.id]; save(); }))));
+    ...[...MODE_LIST, { id: 'lumba', e: '🏎️', n: 'Cilik Racing' }].map((m) => toggle(`${m.e} ${m.n}`, !s.disabledModes.includes(m.id), (v) => { s.disabledModes = v ? s.disabledModes.filter((x) => x !== m.id) : [...s.disabledModes, m.id]; save(); }))));
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '💾 Data'),
     h('p', { class: 'muted', style: { fontSize: '14px' } }, 'Semua kemajuan disimpan secara automatik dalam peranti ini sahaja (IndexedDB). Tiada data dihantar ke internet.'),
     h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start' } },
@@ -280,8 +282,8 @@ function profilTab() {
       h('div', { class: 'row-wrap' },
         p.id !== st.currentId ? h('button', { class: 'btn small blue', type: 'button', onclick: () => { switchProfile(p.id); go('/ibubapa/profil'); } }, 'Guna') : null,
         h('button', { class: 'btn small ghost', type: 'button', onclick: () => { const f = profileForm(p, (d) => { updateProfile(p.id, d); toast('Disimpan', 'good', '✅'); go('/ibubapa/profil'); }, `Sunting ${p.name}`); wrap.prepend(f); f.scrollIntoView({ behavior: 'smooth' }); } }, 'Sunting'),
-        h('button', { class: 'btn small ghost', type: 'button', onclick: () => confirmBox(`Set semula semua kemajuan ${p.name}?`, () => { resetProfileProgress(p.id); toast('Kemajuan diset semula', 'good', '🔄'); go('/ibubapa/profil'); }, { emoji: '🔄' }) }, 'Set semula'),
-        h('button', { class: 'btn small red', type: 'button', onclick: () => confirmBox(`Padam profil ${p.name}? Tindakan ini tidak boleh dibatalkan.`, () => { deleteProfile(p.id); go(getState().profiles.length ? '/ibubapa/profil' : '/'); }, { emoji: '🗑️', yes: 'Padam' }) }, 'Padam'))));
+        h('button', { class: 'btn small ghost', type: 'button', onclick: () => confirmBox(`Set semula semua kemajuan ${p.name}?`, () => { resetProfileProgress(p.id); resetRacing(p.id); toast('Kemajuan diset semula', 'good', '🔄'); go('/ibubapa/profil'); }, { emoji: '🔄' }) }, 'Set semula'),
+        h('button', { class: 'btn small red', type: 'button', onclick: () => confirmBox(`Padam profil ${p.name}? Tindakan ini tidak boleh dibatalkan.`, () => { deleteProfile(p.id); resetRacing(p.id); go(getState().profiles.length ? '/ibubapa/profil' : '/'); }, { emoji: '🗑️', yes: 'Padam' }) }, 'Padam'))));
   });
   wrap.appendChild(profileForm({}, (d) => { addProfile(d); toast(`Profil ${d.name} ditambah`, 'good', '🎉'); go('/ibubapa/profil'); }, '➕ Tambah profil anak'));
   return wrap;
