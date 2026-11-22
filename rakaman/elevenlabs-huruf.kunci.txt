@@ -24,3 +24,6 @@ Huruf W.
 Huruf X.
 Huruf Y.
 Huruf Z.
+Tekan butang bunyi untuk dengar.
+A, B, C Ceria.
+Lemon.
