@@ -29,6 +29,8 @@ jobs:
         run: node tests/voice.test.mjs
       - name: Sahkan 500 level Cilik Racing
         run: node tests/racing.test.mjs --data
+      - name: Sahkan 450 level Teka Silang Cilik
+        run: node tests/silang.test.mjs --data
 
   deploy:
     needs: test

@@ -35,6 +35,7 @@ Prinsip utama:
 | 13 | Dunia Haiwan | Nama, habitat, makanan dan anak haiwan, kelaskan haiwan | Pilih, padan, asingkan |
 | 14 | Asah Minda | Cari yang berbeza, corak, teka-teki, selesaikan masalah, urutan | Pilih, padan, susun |
 | 15 | Misi Pengembaraan | Misi bercerita ke hutan, laut, angkasa dan ladang | Gabungan: cari, kira, maze, asingkan, puzzle |
+| 17 | **Teka Silang Cilik** | Pendidikan awal Islam: Allah, rukun Islam & iman, solat, wuduk, doa, adab, keluarga, masjid, 25 nabi, kisah nabi, makanan halal, ciptaan Allah, Ramadan | Teka silang bergambar, huruf hilang, cari huruf, padan, bayang (tanpa suara) |
 | 16 | **Cilik Racing** | Berlumba sambil belajar: huruf, nombor, warna, bentuk, haiwan, ejaan, memori, adab | Lumba 2.5D: tukar lorong, pintu jawapan, kutip, elak, pit stop |
 
 ### Cilik Racing — "Belajar, Pecut, Teroka!"
@@ -47,6 +48,16 @@ Prinsip utama:
 - Ganjaran racing berasingan daripada ganjaran asal: bintang lumba, pingat gangsa/perak/emas bagi setiap dunia, trofi juara, 15 kereta mainan, cat, pelekat dan rim tayar. Tiada pembelian, kotak rawak atau leaderboard.
 - Visual: jalan pseudo-3D berperspektif dengan bukit, selekoh, terowong, jambatan dan jalan terapung. Kereta, hiasan dan halangan dilukis sendiri dalam Canvas, dengan latar paralaks serta kesan zarah ringan. Muzik dunia dan bunyi enjin kartun mematuhi tetapan bunyi.
 - Kemajuan disimpan dalam kunci storan sendiri (`dc-racing-v1`) dengan sandaran IndexedDB. Masa bermain racing dikira dalam had masa harian ibu bapa.
+
+### Teka Silang Cilik — "Susun huruf, cari jawapan!"
+- Modul **berasingan** (`js/tekasilang/`, gaya `css/tekasilang.css`) dengan laluan `#/silang`, dimuat hanya apabila dibuka.
+- **15 chapter × 30 level = 450 level** pendidikan awal Islam, dari Allah Tuhan Kita hingga Si Cilik Soleh. Chapter seterusnya dibuka selepas 10 level di chapter sebelumnya.
+- **10 mekanik:** A gambar ke perkataan, B huruf hilang, C huruf terapung, D silang mini, E silang bergambar, F padan perkataan, G bayang perkataan, H campuran, I cari huruf, J lengkapkan papan.
+- Peringkat: level 1–5 perkataan pendek dengan bantuan penuh; level 6–10 huruf hilang dan cari huruf; level 11–15 silang mini; level 16–20 padan, huruf terapung dan campuran; level 21–25 silang 3 perkataan; level 26–29 papan 4–5 perkataan. **Level 30 ialah Chapter Master**, dengan papan besar, pingat dan pelekat chapter.
+- **Tanpa suara.** Maklum balas hanya melalui visual dan kesan bunyi Web Audio (pop, tink, kilauan, melodi sambutan; bunyi salah yang lembut tanpa buzzer), dan semuanya mematuhi tetapan bunyi ibu bapa.
+- Petunjuk berperingkat: sorotan lembut, kemudian kurangkan pilihan, kemudian bantu isi jawapan. Tiada nyawa, tiada kiraan masa, tiada "game over".
+- Ilustrasi SVG dilukis khas (kira-kira 135). Nabi tidak digambarkan; nama nabi dipaparkan pada papan nama, dan tiada ayat al-Quran dijadikan hiasan.
+- Kemajuan disimpan dalam kunci sendiri (`dc-silang-v1`) dengan sandaran IndexedDB. Ibu bapa boleh mengunci permainan ini dan set semula kemajuannya.
 
 ## 3. Sistem level
 - **50 level setiap permainan**, dibahagi kepada 5 peringkat:

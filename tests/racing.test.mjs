@@ -127,7 +127,7 @@ try {
   await page.click('text=Seterusnya'); await page.click('text=Seterusnya'); await page.click('text=Jom Mula!');
   await page.waitForSelector('.mode-card');
   ok(await page.locator('.mode-card').count() === 15, '15 permainan asal kekal di laman utama');
-  await page.click('.rc-entry');
+  await page.locator('.rc-entry:not(.ts-entry):visible').click();
   await page.waitForSelector('.rc-home', { timeout: 8000 });
   ok(true, 'kad Cilik Racing membuka laman racing');
   const race = async (wi, n, label) => {
@@ -172,13 +172,13 @@ try {
   // kunci ibu bapa
   await page.evaluate(() => { window.__dc.getState().settings.disabledModes.push('lumba'); location.hash = '/'; });
   await page.waitForSelector('.mode-card');
-  ok(await page.locator('.rc-entry.locked:visible').count() === 1, 'kad racing dipaparkan sebagai dikunci apabila ibu bapa mengunci');
+  ok(await page.locator('.rc-entry:not(.ts-entry).locked:visible').count() === 1, 'kad racing dipaparkan sebagai dikunci apabila ibu bapa mengunci');
   await page.evaluate(() => { location.hash = '/lumba/main/0/1'; });
   await page.waitForSelector('text=sedang dikunci oleh ibu bapa', { timeout: 8000 });
   ok(await page.locator('.rc-race').count() === 0, 'laluan racing disekat semasa dikunci');
   await page.evaluate(() => { const st = window.__dc.getState().settings; st.disabledModes = st.disabledModes.filter((x) => x !== 'lumba'); location.hash = '/'; });
   await page.waitForSelector('.mode-card');
-  ok(await page.locator('.rc-entry:not(.locked):visible').count() === 1, 'hanya satu kad racing kelihatan pada telefon');
+  ok(await page.locator('.rc-entry:not(.ts-entry):not(.locked):visible').count() === 1, 'hanya satu kad racing kelihatan pada telefon');
   // luar talian
   await page.goto(BASE);
   await page.evaluate(() => navigator.serviceWorker && navigator.serviceWorker.ready);

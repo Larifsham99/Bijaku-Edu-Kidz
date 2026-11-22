@@ -1,11 +1,12 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-25eaae842c';
+const VERSION = 'dunia-cilik-7a2ebc4c98';
 const ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
   './css/app.css',
   './css/racing.css',
+  './css/tekasilang.css',
   './css/ui2.css',
   './css/ui3.css',
   './css/ui4.css',
@@ -56,6 +57,13 @@ const ASSETS = [
   './js/screens/trophy.js',
   './js/store.js',
   './js/talk.js',
+  './js/tekasilang/art.js',
+  './js/tekasilang/data.js',
+  './js/tekasilang/levels.js',
+  './js/tekasilang/main.js',
+  './js/tekasilang/sound.js',
+  './js/tekasilang/store.js',
+  './js/tekasilang/ui.js',
   './js/theme.js',
   './js/ui.js',
   './icons/icon-192.png',
@@ -74,6 +82,7 @@ const ASSETS = [
   './visual-assets/mascots/lala.svg',
   './visual-assets/mascots/mimi.svg',
   './visual-assets/racing/kereta.png',
+  './visual-assets/tekasilang/papan.svg',
 ];
 self.addEventListener('install', (e) => {
   // cache: 'reload' memastikan fail diambil terus dari pelayan, bukan salinan lama dalam cache HTTP pelayar
