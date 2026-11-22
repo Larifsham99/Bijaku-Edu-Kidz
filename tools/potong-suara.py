@@ -5,6 +5,7 @@
 #
 #  python3 tools/potong-suara.py SKRIP.txt AUDIO.mp3 [SKRIP2.txt AUDIO2.mp3 ...]
 #      --semak   hanya laporan, tidak menulis klip
+#  python3 tools/potong-suara.py --auto 01.mp3 02.mp3 ...  (padan ikut nombor dengan rakaman/baki/NN.txt)
 #  Jika SKRIP.kunci.txt wujud, setiap barisnya ialah ayat sebenar bagi baris skrip
 #  yang sama (untuk skrip yang ditulis dengan ejaan sebutan, cth. huruf).
 #
@@ -95,7 +96,7 @@ def align(lines, gaps, t0, t1, iters=3):
                 if k == N - 1 and j != G: continue
                 bonus = math.log(glen[j] + 0.02) if j < G else 0
                 bestv, bi = INF, -1
-                for i in range(k - 1, j):
+                for i in range(max(k - 1, j - 25), j):
                     if dp[k - 1][i] >= INF: continue
                     v = dp[k - 1][i] + seg_cost(k, i + 1, j)
                     if v < bestv: bestv, bi = v, i
@@ -142,10 +143,23 @@ def fix_tails(segs, db):
 def clip_id(key):
     return hashlib.sha1(key.encode('utf-8')).hexdigest()[:10]
 
+def auto_pairs(files, folder='rakaman/baki'):
+    # padankan MP3 dengan bahagian skrip ikut nombor dalam nama fail (cth. "07.mp3", "bahagian 07.mp3")
+    import glob
+    pairs = []
+    for au in files:
+        m = re.findall(r'(?<![0-9])([0-9]{2})(?![0-9])', os.path.splitext(os.path.basename(au))[0])
+        sc = f'{folder}/{m[-1]}.txt' if m else None
+        if sc and os.path.exists(sc):
+            pairs.append((sc, au)); print(f'{os.path.basename(au)}  =>  {sc}')
+        else:
+            print(f'!! {os.path.basename(au)}: namakan fail dengan nombor bahagian (cth. 07.mp3)')
+    return pairs
+
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     check = '--semak' in sys.argv
-    pairs = list(zip(args[0::2], args[1::2]))
+    pairs = auto_pairs(args) if '--auto' in sys.argv else list(zip(args[0::2], args[1::2]))
     cat = {}
     if os.path.exists(f'{DIR}/catalog.json'):
         for it in json.load(open(f'{DIR}/catalog.json', encoding='utf-8'))['items']:

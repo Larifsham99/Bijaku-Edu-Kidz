@@ -1,0 +1,325 @@
+[warmly] Warnakan sayap atas kanan dulu, ya.
+
+
+Warnakan sayap atas kiri dulu, ya.
+
+
+Warnakan sayap bawah kanan dulu, ya.
+
+
+Warnakan sayap bawah kiri dulu, ya.
+
+
+Warnakan sinar dulu, ya.
+
+
+Warnakan tangkai dulu, ya.
+
+
+Warnakan telinga kanan dulu, ya.
+
+
+Warnakan telinga kiri dulu, ya.
+
+
+Warnakan tengah bunga dulu, ya.
+
+
+Wiu, wiu!
+
+
+Wuuu,.
+
+
+Wai untuk Yoyo.
+
+
+Zed untuk Zirafah.
+
+
+[gently] Cuba cari warna biru.
+
+
+Cuba cari warna coklat.
+
+
+Cuba cari warna hijau.
+
+
+Cuba cari warna hitam.
+
+
+Cuba cari warna kuning.
+
+
+Cuba cari warna merah jambu.
+
+
+Cuba cari warna merah.
+
+
+Cuba cari warna oren.
+
+
+Cuba cari warna putih.
+
+
+Cuba cari warna ungu.
+
+
+Ini warna biru.
+
+
+Ini warna coklat.
+
+
+Ini warna hijau.
+
+
+Ini warna hitam.
+
+
+Ini warna kuning.
+
+
+Ini warna merah jambu.
+
+
+Ini warna merah.
+
+
+Ini warna oren.
+
+
+Ini warna putih.
+
+
+Ini warna ungu.
+
+
+[cheerfully] Wisel.
+
+
+Angin.
+
+
+Telefon.
+
+
+Beriman kepada malaikat.
+
+
+Beri biru.
+
+
+Dram.
+
+
+Beriman kepada Allah.
+
+
+Guruh.
+
+
+Hujan.
+
+
+Tepuk tangan.
+
+
+Loceng pintu.
+
+
+Menunaikan zakat.
+
+
+Huruf vi kecil.
+
+
+Bangun tidur.
+
+
+Dengan nama Allah.
+
+
+Anak ayam.
+
+
+Dal.
+
+
+Huruf ar kecil.
+
+
+Aku memohon keampunan-Mu.
+
+
+Huruf ai kecil.
+
+
+Anak kuda.
+
+
+Huruf en kecil.
+
+
+Huruf yu kecil.
+
+
+Huruf wai kecil.
+
+
+Masuk tandas.
+
+
+Feri.
+
+
+Kaf.
+
+
+Nabi Soleh.
+
+
+Zho.
+
+
+Doa untuk ibu bapa.
+
+
+Huruf si kecil.
+
+
+Nabi Hud.
+
+
+Segala puji bagi Allah.
+
+
+Seluar.
+
+
+Tong sampah.
+
+
+But.
+
+
+Ketuk dan minta izin.
+
+
+Nabi Yahya.
+
+
+Terima kasih.
+
+
+Bawang putih.
+
+
+Belon.
+
+
+Belon udara.
+
+
+Brokoli.
+
+
+Kentang.
+
+
+Lada benggala.
+
+
+Mendengar.
+
+
+Minta maaf.
+
+
+Nyamuk.
+
+
+Padang rumput.
+
+
+Salam.
+
+
+Sawi.
+
+
+Timun.
+
+
+Tomato.
+
+
+Wah, berlian!
+
+
+Wah, bintang!
+
+
+Wah, bulan!
+
+
+Wah, hati!
+
+
+Wah, ikan!
+
+
+Wah, pokok!
+
+
+Wah, rama-rama!
+
+
+Wah, rumah!
+
+
+Wah, segi empat!
+
+
+Wah, segi tiga!
+
+
+Yu.
+
+
+Kamu sudah tamatkan semua level ei, bi, si Ceria!
+
+
+Kamu sudah tamatkan semua level Asah Minda!
+
+
+Kamu sudah tamatkan semua level Bijak Mengelaskan!
+
+
+Kamu sudah tamatkan semua level Cari Bayang!
+
+
+Kamu sudah tamatkan semua level Dunia Haiwan!
+
+
+Kamu sudah tamatkan semua level Dunia Nombor!
+
+
+Kamu sudah tamatkan semua level Ingatan Hebat!
+
+
+Kamu sudah tamatkan semua level Kehidupan Harian!
+
+
+Kamu sudah tamatkan semua level Maze Pengembaraan!
+
+
+Kamu sudah tamatkan semua level Misi Pengembaraan!
+
+
+Kamu sudah tamatkan semua level Pazel Pintar!
+
+
+Kamu sudah tamatkan semua level Seni dan Mewarna!
