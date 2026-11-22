@@ -1,7 +1,7 @@
-[cheerfully] Huruf h.
+[cheerfully] Huruf Heish.
 
 
-[warmly] Huruf h kecil.
+[warmly] Huruf Heish kecil.
 
 
 Mana warna merah?
@@ -118,7 +118,7 @@ Ini anak panda.
 Ini huruf i.
 
 
-Ini huruf h.
+Ini huruf Heish.
 
 
 Ini ulat (anak rama-rama).
@@ -139,7 +139,7 @@ Jangan langgar pokok, ya.
 Jangan langgar sarang labah-labah, ya.
 
 
-Jom cari huruf h!
+Jom cari huruf Heish!
 
 
 Jom kira, ada berapa ekor anak ayam?
@@ -241,7 +241,7 @@ Mana otak?
 Mana satu lagi huruf i?
 
 
-Mana satu lagi huruf h?
+Mana satu lagi huruf Heish?
 
 
 Mana tangan?
@@ -370,7 +370,7 @@ Gambar mana yang bermula dengan ef?
 Gambar mana yang bermula dengan ji?
 
 
-Gambar mana yang bermula dengan h?
+Gambar mana yang bermula dengan Heish?
 
 
 Gambar mana yang bermula dengan jei?
@@ -460,7 +460,7 @@ Jom kira, ada berapa biji pisang?
 Jom surih huruf si guna jari.
 
 
-Jom surih huruf h guna jari.
+Jom surih huruf Heish guna jari.
 
 
 Jom surih huruf el guna jari.
@@ -784,7 +784,7 @@ Cari huruf i!
 Litar Kampung, level dua.
 
 
-Cari gambar yang bermula dengan huruf h!
+Cari gambar yang bermula dengan huruf Heish!
 
 
 Litar Kampung, level tiga.
@@ -1064,6 +1064,3 @@ Cari nombor empat!
 
 
 Berapa ikan?
-
-
-Litar Kampung, level empat puluh.

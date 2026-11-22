@@ -628,7 +628,7 @@ Itu Coklat.
 Itu yu.
 
 
-Itu h.
+Itu Heish.
 
 
 Itu ef.
@@ -1196,6 +1196,3 @@ Itu Berlian.
 
 
 Itu Bulan sabit.
-
-
-Itu bukan Bulan sabit.

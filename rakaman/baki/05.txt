@@ -1,4 +1,7 @@
-[gently] Itu bukan Segi tiga.
+[gently] Itu bukan Bulan sabit.
+
+
+Itu bukan Segi tiga.
 
 
 Itu kek cawan.
@@ -175,7 +178,7 @@ Itu kosong.
 Itu Bercakap dengan sopan.
 
 
-Cari huruf h.
+Cari huruf Heish.
 
 
 Itu Ketuk dan minta izin.
@@ -655,7 +658,7 @@ Kamu juara Pulau Juara!
 Vi.
 
 
-h.
+Heish.
 
 
 Tomato Turbo.
@@ -1397,6 +1400,3 @@ Tolong kumpul lima lobak merah untuk Mimi.
 
 
 Tolong kumpul lima pisang untuk Coco.
-
-
-Warnakan daun dulu, ya.

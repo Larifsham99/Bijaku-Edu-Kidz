@@ -1,4 +1,7 @@
-[warmly] Warnakan tingkap dulu, ya.
+[warmly] Warnakan daun dulu, ya.
+
+
+Warnakan tingkap dulu, ya.
 
 
 Yang mana satu bukan alat tulis?
@@ -205,7 +208,7 @@ Menetas.
 Mula dengan si, ya.
 
 
-Mula dengan h, ya.
+Mula dengan Heish, ya.
 
 
 Mula dengan kei, ya.
@@ -1040,6 +1043,3 @@ Satu batang dah diambil.
 
 
 Satu batang pensel, tambah empat batang lagi.
-
-
-Satu batang pokok, tambah dua batang lagi.

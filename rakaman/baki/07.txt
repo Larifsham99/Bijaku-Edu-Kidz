@@ -1,4 +1,7 @@
-[warmly] Satu buah dah diambil.
+[warmly] Satu batang pokok, tambah dua batang lagi.
+
+
+Satu buah dah diambil.
 
 
 Satu ekor anak ayam, tambah enam ekor lagi.
@@ -52,7 +55,7 @@ Tekan semua benda yang warnanya coklat.
 Tekan semua benda yang warnanya kuning.
 
 
-Tekan semua huruf h yang kamu nampak!
+Tekan semua huruf Heish yang kamu nampak!
 
 
 Tekan semua huruf ai yang kamu nampak!
@@ -346,7 +349,7 @@ Ef untuk Feri.
 Ji untuk Gajah.
 
 
-h untuk Harimau.
+Heish untuk Harimau.
 
 
 Ai untuk Ikan.
@@ -1040,6 +1043,3 @@ Beriman kepada hari akhirat.
 
 
 Qof.
-
-
-Wahai Tuhanku, ampunkanlah aku dan kedua ibu bapaku.

@@ -15,7 +15,7 @@ import { buildLevel } from '../js/racing/levels.js';
 import { NUM_WORDS } from '../js/data/content.js';
 
 const MAX = 10000; // aksara setiap bahagian (kira-kira 10,000 — stabil di ElevenLabs)
-const LETTER = { A: 'ei', B: 'bi', C: 'si', D: 'di', E: 'i', F: 'ef', G: 'ji', H: 'h', I: 'ai', J: 'jei', K: 'kei', L: 'el', M: 'em', N: 'en', O: 'o', P: 'pi', Q: 'kiu', R: 'ar', S: 'es', T: 'ti', U: 'yu', V: 'vi', W: 'dabel yu', X: 'eks', Y: 'wai', Z: 'zed' };
+const LETTER = { A: 'ei', B: 'bi', C: 'si', D: 'di', E: 'i', F: 'ef', G: 'ji', H: 'Heish', I: 'ai', J: 'jei', K: 'kei', L: 'el', M: 'em', N: 'en', O: 'o', P: 'pi', Q: 'kiu', R: 'ar', S: 'es', T: 'ti', U: 'yu', V: 'vi', W: 'dabel yu', X: 'eks', Y: 'wai', Z: 'zed' };
 const TAG = { arahan: '[warmly]', pujian: '[cheerfully]', galakan: '[gently]', tenang: '[softly]' };
 const base = (s) => clipKey(s).replace(/[.!?,]+$/, '');
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
