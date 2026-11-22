@@ -15,7 +15,7 @@ const bad = (id, m) => probs.push(`${id}: ${m}`);
 ok(CHAPTERS.length === 15, '15 chapter');
 const nabi = CHAPTERS.find((c) => c.id === 'nabi').words.map((w) => w.w);
 const ref = NABI.map((n) => n.toUpperCase());
-ok(nabi.length === 25 && ref.every((n) => nabi.includes(n)), 'kesemua 25 nama nabi dimasukkan dengan tepat (sama seperti senarai Si Cilik Soleh)');
+ok(ref.length === 25 && ref.every((n) => nabi.includes(n)), 'kesemua 25 nama nabi dimasukkan dengan tepat (sama seperti senarai Si Cilik Soleh)');
 for (const c of CHAPTERS) for (const w of c.words) {
   if (!/^[A-Z]{2,9}$/.test(w.w)) bad(c.id, `perkataan tidak sah ${w.w}`);
   if (!(w.art in ART)) bad(c.id, `tiada ilustrasi ${w.art}`);
@@ -64,6 +64,20 @@ for (let ci = 0; ci < CHAPTERS.length; ci++) for (let n = 1; n <= LEVELS_PER_CHA
 ok(ids.size === TOTAL && TOTAL === 450, `${ids.size} level tersedia (15 chapter × 30)`);
 ok(probs.length === 0, `semua level sah: jawapan ada dalam pilihan huruf, grid silang konsisten, tiada pendua${probs.length ? '\n   ' + probs.slice(0, 12).join('\n   ') : ''}`);
 ok(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'J'].every((m) => modes[m] > 0) && buildLevel(0, 17).mode === 'H', `10 mekanik digunakan: ${JSON.stringify(modes)} + H (campuran)`);
+// kepelbagaian kosa kata: banyak perkataan berbeza, tiada pengulangan berlebihan
+const variety = [];
+for (let ci = 0; ci < CHAPTERS.length; ci++) {
+  const cnt = {}; let consec = 0, prev = new Set();
+  for (let n = 1; n <= LEVELS_PER_CHAPTER; n++) { const w = buildLevel(ci, n).words; w.forEach((x) => { cnt[x] = (cnt[x] || 0) + 1; }); if (w.some((x) => prev.has(x))) consec++; prev = new Set(w); }
+  const used = Object.keys(cnt).length, max = Math.max(...Object.values(cnt)), c = CHAPTERS[ci];
+  const nabiCh = c.id === 'nabi';
+  if (c.words.length < 27) variety.push(`${c.id}: hanya ${c.words.length} perkataan`);
+  if (used < Math.min(c.words.length, 100)) variety.push(`${c.id}: hanya ${used}/${c.words.length} perkataan digunakan`);
+  if (max > (nabiCh ? 6 : 5)) variety.push(`${c.id}: satu perkataan muncul ${max} kali`);
+  if (consec > (nabiCh ? 6 : 1)) variety.push(`${c.id}: ${consec} level berturut berkongsi perkataan`);
+}
+const totalWords = new Set(CHAPTERS.flatMap((c) => c.words.map((w) => w.w))).size;
+ok(variety.length === 0 && totalWords >= 300, `kosa kata pelbagai: ${totalWords} perkataan unik; setiap perkataan chapter digunakan, maksimum 4–6 kali, tiada ulangan berturut${variety.length ? '\n   ' + variety.join('\n   ') : ''}`);
 const again = await import('../js/tekasilang/levels.js?ulang');
 ok(JSON.stringify(again.buildLevel(5, 22)) === JSON.stringify(buildLevel(5, 22)), 'level dijana semula dengan sama (main semula stabil)');
 

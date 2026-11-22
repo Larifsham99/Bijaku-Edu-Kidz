@@ -121,30 +121,60 @@ function crossRound(mode, list, rng, { giveFirst, giveCross }) {
 }
 
 // ---------- level ----------
+// Setiap chapter dibina berurutan: perkataan yang paling jarang digunakan
+// diutamakan, dan perkataan level sebelumnya tidak diulang terus.
 const cache = new Map();
+const built = new Set();
 export function buildLevel(ci, n) {
   const k = `${ci}-${n}`;
-  if (cache.has(k)) return cache.get(k);
+  if (!built.has(ci)) {
+    built.add(ci);
+    const state = { use: new Map(), prev: new Set() };
+    for (let m = 1; m <= LEVELS_PER_CHAPTER; m++) {
+      const L = makeLevel(ci, m, state);
+      L.words.forEach((w) => state.use.set(w, (state.use.get(w) || 0) + 1));
+      state.prev = new Set(L.words);
+      cache.set(`${ci}-${m}`, L);
+    }
+  }
+  return cache.get(k);
+}
+function makeLevel(ci, n, state) {
   const ch = CHAPTERS[ci];
   const rng = makeRng(`teka-silang-${ch.id}-${n}`);
   const words = ch.words;
   const pic = words.filter((x) => !isPlate(x));
   const tier = n === 30 ? 7 : Math.ceil(n / 5); // 1..6, 7 = master
-  const primary = words[(n * 7 + ci) % words.length];
-  const pickW = (filter, count, must = null) => {
-    const pool = rng.shuffle(words.filter(filter));
-    const out = must && filter(must) ? [must] : [];
-    for (const x of pool) { if (out.length >= count) break; if (!out.some((y) => y.w === x.w)) out.push(x); }
+  const taken = new Set(); // perkataan sudah digunakan dalam level ini
+  // susun calon: paling jarang digunakan dahulu; elak perkataan level lalu & dalam level ini
+  const rank = (list, spread = 0) => {
+    const tagged = rng.shuffle(list).map((x) => ({ x, u: (state.use.get(x.w) || 0) + (state.prev.has(x.w) ? 50 : 0) + (taken.has(x.w) ? 100 : 0) }));
+    tagged.sort((a, b) => a.u - b.u);
+    let out = tagged.map((t) => t.x);
+    if (spread) out = rng.shuffle(out.slice(0, spread)).concat(out.slice(spread));
+    return out;
+  };
+  const pickW = (filter, count, must = null, spread = 0) => {
+    const out = must && filter(must) && !taken.has(must.w) ? [must] : [];
+    for (const x of rank(words.filter(filter), spread)) {
+      if (out.length >= count) break;
+      if (!out.some((y) => y.w === x.w || (y.art === x.art && !isPlate(x)))) out.push(x);
+    }
+    out.forEach((x) => taken.add(x.w));
     return out;
   };
   const short = (x) => x.w.length <= (tier <= 1 ? 4 : tier === 2 ? 5 : 8);
+  const primary = rank(words.filter((x) => (tier <= 2 ? short(x) : true)))[0] || rank(words)[0];
   const rounds = [];
   const cross = (mode, count, opts) => {
-    for (let tries = 0; tries < 40; tries++) {
-      const list = pickW((x) => x.w.length >= 3 && x.w.length <= (mode === 'D' ? 7 : 8), count, tries ? null : primary).sort((a, b) => b.w.length - a.w.length);
+    const snap = new Set(taken);
+    for (let tries = 0; tries < 60; tries++) {
+      taken.clear(); snap.forEach((w) => taken.add(w));
+      const list = pickW((x) => x.w.length >= 3 && x.w.length <= (mode === 'D' ? 7 : 8), count, tries ? null : primary, tries ? count + 2 + Math.floor(tries / 4) : 0).sort((a, b) => b.w.length - a.w.length);
       const r = crossRound(mode, list, rng, opts);
       if (r && r.entries.length === count) return r;
     }
+    taken.clear(); snap.forEach((w) => taken.add(w));
     return null;
   };
   if (tier === 1) {
@@ -162,6 +192,7 @@ export function buildLevel(ci, n) {
   } else if (tier === 4) {
     if (n % 3 === 1 && pic.length >= 3) rounds.push(matchRound(pickW((x) => !isPlate(x), 3), rng));
     else if (n % 3 === 2) { // campuran: gambar + huruf hilang + silang mini
+      taken.add(primary.w);
       rounds.push(slotRound(isPlate(primary) ? 'B' : 'A', primary, rng, { blanks: 3, extra: 2 }));
       rounds.push(slotRound('B', pickW((x) => x.w !== primary.w, 1)[0], rng, { blanks: 2, extra: 2 }));
       const r = cross('D', 2, { giveCross: false }); if (r) rounds.push(r);
@@ -190,7 +221,7 @@ export function buildLevel(ci, n) {
     reward: { stars: 3, sticker: n === 30, medal: n === 30 },
     master: n === 30,
   };
-  cache.set(k, level);
+
   return level;
 }
 export const TOTAL = CHAPTERS.length * LEVELS_PER_CHAPTER;

@@ -56,7 +56,7 @@ Prinsip utama:
 - Peringkat: level 1–5 perkataan pendek dengan bantuan penuh; level 6–10 huruf hilang dan cari huruf; level 11–15 silang mini; level 16–20 padan, huruf terapung dan campuran; level 21–25 silang 3 perkataan; level 26–29 papan 4–5 perkataan. **Level 30 ialah Chapter Master**, dengan papan besar, pingat dan pelekat chapter.
 - **Tanpa suara.** Maklum balas hanya melalui visual dan kesan bunyi Web Audio (pop, tink, kilauan, melodi sambutan; bunyi salah yang lembut tanpa buzzer), dan semuanya mematuhi tetapan bunyi ibu bapa.
 - Petunjuk berperingkat: sorotan lembut, kemudian kurangkan pilihan, kemudian bantu isi jawapan. Tiada nyawa, tiada kiraan masa, tiada "game over".
-- Ilustrasi SVG dilukis khas (kira-kira 135). Nabi tidak digambarkan; nama nabi dipaparkan pada papan nama, dan tiada ayat al-Quran dijadikan hiasan.
+- Kosa kata kira-kira 340 perkataan berbeza (30+ setiap chapter), dengan ilustrasi SVG dilukis khas (kira-kira 250). Nabi tidak digambarkan; nama nabi dipaparkan pada papan nama, dan tiada ayat al-Quran dijadikan hiasan.
 - Kemajuan disimpan dalam kunci sendiri (`dc-silang-v1`) dengan sandaran IndexedDB. Ibu bapa boleh mengunci permainan ini dan set semula kemajuannya.
 
 ## 3. Sistem level
