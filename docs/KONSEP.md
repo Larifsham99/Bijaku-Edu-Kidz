@@ -17,6 +17,14 @@
 6. Ibadah (wuduk, solat, doa) mengikut amalan mazhab Syafie di Malaysia, dengan sumber doa dinyatakan.
 7. Apabila ragu-ragu, pilih papan nama atau ikon neutral, dan rujuk ibu bapa/ustaz sebelum menambah.
 
+## Laluan Bijak (jawapan kepada "nak mula dari mana?")
+
+- Skrin utama: banner pertama **"Laluan Bijak · Langkah N"** dengan satu butang **Mula** → terus ke level yang sesuai. Selepas level tamat, sebarang navigasi membawa anak kembali ke laluan (sambutan + langkah seterusnya bersinar).
+- Kurikulum `js/screens/path.js`: 24 unit × 10 langkah. Setiap unit menggilirkan bidang **bahasa, nombor, Islam & akhlak, logik, sains, kreatif** + 1 cabaran seronok. Setiap langkah = level seterusnya bagi permainan itu (kesukaran naik perlahan). Permainan yang perlu membaca/lebih sukar diperkenalkan lewat untuk umur ≤4.
+- **Matlamat harian** (lalai 3 langkah ≈ 10–15 minit, ibu bapa boleh tukar 2/3/5), **streak 🔥**, **peti harta** selepas langkah ke-5 & ke-10 setiap unit (syiling + pelekat).
+- Langkah yang sudah dimainkan secara bebas dikira selesai automatik.
+- Ruang Ibu Bapa → **🧭 Panduan**: cara guna, matlamat harian, kemajuan 6 bidang, cadangan ikut umur.
+
 ## Jenama: BIJAKU oleh Mawar Ikhlas
 
 - **Nama aplikasi:** BIJAKU (bi-ja-ku, "bijakku"). **Syarikat:** Mawar Ikhlas (ditulis "oleh Mawar Ikhlas").

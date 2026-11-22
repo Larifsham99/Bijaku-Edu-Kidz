@@ -35,6 +35,8 @@ jobs:
         run: node tests/akhlak.test.mjs --data
       - name: Sahkan 4 permainan baharu (120 level)
         run: node tests/games.test.mjs --data
+      - name: Sahkan kurikulum Laluan Bijak
+        run: node tests/path.test.mjs --data
 
   deploy:
     needs: test

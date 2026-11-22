@@ -13,6 +13,7 @@ import { limitSeconds } from './timeout.js';
 import { DEMO, DEMO_MAX, SALES_URL } from '../demo.js';
 import { BRAND, brandLogo, shade } from '../brand.js';
 import { EXTRAS, SHELVES, gameInfo, openGame, gameArt, isOff, lockIc } from './catalog.js';
+import { pathHeroInfo, startNode, DOMAINS } from './path.js';
 
 const greet = (name) => {
   const hr = new Date().getHours();
@@ -62,6 +63,7 @@ export function homeScreen() {
   const d = dailySet(p);
   const scr = h('div', { class: 'screen bj-home' }, h('div', { class: 'bj-stage', 'aria-hidden': 'true' }));
   later(() => speak(voicePack() && settings().voiceEngine !== 'peranti' ? greet('') : greet(p.name)), 400);
+  if (!pathHeroInfo(p).st.cur) later(() => speak('Tekan butang Mula untuk memulakan Laluan Bijak!'), 3200);
 
   // ---- kepala: logo, bintang, pemain ----
   scr.appendChild(h('header', { class: 'bj-top' },
@@ -77,16 +79,19 @@ export function homeScreen() {
     h('a', { class: 'btn small green', href: SALES_URL, target: '_top', style: { textDecoration: 'none' } }, 'Dapatkan versi penuh')));
 
   // ---- banner bergerak: sambung bermain + permainan istimewa ----
-  const np = nextPlay(p);
+  // Laluan Bijak: satu butang "Mula" yang jelas — jawapan kepada "nak mula dari mana?"
+  const lp = pathHeroInfo(p);
   const slides = [];
-  if (np) {
-    slides.push(h('button', { class: 'bj-slide bj-cont', type: 'button', style: `--a:${shade(np.m.c, 0.15)};--b:${shade(np.m.c, -0.12)};--d:${shade(np.m.c, -0.42)}`, 'aria-label': `Mula bermain ${np.m.n} level ${np.L}`, onclick: () => { sfx.tap(); go(`/main/${np.m.id}/${np.L}`); } },
+  if (lp.node) {
+    const nd = lp.node, dc = DOMAINS[nd.dom].c;
+    const art = MODES[nd.g] ? (() => { const a = modeArt(MODES[nd.g]); a.classList.add('bj-slide-art'); return a; })() : h('img', { class: 'bj-slide-art', src: EXTRAS[nd.g]?.img || '', alt: '' });
+    slides.push(h('button', { class: 'bj-slide bj-cont bj-lpslide', type: 'button', style: `--a:${shade(dc, 0.2)};--b:${shade(dc, -0.1)};--d:${shade(dc, -0.42)}`, 'aria-label': `Laluan Bijak langkah ${lp.step}: ${lp.name}`, onclick: () => { sfx.tap(); startNode(nd); } },
       h('span', { class: 'bj-slide-txt' },
-        h('small', {}, settings().islamic !== false ? 'Assalamualaikum!' : 'Hai!'),
-        h('b', {}, `Teruskan, ${p.name}!`),
-        h('span', { class: 'bj-sub' }, `${np.m.n} · Level ${np.L}`),
-        h('span', { class: 'bj-go' }, icon('play'), 'Main')),
-      (() => { const a = modeArt(np.m); a.classList.add('bj-slide-art'); return a; })()));
+        h('small', {}, `LALUAN BIJAK · LANGKAH ${lp.step}`),
+        h('b', {}, lp.st.todayCount >= lp.st.goal ? `Hebat, ${p.name}!` : `Jom belajar, ${p.name}!`),
+        h('span', { class: 'bj-sub' }, `${lp.name} · ${DOMAINS[nd.dom].n}`),
+        h('span', { class: 'bj-go' }, icon('play'), 'Mula')),
+      art));
   }
   ['akhlak', 'lumba', 'silang'].forEach((id) => {
     const g = EXTRAS[id];
@@ -124,12 +129,21 @@ export function homeScreen() {
     }, 5000);
   }
 
+  // ---- matlamat harian ----
+  {
+    const st = lp.st, done = st.todayCount >= st.goal;
+    scr.appendChild(h('button', { class: `bj-goal ${done ? 'done' : ''}`, type: 'button', onclick: () => { sfx.tap(); go('/laluan'); } },
+      h('span', { class: 'bj-goal-ic' }, done ? '🏆' : '🎯'),
+      h('span', { class: 'bj-goal-t' }, h('b', {}, done ? 'Matlamat hari ini tercapai!' : `Matlamat hari ini: ${st.todayCount}/${st.goal} langkah`), h('small', {}, done ? 'Bebas main apa sahaja!' : 'Ikut Laluan Bijak · 10–15 minit')),
+      h('span', { class: 'bj-goal-dots' }, ...Array.from({ length: st.goal }, (_, i) => h('i', { class: i < st.todayCount ? 'on' : '' }))),
+      h('span', { class: 'bj-goal-fire' }, '🔥', h('b', {}, p.streak?.count || 0))));
+  }
   // ---- butang pantas ----
   const dailyLeft = 5 - d.done.length;
   const quick = (cls, ic, label, onclick, badge = null) => h('button', { class: `bj-quick ${cls}`, type: 'button', onclick: () => { sfx.tap(); onclick(); } }, h('span', { class: 'bj-q-ic' }, icon(ic), badge), h('span', {}, label));
   scr.appendChild(h('nav', { class: 'bj-quicks', 'aria-label': 'Pintasan' },
     quick('q-orange', 'calendar', 'Cabaran Harian', () => go('/harian'), dailyLeft ? h('span', { class: 'badge' }, dailyLeft) : h('span', { class: 'badge ok' }, '✓')),
-    quick('q-blue', 'map', 'Dunia', () => go('/dunia')),
+    quick('q-blue', 'map', 'Laluan', () => go('/laluan')),
     quick('q-yellow', 'trophy', 'Trofi', () => go('/trofi')),
     quick('q-pink', 'kain', 'Kostum', () => go('/kedai')),
     quick('q-green', 'wau', 'Main Bebas', () => go('/bebas'))));
@@ -172,7 +186,8 @@ export function tabBar(on) {
   const t = (id, ic, label, fn) => h('button', { class: `bj-tab ${on === id ? 'on' : ''}`, type: 'button', 'aria-current': on === id ? 'page' : null, onclick: () => { sfx.tap(); fn(); } }, h('span', { class: 'bj-tab-ic' }, icon(ic)), h('span', {}, label));
   return h('nav', { class: 'bj-tabs', 'aria-label': 'Menu utama' },
     t('main', 'home', 'Utama', () => go('/')),
-    t('dunia', 'map', 'Dunia', () => go('/dunia')),
+    t('laluan', 'map', 'Laluan', () => go('/laluan')),
+    t('dunia', 'grid', 'Dunia', () => go('/dunia')),
     t('trofi', 'trophy', 'Koleksi', () => go('/trofi')),
     t('ibubapa', 'parent', 'Ibu Bapa', () => parentGate(() => go('/ibubapa/ringkasan'))));
 }

@@ -12,10 +12,11 @@ const resetRacing = (id) => {
 import { getState, profile, settings, save, flush, levelsDone, totalLevelsDone, totalPlaySeconds, mastery, MASTERY_LABEL, addProfile, deleteProfile, updateProfile, switchProfile, resetProfileProgress, exportData, highestUnlocked } from '../store.js';
 import { MODE_LIST, MODES, ALL_SKILLS } from '../modes/index.js';
 import { AVATARS } from '../data/content.js';
+import { domainProgress, DOMAINS, UNIT_NAMES, UNITS, gameName } from './path.js';
 import { parentGate, parentOkRecently, lockParent, avatarEl, confirmBox } from './shared.js';
 import { speak, voiceInfo, startMusic, stopMusic, sfx, malayVoices, refreshVoice, VOICE_RATES, VOICE_PITCHES, VOICE_EXPR, voicePack, downloadVoicePack, isFemaleVoice, isMaleVoice, isQualityVoice } from '../audio.js';
 
-const TABS = [['ringkasan', '📊 Ringkasan'], ['kemahiran', '🎯 Kemahiran'], ['aktiviti', '📅 Aktiviti'], ['tetapan', '⚙️ Tetapan'], ['profil', '👧 Profil']];
+const TABS = [['panduan', '🧭 Panduan'], ['ringkasan', '📊 Ringkasan'], ['kemahiran', '🎯 Kemahiran'], ['aktiviti', '📅 Aktiviti'], ['tetapan', '⚙️ Tetapan'], ['profil', '👧 Profil']];
 
 export function parentScreen(tab = 'ringkasan') {
   const scr = h('div', { class: 'screen parent' });
@@ -38,7 +39,7 @@ export function parentScreen(tab = 'ringkasan') {
   }
   scr.appendChild(h('div', { class: 'tabs' }, TABS.map(([id, n]) => h('button', { class: tab === id ? 'on' : '', type: 'button', onclick: () => go('/ibubapa/' + id) }, n))));
   if (!p) { scr.appendChild(profilTab()); return scr; }
-  const body = { ringkasan: ringkasanTab, kemahiran: kemahiranTab, aktiviti: aktivitiTab, tetapan: tetapanTab, profil: profilTab }[tab] || ringkasanTab;
+  const body = { panduan: panduanTab, ringkasan: ringkasanTab, kemahiran: kemahiranTab, aktiviti: aktivitiTab, tetapan: tetapanTab, profil: profilTab }[tab] || ringkasanTab;
   scr.appendChild(body(p));
   return scr;
 }
@@ -65,6 +66,42 @@ export function recommendations(p, n = 5) {
   // tambah mod yang belum dicuba
   MODE_LIST.forEach((m) => { if (!settings().disabledModes.includes(m.id) && !levelsDone(p, m.id)) rec.push({ id: m.id, n: `Cuba ${m.n}`, mode: m.id, lv: 0, why: 'Belum dicuba' }); });
   return rec.slice(0, n);
+}
+
+// Panduan: cara guna BIJAKU, matlamat harian & kemajuan Laluan Bijak ikut bidang
+function panduanTab(p) {
+  const { st, out } = domainProgress(p);
+  const s = settings();
+  const nd = st.node;
+  const wrap = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px' } });
+  wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '🧭 Cara terbaik guna BIJAKU'),
+    h('ol', { class: 'guide-steps' },
+      h('li', {}, h('b', {}, 'Ikut Laluan Bijak setiap hari. '), `Tekan butang "Mula" di skrin utama. Anak terus dibawa ke langkah seterusnya; tak perlu pilih sendiri daripada 24 permainan. Sasaran ${st.goal} langkah sehari (lebih kurang 10–15 minit).`),
+      h('li', {}, h('b', {}, 'Setiap langkah ialah bidang berbeza: '), 'bahasa, nombor, Islam & akhlak, logik, sains dan kreatif, bergilir-gilir. Kesukaran naik sedikit demi sedikit kerana setiap langkah ialah level seterusnya.'),
+      h('li', {}, h('b', {}, 'Selepas matlamat tercapai, biar anak main bebas '), 'permainan kegemaran di rak permainan. Rasa "boleh memilih" menambah minat.'),
+      h('li', {}, h('b', {}, 'Duduk bersama untuk '), 'Jom Berwuduk, Taman Akhlak dan doa harian. Tanya: "Apa yang kamu belajar hari ini?"'),
+      h('li', {}, h('b', {}, 'Puji usaha, bukan markah. '), 'Streak 🔥 dan peti harta membina tabiat rajin; jangan jadikan ia tekanan.'))));
+  const goals = [2, 3, 5];
+  wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '🎯 Matlamat harian'),
+    h('p', { class: 'muted' }, 'Berapa langkah Laluan Bijak sehari? 3 langkah sesuai untuk kebanyakan anak 4–6 tahun.'),
+    h('div', { class: 'row-wrap' }, goals.map((g) => h('button', { class: `btn small ${st.goal === g ? 'green' : 'ghost'}`, type: 'button', onclick: () => { s.pathGoal = g; save(); go('/ibubapa/panduan'); } }, `${g} langkah`)))));
+  wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '🗺️ Kemajuan Laluan Bijak'),
+    h('div', { class: 'kv' },
+      h('div', {}, h('b', {}, `${st.cur}`), h('span', {}, 'Langkah selesai')),
+      h('div', {}, h('b', {}, `Unit ${nd ? nd.unit : UNITS} / ${UNITS}`), h('span', {}, nd ? UNIT_NAMES[nd.unit - 1] : 'Semua selesai')),
+      h('div', {}, h('b', {}, `${st.todayCount} / ${st.goal}`), h('span', {}, 'Langkah hari ini')),
+      h('div', {}, h('b', {}, `${p.streak?.count || 0} hari`), h('span', {}, 'Streak berturut-turut'))),
+    nd ? h('p', { class: 'muted', style: { marginTop: '8px' } }, `Langkah seterusnya: ${gameName(nd.g)} (${DOMAINS[nd.dom].n}).`) : null,
+    h('div', { class: 'dom-bars' }, Object.entries(DOMAINS).filter(([d]) => d !== 'seronok').map(([d, info]) => {
+      const o = out[d]; const pct = o.total ? Math.round((o.done / o.total) * 100) : 0;
+      return h('div', { class: 'dom-bar' }, h('span', {}, `${info.e} ${info.n}`), h('i', { style: `--c:${info.c}` }, h('em', { style: { width: `${pct}%` } })), h('small', {}, `${o.done} langkah`));
+    }))));
+  wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '👶 Cadangan ikut umur'),
+    h('ul', { class: 'guide-steps' },
+      h('li', {}, h('b', {}, '3–4 tahun: '), 'huruf, nombor, warna, bunyi dan cerita akhlak. Teka Silang (perlu membaca) dibuka lewat dalam laluan.'),
+      h('li', {}, h('b', {}, '5–6 tahun: '), 'laluan memperkenalkan Teka Silang, Robot Kod Cilik, Kedai Runcit dan Makmal lebih awal untuk persediaan Tahun 1.'),
+      h('li', {}, 'Laluan menyesuaikan diri dengan umur dalam profil anak. Tukar umur di tab Profil jika perlu.'))));
+  return wrap;
 }
 
 function ringkasanTab(p) {

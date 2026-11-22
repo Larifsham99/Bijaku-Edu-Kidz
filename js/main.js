@@ -6,6 +6,7 @@ import { unlockAudio, startMusic, loadVoicePack, speak } from './audio.js';
 import { clear } from './ui.js';
 import { homeScreen, onboardingScreen, profilesScreen } from './screens/home.js';
 import { worldScreen } from './screens/world.js';
+import { pathScreen, pathIntercept } from './screens/path.js';
 import { modeScreen } from './screens/modemap.js';
 import { playScreen, dailyPlayScreen, stopPlay, currentSession } from './screens/play.js';
 import { dailyScreen } from './screens/daily.js';
@@ -131,11 +132,14 @@ function route() {
   if (!st.profiles.length && parts[0] !== 'ibubapa') { app.appendChild(onboardingScreen()); return; }
   // had masa: hanya ruang ibu bapa boleh dibuka apabila masa tamat
   if (p && overLimit(p) && parts[0] !== 'ibubapa') { app.appendChild(timeoutScreen()); return; }
+  // Laluan Bijak: selepas langkah selesai, sebarang navigasi kembali ke laluan
+  if (pathIntercept(path)) return;
   let el;
   switch (parts[0]) {
     case undefined: el = homeScreen(); break;
     case 'profil': el = profilesScreen(); break;
     case 'dunia': el = worldScreen(); break;
+    case 'laluan': el = pathScreen(); break;
     case 'mod': el = MODES[parts[1]] ? modeScreen(parts[1]) : homeScreen(); break;
     case 'main': el = MODES[parts[1]] ? playScreen(parts[1], Math.max(1, Math.min(50, +parts[2] || 1))) : homeScreen(); break;
     case 'harian': el = parts[1] !== undefined ? dailyPlayScreen(+parts[1]) : dailyScreen(); break;
