@@ -1,226 +1,1201 @@
-[warmly] Tolong kumpul empat lobak merah untuk Mimi.
+[warmly] Tinggal berapa?
 
 
-Tolong kumpul empat permata untuk Roket Dino.
+Tapak Binaan Cilik, level tujuh.
 
 
-Tolong kumpul tiga cendawan untuk Coco.
+Tapak Binaan Cilik, level lapan.
 
 
-Tolong kumpul tiga tiram untuk Kura-kura.
+Tapak Binaan Cilik, level sembilan.
 
 
-Warnakan badan bas dengan warna kuning.
+Tapak Binaan Cilik, level sepuluh.
 
 
-Warnakan belon kanan dengan warna biru.
+Tapak Binaan Cilik, level sebelas.
 
 
-Warnakan isi tembikai dengan warna merah.
+Tapak Binaan Cilik, level dua belas.
 
 
-Warnakan kereta ikut warna kegemaran kamu!
+Ada lima epal.
 
 
-Yang mana satu boleh kita jumpa di angkasa?
+Ambil satu.
 
 
-Yang mana satu boleh kita jumpa di ladang?
+Tapak Binaan Cilik, level tiga belas.
 
 
-Ada dua lemon yang menyorok.
+Tapak Binaan Cilik, level empat belas.
 
 
-Ada dua singa yang menyorok.
+Tapak Binaan Cilik, level lima belas.
 
 
-Ada epal yang menyorok.
+Ada enam belon.
 
 
-Ada ikan lumba-lumba yang menyorok.
+Ambil dua.
 
 
-Ada panda yang menyorok.
+Tapak Binaan Cilik, level enam belas.
 
 
-Ada roket yang menyorok.
+Tapak Binaan Cilik, level tujuh belas.
 
 
-Ayam suka makan apa, ya?
+Tapak Binaan Cilik, level lapan belas.
 
 
-Badan berpeluh selepas bermain.
+Ada empat bunga.
 
 
-Burung helang tinggal di mana, ya?
+Tapak Binaan Cilik, level sembilan belas.
 
 
-Burung tinggal di mana, ya?
+Tapak Binaan Cilik, level dua puluh.
 
 
-Cili bermula dengan huruf apa, ya?
+Ada lapan pisang.
 
 
-Di mana Arnab?
+Tapak Binaan Cilik, level dua puluh satu.
 
 
-Di mana Harimau?
+Tapak Binaan Cilik, level dua puluh dua.
 
 
-Di mana Kambing?
+Ada enam epal.
 
 
-Gambar mana yang bermula dengan si?
+Tapak Binaan Cilik, level dua puluh tiga.
 
 
-Gambar mana yang bermula dengan di?
+Tapak Binaan Cilik, level dua puluh empat.
 
 
-Gambar mana yang bermula dengan i?
+Ada tiga pisang.
 
 
-Gambar mana yang bermula dengan ef?
+Tapak Binaan Cilik, level dua puluh lima.
 
 
-Gambar mana yang bermula dengan ji?
+Tapak Binaan Cilik, level dua puluh enam.
 
 
-Gambar mana yang bermula dengan eic?
+Tapak Binaan Cilik, level dua puluh tujuh.
 
 
-Gambar mana yang bermula dengan jei?
+Tapak Binaan Cilik, level dua puluh lapan.
 
 
-Gambar mana yang bermula dengan el?
+Tapak Binaan Cilik, level dua puluh sembilan.
 
 
-Helikopter bermula dengan huruf apa, ya?
+Ada sembilan kereta.
 
 
-Ikan lumba-lumba tinggal di mana, ya?
+Tapak Binaan Cilik, level tiga puluh.
 
 
-Ikan paus tinggal di mana, ya?
+Ada empat kereta.
 
 
-Ini anak anjing.
+Tapak Binaan Cilik, level tiga puluh satu.
 
 
-Ini anak gajah.
+Tapak Binaan Cilik, level tiga puluh dua.
 
 
-Ini cili.
+Tapak Binaan Cilik, level tiga puluh tiga.
 
 
-Ini helikopter.
+Ada tujuh anak ayam.
 
 
-Ini huruf si.
+Tapak Binaan Cilik, level tiga puluh empat.
 
 
-Ini huruf ef.
+Kutip dua bulan sabit!
 
 
-Ini huruf ji.
+Tapak Binaan Cilik, level tiga puluh lima.
 
 
-Ini huruf ai.
+Ada enam bintang.
 
 
-Ini huruf kei besar.
+Tapak Binaan Cilik, level tiga puluh enam.
 
 
-Ini huruf el.
+Ada enam anak ayam.
 
 
-Ini huruf em besar.
+Tapak Binaan Cilik, level tiga puluh tujuh.
 
 
-Ini ombak.
+Ada sembilan bunga.
 
 
-Itik bermula dengan huruf apa, ya?
+Tapak Binaan Cilik, level tiga puluh lapan.
 
 
-Itik tinggal di mana, ya?
+Ada empat epal.
 
 
-Jangan langgar ketulan ais, ya.
+Tapak Binaan Cilik, level tiga puluh sembilan.
 
 
-Jom cari huruf di!
+Tapak Binaan Cilik, level empat puluh.
 
 
-Jom cari huruf ef!
+Tapak Binaan Cilik, level empat puluh satu.
 
 
-Jom cari huruf ji!
+Tapak Binaan Cilik, level empat puluh dua.
 
 
-Jom cari huruf el!
+Ada lima pisang.
 
 
-Jom cari huruf em!
+Tapak Binaan Cilik, level empat puluh tiga.
 
 
-Jom cari huruf kiu!
+Ada lima bintang.
 
 
-Jom cari huruf es!
+Tapak Binaan Cilik, level empat puluh empat.
 
 
-Jom kira, ada berapa biji pisang?
+Tapak Binaan Cilik, level empat puluh lima.
 
 
-Jom surih huruf si guna jari.
+Ada lima ikan.
 
 
-Jom surih huruf eic guna jari.
+Tapak Binaan Cilik, level empat puluh enam.
 
 
-Jom surih huruf el guna jari.
+Tapak Binaan Cilik, level empat puluh tujuh.
 
 
-Jom surih huruf ti guna jari.
+Tapak Binaan Cilik, level empat puluh lapan.
 
 
-Jom warnakan epal!
+Ada lapan ikan.
 
 
-Jom warnakan kereta!
+Tapak Binaan Cilik, level empat puluh sembilan.
 
 
-Jom warnakan kucing!
+Ada tiga anak ayam.
 
 
-Kawan kita, angkasawan, perlukan permata.
+Tapak Binaan Cilik, level lima puluh.
 
 
-Kawan kita, ayam, perlukan telur.
+Ada enam ikan.
 
 
-Kawan kita, gurita, perlukan tiram.
+Pulau Juara.
 
 
-Kawan kita, kawan angkasa, perlukan bintang.
+Pulau terapung, stadium dan gunung trofi.
 
 
-Kawan kita, monyet, perlukan kacang.
+Selesaikan sepuluh level di Tapak Binaan Cilik dahulu, ya.
 
 
-Kucing suka makan apa, ya?
+Pulau Juara, level satu.
 
 
-Kumpulan mana yang ada empat biji strawberi?
+Pulau Juara, level dua.
 
 
-Kumpulan mana yang ada enam biji telur?
+Pulau Juara, level tiga.
 
 
-Kumpulan mana yang ada lapan ekor kumbang?
+Pulau Juara, level empat.
 
 
-Kumpulan mana yang ada lima biji telur?
+Pulau Juara, level lima.
 
 
-Kumpulan mana yang ada satu biji bola?
+Pulau Juara, level enam.
+
+
+Pulau Juara, level tujuh.
+
+
+Ingat urutan ini: kereta, telur, strawberi.
+
+
+Pulau Juara, level lapan.
+
+
+Satu tambah empat, jadi berapa?
+
+
+Pulau Juara, level sembilan.
+
+
+Pulau Juara, level sepuluh.
+
+
+Pulau Juara, level sebelas.
+
+
+Jom eja van.
+
+
+Pulau Juara, level dua belas.
+
+
+Pulau Juara, level tiga belas.
+
+
+Pulau Juara, level empat belas.
+
+
+Pulau Juara, level lima belas.
+
+
+Ingat urutan ini: strawberi, rama-rama, telur.
+
+
+Pulau Juara, level enam belas.
+
+
+Pulau Juara, level tujuh belas.
+
+
+Pulau Juara, level lapan belas.
+
+
+Pulau Juara, level sembilan belas.
+
+
+Cari kucing!
+
+
+Pulau Juara, level dua puluh.
+
+
+Pulau Juara, level dua puluh satu.
+
+
+Jom eja hati.
+
+
+Pulau Juara, level dua puluh dua.
+
+
+Pulau Juara, level dua puluh tiga.
+
+
+Ada tiga belon.
+
+
+Pulau Juara, level dua puluh empat.
+
+
+Pulau Juara, level dua puluh lima.
+
+
+Ingat urutan ini: strawberi, rama-rama, bunga.
+
+
+Pulau Juara, level dua puluh enam.
+
+
+Cari gurita!
+
+
+Pulau Juara, level dua puluh tujuh.
+
+
+Pulau Juara, level dua puluh lapan.
+
+
+Ingat urutan ini: kek cawan, ikan, oren.
+
+
+Pulau Juara, level dua puluh sembilan.
+
+
+Pulau Juara, level tiga puluh.
+
+
+Ingat urutan ini: bintang, kek cawan, rama-rama.
+
+
+Pulau Juara, level tiga puluh satu.
+
+
+Pulau Juara, level tiga puluh dua.
+
+
+Ingat urutan ini: bintang, belon, kura-kura.
+
+
+Pulau Juara, level tiga puluh tiga.
+
+
+Cari udang!
+
+
+Pulau Juara, level tiga puluh empat.
+
+
+Pulau Juara, level tiga puluh lima.
+
+
+Ingat urutan ini: kura-kura, oren, pisang.
+
+
+Berapa kura-kura?
+
+
+Pulau Juara, level tiga puluh enam.
+
+
+Pulau Juara, level tiga puluh tujuh.
+
+
+Pulau Juara, level tiga puluh lapan.
+
+
+Pulau Juara, level tiga puluh sembilan.
+
+
+Jom eja unta.
+
+
+Pulau Juara, level empat puluh.
+
+
+Ada sembilan anak ayam.
+
+
+Pulau Juara, level empat puluh satu.
+
+
+Pulau Juara, level empat puluh dua.
+
+
+Pulau Juara, level empat puluh tiga.
+
+
+Cari arnab!
+
+
+Pulau Juara, level empat puluh empat.
+
+
+Jom eja singa.
+
+
+Pulau Juara, level empat puluh lima.
+
+
+Pulau Juara, level empat puluh enam.
+
+
+Jom eja bola.
+
+
+Pulau Juara, level empat puluh tujuh.
+
+
+Cari singa!
+
+
+Ada lapan epal.
+
+
+Pulau Juara, level empat puluh lapan.
+
+
+Pulau Juara, level empat puluh sembilan.
+
+
+Ingat urutan ini: kura-kura, bunga, kereta, telur.
+
+
+Pulau Juara, level lima puluh.
+
+
+Tekan anak panah, atau leret ke kiri dan ke kanan untuk menukar laluan.
+
+
+Selesaikan level sebelum ini dahulu, ya.
+
+
+Peta Dunia.
+
+
+Garaj.
+
+
+Koleksi.
+
+
+Cilik Racing!
+
+
+Menangi satu trofi juara dunia untuk membuka kereta ini.
+
+
+Pandu sekarang.
+
+
+Kumpul lima bintang untuk membuka kereta ini.
+
+
+Kumpul dua belas bintang untuk membuka kereta ini.
+
+
+Kumpul dua puluh bintang untuk membuka kereta ini.
+
+
+Kumpul tiga puluh bintang untuk membuka kereta ini.
+
+
+Kumpul empat puluh dua bintang untuk membuka kereta ini.
+
+
+Kumpul lima puluh lima bintang untuk membuka kereta ini.
+
+
+Kumpul tujuh puluh bintang untuk membuka kereta ini.
+
+
+Kumpul sembilan puluh bintang untuk membuka kereta ini.
+
+
+Kumpul seratus sepuluh bintang untuk membuka kereta ini.
+
+
+Kumpul seratus tiga puluh lima bintang untuk membuka kereta ini.
+
+
+Kumpul seratus enam puluh bintang untuk membuka kereta ini.
+
+
+Kumpul seratus sembilan puluh bintang untuk membuka kereta ini.
+
+
+Kumpul dua ratus dua puluh lima bintang untuk membuka kereta ini.
+
+
+Kumpul lapan bintang untuk cat ini.
+
+
+Kumpul enam belas bintang untuk cat ini.
+
+
+Kumpul dua puluh empat bintang untuk cat ini.
+
+
+Kumpul tiga puluh enam bintang untuk cat ini.
+
+
+Kumpul empat puluh lapan bintang untuk cat ini.
+
+
+Kumpul enam puluh empat bintang untuk cat ini.
+
+
+Kumpul lapan puluh bintang untuk cat ini.
+
+
+Kumpul tiga ratus bintang untuk cat ini.
+
+
+Kumpul satu pingat untuk pelekat ini.
+
+
+Kumpul dua pingat untuk pelekat ini.
+
+
+Kumpul tiga pingat untuk pelekat ini.
+
+
+Kumpul empat pingat untuk pelekat ini.
+
+
+Kumpul enam pingat untuk pelekat ini.
+
+
+Kumpul lapan pingat untuk pelekat ini.
+
+
+Kumpul sepuluh pingat untuk pelekat ini.
+
+
+Buka satu dunia untuk rim ini.
+
+
+Buka dua dunia untuk rim ini.
+
+
+Buka tiga dunia untuk rim ini.
+
+
+Buka lima dunia untuk rim ini.
+
+
+Buka tujuh dunia untuk rim ini.
+
+
+[gently] Itu i.
+
+
+Itu es.
+
+
+Itu Pokok.
+
+
+Itu Helikopter.
+
+
+Itu tiga.
+
+
+Itu dua.
+
+
+Itu bukan oren.
+
+
+Itu Oren.
+
+
+Itu Biru.
+
+
+Itu bukan bintang.
+
+
+Cari huruf yu.
+
+
+Cari huruf bi.
+
+
+Cari huruf ai.
+
+
+Itu Kanan.
+
+
+Itu Kiri.
+
+
+Itu kei.
+
+
+Itu bi.
+
+
+Itu Topi.
+
+
+Itu Nyamuk.
+
+
+Itu lima.
+
+
+Itu Merah.
+
+
+Itu Ungu.
+
+
+Itu bukan belon.
+
+
+Itu bukan telur.
+
+
+Itu Coklat.
+
+
+Itu yu.
+
+
+Itu h.
+
+
+Itu ef.
+
+
+Cari huruf ei.
+
+
+Cari huruf pi.
+
+
+Itu empat.
+
+
+Itu Terus masuk.
+
+
+Itu ei.
+
+
+Itu jei.
+
+
+Itu satu.
+
+
+Itu enam.
+
+
+Itu bukan pisang.
+
+
+Itu Roti.
+
+
+Itu Roket.
+
+
+Itu Monyet.
+
+
+Itu bukan ef.
+
+
+Itu pi.
+
+
+Itu zed.
+
+
+Itu bukan kura-kura.
+
+
+Itu Merah jambu.
+
+
+Itu Hijau.
+
+
+Itu en.
+
+
+Itu si.
+
+
+Itu vi.
+
+
+Cari huruf jei.
+
+
+Cari huruf em.
+
+
+Itu Ketawa.
+
+
+Itu Yarhamukallah.
+
+
+Itu Ejek.
+
+
+Itu Diam sahaja.
+
+
+Itu Mendengar.
+
+
+Itu Menyampuk.
+
+
+Itu Kuning.
+
+
+Itu ji.
+
+
+Itu ti.
+
+
+Itu di.
+
+
+Itu Marah.
+
+
+Itu tujuh.
+
+
+Itu lapan.
+
+
+Itu Terima kasih.
+
+
+Cari huruf ef.
+
+
+Cari huruf ar.
+
+
+Itu Ikan.
+
+
+Itu Burung.
+
+
+Itu Nanas.
+
+
+Itu Rumah.
+
+
+Cari huruf di.
+
+
+Itu Bismillah.
+
+
+Itu Tonton televisyen.
+
+
+Itu Lagu.
+
+
+Itu wai.
+
+
+Itu ai.
+
+
+Itu dabel yu.
+
+
+Cari huruf dabel yu.
+
+
+Itu Motosikal.
+
+
+Itu Orang utan.
+
+
+Itu sembilan.
+
+
+Itu bukan ai.
+
+
+Cari huruf es.
+
+
+Itu sepuluh.
+
+
+Itu Awan.
+
+
+Itu Lobak.
+
+
+Itu Bunga.
+
+
+Itu Terus tidur.
+
+
+Itu Alhamdulillah.
+
+
+Itu Minta maaf.
+
+
+Itu Jelir lidah.
+
+
+Itu em.
+
+
+Itu el.
+
+
+Itu Jambatan.
+
+
+Itu Tikus.
+
+
+Itu Yoyo.
+
+
+Itu ar.
+
+
+Itu bukan bunga.
+
+
+Cari huruf o.
+
+
+Cari huruf en.
+
+
+Itu Yu.
+
+
+Itu Cacing.
+
+
+Itu Aiskrim.
+
+
+Cari huruf el.
+
+
+Itu bukan pensel.
+
+
+Itu Lari.
+
+
+Itu Menjerit.
+
+
+Itu bukan el.
+
+
+Itu o.
+
+
+Itu Ceri.
+
+
+Itu Epal.
+
+
+Itu Katil.
+
+
+Itu Gajah.
+
+
+Itu Kereta api.
+
+
+Itu warna merah jambu.
+
+
+Itu warna kuning.
+
+
+Itu Strawberi.
+
+
+Itu bukan ikan.
+
+
+Itu Kucing.
+
+
+Itu Ikan paus.
+
+
+Itu Bas.
+
+
+Itu Sotong.
+
+
+Itu Lada benggala.
+
+
+Itu bukan strawberi.
+
+
+Itu Teksi.
+
+
+Itu Unta.
+
+
+Itu Sawi.
+
+
+Itu bukan epal.
+
+
+Itu Ikan lumba-lumba.
+
+
+Itu Beruang.
+
+
+Itu Traktor.
+
+
+Itu warna ungu.
+
+
+Itu warna coklat.
+
+
+Itu Bawang putih.
+
+
+Itu Lori.
+
+
+Itu Kiwi.
+
+
+Itu Kelapa.
+
+
+Itu Beri biru.
+
+
+Itu Lembu.
+
+
+Itu Semut.
+
+
+Itu Lemon.
+
+
+Itu Anggur.
+
+
+Itu bukan rama-rama.
+
+
+Itu Tembikai.
+
+
+Itu Jagung.
+
+
+Itu warna biru.
+
+
+Itu warna merah.
+
+
+Itu Anak ayam.
+
+
+Itu Kelawar.
+
+
+Itu Kereta.
+
+
+Itu Kumbang.
+
+
+Itu warna oren.
+
+
+Itu Pic.
+
+
+Itu Pisang.
+
+
+Itu Kapal terbang.
+
+
+Itu Penguin.
+
+
+Itu Kereta polis.
+
+
+Itu Kereta bomba.
+
+
+Itu Timun.
+
+
+Itu Burung helang.
+
+
+Itu Kura-kura.
+
+
+Itu Brokoli.
+
+
+Itu warna hijau.
+
+
+Itu Mangga.
+
+
+Itu Cendawan.
+
+
+Itu Kentang.
+
+
+Itu Pear.
+
+
+Itu Bola.
+
+
+Itu Lebah.
+
+
+Itu Kunci.
+
+
+Itu Ambulans.
+
+
+Itu Udang.
+
+
+Itu Ikan yu.
+
+
+Itu Zirafah.
+
+
+Itu Rama-rama.
+
+
+Itu Kuda.
+
+
+Itu Daging.
+
+
+Itu bukan kek cawan.
+
+
+Itu Ketam.
+
+
+Itu Gurita.
+
+
+Itu Katak.
+
+
+Itu Ayam.
+
+
+Itu Burung hantu.
+
+
+Itu Itik.
+
+
+Itu Zebra.
+
+
+Itu Rumput.
+
+
+Itu Buah-buahan.
+
+
+Itu Madu.
+
+
+Itu Kambing.
+
+
+Itu Anjing.
+
+
+Itu Singa.
+
+
+Itu Buluh.
+
+
+Itu Udang kecil.
+
+
+Itu Serangga.
+
+
+Itu Harimau.
+
+
+Itu Tulang.
+
+
+Itu bukan bola.
+
+
+Itu bukan anak ayam.
+
+
+Itu Keju.
+
+
+Itu Lobak merah.
+
+
+Itu Daun.
+
+
+Itu Panda.
+
+
+Itu bukan kumbang.
+
+
+Itu Biri-biri.
+
+
+Itu bukan kereta.
+
+
+Itu Arnab.
+
+
+Itu Segi empat sama.
+
+
+Itu Bintang.
+
+
+Itu Segi tiga.
+
+
+Itu Hati.
+
+
+Itu bukan Segi empat sama.
+
+
+Itu Bulatan.
+
+
+Itu bukan Hati.
+
+
+Itu Berlian.
+
+
+Itu Bulan sabit.
+
+
+Itu bukan Bulan sabit.

@@ -1,271 +1,1402 @@
-[warmly] Kumpulan mana yang ada satu biji pisang?
+[gently] Itu bukan Segi tiga.
 
 
-Kumpulan mana yang ada sepuluh biji pisang?
+Itu kek cawan.
 
 
-Kumpulan mana yang ada tujuh kuntum bunga?
+Itu bukan Bulatan.
 
 
-Kumpulan mana yang lebih banyak belon?
+Itu bukan Bujur.
 
 
-Kumpulan mana yang lebih banyak kek cawan?
+Itu Gaul.
 
 
-Kumpulan mana yang lebih banyak oren?
+Itu Kudup.
 
 
-Kumpulan mana yang lebih banyak pisang?
+Itu Gulung salji.
 
 
-Kumpulan mana yang lebih sedikit pokok?
+Itu Menetas.
 
 
-Kura-kura tinggal di mana, ya?
+Itu Bawang.
 
 
-Lebah suka makan apa, ya?
+Itu Manusia salji.
 
 
-Lukis muka yang tersenyum!
+Itu Gelap.
 
 
-Mana anjing?
+Itu Biji benih.
 
 
-Mana bayang burung hantu?
+Itu Pokok kecil.
 
 
-Mana bayang ketam?
+Itu Cili.
 
 
-Mana bayang roket?
+Itu Telur.
 
 
-Mana bayang strawberi?
+Itu Bunga kembang.
 
 
-Mana bayang tikus?
+Itu Terung.
 
 
-Mana bayang zirafah?
+Itu Salji turun.
 
 
-Mana burung helang?
+Itu Purnama.
 
 
-Mana burung?
+Itu Pokok besar.
 
 
-Mana huruf kei kecil?
+Itu Kepompong.
 
 
-Mana huruf em kecil?
+Itu Makan.
 
 
-Mana ikan yu?
+Itu Bahan.
 
 
-Mana itik?
+Itu Potong.
 
 
-Mana kelawar?
+Itu Sabit.
 
 
-Mana lidah?
+Itu Kek siap.
 
 
-Mana mata?
+Itu Anak pokok.
 
 
-Mana mulut?
+Itu Ulat.
 
 
-Mana nombor empat?
+Itu Separuh.
 
 
-Mana nombor tujuh?
+Itu Basikal.
 
 
-Mana panda?
+Itu Tunas.
 
 
-Mana penguin?
+Itu Belon udara.
 
 
-Mana reben yang paling panjang?
+Itu Kapal.
 
 
-Mana satu lagi huruf si?
+Itu Bot laju.
 
 
-Mana satu lagi huruf ef?
+Itu bukan pokok.
 
 
-Mana satu lagi huruf ji?
+Itu Payung terjun.
 
 
-Mana satu lagi huruf ai?
+Itu Kapal layar.
 
 
-Mana satu lagi huruf el?
+Itu Bujur.
 
 
-Mana singa?
+Itu Sampan.
 
 
-Mana stoking?
+Itu Feri.
 
 
-Mana tikus?
+Itu bukan Berlian.
 
 
-Mana topi?
+Itu Planet.
 
 
-Mana yang lebih besar?
+Itu Komet.
 
 
-Nombor enam.
+Itu Piring terbang.
 
 
-Nombor lima.
+Itu Bumi.
 
 
-Nombor satu.
+Itu belon.
 
 
-Nombor sembilan.
+Itu Bulan.
 
 
-Nombor tiga.
+Itu Matahari.
 
 
-Ombak bermula dengan huruf apa, ya?
+Itu Bakar.
 
 
-Pesawat.
+Itu Lolipop.
 
 
-Pinggan.
+Itu Donat.
 
 
-Saya berbunyi kuak kuak.
+Itu Susu.
 
 
-Saya bulat dan kamu sepak saya.
+Itu Kentang goreng.
 
 
-Saya cair jika panas.
+Itu Air bergas.
 
 
-Saya hijau dan suka melompat.
+Itu Gula-gula.
 
 
-Saya menunjukkan masa.
+Itu Air kosong.
 
 
-Saya sejuk dan manis.
+Itu Nasi.
 
 
-Siapa yang berbunyi, Aummm!
+Itu kosong.
 
 
-Siapa yang berbunyi, Mooo!
+Itu Bercakap dengan sopan.
 
 
-Tangan terbuka.
+Cari huruf h.
 
 
-Tolong kumpul empat komet untuk Roket Dino.
+Itu Ketuk dan minta izin.
 
 
-Tolong kumpul empat kulit kerang untuk Kura-kura.
+[cheerfully] Jam.
 
 
-Tolong kumpul tiga bulan untuk Roket Dino.
+Kaki.
 
 
-Tolong kumpul tiga epal untuk Mimi.
+Lengan.
 
 
-Tolong kumpul tiga komet untuk Roket Dino.
+Pear.
 
 
-Tolong kumpul tiga kulit kerang untuk Kura-kura.
+Tangan.
 
 
-Tolong kumpul tiga strawberi untuk Coco.
+Anggur.
 
 
-Tolong kumpul tiga telur untuk Mimi.
+Nanas.
 
 
-Udang tinggal di mana, ya?
+Kelapa.
 
 
-Unta tinggal di mana, ya?
+Mangga.
 
 
-Warnakan badan kereta dengan warna merah.
+Mulut.
 
 
-Warnakan bas ikut warna kegemaran kamu!
+Gosok gigi.
 
 
-Warnakan bendera dengan warna merah.
+Kereta.
 
 
-Warnakan buah epal dengan warna merah.
+Lidah.
 
 
-Warnakan hidung dengan warna merah jambu.
+Strawberi.
 
 
-Yang mana satu bukan tumbuhan?
+Ombak.
 
 
-Gunung.
+Otak.
 
 
-Mahkota.
+Lobak merah.
 
 
-Main lagi.
+Telinga.
 
 
-Makan kentang goreng.
+Ceri.
 
 
-Nombor empat.
+Anak anjing.
 
 
-Nombor tujuh.
+Buluh.
 
 
-Udang kecil.
+Cuci tangan.
 
 
-Yoyo.
+Madu.
 
 
-Litar Kampung.
+Ro.
 
 
-Rumah kampung, sawah dan pokok kelapa.
+Anak biri-biri.
 
 
-Level juara!
+Anak panda.
 
 
-Sedia?
+Huruf kiu kecil.
 
 
-Litar Kampung, level satu.
+Jim.
 
 
-Cari huruf i!
+Rumput.
 
 
-Litar Kampung, level dua.
+Ba.
+
+
+Bas.
+
+
+Bot laju.
+
+
+Bunga.
+
+
+Daging.
+
+
+Huruf em kecil.
+
+
+Lori.
+
+
+Tsa.
+
+
+Tulang.
+
+
+Keju.
+
+
+Semut.
+
+
+Ain.
+
+
+Baju.
+
+
+Bulan.
+
+
+Huruf ei kecil.
+
+
+Huruf di kecil.
+
+
+Huruf kei kecil.
+
+
+Huruf el kecil.
+
+
+Basikal.
+
+
+Kanan.
+
+
+Keluar tandas.
+
+
+Kiri.
+
+
+Laut.
+
+
+Nabi Adam.
+
+
+Nabi Ismail.
+
+
+Sebelum tidur.
+
+
+Tangan hingga siku.
+
+
+Alif.
+
+
+Anak itik.
+
+
+Anak lembu.
+
+
+Huruf bi kecil.
+
+
+Huruf ef kecil.
+
+
+Huruf ji kecil.
+
+
+Kapal.
+
+
+Kapal layar.
+
+
+Kunci.
+
+
+Mandi.
+
+
+Muka.
+
+
+Nabi Ibrahim.
+
+
+Nabi Idris.
+
+
+Roket.
+
+
+Sampan.
+
+
+Sebelum belajar.
+
+
+Sod.
+
+
+Syin.
+
+
+Topi.
+
+
+Cuci dengan sabun.
+
+
+Huruf pi kecil.
+
+
+Kaki hingga buku lali.
+
+
+Keluar rumah.
+
+
+Potong kuku.
+
+
+Sarung tangan.
+
+
+Selipar.
+
+
+Stoking.
+
+
+Telur.
+
+
+Traktor.
+
+
+Zai.
+
+
+Anak gajah.
+
+
+Cili.
+
+
+Dua puluh lima.
+
+
+Gaun.
+
+
+Huruf jei kecil.
+
+
+Jaket.
+
+
+Kolam.
+
+
+Payung terjun.
+
+
+Sarang.
+
+
+Selepas makan.
+
+
+Yarhamukallah.
+
+
+Huruf i kecil.
+
+
+Kepala.
+
+
+Nabi Isa.
+
+
+Nabi Yunus.
+
+
+Dhod.
+
+
+Jagung.
+
+
+Nabi Ilyasa.
+
+
+Nabi Muhammad.
+
+
+Topi bunga.
+
+
+Ubi.
+
+
+Air bergas.
+
+
+Bercakap dengan sopan.
+
+
+Gitar.
+
+
+Gurun.
+
+
+Kentang goreng.
+
+
+Kutub.
+
+
+Lolipop.
+
+
+Nabi Sulaiman.
+
+
+Tisu, atau siku.
+
+
+Dadu.
+
+
+Elang.
+
+
+Flamingo.
+
+
+Gula-gula.
+
+
+Lampu.
+
+
+Nasi.
+
+
+Susu.
+
+
+Kamu juara Litar Kampung!
+
+
+Yu.
+
+
+Bi.
+
+
+Ai.
+
+
+Api!
+
+
+Ei.
+
+
+Pi.
+
+
+Jei.
+
+
+Em.
+
+
+Ef.
+
+
+i.
+
+
+Ar.
+
+
+Di.
+
+
+Dabel yu.
+
+
+Rusa!
+
+
+Es.
+
+
+Kei.
+
+
+o.
+
+
+En.
+
+
+El.
+
+
+Ji.
+
+
+Ti.
+
+
+Kamu juara Lembah Buah!
+
+
+Kamu juara Hutan Haiwan!
+
+
+Kamu juara Bandar Warna!
+
+
+Kamu juara Taman Dinosor!
+
+
+Seterusnya?
+
+
+Kek cawan!
+
+
+Pensel!
+
+
+Kamu juara Pulau Ombak!
+
+
+Kamu juara Angkasa Ria!
+
+
+Kamu juara Negeri Gula-gula!
+
+
+Kamu juara Tapak Binaan Cilik!
+
+
+Kamu juara Pulau Juara!
+
+
+Vi.
+
+
+h.
+
+
+Tomato Turbo.
+
+
+Kereta baharu, Tomato Turbo!
+
+
+Kamu dapat kereta baharu, Tomato Turbo!
+
+
+Pisang Kilat.
+
+
+Kereta baharu, Pisang Kilat!
+
+
+Kamu dapat kereta baharu, Pisang Kilat!
+
+
+Komet Biru.
+
+
+Kereta baharu, Komet Biru!
+
+
+Kamu dapat kereta baharu, Komet Biru!
+
+
+Roda Dino.
+
+
+Kereta baharu, Roda Dino!
+
+
+Kamu dapat kereta baharu, Roda Dino!
+
+
+Panda Laju.
+
+
+Kereta baharu, Panda Laju!
+
+
+Kamu dapat kereta baharu, Panda Laju!
+
+
+Awan Laju.
+
+
+Kereta baharu, Awan Laju!
+
+
+Kamu dapat kereta baharu, Awan Laju!
+
+
+Kelip-kelip Mini.
+
+
+Kereta baharu, Kelip-kelip Mini!
+
+
+Kamu dapat kereta baharu, Kelip-kelip Mini!
+
+
+Jip Hutan.
+
+
+Kereta baharu, Jip Hutan!
+
+
+Kamu dapat kereta baharu, Jip Hutan!
+
+
+Harimau Turbo.
+
+
+Kereta baharu, Harimau Turbo!
+
+
+Kamu dapat kereta baharu, Harimau Turbo!
+
+
+Roket Pelangi.
+
+
+Kereta baharu, Roket Pelangi!
+
+
+Kamu dapat kereta baharu, Roket Pelangi!
+
+
+Kereta Kampung.
+
+
+Kereta baharu, Kereta Kampung!
+
+
+Kamu dapat kereta baharu, Kereta Kampung!
+
+
+Laju Lautan.
+
+
+Kereta baharu, Laju Lautan!
+
+
+Kamu dapat kereta baharu, Laju Lautan!
+
+
+Robot Pelumba.
+
+
+Kereta baharu, Robot Pelumba!
+
+
+Kamu dapat kereta baharu, Robot Pelumba!
+
+
+Kereta Bulan.
+
+
+Kereta baharu, Kereta Bulan!
+
+
+Kamu dapat kereta baharu, Kereta Bulan!
+
+
+Juara Emas.
+
+
+Kereta baharu, Juara Emas!
+
+
+Kamu dapat kereta baharu, Juara Emas!
+
+
+Cat asal.
+
+
+Cat merah.
+
+
+Cat oren.
+
+
+Cat kuning.
+
+
+Cat hijau.
+
+
+Cat biru.
+
+
+Cat ungu.
+
+
+Cat merah jambu.
+
+
+Cat emas.
+
+
+Pelekat tiada.
+
+
+Pelekat bintang.
+
+
+Pelekat petir.
+
+
+Pelekat bunga raya.
+
+
+Pelekat hati.
+
+
+Pelekat nombor satu.
+
+
+Pelekat wau.
+
+
+Pelekat bulan.
+
+
+Rim perak.
+
+
+Rim merah.
+
+
+Rim biru.
+
+
+Rim emas.
+
+
+Rim pelangi.
+
+
+Kamu dapat pingat gangsa!
+
+
+Kamu dapat pingat perak!
+
+
+Kamu dapat pingat emas!
+
+
+[softly] Bilakah kita membacanya?
+
+
+Mengucap dua kalimah syahadah.
+
+
+Beriman kepada kitab-kitab.
+
+
+Beriman kepada rasul-rasul.
+
+
+Susun langkah berwuduk mengikut tertib.
+
+
+Membasuh kedua-dua tangan hingga siku.
+
+
+Menyapu sebahagian kepala.
+
+
+Berpuasa pada bulan Ramadan.
+
+
+Pilih semua anggota yang kita basuh atau sapu semasa berwuduk.
+
+
+Ta.
+
+
+Cari huruf yang sama!
+
+
+Beriman kepada qada' dan qadar.
+
+
+Kasut.
+
+
+Anak patung.
+
+
+Dzal.
+
+
+Sebelum memulakan sesuatu, atau sebelum makan.
+
+
+Apakah rukun Islam yang pertama?
+
+
+Kho.
+
+
+Siapakah nabi yang pertama?
+
+
+Apabila kawan bersin dan berkata Alhamdulillah, kita jawab,.
+
+
+Berapakah bilangan nabi dan rasul yang wajib kita ketahui?
+
+
+Ha.
+
+
+Kita makan dengan tangan,.
+
+
+Nabi Yaakub.
+
+
+Rukun Iman ada berapa perkara?
+
+
+Terus tidur.
+
+
+Beg sekolah.
+
+
+Doa ini bermaksud: Wahai Tuhanku, tambahkanlah ilmuku.
+
+
+Ketawa.
+
+
+Rukun Islam ada berapa perkara?
+
+
+Sin.
+
+
+Doa ini bermaksud: Aku memohon keampunan-Mu.
+
+
+Doa ini bermaksud: Dengan nama-Mu ya Allah, aku mati dan aku hidup.
+
+
+Ini huruf Jim.
+
+
+Siapakah nabi yang terakhir?
+
+
+Apabila bercakap dengan ibu bapa, kita,.
+
+
+Cari huruf Dhod!
+
+
+Dengar dan cari: Nabi Idris.
+
+
+Doa ini bermaksud: Dengan nama Allah.
+
+
+Ini huruf Ro.
+
+
+Nabi Ilyas.
+
+
+Cari huruf Jim!
+
+
+Dengar dan cari: Nabi Ismail.
+
+
+Dengar dan cari: Nabi Sulaiman.
+
+
+Dengar dan cari: Nabi Yunus.
+
+
+Huruf Dhod.
+
+
+Ini huruf Ba.
+
+
+Ini huruf Syin.
+
+
+Ini huruf Tsa.
+
+
+Ini huruf Zai.
+
+
+Menjerit.
+
+
+Nabi Musa.
+
+
+Nabi Nuh.
+
+
+Nabi Syuaib.
+
+
+Huruf Jim.
+
+
+Nabi Daud.
+
+
+Nabi Harun.
+
+
+Nabi Zakaria.
+
+
+[warmly] Jom bawa haiwan balik ke tempat tinggalnya.
+
+
+Padankan benda yang selalu dipakai sama-sama.
+
+
+Ada dua belas keping.
+
+
+Kumpulan mana yang lain sendiri?
+
+
+Hantar setiap benda ke tempat asalnya.
+
+
+Pilih semua haiwan yang boleh terbang.
+
+
+Asingkan makanan.
+
+
+Pilih dua-dua, ya!
+
+
+Yang berkhasiat, dan yang kurang berkhasiat.
+
+
+Bagi makanan kepada haiwan yang betul.
+
+
+Semua sekali ada berapa?
+
+
+Ei, i, ai, o, yu.
+
+
+Buka kad, cari pasangan huruf besar dengan huruf kecil.
+
+
+Susun huruf ikut urutan.
+
+
+Tekan semua huruf vokal.
+
+
+Haiwan ini tinggal di darat, dalam air, atau terbang di udara?
+
+
+Nombor mana yang hilang, ya?
+
+
+Cuba cari dua benda yang tak sama dalam dua gambar ini.
+
+
+Tengok bentuk mana yang menyala.
+
+
+Susun nombor, dari kecil ke besar.
+
+
+Buka kad, cari nombor dengan gambar yang sama banyak.
+
+
+Susun dari yang paling pendek, sampai yang paling panjang.
+
+
+Tinggal berapa, ya?
+
+
+Kutip semua strawberi dulu, ya.
+
+
+Alamak, peta misi dah koyak!
+
+
+Cuba cari tiga benda yang tak sama dalam dua gambar ini.
+
+
+Jom susun semula.
+
+
+Kutip semua kacang dulu, ya.
+
+
+Katil.
+
+
+Kutip semua kulit kerang dulu, ya.
+
+
+Bila matahari paling terik?
+
+
+Haiwan mana yang ada empat kaki?
+
+
+Jom tolong Roket Dino berkemas!
+
+
+Kumbang.
+
+
+Kutip bintang laut sepanjang jalan, ya.
+
+
+Kutip pisang sepanjang jalan, ya.
+
+
+Kutip semua kelapa dulu, ya.
+
+
+Kutip semua kepingan salji dulu, ya.
+
+
+Kutip semua minyak dulu, ya.
+
+
+Tekan semua benda yang warnanya hijau.
+
+
+Di mana Gajah?
+
+
+Kalau warna biru campur dengan kuning, jadi warna apa?
+
+
+Kutip bulan sepanjang jalan, ya.
+
+
+Kutip semua madu dulu, ya.
+
+
+Kutip telur sepanjang jalan, ya.
+
+
+Ulat (anak rama-rama).
+
+
+Warnakan tingkap dengan warna biru.
+
+
+Ada satu yang hilang dalam corak ini.
+
+
+Apa dia?
+
+
+Huruf dabel yu kecil.
+
+
+Jom susun pazel dinosor comel.
+
+
+Jom susun pazel pelangi ceria.
+
+
+Jom tolong Kura-kura berkemas!
+
+
+Jom tolong Mimi berkemas!
+
+
+Tekan semua benda yang warnanya biru.
+
+
+Yang mana satu bukan alat muzik?
+
+
+Ada berapa bintang laut dalam bakul?
+
+
+Ada berapa pisang dalam bakul?
+
+
+Basahkan tangan.
+
+
+Bilas air.
+
+
+Di mana Beruang?
+
+
+Di mana Biri-biri?
+
+
+Di mana Kelawar?
+
+
+Di mana Lembu?
+
+
+Di mana Pear?
+
+
+Di mana Singa?
+
+
+Gosok tangan.
+
+
+Hari panas terik.
+
+
+Jom susun pazel kura-kura berenang.
+
+
+Jom tolong Coco berkemas!
+
+
+Kalau warna merah campur dengan putih, jadi warna apa?
+
+
+Kamu pakai saya di kaki sebelum keluar rumah.
+
+
+Kutip semua bola dulu, ya.
+
+
+Kutip semua ikan dulu, ya.
+
+
+Kutip semua nyamuk dulu, ya.
+
+
+Lap kering.
+
+
+Membina manusia salji.
+
+
+Sapu sabun.
+
+
+Tekan semua benda yang warnanya merah.
+
+
+Tekan semua benda yang warnanya oren.
+
+
+Warnakan kelopak dulu, ya.
+
+
+Yang mana satu bukan mainan?
+
+
+Ada berapa bintang dalam bakul?
+
+
+Ada berapa jagung dalam bakul?
+
+
+Ayam membesar.
+
+
+Bunga berkembang.
+
+
+Di mana Ikan?
+
+
+Di mana Kelapa?
+
+
+Di mana Kucing?
+
+
+Di mana Monyet?
+
+
+Gulung salji.
+
+
+Haiwan mana yang ada dua kaki?
+
+
+Haiwan mana yang tiada kaki?
+
+
+Huruf o kecil.
+
+
+Huruf zed kecil.
+
+
+Ini ikan.
+
+
+Ini sudu.
+
+
+Jom kira, ada berapa biji oren?
+
+
+Jom lengkapkan perkataan sudu.
+
+
+Jom surih nombor satu guna jari.
+
+
+Jom susun pazel kereta di bandar.
+
+
+Kalau warna merah campur dengan biru, jadi warna apa?
+
+
+Kawan kita, beruang, perlukan dua pisang.
+
+
+Ke tadika.
+
+
+Kita melihat dengan apa?
+
+
+Kita menghidu bau dengan apa?
+
+
+Lukis sebatang pokok!
+
+
+Mana yang paling kecil?
+
+
+Manusia salji.
+
+
+Membuat kek.
+
+
+Nombor apa selepas enam?
+
+
+Sampah selepas makan dibuang ke,.
+
+
+Satu biji dah diambil.
+
+
+Saya ada empat roda dan membawa ramai orang ke sekolah.
+
+
+Tekan semua huruf kei yang kamu nampak!
+
+
+Tolong kumpul empat tiram untuk Kura-kura.
+
+
+Tolong kumpul lima bintang laut untuk Kura-kura.
+
+
+Tolong kumpul lima lobak merah untuk Mimi.
+
+
+Tolong kumpul lima pisang untuk Coco.
+
+
+Warnakan daun dulu, ya.

@@ -1,247 +1,1045 @@
-[warmly] Cari gambar yang bermula dengan huruf eic!
+[warmly] Warnakan tingkap dulu, ya.
 
 
-Litar Kampung, level tiga.
+Yang mana satu bukan alat tulis?
 
 
-Cari nombor dua!
+Ada berapa kacang dalam bakul?
 
 
-Litar Kampung, level empat.
+Ada dua traktor yang menyorok.
 
 
-Kutip satu oren!
+Ada empat ayam yang menyorok.
 
 
-Elak halangan di hadapan!
+Ada tiga bot laju yang menyorok.
 
 
-Litar Kampung, level lima.
+Ada tujuh biji belon.
 
 
-Pilih laluan warna biru!
+Apa kita buat?
 
 
-Kutip dua bintang!
+Baca buku.
 
 
-Litar Kampung, level enam.
+Bakar.
 
 
-Jom eja ubi.
+Bawa beg.
 
 
-Tekan huruf mengikut urutan.
+Bawah sofa.
 
 
-Litar Kampung, level tujuh.
+Benda mana yang warnanya merah?
 
 
-Litar Kampung, level lapan.
+Bunga kembang.
 
 
-Litar Kampung, level sembilan.
+Cari empat biji bola, kemudian tekan.
 
 
-Cari gambar yang bermula dengan huruf en!
+Cari lima kuntum bunga, kemudian tekan.
 
 
-Litar Kampung, level sepuluh.
+Di mana Beri biru?
 
 
-Cari nombor lima!
+Di mana Burung helang?
 
 
-Litar Kampung, level sebelas.
+Di mana Ceri?
 
 
-Pilih laluan warna merah!
+Di mana Ikan paus?
 
 
-Kutip tiga belon!
+Di mana Penguin?
 
 
-Litar Kampung, level dua belas.
+Di mana Pisang?
 
 
-Kutip tiga telur!
+Di mana Sotong?
 
 
-Pilih laluan warna coklat!
+Di mana Strawberi?
 
 
-Litar Kampung, level tiga belas.
+Di mana Udang?
 
 
-Feri bermula dengan huruf apa?
+Di mana Zirafah?
 
 
-Jom eja api.
+Dua biji dah diambil.
 
 
-Kutip tiga bintang!
+Gaul.
 
 
-Litar Kampung, level empat belas.
+Gelap.
 
 
-Berapa kereta?
+Huruf eks kecil.
 
 
-Kira dan pilih nombornya.
+Ikan bermula dengan huruf apa, ya?
 
 
-Litar Kampung, level lima belas.
+Ini anak kucing.
 
 
-Cari huruf kei!
+Ini hati.
 
 
-Cari nombor enam!
+Ini lori.
 
 
-Litar Kampung, level enam belas.
+Ini nanas.
 
 
-Kutip tiga pisang!
+Ini payung.
 
 
-Cari gambar yang bermula dengan huruf em!
+Jom kira, ada berapa biji bola?
 
 
-Litar Kampung, level tujuh belas.
+Jom lengkapkan perkataan hati.
 
 
-Cari nombor satu!
+Jom lengkapkan perkataan itik.
 
 
-Kutip dua huruf ef!
+Jom surih bulatan guna jari.
 
 
-Litar Kampung, level lapan belas.
+Jom surih huruf ei guna jari.
 
 
-Zebra bermula dengan huruf apa?
+Jom surih huruf em guna jari.
 
 
-Kutip tiga kura-kura!
+Jom surih huruf o guna jari.
 
 
-Litar Kampung, level sembilan belas.
+Jom surih nombor empat guna jari.
 
 
-Pilih laluan warna oren!
+Jom susun pazel kapal di laut.
 
 
-Cari huruf si!
+Jom warnakan ikan!
 
 
-Litar Kampung, level dua puluh.
+Jom warnakan roket!
 
 
-Jom eja jam.
+Kawan kita, gurita, perlukan dua bintang laut.
 
 
-Litar Kampung, level dua puluh satu.
+Kawan kita, ikan, perlukan dua kulit kerang.
 
 
-Pilih laluan warna kuning!
+Kawan kita, monyet, perlukan dua strawberi.
 
 
-Litar Kampung, level dua puluh dua.
+Kawan terjatuh dan menangis.
 
 
-Cari huruf vi!
+Kek siap.
 
 
-Berapa telur?
+Kita beri,.
 
 
-Litar Kampung, level dua puluh tiga.
+Kita memegang dengan apa?
 
 
-Gigi bermula dengan huruf apa?
+Kita mengangkat dengan apa?
 
 
-Kutip empat bintang!
+Kita merasa makanan dengan apa?
 
 
-Litar Kampung, level dua puluh empat.
+Kring, kring!
 
 
-Berapa rama-rama?
+Kucing lapar.
 
 
-Litar Kampung, level dua puluh lima.
+Kudup.
 
 
-Berapa bola?
+Kumpulan mana yang lebih banyak bunga?
 
 
-Litar Kampung, level dua puluh enam.
+Kumpulan mana yang lebih sedikit bintang?
 
 
-Jom eja feri.
+Kumpulan mana yang lebih sedikit kumbang?
 
 
-Litar Kampung, level dua puluh tujuh.
+Kutip semua daun dulu, ya.
 
 
-Cari gambar yang bermula dengan huruf ar!
+Lukis sekuntum bunga!
 
 
-Jom eja dram.
+Mana bayang basikal?
 
 
-Litar Kampung, level dua puluh lapan.
+Mana bayang gajah?
 
 
-Litar Kampung, level dua puluh sembilan.
+Mana yang paling besar?
 
 
-Berapa bunga?
+Menetas.
 
 
-Cari huruf ti!
+Mula dengan si, ya.
 
 
-Litar Kampung, level tiga puluh.
+Mula dengan h, ya.
 
 
-Wang bermula dengan huruf apa?
+Mula dengan kei, ya.
 
 
-Jom eja wau.
+Mula dengan en, ya.
 
 
-Litar Kampung, level tiga puluh satu.
+Mula dengan vi, ya.
 
 
-Cari gambar yang bermula dengan huruf o!
+Naik bas.
 
 
-Cari nombor tiga!
+Nanas bermula dengan huruf apa, ya?
 
 
-Kutip dua huruf ai!
+Ngiau, ngiau!
 
 
-Litar Kampung, level tiga puluh dua.
+Nombor apa selepas lapan?
 
 
-Jom eja rusa.
+Nombor apa selepas sebelas?
 
 
-Litar Kampung, level tiga puluh tiga.
+Nombor apa selepas sembilan?
 
 
-Jom eja kuda.
+Nombor apa selepas tiga?
 
 
-Cari gambar yang bermula dengan huruf ei!
+Pakai baju sekolah.
 
 
-Litar Kampung, level tiga puluh empat.
+Payung bermula dengan huruf apa, ya?
 
 
-Litar Kampung, level tiga puluh lima.
+Salji turun.
+
+
+Sampai tadika.
+
+
+Saya ada belalai yang panjang.
+
+
+Saya berbunyi kukuruyuk pada waktu pagi.
+
+
+Saya bersinar di waktu siang.
+
+
+Saya melindungi kamu daripada hujan.
+
+
+Sudu.
+
+
+Tekan semua benda yang warnanya merah jambu.
+
+
+Tekan semua benda yang warnanya ungu.
+
+
+Tekan semua huruf yu yang kamu nampak!
+
+
+Tepi pokok.
+
+
+Tiga biji dah diambil.
+
+
+Tolong kumpul empat bintang untuk Roket Dino.
+
+
+Tolong kumpul lima jagung untuk Mimi.
+
+
+Tolong kumpul lima permata untuk Roket Dino.
+
+
+Tunas.
+
+
+Waktu makan.
+
+
+Warnakan api dengan warna oren.
+
+
+Warnakan badan ikan dengan warna oren.
+
+
+Warnakan badan roket dengan warna putih.
+
+
+Warnakan batang pokok dengan warna coklat.
+
+
+Warnakan bunga ikut warna kegemaran kamu!
+
+
+Warnakan daun dengan warna hijau.
+
+
+Warnakan ekor dengan warna oren.
+
+
+Warnakan kelopak dengan warna merah jambu.
+
+
+Warnakan layar dengan warna putih.
+
+
+Warnakan matahari ikut warna kegemaran kamu!
+
+
+Warnakan sirip dengan warna kuning.
+
+
+Warnakan sirip dengan warna merah.
+
+
+Yang mana satu bukan alat dapur?
+
+
+Ada berapa buih dalam bakul?
+
+
+Ada dua anjing yang menyorok.
+
+
+Ada dua arnab yang menyorok.
+
+
+Ada dua biji pisang.
+
+
+Ada dua biri-biri yang menyorok.
+
+
+Ada dua ikan lumba-lumba yang menyorok.
+
+
+Ada dua kuntum bunga.
+
+
+Ada dua roket yang menyorok.
+
+
+Ada dua zirafah yang menyorok.
+
+
+Ada empat beruang yang menyorok.
+
+
+Ada empat biji telur.
+
+
+Ada empat kereta api yang menyorok.
+
+
+Ada empat kuda yang menyorok.
+
+
+Ada empat lembu yang menyorok.
+
+
+Ada empat mangga yang menyorok.
+
+
+Ada empat payung terjun yang menyorok.
+
+
+Ada empat pear yang menyorok.
+
+
+Ada empat sampan yang menyorok.
+
+
+Ada lapan biji epal.
+
+
+Ada lima biji bola.
+
+
+Ada sembilan ekor rama-rama.
+
+
+Ada sepuluh biji epal.
+
+
+Ada tiga ayam yang menyorok.
+
+
+Ada tiga batang pensel.
+
+
+Ada tiga biji kek cawan.
+
+
+Ada tiga biji pisang.
+
+
+Ada tiga buah bintang.
+
+
+Ada tiga burung hantu yang menyorok.
+
+
+Ada tiga gurita yang menyorok.
+
+
+Ada tiga kambing yang menyorok.
+
+
+Ada tiga kapal layar yang menyorok.
+
+
+Ada tiga kereta bomba yang menyorok.
+
+
+Ada tiga kereta yang menyorok.
+
+
+Ada tiga kura-kura yang menyorok.
+
+
+Ada tiga lembu yang menyorok.
+
+
+Ada tiga lori yang menyorok.
+
+
+Ada tiga mangga yang menyorok.
+
+
+Ada tiga singa yang menyorok.
+
+
+Aiskrim bermula dengan huruf apa, ya?
+
+
+Ambil berus.
+
+
+Apa yang hilang?
+
+
+Baca doa.
+
+
+Bahan.
+
+
+Beee!
+
+
+Bila kita bangun tidur?
+
+
+Bzzzz!
+
+
+Cari dua buah kereta, kemudian tekan.
+
+
+Cari empat biji strawberi, kemudian tekan.
+
+
+Cari enam ekor kura-kura, kemudian tekan.
+
+
+Cari lima ekor ikan, kemudian tekan.
+
+
+Cari lima ekor rama-rama, kemudian tekan.
+
+
+Cari tiga batang pensel, kemudian tekan.
+
+
+Cari tiga buah kereta, kemudian tekan.
+
+
+Cari tiga ekor kumbang, kemudian tekan.
+
+
+Coklat bermula dengan huruf apa, ya?
+
+
+Di mana Kiwi?
+
+
+Dua biji bola, tambah satu biji lagi.
+
+
+Dua buah bintang, tambah satu buah lagi.
+
+
+Dua kuntum bunga, tambah satu kuntum lagi.
+
+
+Empat biji dah diambil.
+
+
+Enam biji strawberi, tambah tiga biji lagi.
+
+
+Enam ekor dah diambil.
+
+
+Epal bermula dengan huruf apa, ya?
+
+
+Gambar mana yang bermula dengan ei?
+
+
+Gambar mana yang bermula dengan en?
+
+
+Gambar mana yang bermula dengan ar?
+
+
+Gambar mana yang bermula dengan ti?
+
+
+Gambar mana yang bermula dengan yu?
+
+
+Gambar mana yang bermula dengan wai?
+
+
+Gambar mana yang bermula dengan zed?
+
+
+Gong, gong!
+
+
+Hiii hi hi!
+
+
+Ini aiskrim.
+
+
+Ini awan.
+
+
+Ini bas.
+
+
+Ini bola.
+
+
+Ini ceri.
+
+
+Ini coklat.
+
+
+Ini dram.
+
+
+Ini epal.
+
+
+Ini feri.
+
+
+Ini gelas.
+
+
+Ini gitar.
+
+
+Ini huruf bi besar.
+
+
+Ini huruf si besar.
+
+
+Ini huruf ef besar.
+
+
+Ini huruf ai besar.
+
+
+Ini huruf en besar.
+
+
+Ini huruf vi besar.
+
+
+Ini istana.
+
+
+Ini jambatan.
+
+
+Ini kek.
+
+
+Ini orang utan.
+
+
+Ini pokok.
+
+
+Ini semut.
+
+
+Ini siput.
+
+
+Ini tangan.
+
+
+Ini tembikai.
+
+
+Ini ubi.
+
+
+Ini ular.
+
+
+Ini violin.
+
+
+Ini wang.
+
+
+Istana.
+
+
+Jambatan bermula dengan huruf apa, ya?
+
+
+Jom cari huruf en!
+
+
+Jom cari huruf eks!
+
+
+Jom kira, ada berapa ekor ikan?
+
+
+Jom kira, ada berapa kuntum bunga?
+
+
+Jom lengkapkan perkataan awan.
+
+
+Jom lengkapkan perkataan bas.
+
+
+Jom lengkapkan perkataan bola.
+
+
+Jom lengkapkan perkataan ceri.
+
+
+Jom lengkapkan perkataan dram.
+
+
+Jom lengkapkan perkataan feri.
+
+
+Jom lengkapkan perkataan gelas.
+
+
+Jom lengkapkan perkataan gitar.
+
+
+Jom lengkapkan perkataan ikan.
+
+
+Jom lengkapkan perkataan istana.
+
+
+Jom lengkapkan perkataan kek.
+
+
+Jom lengkapkan perkataan lori.
+
+
+Jom lengkapkan perkataan pokok.
+
+
+Jom lengkapkan perkataan siput.
+
+
+Jom lengkapkan perkataan ular.
+
+
+Jom lengkapkan perkataan wang.
+
+
+Jom surih huruf i guna jari.
+
+
+Jom surih huruf ai guna jari.
+
+
+Jom surih huruf vi guna jari.
+
+
+Jom surih huruf dabel yu guna jari.
+
+
+Jom surih nombor tujuh guna jari.
+
+
+Jom warnakan bunga!
+
+
+Jom warnakan matahari!
+
+
+Jom warnakan rama-rama!
+
+
+Jom warnakan rumah!
+
+
+Jom warnakan strawberi!
+
+
+Kalau warna merah campur dengan kuning, jadi warna apa?
+
+
+Katak tinggal di mana, ya?
+
+
+Kawan kita, angkasawan, perlukan dua bintang.
+
+
+Kawan kita, ayam, perlukan dua lobak merah.
+
+
+Kawan kita, biri-biri, perlukan dua telur.
+
+
+Kawan kita, biri-biri, perlukan telur.
+
+
+Kawan kita, burung kakak tua, perlukan dua kacang.
+
+
+Kawan kita, burung kakak tua, perlukan pisang.
+
+
+Kawan kita, gurita, perlukan buih.
+
+
+Kawan kita, ikan lumba-lumba, perlukan dua buih.
+
+
+Kawan kita, kawan angkasa, perlukan komet.
+
+
+Kawan kita, kuda, perlukan dua epal.
+
+
+Kawan kita, kuda, perlukan dua jagung.
+
+
+Kawan kita, lembu, perlukan dua lobak merah.
+
+
+Kawan kita, lembu, perlukan lobak merah.
+
+
+Kawan kita, robot, perlukan dua bintang.
+
+
+Kawan kita, robot, perlukan dua komet.
+
+
+Kemas pinggan.
+
+
+Ketam tinggal di mana, ya?
+
+
+Kita bercakap dengan apa?
+
+
+Kukuruyuk!
+
+
+Kumpulan mana yang ada dua kuntum bunga?
+
+
+Kumpulan mana yang ada lima buah bintang?
+
+
+Kumpulan mana yang ada sembilan biji epal?
+
+
+Kumpulan mana yang ada sepuluh biji oren?
+
+
+Kumpulan mana yang ada tiga biji belon?
+
+
+Kumpulan mana yang ada tujuh biji telur?
+
+
+Kumpulan mana yang lebih banyak epal?
+
+
+Kumpulan mana yang lebih banyak pokok?
+
+
+Kumpulan mana yang lebih banyak telur?
+
+
+Kumpulan mana yang lebih sedikit belon?
+
+
+Kumpulan mana yang lebih sedikit ikan?
+
+
+Kumpulan mana yang lebih sedikit oren?
+
+
+Kumpulan mana yang lebih sedikit pisang?
+
+
+Kutip semua bintang laut dulu, ya.
+
+
+Kutip semua bulan dulu, ya.
+
+
+Kutip semua pisang dulu, ya.
+
+
+Kutip semua telur dulu, ya.
+
+
+Lantai kotor.
+
+
+Lima biji belon, tambah dua biji lagi.
+
+
+Lima biji epal, tambah empat biji lagi.
+
+
+Lima ekor anak ayam, tambah satu ekor lagi.
+
+
+Lori bermula dengan huruf apa, ya?
+
+
+Lukis apa sahaja dengan jari kamu!
+
+
+Lukis belon!
+
+
+Lukis bintang di langit!
+
+
+Lukis matahari yang ceria!
+
+
+Lukis pelangi yang berwarna-warni!
+
+
+Lukis rumah kamu!
+
+
+Lukis seekor ikan!
+
+
+Main apa sahaja yang kamu suka.
+
+
+Makan lagi.
+
+
+Mana bayang ayam?
+
+
+Mana bayang gurita?
+
+
+Mana bayang kelapa?
+
+
+Mana bayang kereta bomba?
+
+
+Mana bayang kura-kura?
+
+
+Mana bayang panda?
+
+
+Mana bayang penguin?
+
+
+Mana bayang pisang?
+
+
+Mana bayang rama-rama?
+
+
+Mana bentuk berlian?
+
+
+Mana bentuk bujur?
+
+
+Mana biri-biri?
+
+
+Mana huruf bi kecil?
+
+
+Mana huruf si kecil?
+
+
+Mana huruf ef kecil?
+
+
+Mana huruf ai kecil?
+
+
+Mana huruf en kecil?
+
+
+Mana huruf vi kecil?
+
+
+Mana ikan?
+
+
+Mana nombor lapan?
+
+
+Mana nombor lima belas?
+
+
+Mana seluar?
+
+
+Mana zebra?
+
+
+Mbeee!
+
+
+Mula dengan jei, ya.
+
+
+Mula dengan pi, ya.
+
+
+Mula dengan kiu, ya.
+
+
+Mula dengan ar, ya.
+
+
+Mula dengan ti, ya.
+
+
+Mula dengan dabel yu, ya.
+
+
+Mula dengan eks, ya.
+
+
+Niu, niu, niu!
+
+
+Nombor apa sebelum lapan?
+
+
+Nombor apa sebelum lima?
+
+
+Nombor apa selepas lima?
+
+
+Nombor apa selepas tiga belas?
+
+
+Orang utan bermula dengan huruf apa, ya?
+
+
+Pakai baju.
+
+
+Panda suka makan apa, ya?
+
+
+Payung.
+
+
+Penguin tinggal di mana, ya?
+
+
+Pilih gambar dan bilangan kepingan.
+
+
+Pilih gambar untuk diwarnakan.
+
+
+Pilih kategori untuk diteroka.
+
+
+Pilih warna, kemudian tekan bahagian gambar.
+
+
+Pokok membesar.
+
+
+Pon, pon!
+
+
+Pruuuut!
+
+
+Satu batang dah diambil.
+
+
+Satu batang pensel, tambah empat batang lagi.
+
+
+Satu batang pokok, tambah dua batang lagi.

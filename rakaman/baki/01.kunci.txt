@@ -1,92 +1,357 @@
-Jom asingkan buah dengan sayur.
-Padankan anak dengan ibunya.
-Tarik huruf kecil, letak pada huruf besar yang sama.
-Apa saya?
-Ada enam keping.
-Gambar ini sesuai dengan yang mana satu?
-Siapa saya?
-Tunjukkan.
-Asingkan haiwan darat dengan haiwan air.
-Jangan langgar batu, ya.
-Cuaca sejuk.
-Jom ke hutan!
-Jom ke laut!
-Jom tolong anjing cari tulang!
-Jom tolong kura-kura balik ke laut!
-Jom tolong tikus cari keju!
-Tarik nombor ke kumpulan yang betul.
-Jom ke angkasa!
-Jom ke ladang!
-Ada empat keping.
-Bila kita tidur?
-Cuba cari satu benda yang tak sama dalam dua gambar ini.
-Jom susun pazel ikan di laut.
-Jom tolong monyet ambil pisang!
-Jom tolong penguin ambil ikan!
-Hari panas di pantai.
-Jom pandu kereta sampai ke garisan penamat!
-Jom tolong bagi!
-Jom tolong Coco sampai ke rumah!
-Jom tolong Kura-kura sampai ke batu karang!
-Jom tolong Mimi sampai ke rumah!
-Jom tolong Roket Dino sampai ke planet!
-Kita guna,
-Rumah
-Tekan yang paling besar.
-Hari hujan.
-Jom tolong beruang cari madu!
-Jom tolong kucing balik ke rumah!
-Kita perlukan,
-Tekan yang paling kecil.
-Anak kucing
-Bila matahari terbenam?
-Bola
-Jom tolong arnab cari lobak!
-Jom tolong katak lompat ke daun teratai!
-Jom tolong lebah terbang ke bunga!
-Waktu sehari.
-Ada dua keping.
-Asingkan kenderaan darat dengan kenderaan udara.
-Di mana Gurita?
-Di mana Kuda?
-Di mana Mangga?
-Di mana Tembikai?
-Ini anak lembu.
-Jom susun pazel kek hari jadi.
-Jom susun pazel penguin di kutub.
-Jom tolong panda ambil buluh!
-Kita perlu,
-Mahu buka pintu yang berkunci.
-Makanan mana yang elok untuk badan kita?
-Apa kita perlu buat?
-Apa yang ia perlukan?
-Di mana Ketam?
-Di mana Lemon?
-Jom cari!
-Jom susun pazel kucing di taman.
-Jom susun pazel lebah dan bunga.
-Jom warnakan pisang!
-Kuku sudah panjang.
-Makan
-Mana yang lebih kecil?
-Pokok
-Pokok bunga layu.
-Tangan kotor.
-Tidur
-Warnakan hujung pisang dengan warna coklat.
-Ada berapa lobak merah dalam bakul?
-Ada berapa tiram dalam bakul?
-Biarkan
-Buah-buahan
-Cermin mata hitam
-Cip, cip, cip!
-Daun
-Di mana Anggur?
-Di mana Ikan lumba-lumba?
-Di mana Tikus?
-Di mana Zebra?
-Huruf S kecil
-Jom surih garis zig-zag guna jari.
-Jom susun pazel arnab di ladang.
-Jom susun pazel gajah di hutan.
-Jom susun pazel roket di angkasa.
+Huruf H
+Huruf H kecil
+Mana warna merah?
+Pakai baju tidur
+Rama-rama suka makan apa, ya?
+Rutin pagi.
+Saya ada leher yang sangat panjang.
+Saya berenang di dalam air dan ada sirip.
+Saya digunakan untuk menulis.
+Selendang
+Serangga
+Tolong kumpul empat strawberi untuk Coco.
+Warnakan buah dengan warna merah.
+Warnakan kaki dengan warna hijau.
+Warnakan laut dengan warna biru.
+Warnakan pintu dengan warna merah.
+Yang mana satu boleh kita jumpa di hutan?
+Yang mana satu boleh kita jumpa di laut?
+Yang mana satu bukan cuaca?
+Yang mana satu bukan makanan?
+Ada berapa bulan dalam bakul?
+Ada berapa epal dalam bakul?
+Ada berapa telur dalam bakul?
+Ada kiwi yang menyorok.
+Anjing suka makan apa, ya?
+Aummm!
+Benda mana yang warnanya oren?
+Berlari
+Beruang suka makan apa, ya?
+Cari dua ekor anak ayam, kemudian tekan.
+Di mana Ikan yu?
+Di mana Lebah?
+Di mana Rama-rama?
+Di mana Unta?
+Donat
+Gambar mana yang bermula dengan B?
+Gelas
+Ini anak kuda.
+Ini anak panda.
+Ini huruf E.
+Ini huruf H.
+Ini ulat (anak rama-rama).
+Jangan langgar kayu, ya.
+Jangan langgar ketam, ya.
+Jangan langgar perangkap, ya.
+Jangan langgar pokok, ya.
+Jangan langgar sarang labah-labah, ya.
+Jom cari huruf H!
+Jom kira, ada berapa ekor anak ayam?
+Jom surih garis ombak guna jari.
+Jom surih huruf U guna jari.
+Jom surih segi empat guna jari.
+Jom susun pazel rumah saya.
+Jom warnakan belon!
+Jom warnakan tembikai!
+Kita tutup mulut dengan,
+Kumpulan mana yang ada dua ekor kumbang?
+Kumpulan mana yang lebih banyak rama-rama?
+Kumur air
+Lukis sebiji epal!
+Mahu bersin.
+Mahu melukis gambar.
+Mana ayam?
+Mana bayang burung helang?
+Mana bayang burung?
+Mana bayang ikan yu?
+Mana bayang lebah?
+Mana bentuk bulatan?
+Mana bentuk segi empat sama?
+Mana bentuk segi empat tepat?
+Mana gaun?
+Mana gurita?
+Mana hidung?
+Mana lebah?
+Mana nombor enam?
+Mana nombor lima?
+Mana nombor satu?
+Mana nombor sembilan?
+Mana nombor tiga?
+Mana otak?
+Mana satu lagi huruf E?
+Mana satu lagi huruf H?
+Mana tangan?
+Mana warna ungu?
+Monyet suka makan saya.
+Mooo!
+Nombor dua
+Saya kuning dan panjang.
+Saya membantu kamu melihat dalam gelap.
+Seluar pendek
+Siapa yang berbunyi, Hu, hu!
+Siapa yang berbunyi, Kuak, kuak!
+Siapa yang berbunyi, Kuek, kuek!
+Teksi
+Tikus suka makan apa, ya?
+Tolong kumpul empat lobak merah untuk Mimi.
+Tolong kumpul empat permata untuk Roket Dino.
+Tolong kumpul tiga cendawan untuk Coco.
+Tolong kumpul tiga tiram untuk Kura-kura.
+Warnakan badan bas dengan warna kuning.
+Warnakan belon kanan dengan warna biru.
+Warnakan isi tembikai dengan warna merah.
+Warnakan kereta ikut warna kegemaran kamu!
+Yang mana satu boleh kita jumpa di angkasa?
+Yang mana satu boleh kita jumpa di ladang?
+Ada dua lemon yang menyorok.
+Ada dua singa yang menyorok.
+Ada epal yang menyorok.
+Ada ikan lumba-lumba yang menyorok.
+Ada panda yang menyorok.
+Ada roket yang menyorok.
+Ayam suka makan apa, ya?
+Badan berpeluh selepas bermain.
+Burung helang tinggal di mana, ya?
+Burung tinggal di mana, ya?
+Cili bermula dengan huruf apa, ya?
+Di mana Arnab?
+Di mana Harimau?
+Di mana Kambing?
+Gambar mana yang bermula dengan C?
+Gambar mana yang bermula dengan D?
+Gambar mana yang bermula dengan E?
+Gambar mana yang bermula dengan F?
+Gambar mana yang bermula dengan G?
+Gambar mana yang bermula dengan H?
+Gambar mana yang bermula dengan J?
+Gambar mana yang bermula dengan L?
+Helikopter bermula dengan huruf apa, ya?
+Ikan lumba-lumba tinggal di mana, ya?
+Ikan paus tinggal di mana, ya?
+Ini anak anjing.
+Ini anak gajah.
+Ini cili.
+Ini helikopter.
+Ini huruf C.
+Ini huruf F.
+Ini huruf G.
+Ini huruf I.
+Ini huruf K besar.
+Ini huruf L.
+Ini huruf M besar.
+Ini ombak.
+Itik bermula dengan huruf apa, ya?
+Itik tinggal di mana, ya?
+Jangan langgar ketulan ais, ya.
+Jom cari huruf D!
+Jom cari huruf F!
+Jom cari huruf G!
+Jom cari huruf L!
+Jom cari huruf M!
+Jom cari huruf Q!
+Jom cari huruf S!
+Jom kira, ada berapa biji pisang?
+Jom surih huruf C guna jari.
+Jom surih huruf H guna jari.
+Jom surih huruf L guna jari.
+Jom surih huruf T guna jari.
+Jom warnakan epal!
+Jom warnakan kereta!
+Jom warnakan kucing!
+Kawan kita, angkasawan, perlukan permata.
+Kawan kita, ayam, perlukan telur.
+Kawan kita, gurita, perlukan tiram.
+Kawan kita, kawan angkasa, perlukan bintang.
+Kawan kita, monyet, perlukan kacang.
+Kucing suka makan apa, ya?
+Kumpulan mana yang ada empat biji strawberi?
+Kumpulan mana yang ada enam biji telur?
+Kumpulan mana yang ada lapan ekor kumbang?
+Kumpulan mana yang ada lima biji telur?
+Kumpulan mana yang ada satu biji bola?
+Kumpulan mana yang ada satu biji pisang?
+Kumpulan mana yang ada sepuluh biji pisang?
+Kumpulan mana yang ada tujuh kuntum bunga?
+Kumpulan mana yang lebih banyak belon?
+Kumpulan mana yang lebih banyak kek cawan?
+Kumpulan mana yang lebih banyak oren?
+Kumpulan mana yang lebih banyak pisang?
+Kumpulan mana yang lebih sedikit pokok?
+Kura-kura tinggal di mana, ya?
+Lebah suka makan apa, ya?
+Lukis muka yang tersenyum!
+Mana anjing?
+Mana bayang burung hantu?
+Mana bayang ketam?
+Mana bayang roket?
+Mana bayang strawberi?
+Mana bayang tikus?
+Mana bayang zirafah?
+Mana burung helang?
+Mana burung?
+Mana huruf K kecil?
+Mana huruf M kecil?
+Mana ikan yu?
+Mana itik?
+Mana kelawar?
+Mana lidah?
+Mana mata?
+Mana mulut?
+Mana nombor empat?
+Mana nombor tujuh?
+Mana panda?
+Mana penguin?
+Mana reben yang paling panjang?
+Mana satu lagi huruf C?
+Mana satu lagi huruf F?
+Mana satu lagi huruf G?
+Mana satu lagi huruf I?
+Mana satu lagi huruf L?
+Mana singa?
+Mana stoking?
+Mana tikus?
+Mana topi?
+Mana yang lebih besar?
+Nombor enam
+Nombor lima
+Nombor satu
+Nombor sembilan
+Nombor tiga
+Ombak bermula dengan huruf apa, ya?
+Pesawat
+Pinggan
+Saya berbunyi kuak kuak.
+Saya bulat dan kamu sepak saya.
+Saya cair jika panas.
+Saya hijau dan suka melompat.
+Saya menunjukkan masa.
+Saya sejuk dan manis.
+Siapa yang berbunyi, Aummm!
+Siapa yang berbunyi, Mooo!
+Tangan terbuka
+Tolong kumpul empat komet untuk Roket Dino.
+Tolong kumpul empat kulit kerang untuk Kura-kura.
+Tolong kumpul tiga bulan untuk Roket Dino.
+Tolong kumpul tiga epal untuk Mimi.
+Tolong kumpul tiga komet untuk Roket Dino.
+Tolong kumpul tiga kulit kerang untuk Kura-kura.
+Tolong kumpul tiga strawberi untuk Coco.
+Tolong kumpul tiga telur untuk Mimi.
+Udang tinggal di mana, ya?
+Unta tinggal di mana, ya?
+Warnakan badan kereta dengan warna merah.
+Warnakan bas ikut warna kegemaran kamu!
+Warnakan bendera dengan warna merah.
+Warnakan buah epal dengan warna merah.
+Warnakan hidung dengan warna merah jambu.
+Yang mana satu bukan tumbuhan?
+Gunung
+Mahkota
+Main lagi
+Makan kentang goreng
+Nombor empat
+Nombor tujuh
+Udang kecil
+Yoyo
+Litar Kampung.
+Rumah kampung, sawah dan pokok kelapa.
+Level juara!
+Sedia?
+Litar Kampung, level satu.
+Cari huruf E!
+Litar Kampung, level dua.
+Cari gambar yang bermula dengan huruf H!
+Litar Kampung, level tiga.
+Cari nombor dua!
+Litar Kampung, level empat.
+Kutip satu oren!
+Elak halangan di hadapan!
+Litar Kampung, level lima.
+Pilih laluan warna biru!
+Kutip dua bintang!
+Litar Kampung, level enam.
+Jom eja ubi.
+Tekan huruf mengikut urutan.
+Litar Kampung, level tujuh.
+Litar Kampung, level lapan.
+Litar Kampung, level sembilan.
+Cari gambar yang bermula dengan huruf N!
+Litar Kampung, level sepuluh.
+Cari nombor lima!
+Litar Kampung, level sebelas.
+Pilih laluan warna merah!
+Kutip tiga belon!
+Litar Kampung, level dua belas.
+Kutip tiga telur!
+Pilih laluan warna coklat!
+Litar Kampung, level tiga belas.
+Feri bermula dengan huruf apa?
+Jom eja api.
+Kutip tiga bintang!
+Litar Kampung, level empat belas.
+Berapa kereta?
+Kira dan pilih nombornya.
+Litar Kampung, level lima belas.
+Cari huruf K!
+Cari nombor enam!
+Litar Kampung, level enam belas.
+Kutip tiga pisang!
+Cari gambar yang bermula dengan huruf M!
+Litar Kampung, level tujuh belas.
+Cari nombor satu!
+Kutip dua huruf F!
+Litar Kampung, level lapan belas.
+Zebra bermula dengan huruf apa?
+Kutip tiga kura-kura!
+Litar Kampung, level sembilan belas.
+Pilih laluan warna oren!
+Cari huruf C!
+Litar Kampung, level dua puluh.
+Jom eja jam.
+Litar Kampung, level dua puluh satu.
+Pilih laluan warna kuning!
+Litar Kampung, level dua puluh dua.
+Cari huruf V!
+Berapa telur?
+Litar Kampung, level dua puluh tiga.
+Gigi bermula dengan huruf apa?
+Kutip empat bintang!
+Litar Kampung, level dua puluh empat.
+Berapa rama-rama?
+Litar Kampung, level dua puluh lima.
+Berapa bola?
+Litar Kampung, level dua puluh enam.
+Jom eja feri.
+Litar Kampung, level dua puluh tujuh.
+Cari gambar yang bermula dengan huruf R!
+Jom eja dram.
+Litar Kampung, level dua puluh lapan.
+Litar Kampung, level dua puluh sembilan.
+Berapa bunga?
+Cari huruf T!
+Litar Kampung, level tiga puluh.
+Wang bermula dengan huruf apa?
+Jom eja wau.
+Litar Kampung, level tiga puluh satu.
+Cari gambar yang bermula dengan huruf O!
+Cari nombor tiga!
+Kutip dua huruf I!
+Litar Kampung, level tiga puluh dua.
+Jom eja rusa.
+Litar Kampung, level tiga puluh tiga.
+Jom eja kuda.
+Cari gambar yang bermula dengan huruf A!
+Litar Kampung, level tiga puluh empat.
+Litar Kampung, level tiga puluh lima.
+Litar Kampung, level tiga puluh enam.
+Cari huruf G!
+Tangan bermula dengan huruf apa?
+Litar Kampung, level tiga puluh tujuh.
+Cari gambar yang bermula dengan huruf Y!
+Litar Kampung, level tiga puluh lapan.
+Cari nombor lapan!
+Pilih laluan warna hijau!
+Litar Kampung, level tiga puluh sembilan.
+Cari nombor empat!
+Berapa ikan?
+Litar Kampung, level empat puluh.

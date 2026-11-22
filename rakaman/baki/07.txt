@@ -1,247 +1,1045 @@
-[warmly] Litar Kampung, level tiga puluh enam.
+[warmly] Satu buah dah diambil.
 
 
-Cari huruf ji!
+Satu ekor anak ayam, tambah enam ekor lagi.
 
 
-Tangan bermula dengan huruf apa?
+Satu kuntum dah diambil.
 
 
-Litar Kampung, level tiga puluh tujuh.
+Saya berbulu putih dan memberikan bulu untuk baju.
 
 
-Cari gambar yang bermula dengan huruf wai!
+Saya muncul di langit selepas hujan dan berwarna-warni.
 
 
-Litar Kampung, level tiga puluh lapan.
+Sekarang jalan ke tempat yang dituju.
 
 
-Cari nombor lapan!
+Sekarang, susun semula ikut urutan tadi, ya.
 
 
-Pilih laluan warna hijau!
+Sembilan ekor kumbang, tambah satu ekor lagi.
 
 
-Litar Kampung, level tiga puluh sembilan.
+Semut bermula dengan huruf apa, ya?
 
 
-Cari nombor empat!
+Siapa yang berbunyi, Kukuruyuk!
 
 
-Berapa ikan?
+Siapa yang berbunyi, Ngiau, ngiau!
 
 
-Litar Kampung, level empat puluh.
+Singa suka makan apa, ya?
 
 
-Kutip tiga bunga!
+Susun objek ke dalam kumpulannya.
 
 
-Jom eja oren.
+Tangan bermula dengan huruf apa, ya?
 
 
-Litar Kampung, level empat puluh satu.
+Tekan gambar untuk dengar namanya.
 
 
-Jom eja daun.
+Tekan gambar untuk mendengar bunyinya.
 
 
-Litar Kampung, level empat puluh dua.
+Tekan semua benda yang warnanya coklat.
 
 
-Litar Kampung, level empat puluh tiga.
+Tekan semua benda yang warnanya kuning.
 
 
-Jom eja lori.
+Tekan semua huruf h yang kamu nampak!
 
 
-Litar Kampung, level empat puluh empat.
+Tekan semua huruf ai yang kamu nampak!
 
 
-Zirafah bermula dengan huruf apa?
+Tekan semua huruf pi yang kamu nampak!
 
 
-Kutip tiga pensel!
+Tekan semua huruf ti yang kamu nampak!
 
 
-Litar Kampung, level empat puluh lima.
+Tekan semua huruf vi yang kamu nampak!
 
 
-Cari huruf zed!
+Tekan semua huruf wai yang kamu nampak!
 
 
-Litar Kampung, level empat puluh enam.
+Tekan semua huruf zed yang kamu nampak!
 
 
-Pilih laluan warna ungu!
+Tembikai bermula dengan huruf apa, ya?
 
 
-Cari huruf wai!
+Tiada markah, main sahaja!
 
 
-Nanas bermula dengan huruf apa?
+Tiada markah, tiada had!
 
 
-Litar Kampung, level empat puluh tujuh.
+Tiga batang pensel, tambah enam batang lagi.
 
 
-Jom eja bulan.
+Tiga biji epal, tambah tiga biji lagi.
 
 
-Litar Kampung, level empat puluh lapan.
+Tiga biji kek cawan, tambah lima biji lagi.
 
 
-Jom eja elang.
+Tiga biji telur, tambah satu biji lagi.
 
 
-Kutip dua huruf el!
+Tiga ekor rama-rama, tambah dua ekor lagi.
 
 
-Gitar bermula dengan huruf apa?
+Ting, ting, ting!
 
 
-Litar Kampung, level empat puluh sembilan.
+Tolong kumpul empat bintang laut untuk Kura-kura.
 
 
-Berapa oren?
+Tolong kumpul empat epal untuk Mimi.
 
 
-Litar Kampung, level lima puluh.
+Tolong kumpul empat jagung untuk Mimi.
 
 
-Jom eja topi.
+Tolong kumpul empat kacang untuk Coco.
 
 
-Kutip lima belon!
+Tolong kumpul empat pisang untuk Coco.
 
 
-Lembah Buah.
+Tolong kumpul empat telur untuk Mimi.
 
 
-Tembikai, pisang, strawberi dan sungai jus.
+Tolong kumpul lima bintang untuk Roket Dino.
 
 
-Selesaikan sepuluh level di Litar Kampung dahulu, ya.
+Tolong kumpul lima buih untuk Kura-kura.
 
 
-Lembah Buah, level satu.
+Tolong kumpul lima bulan untuk Roket Dino.
 
 
-Cari epal!
+Tolong kumpul lima cendawan untuk Coco.
 
 
-Lembah Buah, level dua.
+Tolong kumpul lima kacang untuk Coco.
 
 
-Pilih laluan warna merah jambu!
+Tolong kumpul lima komet untuk Roket Dino.
 
 
-Lembah Buah, level tiga.
+Tolong kumpul lima kulit kerang untuk Kura-kura.
 
 
-Kutip dua belon!
+Tujuh biji dah diambil.
 
 
-Lembah Buah, level empat.
+Tujuh biji epal, tambah dua biji lagi.
 
 
-Pilih yang paling kecil!
+Tujuh biji kek cawan, tambah dua biji lagi.
 
 
-Lembah Buah, level lima.
+Ubi bermula dengan huruf apa, ya?
 
 
-Cari kenderaan!
+Uk uk ak ak!
 
 
-Lembah Buah, level enam.
+Van.
 
 
-Dua tambah tiga, jadi berapa?
+Violin bermula dengan huruf apa, ya?
 
 
-Lembah Buah, level tujuh.
+Vrooom!
 
 
-Cari benda berwarna kuning!
+Warnakan badan bot dengan warna coklat.
 
 
-Lembah Buah, level lapan.
+Warnakan badan dengan warna coklat.
 
 
-Cari ceri!
+Warnakan belon kiri dengan warna merah.
 
 
-Lembah Buah, level sembilan.
+Warnakan belon tengah dengan warna kuning.
 
 
-Lembah Buah, level sepuluh.
+Warnakan bot layar ikut warna kegemaran kamu!
 
 
-Kutip dua ikan!
+Warnakan buah strawberi dengan warna merah.
 
 
-Lembah Buah, level sebelas.
+Warnakan bumbung dengan warna merah.
 
 
-Cari sayur!
+Warnakan cangkerang dengan warna coklat.
 
 
-Lembah Buah, level dua belas.
+Warnakan cerobong dengan warna coklat.
 
 
-Kutip empat strawberi!
+Warnakan dinding dengan warna kuning.
 
 
-Lembah Buah, level tiga belas.
+Warnakan ikan ikut warna kegemaran kamu!
 
 
-Tiga tambah tiga, jadi berapa?
+Warnakan kepala dengan warna hijau.
 
 
-Kutip dua epal!
+Warnakan kulit tembikai dengan warna hijau.
 
 
-Lembah Buah, level empat belas.
+Warnakan mata dengan warna putih.
 
 
-Cari benda berwarna coklat!
+Warnakan matahari dengan warna kuning.
 
 
-Lembah Buah, level lima belas.
+Warnakan pintu dengan warna coklat.
 
 
-Cari buah!
+Warnakan pintu dulu, ya.
 
 
-Cari nanas!
+Warnakan rama-rama ikut warna kegemaran kamu!
 
 
-Lembah Buah, level enam belas.
+Warnakan roda dulu, ya.
 
 
-Lembah Buah, level tujuh belas.
+Warnakan roket ikut warna kegemaran kamu!
 
 
-Lembah Buah, level lapan belas.
+Warnakan sayap atas kanan dengan warna ungu.
 
 
-Pilih yang paling besar!
+Warnakan sayap atas kiri dengan warna ungu.
 
 
-Cari anggur!
+Warnakan sinar dengan warna oren.
 
 
-Lembah Buah, level sembilan belas.
+Warnakan sirip dulu, ya.
 
 
-Kutip empat rama-rama!
+Warnakan strawberi ikut warna kegemaran kamu!
 
 
-Lembah Buah, level dua puluh.
+Warnakan tembikai ikut warna kegemaran kamu!
 
 
-Empat tambah satu, jadi berapa?
+Warnakan tengah bunga dengan warna kuning.
 
 
-Lembah Buah, level dua puluh satu.
+Wuuuush!
+
+
+Yang mana satu bukan pakaian?
+
+
+Yang mana satu bukan sukan?
+
+
+Zirafah tinggal di mana, ya?
+
+
+Ei untuk Ayam.
+
+
+Ada dua cabaran menunggu kamu hari ini!
+
+
+Ada empat cabaran menunggu kamu hari ini!
+
+
+Ada lima cabaran menunggu kamu hari ini!
+
+
+Ada satu cabaran menunggu kamu hari ini!
+
+
+Ada tiga cabaran menunggu kamu hari ini!
+
+
+Aiskrim.
+
+
+Anak pokok.
+
+
+Awan.
+
+
+Bi untuk Bola.
+
+
+Bagus, kamu semakin bijak.
+
+
+Bawang.
+
+
+Biji benih.
+
+
+Buuuu!
+
+
+Si untuk Cendawan.
+
+
+Cendawan.
+
+
+Cik, cik, cik!
+
+
+Coco si Arnab.
+
+
+Cuu, cuu!
+
+
+Di untuk Daun.
+
+
+Di mana Ayam?
+
+
+Di mana Burung?
+
+
+Di mana Nanas?
+
+
+Ding, dong!
+
+
+Dua puluh empat.
+
+
+Dum, dum, tak!
+
+
+Dum, dum!
+
+
+i untuk Epal.
+
+
+Ef untuk Feri.
+
+
+Ji untuk Gajah.
+
+
+h untuk Harimau.
+
+
+Ai untuk Ikan.
+
+
+Jei untuk Jam.
+
+
+Jambatan.
+
+
+Jom dapatkan versi penuh Dunia Cilik!
+
+
+Kei untuk Kucing.
+
+
+Kek.
+
+
+Kepompong.
+
+
+Kutip semua barang dulu, ya.
+
+
+Kutip semua bintang dulu, ya.
+
+
+Kutip semua buih dulu, ya.
+
+
+Kutip semua cendawan dulu, ya.
+
+
+Kutip semua epal dulu, ya.
+
+
+Kutip semua jagung dulu, ya.
+
+
+Kutip semua komet dulu, ya.
+
+
+Kutip semua lobak merah dulu, ya.
+
+
+Kutip semua permata dulu, ya.
+
+
+Kutip semua tiram dulu, ya.
+
+
+El untuk Lebah.
+
+
+Lobak.
+
+
+Em untuk Monyet.
+
+
+En untuk Nanas.
+
+
+Nombor lapan.
+
+
+Nombor lima belas.
+
+
+o untuk Oren.
+
+
+Orang utan.
+
+
+Pi untuk Pisang.
+
+
+Pak, pak, pak!
+
+
+Permainan ini sedang dikunci oleh ibu bapa.
+
+
+Pokok besar.
+
+
+Pokok kecil.
+
+
+Priiit!
+
+
+Prok, prok, prok!
+
+
+Ar untuk Rama-rama.
+
+
+Rintik, rintik,.
+
+
+Es untuk Siput.
+
+
+Sarapan.
+
+
+Sekolah.
+
+
+Sembilan ekor rama-rama, tambah satu ekor lagi.
+
+
+Siput.
+
+
+Susun pazel Roket di angkasa.
+
+
+Syuuu, syuuu,.
+
+
+Ti untuk Tikus.
+
+
+Tamatkan semua level ei, bi, si Ceria untuk mendapat sijil.
+
+
+Tamatkan semua level Asah Minda untuk mendapat sijil.
+
+
+Tamatkan semua level Bijak Mengelaskan untuk mendapat sijil.
+
+
+Tamatkan semua level Cari Bayang untuk mendapat sijil.
+
+
+Tamatkan semua level Dunia Haiwan untuk mendapat sijil.
+
+
+Tamatkan semua level Dunia Nombor untuk mendapat sijil.
+
+
+Tamatkan semua level Ingatan Hebat untuk mendapat sijil.
+
+
+Tamatkan semua level Kehidupan Harian untuk mendapat sijil.
+
+
+Tamatkan semua level Maze Pengembaraan untuk mendapat sijil.
+
+
+Tamatkan semua level Misi Pengembaraan untuk mendapat sijil.
+
+
+Tamatkan semua level Pazel Pintar untuk mendapat sijil.
+
+
+Tamatkan semua level Seni dan Mewarna untuk mendapat sijil.
+
+
+Tamatkan semua level Si Cilik Soleh untuk mendapat sijil.
+
+
+Tamatkan semua level Teka Bunyi untuk mendapat sijil.
+
+
+Tamatkan semua level Warna dan Bentuk untuk mendapat sijil.
+
+
+Terung.
+
+
+Tik, tok, tik, tok!
+
+
+Yu untuk Ular.
+
+
+Ular.
+
+
+Ulat.
+
+
+Vi untuk Van.
+
+
+Violin.
+
+
+Dabel yu untuk Wau.
+
+
+Wang.
+
+
+Warnakan api dulu, ya.
+
+
+Warnakan badan bas dulu, ya.
+
+
+Warnakan badan bot dulu, ya.
+
+
+Warnakan badan dulu, ya.
+
+
+Warnakan badan ikan dulu, ya.
+
+
+Warnakan badan kereta dulu, ya.
+
+
+Warnakan badan roket dulu, ya.
+
+
+Warnakan batang dulu, ya.
+
+
+Warnakan batang pokok dulu, ya.
+
+
+Warnakan belon kanan dulu, ya.
+
+
+Warnakan belon kiri dulu, ya.
+
+
+Warnakan belon tengah dulu, ya.
+
+
+Warnakan bendera dulu, ya.
+
+
+Warnakan buah dulu, ya.
+
+
+Warnakan buah epal dulu, ya.
+
+
+Warnakan buah strawberi dulu, ya.
+
+
+Warnakan bumbung dulu, ya.
+
+
+Warnakan cangkerang dulu, ya.
+
+
+Warnakan cerobong dulu, ya.
+
+
+Warnakan dinding dulu, ya.
+
+
+Warnakan ekor dulu, ya.
+
+
+Warnakan hidung dulu, ya.
+
+
+Warnakan hujung pisang dulu, ya.
+
+
+Warnakan isi tembikai dulu, ya.
+
+
+Warnakan kaki dulu, ya.
+
+
+Warnakan kepala dulu, ya.
+
+
+Warnakan kulit tembikai dulu, ya.
+
+
+Warnakan laut dulu, ya.
+
+
+Warnakan layar dulu, ya.
+
+
+Warnakan mata dulu, ya.
+
+
+Warnakan matahari dulu, ya.
+
+
+Warnakan muka kucing dulu, ya.
+
+
+Warnakan pisang dulu, ya.
+
+
+Warnakan sayap atas kanan dulu, ya.
+
+
+Warnakan sayap atas kiri dulu, ya.
+
+
+Warnakan sayap bawah kanan dulu, ya.
+
+
+Warnakan sayap bawah kiri dulu, ya.
+
+
+Warnakan sinar dulu, ya.
+
+
+Warnakan tangkai dulu, ya.
+
+
+Warnakan telinga kanan dulu, ya.
+
+
+Warnakan telinga kiri dulu, ya.
+
+
+Warnakan tengah bunga dulu, ya.
+
+
+Wiu, wiu!
+
+
+Wuuu,.
+
+
+Wai untuk Yoyo.
+
+
+Zed untuk Zirafah.
+
+
+[gently] Cuba cari warna biru.
+
+
+Cuba cari warna coklat.
+
+
+Cuba cari warna hijau.
+
+
+Cuba cari warna hitam.
+
+
+Cuba cari warna kuning.
+
+
+Cuba cari warna merah jambu.
+
+
+Cuba cari warna merah.
+
+
+Cuba cari warna oren.
+
+
+Cuba cari warna putih.
+
+
+Cuba cari warna ungu.
+
+
+Ini warna biru.
+
+
+Ini warna coklat.
+
+
+Ini warna hijau.
+
+
+Ini warna hitam.
+
+
+Ini warna kuning.
+
+
+Ini warna merah jambu.
+
+
+Ini warna merah.
+
+
+Ini warna oren.
+
+
+Ini warna putih.
+
+
+Ini warna ungu.
+
+
+[cheerfully] Wisel.
+
+
+Angin.
+
+
+Telefon.
+
+
+Beriman kepada malaikat.
+
+
+Beri biru.
+
+
+Dram.
+
+
+Beriman kepada Allah.
+
+
+Guruh.
+
+
+Hujan.
+
+
+Tepuk tangan.
+
+
+Loceng pintu.
+
+
+Menunaikan zakat.
+
+
+Huruf vi kecil.
+
+
+Bangun tidur.
+
+
+Dengan nama Allah.
+
+
+Anak ayam.
+
+
+Dal.
+
+
+Huruf ar kecil.
+
+
+Aku memohon keampunan-Mu.
+
+
+Huruf ai kecil.
+
+
+Anak kuda.
+
+
+Huruf en kecil.
+
+
+Huruf yu kecil.
+
+
+Huruf wai kecil.
+
+
+Masuk tandas.
+
+
+Feri.
+
+
+Kaf.
+
+
+Nabi Soleh.
+
+
+Zho.
+
+
+Doa untuk ibu bapa.
+
+
+Huruf si kecil.
+
+
+Nabi Hud.
+
+
+Segala puji bagi Allah.
+
+
+Seluar.
+
+
+Tong sampah.
+
+
+But.
+
+
+Ketuk dan minta izin.
+
+
+Nabi Yahya.
+
+
+Terima kasih.
+
+
+Bawang putih.
+
+
+Belon.
+
+
+Belon udara.
+
+
+Brokoli.
+
+
+Kentang.
+
+
+Lada benggala.
+
+
+Mendengar.
+
+
+Minta maaf.
+
+
+Nyamuk.
+
+
+Padang rumput.
+
+
+Salam.
+
+
+Sawi.
+
+
+Timun.
+
+
+Tomato.
+
+
+Wah, berlian!
+
+
+Wah, bintang!
+
+
+Wah, bulan!
+
+
+Wah, hati!
+
+
+Wah, ikan!
+
+
+Wah, pokok!
+
+
+Wah, rama-rama!
+
+
+Wah, rumah!
+
+
+Wah, segi empat!
+
+
+Wah, segi tiga!
+
+
+Yu.
+
+
+Kamu sudah tamatkan semua level ei, bi, si Ceria!
+
+
+Kamu sudah tamatkan semua level Asah Minda!
+
+
+Kamu sudah tamatkan semua level Bijak Mengelaskan!
+
+
+Kamu sudah tamatkan semua level Cari Bayang!
+
+
+Kamu sudah tamatkan semua level Dunia Haiwan!
+
+
+Kamu sudah tamatkan semua level Dunia Nombor!
+
+
+Kamu sudah tamatkan semua level Ingatan Hebat!
+
+
+Kamu sudah tamatkan semua level Kehidupan Harian!
+
+
+Kamu sudah tamatkan semua level Maze Pengembaraan!
+
+
+Kamu sudah tamatkan semua level Misi Pengembaraan!
+
+
+Kamu sudah tamatkan semua level Pazel Pintar!
+
+
+Kamu sudah tamatkan semua level Seni dan Mewarna!
+
+
+Kamu sudah tamatkan semua level Si Cilik Soleh!
+
+
+Kamu sudah tamatkan semua level Teka Bunyi!
+
+
+Kamu sudah tamatkan semua level Warna dan Bentuk!
+
+
+Tema Batik Laut!
+
+
+Tema Kampung Ceria!
+
+
+Tema Klasik Lembut!
+
+
+Tema Kuih-muih!
+
+
+Tema Malam Bulan!
+
+
+Tema Songket Diraja!
+
+
+Tema Taman Masjid!
+
+
+Wah, bot!
+
+
+Wah, payung!
+
+
+[softly] Mula dari kanan.
+
+
+Membasuh muka (dengan niat).
+
+
+Menunaikan solat lima waktu.
+
+
+Susun rukun Iman mengikut urutan.
+
+
+Membasuh kedua-dua kaki hingga buku lali.
+
+
+Susun rukun Islam mengikut urutan.
+
+
+Cari pasangan huruf hijaiyah yang sama.
+
+
+Menunaikan haji bagi yang mampu.
+
+
+Tonton televisyen.
+
+
+Beriman kepada hari akhirat.
+
+
+Qof.
+
+
+Wahai Tuhanku, ampunkanlah aku dan kedua ibu bapaku.
