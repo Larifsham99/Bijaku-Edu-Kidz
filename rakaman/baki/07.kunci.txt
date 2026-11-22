@@ -1,349 +1,82 @@
-Satu batang pokok, tambah dua batang lagi.
-Satu buah dah diambil.
-Satu ekor anak ayam, tambah enam ekor lagi.
-Satu kuntum dah diambil.
-Saya berbulu putih dan memberikan bulu untuk baju.
-Saya muncul di langit selepas hujan dan berwarna-warni.
-Sekarang jalan ke tempat yang dituju.
-Sekarang, susun semula ikut urutan tadi, ya.
-Sembilan ekor kumbang, tambah satu ekor lagi.
-Semut bermula dengan huruf apa, ya?
-Siapa yang berbunyi, Kukuruyuk!
-Siapa yang berbunyi, Ngiau, ngiau!
-Singa suka makan apa, ya?
-Susun objek ke dalam kumpulannya.
-Tangan bermula dengan huruf apa, ya?
-Tekan gambar untuk dengar namanya.
-Tekan gambar untuk mendengar bunyinya.
-Tekan semua benda yang warnanya coklat.
-Tekan semua benda yang warnanya kuning.
-Tekan semua huruf H yang kamu nampak!
-Tekan semua huruf I yang kamu nampak!
-Tekan semua huruf P yang kamu nampak!
-Tekan semua huruf T yang kamu nampak!
-Tekan semua huruf V yang kamu nampak!
-Tekan semua huruf Y yang kamu nampak!
-Tekan semua huruf Z yang kamu nampak!
-Tembikai bermula dengan huruf apa, ya?
-Tiada markah, main sahaja!
-Tiada markah, tiada had!
-Tiga batang pensel, tambah enam batang lagi.
-Tiga biji epal, tambah tiga biji lagi.
-Tiga biji kek cawan, tambah lima biji lagi.
-Tiga biji telur, tambah satu biji lagi.
-Tiga ekor rama-rama, tambah dua ekor lagi.
-Ting, ting, ting!
-Tolong kumpul empat bintang laut untuk Kura-kura.
-Tolong kumpul empat epal untuk Mimi.
-Tolong kumpul empat jagung untuk Mimi.
-Tolong kumpul empat kacang untuk Coco.
-Tolong kumpul empat pisang untuk Coco.
-Tolong kumpul empat telur untuk Mimi.
-Tolong kumpul lima bintang untuk Roket Dino.
-Tolong kumpul lima buih untuk Kura-kura.
-Tolong kumpul lima bulan untuk Roket Dino.
-Tolong kumpul lima cendawan untuk Coco.
-Tolong kumpul lima kacang untuk Coco.
-Tolong kumpul lima komet untuk Roket Dino.
-Tolong kumpul lima kulit kerang untuk Kura-kura.
-Tujuh biji dah diambil.
-Tujuh biji epal, tambah dua biji lagi.
-Tujuh biji kek cawan, tambah dua biji lagi.
-Ubi bermula dengan huruf apa, ya?
-Uk uk ak ak!
-Van
-Violin bermula dengan huruf apa, ya?
-Vrooom!
-Warnakan badan bot dengan warna coklat.
-Warnakan badan dengan warna coklat.
-Warnakan belon kiri dengan warna merah.
-Warnakan belon tengah dengan warna kuning.
-Warnakan bot layar ikut warna kegemaran kamu!
-Warnakan buah strawberi dengan warna merah.
-Warnakan bumbung dengan warna merah.
-Warnakan cangkerang dengan warna coklat.
-Warnakan cerobong dengan warna coklat.
-Warnakan dinding dengan warna kuning.
-Warnakan ikan ikut warna kegemaran kamu!
-Warnakan kepala dengan warna hijau.
-Warnakan kulit tembikai dengan warna hijau.
-Warnakan mata dengan warna putih.
-Warnakan matahari dengan warna kuning.
-Warnakan pintu dengan warna coklat.
-Warnakan pintu dulu, ya.
-Warnakan rama-rama ikut warna kegemaran kamu!
-Warnakan roda dulu, ya.
-Warnakan roket ikut warna kegemaran kamu!
-Warnakan sayap atas kanan dengan warna ungu.
-Warnakan sayap atas kiri dengan warna ungu.
-Warnakan sinar dengan warna oren.
-Warnakan sirip dulu, ya.
-Warnakan strawberi ikut warna kegemaran kamu!
-Warnakan tembikai ikut warna kegemaran kamu!
-Warnakan tengah bunga dengan warna kuning.
-Wuuuush!
-Yang mana satu bukan pakaian?
-Yang mana satu bukan sukan?
-Zirafah tinggal di mana, ya?
-A untuk Ayam
-Ada dua cabaran menunggu kamu hari ini!
-Ada empat cabaran menunggu kamu hari ini!
-Ada lima cabaran menunggu kamu hari ini!
-Ada satu cabaran menunggu kamu hari ini!
-Ada tiga cabaran menunggu kamu hari ini!
-Aiskrim
-Anak pokok
-Awan
-B untuk Bola
-Bagus, kamu semakin bijak.
-Bawang
-Biji benih
-Buuuu!
-C untuk Cendawan
-Cendawan
-Cik, cik, cik!
-Coco si Arnab
-Cuu, cuu!
-D untuk Daun
-Di mana Ayam?
-Di mana Burung?
-Di mana Nanas?
-Ding, dong!
-dua puluh empat
-Dum, dum, tak!
-Dum, dum!
-E untuk Epal
-F untuk Feri
-G untuk Gajah
-H untuk Harimau
-I untuk Ikan
-J untuk Jam
-Jambatan
-Jom dapatkan versi penuh Dunia Cilik!
-K untuk Kucing
-Kek
-Kepompong
-Kutip semua barang dulu, ya.
-Kutip semua bintang dulu, ya.
-Kutip semua buih dulu, ya.
-Kutip semua cendawan dulu, ya.
-Kutip semua epal dulu, ya.
-Kutip semua jagung dulu, ya.
-Kutip semua komet dulu, ya.
-Kutip semua lobak merah dulu, ya.
-Kutip semua permata dulu, ya.
-Kutip semua tiram dulu, ya.
-L untuk Lebah
-Lobak
-M untuk Monyet
-N untuk Nanas
-Nombor lapan
-Nombor lima belas
-O untuk Oren
-Orang utan
-P untuk Pisang
-Pak, pak, pak!
-Permainan ini sedang dikunci oleh ibu bapa.
-Pokok besar
-Pokok kecil
-Priiit!
-Prok, prok, prok!
-R untuk Rama-rama
-Rintik, rintik,
-S untuk Siput
-Sarapan
-Sekolah
-Sembilan ekor rama-rama, tambah satu ekor lagi.
-Siput
-Susun pazel Roket di angkasa.
-Syuuu, syuuu,
-T untuk Tikus
-Tamatkan semua level A, B, C Ceria untuk mendapat sijil.
-Tamatkan semua level Asah Minda untuk mendapat sijil.
-Tamatkan semua level Bijak Mengelaskan untuk mendapat sijil.
-Tamatkan semua level Cari Bayang untuk mendapat sijil.
-Tamatkan semua level Dunia Haiwan untuk mendapat sijil.
-Tamatkan semua level Dunia Nombor untuk mendapat sijil.
-Tamatkan semua level Ingatan Hebat untuk mendapat sijil.
-Tamatkan semua level Kehidupan Harian untuk mendapat sijil.
-Tamatkan semua level Maze Pengembaraan untuk mendapat sijil.
-Tamatkan semua level Misi Pengembaraan untuk mendapat sijil.
-Tamatkan semua level Pazel Pintar untuk mendapat sijil.
-Tamatkan semua level Seni dan Mewarna untuk mendapat sijil.
-Tamatkan semua level Si Cilik Soleh untuk mendapat sijil.
-Tamatkan semua level Teka Bunyi untuk mendapat sijil.
-Tamatkan semua level Warna dan Bentuk untuk mendapat sijil.
-Terung
-Tik, tok, tik, tok!
-U untuk Ular
-Ular
-Ulat
-V untuk Van
-Violin
-W untuk Wau
-Wang
-Warnakan api dulu, ya.
-Warnakan badan bas dulu, ya.
-Warnakan badan bot dulu, ya.
-Warnakan badan dulu, ya.
-Warnakan badan ikan dulu, ya.
-Warnakan badan kereta dulu, ya.
-Warnakan badan roket dulu, ya.
-Warnakan batang dulu, ya.
-Warnakan batang pokok dulu, ya.
-Warnakan belon kanan dulu, ya.
-Warnakan belon kiri dulu, ya.
-Warnakan belon tengah dulu, ya.
-Warnakan bendera dulu, ya.
-Warnakan buah dulu, ya.
-Warnakan buah epal dulu, ya.
-Warnakan buah strawberi dulu, ya.
-Warnakan bumbung dulu, ya.
-Warnakan cangkerang dulu, ya.
-Warnakan cerobong dulu, ya.
-Warnakan dinding dulu, ya.
-Warnakan ekor dulu, ya.
-Warnakan hidung dulu, ya.
-Warnakan hujung pisang dulu, ya.
-Warnakan isi tembikai dulu, ya.
-Warnakan kaki dulu, ya.
-Warnakan kepala dulu, ya.
-Warnakan kulit tembikai dulu, ya.
-Warnakan laut dulu, ya.
-Warnakan layar dulu, ya.
-Warnakan mata dulu, ya.
-Warnakan matahari dulu, ya.
-Warnakan muka kucing dulu, ya.
-Warnakan pisang dulu, ya.
-Warnakan sayap atas kanan dulu, ya.
-Warnakan sayap atas kiri dulu, ya.
-Warnakan sayap bawah kanan dulu, ya.
-Warnakan sayap bawah kiri dulu, ya.
-Warnakan sinar dulu, ya.
-Warnakan tangkai dulu, ya.
-Warnakan telinga kanan dulu, ya.
-Warnakan telinga kiri dulu, ya.
-Warnakan tengah bunga dulu, ya.
-Wiu, wiu!
-Wuuu,
-Y untuk Yoyo
-Z untuk Zirafah
-Cuba cari warna biru.
-Cuba cari warna coklat.
-Cuba cari warna hijau.
-Cuba cari warna hitam.
-Cuba cari warna kuning.
-Cuba cari warna merah jambu.
-Cuba cari warna merah.
-Cuba cari warna oren.
-Cuba cari warna putih.
-Cuba cari warna ungu.
-Ini warna biru.
-Ini warna coklat.
-Ini warna hijau.
-Ini warna hitam.
-Ini warna kuning.
-Ini warna merah jambu.
-Ini warna merah.
-Ini warna oren.
-Ini warna putih.
-Ini warna ungu.
-Wisel
-Angin
-Telefon
-Beriman kepada malaikat
-Beri biru
-Dram
-Beriman kepada Allah
-Guruh
-Hujan
-Tepuk tangan
-Loceng pintu
-Menunaikan zakat
-Huruf V kecil
-Bangun tidur
-Dengan nama Allah
-Anak ayam
-Dal
-Huruf R kecil
-Aku memohon keampunan-Mu
-Huruf I kecil
-Anak kuda
-Huruf N kecil
-Huruf U kecil
-Huruf Y kecil
-Masuk tandas
-Feri
-Kaf
-Nabi Soleh
-Zho
-Doa untuk ibu bapa
-Huruf C kecil
-Nabi Hud
-Segala puji bagi Allah
-Seluar
-Tong sampah
-But
-Ketuk dan minta izin
-Nabi Yahya
-Terima kasih
-Bawang putih
-Belon
-Belon udara
-Brokoli
-Kentang
-Lada benggala
-Mendengar
-Minta maaf
-Nyamuk
-Padang rumput
-Salam
-Sawi
-Timun
-Tomato
-Wah, berlian!
-Wah, bintang!
-Wah, bulan!
-Wah, hati!
-Wah, ikan!
-Wah, pokok!
-Wah, rama-rama!
-Wah, rumah!
-Wah, segi empat!
-Wah, segi tiga!
-Yu
-Kamu sudah tamatkan semua level A, B, C Ceria!
-Kamu sudah tamatkan semua level Asah Minda!
-Kamu sudah tamatkan semua level Bijak Mengelaskan!
-Kamu sudah tamatkan semua level Cari Bayang!
-Kamu sudah tamatkan semua level Dunia Haiwan!
-Kamu sudah tamatkan semua level Dunia Nombor!
-Kamu sudah tamatkan semua level Ingatan Hebat!
-Kamu sudah tamatkan semua level Kehidupan Harian!
-Kamu sudah tamatkan semua level Maze Pengembaraan!
-Kamu sudah tamatkan semua level Misi Pengembaraan!
-Kamu sudah tamatkan semua level Pazel Pintar!
-Kamu sudah tamatkan semua level Seni dan Mewarna!
-Kamu sudah tamatkan semua level Si Cilik Soleh!
-Kamu sudah tamatkan semua level Teka Bunyi!
-Kamu sudah tamatkan semua level Warna dan Bentuk!
-Tema Batik Laut!
-Tema Kampung Ceria!
-Tema Klasik Lembut!
-Tema Kuih-muih!
-Tema Malam Bulan!
-Tema Songket Diraja!
-Tema Taman Masjid!
-Wah, bot!
-Wah, payung!
-Mula dari kanan.
-Membasuh muka (dengan niat)
-Menunaikan solat lima waktu
-Susun rukun Iman mengikut urutan.
-Membasuh kedua-dua kaki hingga buku lali
-Susun rukun Islam mengikut urutan.
-Cari pasangan huruf hijaiyah yang sama.
-Menunaikan haji bagi yang mampu
-Tonton televisyen
-Beriman kepada hari akhirat
-Qof
+Hutan Haiwan, level dua puluh.
+Cari katak!
+Hutan Haiwan, level dua puluh satu.
+Hutan Haiwan, level dua puluh dua.
+Ikan paus suka makan apa?
+Cari sotong!
+Hutan Haiwan, level dua puluh tiga.
+Hutan Haiwan, level dua puluh empat.
+Anjing suka makan apa?
+Berapa anak ayam?
+Cari harimau!
+Hutan Haiwan, level dua puluh lima.
+Kutip dua bola!
+Cari monyet!
+Hutan Haiwan, level dua puluh enam.
+Cari ikan!
+Kutip dua anak ayam!
+Hutan Haiwan, level dua puluh tujuh.
+Hutan Haiwan, level dua puluh lapan.
+Kutip lima oren!
+Tikus suka makan apa?
+Hutan Haiwan, level dua puluh sembilan.
+Panda suka makan apa?
+Hutan Haiwan, level tiga puluh.
+Burung suka makan apa?
+Berapa bintang?
+Hutan Haiwan, level tiga puluh satu.
+Kutip lima bunga!
+Hutan Haiwan, level tiga puluh dua.
+Hutan Haiwan, level tiga puluh tiga.
+Cari lebah!
+Hutan Haiwan, level tiga puluh empat.
+Ayam suka makan apa?
+Hutan Haiwan, level tiga puluh lima.
+Zirafah suka makan apa?
+Hutan Haiwan, level tiga puluh enam.
+Kutip empat pensel!
+Hutan Haiwan, level tiga puluh tujuh.
+Katak suka makan apa?
+Hutan Haiwan, level tiga puluh lapan.
+Kutip lima kumbang!
+Hutan Haiwan, level tiga puluh sembilan.
+Hutan Haiwan, level empat puluh.
+Ikan suka makan apa?
+Hutan Haiwan, level empat puluh satu.
+Hutan Haiwan, level empat puluh dua.
+Hutan Haiwan, level empat puluh tiga.
+Hutan Haiwan, level empat puluh empat.
+Ikan lumba-lumba suka makan apa?
+Hutan Haiwan, level empat puluh lima.
+Hutan Haiwan, level empat puluh enam.
+Cari itik!
+Kutip dua kereta!
+Hutan Haiwan, level empat puluh tujuh.
+Hutan Haiwan, level empat puluh lapan.
+Hutan Haiwan, level empat puluh sembilan.
+Hutan Haiwan, level lima puluh.
+Udang suka makan apa?
+Bandar Warna.
+Bangunan mainan, lampu isyarat dan jalan pelangi.
+Selesaikan sepuluh level di Hutan Haiwan dahulu, ya.
+Bandar Warna, level satu.
+Bandar Warna, level dua.
+Cari bentuk segi empat sama!
+Bandar Warna, level tiga.
+Bandar Warna, level empat.
+Apa yang datang seterusnya?
+Bandar Warna, level lima.
+Bandar Warna, level enam.
+Bandar Warna, level tujuh.
+Cari bentuk bintang!
+Bandar Warna, level lapan.
+Bandar Warna, level sembilan.
+Bandar Warna, level sepuluh.
+Bandar Warna, level sebelas.
+Cari benda berwarna oren!
+Bandar Warna, level dua belas.
+Cari bentuk hati!
+Bandar Warna, level tiga belas.
+Bandar Warna, level empat belas.
+Bandar Warna, level lima belas.
+Berapa pisang?

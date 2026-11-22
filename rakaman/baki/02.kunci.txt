@@ -1,328 +1,78 @@
-Litar Kampung, level empat puluh.
-Kutip tiga bunga!
-Jom eja oren.
-Litar Kampung, level empat puluh satu.
-Jom eja daun.
-Litar Kampung, level empat puluh dua.
-Litar Kampung, level empat puluh tiga.
-Jom eja lori.
-Litar Kampung, level empat puluh empat.
-Zirafah bermula dengan huruf apa?
-Kutip tiga pensel!
-Litar Kampung, level empat puluh lima.
-Cari huruf Z!
-Litar Kampung, level empat puluh enam.
-Pilih laluan warna ungu!
-Cari huruf Y!
-Nanas bermula dengan huruf apa?
-Litar Kampung, level empat puluh tujuh.
-Jom eja bulan.
-Litar Kampung, level empat puluh lapan.
-Jom eja elang.
-Kutip dua huruf L!
-Gitar bermula dengan huruf apa?
-Litar Kampung, level empat puluh sembilan.
-Berapa oren?
-Litar Kampung, level lima puluh.
-Jom eja topi.
-Kutip lima belon!
-Lembah Buah.
-Tembikai, pisang, strawberi dan sungai jus.
-Selesaikan sepuluh level di Litar Kampung dahulu, ya.
-Lembah Buah, level satu.
-Cari epal!
-Lembah Buah, level dua.
-Pilih laluan warna merah jambu!
-Lembah Buah, level tiga.
-Kutip dua belon!
-Lembah Buah, level empat.
-Pilih yang paling kecil!
-Lembah Buah, level lima.
-Cari kenderaan!
-Lembah Buah, level enam.
-dua tambah tiga, jadi berapa?
-Lembah Buah, level tujuh.
-Cari benda berwarna kuning!
-Lembah Buah, level lapan.
-Cari ceri!
-Lembah Buah, level sembilan.
-Lembah Buah, level sepuluh.
-Kutip dua ikan!
-Lembah Buah, level sebelas.
-Cari sayur!
-Lembah Buah, level dua belas.
-Kutip empat strawberi!
-Lembah Buah, level tiga belas.
-tiga tambah tiga, jadi berapa?
-Kutip dua epal!
-Lembah Buah, level empat belas.
-Cari benda berwarna coklat!
-Lembah Buah, level lima belas.
-Cari buah!
-Cari nanas!
-Lembah Buah, level enam belas.
-Lembah Buah, level tujuh belas.
-Lembah Buah, level lapan belas.
-Pilih yang paling besar!
-Cari anggur!
-Lembah Buah, level sembilan belas.
-Kutip empat rama-rama!
-Lembah Buah, level dua puluh.
-empat tambah satu, jadi berapa?
-Lembah Buah, level dua puluh satu.
-Cari benda berwarna merah!
-Lembah Buah, level dua puluh dua.
-Cari beri biru!
-Cari haiwan!
-Lembah Buah, level dua puluh tiga.
-Lembah Buah, level dua puluh empat.
-Cari benda berwarna biru!
-Kutip empat pisang!
-Lembah Buah, level dua puluh lima.
-Cari kiwi!
-Lembah Buah, level dua puluh enam.
-Lembah Buah, level dua puluh tujuh.
-lima tambah dua, jadi berapa?
-Lembah Buah, level dua puluh lapan.
-Lembah Buah, level dua puluh sembilan.
-Lembah Buah, level tiga puluh.
-lima tambah empat, jadi berapa?
-Lembah Buah, level tiga puluh satu.
-Berapa pokok?
-Lembah Buah, level tiga puluh dua.
-Cari nombor tujuh!
-Lembah Buah, level tiga puluh tiga.
-Kutip empat oren!
-Cari benda berwarna ungu!
-Lembah Buah, level tiga puluh empat.
-tiga tambah satu, jadi berapa?
-Lembah Buah, level tiga puluh lima.
-tiga tambah empat, jadi berapa?
-Cari oren!
-Lembah Buah, level tiga puluh enam.
-Cari pear!
-Lembah Buah, level tiga puluh tujuh.
-satu tambah satu, jadi berapa?
-Cari pic!
-Lembah Buah, level tiga puluh lapan.
-lima tambah tiga, jadi berapa?
-Cari pisang!
-Lembah Buah, level tiga puluh sembilan.
-Lembah Buah, level empat puluh.
-empat tambah tiga, jadi berapa?
-Lembah Buah, level empat puluh satu.
-Lembah Buah, level empat puluh dua.
-Lembah Buah, level empat puluh tiga.
-Lembah Buah, level empat puluh empat.
-Lembah Buah, level empat puluh lima.
-Cari tembikai!
-Kutip lima epal!
-Lembah Buah, level empat puluh enam.
-Cari mangga!
-Lembah Buah, level empat puluh tujuh.
-Cari benda berwarna hijau!
-Cari lemon!
-Lembah Buah, level empat puluh lapan.
-Kutip empat ikan!
-Lembah Buah, level empat puluh sembilan.
-Cari benda berwarna merah jambu!
-Lembah Buah, level lima puluh.
-Hutan Haiwan.
-Gajah, monyet, air terjun dan jambatan.
-Selesaikan sepuluh level di Lembah Buah dahulu, ya.
-Hutan Haiwan, level satu.
-Cari kelawar!
-Hutan Haiwan, level dua.
-Siapa yang boleh terbang?
-Hutan Haiwan, level tiga.
-Dengar bunyi ini.
-Siapa yang berbunyi begini?
-Hutan Haiwan, level empat.
-Harimau suka makan apa?
-Hutan Haiwan, level lima.
-Siapa ibunya?
-Hutan Haiwan, level enam.
-Kutip satu kek cawan!
-Hutan Haiwan, level tujuh.
-Cari ketam!
-Hutan Haiwan, level lapan.
-Siapa yang tinggal di darat dan tidak boleh terbang?
-Hutan Haiwan, level sembilan.
-Hutan Haiwan, level sepuluh.
-Itik suka makan apa?
-Hutan Haiwan, level sebelas.
-Cari gajah!
-Hutan Haiwan, level dua belas.
-Kutip tiga kek cawan!
-Hutan Haiwan, level tiga belas.
-Siapa yang tinggal di dalam air?
-Hutan Haiwan, level empat belas.
-Hutan Haiwan, level lima belas.
-Hutan Haiwan, level enam belas.
-Zebra suka makan apa?
-Cari kuda!
-Hutan Haiwan, level tujuh belas.
-Ini anak itik.
-Cari rama-rama!
-Hutan Haiwan, level lapan belas.
-Cari kambing!
-Hutan Haiwan, level sembilan belas.
-Cari unta!
-Hutan Haiwan, level dua puluh.
-Cari katak!
-Hutan Haiwan, level dua puluh satu.
-Hutan Haiwan, level dua puluh dua.
-Ikan paus suka makan apa?
-Cari sotong!
-Hutan Haiwan, level dua puluh tiga.
-Hutan Haiwan, level dua puluh empat.
-Anjing suka makan apa?
-Berapa anak ayam?
-Cari harimau!
-Hutan Haiwan, level dua puluh lima.
-Kutip dua bola!
-Cari monyet!
-Hutan Haiwan, level dua puluh enam.
-Cari ikan!
-Kutip dua anak ayam!
-Hutan Haiwan, level dua puluh tujuh.
-Hutan Haiwan, level dua puluh lapan.
-Kutip lima oren!
-Tikus suka makan apa?
-Hutan Haiwan, level dua puluh sembilan.
-Panda suka makan apa?
-Hutan Haiwan, level tiga puluh.
-Burung suka makan apa?
-Berapa bintang?
-Hutan Haiwan, level tiga puluh satu.
-Kutip lima bunga!
-Hutan Haiwan, level tiga puluh dua.
-Hutan Haiwan, level tiga puluh tiga.
-Cari lebah!
-Hutan Haiwan, level tiga puluh empat.
-Ayam suka makan apa?
-Hutan Haiwan, level tiga puluh lima.
-Zirafah suka makan apa?
-Hutan Haiwan, level tiga puluh enam.
-Kutip empat pensel!
-Hutan Haiwan, level tiga puluh tujuh.
-Katak suka makan apa?
-Hutan Haiwan, level tiga puluh lapan.
-Kutip lima kumbang!
-Hutan Haiwan, level tiga puluh sembilan.
-Hutan Haiwan, level empat puluh.
-Ikan suka makan apa?
-Hutan Haiwan, level empat puluh satu.
-Hutan Haiwan, level empat puluh dua.
-Hutan Haiwan, level empat puluh tiga.
-Hutan Haiwan, level empat puluh empat.
-Ikan lumba-lumba suka makan apa?
-Hutan Haiwan, level empat puluh lima.
-Hutan Haiwan, level empat puluh enam.
-Cari itik!
-Kutip dua kereta!
-Hutan Haiwan, level empat puluh tujuh.
-Hutan Haiwan, level empat puluh lapan.
-Hutan Haiwan, level empat puluh sembilan.
-Hutan Haiwan, level lima puluh.
-Udang suka makan apa?
-Bandar Warna.
-Bangunan mainan, lampu isyarat dan jalan pelangi.
-Selesaikan sepuluh level di Hutan Haiwan dahulu, ya.
-Bandar Warna, level satu.
-Bandar Warna, level dua.
-Cari bentuk segi empat sama!
-Bandar Warna, level tiga.
-Bandar Warna, level empat.
-Apa yang datang seterusnya?
-Bandar Warna, level lima.
-Bandar Warna, level enam.
-Bandar Warna, level tujuh.
-Cari bentuk bintang!
-Bandar Warna, level lapan.
-Bandar Warna, level sembilan.
-Bandar Warna, level sepuluh.
-Bandar Warna, level sebelas.
-Cari benda berwarna oren!
-Bandar Warna, level dua belas.
-Cari bentuk hati!
-Bandar Warna, level tiga belas.
-Bandar Warna, level empat belas.
-Bandar Warna, level lima belas.
-Berapa pisang?
-Bandar Warna, level enam belas.
-Bandar Warna, level tujuh belas.
-Kutip tiga segi empat sama!
-Bandar Warna, level lapan belas.
-Bandar Warna, level sembilan belas.
-Kutip tiga hati!
-Bandar Warna, level dua puluh.
-Bandar Warna, level dua puluh satu.
-Cari bentuk bulan sabit!
-Bandar Warna, level dua puluh dua.
-Kutip empat bulan sabit!
-Bandar Warna, level dua puluh tiga.
-Bandar Warna, level dua puluh empat.
-Kutip tiga segi tiga!
-Bandar Warna, level dua puluh lima.
-Cari nombor sembilan!
-Bandar Warna, level dua puluh enam.
-Bandar Warna, level dua puluh tujuh.
-Bandar Warna, level dua puluh lapan.
-Bandar Warna, level dua puluh sembilan.
-Bandar Warna, level tiga puluh.
-Kutip empat segi tiga!
-Bandar Warna, level tiga puluh satu.
-Bandar Warna, level tiga puluh dua.
-Bandar Warna, level tiga puluh tiga.
-Bandar Warna, level tiga puluh empat.
-Bandar Warna, level tiga puluh lima.
-Berapa kumbang?
-Cari bentuk segi tiga!
-Bandar Warna, level tiga puluh enam.
-Bandar Warna, level tiga puluh tujuh.
-Bandar Warna, level tiga puluh lapan.
-Bandar Warna, level tiga puluh sembilan.
-Bandar Warna, level empat puluh.
-Bandar Warna, level empat puluh satu.
-Bandar Warna, level empat puluh dua.
-Bandar Warna, level empat puluh tiga.
-Berapa pensel?
-Bandar Warna, level empat puluh empat.
-Kutip tiga bulatan!
-Bandar Warna, level empat puluh lima.
-Berapa kek cawan?
-Bandar Warna, level empat puluh enam.
-Cari nombor sepuluh!
-Bandar Warna, level empat puluh tujuh.
-Bandar Warna, level empat puluh lapan.
-Kutip dua bujur!
-Bandar Warna, level empat puluh sembilan.
-Bandar Warna, level lima puluh.
-Taman Dinosor.
-Dinosor comel, telur dan gunung berapi.
-Selesaikan sepuluh level di Bandar Warna dahulu, ya.
-Taman Dinosor, level satu.
-Taman Dinosor, level dua.
-Selepas itu, apa pula?
-Taman Dinosor, level tiga.
-Taman Dinosor, level empat.
-Ingat urutan ini: bunga, kek cawan, bola.
-Taman Dinosor, level lima.
-Taman Dinosor, level enam.
-Semua ini buah-buahan, kecuali satu.
-Cari yang lain!
-Taman Dinosor, level tujuh.
-Taman Dinosor, level lapan.
-Taman Dinosor, level sembilan.
-Taman Dinosor, level sepuluh.
-Ingat urutan ini: bintang, kek cawan, bola.
-Taman Dinosor, level sebelas.
-Taman Dinosor, level dua belas.
-Semua ini haiwan, kecuali satu.
-Taman Dinosor, level tiga belas.
-Ingat urutan ini: bunga, anak ayam, kumbang.
-Taman Dinosor, level empat belas.
-Ingat urutan ini: pensel, telur, belon.
-Taman Dinosor, level lima belas.
-Taman Dinosor, level enam belas.
+Tolong kumpul empat permata untuk Roket Dino.
+Tolong kumpul tiga cendawan untuk Coco.
+Tolong kumpul tiga tiram untuk Kura-kura.
+Warnakan badan bas dengan warna kuning.
+Warnakan belon kanan dengan warna biru.
+Warnakan isi tembikai dengan warna merah.
+Warnakan kereta ikut warna kegemaran kamu!
+Yang mana satu boleh kita jumpa di angkasa?
+Yang mana satu boleh kita jumpa di ladang?
+Ada dua lemon yang menyorok.
+Ada dua singa yang menyorok.
+Ada epal yang menyorok.
+Ada ikan lumba-lumba yang menyorok.
+Ada panda yang menyorok.
+Ada roket yang menyorok.
+Ayam suka makan apa, ya?
+Badan berpeluh selepas bermain.
+Burung helang tinggal di mana, ya?
+Burung tinggal di mana, ya?
+Cili bermula dengan huruf apa, ya?
+Di mana Arnab?
+Di mana Harimau?
+Di mana Kambing?
+Gambar mana yang bermula dengan C?
+Gambar mana yang bermula dengan D?
+Gambar mana yang bermula dengan E?
+Gambar mana yang bermula dengan F?
+Gambar mana yang bermula dengan G?
+Gambar mana yang bermula dengan H?
+Gambar mana yang bermula dengan J?
+Gambar mana yang bermula dengan L?
+Helikopter bermula dengan huruf apa, ya?
+Ikan lumba-lumba tinggal di mana, ya?
+Ikan paus tinggal di mana, ya?
+Ini anak anjing.
+Ini anak gajah.
+Ini cili.
+Ini helikopter.
+Ini huruf C.
+Ini huruf F.
+Ini huruf G.
+Ini huruf I.
+Ini huruf K besar.
+Ini huruf L.
+Ini huruf M besar.
+Ini ombak.
+Itik bermula dengan huruf apa, ya?
+Itik tinggal di mana, ya?
+Jangan langgar ketulan ais, ya.
+Jom cari huruf D!
+Jom cari huruf F!
+Jom cari huruf G!
+Jom cari huruf L!
+Jom cari huruf M!
+Jom cari huruf Q!
+Jom cari huruf S!
+Jom kira, ada berapa biji pisang?
+Jom surih huruf C guna jari.
+Jom surih huruf H guna jari.
+Jom surih huruf L guna jari.
+Jom surih huruf T guna jari.
+Jom warnakan epal!
+Jom warnakan kereta!
+Jom warnakan kucing!
+Kawan kita, angkasawan, perlukan permata.
+Kawan kita, ayam, perlukan telur.
+Kawan kita, gurita, perlukan tiram.
+Kawan kita, kawan angkasa, perlukan bintang.
+Kawan kita, monyet, perlukan kacang.
+Kucing suka makan apa, ya?
+Kumpulan mana yang ada empat biji strawberi?
+Kumpulan mana yang ada enam biji telur?
+Kumpulan mana yang ada lapan ekor kumbang?
+Kumpulan mana yang ada lima biji telur?
+Kumpulan mana yang ada satu biji bola?
+Kumpulan mana yang ada satu biji pisang?
+Kumpulan mana yang ada sepuluh biji pisang?
+Kumpulan mana yang ada tujuh kuntum bunga?

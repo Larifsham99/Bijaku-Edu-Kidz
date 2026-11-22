@@ -1,856 +1,286 @@
-[warmly] Ingat urutan ini: kura-kura, pensel, bunga.
+[warmly] Kumpulan mana yang lebih banyak belon?
 
 
-Taman Dinosor, level tujuh belas.
+Kumpulan mana yang lebih banyak kek cawan?
 
 
-Taman Dinosor, level lapan belas.
+Kumpulan mana yang lebih banyak oren?
 
 
-Taman Dinosor, level sembilan belas.
+Kumpulan mana yang lebih banyak pisang?
 
 
-Ingat urutan ini: anak ayam, ikan, pensel.
+Kumpulan mana yang lebih sedikit pokok?
 
 
-Taman Dinosor, level dua puluh.
+Kura-kura tinggal di mana, ya?
 
 
-Taman Dinosor, level dua puluh satu.
+Lebah suka makan apa, ya?
 
 
-Semua ini sayur-sayuran, kecuali satu.
+Lukis muka yang tersenyum!
 
 
-Taman Dinosor, level dua puluh dua.
+Mana anjing?
 
 
-Ingat urutan ini: strawberi, pensel, telur.
+Mana bayang burung hantu?
 
 
-Taman Dinosor, level dua puluh tiga.
+Mana bayang ketam?
 
 
-Semua ini kenderaan, kecuali satu.
+Mana bayang roket?
 
 
-Taman Dinosor, level dua puluh empat.
+Mana bayang strawberi?
 
 
-Ingat urutan ini: kura-kura, pisang, ikan.
+Mana bayang tikus?
 
 
-Taman Dinosor, level dua puluh lima.
+Mana bayang zirafah?
 
 
-Taman Dinosor, level dua puluh enam.
+Mana burung helang?
 
 
-Taman Dinosor, level dua puluh tujuh.
+Mana burung?
 
 
-Taman Dinosor, level dua puluh lapan.
+Mana huruf kei kecil?
 
 
-Ingat urutan ini: anak ayam, kumbang, bintang.
+Mana huruf em kecil?
 
 
-Taman Dinosor, level dua puluh sembilan.
+Mana ikan yu?
 
 
-Taman Dinosor, level tiga puluh.
+Mana itik?
 
 
-Taman Dinosor, level tiga puluh satu.
+Mana kelawar?
 
 
-Ingat urutan ini: bunga, bola, pisang.
+Mana lidah?
 
 
-Taman Dinosor, level tiga puluh dua.
+Mana mata?
 
 
-Taman Dinosor, level tiga puluh tiga.
+Mana mulut?
 
 
-Ingat urutan ini: belon, kumbang, pisang.
+Mana nombor empat?
 
 
-Taman Dinosor, level tiga puluh empat.
+Mana nombor tujuh?
 
 
-Ingat urutan ini: strawberi, kereta, epal.
+Mana panda?
 
 
-Taman Dinosor, level tiga puluh lima.
+Mana penguin?
 
 
-Ingat urutan ini: kumbang, epal, rama-rama.
+Mana reben yang paling panjang?
 
 
-Taman Dinosor, level tiga puluh enam.
+Mana satu lagi huruf si?
 
 
-Ingat urutan ini: kek cawan, kura-kura, bunga.
+Mana satu lagi huruf ef?
 
 
-Taman Dinosor, level tiga puluh tujuh.
+Mana satu lagi huruf ji?
 
 
-Taman Dinosor, level tiga puluh lapan.
+Mana satu lagi huruf ai?
 
 
-Ingat urutan ini: bunga, kumbang, bola.
+Mana satu lagi huruf el?
 
 
-Taman Dinosor, level tiga puluh sembilan.
+Mana singa?
 
 
-Taman Dinosor, level empat puluh.
+Mana stoking?
 
 
-Ingat urutan ini: oren, strawberi, belon.
+Mana tikus?
 
 
-Taman Dinosor, level empat puluh satu.
+Mana topi?
 
 
-Ingat urutan ini: kek cawan, bunga, strawberi, ikan.
+Mana yang lebih besar?
 
 
-Taman Dinosor, level empat puluh dua.
+Nombor enam.
 
 
-Ingat urutan ini: kereta, bola, pisang, kumbang.
+Nombor lima.
 
 
-Taman Dinosor, level empat puluh tiga.
+Nombor satu.
 
 
-Taman Dinosor, level empat puluh empat.
+Nombor sembilan.
 
 
-Ingat urutan ini: kek cawan, kereta, oren, ikan.
+Nombor tiga.
 
 
-Taman Dinosor, level empat puluh lima.
+Ombak bermula dengan huruf apa, ya?
 
 
-Taman Dinosor, level empat puluh enam.
+Pesawat.
 
 
-Ingat urutan ini: strawberi, rama-rama, telur, anak ayam.
+Pinggan.
 
 
-Taman Dinosor, level empat puluh tujuh.
+Saya berbunyi kuak kuak.
 
 
-Taman Dinosor, level empat puluh lapan.
+Saya bulat dan kamu sepak saya.
 
 
-Taman Dinosor, level empat puluh sembilan.
+Saya cair jika panas.
 
 
-Ingat urutan ini: strawberi, anak ayam, epal, pensel.
+Saya hijau dan suka melompat.
 
 
-Taman Dinosor, level lima puluh.
+Saya menunjukkan masa.
 
 
-Ingat urutan ini: oren, anak ayam, pensel, ikan.
+Saya sejuk dan manis.
 
 
-Pulau Ombak.
+Siapa yang berbunyi, Aummm!
 
 
-Pantai, penyu, batu karang dan rumah api.
+Siapa yang berbunyi, Mooo!
 
 
-Selesaikan sepuluh level di Taman Dinosor dahulu, ya.
+Tangan terbuka.
 
 
-Pulau Ombak, level satu.
+Tolong kumpul empat komet untuk Roket Dino.
 
 
-Pulau Ombak, level dua.
+Tolong kumpul empat kulit kerang untuk Kura-kura.
 
 
-Pulau Ombak, level tiga.
+Tolong kumpul tiga bulan untuk Roket Dino.
 
 
-Kutip dua segi tiga!
+Tolong kumpul tiga epal untuk Mimi.
 
 
-Pulau Ombak, level empat.
+Tolong kumpul tiga komet untuk Roket Dino.
 
 
-Kutip satu kereta!
+Tolong kumpul tiga kulit kerang untuk Kura-kura.
 
 
-Pulau Ombak, level lima.
+Tolong kumpul tiga strawberi untuk Coco.
 
 
-Pulau Ombak, level enam.
+Tolong kumpul tiga telur untuk Mimi.
 
 
-Kenderaan mana yang terbang di udara?
+Udang tinggal di mana, ya?
 
 
-Pulau Ombak, level tujuh.
+Unta tinggal di mana, ya?
 
 
-Pulau Ombak, level lapan.
+Warnakan badan kereta dengan warna merah.
 
 
-Pulau Ombak, level sembilan.
+Warnakan bas ikut warna kegemaran kamu!
 
 
-Cari bentuk bulatan!
+Warnakan bendera dengan warna merah.
 
 
-Pulau Ombak, level sepuluh.
+Warnakan buah epal dengan warna merah.
 
 
-Pulau Ombak, level sebelas.
+Warnakan hidung dengan warna merah jambu.
 
 
-Kenderaan mana yang bergerak di jalan raya?
+Yang mana satu bukan tumbuhan?
 
 
-Pulau Ombak, level dua belas.
+Gunung.
 
 
-Kenderaan mana yang bergerak di air?
+Mahkota.
 
 
-Pulau Ombak, level tiga belas.
+Main lagi.
 
 
-Kutip empat kumbang!
+Makan kentang goreng.
 
 
-Pulau Ombak, level empat belas.
+Nombor empat.
 
 
-Kutip dua rama-rama!
+Nombor tujuh.
 
 
-Pulau Ombak, level lima belas.
+Udang kecil.
 
 
-Kutip dua segi empat sama!
+Yoyo.
 
 
-Pulau Ombak, level enam belas.
+Litar Kampung.
 
 
-Kutip tiga pokok!
+Rumah kampung, sawah dan pokok kelapa.
 
 
-Pulau Ombak, level tujuh belas.
+Level juara!
 
 
-Kutip dua kura-kura!
+Sedia?
 
 
-Pulau Ombak, level lapan belas.
+Litar Kampung, level satu.
 
 
-Cari lembu!
+Cari huruf i!
 
 
-Pulau Ombak, level sembilan belas.
+Litar Kampung, level dua.
 
 
-Pulau Ombak, level dua puluh.
+Cari gambar yang bermula dengan huruf Heish!
 
 
-Pulau Ombak, level dua puluh satu.
+Litar Kampung, level tiga.
 
 
-Kutip empat hati!
+Cari nombor dua!
 
 
-Pulau Ombak, level dua puluh dua.
+Litar Kampung, level empat.
 
 
-Pulau Ombak, level dua puluh tiga.
+Kutip satu oren!
 
 
-Cari biri-biri!
+Elak halangan di hadapan!
 
 
-Pulau Ombak, level dua puluh empat.
+Litar Kampung, level lima.
 
 
-Cari zirafah!
-
-
-Pulau Ombak, level dua puluh lima.
-
-
-Pulau Ombak, level dua puluh enam.
-
-
-Cari burung hantu!
-
-
-Kutip empat bulatan!
-
-
-Pulau Ombak, level dua puluh tujuh.
-
-
-Pulau Ombak, level dua puluh lapan.
-
-
-Cari burung!
-
-
-Pulau Ombak, level dua puluh sembilan.
-
-
-Pulau Ombak, level tiga puluh.
-
-
-Pulau Ombak, level tiga puluh satu.
-
-
-Pulau Ombak, level tiga puluh dua.
-
-
-Cari tikus!
-
-
-Pulau Ombak, level tiga puluh tiga.
-
-
-Kutip tiga anak ayam!
-
-
-Pulau Ombak, level tiga puluh empat.
-
-
-Pulau Ombak, level tiga puluh lima.
-
-
-Kutip lima bintang!
-
-
-Cari beruang!
-
-
-Pulau Ombak, level tiga puluh enam.
-
-
-Pulau Ombak, level tiga puluh tujuh.
-
-
-Pulau Ombak, level tiga puluh lapan.
-
-
-Cari zebra!
-
-
-Pulau Ombak, level tiga puluh sembilan.
-
-
-Cari bentuk berlian!
-
-
-Kutip lima telur!
-
-
-Pulau Ombak, level empat puluh.
-
-
-Kutip tiga epal!
-
-
-Pulau Ombak, level empat puluh satu.
-
-
-Kutip empat berlian!
-
-
-Pulau Ombak, level empat puluh dua.
-
-
-Kutip dua oren!
-
-
-Pulau Ombak, level empat puluh tiga.
-
-
-Pulau Ombak, level empat puluh empat.
-
-
-Kutip empat segi empat sama!
-
-
-Pulau Ombak, level empat puluh lima.
-
-
-Kutip dua telur!
-
-
-Pulau Ombak, level empat puluh enam.
-
-
-Pulau Ombak, level empat puluh tujuh.
-
-
-Pulau Ombak, level empat puluh lapan.
-
-
-Cari panda!
-
-
-Pulau Ombak, level empat puluh sembilan.
-
-
-Pulau Ombak, level lima puluh.
-
-
-Angkasa Ria.
-
-
-Planet, bulan, bintang dan Ufo comel.
-
-
-Selesaikan sepuluh level di Pulau Ombak dahulu, ya.
-
-
-Angkasa Ria, level satu.
-
-
-Kutip dua bulatan!
-
-
-Angkasa Ria, level dua.
-
-
-Angkasa Ria, level tiga.
-
-
-Angkasa Ria, level empat.
-
-
-Angkasa Ria, level lima.
-
-
-Cari planet!
-
-
-Angkasa Ria, level enam.
-
-
-Angkasa Ria, level tujuh.
-
-
-Angkasa Ria, level lapan.
-
-
-Angkasa Ria, level sembilan.
-
-
-Angkasa Ria, level sepuluh.
-
-
-Angkasa Ria, level sebelas.
-
-
-Dua tambah satu, jadi berapa?
-
-
-Kita tinggal di planet apa?
-
-
-Angkasa Ria, level dua belas.
-
-
-Angkasa Ria, level tiga belas.
-
-
-Angkasa Ria, level empat belas.
-
-
-Angkasa Ria, level lima belas.
-
-
-Angkasa Ria, level enam belas.
-
-
-Angkasa Ria, level tujuh belas.
-
-
-Cari roket!
-
-
-Angkasa Ria, level lapan belas.
-
-
-Empat tambah empat, jadi berapa?
-
-
-Angkasa Ria, level sembilan belas.
-
-
-Satu tambah tiga, jadi berapa?
-
-
-Angkasa Ria, level dua puluh.
-
-
-Angkasa Ria, level dua puluh satu.
-
-
-Angkasa Ria, level dua puluh dua.
-
-
-Angkasa Ria, level dua puluh tiga.
-
-
-Angkasa Ria, level dua puluh empat.
-
-
-Cari piring terbang!
-
-
-Berapa belon?
-
-
-Angkasa Ria, level dua puluh lima.
-
-
-Angkasa Ria, level dua puluh enam.
-
-
-Cari komet!
-
-
-Angkasa Ria, level dua puluh tujuh.
-
-
-Dua tambah empat, jadi berapa?
-
-
-Angkasa Ria, level dua puluh lapan.
-
-
-Angkasa Ria, level dua puluh sembilan.
-
-
-Berapa strawberi?
-
-
-Angkasawan naik apa ke angkasa?
-
-
-Angkasa Ria, level tiga puluh.
-
-
-Lima tambah satu, jadi berapa?
-
-
-Cari bintang!
-
-
-Angkasa Ria, level tiga puluh satu.
-
-
-Cari matahari!
-
-
-Angkasa Ria, level tiga puluh dua.
-
-
-Apa yang berkelip-kelip di langit malam?
-
-
-Tiga tambah dua, jadi berapa?
-
-
-Angkasa Ria, level tiga puluh tiga.
-
-
-Angkasa Ria, level tiga puluh empat.
-
-
-Kutip dua berlian!
-
-
-Angkasa Ria, level tiga puluh lima.
-
-
-Apa yang kita nampak di langit pada waktu malam?
-
-
-Angkasa Ria, level tiga puluh enam.
-
-
-Angkasa Ria, level tiga puluh tujuh.
-
-
-Angkasa Ria, level tiga puluh lapan.
-
-
-Angkasa Ria, level tiga puluh sembilan.
-
-
-Cari bentuk bujur!
-
-
-Angkasa Ria, level empat puluh.
-
-
-Angkasa Ria, level empat puluh satu.
-
-
-Angkasa Ria, level empat puluh dua.
-
-
-Angkasa Ria, level empat puluh tiga.
-
-
-Angkasa Ria, level empat puluh empat.
-
-
-Angkasa Ria, level empat puluh lima.
-
-
-Angkasa Ria, level empat puluh enam.
-
-
-Angkasa Ria, level empat puluh tujuh.
-
-
-Cari bumi!
-
-
-Angkasa Ria, level empat puluh lapan.
-
-
-Dua tambah dua, jadi berapa?
-
-
-Angkasa Ria, level empat puluh sembilan.
-
-
-Angkasa Ria, level lima puluh.
-
-
-Negeri Gula-gula.
-
-
-Lolipop, donat, coklat dan biskut.
-
-
-Selesaikan sepuluh level di Angkasa Ria dahulu, ya.
-
-
-Negeri Gula-gula, level satu.
-
-
-Negeri Gula-gula, level dua.
-
-
-Negeri Gula-gula, level tiga.
-
-
-Negeri Gula-gula, level empat.
-
-
-Negeri Gula-gula, level lima.
-
-
-Negeri Gula-gula, level enam.
-
-
-Pilih makanan yang sihat!
-
-
-Negeri Gula-gula, level tujuh.
-
-
-Kutip dua bunga!
-
-
-Negeri Gula-gula, level lapan.
-
-
-Negeri Gula-gula, level sembilan.
-
-
-Negeri Gula-gula, level sepuluh.
-
-
-Negeri Gula-gula, level sebelas.
-
-
-Negeri Gula-gula, level dua belas.
-
-
-Negeri Gula-gula, level tiga belas.
-
-
-Negeri Gula-gula, level empat belas.
-
-
-Negeri Gula-gula, level lima belas.
-
-
-Negeri Gula-gula, level enam belas.
-
-
-Negeri Gula-gula, level tujuh belas.
-
-
-Negeri Gula-gula, level lapan belas.
-
-
-Negeri Gula-gula, level sembilan belas.
-
-
-Negeri Gula-gula, level dua puluh.
-
-
-Negeri Gula-gula, level dua puluh satu.
-
-
-Negeri Gula-gula, level dua puluh dua.
-
-
-Negeri Gula-gula, level dua puluh tiga.
-
-
-Negeri Gula-gula, level dua puluh empat.
-
-
-Negeri Gula-gula, level dua puluh lima.
-
-
-Negeri Gula-gula, level dua puluh enam.
-
-
-Negeri Gula-gula, level dua puluh tujuh.
-
-
-Negeri Gula-gula, level dua puluh lapan.
-
-
-Negeri Gula-gula, level dua puluh sembilan.
-
-
-Negeri Gula-gula, level tiga puluh.
-
-
-Negeri Gula-gula, level tiga puluh satu.
-
-
-Negeri Gula-gula, level tiga puluh dua.
-
-
-Kutip lima anak ayam!
-
-
-Negeri Gula-gula, level tiga puluh tiga.
-
-
-Negeri Gula-gula, level tiga puluh empat.
-
-
-Negeri Gula-gula, level tiga puluh lima.
-
-
-Kutip tiga berlian!
-
-
-Negeri Gula-gula, level tiga puluh enam.
-
-
-Negeri Gula-gula, level tiga puluh tujuh.
-
-
-Kutip dua hati!
-
-
-Negeri Gula-gula, level tiga puluh lapan.
-
-
-Kutip empat kura-kura!
-
-
-Negeri Gula-gula, level tiga puluh sembilan.
-
-
-Negeri Gula-gula, level empat puluh.
-
-
-Negeri Gula-gula, level empat puluh satu.
-
-
-Negeri Gula-gula, level empat puluh dua.
-
-
-Negeri Gula-gula, level empat puluh tiga.
-
-
-Berapa epal?
-
-
-Negeri Gula-gula, level empat puluh empat.
-
-
-Negeri Gula-gula, level empat puluh lima.
-
-
-Negeri Gula-gula, level empat puluh enam.
-
-
-Negeri Gula-gula, level empat puluh tujuh.
-
-
-Negeri Gula-gula, level empat puluh lapan.
-
-
-Negeri Gula-gula, level empat puluh sembilan.
-
-
-Negeri Gula-gula, level lima puluh.
-
-
-Tapak Binaan Cilik.
-
-
-Kren, jengkaut, kon dan papan tanda.
-
-
-Selesaikan sepuluh level di Negeri Gula-gula dahulu, ya.
-
-
-Tapak Binaan Cilik, level satu.
-
-
-Tapak Binaan Cilik, level dua.
-
-
-Apa pasangan yang sesuai untuk benda ini?
-
-
-Tapak Binaan Cilik, level tiga.
-
-
-Tapak Binaan Cilik, level empat.
-
-
-Tapak Binaan Cilik, level lima.
-
-
-Tapak Binaan Cilik, level enam.
-
-
-Ada lima bunga.
-
-
-Ambil tiga.
+Pilih laluan warna biru!
