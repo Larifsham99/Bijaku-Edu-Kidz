@@ -14,6 +14,7 @@ import { RC_WORLDS, CARS, PAINTS, STICKERS_RC, RIMS, MEDALS } from '../js/racing
 import { buildLevel } from '../js/racing/levels.js';
 import { NUM_WORDS } from '../js/data/content.js';
 
+const VERSI = new Date().toISOString().slice(0, 16).replace('T', ' ');
 const MAX = 10000; // aksara setiap bahagian (kira-kira 10,000 — stabil di ElevenLabs)
 const LETTER = { A: 'ei', B: 'bi', C: 'si', D: 'di', E: 'i', F: 'ef', G: 'ji', H: 'Heish', I: 'ai', J: 'jei', K: 'kei', L: 'el', M: 'em', N: 'en', O: 'o', P: 'pi', Q: 'kiu', R: 'ar', S: 'es', T: 'ti', U: 'yu', V: 'vi', W: 'dabel yu', X: 'eks', Y: 'wai', Z: 'zed' };
 const TAG = { arahan: '[warmly]', pujian: '[cheerfully]', galakan: '[gently]', tenang: '[softly]' };
@@ -116,7 +117,7 @@ main{max-width:900px;margin:0 auto;padding:12px 16px 60px;display:grid;gap:10px}
 button{font:inherit;font-weight:700;border:0;border-radius:14px;padding:9px 14px;cursor:pointer}.copy{background:#2f9e6a;color:#fff}.see{background:#ece6fa;color:var(--ink)}.tick{background:#fff;border:2px solid #d9d3ea}
 pre{width:100%;white-space:pre-wrap;background:#f8f6ff;border-radius:12px;padding:10px;max-height:260px;overflow:auto;display:none;margin:6px 0 0;font-size:13px}.part.open pre{display:block}
 </style></head><body>
-<header><h1>Skrip ElevenLabs: baki ${list.length} ayat</h1><p>${parts.length} bahagian · ${total.toLocaleString('ms')} aksara (± kredit). Tekan "Salin", paste ke ElevenLabs v3, jana, muat turun MP3. Penting: namakan setiap fail MP3 ikut nombor bahagian (cth. 07.mp3) supaya klip dipadankan dengan betul. Tanda ✓ selepas siap.</p></header>
+<header><div style="display:inline-block;background:#2f9e6a;color:#fff;font-weight:800;padding:4px 12px;border-radius:99px;margin-bottom:6px">VERSI ${VERSI} · ${parts.length} bahagian · H = "${LETTER.H}"</div><h1>Skrip ElevenLabs: baki ${list.length} ayat</h1><p>${parts.length} bahagian · ${total.toLocaleString('ms')} aksara (± kredit). Tekan "Salin", paste ke ElevenLabs v3, jana, muat turun MP3. Penting: namakan setiap fail MP3 ikut nombor bahagian (cth. 07.mp3) supaya klip dipadankan dengan betul. Tanda ✓ selepas siap.</p></header>
 <main>${pages.map((p) => `<div class="part" data-id="${p.id}"><b>Bahagian ${p.id}</b><span>${p.n} ayat · ${p.chars} aksara</span><button class="copy" type="button">Salin</button><button class="see" type="button">Lihat</button><button class="tick" type="button">✓</button><pre>${esc(p.txt)}</pre></div>`).join('\n')}</main>
 <script>
 const done=new Set(JSON.parse(localStorage.getItem('dc-skrip-siap')||'[]'));
