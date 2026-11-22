@@ -101,8 +101,8 @@ export async function playScreen(id, n, onClean) {
     const res = S.record(gp, n, st);
     if (p) { addActivity(p, { levels: 1, rounds: 1 }); save(); }
     if (p && overLimit(p)) { go('/'); return; }
-    sfx.win();
-    cheer('done', { perfect: misses === 0 });
+    if (mod.celebrate) mod.celebrate(); else sfx.win();
+    later(() => cheer('done', { perfect: misses === 0 }), mod.celebrate ? 1200 : 0);
     const nextN = n < GAME_LEVELS ? n + 1 : null;
     const box = h('div', { class: 'gm-win' },
       h('div', { class: 'gm-rays', 'aria-hidden': 'true' }),

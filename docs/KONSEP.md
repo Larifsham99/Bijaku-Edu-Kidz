@@ -39,6 +39,11 @@ Setiap permainan: 30 level dalam 3 bab, peta level 2.5D, bintang 1–3, suara ar
 | **Jom Berwuduk** (`wuduk`) | Ikut 12 langkah wuduk pada watak kanak-kanak | Susun tertib | Apa seterusnya? · Yang mana wajib (rukun)? |
 | **Robot Kod Cilik** (`robot`) | Laluan terus ke bintang | Elak halangan | Kutip bateri dahulu, kemudian ke bintang |
 
+| **Lompat Blok** (`lompat`) | Pulau Rumput: jurang, tangga, blok retak | Pulau Lava: platform bergerak, duri berkala | Pulau Awan: spring + gabungan semua rintangan |
+| **Bina Dunia** (`bina`) | Ikut Pelan (pelan setiap tingkat) | Lihat 3D (model berputar) | Arkitek Cilik (binaan 14–22 blok) |
+
+Lompat Blok & Bina Dunia ialah genre "dunia blok 3D" (rekaan, watak & nama sendiri): laluan Lompat Blok disahkan boleh diselesaikan oleh pencari laluan berasaskan masa; model Bina Dunia disahkan boleh dibina ikut peraturan sokongan. Pek bunyi sintesis `js/games/blocksfx.js` (lompat, mendarat, permata, checkpoint, jatuh, runtuh, spring, letak blok) dan sambutan: fanfare trompet + tepukan gemuruh + bunga api.
+
 Wuduk mengikut amalan mazhab Syafie di Malaysia: rukun = niat (semasa basuh muka), basuh muka, tangan hingga siku, sapu sebahagian kepala, kaki hingga buku lali, tertib; sunat yang diajar = Bismillah, basuh tapak tangan, berkumur, air ke hidung, sapu telinga, ulang tiga kali, dahulukan kanan, doa selepas wuduk (HR Muslim). Tambah permainan baharu dengan mendaftar dalam `js/games/registry.js` dan menulis modul `play(ctx)`.
 
 ## 1. Apa itu Dunia Cilik

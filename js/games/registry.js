@@ -30,6 +30,18 @@ export const GAMES = {
     chapters: ['Langkah Pertama', 'Elak Halangan', 'Kutip Bateri'],
     load: () => import('./robot.js'),
   },
+  lompat: {
+    id: 'lompat', n: 'Lompat Blok', c: '#2fbf71', img: 'visual-assets/games/lompat.svg',
+    sub: 'Lompat pulau ke pulau, elak jatuh!', bg: ['#6ee7a8', '#22b36a', '#12804a'],
+    chapters: ['Pulau Rumput', 'Pulau Lava', 'Pulau Awan'],
+    load: () => import('./lompat.js'),
+  },
+  bina: {
+    id: 'bina', n: 'Bina Dunia', c: '#ff7a45', img: 'visual-assets/games/bina.svg',
+    sub: 'Bina rumah, istana & roket dari blok!', bg: ['#ffb36b', '#ff7a45', '#c2410c'],
+    chapters: ['Ikut Pelan', 'Lihat 3D', 'Arkitek Cilik'],
+    load: () => import('./bina.js'),
+  },
 };
 export const GAME_IDS = Object.keys(GAMES);
 export const chapterOf = (n) => Math.min(2, Math.floor((n - 1) / 10));

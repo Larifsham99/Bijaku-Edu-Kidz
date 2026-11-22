@@ -45,10 +45,10 @@ try {
   ok(await page.locator('text=Aisyah').count() > 0, 'nama pemain dipaparkan');
   await page.screenshot({ path: 'tests/out-home.png', fullPage: true });
   ok(await page.locator('.bj-logo[aria-label="BIJAKU oleh Mawar Ikhlas"]').count() > 0, 'logo BIJAKU oleh Mawar Ikhlas dipaparkan');
-  ok(await page.locator('.bj-shelf').count() === 5, '5 rak kategori permainan');
+  ok(await page.locator('.bj-shelf').count() === 6, '6 rak kategori permainan');
   await page.click('.bj-tab:has-text("Dunia")');
   await page.waitForSelector('.bj-isle');
-  ok(await page.locator('.bj-isle').count() === 22, 'Dunia BIJAKU: 22 pulau permainan');
+  ok(await page.locator('.bj-isle').count() === 24, 'Dunia BIJAKU: 24 pulau permainan');
   await page.locator('.bj-isle', { hasText: 'Dunia Nombor' }).click();
   await page.waitForFunction(() => location.hash === '#/mod/nombor');
   ok(true, 'pulau membuka permainan');

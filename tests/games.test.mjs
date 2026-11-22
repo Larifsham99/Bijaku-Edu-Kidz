@@ -13,7 +13,7 @@ const fs = await import('node:fs');
 let failures = 0;
 const ok = (c, m) => { if (c) console.log('✓ ' + m); else { failures++; console.log('✗ ' + m); } };
 
-ok(GAME_IDS.length === 4 && GAME_IDS.every((id) => GAMES[id].chapters.length === 3 && fs.existsSync(GAMES[id].img)), '4 permainan baharu berdaftar, 3 bab setiap satu, ilustrasi kad wujud');
+ok(GAME_IDS.length === 6 && GAME_IDS.every((id) => GAMES[id].chapters.length === 3 && fs.existsSync(GAMES[id].img)), '6 permainan baharu berdaftar, 3 bab setiap satu, ilustrasi kad wujud');
 
 // ---------- Robot: setiap teka-teki boleh diselesaikan & penyelesaian disahkan dengan simulasi ----------
 const DIRS = { atas: [0, -1], bawah: [0, 1], kiri: [-1, 0], kanan: [1, 0] };
@@ -88,6 +88,26 @@ for (let n = 1; n <= GAME_LEVELS; n++) {
 }
 ok(wdBad.length === 0, `Wuduk: 30 level (ikut langkah, susun tertib, apa seterusnya, yang mana wajib) sah${wdBad.length ? ': ' + wdBad.slice(0, 5).join(', ') : ''}`);
 
+// ---------- Lompat Blok: setiap laluan boleh diselesaikan (pencari laluan dengan masa) ----------
+const lompat = await import('../js/games/lompat.js');
+let lbBad = [], lbLen = [];
+for (let n = 1; n <= GAME_LEVELS; n++) {
+  const c = lompat.makeCourse(n, makeRng(`lompat:${n}`));
+  if (!c.solution?.length) lbBad.push(`L${n}: tiada penyelesaian`);
+  const kinds = new Set([...c.tiles.values()].map((x) => x.kind));
+  if (n > 10 && n <= 20 && !c.platRow.size && !kinds.has('spike')) lbBad.push(`L${n}: bab lava tanpa rintangan bergerak`);
+  if (n > 20 && !kinds.has('spring')) lbBad.push(`L${n}: bab awan tanpa spring`);
+  if (!kinds.has('goal') || !kinds.has('check')) lbBad.push(`L${n}: tiada trofi/checkpoint`);
+  lbLen.push(c.solution.length);
+}
+ok(lbBad.length === 0, `Lompat Blok: 30 laluan disahkan boleh diselesaikan (${Math.min(...lbLen)}–${Math.max(...lbLen)} langkah)${lbBad.length ? ': ' + lbBad.slice(0, 5).join(', ') : ''}`);
+
+// ---------- Bina Dunia: model boleh dibina ikut peraturan sokongan ----------
+const bina = await import('../js/games/bina.js');
+const bdBad = bina.MODELS.filter((m) => !bina.buildable(m.blocks) || new Set(m.blocks.map((b) => b.slice(0, 3).join())).size !== m.blocks.length || m.blocks.some(([x, y, z, c]) => x < 0 || y < 0 || x >= m.N || y >= m.N || z < 0 || !bina.COLORS[c])).map((m) => m.n);
+const sizes = bina.MODELS.map((m) => m.blocks.length);
+ok(bina.MODELS.length === 30 && bdBad.length === 0, `Bina Dunia: 30 model sah & boleh dibina (${Math.min(...sizes)}–${Math.max(...sizes)} blok)${bdBad.length ? ': ' + bdBad.join(', ') : ''}`);
+
 // ---------- storan ----------
 const S = await import('../js/games/store.js');
 const g = S.gprof('u', 'robot');
@@ -109,6 +129,7 @@ await new Promise((r) => setTimeout(r, 800));
 const errors = [];
 const browser = await chromium.launch();
 const ctx = await browser.newContext({ viewport: { width: 412, height: 860 }, hasTouch: true });
+await ctx.addInitScript(() => { globalThis.__gmFast = true; });
 const page = await ctx.newPage();
 page.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
 page.on('console', (m) => { if (m.type() === 'error' || (m.type() === 'warning' && /Permainan baharu/.test(m.text()))) errors.push(m.text()); });
@@ -120,7 +141,7 @@ async function playLevel(id, n) {
   await page.waitForFunction(([gid, k]) => window.__gmPlay?.id === gid && window.__gmPlay?.n === k && !document.querySelector('.gm-win') && document.querySelector('.gm-stage')?.children.length, [id, n], { timeout: 10000 });
   for (let i = 0; i < 16 && !(await page.locator('.gm-win').count()); i++) {
     await page.evaluate(() => window.__gmPlay?.solve?.());
-    await page.waitForTimeout(id === 'robot' ? 900 : 500);
+    await page.waitForTimeout(id === 'robot' ? 900 : id === 'lompat' ? 6000 : 500);
     await page.waitForFunction(() => document.querySelector('.gm-win') || !document.querySelector('.rb-board.running'), null, { timeout: 15000 });
     await page.waitForTimeout(id === 'wuduk' ? 400 : 1900);
   }
@@ -142,11 +163,11 @@ try {
     ok(st >= 1, `${GAMES[id].n}: level 1 dimainkan hingga tamat & disimpan (${st} bintang)`);
   }
   // bab lain: buka semua level dan main satu level setiap bab
-  await page.evaluate(() => { const id = window.__dc.getState().currentId; const d = JSON.parse(localStorage.getItem('dc-games-v1') || '{}'); for (const g of ['robot', 'kedai', 'makmal', 'wuduk']) { d[id][g] ||= { stars: {} }; for (let i = 1; i <= 29; i++) d[id][g].stars[i] ||= 1; } localStorage.setItem('dc-games-v1', JSON.stringify(d)); });
+  await page.evaluate(() => { const id = window.__dc.getState().currentId; const d = JSON.parse(localStorage.getItem('dc-games-v1') || '{}'); for (const g of ['robot', 'kedai', 'makmal', 'wuduk', 'lompat', 'bina']) { d[id][g] ||= { stars: {} }; for (let i = 1; i <= 29; i++) d[id][g].stars[i] ||= 1; } localStorage.setItem('dc-games-v1', JSON.stringify(d)); });
   await page.goto(`http://localhost:${PORT}/index.html#/`);
   await page.reload();
   await page.waitForSelector('.mode-card');
-  for (const [id, n] of [['robot', 15], ['robot', 28], ['kedai', 14], ['kedai', 26], ['makmal', 4], ['makmal', 16], ['makmal', 27], ['wuduk', 7], ['wuduk', 13], ['wuduk', 22], ['wuduk', 30]]) {
+  for (const [id, n] of [['lompat', 9], ['lompat', 14], ['lompat', 27], ['bina', 12], ['bina', 22], ['robot', 15], ['robot', 28], ['kedai', 14], ['kedai', 26], ['makmal', 4], ['makmal', 16], ['makmal', 27], ['wuduk', 7], ['wuduk', 13], ['wuduk', 22], ['wuduk', 30]]) {
     const st = await playLevel(id, n);
     ok(st >= 1, `${GAMES[id].n} L${n} (${GAMES[id].chapters[Math.min(2, Math.floor((n - 1) / 10))]}) dimainkan hingga tamat`);
   }
@@ -160,7 +181,7 @@ try {
   // Dunia: pulau baharu
   await page.evaluate(() => window.__dc.go('/dunia'));
   await page.waitForSelector('.bj-isle');
-  ok(await page.locator('.bj-isle').count() === 22, 'Dunia BIJAKU: 22 pulau');
+  ok(await page.locator('.bj-isle').count() === 24, 'Dunia BIJAKU: 24 pulau');
   // kunci ibu bapa
   await page.evaluate(() => { window.__dc.getState().settings.disabledModes.push('robot'); window.__dc.go('/'); });
   await page.waitForSelector('.mode-card');

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <path d="M100 170 180 130 100 90 20 130Z" fill="#7bd860"/><path d="M20 130 100 170V184L20 144Z" fill="#a66f3f"/><path d="M180 130 100 170V184L180 144Z" fill="#8a5d36"/>
+  <g id="c">
+  </g>
+  <g>
+    <path d="M70 118 100 103 130 118 100 133Z" fill="#fff"/><path d="M70 118 100 133V163L70 148Z" fill="#dfe3e8"/><path d="M130 118 100 133V163L130 148Z" fill="#c4c9d0"/>
+    <path d="M90 140v18l8 4v-18z" fill="#c68a4c"/>
+    <path d="M110 136l10-5v8l-10 5z" fill="#a5d8ff"/>
+  </g>
+  <g transform="translate(0 -30)">
+    <path d="M70 118 100 103 130 118 100 133Z" fill="#ff7b7b"/><path d="M70 118 100 133V148L70 133Z" fill="#e04848"/><path d="M130 118 100 133V148L130 133Z" fill="#c43c3c"/>
+  </g>
+  <g transform="translate(0 -45)"><path d="M85 110 100 102 115 110 100 118Z" fill="#ffe066"/><path d="M85 110 100 118V128L85 120Z" fill="#f2b705"/><path d="M115 110 100 118V128L115 120Z" fill="#d99c00"/></g>
+  <g transform="translate(140 58)"><path d="M0 8 14 1 28 8 14 15Z" fill="#6ec3ff"/><path d="M0 8 14 15V29L0 22Z" fill="#3d8bff"/><path d="M28 8 14 15V29L28 22Z" fill="#2463c9"/></g>
+  <g transform="translate(34 70)"><path d="M0 8 14 1 28 8 14 15Z" fill="#7ee081"/><path d="M0 8 14 15V29L0 22Z" fill="#2fbf71"/><path d="M28 8 14 15V29L28 22Z" fill="#1f9a58"/></g>
+  <path d="M150 30l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#ffd43b"/>
+</svg>

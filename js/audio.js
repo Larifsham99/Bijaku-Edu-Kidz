@@ -325,6 +325,13 @@ export const sfx = {
   note(i) { if (!sfxOn()) return; const sc = [262, 330, 392, 523, 587, 659, 784, 880]; tone({ type: 'triangle', f: sc[i % sc.length], dur: 0.35, vol: 0.22 }); },
 };
 
+// Sintesis mentah untuk pek bunyi permainan (mematuhi tetapan bunyi ibu bapa)
+export const synth = {
+  on: () => !!settings().sound,
+  tone: (o) => { if (sfxOn()) tone(o); },
+  noise: (o) => { if (sfxOn()) noise(o); },
+};
+
 // ---------------- BUNYI SEBENAR (sintesis) ----------------
 const SYN = {
   kucing() { tone({ type: 'sawtooth', f: 520, f2: 760, dur: 0.25, vol: 0.18, filter: { type: 'bandpass', f: 1400, q: 3 } }); tone({ type: 'sawtooth', f: 760, f2: 430, t: 0.25, dur: 0.45, vol: 0.18, filter: { type: 'bandpass', f: 1200, f2: 800, q: 3 } }); return 0.8; },

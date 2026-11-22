@@ -1,5 +1,5 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-07381885f2';
+const VERSION = 'dunia-cilik-22cf0cdd86';
 const ASSETS = [
   './',
   './index.html',
@@ -34,7 +34,10 @@ const ASSETS = [
   './js/engines/maze.js',
   './js/engines/memory.js',
   './js/engines/puzzle.js',
+  './js/games/bina.js',
+  './js/games/blocksfx.js',
   './js/games/kedai.js',
+  './js/games/lompat.js',
   './js/games/main.js',
   './js/games/makmal.js',
   './js/games/registry.js',
@@ -92,7 +95,9 @@ const ASSETS = [
   './icons/icon.svg',
   './fonts/baloo2-latin.woff2',
   './visual-assets/akhlak/kebun.svg',
+  './visual-assets/games/bina.svg',
   './visual-assets/games/kedai.svg',
+  './visual-assets/games/lompat.svg',
   './visual-assets/games/makmal.svg',
   './visual-assets/games/robot.svg',
   './visual-assets/games/wuduk.svg',
