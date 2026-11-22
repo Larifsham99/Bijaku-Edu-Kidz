@@ -75,7 +75,7 @@ export function certScreen(modeId) {
     h('div', { class: 'who' }, p.name),
     h('div', { style: { fontSize: '20px', fontWeight: 800 } }, `kerana berjaya menamatkan kesemua 50 level`),
     h('div', { style: { fontSize: '28px', fontWeight: 900, color: m.c, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' } }, modeArt(m, 'md'), m.n),
-    h('div', { class: 'muted' }, `Dunia Cilik · ${todayKey()}`),
+    h('div', { class: 'muted' }, `BIJAKU oleh Mawar Ikhlas · ${todayKey()}`),
     h('div', { class: 'muted', style: { fontStyle: 'italic' } }, 'Belajar Sambil Bermain, Bijak Sambil Meneroka.')));
   scr.appendChild(h('div', { class: 'row-wrap' }, h('button', { class: 'btn blue', type: 'button', onclick: () => window.print() }, emo('🖨️'), 'Cetak sijil')));
   return scr;

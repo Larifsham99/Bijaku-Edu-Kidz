@@ -17,7 +17,7 @@ export const BADGES = [
   { id: 'lv10', e: '🚀', n: 'Penjelajah Cilik', d: 'Selesaikan 10 level', test: (p) => totalLevelsDone(p) >= 10 },
   { id: 'lv50', e: '🧭', n: 'Pengembara Hebat', d: 'Selesaikan 50 level', test: (p) => totalLevelsDone(p) >= 50 },
   { id: 'lv150', e: '🦸', n: 'Wira Ilmu', d: 'Selesaikan 150 level', test: (p) => totalLevelsDone(p) >= 150 },
-  { id: 'lv300', e: '👑', n: 'Raja Dunia Cilik', d: 'Selesaikan 300 level', test: (p) => totalLevelsDone(p) >= 300 },
+  { id: 'lv300', e: '👑', n: 'Raja BIJAKU', d: 'Selesaikan 300 level', test: (p) => totalLevelsDone(p) >= 300 },
   { id: 'star100', e: '⭐', n: '100 Bintang', d: 'Kumpul 100 bintang', test: (p) => p.totalStarsEarned >= 100 },
   { id: 'star500', e: '🌠', n: '500 Bintang', d: 'Kumpul 500 bintang', test: (p) => p.totalStarsEarned >= 500 },
   { id: 'allmodes', e: '🌈', n: 'Serba Boleh', d: 'Cuba kelima belas mod permainan', test: (p) => MODE_LIST.every((m) => Object.keys(p.modes[m.id]?.done || {}).length > 0) },

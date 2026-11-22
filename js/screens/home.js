@@ -11,6 +11,8 @@ import { dailySet } from './daily.js';
 import { speak, sfx, voicePack } from '../audio.js';
 import { limitSeconds } from './timeout.js';
 import { DEMO, DEMO_MAX, SALES_URL } from '../demo.js';
+import { BRAND, brandLogo, shade } from '../brand.js';
+import { EXTRAS, SHELVES, gameInfo, openGame, gameArt, isOff, lockIc } from './catalog.js';
 
 const greet = (name) => {
   const hr = new Date().getHours();
@@ -20,10 +22,9 @@ const greet = (name) => {
   return `${t}${nm}! Jom belajar sambil bermain!`;
 };
 
-// Logo: wau kecil + "Dunia" (cili) "Cilik" (pandan)
+// Logo BIJAKU
 function logoH1() {
-  const wau = h('span', { class: 'logo-wau', html: '<svg viewBox="0 0 120 150" width="100%" height="100%"><path d="M60 4 C 44 26 30 30 6 34 C 24 46 44 50 58 58 C 40 64 22 72 12 92 C 34 86 50 84 60 92 C 70 84 86 86 108 92 C 98 72 80 64 62 58 C 76 50 96 46 114 34 C 90 30 76 26 60 4 Z" fill="#e2553f"/><path d="M60 14 C 50 30 40 34 24 37 C 38 45 50 49 60 54 C 70 49 82 45 96 37 C 80 34 70 30 60 14 Z" fill="#f2a922"/><path d="M60 62 C 48 68 36 74 28 86 C 42 82 52 82 60 88 C 68 82 78 82 92 86 C 84 74 72 68 60 62 Z" fill="#2e5aac"/><path d="M60 92 C 52 106 50 120 56 146" stroke="#e2553f" stroke-width="4" fill="none"/></svg>' });
-  return h('h1', { 'aria-label': 'Dunia Cilik' }, wau, h('span', {}, h('span', { class: 'l1' }, 'Dunia'), ' ', h('span', { class: 'l2' }, 'Cilik')));
+  return h('h1', { class: 'bj-h1' }, brandLogo({ size: 'lg' }));
 }
 
 // Doa Hari Ini: bertukar setiap hari, hanya doa sahih daripada senarai DOA (dengan sumber)
@@ -59,105 +60,112 @@ export function homeScreen() {
   if (!p) { setTimeout(() => go('/profil'), 0); return h('div'); }
   const lv = playerLevel(p);
   const d = dailySet(p);
-  const scr = h('div', { class: 'screen' });
-  const wrap = h('div', { class: 'home2' });
-  const side = h('div', { class: 'home-side' });
-  const main = h('div', { class: 'home-main' });
-  wrap.append(side, main);
-  scr.appendChild(wrap);
-
-  side.appendChild(h('div', { class: 'home-head' },
-    h('button', { class: 'player-card', type: 'button', 'aria-label': 'Tukar profil', onclick: () => { sfx.tap(); go('/profil'); } },
-      avatarEl(p),
-      h('div', { style: { flex: 1, minWidth: 0 } },
-        h('div', { class: 'player-name' }, p.name),
-        h('div', { class: 'player-sub' }, `Level ${lv.lvl} · ${p.age} tahun`),
-        h('div', { class: 'lvl-bar' }, h('i', { style: { width: `${Math.round((lv.into / lv.need) * 100)}%` } })))),
-    statPills(p)));
-  if (DEMO) side.appendChild(h('div', { class: 'panel', style: { display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', textAlign: 'center' } },
-    h('b', {}, `🎮 Versi Demo · ${DEMO_MAX} level pertama setiap permainan`),
-    h('a', { class: 'btn small green', href: SALES_URL, target: '_top', style: { textDecoration: 'none' } }, 'Dapatkan versi penuh')));
-  side.appendChild(h('div', { class: 'logo' }, logoH1(), h('p', {}, 'Belajar Sambil Bermain, Bijak Sambil Meneroka.')));
-  const ch = CHARACTERS[new Date().getDay() % CHARACTERS.length];
-  const g = guide(ch.id, greet(p.name));
-  side.appendChild(g.el);
+  const scr = h('div', { class: 'screen bj-home' }, h('div', { class: 'bj-stage', 'aria-hidden': 'true' }));
   later(() => speak(voicePack() && settings().voiceEngine !== 'peranti' ? greet('') : greet(p.name)), 400);
 
+  // ---- kepala: logo, bintang, pemain ----
+  scr.appendChild(h('header', { class: 'bj-top' },
+    brandLogo({ size: 'md' }),
+    h('div', { class: 'bj-top-r' },
+      h('span', { class: 'bj-pill', title: 'Bintang' }, icon('star'), h('b', {}, p.stars)),
+      h('span', { class: 'bj-pill hide-xs', title: 'Syiling' }, icon('coin'), h('b', {}, p.coins)),
+      h('button', { class: 'player-card bj-me', type: 'button', 'aria-label': 'Tukar profil', onclick: () => { sfx.tap(); go('/profil'); } },
+        avatarEl(p),
+        h('span', { class: 'bj-me-txt' }, h('b', { class: 'player-name' }, p.name), h('span', { class: 'lvl-bar' }, h('i', { style: { width: `${Math.round((lv.into / lv.need) * 100)}%` } })), h('small', {}, `Level ${lv.lvl}`))))));
+  if (DEMO) scr.appendChild(h('div', { class: 'bj-demo' },
+    h('b', {}, `Versi Demo · ${DEMO_MAX} level pertama setiap permainan`),
+    h('a', { class: 'btn small green', href: SALES_URL, target: '_top', style: { textDecoration: 'none' } }, 'Dapatkan versi penuh')));
+
+  // ---- banner bergerak: sambung bermain + permainan istimewa ----
   const np = nextPlay(p);
-  const dailyLeft = 5 - d.done.length;
-  const lim = limitSeconds(p);
+  const slides = [];
   if (np) {
-    side.appendChild(h('button', { class: 'play-cta', type: 'button', 'aria-label': `Mula bermain ${np.m.n} level ${np.L}`, onclick: () => { sfx.tap(); go(`/main/${np.m.id}/${np.L}`); } },
-      h('span', { class: 'pc-play' }, icon('play')),
-      h('span', { class: 'pc-text' }, h('b', {}, 'Mula Bermain'), h('span', { class: 'pc-sub' }, modeArt(np.m, 'sm'), `${np.m.n} · Level ${np.L}`)),
-      h('span', { class: 'pc-char emo', 'data-avatar': p.avatar }, AVATARS.find((a) => a.id === p.avatar)?.e || '🐰')));
+    slides.push(h('button', { class: 'bj-slide bj-cont', type: 'button', style: `--a:${shade(np.m.c, 0.15)};--b:${shade(np.m.c, -0.12)};--d:${shade(np.m.c, -0.42)}`, 'aria-label': `Mula bermain ${np.m.n} level ${np.L}`, onclick: () => { sfx.tap(); go(`/main/${np.m.id}/${np.L}`); } },
+      h('span', { class: 'bj-slide-txt' },
+        h('small', {}, settings().islamic !== false ? 'Assalamualaikum!' : 'Hai!'),
+        h('b', {}, `Teruskan, ${p.name}!`),
+        h('span', { class: 'bj-sub' }, `${np.m.n} · Level ${np.L}`),
+        h('span', { class: 'bj-go' }, icon('play'), 'Main')),
+      (() => { const a = modeArt(np.m); a.classList.add('bj-slide-art'); return a; })()));
   }
-  // CILIK RACING (permainan ke-16, modul berasingan). Kad muncul dalam lajur sisi
-  // (telefon, satu lajur) atau lajur utama (tablet/desktop) — CSS memilih satu.
-  const rcOff = settings().disabledModes.includes('lumba');
-  const rcCard = (where) => h('button', { class: `rc-entry in-${where} ${rcOff ? 'locked' : ''}`, type: 'button', 'aria-label': 'Cilik Racing', onclick: () => {
-    sfx.tap();
-    if (rcOff) { speak('Permainan ini sedang dikunci oleh ibu bapa.'); return; }
-    speak('Cilik Racing!'); go('/lumba');
-  } },
-    h('span', { class: 'rc-entry-txt' }, h('small', {}, rcOff ? 'DIKUNCI' : 'BAHARU'), h('b', {}, 'Cilik Racing'), h('span', {}, 'Belajar, Pecut, Teroka!')),
-    h('img', { class: 'rc-entry-art', src: 'visual-assets/racing/kereta.png', alt: '' }),
-    rcOff ? h('span', { class: 'lock-ic' }, icon('lock')) : null);
-  // TEKA SILANG CILIK (modul berasingan, tanpa suara)
-  const tsOff = settings().disabledModes.includes('silang');
-  const tsCard = (where) => h('button', { class: `rc-entry ts-entry in-${where} ${tsOff ? 'locked' : ''}`, type: 'button', 'aria-label': 'Teka Silang Cilik', onclick: () => {
-    sfx.tap();
-    if (tsOff) { speak('Permainan ini sedang dikunci oleh ibu bapa.'); return; }
-    go('/silang');
-  } },
-    h('span', { class: 'rc-entry-txt' }, h('small', {}, tsOff ? 'DIKUNCI' : 'BAHARU'), h('b', {}, 'Teka Silang Cilik'), h('span', {}, 'Susun huruf, cari jawapan!')),
-    h('img', { class: 'rc-entry-art', src: 'visual-assets/tekasilang/papan.svg', alt: '' }),
-    tsOff ? h('span', { class: 'lock-ic' }, icon('lock')) : null);
-  // TAMAN AKHLAK (modul berasingan)
-  const akOff = settings().disabledModes.includes('akhlak');
-  const akCard = (where) => h('button', { class: `rc-entry ak-entry in-${where} ${akOff ? 'locked' : ''}`, type: 'button', 'aria-label': 'Taman Akhlak', onclick: () => {
-    sfx.tap();
-    if (akOff) { speak('Permainan ini sedang dikunci oleh ibu bapa.'); return; }
-    go('/akhlak');
-  } },
-    h('span', { class: 'rc-entry-txt' }, h('small', {}, akOff ? 'DIKUNCI' : 'BAHARU'), h('b', {}, 'Taman Akhlak'), h('span', {}, 'Pilih yang baik, kebun pun mekar!')),
-    h('img', { class: 'rc-entry-art', src: 'visual-assets/akhlak/kebun.svg', alt: '' }),
-    akOff ? h('span', { class: 'lock-ic' }, icon('lock')) : null);
-  const tile = (cls, ic, label, onclick, extra = null) => h('button', { class: `tile-btn ${cls}`, type: 'button', onclick: () => { sfx.tap(); onclick(); } }, h('span', { class: 'tb-ico' }, icon(ic)), h('span', {}, label), extra);
-  side.appendChild(h('div', { class: 'home-actions' },
-    tile('t-orange', 'calendar', 'Cabaran Harian', () => go('/harian'), dailyLeft ? h('span', { class: 'badge' }, dailyLeft) : h('span', { class: 'badge', style: { color: '#189a5a' } }, '✓')),
-    tile('t-yellow', 'trophy', 'Koleksi Trofi', () => go('/trofi')),
-    tile('t-pink', 'kain', 'Kostum & Tema', () => go('/kedai')),
-    tile('t-sky', 'wau', 'Main Bebas', () => go('/bebas'))));
-  side.appendChild(akCard('side'));
-  side.appendChild(rcCard('side'));
-  side.appendChild(tsCard('side'));
-  if (settings().islamic !== false) side.appendChild(doaCard());
-  side.appendChild(h('div', { class: 'parent-row' },
+  ['akhlak', 'lumba', 'silang'].forEach((id) => {
+    const g = EXTRAS[id];
+    const off = isOff(id);
+    slides.push(h('button', { class: `bj-slide rc-entry ${g.cls} ${off ? 'locked' : ''}`, type: 'button', 'aria-label': g.n, style: `--a:${g.bg[0]};--b:${g.bg[1]};--d:${g.bg[2]}`, onclick: () => openGame({ ...g, extra: true }) },
+      h('span', { class: 'bj-slide-txt' },
+        h('small', {}, off ? 'DIKUNCI' : 'BAHARU'),
+        h('b', {}, g.n),
+        h('span', { class: 'bj-sub' }, g.sub),
+        h('span', { class: 'bj-go' }, icon('play'), 'Jom')),
+      h('img', { class: 'bj-slide-art', src: g.img, alt: '' }),
+      off ? lockIc() : null));
+  });
+  const track = h('div', { class: 'bj-track' }, slides);
+  const dots = h('div', { class: 'bj-dots', 'aria-hidden': 'true' }, slides.map((_, i) => h('i', { class: i ? '' : 'on' })));
+  scr.appendChild(h('section', { class: 'bj-hero' }, track, dots));
+  let cur = 0, touched = false;
+  const setDot = () => { cur = Math.round(track.scrollLeft / Math.max(1, track.clientWidth)); [...dots.children].forEach((x, i) => x.classList.toggle('on', i === cur)); };
+  track.addEventListener('scroll', setDot, { passive: true });
+  ['pointerdown', 'wheel', 'touchstart'].forEach((ev) => track.addEventListener(ev, () => { touched = true; }, { passive: true }));
+  if (!navigator.webdriver) {
+    const timer = setInterval(() => {
+      if (!track.isConnected) { clearInterval(timer); return; }
+      if (touched || document.hidden) return;
+      track.scrollTo({ left: ((cur + 1) % slides.length) * track.clientWidth, behavior: 'smooth' });
+    }, 5000);
+  }
+
+  // ---- butang pantas ----
+  const dailyLeft = 5 - d.done.length;
+  const quick = (cls, ic, label, onclick, badge = null) => h('button', { class: `bj-quick ${cls}`, type: 'button', onclick: () => { sfx.tap(); onclick(); } }, h('span', { class: 'bj-q-ic' }, icon(ic), badge), h('span', {}, label));
+  scr.appendChild(h('nav', { class: 'bj-quicks', 'aria-label': 'Pintasan' },
+    quick('q-orange', 'calendar', 'Cabaran Harian', () => go('/harian'), dailyLeft ? h('span', { class: 'badge' }, dailyLeft) : h('span', { class: 'badge ok' }, '✓')),
+    quick('q-blue', 'map', 'Dunia', () => go('/dunia')),
+    quick('q-yellow', 'trophy', 'Trofi', () => go('/trofi')),
+    quick('q-pink', 'kain', 'Kostum', () => go('/kedai')),
+    quick('q-green', 'wau', 'Main Bebas', () => go('/bebas'))));
+
+  // ---- rak kategori ----
+  SHELVES.forEach((s) => {
+    const row = h('div', { class: 'bj-shelf-row' });
+    s.ids.forEach((id) => {
+      const g = gameInfo(id, p);
+      const off = isOff(id);
+      const style = `--c:${g.c};--a:${shade(g.c, 0.22)};--b:${shade(g.c, -0.08)};--d:${shade(g.c, -0.4)}`;
+      if (g.extra) {
+        row.appendChild(h('button', { class: `bj-tile bj-xtile ${off ? 'locked' : ''}`, type: 'button', style, 'aria-label': g.n, onclick: () => openGame(g) },
+          h('span', { class: 'bj-new' }, off ? 'DIKUNCI' : 'BAHARU'),
+          h('span', { class: 'bj-tile-art' }, gameArt(g)), h('span', { class: 'name' }, g.n), h('span', { class: 'meta' }, icon('play'), 'Jom main'), off ? lockIc() : null));
+        return;
+      }
+      row.appendChild(h('button', { class: `bj-tile mode-card ${off ? 'locked' : ''}`, type: 'button', style: `${style};--p:${Math.round((g.done / 50) * 100)}`, 'aria-label': `${g.n}, ${g.done} daripada 50 level`, onclick: () => openGame(g) },
+        g.done >= 50 ? h('span', { class: 'done-badge' }, icon('medal')) : null,
+        h('span', { class: 'bj-tile-art' }, gameArt(g)),
+        h('span', { class: 'name' }, g.n),
+        h('span', { class: 'meta' }, h('span', { class: 'bj-prog' }, h('i', { style: { width: `${Math.round((g.done / 50) * 100)}%` } })), `${g.done}/50`),
+        off ? lockIc() : null));
+    });
+    scr.appendChild(h('section', { class: 'bj-shelf' }, h('h2', { class: 'bj-shelf-t' }, s.t, h('small', {}, `${s.ids.length} permainan`)), row));
+  });
+
+  if (settings().islamic !== false) scr.appendChild(doaCard());
+  const lim = limitSeconds(p);
+  scr.appendChild(h('div', { class: 'parent-row bj-parent' },
     lim !== Infinity ? h('span', { class: 'time-chip' }, '⏰', `Baki masa hari ini: ${Math.max(0, Math.round((lim - todayPlaySeconds(p)) / 60))} minit`) : null,
     h('button', { class: 'tile-btn parent-link', type: 'button', onclick: () => { sfx.tap(); parentGate(() => go('/ibubapa/ringkasan')); } }, h('span', { class: 'tb-ico' }, icon('parent')), 'Ruang Ibu Bapa')));
-
-  main.appendChild(akCard('main'));
-  main.appendChild(rcCard('main'));
-  main.appendChild(tsCard('main'));
-  main.appendChild(h('div', { class: 'section-title' }, icon('grid'), 'Pilih Permainan'));
-  const grid = h('div', { class: 'mode-grid' });
-  MODE_LIST.forEach((m) => {
-    const done = levelsDone(p, m.id);
-    const off = settings().disabledModes.includes(m.id);
-    grid.appendChild(h('button', { class: `mode-card ${off ? 'locked' : ''}`, type: 'button', style: `--c:${m.c};--p:${Math.round((done / 50) * 100)}`, 'aria-label': `${m.n}, ${done} daripada 50 level`, onclick: () => {
-      sfx.tap();
-      if (off) { speak('Permainan ini sedang dikunci oleh ibu bapa.'); return; }
-      speak(m.n); go('/mod/' + m.id);
-    } },
-      h('span', { class: 'mc-ico' }, h('span', { class: 'mc-ring' }), modeArt(m), off ? h('span', { class: 'lock-ic' }, icon('lock')) : null),
-      done >= 50 ? h('span', { class: 'done-badge' }, icon('medal')) : null,
-      h('span', { class: 'name' }, m.n),
-      h('span', { class: 'meta' }, icon('star'), `${done} / 50`)));
-  });
-  main.appendChild(grid);
-  main.appendChild(h('div', { class: 'center muted', style: { fontSize: '13px', marginTop: '8px' } }, 'Dunia Cilik · tiada iklan · tiada sembang · data disimpan dalam peranti ini sahaja'));
+  scr.appendChild(h('footer', { class: 'bj-foot' }, brandLogo({ size: 'sm' }), h('p', {}, `${BRAND.tagline}`), h('p', {}, 'Tiada iklan · tiada sembang · data disimpan dalam peranti ini sahaja')));
+  scr.appendChild(tabBar('main'));
   return scr;
+}
+
+// Bar tab bawah (Utama · Dunia · Trofi · Ibu Bapa)
+export function tabBar(on) {
+  const t = (id, ic, label, fn) => h('button', { class: `bj-tab ${on === id ? 'on' : ''}`, type: 'button', 'aria-current': on === id ? 'page' : null, onclick: () => { sfx.tap(); fn(); } }, h('span', { class: 'bj-tab-ic' }, icon(ic)), h('span', {}, label));
+  return h('nav', { class: 'bj-tabs', 'aria-label': 'Menu utama' },
+    t('main', 'home', 'Utama', () => go('/')),
+    t('dunia', 'map', 'Dunia', () => go('/dunia')),
+    t('trofi', 'trophy', 'Koleksi', () => go('/trofi')),
+    t('ibubapa', 'parent', 'Ibu Bapa', () => parentGate(() => go('/ibubapa/ringkasan'))));
 }
 
 // ---------------- PENDAFTARAN PERTAMA ----------------
@@ -199,7 +207,7 @@ export function onboardingScreen({ addMode = false } = {}) {
         h('button', { class: 'btn big green', type: 'button', onclick: () => {
           addProfile({ name, age, avatar });
           sfx.win();
-          speak(`Selamat datang ke Dunia Cilik, ${name}!`);
+          speak(`Selamat datang ke ${BRAND.say}, ${name}!`);
           go('/');
         } }, emo('🚀'), 'Jom Mula!'));
       if (!addMode) speak('Pilih kawan bermain kamu!');

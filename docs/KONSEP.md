@@ -1,4 +1,4 @@
-# DUNIA CILIK — Ringkasan Konsep Aplikasi
+# BIJAKU oleh Mawar Ikhlas (dahulu "Dunia Cilik") — Ringkasan Konsep Aplikasi
 
 **Tagline:** "Belajar Sambil Bermain, Bijak Sambil Meneroka."
 **Sasaran:** kanak-kanak 4–5 tahun (sesuai juga 3–6 tahun) dan ibu bapa Muslim di Malaysia.
@@ -6,6 +6,16 @@
 **Model perniagaan:** sekali bayar RM39 (cadangan). Tiada langganan, tiada iklan, dan tiada pembelian dalam aplikasi.
 
 ---
+
+## Jenama: BIJAKU oleh Mawar Ikhlas
+
+- **Nama aplikasi:** BIJAKU (bi-ja-ku, "bijakku"). **Syarikat:** Mawar Ikhlas (ditulis "oleh Mawar Ikhlas").
+- **Logo:** enam huruf timbul berwarna (merah, jingga, hijau, biru, ungu, merah jambu) + bunga mawar kecil. Komponen `brandLogo()` dalam `js/brand.js`.
+- **Ikon apl:** jubin "B" 2.5D di atas latar malam ungu (`icons/icon.svg`, PNG 192/512 + versi maskable).
+- **Gaya visual 2.5D** (`css/bijaku.css`): kad timbul dengan bayang tebal di bawah, banner bergerak, rak kategori.
+- **Skrin utama:** banner (sambung bermain + Taman Akhlak, Cilik Racing, Teka Silang), butang pantas, 5 rak kategori (Huruf & Nombor, Islam & Akhlak, Minda Pintar, Kreatif & Bunyi, Dunia Sekeliling), Doa Hari Ini, bar tab bawah.
+- **Dunia BIJAKU** (`#/dunia`, `js/screens/world.js`): peta pulau isometrik, satu pulau untuk setiap permainan (18), disambung jalan bertitik.
+- Katalog permainan dikongsi dalam `js/screens/catalog.js` (tambah permainan baharu ke `SHELVES`/`EXTRAS`).
 
 ## 1. Apa itu Dunia Cilik
 Aplikasi permainan pendidikan untuk kanak-kanak prasekolah. Ia mempunyai **15 permainan** dan setiap permainan ada **50 level** (jumlah **750 level**). Setiap permainan menggunakan mekanik interaktif tersendiri seperti seret dan lepas, padanan, puzzle, memori, maze, mewarna, menyurih dan mengira, bukan sekadar soalan dan jawapan. Semua arahan dibacakan dengan suara, jadi anak yang belum boleh membaca pun boleh bermain sendiri.

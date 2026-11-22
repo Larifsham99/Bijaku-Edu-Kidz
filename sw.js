@@ -1,11 +1,12 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-653c0b76ad';
+const VERSION = 'dunia-cilik-0eafc9b9f5';
 const ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
   './css/akhlak.css',
   './css/app.css',
+  './css/bijaku.css',
   './css/racing.css',
   './css/tekasilang.css',
   './css/ui2.css',
@@ -17,6 +18,7 @@ const ASSETS = [
   './js/akhlak/store.js',
   './js/akhlak/ui.js',
   './js/audio.js',
+  './js/brand.js',
   './js/data/art.js',
   './js/data/content.js',
   './js/data/modeart.js',
@@ -51,6 +53,7 @@ const ASSETS = [
   './js/racing/ui.js',
   './js/rewards.js',
   './js/rng.js',
+  './js/screens/catalog.js',
   './js/screens/daily.js',
   './js/screens/free.js',
   './js/screens/home.js',
@@ -61,6 +64,7 @@ const ASSETS = [
   './js/screens/shop.js',
   './js/screens/timeout.js',
   './js/screens/trophy.js',
+  './js/screens/world.js',
   './js/store.js',
   './js/talk.js',
   './js/tekasilang/art.js',
@@ -74,6 +78,7 @@ const ASSETS = [
   './js/ui.js',
   './icons/icon-192.png',
   './icons/icon-512.png',
+  './icons/icon-maskable-512.png',
   './icons/icon.svg',
   './fonts/baloo2-latin.woff2',
   './visual-assets/akhlak/kebun.svg',

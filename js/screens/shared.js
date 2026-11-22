@@ -95,7 +95,7 @@ export function confirmBox(text, onYes, { yes = 'Ya', no = 'Tidak', emoji = 'ðŸ¤
 
 // Mesej versi penuh (mod demo)
 export function demoUpgrade(text = `Versi demo membuka ${DEMO_MAX} level pertama setiap permainan.`) {
-  speak('Jom dapatkan versi penuh Dunia Cilik!');
+  speak('Jom dapatkan versi penuh Bijaku!');
   const m = modal(h('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' } },
     h('div', { class: 'emo float', style: { fontSize: '64px' } }, 'ðŸ”“'),
     h('h2', {}, 'Buka 750 Level!'),

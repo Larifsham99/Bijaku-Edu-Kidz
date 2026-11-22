@@ -97,7 +97,7 @@ for (const m of MODE_LIST) {
 add('Ada level baharu sedang menunggu kamu.', 'arahan', CORE);
 add('Selesaikan level sebelumnya dahulu, ya.', 'arahan', CORE);
 ['Kutip semua barang dulu, ya.', 'Pandainya! Sekarang jalan ke tempat yang dituju.', 'Sekarang, susun semula ikut urutan tadi, ya.', 'Apa yang hilang?',
-  'Permainan ini sedang dikunci oleh ibu bapa.', 'Jom dapatkan versi penuh Dunia Cilik!', 'Pilih gambar untuk diwarnakan.', 'Pilih warna, kemudian tekan bahagian gambar.',
+  'Permainan ini sedang dikunci oleh ibu bapa.', 'Jom dapatkan versi penuh Bijaku!', 'Pilih gambar untuk diwarnakan.', 'Pilih warna, kemudian tekan bahagian gambar.',
   'Lukis apa sahaja dengan jari kamu!', 'Tekan gambar untuk mendengar bunyinya.', 'Susun objek ke dalam kumpulannya. Tiada markah, main sahaja!',
   'Pilih gambar dan bilangan kepingan.', 'Pilih kategori untuk diteroka.', 'Tekan gambar untuk dengar namanya.', 'Hai! Siapa nama kamu?', 'Pilih kawan bermain kamu!',
   'Main apa sahaja yang kamu suka. Tiada markah, tiada had!', 'Assalamualaikum. Jom cari huruf A! Bagus, kamu semakin bijak.'].forEach((t) => add(t));

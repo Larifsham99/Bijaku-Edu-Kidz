@@ -44,6 +44,16 @@ try {
   ok(await page.locator('.mode-card').count() === 15, '15 kad mod di halaman utama');
   ok(await page.locator('text=Aisyah').count() > 0, 'nama pemain dipaparkan');
   await page.screenshot({ path: 'tests/out-home.png', fullPage: true });
+  ok(await page.locator('.bj-logo[aria-label="BIJAKU oleh Mawar Ikhlas"]').count() > 0, 'logo BIJAKU oleh Mawar Ikhlas dipaparkan');
+  ok(await page.locator('.bj-shelf').count() === 5, '5 rak kategori permainan');
+  await page.click('.bj-tab:has-text("Dunia")');
+  await page.waitForSelector('.bj-isle');
+  ok(await page.locator('.bj-isle').count() === 18, 'Dunia BIJAKU: 18 pulau permainan');
+  await page.locator('.bj-isle', { hasText: 'Dunia Nombor' }).click();
+  await page.waitForFunction(() => location.hash === '#/mod/nombor');
+  ok(true, 'pulau membuka permainan');
+  await page.evaluate(() => { location.hash = '/'; });
+  await page.waitForSelector('.mode-card');
 
   // fungsi bantu: main satu level hingga selesai
   async function playLevel(pg, mode, L) {
