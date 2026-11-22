@@ -4,7 +4,8 @@
 import { CHAPTERS, LEVELS_PER_CHAPTER } from '../js/tekasilang/data.js';
 import { buildLevel, TOTAL, isPlate } from '../js/tekasilang/levels.js';
 import { ART } from '../js/tekasilang/art.js';
-import { NABI } from '../js/data/content.js';
+import { NABI, PRAISE, ENCOURAGE, ISLAMIC_PRAISE, ISLAMIC_ENCOURAGE } from '../js/data/content.js';
+import { TALK } from '../js/talk.js';
 
 let failures = 0;
 const ok = (c, m) => { if (c) console.log('✓ ' + m); else { failures++; console.log('✗ ' + m); } };
@@ -162,11 +163,16 @@ try {
   }
   await play(9, 30, 'Chapter Master 25 Nabi (L30)');
   ok(await page.locator('.ts-win.master').count() === 1, 'level 30 memaparkan pelekat & pingat chapter');
+  ok(await page.locator('.ts-win .bj-ribbon').count() === 1, 'reben pujian "Tahniah!" dipaparkan apabila level tamat');
+  const cheers = await page.evaluate(() => globalThis.__cheers || []);
+  ok(cheers.includes('good') && cheers.includes('done'), `suara pujian dimainkan (perkataan betul & level tamat: ${cheers.length} kali)`);
   await page.evaluate(() => { location.hash = '/silang/pelekat'; });
   await page.waitForSelector('.ts-sticker.got');
   ok(await page.locator('.ts-sticker.got').count() >= 1, 'pelekat chapter dibuka dalam Buku Pelekat');
-  const spokenN = await page.evaluate(() => (window.__spoken || []).length);
-  ok(spokenN === 0, `permainan tanpa suara (tiada ucapan dimainkan: ${spokenN})`);
+  const spokenAll = await page.evaluate(() => window.__spoken || []);
+  const allowed = new Set([...PRAISE, ...ENCOURAGE, ...ISLAMIC_PRAISE, ...ISLAMIC_ENCOURAGE, ...TALK.done, ...TALK.doneAll].flatMap((x) => [x, `Alhamdulillah! ${x}`]));
+  const odd = spokenAll.filter((x) => !allowed.has(x.trim()));
+  ok(odd.length === 0, `hanya suara pujian/galakan (tiada arahan bersuara): ${spokenAll.length} ucapan${odd.length ? ' · luar senarai: ' + odd.slice(0, 3).join(' | ') : ''}`);
   // kunci ibu bapa
   await page.evaluate(() => { window.__dc.getState().settings.disabledModes.push('silang'); location.hash = '/'; });
   await page.waitForSelector('.mode-card');

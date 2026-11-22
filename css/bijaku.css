@@ -236,3 +236,38 @@ html:has(.bj-world) body { background: #c8f0d4; }
   .bj-slide-art { right: 6%; }
 }
 .bj-home .bj-tile .meta .ic { width: 12px; height: 12px; }
+
+/* ---------- reben pujian bersayap (semua permainan) ---------- */
+.bj-ribbon { position: relative; display: flex; flex-direction: column; align-items: center; margin: 0 auto; width: min(340px, 92%); padding-top: 4px; animation: bjRbIn .6s cubic-bezier(.2, 1.5, .4, 1) both; z-index: 1; }
+.bj-rb-burst { position: absolute; left: 50%; top: 44%; width: 300px; height: 300px; transform: translate(-50%, -50%); z-index: -1; pointer-events: none; border-radius: 50%;
+  background: repeating-conic-gradient(rgba(255, 236, 150, .55) 0 10deg, transparent 10deg 22deg); -webkit-mask: radial-gradient(circle, #000 25%, transparent 68%); mask: radial-gradient(circle, #000 25%, transparent 68%); animation: bjSpin 14s linear infinite; }
+.bj-rb-top { width: 170px; margin-bottom: -26px; position: relative; z-index: 2; filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .18)); }
+.bj-rb-top svg { display: block; width: 100%; height: auto; }
+.bj-rb-band { position: relative; display: flex; align-items: center; justify-content: center; }
+.bj-rb-band b {
+  position: relative; z-index: 1; display: block; padding: 6px 30px 8px; border-radius: 14px; min-width: 190px; text-align: center;
+  font-size: clamp(32px, 9vw, 44px); line-height: 1.05; font-weight: 900; color: #fff; letter-spacing: .5px;
+  background: linear-gradient(180deg, #ff6b5b, #e0312f); box-shadow: inset 0 4px 0 rgba(255, 255, 255, .35), inset 0 -6px 0 rgba(0, 0, 0, .15), 0 6px 0 #9e1d22, 0 12px 18px rgba(0, 0, 0, .22);
+  text-shadow: 0 3px 0 #9e1d22, 0 0 1px #9e1d22; transform: perspective(300px) rotateX(8deg);
+}
+.bj-rb-tail { position: absolute; top: 18px; width: 46px; height: 46px; background: #b8232a; z-index: 0; }
+.bj-rb-tail.l { left: -26px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 32% 50%); }
+.bj-rb-tail.r { right: -26px; clip-path: polygon(0 0, 100% 0, 68% 50%, 100% 100%, 0 100%); }
+.bj-rb-sub { margin-top: 12px; font-weight: 900; font-size: 20px; color: var(--bj-ink); background: #fff; padding: 3px 16px; border-radius: 99px; box-shadow: 0 4px 0 rgba(0, 0, 0, .12); }
+.bj-rb-stars { display: flex; gap: 6px; margin-top: 8px; align-items: flex-end; }
+.bj-rb-stars i { width: 40px; height: 40px; filter: grayscale(1) brightness(1.4) opacity(.45); }
+.bj-rb-stars i:nth-child(2) { width: 52px; height: 52px; }
+.bj-rb-stars i.on { filter: drop-shadow(0 4px 2px rgba(0, 0, 0, .2)); animation: bjStarPop .5s cubic-bezier(.2, 1.6, .4, 1) both; }
+.bj-rb-stars svg { width: 100%; height: 100%; display: block; }
+.bj-flash { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; pointer-events: none; }
+.bj-flash .bj-ribbon { transform: scale(.9); }
+.bj-flash.out { animation: bjFlashOut .4s ease forwards; }
+.win-head .bj-ribbon { margin: 2px auto 0; }
+.win-head .bj-rb-sub { color: var(--bj-ink); }
+.ts-win .bj-ribbon, .rc-result .bj-ribbon { margin-bottom: 6px; }
+.ak-lesson .bj-ribbon { margin-bottom: 8px; }
+@keyframes bjRbIn { from { opacity: 0; transform: scale(.4) translateY(30px); } }
+@keyframes bjStarPop { from { transform: scale(0) rotate(-40deg); } }
+@keyframes bjSpin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes bjFlashOut { to { opacity: 0; transform: translateY(-30px) scale(.9); } }
+@media (prefers-reduced-motion: reduce) { .bj-ribbon, .bj-rb-burst, .bj-rb-stars i.on { animation: none !important; } }

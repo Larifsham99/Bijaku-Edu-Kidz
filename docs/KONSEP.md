@@ -16,6 +16,7 @@
 - **Skrin utama:** banner (sambung bermain + Taman Akhlak, Cilik Racing, Teka Silang), butang pantas, 5 rak kategori (Huruf & Nombor, Islam & Akhlak, Minda Pintar, Kreatif & Bunyi, Dunia Sekeliling), Doa Hari Ini, bar tab bawah.
 - **Dunia BIJAKU** (`#/dunia`, `js/screens/world.js`): peta pulau isometrik, satu pulau untuk setiap permainan (18), disambung jalan bertitik.
 - Katalog permainan dikongsi dalam `js/screens/catalog.js` (tambah permainan baharu ke `SHELVES`/`EXTRAS`).
+- **Pujian bersama** (`js/cheer.js`): `cheer('good'|'try'|'done')` memainkan suara pujian/galakan yang sudah dirakam, dan `ribbon()` memaparkan reben "Hebat!/Tahniah!" bersayap dengan bintang. Digunakan dalam 15 permainan asal, Teka Silang, Cilik Racing & Taman Akhlak — guna juga untuk setiap permainan baharu.
 
 ## 1. Apa itu Dunia Cilik
 Aplikasi permainan pendidikan untuk kanak-kanak prasekolah. Ia mempunyai **15 permainan** dan setiap permainan ada **50 level** (jumlah **750 level**). Setiap permainan menggunakan mekanik interaktif tersendiri seperti seret dan lepas, padanan, puzzle, memori, maze, mewarna, menyurih dan mengira, bukan sekadar soalan dan jawapan. Semua arahan dibacakan dengan suara, jadi anak yang belum boleh membaca pun boleh bermain sendiri.
@@ -45,7 +46,7 @@ Prinsip utama:
 | 13 | Dunia Haiwan | Nama, habitat, makanan dan anak haiwan, kelaskan haiwan | Pilih, padan, asingkan |
 | 14 | Asah Minda | Cari yang berbeza, corak, teka-teki, selesaikan masalah, urutan | Pilih, padan, susun |
 | 15 | Misi Pengembaraan | Misi bercerita ke hutan, laut, angkasa dan ladang | Gabungan: cari, kira, maze, asingkan, puzzle |
-| 17 | **Teka Silang Cilik** | Pendidikan awal Islam: Allah, rukun Islam & iman, solat, wuduk, doa, adab, keluarga, masjid, 25 nabi, kisah nabi, makanan halal, ciptaan Allah, Ramadan | Teka silang bergambar, huruf hilang, cari huruf, padan, bayang (tanpa suara) |
+| 17 | **Teka Silang Cilik** | Pendidikan awal Islam: Allah, rukun Islam & iman, solat, wuduk, doa, adab, keluarga, masjid, 25 nabi, kisah nabi, makanan halal, ciptaan Allah, Ramadan | Teka silang bergambar, huruf hilang, cari huruf, padan, bayang (tiada arahan bersuara; hanya suara pujian (tanpa suara) galakan) |
 | 16 | **Cilik Racing** | Berlumba sambil belajar: huruf, nombor, warna, bentuk, haiwan, ejaan, memori, adab | Lumba 2.5D: tukar lorong, pintu jawapan, kutip, elak, pit stop |
 
 ### Cilik Racing — "Belajar, Pecut, Teroka!"

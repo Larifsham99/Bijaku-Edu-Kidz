@@ -7,6 +7,7 @@ import { MODES, generateLevel, makeRound, TIERS } from '../modes/index.js';
 import { PRAISE, ENCOURAGE, ISLAMIC_PRAISE, ISLAMIC_ENCOURAGE } from '../data/content.js';
 import { speak, stopSpeak, sfx, playSound, speakWord, haptic, voicePack } from '../audio.js';
 import { TALK, pick, echoable } from '../talk.js';
+import { ribbon } from '../cheer.js';
 import { icon } from '../icons.js';
 import { profile, settings, save, recordSkill, addActivity, modeProg, isUnlocked } from '../store.js';
 import { awardLevel, addStars, checkBadges } from '../rewards.js';
@@ -248,8 +249,7 @@ function showLevelDone({ p, mode, level, stars, rewards, totalMistakes, special 
     h('div', { class: 'win-head' },
       h('span', { class: 'emo float' }, special ? '🎁' : '🎉'),
       alh ? h('div', { class: 'win-alh' }, 'Alhamdulillah!') : null,
-      h('h2', {}, `Level ${level} Selesai!`),
-      h('div', { class: 'win-stars' }, Array.from({ length: stars }, (_, i) => { const st = icon('star'); st.style.animationDelay = `${0.25 + i * 0.18}s`; return st; }))),
+      ribbon(totalMistakes === 0 ? 'Hebat!' : pick(['Tahniah!', 'Syabas!', 'Bagus!', 'Terbaik!']), { sub: `Level ${level} Selesai!`, stars: totalMistakes === 0 ? 3 : totalMistakes <= 2 ? 2 : 1 })),
     h('p', {}, msg),
     h('div', { class: 'reward-list' }, rewards.map((r) => h('span', { class: 'pill', style: r.big ? { background: '#fff3c4' } : null }, r.e === '🪙' ? icon('coin') : emo(r.e), r.n))),
     h('div', { class: 'row' },

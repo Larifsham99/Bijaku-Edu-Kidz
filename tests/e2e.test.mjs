@@ -72,6 +72,7 @@ try {
       await pg.waitForTimeout(150);
     }
     const fin = await pg.locator('text=Selesai!').count();
+    if (fin && !playLevel.shot) { playLevel.shot = true; await pg.waitForTimeout(900); await pg.screenshot({ path: 'tests/out-win.png' }); ok(await pg.locator('.win-head .bj-ribbon').count() === 1, 'reben pujian pada skrin level selesai'); }
     if (!fin) { const info = await pg.evaluate(() => { const s = window.__dc.session(); return s ? `pusingan ${s.index + 1}/${s.rounds.length} ${s.rounds[s.index]?.type}/${s.rounds[s.index]?.gen}` : 'tiada sesi'; }); ok(false, `${mode} L${L} tidak selesai — ${info}`); }
     return fin > 0;
   }
