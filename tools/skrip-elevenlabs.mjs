@@ -116,7 +116,7 @@ main{max-width:900px;margin:0 auto;padding:12px 16px 60px;display:grid;gap:10px}
 button{font:inherit;font-weight:700;border:0;border-radius:14px;padding:9px 14px;cursor:pointer}.copy{background:#2f9e6a;color:#fff}.see{background:#ece6fa;color:var(--ink)}.tick{background:#fff;border:2px solid #d9d3ea}
 pre{width:100%;white-space:pre-wrap;background:#f8f6ff;border-radius:12px;padding:10px;max-height:260px;overflow:auto;display:none;margin:6px 0 0;font-size:13px}.part.open pre{display:block}
 </style></head><body>
-<header><h1>Skrip ElevenLabs: baki ${list.length} ayat</h1><p>${parts.length} bahagian · ${total.toLocaleString('ms')} aksara (± kredit). Tekan "Salin", paste ke ElevenLabs v3, jana, muat turun MP3. Namakan fail ikut nombor bahagian (cth. 07.mp3) jika boleh. Tanda ✓ selepas siap.</p></header>
+<header><h1>Skrip ElevenLabs: baki ${list.length} ayat</h1><p>${parts.length} bahagian · ${total.toLocaleString('ms')} aksara (± kredit). Tekan "Salin", paste ke ElevenLabs v3, jana, muat turun MP3. Penting: namakan setiap fail MP3 ikut nombor bahagian (cth. 07.mp3) supaya klip dipadankan dengan betul. Tanda ✓ selepas siap.</p></header>
 <main>${pages.map((p) => `<div class="part" data-id="${p.id}"><b>Bahagian ${p.id}</b><span>${p.n} ayat · ${p.chars} aksara</span><button class="copy" type="button">Salin</button><button class="see" type="button">Lihat</button><button class="tick" type="button">✓</button><pre>${esc(p.txt)}</pre></div>`).join('\n')}</main>
 <script>
 const done=new Set(JSON.parse(localStorage.getItem('dc-skrip-siap')||'[]'));
