@@ -7,6 +7,16 @@
 
 ---
 
+## Garis panduan akidah & sensitiviti (WAJIB untuk semua permainan)
+
+1. **Allah tidak digambarkan** dengan apa-apa imej: tiada langit, cahaya, matahari, awan, mata, tangan atau simbol yang boleh difahami sebagai "rupa" Tuhan. Perkataan seperti ALLAH, TUHAN, RAHMAT dan CAHAYA (dalam konteks sifat Allah) hanya ditulis pada papan nama kosong.
+2. **Malaikat, nabi dan rasul tidak digambarkan**: hanya papan nama, atau objek yang berkaitan dengan kisah (bahtera, tongkat, unta). Tiada emoji orang/wajah untuk nabi atau rasul.
+3. **Alam ghaib** (akhirat, syurga, qada' dan qadar) tidak digambarkan dengan pemandangan; guna papan nama atau ikon neutral.
+4. Imej kaligrafi kalimah Allah tidak dijadikan objek permainan (kepingan yang diseret, dilanggar atau pilihan jawapan).
+5. Hindari unsur syirik/khurafat (bola kristal, tilik nasib), babi/arak sebagai hiasan atau pilihan jawapan, dan simbol agama lain.
+6. Ibadah (wuduk, solat, doa) mengikut amalan mazhab Syafie di Malaysia, dengan sumber doa dinyatakan.
+7. Apabila ragu-ragu, pilih papan nama atau ikon neutral, dan rujuk ibu bapa/ustaz sebelum menambah.
+
 ## Jenama: BIJAKU oleh Mawar Ikhlas
 
 - **Nama aplikasi:** BIJAKU (bi-ja-ku, "bijakku"). **Syarikat:** Mawar Ikhlas (ditulis "oleh Mawar Ikhlas").

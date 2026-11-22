@@ -80,8 +80,8 @@ export const COLORS = [
   { id: 'kuning', n: 'Kuning', en: 'Yellow', hex: '#ffd60a', items: ['🍌', '🌻', '⭐', '🐥', '🍋', '🌽', '🧀', '🚕'] },
   { id: 'hijau', n: 'Hijau', en: 'Green', hex: '#38b000', items: ['🥦', '🐸', '🍀', '🥒', '🌲', '🍏', '🐢', '🥬'] },
   { id: 'oren', n: 'Oren', en: 'Orange', hex: '#ff8c1a', items: ['🍊', '🥕', '🎃', '🦊', '🏀', '🧡', '🦁', '🍑'] },
-  { id: 'ungu', n: 'Ungu', en: 'Purple', hex: '#9d4edd', items: ['🍇', '🍆', '💜', '🔮', '☂️', '🟣', '🦄', '👾'] },
-  { id: 'merahjambu', n: 'Merah jambu', en: 'Pink', hex: '#ff70a6', items: ['🌸', '🐷', '🎀', '🦩', '💗', '🍑', '🌷', '🩷'] },
+  { id: 'ungu', n: 'Ungu', en: 'Purple', hex: '#9d4edd', items: ['🍇', '🍆', '💜', '🪻', '☂️', '🟣', '🦄', '👾'] },
+  { id: 'merahjambu', n: 'Merah jambu', en: 'Pink', hex: '#ff70a6', items: ['🌸', '🌺', '🎀', '🦩', '💗', '🍑', '🌷', '🩷'] },
   { id: 'coklat', n: 'Coklat', en: 'Brown', hex: '#8b5a2b', items: ['🐻', '🍫', '🥔', '🌰', '🪵', '🍪', '🐴', '🥥'] },
   { id: 'hitam', n: 'Hitam', en: 'Black', hex: '#222222', items: ['🖤', '🎱', '🐈‍⬛', '🕶️', '🎩', '⚫', '🦍', '🐜'] },
   { id: 'putih', n: 'Putih', en: 'White', hex: '#f4f4f4', items: ['⚪', '☁️', '🐑', '🥚', '🦢', '⛄', '🦷', '🍚'] },
@@ -93,8 +93,8 @@ export const COLOR_OBJECTS = {
   kuning: ['🍌', '🌻', '⭐', '🐥', '🍋', '🌽'],
   hijau: ['🥦', '🐸', '🍀', '🥒', '🌲', '🍏'],
   oren: ['🍊', '🥕', '🎃', '🏀', '🧡'],
-  ungu: ['🍇', '🍆', '💜', '🔮'],
-  merahjambu: ['🐷', '🎀', '🦩', '💗', '🌷'],
+  ungu: ['🍇', '🍆', '💜', '🪻'],
+  merahjambu: ['🌺', '🎀', '🦩', '💗', '🌷'],
   coklat: ['🐻', '🍫', '🥔', '🌰', '🍪'],
 };
 // Gabungan warna (asas -> sekunder)
@@ -137,7 +137,7 @@ export const shapeSvg = (id, fill = '#a77bff', size = '1em') => {
 // Haiwan: hab = darat/air/udara, home = id habitat, food = makanan, size = saiz relatif (1 kecil -> 10 besar)
 export const ANIMALS = [
   { id: 'kucing', e: '🐱', n: 'Kucing', en: 'Cat', hab: 'darat', home: 'rumah', food: 'ikan', size: 3, legs: 4, kind: 'mamalia', snd: 'kucing' },
-  { id: 'anjing', e: '🐶', n: 'Anjing', en: 'Dog', hab: 'darat', home: 'rumah', food: 'tulang', size: 4, legs: 4, kind: 'mamalia', snd: 'anjing' },
+  { id: 'anjing', e: '🐶', n: 'Anjing', en: 'Dog', hab: 'darat', home: 'ladang', food: 'tulang', size: 4, legs: 4, kind: 'mamalia', snd: 'anjing' },
   { id: 'lembu', e: '🐄', n: 'Lembu', en: 'Cow', hab: 'darat', home: 'ladang', food: 'rumput', size: 7, legs: 4, kind: 'mamalia', snd: 'lembu' },
   { id: 'kambing', e: '🐐', n: 'Kambing', en: 'Goat', hab: 'darat', home: 'ladang', food: 'rumput', size: 5, legs: 4, kind: 'mamalia', snd: 'kambing' },
   { id: 'biri', e: '🐑', n: 'Biri-biri', en: 'Sheep', hab: 'darat', home: 'ladang', food: 'rumput', size: 5, legs: 4, kind: 'mamalia', snd: 'biri' },
@@ -196,7 +196,6 @@ export const BABIES = [
   { mom: '🐱', n: 'Kucing', baby: '🐱', bn: 'Anak kucing', small: true },
   { mom: '🐶', n: 'Anjing', baby: '🐶', bn: 'Anak anjing', small: true },
   { mom: '🐄', n: 'Lembu', baby: '🐮', bn: 'Anak lembu' },
-  { mom: '🐖', n: 'Babi hutan', baby: '🐷', bn: 'Anak', skip: true },
   { mom: '🐑', n: 'Biri-biri', baby: '🐑', bn: 'Anak biri-biri', small: true },
   { mom: '🐘', n: 'Gajah', baby: '🐘', bn: 'Anak gajah', small: true },
   { mom: '🐴', n: 'Kuda', baby: '🐴', bn: 'Anak kuda', small: true },
@@ -349,7 +348,7 @@ export const RIDDLES = [
   { q: 'Saya menunjukkan masa. Apa saya?', a: '⏰', no: ['📱', '💡', '📺'] },
   { q: 'Saya hijau dan suka melompat. Saya berbunyi "kuak kuak". Siapa saya?', a: '🐸', no: ['🐢', '🐍', '🐊'] },
   { q: 'Saya membantu kamu melihat dalam gelap. Apa saya?', a: '🔦', no: ['🔑', '✂️', '🧸'] },
-  { q: 'Saya berbulu putih dan memberikan bulu untuk baju. Siapa saya?', a: '🐑', no: ['🐄', '🐐', '🐖'] },
+  { q: 'Saya berbulu putih dan memberikan bulu untuk baju. Siapa saya?', a: '🐑', no: ['🐄', '🐐', '🐎'] },
 ];
 // Masalah mudah / pilih yang sesuai
 export const PROBLEMS = [
@@ -452,11 +451,11 @@ export const RUKUN_ISLAM = [
 ];
 export const RUKUN_IMAN = [
   { e: '☝️', n: 'Beriman kepada Allah' },
-  { e: '✨', n: 'Beriman kepada malaikat' },
+  { e: '📝', n: 'Beriman kepada malaikat' },
   { e: '📖', n: 'Beriman kepada kitab-kitab' },
-  { e: '👳', n: 'Beriman kepada rasul-rasul' },
-  { e: '🌅', n: 'Beriman kepada hari akhirat' },
-  { e: '⚖️', n: "Beriman kepada qada' dan qadar" },
+  { e: '📜', n: 'Beriman kepada rasul-rasul' },
+  { e: '⏳', n: 'Beriman kepada hari akhirat' },
+  { e: '🌱', n: "Beriman kepada qada' dan qadar" },
 ];
 // Anggota wuduk (fardu) mengikut tertib
 export const WUDUK = [
@@ -473,7 +472,7 @@ export const WUDUK_PARTS = [
 export const ADAB = [
   { q: 'Kita makan dengan tangan...', a: { e: '🫱', n: 'Kanan' }, no: [{ e: '🫲', n: 'Kiri' }] },
   { q: 'Apabila berjumpa kawan, kita memberi...', a: { e: '👋', n: 'Salam' }, no: [{ e: '😠', n: 'Marah' }, { e: '🙈', n: 'Lari' }] },
-  { q: 'Apabila menerima hadiah, kita ucapkan...', a: { e: '🙏', n: 'Terima kasih' }, no: [{ e: '😝', n: 'Ejek' }, { e: '🤐', n: 'Diam sahaja' }] },
+  { q: 'Apabila menerima hadiah, kita ucapkan...', a: { e: '😊', n: 'Terima kasih' }, no: [{ e: '😝', n: 'Ejek' }, { e: '🤐', n: 'Diam sahaja' }] },
   { q: 'Sebelum masuk bilik orang, kita...', a: { e: '🚪', n: 'Ketuk dan minta izin' }, no: [{ e: '🏃', n: 'Terus masuk' }] },
   { q: 'Apabila bercakap dengan ibu bapa, kita...', a: { e: '😊', n: 'Bercakap dengan sopan' }, no: [{ e: '😤', n: 'Menjerit' }] },
   { q: 'Sebelum makan, kita membaca...', a: { e: '🤲', n: 'Bismillah' }, no: [{ e: '🎵', n: 'Lagu' }, { e: '📺', n: 'Tonton TV' }] },
@@ -502,7 +501,7 @@ export const WORLDS = [
   { id: 'hutan', n: 'Hutan', e: '🌳', bg: ['#d8f3dc', '#74c69d'], hero: '🐰', heroN: 'Coco', goal: '🏡', goalN: 'rumah', items: ['🍄', '🍌', '🌰', '🍓'], itemsN: ['cendawan', 'pisang', 'kacang', 'strawberi'], friendsN: ['monyet', 'burung kakak tua', 'tupai', 'beruang'], deco: ['🌳', '🌲', '🌿', '🦜', '🐒', '🦋', '🌺', '🐿️'], friends: ['🐒', '🦜', '🐿️', '🐻'], obstacle: '🪨' },
   { id: 'laut', n: 'Laut', e: '🌊', bg: ['#caf0f8', '#0096c7'], hero: '🐢', heroN: 'Kura-kura', goal: '🪸', goalN: 'batu karang', items: ['🐚', '⭐', '🦪', '🫧'], itemsN: ['kulit kerang', 'bintang laut', 'tiram', 'buih'], friendsN: ['ikan', 'gurita', 'ketam', 'ikan lumba-lumba'], deco: ['🐟', '🐠', '🐡', '🦀', '🐙', '🪸', '🐬', '🦑'], friends: ['🐟', '🐙', '🦀', '🐬'], obstacle: '🪨' },
   { id: 'angkasa', n: 'Angkasa', e: '🚀', bg: ['#240046', '#5a189a'], hero: '🚀', heroN: 'Roket Dino', goal: '🪐', goalN: 'planet', items: ['⭐', '🌙', '☄️', '💎'], itemsN: ['bintang', 'bulan', 'komet', 'permata'], friendsN: ['kawan angkasa', 'robot', 'piring terbang', 'angkasawan'], deco: ['✨', '🌍', '🛰️', '👽', '🌟', '🌕', '🪐', '☄️'], friends: ['👽', '🤖', '🛸', '👨‍🚀'], obstacle: '☄️' },
-  { id: 'ladang', n: 'Ladang', e: '🌾', bg: ['#fff3b0', '#b5e48c'], hero: '🐱', heroN: 'Mimi', goal: '🏠', goalN: 'rumah', items: ['🥕', '🥚', '🌽', '🍎'], itemsN: ['lobak merah', 'telur', 'jagung', 'epal'], friendsN: ['lembu', 'ayam', 'biri-biri', 'kuda'], deco: ['🐄', '🐔', '🐑', '🚜', '🌻', '🌾', '🐖', '🐐'], friends: ['🐄', '🐔', '🐑', '🐴'], obstacle: '🪵' },
+  { id: 'ladang', n: 'Ladang', e: '🌾', bg: ['#fff3b0', '#b5e48c'], hero: '🐱', heroN: 'Mimi', goal: '🏠', goalN: 'rumah', items: ['🥕', '🥚', '🌽', '🍎'], itemsN: ['lobak merah', 'telur', 'jagung', 'epal'], friendsN: ['lembu', 'ayam', 'biri-biri', 'kuda'], deco: ['🐄', '🐔', '🐑', '🚜', '🌻', '🌾', '🦆', '🐐'], friends: ['🐄', '🐔', '🐑', '🐴'], obstacle: '🪵' },
 ];
 
 // ================== KARAKTER, AVATAR & KOSTUM ==================

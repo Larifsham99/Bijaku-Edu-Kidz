@@ -57,8 +57,6 @@ const tree = (x, y, k = 1) => `<g transform="translate(${x} ${y}) scale(${k})">$
 const fish = (x, y, k = 1, f = '#4dabf7') => `<g transform="translate(${x} ${y}) scale(${k})">${p('M14 0L28 -10V10Z', f)}${e(0, 0, 18, 11, f)}${c(-8, -2, 2.6, '#2b2350')}${hl(-3, -5, 7, 2.5, 0.5)}${s('M4 -6Q8 0 4 6', '#fff', 1.6, 'opacity=".6"')}</g>`;
 
 export const ART = {
-  allah: () => c(50, 50, 36, '#f2c14e') + c(50, 50, 30, '#fff8db') + [...Array(8)].map((_, i) => star(50 + Math.cos(i * Math.PI / 4) * 33, 50 + Math.sin(i * Math.PI / 4) * 33, 4, 2, '#e8a10b')).join('') + t(50, 62, 'الله', 30, '#2f9e6a', 'font-family="Amiri, Scheherazade, Noto Naskh Arabic, serif"') + hl(38, 30, 10, 4, 0.5),
-  langitcahaya: () => sky('#74c0fc', '#d0ebff') + [...Array(7)].map((_, i) => p(`M50 22L${20 + i * 10} 94L${26 + i * 10} 94Z`, '#fff9db', 'opacity=".55"')).join('') + c(50, 22, 12, '#fff3bf') + cloud(26, 70, 0.8) + cloud(74, 76, 0.7),
   bulanbintang: () => c(50, 50, 38, '#1c3d72') + moon(44, 50, 22, '#ffd43b', '#1c3d72') + star(70, 40, 9, 4, '#ffd43b') + star(30, 26, 3, 1.4, '#fff') + star(74, 72, 3, 1.4, '#fff'),
   hatisinar: () => [...Array(10)].map((_, i) => { const a = i * Math.PI / 5; return s(`M${50 + Math.cos(a) * 30} ${52 + Math.sin(a) * 30}L${50 + Math.cos(a) * 42} ${52 + Math.sin(a) * 42}`, '#ffd43b', 4); }).join('') + heart(50, 50, 1.25, '#f03e3e') + hl(40, 38, 6, 3, 0.6) + star(50, 50, 7, 3, '#fff3bf'),
   tadah: () => sh() + hand(34, 70, 1.2, -18) + hand(66, 70, 1.2, 18) + [...Array(5)].map((_, i) => s(`M${38 + i * 6} 26l0 -8`, '#ffd43b', 3)).join('') + star(50, 14, 5, 2, '#ffd43b'),
@@ -193,7 +191,6 @@ export const ART = {
   tiga: () => t(50, 74, '3', 72, '#1c7ed6', 'stroke="#fff" stroke-width="4" paint-order="stroke"') + star(78, 22, 6, 2.5, '#ffd43b'),
   muslim: () => person({ head: 'kopiah', top: '#37b24d', k: 1.15, arms: 'wave' }) + moon(80, 22, 7, '#ffd43b', '#fff'),
   pahala: () => sh(50, 90, 26) + p('M30 40Q30 30 50 30Q70 30 70 40L74 82Q74 90 50 90Q26 90 26 82Z', '#a5d8ff', 'opacity=".7"') + r(34, 22, 32, 10, 4, '#74c0fc') + [[42, 70], [58, 64], [48, 52], [60, 80], [38, 82]].map(([x, y]) => star(x, y, 7, 3, '#ffd43b')).join(''),
-  hujanrahmat: () => sky('#a5d8ff', '#e7f5ff') + cloud(50, 32, 1.3) + [[30, 58], [44, 66], [58, 58], [72, 66], [38, 80], [64, 80]].map(([x, y]) => star(x, y, 4, 1.8, '#4dabf7')).join('') + p('M10 92Q50 76 90 92Z', '#69db7c'),
   cinta: () => sh(50, 88, 30) + heart(38, 50, 1, '#ff6b6b') + heart(62, 50, 1, '#f783ac') + hl(30, 40, 5, 2.5, 0.6),
   wang: () => sh(50, 84, 34) + r(18, 34, 64, 36, 5, '#69db7c') + r(22, 38, 56, 28, 3, 'none', 'stroke="#2f9e6a" stroke-width="2"') + c(50, 52, 9, '#2f9e6a') + t(50, 56, 'RM', 9, '#fff') + r(26, 28, 64, 36, 5, '#8ce99a', 'opacity=".55"'),
   syiling: () => sh(50, 86, 30) + [[36, 64], [60, 58], [48, 40]].map(([x, y]) => c(x, y, 16, '#e8a10b') + c(x, y, 12, '#ffd43b') + t(x, y + 4, '¢', 12, '#c99512')).join(''),

@@ -92,6 +92,15 @@ ok(S.chapterOpen(t, 1) && res.openedChapter === 1, 'selepas 10 level, chapter 2 
 S.resetSilang('u');
 ok(S.totalStars(S.tprof('u')) === 0, 'set semula ibu bapa memadam kemajuan Teka Silang');
 
+// akidah: Allah, malaikat & alam ghaib tidak digambarkan
+{
+  const words = CHAPTERS.flatMap((c) => c.words);
+  const mustPlate = ['ALLAH', 'TUHAN', 'MALAIKAT', 'AKHIRAT', 'RAHMAT', 'SYURGA', 'JIBRIL', 'WAHYU'];
+  const bad = words.filter((w) => mustPlate.includes(w.w ?? w.word ?? w[0]) && (w.art ?? w[1]) !== 'plat');
+  ok(!('allah' in ART) && !('langitcahaya' in ART) && bad.length === 0 && !CHAPTERS.some((c) => c.icon === 'allah'), `akidah: Allah, malaikat & alam ghaib hanya pada papan nama (tiada gambaran)${bad.length ? ': ' + bad.map((w) => w.w ?? w[0]).join(', ') : ''}`);
+  const { RUKUN_IMAN } = await import('../js/data/content.js');
+  ok(!RUKUN_IMAN.some((r) => /👳|😇|👼|✨|🌅/u.test(r.e)), 'akidah: rukun iman tanpa gambaran malaikat/rasul/alam ghaib');
+}
 if (process.argv.includes('--data')) { console.log(failures ? `\n✗ ${failures} gagal` : '\n✓ Ujian data Teka Silang lulus'); process.exit(failures ? 1 : 0); }
 
 // ---------------- PELAYAR ----------------
