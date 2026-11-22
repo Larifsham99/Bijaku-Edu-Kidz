@@ -33,6 +33,8 @@ jobs:
         run: node tests/silang.test.mjs --data
       - name: Sahkan 30 kisah Taman Akhlak
         run: node tests/akhlak.test.mjs --data
+      - name: Sahkan 4 permainan baharu (120 level)
+        run: node tests/games.test.mjs --data
 
   deploy:
     needs: test

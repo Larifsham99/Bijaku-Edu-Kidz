@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <ellipse cx="100" cy="186" rx="76" ry="10" fill="#000" opacity=".15"/>
+  <rect x="20" y="24" width="96" height="22" rx="8" fill="#adb5bd"/><rect x="96" y="24" width="24" height="48" rx="8" fill="#ced4da"/><rect x="46" y="10" width="26" height="16" rx="5" fill="#4dabf7"/>
+  <path d="M108 72v40" stroke="#74c0fc" stroke-width="12" stroke-linecap="round"/>
+  <g fill="#4dabf7"><path d="M76 96q6 10 0 14-6-4 0-14z"/><path d="M140 92q6 10 0 14-6-4 0-14z"/><path d="M152 122q5 8 0 12-5-4 0-12z"/></g>
+  <path d="M60 128q48-22 96 0 10 6 4 16-14 20-52 20t-52-20q-6-10 4-16z" fill="#f8cfa8"/>
+  <path d="M68 132q20-12 40-8M110 124q20 2 38 10" stroke="#eab28a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M40 160q60 24 120 0v14H40z" fill="#4dabf7"/><path d="M40 160q60 24 120 0" stroke="#a5d8ff" stroke-width="5" fill="none"/>
+  <circle cx="98" cy="146" r="4" fill="#fff" opacity=".8"/><circle cx="122" cy="140" r="3" fill="#fff" opacity=".8"/>
+  <g transform="translate(150 40)"><path d="M0 -18q14 6 6 22-14 8-22-6 8 0 16-16z" fill="#ffd43b"/><circle cx="12" cy="-16" r="3" fill="#ffd43b"/></g>
+</svg>

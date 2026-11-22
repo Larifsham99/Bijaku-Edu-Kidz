@@ -6,6 +6,7 @@ import { modeArt } from '../data/modeart.js';
 import { settings, levelsDone } from '../store.js';
 import { speak, sfx } from '../audio.js';
 import { icon } from '../icons.js';
+import { GAMES } from '../games/registry.js';
 
 // Modul berasingan (storan & enjin sendiri)
 export const EXTRAS = {
@@ -14,12 +15,15 @@ export const EXTRAS = {
   silang: { id: 'silang', n: 'Teka Silang Cilik', c: '#ff9f1c', img: 'visual-assets/tekasilang/papan.svg', sub: 'Susun huruf, cari jawapan!', route: '/silang', cls: 'ts-entry', bg: ['#ffc94d', '#ff8a1f', '#c25e00'] },
 };
 
+// Permainan baharu Fasa 2+ (rangka kongsi js/games)
+Object.values(GAMES).forEach((g) => { EXTRAS[g.id] = { id: g.id, n: g.n, c: g.c, img: g.img, sub: g.sub, route: `/g/${g.id}`, cls: '', bg: g.bg, isNew: true }; });
+
 export const SHELVES = [
-  { t: 'Huruf & Nombor', ids: ['abc', 'nombor', 'kelas', 'silang'] },
-  { t: 'Islam & Akhlak', ids: ['soleh', 'akhlak'] },
-  { t: 'Minda Pintar', ids: ['puzzle', 'ingatan', 'bayang', 'minda', 'maze'] },
+  { t: 'Huruf & Nombor', ids: ['abc', 'nombor', 'kedai', 'kelas', 'silang'] },
+  { t: 'Islam & Akhlak', ids: ['soleh', 'wuduk', 'akhlak'] },
+  { t: 'Minda Pintar', ids: ['robot', 'puzzle', 'ingatan', 'bayang', 'minda', 'maze'] },
   { t: 'Kreatif & Bunyi', ids: ['warna', 'seni', 'bunyi'] },
-  { t: 'Dunia Sekeliling', ids: ['harian', 'haiwan', 'misi', 'lumba'] },
+  { t: 'Sains & Dunia Sekeliling', ids: ['makmal', 'harian', 'haiwan', 'misi', 'lumba'] },
 ];
 
 export const ALL_IDS = SHELVES.flatMap((s) => s.ids);

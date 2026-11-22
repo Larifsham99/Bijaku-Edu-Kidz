@@ -18,6 +18,19 @@
 - Katalog permainan dikongsi dalam `js/screens/catalog.js` (tambah permainan baharu ke `SHELVES`/`EXTRAS`).
 - **Pujian bersama** (`js/cheer.js`): `cheer('good'|'try'|'done')` memainkan suara pujian/galakan yang sudah dirakam, dan `ribbon()` memaparkan reben "Hebat!/Tahniah!" bersayap dengan bintang. Digunakan dalam 15 permainan asal, Teka Silang, Cilik Racing & Taman Akhlak — guna juga untuk setiap permainan baharu.
 
+## Fasa 2: 4 permainan baharu (rangka kongsi `js/games/`)
+
+Setiap permainan: 30 level dalam 3 bab, peta level 2.5D, bintang 1–3, suara arahan, pujian & reben bersama, kunci/set semula ibu bapa, boleh dimainkan luar talian. Kemajuan disimpan dalam `dc-games-v1` (+ sandaran IndexedDB). Laluan `#/g/<id>` dan `#/g/<id>/<level>`.
+
+| Permainan | Bab 1 | Bab 2 | Bab 3 |
+|---|---|---|---|
+| **Kedai Runcit Cilik** (`kedai`) | Bayar tepat dengan RM1 (harga RM1–RM9) | Duit kertas RM1, RM5 & RM10 (RM5–RM20) | Dua barang: campur harga, bayar jumlah |
+| **Makmal Cilik** (`makmal`) | Campur warna (primer → sekunder, tambah putih/hitam) | Timbul atau tenggelam (ramal → uji) | Kuasa magnet (hanya besi/keluli melekat) |
+| **Jom Berwuduk** (`wuduk`) | Ikut 12 langkah wuduk pada watak kanak-kanak | Susun tertib | Apa seterusnya? · Yang mana wajib (rukun)? |
+| **Robot Kod Cilik** (`robot`) | Laluan terus ke bintang | Elak halangan | Kutip bateri dahulu, kemudian ke bintang |
+
+Wuduk mengikut amalan mazhab Syafie di Malaysia: rukun = niat (semasa basuh muka), basuh muka, tangan hingga siku, sapu sebahagian kepala, kaki hingga buku lali, tertib; sunat yang diajar = Bismillah, basuh tapak tangan, berkumur, air ke hidung, sapu telinga, ulang tiga kali, dahulukan kanan, doa selepas wuduk (HR Muslim). Tambah permainan baharu dengan mendaftar dalam `js/games/registry.js` dan menulis modul `play(ctx)`.
+
 ## 1. Apa itu Dunia Cilik
 Aplikasi permainan pendidikan untuk kanak-kanak prasekolah. Ia mempunyai **15 permainan** dan setiap permainan ada **50 level** (jumlah **750 level**). Setiap permainan menggunakan mekanik interaktif tersendiri seperti seret dan lepas, padanan, puzzle, memori, maze, mewarna, menyurih dan mengira, bukan sekadar soalan dan jawapan. Semua arahan dibacakan dengan suara, jadi anak yang belum boleh membaca pun boleh bermain sendiri.
 

@@ -229,6 +229,7 @@ html:has(.bj-world) body { background: #c8f0d4; }
 .bj-home .bj-slide .bj-slide-txt b { font-style: normal; }
 .bj-home .bj-slide .bj-slide-txt span { opacity: 1; }
 .bj-home .bj-slide .bj-slide-txt small { background: var(--bj-gold); color: #6b4200; }
+.bj-home .bj-slide.bj-newgame .bj-slide-txt small { background: #fff; color: var(--d); }
 .bj-home .bj-slide.bj-cont .bj-slide-txt small { background: rgba(255, 255, 255, .25); color: #fff; }
 .bj-home .bj-slide.locked .bj-slide-txt small { background: #8b8aa3; color: #fff; }
 @media (min-width: 900px) {

@@ -21,7 +21,7 @@ import { DEMO } from './demo.js';
 import { addProfile } from './store.js';
 
 let pendingReload = false;
-const inGame = () => /^#\/(main|harian\/|lumba\/main|silang\/main|akhlak\/kisah\/)/.test(location.hash);
+const inGame = () => /^#\/(main|harian\/|lumba\/main|silang\/main|akhlak\/kisah\/|g\/[a-z]+\/\d)/.test(location.hash);
 
 // CILIK RACING: modul terasing yang dimuat secara malas. Jika ia gagal dimuat,
 // hanya skrin racing terjejas — 15 permainan asal tidak disentuh.
@@ -47,6 +47,26 @@ function silangView(args) {
       console.warn('Teka Silang Cilik:', err);
       if (tok !== silangToken) return;
       el.innerHTML = '<div class="screen" style="text-align:center;padding:40px 16px"><h2>Teka Silang Cilik belum dapat dibuka.</h2><p>Permainan lain masih boleh dimainkan seperti biasa.</p><a class="btn green" href="#/">Kembali</a></div>';
+    });
+  return el;
+}
+// PERMAINAN BAHARU (Fasa 2+): modul terasing yang dimuat secara malas
+let gamesCleanup = null, gamesToken = 0;
+function stopGames() {
+  gamesToken++;
+  if (gamesCleanup) { const c = gamesCleanup; gamesCleanup = null; try { c(); } catch { /* */ } }
+}
+function gamesView(args) {
+  const el = document.createElement('div');
+  el.className = 'gm-host';
+  const tok = ++gamesToken;
+  import('./games/main.js')
+    .then((m) => m.mount(el, args))
+    .then((cl) => { if (tok === gamesToken && el.isConnected) gamesCleanup = cl; else cl(); })
+    .catch((err) => {
+      console.warn('Permainan baharu:', err);
+      if (tok !== gamesToken) return;
+      el.innerHTML = '<div class="screen" style="text-align:center;padding:40px 16px"><h2>Permainan ini belum dapat dibuka.</h2><p>Permainan lain masih boleh dimainkan seperti biasa.</p><a class="btn green" href="#/">Kembali</a></div>';
     });
   return el;
 }
@@ -93,6 +113,7 @@ function route() {
   stopRacing();
   stopSilang();
   stopAkhlak();
+  stopGames();
   const path = (location.hash || '#/').slice(1) || '/';
   const parts = path.split('/').filter(Boolean);
   clear(app);
@@ -126,6 +147,7 @@ function route() {
     case 'lumba': el = racingView(parts.slice(1)); break;
     case 'silang': el = silangView(parts.slice(1)); break;
     case 'akhlak': el = akhlakView(parts.slice(1)); break;
+    case 'g': el = gamesView(parts.slice(1)); break;
     default: el = homeScreen();
   }
   app.appendChild(el);

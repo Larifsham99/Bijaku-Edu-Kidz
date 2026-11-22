@@ -100,6 +100,15 @@ export function homeScreen() {
       h('img', { class: 'bj-slide-art', src: g.img, alt: '' }),
       off ? lockIc() : null));
   });
+  // permainan baharu Fasa 2+: satu slaid, bertukar setiap hari
+  const newIds = Object.keys(EXTRAS).filter((id) => EXTRAS[id].isNew);
+  if (newIds.length) {
+    const g = EXTRAS[newIds[Math.floor(Date.now() / 86400000) % newIds.length]];
+    const off = isOff(g.id);
+    slides.splice(1, 0, h('button', { class: `bj-slide bj-newgame ${off ? 'locked' : ''}`, type: 'button', 'aria-label': g.n, style: `--a:${g.bg[0]};--b:${g.bg[1]};--d:${g.bg[2]}`, onclick: () => openGame({ ...g, extra: true }) },
+      h('span', { class: 'bj-slide-txt' }, h('small', {}, off ? 'DIKUNCI' : `BAHARU · ${newIds.length} permainan`), h('b', {}, g.n), h('span', { class: 'bj-sub' }, g.sub), h('span', { class: 'bj-go' }, icon('play'), 'Jom')),
+      h('img', { class: 'bj-slide-art', src: g.img, alt: '' }), off ? lockIc() : null));
+  }
   const track = h('div', { class: 'bj-track' }, slides);
   const dots = h('div', { class: 'bj-dots', 'aria-hidden': 'true' }, slides.map((_, i) => h('i', { class: i ? '' : 'on' })));
   scr.appendChild(h('section', { class: 'bj-hero' }, track, dots));

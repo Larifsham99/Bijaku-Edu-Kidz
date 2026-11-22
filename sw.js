@@ -1,5 +1,5 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-d8482b9843';
+const VERSION = 'dunia-cilik-c780d8447d';
 const ASSETS = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const ASSETS = [
   './css/akhlak.css',
   './css/app.css',
   './css/bijaku.css',
+  './css/games.css',
   './css/racing.css',
   './css/tekasilang.css',
   './css/ui2.css',
@@ -33,6 +34,14 @@ const ASSETS = [
   './js/engines/maze.js',
   './js/engines/memory.js',
   './js/engines/puzzle.js',
+  './js/games/kedai.js',
+  './js/games/main.js',
+  './js/games/makmal.js',
+  './js/games/registry.js',
+  './js/games/robot.js',
+  './js/games/shell.js',
+  './js/games/store.js',
+  './js/games/wuduk.js',
   './js/icons.js',
   './js/main.js',
   './js/malay-text.js',
@@ -83,6 +92,10 @@ const ASSETS = [
   './icons/icon.svg',
   './fonts/baloo2-latin.woff2',
   './visual-assets/akhlak/kebun.svg',
+  './visual-assets/games/kedai.svg',
+  './visual-assets/games/makmal.svg',
+  './visual-assets/games/robot.svg',
+  './visual-assets/games/wuduk.svg',
   './visual-assets/icons/bunyi.svg',
   './visual-assets/icons/lukis.svg',
   './visual-assets/icons/mewarna.svg',
