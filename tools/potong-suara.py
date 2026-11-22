@@ -5,6 +5,8 @@
 #
 #  python3 tools/potong-suara.py SKRIP.txt AUDIO.mp3 [SKRIP2.txt AUDIO2.mp3 ...]
 #      --semak   hanya laporan, tidak menulis klip
+#  Jika SKRIP.kunci.txt wujud, setiap barisnya ialah ayat sebenar bagi baris skrip
+#  yang sama (untuk skrip yang ditulis dengan ejaan sebutan, cth. huruf).
 #
 #  Cara padanan: jeda dalam audio dicari, kemudian titik potong dipilih
 #  (pengaturcaraan dinamik) supaya tempoh setiap klip sepadan dengan
@@ -154,6 +156,10 @@ def main():
     report, total = [], 0
     for script, audio in pairs:
         lines = script_lines(script)
+        # ejaan sebutan (cth. "Huruf i.") dipadankan dengan ayat sebenar dalam fail .kunci.txt
+        kunci = script[:-4] + '.kunci.txt'
+        keys = [l.strip() for l in open(kunci, encoding='utf-8') if l.strip()] if os.path.exists(kunci) else lines
+        if len(keys) != len(lines): raise SystemExit(f'{kunci}: {len(keys)} baris, skrip {len(lines)} baris')
         x = load(audio); db = envelope(x)
         gaps, t0, t1 = find_gaps(db)
         segs, chosen, rate, base, syl = align(lines, gaps, t0, t1)
@@ -168,7 +174,7 @@ def main():
         for k in worst: print(f'   semak: "{lines[k]}"  {durs[k]:.2f}s vs jangka {exp[k]:.2f}s')
         report.append((audio, corr, gapmin))
         if check: continue
-        for k, (line, (a, b)) in enumerate(zip(lines, segs)):
+        for k, (line, (a, b)) in enumerate(zip(keys, segs)):
             base_key = re.sub(r'[.!?]+$', '', clip_key(line))
             key = cat.get(base_key, clip_key(line))
             fid = clip_id(key)
