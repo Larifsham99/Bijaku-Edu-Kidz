@@ -189,6 +189,8 @@ def main():
         report.append((audio, corr, gapmin))
         if check: continue
         for k, (line, (a, b)) in enumerate(zip(keys, segs)):
+            if re.search(r'\beic\b', lines[k], re.I):
+                print(f'   langkau (ejaan H lama "eic"): {line}'); continue
             base_key = re.sub(r'[.!?]+$', '', clip_key(line))
             key = cat.get(base_key, clip_key(line))
             fid = clip_id(key)
