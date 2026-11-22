@@ -1,35 +1,35 @@
 [cheerfully] Okey, jom seterusnya.
-[long pause]
-[cheerfully] Jom sambung.
-[long pause]
-[cheerfully] Sekarang, yang ini pula.
-[long pause]
-[cheerfully] Seterusnya, ya.
-[long pause]
+
+Jom sambung.
+
+Sekarang, yang ini pula.
+
+Seterusnya, ya.
+
 [excited] Satu lagi, ini yang terakhir!
-[long pause]
-[excited] Yang terakhir, jom!
-[long pause]
-[excited] Tinggal satu lagi!
-[long pause]
-[excited] Satu!
-[long pause]
-[excited] Dua!
-[long pause]
-[excited] Tiga!
-[long pause]
-[excited] Empat!
-[long pause]
-[excited] Sekarang, kutip ikut urutan!
-[long pause]
-[excited] Pusingan akhir!
-[long pause]
-[excited] Kita dah hampir sampai!
-[long pause]
-[excited] Garisan penamat di depan!
-[long pause]
-[excited] Pit stop di depan!
-[long pause]
+
+Yang terakhir, jom!
+
+Tinggal satu lagi!
+
+Satu!
+
+Dua!
+
+Tiga!
+
+Empat!
+
+Sekarang, kutip ikut urutan!
+
+Pusingan akhir!
+
+Kita dah hampir sampai!
+
+Garisan penamat di depan!
+
+Pit stop di depan!
+
 [cheerfully] Jom berhenti sekejap.
-[long pause]
+
 [softly] Bismillah.

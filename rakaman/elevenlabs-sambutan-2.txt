@@ -1,25 +1,25 @@
 [excited] Selamat datang ke Cilik Racing!
-[long pause]
-[excited] Belajar, pecut, teroka!
-[long pause]
-[excited] Jom, kita mula!
-[long pause]
+
+Belajar, pecut, teroka!
+
+Jom, kita mula!
+
 [cheerfully] Jom teruskan di Litar Kampung.
-[long pause]
-[cheerfully] Jom teruskan di Lembah Buah.
-[long pause]
-[cheerfully] Jom teruskan di Hutan Haiwan.
-[long pause]
-[cheerfully] Jom teruskan di Bandar Warna.
-[long pause]
-[cheerfully] Jom teruskan di Taman Dinosor.
-[long pause]
-[cheerfully] Jom teruskan di Pulau Ombak.
-[long pause]
-[cheerfully] Jom teruskan di Angkasa Ria.
-[long pause]
-[cheerfully] Jom teruskan di Negeri Gula-gula.
-[long pause]
-[cheerfully] Jom teruskan di Tapak Binaan Cilik.
-[long pause]
-[cheerfully] Jom teruskan di Pulau Juara.
+
+Jom teruskan di Lembah Buah.
+
+Jom teruskan di Hutan Haiwan.
+
+Jom teruskan di Bandar Warna.
+
+Jom teruskan di Taman Dinosor.
+
+Jom teruskan di Pulau Ombak.
+
+Jom teruskan di Angkasa Ria.
+
+Jom teruskan di Negeri Gula-gula.
+
+Jom teruskan di Tapak Binaan Cilik.
+
+Jom teruskan di Pulau Juara.

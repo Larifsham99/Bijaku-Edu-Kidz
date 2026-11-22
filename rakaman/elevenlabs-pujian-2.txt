@@ -1,65 +1,65 @@
-[encouraging] Bagus, cuba sekali lagi!
-[long pause]
-[gently] Tidak mengapa, kita cuba sama-sama!
-[long pause]
-[encouraging] Hampir betul!
-[long pause]
-[warmly] Cuba lagi.
-[long pause]
-[gently] Jangan risau, cuba lagi ya!
-[long pause]
-[encouraging] Kamu boleh!
-[long pause]
-[gently] Tak apa, sayang.
-[long pause]
-[warmly] Kita cuba lagi, ya?
-[long pause]
-[gently] Tidak mengapa, cuba lagi.
-[long pause]
-[encouraging] Insya Allah boleh!
-[long pause]
-[gently] Sabar ya, cuba sekali lagi.
-[long pause]
-[encouraging] Insya Allah berjaya!
-[long pause]
-[warmly] Bukan yang itu.
-[long pause]
-[thoughtful] Hmm, bukan yang itu.
-[long pause]
-[warmly] Cuba lagi, ya.
-[long pause]
-[warmly] Cuba sekali lagi.
-[long pause]
-[gently] Tak apa, cuba lagi.
-[long pause]
-[warmly] Cuba yang lain pula, ya.
-[long pause]
-[warmly] Cuba tengok yang ini.
-[long pause]
+[warmly] Bagus, cuba sekali lagi!
+
+Tidak mengapa, kita cuba sama-sama!
+
+Hampir betul!
+
+Cuba lagi.
+
+Jangan risau, cuba lagi ya!
+
+Kamu boleh!
+
+Tak apa, sayang.
+
+Kita cuba lagi, ya?
+
+Tidak mengapa, cuba lagi.
+
+Insya Allah boleh!
+
+Sabar ya, cuba sekali lagi.
+
+Insya Allah berjaya!
+
+Bukan yang itu.
+
+Hmm, bukan yang itu.
+
+Cuba lagi, ya.
+
+Cuba sekali lagi.
+
+Tak apa, cuba lagi.
+
+Cuba yang lain pula, ya.
+
+Cuba tengok yang ini.
+
 [whispers] Psst, cuba yang bersinar itu.
-[long pause]
-[gently] Tak apa, ambil masa.
-[long pause]
-[warmly] Cuba pilih satu, ya.
-[long pause]
-[warmly] Cuba tekan satu.
-[long pause]
-[warmly] Jom, cuba dulu.
-[long pause]
-[gently] Salah pun tak apa.
-[long pause]
-[warmly] Cuba lagi di depan, ya.
-[long pause]
-[gently] Tak apa, ada pintu baharu di depan.
-[long pause]
-[warmly] Jom cuba sekali lagi.
-[long pause]
-[warmly] Ikut anak panah, ya.
-[long pause]
-[playfully] Ops, hampir!
-[long pause]
-[warmly] Jom cuba laluan sebelah.
-[long pause]
-[encouraging] Kutip lagi, ya!
-[long pause]
-[warmly] Lihat coraknya.
+
+[warmly] Tak apa, ambil masa.
+
+Cuba pilih satu, ya.
+
+Cuba tekan satu.
+
+Jom, cuba dulu.
+
+Salah pun tak apa.
+
+Cuba lagi di depan, ya.
+
+Tak apa, ada pintu baharu di depan.
+
+Jom cuba sekali lagi.
+
+Ikut anak panah, ya.
+
+Ops, hampir!
+
+Jom cuba laluan sebelah.
+
+Kutip lagi, ya!
+
+Lihat coraknya.

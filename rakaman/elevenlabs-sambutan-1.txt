@@ -1,53 +1,53 @@
 [warmly] Assalamualaikum!
-[long pause]
+
 [cheerfully] Selamat pagi.
-[long pause]
-[cheerfully] Selamat tengah hari.
-[long pause]
-[cheerfully] Selamat petang.
-[long pause]
+
+Selamat tengah hari.
+
+Selamat petang.
+
 [warmly] Selamat malam.
-[long pause]
+
 [excited] Jom belajar sambil bermain!
-[long pause]
+
 [happy] Hai!
-[long pause]
+
 [curious] Siapa nama kamu?
-[long pause]
-[curious] Berapa umur kamu?
-[long pause]
+
+Berapa umur kamu?
+
 [excited] Pilih kawan bermain kamu!
-[long pause]
+
 [warmly] Masa bermain hari ini sudah tamat.
-[long pause]
-[warmly] Kita main lagi esok.
-[long pause]
+
+Kita main lagi esok.
+
 [excited] Jom main A, B, C Ceria!
-[long pause]
-[excited] Jom main Dunia Nombor!
-[long pause]
-[excited] Jom main Warna dan Bentuk!
-[long pause]
-[excited] Jom main Teka Bunyi!
-[long pause]
-[excited] Jom main Pazel Pintar!
-[long pause]
-[excited] Jom main Ingatan Hebat!
-[long pause]
-[excited] Jom main Seni dan Mewarna!
-[long pause]
-[excited] Jom main Cari Bayang!
-[long pause]
-[excited] Jom main Maze Pengembaraan!
-[long pause]
-[excited] Jom main Kehidupan Harian!
-[long pause]
-[excited] Jom main Bijak Mengelaskan!
-[long pause]
-[excited] Jom main Si Cilik Soleh!
-[long pause]
-[excited] Jom main Dunia Haiwan!
-[long pause]
-[excited] Jom main Asah Minda!
-[long pause]
-[excited] Jom main Misi Pengembaraan!
+
+Jom main Dunia Nombor!
+
+Jom main Warna dan Bentuk!
+
+Jom main Teka Bunyi!
+
+Jom main Pazel Pintar!
+
+Jom main Ingatan Hebat!
+
+Jom main Seni dan Mewarna!
+
+Jom main Cari Bayang!
+
+Jom main Maze Pengembaraan!
+
+Jom main Kehidupan Harian!
+
+Jom main Bijak Mengelaskan!
+
+Jom main Si Cilik Soleh!
+
+Jom main Dunia Haiwan!
+
+Jom main Asah Minda!
+
+Jom main Misi Pengembaraan!
