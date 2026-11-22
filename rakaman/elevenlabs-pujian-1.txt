@@ -1,0 +1,81 @@
+[excited] Bagus!
+[long pause]
+[excited] Hebat!
+[long pause]
+[excited] Pandai!
+[long pause]
+[excited] Syabas!
+[long pause]
+[excited] Bijak!
+[long pause]
+[excited] Betul!
+[long pause]
+[excited] Wah, hebatnya!
+[long pause]
+[excited] Kamu semakin bijak!
+[long pause]
+[excited] Cemerlang!
+[long pause]
+[excited] Tahniah!
+[long pause]
+[gently] Bagus, sayang!
+[long pause]
+[gently] Pandainya, sayang!
+[long pause]
+[excited] Terbaik!
+[long pause]
+[excited] Mantap!
+[long pause]
+[excited] Bijak sungguh!
+[long pause]
+[excited] Hebatnya kamu!
+[long pause]
+[excited] Wah, pandainya!
+[long pause]
+[excited] Terbaiklah!
+[long pause]
+[happy] Alhamdulillah, betul!
+[long pause]
+[happy] Alhamdulillah, terbaik!
+[long pause]
+[happy] Alhamdulillah!
+[long pause]
+[excited] Wah, laju betul!
+[long pause]
+[excited] Pandainya!
+[long pause]
+[excited] Wah, semua betul!
+[long pause]
+[excited] Hebatnya, semua betul!
+[long pause]
+[excited] Semua betul!
+[long pause]
+[happy] Pandai sungguh.
+[long pause]
+[excited] Dah siap!
+[long pause]
+[happy] Pandainya kamu.
+[long pause]
+[happy] Tahniah, level ini selesai.
+[long pause]
+[excited] Kamu makin pandai!
+[long pause]
+[excited] Syabas, dah habis satu level!
+[long pause]
+[excited] Kamu berjaya!
+[long pause]
+[excited] Kamu berjaya tanpa sebarang kesilapan!
+[long pause]
+[happy] Satu lagi level selesai.
+[long pause]
+[excited] Cantiknya!
+[long pause]
+[excited] Semua cabaran hari ini selesai!
+[long pause]
+[excited] Ini hadiah khas untuk kamu!
+[long pause]
+[excited] Yeay!
+[long pause]
+[excited] Kita menang!
+[long pause]
+[excited] Kamu dapat trofi juara!
