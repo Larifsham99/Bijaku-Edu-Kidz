@@ -3,3 +3,5 @@ tests/out-*.png
 .DS_Store
 tests/out-capture.json
 audio/samples/
+__pycache__/
+*.pyc
