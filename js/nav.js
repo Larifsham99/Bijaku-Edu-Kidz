@@ -9,7 +9,9 @@
 export function go(path) {
   const url = '#' + path;
   try {
-    if (location.hash !== url) history.replaceState(history.state, '', url);
+    // di entri akar (selepas 'tekan sekali lagi untuk keluar'): pulihkan entri pengawal
+    if (history.state?.bj === 'root') { document.querySelector('.bj-exit-toast')?.remove(); history.pushState({ bj: 'top' }, '', url); }
+    else if (location.hash !== url) history.replaceState(history.state, '', url);
   } catch { if (location.hash !== url) { location.hash = path; return; } }
   dispatchEvent(new HashChangeEvent('hashchange'));
 }

@@ -542,3 +542,6 @@ html:has(.lp-screen) body { background: #e9f8ff; }
 .bj-rec:hover .bj-tile-art { transform: none; }
 .bj-rec-why { z-index: 2; }
 @media (max-width: 370px) { .bj-rec-why { font-size: 10px; padding: 2px 6px; } .bj-rec .name { font-size: 12px; } }
+.bj-exit-toast { position: fixed; left: 50%; bottom: max(90px, calc(env(safe-area-inset-bottom) + 80px)); z-index: 2600; transform: translateX(-50%); white-space: nowrap; display: flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 99px; background: rgba(28, 23, 71, .9); color: #fff; font-weight: 800; font-size: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, .3); animation: bjToastIn .25s ease, bjToastOut .4s ease 2.1s forwards; pointer-events: none; }
+@keyframes bjToastIn { from { opacity: 0; transform: translate(-50%, 16px); } }
+@keyframes bjToastOut { to { opacity: 0; transform: translate(-50%, 10px); } }

@@ -3,7 +3,7 @@
 // =====================================================================
 import { h } from './ui.js';
 import { icon } from './icons.js';
-import { sfx, stopSpeak, speak, synth } from './audio.js';
+import { sfx, stopSpeak, synth } from './audio.js';
 import { go } from './nav.js';
 
 let openBox = null;
@@ -32,25 +32,3 @@ export function pauseMenu({ onResume, restart, map, mapLabel = 'Peta' } = {}) {
   closePause = close;
 }
 export let closePause = () => {};
-
-// Keluar dari aplikasi (butang kembali di skrin utama)
-export function exitDialog() {
-  if (document.querySelector('.bj-exit-back')) { document.querySelector('.bj-exit-back').remove(); return; }
-  synth.tone({ type: 'triangle', f: 520, f2: 390, dur: 0.18, vol: 0.1 });
-  const back = h('div', { class: 'bj-pause-back bj-exit-back', role: 'dialog' },
-    h('div', { class: 'bj-pause' },
-      h('div', { class: 'bj-wave', 'aria-hidden': 'true' }, '👋'),
-      h('b', { class: 'bj-exit-t' }, 'Mahu keluar dari BIJAKU?'),
-      h('button', { class: 'bj-pb go', type: 'button', onclick: () => { sfx.tap(); back.remove(); } }, icon('play'), h('span', {}, 'Tidak, main lagi')),
-      h('button', { class: 'bj-pb', type: 'button', onclick: () => leave(back) }, icon('close'), h('span', {}, 'Ya, keluar'))));
-  document.body.appendChild(back);
-  speak('Mahu keluar?');
-}
-function leave(back) {
-  [523, 440, 349].forEach((f, i) => synth.tone({ type: 'triangle', f, t: i * 0.12, dur: 0.2, vol: 0.1 }));
-  speak('Jumpa lagi!', { mood: 'pujian' });
-  back.querySelector('.bj-pause').replaceChildren(h('div', { class: 'bj-wave' }, '👋'), h('b', { class: 'bj-exit-t' }, 'Jumpa lagi!'), h('small', {}, 'Kamu boleh tutup aplikasi sekarang.'),
-    h('button', { class: 'bj-pb go', type: 'button', onclick: () => { sfx.tap(); back.remove(); } }, icon('play'), h('span', {}, 'Kembali bermain')));
-  // aplikasi yang dipasang (PWA): keluar ke skrin utama telefon
-  setTimeout(() => { try { window.__bjLeaving = true; history.back(); } catch { /* */ } try { window.close(); } catch { /* */ } }, 900);
-}

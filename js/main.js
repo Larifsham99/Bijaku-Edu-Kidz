@@ -19,7 +19,7 @@ import { parentScreen } from './screens/parent.js';
 import { timeoutScreen, overLimit } from './screens/timeout.js';
 import { MODES } from './modes/index.js';
 import { go, clearBack, runBack, parentOf } from './nav.js';
-import { exitDialog, pauseOpen, closePause } from './pause.js';
+import { pauseOpen, closePause } from './pause.js';
 import { applyTheme, ensureThemeFields } from './theme.js';
 import { DEMO } from './demo.js';
 import { addProfile } from './store.js';
@@ -180,12 +180,28 @@ function route() {
 function handleBack(path) {
   // tutup lapisan yang terbuka dahulu
   if (pauseOpen()) { closePause(true); return; }
-  const ex = document.querySelector('.bj-exit-back'); if (ex) { ex.remove(); return; }
   const mb = document.querySelector('.modal-back'); if (mb && !mb.querySelector('.bj-winbar')) { mb.remove(); return; }
   if (runBack()) return; // skrin permainan: menu jeda
   const parent = parentOf(path);
-  if (parent === null) exitDialog();
-  else go(parent);
+  go(parent || '/');
+}
+
+// Skrin utama: tekan kembali sekali -> mesej kecil; tekan sekali lagi (dalam 2.5 s) -> aplikasi terus keluar.
+// (Aplikasi web tidak boleh menutup dirinya sendiri; hanya butang kembali telefon yang benar-benar keluar,
+//  jadi kita tidak memulihkan entri pengawal buat seketika.)
+let exitTimer = 0;
+function armExit() {
+  clearTimeout(exitTimer);
+  document.querySelector('.bj-exit-toast')?.remove();
+  const t = document.createElement('div');
+  t.className = 'bj-exit-toast'; t.setAttribute('role', 'status');
+  t.innerHTML = '<span aria-hidden="true">👋</span> Tekan kembali sekali lagi untuk keluar';
+  document.body.appendChild(t);
+  try { sfx.ping(); } catch { /* */ }
+  exitTimer = setTimeout(() => {
+    t.remove();
+    try { if (history.state?.bj === 'root') history.pushState({ bj: 'top' }, '', location.hash || '#/'); } catch { /* */ }
+  }, 2500);
 }
 
 async function boot() {
@@ -197,17 +213,19 @@ async function boot() {
   // Sejarah: [akar] -> [atas]. Navigasi dalam aplikasi menggantikan [atas] (nav.go).
   // Tekan kembali = kembali ke [akar]: kita tangkap, pulihkan [atas] dan buat tindakan yang sesuai.
   try {
-    history.replaceState({ bj: 'root' }, '', location.href);
-    history.pushState({ bj: 'top' }, '', location.href);
+    const start = location.href;
+    history.replaceState({ bj: 'root' }, '', '#/'); // akar sentiasa skrin utama
+    history.pushState({ bj: 'top' }, '', start);
   } catch { /* */ }
   addEventListener('popstate', (e) => {
     if (e.state?.bj !== 'root') return; // entri pautan biasa: biar hashchange mengurus
-    if (window.__bjLeaving) { window.__bjLeaving = false; try { history.back(); } catch { /* */ } return; }
     const here = curHash || '#/';
+    const path = here.slice(1) || '/';
+    const atHome = parentOf(path) === null && !pauseOpen() && !document.querySelector('.modal-back');
+    if (atHome) { armExit(); return; } // tekan sekali lagi = keluar (tiada entri pengawal)
     try { history.pushState({ bj: 'top' }, '', here); } catch { /* */ }
-    if (location.hash !== here) { /* tidak berlaku: pushState mengembalikan url */ }
     skipHash = true; setTimeout(() => { skipHash = false; }, 0);
-    handleBack(here.slice(1) || '/');
+    handleBack(path);
   });
   // bunyi suis (Ruang Ibu Bapa, tetapan): semua kotak semak
   addEventListener('change', (e) => { const el = e.target; if (el instanceof HTMLInputElement && el.type === 'checkbox') { try { sfx.toggle(el.checked); } catch { /* */ } } }, true);

@@ -238,7 +238,7 @@ Dilindungi soalan darab yang sukar dijawab oleh kanak-kanak.
   - **Butang ⏸** dalam setiap permainan membuka menu: Sambung, Rumah, Peta, Mula semula (`js/pause.js`).
   - **Kembali semasa bermain:** membuka menu jeda.
   - **Kembali di skrin lain:** pergi ke skrin induk (peta, kemudian Rumah).
-  - **Kembali di skrin utama:** dialog "Mahu keluar dari BIJAKU?".
+  - **Kembali di skrin utama:** mesej kecil "Tekan kembali sekali lagi untuk keluar". Tekan sekali lagi dalam 2.5 saat dan aplikasi terus keluar. Aplikasi web tidak boleh menutup dirinya dengan butang, jadi butang kembali telefon itu sendiri yang menutupnya.
 - **Muat satu skrin:** setiap skrin bermain (15 permainan asal & permainan baharu) setinggi skrin. Papan permainan dikecilkan secara automatik dengan `js/fit.js` (CSS `zoom`, minimum 50%) jika kandungan lebih tinggi daripada ruang. Puzzle mengira saiz ikut ketinggian papan.
 - **Panggilan, bukan nama:** aplikasi tidak menyebut nama anak. Setiap profil memilih panggilan: Abang, Adik, Kakak, Baby, Manja atau Intan Payung. Pilihan dibuat semasa pendaftaran dan boleh ditukar di Ruang Ibu Bapa → Profil. Lalainya "Adik". "Baby" disebut "beybi" oleh suara peranti supaya tidak tersalah sebut. Nama masih dipaparkan untuk membezakan profil.
 - **Suara:** semua arahan dibacakan dalam Bahasa Melayu. Aplikasi memilih suara wanita Bahasa Melayu yang terbaik pada peranti (melalui Web Speech API), dengan gaya lembut keibuan dan jeda semula jadi antara ayat.

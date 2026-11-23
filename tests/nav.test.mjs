@@ -42,10 +42,6 @@ try {
   await p.evaluate(() => window.__dc.go('/g/kedai')); await p.waitForTimeout(500);
   await back();
   ok(await hash() === '#/', 'kembali dari peta permainan: ke skrin utama (bukan skrin sebelumnya)');
-  await back();
-  ok(await p.locator('.bj-exit-back').count() === 1, 'kembali di skrin utama: "Mahu keluar dari BIJAKU?"');
-  await back();
-  ok(await p.locator('.bj-exit-back').count() === 0 && await hash() === '#/', 'kembali sekali lagi: dialog ditutup, kekal dalam aplikasi');
   ok(await p.locator('.bj-recs .bj-rec').count() === 3 && await p.locator('.bj-tile.bj-glow').count() >= 1, 'skrin utama: 3 cadangan bercahaya + jubin bercahaya dalam rak');
   await p.evaluate(() => window.__dc.go('/g/kedai/1')); await p.waitForSelector('.gm-pausebtn');
   await p.waitForTimeout(2600);
@@ -54,6 +50,17 @@ try {
   ok(true, 'permainan baharu: butang ⏸ membuka menu jeda');
   await p.click('.bj-pb.go'); await p.waitForTimeout(300);
   ok(await p.locator('.bj-pause-back').count() === 0, 'Sambung menutup menu jeda');
+  // keluar: di skrin utama, kembali sekali = mesej; navigasi biasa membatalkannya; kembali dua kali = keluar terus
+  await p.click('.bj-pause .bj-pb.go').catch(() => {});
+  await p.evaluate(() => window.__dc.go('/')); await p.waitForTimeout(500);
+  await back();
+  ok(await p.locator('.bj-exit-toast').count() === 1 && await hash() === '#/', 'kembali di skrin utama: "Tekan kembali sekali lagi untuk keluar" (tiada dialog)');
+  await p.evaluate(() => window.__dc.go('/g/kedai')); await p.waitForTimeout(400);
+  await back();
+  ok(await hash() === '#/' && await p.locator('.mode-card').count() > 0, 'navigasi selepas mesej keluar: butang kembali kembali berfungsi seperti biasa');
+  await back();
+  await p.evaluate(() => history.back()); await p.waitForTimeout(800);
+  ok(!/index\.html/.test(p.url()), `kembali dua kali di skrin utama: aplikasi terus keluar (${p.url()})`);
 } catch (e) { failures++; console.log('✗ ralat: ' + e.message.split('\n')[0]); }
 ok(errs.length === 0, `tiada ralat JavaScript${errs.length ? ': ' + errs.join(' | ') : ''}`);
 await browser.close(); server.kill();
