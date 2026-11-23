@@ -1,6 +1,6 @@
 {
  "lang": "ms-MY",
- "count": 1846,
+ "count": 1847,
  "items": [
   {
    "key": "bismillah.",
@@ -59,13 +59,6 @@
    "freq": 86
   },
   {
-   "key": "anjing",
-   "text": "Anjing",
-   "mood": "pujian",
-   "group": "teras",
-   "freq": 84
-  },
-  {
    "key": "gajah",
    "text": "Gajah",
    "mood": "pujian",
@@ -78,6 +71,13 @@
    "mood": "pujian",
    "group": "teras",
    "freq": 84
+  },
+  {
+   "key": "anjing",
+   "text": "Anjing",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 83
   },
   {
    "key": "itik",
@@ -126,7 +126,7 @@
    "text": "Lembu",
    "mood": "pujian",
    "group": "teras",
-   "freq": 76
+   "freq": 75
   },
   {
    "key": "hati",
@@ -220,15 +220,15 @@
    "freq": 62
   },
   {
-   "key": "kambing",
-   "text": "Kambing",
-   "mood": "pujian",
-   "group": "teras",
-   "freq": 59
-  },
-  {
    "key": "katak",
    "text": "Katak",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 60
+  },
+  {
+   "key": "kambing",
+   "text": "Kambing",
    "mood": "pujian",
    "group": "teras",
    "freq": 59
@@ -416,6 +416,13 @@
    "freq": 43
   },
   {
+   "key": "tikus",
+   "text": "Tikus",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 43
+  },
+  {
    "key": "oren",
    "text": "Oren",
    "mood": "pujian",
@@ -426,13 +433,6 @@
    "key": "tekan gambar untuk dengar.",
    "text": "Tekan gambar untuk dengar.",
    "mood": "tenang",
-   "group": "teras",
-   "freq": 42
-  },
-  {
-   "key": "tikus",
-   "text": "Tikus",
-   "mood": "pujian",
    "group": "teras",
    "freq": 42
   },
@@ -1165,9 +1165,9 @@
    "freq": 7
   },
   {
-   "key": "bagus!",
-   "text": "Bagus!",
-   "mood": "pujian",
+   "key": "assalamualaikum!",
+   "text": "Assalamualaikum!",
+   "mood": "arahan",
    "group": "teras",
    "freq": 6
   },
@@ -1177,13 +1177,6 @@
    "mood": "arahan",
    "group": "teras",
    "freq": 6
-  },
-  {
-   "key": "assalamualaikum!",
-   "text": "Assalamualaikum!",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 5
   },
   {
    "key": "dua puluh",
@@ -1221,6 +1214,13 @@
    "freq": 4
   },
   {
+   "key": "bagus!",
+   "text": "Bagus!",
+   "mood": "pujian",
+   "group": "teras",
+   "freq": 4
+  },
+  {
    "key": "hebat!",
    "text": "Hebat!",
    "mood": "pujian",
@@ -1242,58 +1242,16 @@
    "freq": 4
   },
   {
-   "key": "jom sambung.",
-   "text": "Jom sambung.",
-   "mood": "tenang",
-   "group": "teras",
-   "freq": 3
-  },
-  {
-   "key": "okey, jom seterusnya.",
-   "text": "Okey, jom seterusnya.",
-   "mood": "tenang",
-   "group": "teras",
-   "freq": 3
-  },
-  {
-   "key": "satu lagi, ini yang terakhir!",
-   "text": "Satu lagi, ini yang terakhir!",
-   "mood": "tenang",
-   "group": "teras",
-   "freq": 3
-  },
-  {
-   "key": "sekarang, yang ini pula.",
-   "text": "Sekarang, yang ini pula.",
-   "mood": "tenang",
-   "group": "teras",
-   "freq": 3
-  },
-  {
-   "key": "selamat pagi.",
-   "text": "Selamat pagi.",
+   "key": "selamat petang.",
+   "text": "Selamat petang.",
    "mood": "arahan",
    "group": "teras",
    "freq": 3
   },
   {
-   "key": "seterusnya, ya.",
-   "text": "Seterusnya, ya.",
-   "mood": "tenang",
-   "group": "teras",
-   "freq": 3
-  },
-  {
-   "key": "tinggal satu lagi!",
-   "text": "Tinggal satu lagi!",
-   "mood": "tenang",
-   "group": "teras",
-   "freq": 3
-  },
-  {
-   "key": "yang terakhir, jom!",
-   "text": "Yang terakhir, jom!",
-   "mood": "tenang",
+   "key": "syabas!",
+   "text": "Syabas!",
+   "mood": "pujian",
    "group": "teras",
    "freq": 3
   },
@@ -1350,6 +1308,13 @@
    "key": "cuba lagi.",
    "text": "Cuba lagi.",
    "mood": "galakan",
+   "group": "teras",
+   "freq": 2
+  },
+  {
+   "key": "dunia nombor",
+   "text": "Dunia Nombor",
+   "mood": "arahan",
    "group": "teras",
    "freq": 2
   },
@@ -1431,8 +1396,8 @@
    "freq": 2
   },
   {
-   "key": "selamat petang.",
-   "text": "Selamat petang.",
+   "key": "selamat pagi.",
+   "text": "Selamat pagi.",
    "mood": "arahan",
    "group": "teras",
    "freq": 2
@@ -1454,13 +1419,6 @@
   {
    "key": "semua cabaran hari ini selesai!",
    "text": "Semua cabaran hari ini selesai!",
-   "mood": "pujian",
-   "group": "teras",
-   "freq": 2
-  },
-  {
-   "key": "syabas!",
-   "text": "Syabas!",
    "mood": "pujian",
    "group": "teras",
    "freq": 2
@@ -1601,13 +1559,6 @@
   {
    "key": "dunia haiwan",
    "text": "Dunia Haiwan",
-   "mood": "arahan",
-   "group": "teras",
-   "freq": 1
-  },
-  {
-   "key": "dunia nombor",
-   "text": "Dunia Nombor",
    "mood": "arahan",
    "group": "teras",
    "freq": 1
@@ -1760,6 +1711,13 @@
    "freq": 1
   },
   {
+   "key": "jom sambung.",
+   "text": "Jom sambung.",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
    "key": "jom, cuba dulu.",
    "text": "Jom, cuba dulu.",
    "mood": "galakan",
@@ -1816,6 +1774,13 @@
    "freq": 1
   },
   {
+   "key": "okey, jom seterusnya.",
+   "text": "Okey, jom seterusnya.",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
    "key": "pandainya kamu.",
    "text": "Pandainya kamu.",
    "mood": "pujian",
@@ -1858,6 +1823,20 @@
    "freq": 1
   },
   {
+   "key": "satu lagi, ini yang terakhir!",
+   "text": "Satu lagi, ini yang terakhir!",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "sekarang, yang ini pula.",
+   "text": "Sekarang, yang ini pula.",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
    "key": "selesaikan level sebelumnya dahulu, ya.",
    "text": "Selesaikan level sebelumnya dahulu, ya.",
    "mood": "arahan",
@@ -1867,6 +1846,13 @@
   {
    "key": "seni dan mewarna",
    "text": "Seni dan Mewarna",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "seterusnya, ya.",
+   "text": "Seterusnya, ya.",
    "mood": "arahan",
    "group": "teras",
    "freq": 1
@@ -1935,8 +1921,22 @@
    "freq": 1
   },
   {
+   "key": "tinggal satu lagi!",
+   "text": "Tinggal satu lagi!",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
    "key": "warna dan bentuk",
    "text": "Warna dan Bentuk",
+   "mood": "arahan",
+   "group": "teras",
+   "freq": 1
+  },
+  {
+   "key": "yang terakhir, jom!",
+   "text": "Yang terakhir, jom!",
    "mood": "arahan",
    "group": "teras",
    "freq": 1
@@ -1991,8 +1991,8 @@
    "freq": 23
   },
   {
-   "key": "bilakah kita membacanya?",
-   "text": "Bilakah kita membacanya?",
+   "key": "bila kita baca doa ini?",
+   "text": "Bila kita baca doa ini?",
    "mood": "tenang",
    "group": "awal",
    "freq": 23
@@ -3615,13 +3615,6 @@
    "freq": 5
   },
   {
-   "key": "doa ini bermaksud: wahai tuhanku, tambahkanlah ilmuku.",
-   "text": "Doa ini bermaksud: Wahai Tuhanku, tambahkanlah ilmuku.",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 5
-  },
-  {
    "key": "gua",
    "text": "Gua",
    "mood": "arahan",
@@ -3730,6 +3723,13 @@
    "key": "mahu potong kertas.",
    "text": "Mahu potong kertas.",
    "mood": "arahan",
+   "group": "awal",
+   "freq": 5
+  },
+  {
+   "key": "maksudnya: wahai tuhanku, tambahkanlah ilmuku.",
+   "text": "Maksudnya: Wahai Tuhanku, tambahkanlah ilmuku.",
+   "mood": "tenang",
    "group": "awal",
    "freq": 5
   },
@@ -3919,20 +3919,6 @@
    "key": "di mana pic?",
    "text": "Di mana Pic?",
    "mood": "arahan",
-   "group": "awal",
-   "freq": 4
-  },
-  {
-   "key": "doa ini bermaksud: aku memohon keampunan-mu.",
-   "text": "Doa ini bermaksud: Aku memohon keampunan-Mu.",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 4
-  },
-  {
-   "key": "doa ini bermaksud: dengan nama-mu ya allah, aku mati dan aku hidup.",
-   "text": "Doa ini bermaksud: Dengan nama-Mu ya Allah, aku mati dan aku hidup.",
-   "mood": "tenang",
    "group": "awal",
    "freq": 4
   },
@@ -4143,6 +4129,20 @@
    "key": "letak ubat gigi",
    "text": "Letak ubat gigi",
    "mood": "arahan",
+   "group": "awal",
+   "freq": 4
+  },
+  {
+   "key": "maksudnya: aku memohon keampunan-mu.",
+   "text": "Maksudnya: Aku memohon keampunan-Mu.",
+   "mood": "tenang",
+   "group": "awal",
+   "freq": 4
+  },
+  {
+   "key": "maksudnya: dengan nama-mu ya allah, aku mati dan aku hidup.",
+   "text": "Maksudnya: Dengan nama-Mu ya Allah, aku mati dan aku hidup.",
+   "mood": "tenang",
    "group": "awal",
    "freq": 4
   },
@@ -4511,13 +4511,6 @@
    "freq": 3
   },
   {
-   "key": "doa ini bermaksud: dengan nama allah.",
-   "text": "Doa ini bermaksud: Dengan nama Allah.",
-   "mood": "tenang",
-   "group": "awal",
-   "freq": 3
-  },
-  {
    "key": "donat",
    "text": "Donat",
    "mood": "arahan",
@@ -4752,6 +4745,13 @@
    "key": "mahu melukis gambar.",
    "text": "Mahu melukis gambar.",
    "mood": "arahan",
+   "group": "awal",
+   "freq": 3
+  },
+  {
+   "key": "maksudnya: dengan nama allah.",
+   "text": "Maksudnya: Dengan nama Allah.",
+   "mood": "tenang",
    "group": "awal",
    "freq": 3
   },
@@ -7213,13 +7213,6 @@
    "freq": 5
   },
   {
-   "key": "doa ini bermaksud: dengan nama allah, aku bertawakal kepada allah; tiada daya dan kekuatan melainkan dengan allah.",
-   "text": "Doa ini bermaksud: Dengan nama Allah, aku bertawakal kepada Allah; tiada daya dan kekuatan melainkan dengan Allah.",
-   "mood": "tenang",
-   "group": "lengkap",
-   "freq": 5
-  },
-  {
    "key": "feri",
    "text": "Feri",
    "mood": "pujian",
@@ -7300,6 +7293,13 @@
    "key": "lap kering",
    "text": "Lap kering",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 5
+  },
+  {
+   "key": "maksudnya: dengan nama allah, aku bertawakal kepada allah; tiada daya dan kekuatan melainkan dengan allah.",
+   "text": "Maksudnya: Dengan nama Allah, aku bertawakal kepada Allah; tiada daya dan kekuatan melainkan dengan Allah.",
+   "mood": "tenang",
    "group": "lengkap",
    "freq": 5
   },
@@ -7969,20 +7969,6 @@
    "freq": 3
   },
   {
-   "key": "doa ini bermaksud: segala puji bagi allah yang menghidupkan kami setelah mematikan kami, dan kepada-nya kami kembali.",
-   "text": "Doa ini bermaksud: Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami, dan kepada-Nya kami kembali.",
-   "mood": "tenang",
-   "group": "lengkap",
-   "freq": 3
-  },
-  {
-   "key": "doa ini bermaksud: wahai tuhanku, ampunkanlah aku dan kedua ibu bapaku.",
-   "text": "Doa ini bermaksud: Wahai Tuhanku, ampunkanlah aku dan kedua ibu bapaku.",
-   "mood": "tenang",
-   "group": "lengkap",
-   "freq": 3
-  },
-  {
    "key": "dua biji dah diambil.",
    "text": "Dua biji dah diambil.",
    "mood": "arahan",
@@ -8252,6 +8238,20 @@
    "key": "lukis sekuntum bunga!",
    "text": "Lukis sekuntum bunga!",
    "mood": "arahan",
+   "group": "lengkap",
+   "freq": 3
+  },
+  {
+   "key": "maksudnya: segala puji bagi allah yang menghidupkan kami setelah mematikan kami, dan kepada-nya kami kembali.",
+   "text": "Maksudnya: Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami, dan kepada-Nya kami kembali.",
+   "mood": "tenang",
+   "group": "lengkap",
+   "freq": 3
+  },
+  {
+   "key": "maksudnya: wahai tuhanku, ampunkanlah aku dan kedua ibu bapaku.",
+   "text": "Maksudnya: Wahai Tuhanku, ampunkanlah aku dan kedua ibu bapaku.",
+   "mood": "tenang",
    "group": "lengkap",
    "freq": 3
   },
@@ -9278,20 +9278,6 @@
    "freq": 2
   },
   {
-   "key": "doa ini bermaksud: segala puji bagi allah.",
-   "text": "Doa ini bermaksud: Segala puji bagi Allah.",
-   "mood": "tenang",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
-   "key": "doa ini bermaksud: ya allah, aku berlindung kepada-mu daripada syaitan lelaki dan perempuan.",
-   "text": "Doa ini bermaksud: Ya Allah, aku berlindung kepada-Mu daripada syaitan lelaki dan perempuan.",
-   "mood": "tenang",
-   "group": "lengkap",
-   "freq": 2
-  },
-  {
    "key": "dua biji bola, tambah satu biji lagi.",
    "text": "Dua biji bola, tambah satu biji lagi.",
    "mood": "arahan",
@@ -10246,6 +10232,20 @@
   {
    "key": "maksudnya, segala puji bagi allah.",
    "text": "Maksudnya, Segala puji bagi Allah.",
+   "mood": "tenang",
+   "group": "lengkap",
+   "freq": 2
+  },
+  {
+   "key": "maksudnya: segala puji bagi allah.",
+   "text": "Maksudnya: Segala puji bagi Allah.",
+   "mood": "tenang",
+   "group": "lengkap",
+   "freq": 2
+  },
+  {
+   "key": "maksudnya: ya allah, aku berlindung kepada-mu daripada syaitan lelaki dan perempuan.",
+   "text": "Maksudnya: Ya Allah, aku berlindung kepada-Mu daripada syaitan lelaki dan perempuan.",
    "mood": "tenang",
    "group": "lengkap",
    "freq": 2
@@ -11560,13 +11560,6 @@
    "freq": 1
   },
   {
-   "key": "assalamualaikum, aisyah!",
-   "text": "Assalamualaikum, Aisyah!",
-   "mood": "arahan",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
    "key": "awan",
    "text": "Awan",
    "mood": "arahan",
@@ -11653,6 +11646,13 @@
   {
    "key": "d untuk daun",
    "text": "D untuk Daun",
+   "mood": "arahan",
+   "group": "lengkap",
+   "freq": 1
+  },
+  {
+   "key": "datang lagi esok ya!",
+   "text": "Datang lagi esok ya!",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
@@ -11805,8 +11805,8 @@
    "freq": 1
   },
   {
-   "key": "hai aisyah!",
-   "text": "Hai Aisyah!",
+   "key": "hai kakak!",
+   "text": "Hai Kakak!",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
@@ -11875,15 +11875,22 @@
    "freq": 1
   },
   {
-   "key": "jom dapatkan versi penuh dunia cilik!",
-   "text": "Jom dapatkan versi penuh Dunia Cilik!",
+   "key": "jom dapatkan versi penuh bijaku!",
+   "text": "Jom dapatkan versi penuh Bijaku!",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
   },
   {
-   "key": "jom rehatkan mata, aisyah!",
-   "text": "Jom rehatkan mata, Aisyah!",
+   "key": "jom rehatkan mata, kakak!",
+   "text": "Jom rehatkan mata, Kakak!",
+   "mood": "arahan",
+   "group": "lengkap",
+   "freq": 1
+  },
+  {
+   "key": "jom teroka dunia bijaku!",
+   "text": "Jom teroka Dunia Bijaku!",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
@@ -11997,6 +12004,13 @@
    "key": "kamu sudah tamatkan semua level warna dan bentuk!",
    "text": "Kamu sudah tamatkan semua level Warna dan Bentuk!",
    "mood": "pujian",
+   "group": "lengkap",
+   "freq": 1
+  },
+  {
+   "key": "kamu suka dipanggil apa?",
+   "text": "Kamu suka dipanggil apa?",
+   "mood": "arahan",
    "group": "lengkap",
    "freq": 1
   },
@@ -12246,15 +12260,15 @@
    "freq": 1
   },
   {
-   "key": "pandainya, aisyah!",
-   "text": "Pandainya, Aisyah!",
-   "mood": "pujian",
+   "key": "permainan ini sedang dikunci oleh ibu bapa.",
+   "text": "Permainan ini sedang dikunci oleh ibu bapa.",
+   "mood": "arahan",
    "group": "lengkap",
    "freq": 1
   },
   {
-   "key": "permainan ini sedang dikunci oleh ibu bapa.",
-   "text": "Permainan ini sedang dikunci oleh ibu bapa.",
+   "key": "pilih satu pulau.",
+   "text": "Pilih satu pulau.",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
@@ -12323,15 +12337,15 @@
    "freq": 1
   },
   {
-   "key": "selamat datang ke dunia cilik, aisyah!",
-   "text": "Selamat datang ke Dunia Cilik, Aisyah!",
+   "key": "selamat datang ke bijaku, kakak!",
+   "text": "Selamat datang ke Bijaku, Kakak!",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
   },
   {
-   "key": "sembilan ekor rama-rama, tambah satu ekor lagi.",
-   "text": "Sembilan ekor rama-rama, tambah satu ekor lagi.",
+   "key": "semua cabaran hari ini sudah selesai.",
+   "text": "Semua cabaran hari ini sudah selesai.",
    "mood": "arahan",
    "group": "lengkap",
    "freq": 1
@@ -12514,13 +12528,6 @@
   {
    "key": "tema taman masjid!",
    "text": "Tema Taman Masjid!",
-   "mood": "pujian",
-   "group": "lengkap",
-   "freq": 1
-  },
-  {
-   "key": "terbaik, aisyah!",
-   "text": "Terbaik, Aisyah!",
    "mood": "pujian",
    "group": "lengkap",
    "freq": 1
