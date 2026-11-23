@@ -220,6 +220,10 @@ export function runTiltGame(ctx, opt) {
   function resume() { if (!paused) return; pauseBox?.remove(); pauseBox = null; paused = false; last = performance.now(); tsfx.resume(); }
   const onHide = () => { if (document.visibilityState === 'hidden') pause(); };
   document.addEventListener('visibilitychange', onHide);
+  // menu jeda kongsi (butang ⏸ atas / butang kembali telefon): beku tanpa lapisan sendiri
+  const gPause = () => { if (running && !won && !paused) { paused = true; } };
+  const gResume = () => { if (paused && !pauseBox) { paused = false; last = performance.now(); } };
+  addEventListener('bj-pause', gPause); addEventListener('bj-resume', gResume);
   if (!seen) {
     tutorial(view, tilt, { title: opt.title, onDone: () => { try { localStorage.setItem(tutKey, '1'); } catch { /* */ } begin(); } });
   } else {
@@ -243,5 +247,5 @@ export function runTiltGame(ctx, opt) {
     if (!ap) { ap = { i: 0 }; speed = globalThis.__gmFast ? 8 : 3; }
     if (!running && !won) begin(true);
   });
-  return () => { cancelAnimationFrame(raf); ro.disconnect(); tilt.destroy(); document.removeEventListener('visibilitychange', onVis); document.removeEventListener('visibilitychange', onHide); try { lock?.release(); } catch { /* */ } lock = null; };
+  return () => { cancelAnimationFrame(raf); ro.disconnect(); tilt.destroy(); document.removeEventListener('visibilitychange', onVis); document.removeEventListener('visibilitychange', onHide); removeEventListener('bj-pause', gPause); removeEventListener('bj-resume', gResume); try { lock?.release(); } catch { /* */ } lock = null; };
 }

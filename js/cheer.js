@@ -11,6 +11,8 @@ import { PRAISE, ENCOURAGE, ISLAMIC_PRAISE, ISLAMIC_ENCOURAGE } from './data/con
 import { TALK } from './talk.js';
 import { cameraAllowed, cameraSupported } from './camera.js';
 import { sfx } from './audio.js';
+import { icon } from './icons.js';
+import { go } from './nav.js';
 
 const pick = (a) => a[Math.floor(Math.random() * a.length)];
 const islamic = () => settings().islamic !== false;
@@ -81,4 +83,26 @@ const WINGS = `<svg viewBox="0 0 220 90">
 export function selfieButton(label = 'Juara hari ini!') {
   if (!cameraAllowed() || !cameraSupported()) return null;
   return h('button', { class: 'bj-selfie-btn', type: 'button', onclick: (e) => { e.stopPropagation(); sfx.tap(); import('./selfie.js').then((m) => m.openSelfie(label)); } }, h('span', { class: 'emo' }, '📸'), 'Selfie Juara');
+}
+
+// =====================================================================
+//  BAR TINDAKAN SKRIN KEJAYAAN (dikongsi semua permainan)
+//  "Seterusnya" besar & sentiasa kelihatan di bawah kad (melekat, tidak perlu tatal);
+//  "Main lagi" & "Peta" kecil di bawahnya supaya anak tidak tertekan ulang tanpa sengaja.
+//  Selepas beberapa saat, tangan kecil menunjuk ke "Seterusnya".
+// =====================================================================
+const HAND = '<svg viewBox="0 0 48 48"><path d="M19 6c2 0 3.5 1.6 3.5 3.6V22l1.2-.2c.6-1.6 2-2.6 3.6-2.6 1.4 0 2.6.7 3.2 1.8.7-.4 1.4-.6 2.2-.6 1.6 0 3 .9 3.6 2.3.5-.2 1-.3 1.6-.3 2.2 0 4 1.8 4 4v7.6C42 42 36.4 46 30 46h-3.2c-4 0-7.6-1.9-9.9-5.1L9.3 30.2c-1-1.5-.7-3.5.8-4.6 1.4-1 3.3-.8 4.5.4l.9 1V9.6C15.5 7.6 17 6 19 6z" fill="#fff" stroke="#2b2350" stroke-width="2.6" stroke-linejoin="round"/></svg>';
+export function winBar({ next, replay, map, home = () => go('/'), nextLabel = 'Seterusnya', mapLabel = 'Peta', replayLabel = 'Main lagi', cls = '' } = {}) {
+  const tap = (fn) => (e) => { e.stopPropagation(); sfx.tap(); fn(); };
+  const primary = next
+    ? h('button', { class: 'bj-next', type: 'button', 'aria-label': nextLabel, onclick: tap(next) }, h('span', {}, nextLabel), icon('next'), h('i', { class: 'bj-hand', 'aria-hidden': 'true', html: HAND }))
+    : map ? h('button', { class: 'bj-next', type: 'button', 'aria-label': mapLabel, onclick: tap(map) }, icon('map'), h('span', {}, mapLabel)) : null;
+  const minis = h('div', { class: 'bj-winsub' },
+    replay ? h('button', { class: 'bj-mini', type: 'button', 'aria-label': replayLabel, onclick: tap(replay) }, icon('replay'), h('span', {}, replayLabel)) : null,
+    next && map ? h('button', { class: 'bj-mini', type: 'button', 'aria-label': mapLabel, onclick: tap(map) }, icon('map'), h('span', {}, mapLabel)) : null,
+    home ? h('button', { class: 'bj-mini home', type: 'button', 'aria-label': 'Rumah', onclick: tap(home) }, icon('home'), h('span', {}, 'Rumah')) : null);
+  const bar = h('div', { class: `bj-winbar ${cls}` }, primary, minis);
+  // tunjuk arah selepas 2.8 saat (anak yang belum membaca tahu butang mana untuk diteruskan)
+  setTimeout(() => { if (bar.isConnected) bar.classList.add('hint'); }, 2800);
+  return bar;
 }

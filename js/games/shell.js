@@ -2,7 +2,8 @@
 //  RANGKA KONGSI PERMAINAN BAHARU: peta level 2.5D, skrin main & skrin tamat
 // =====================================================================
 import { h, clear, later as uiLater } from '../ui.js';
-import { go } from '../nav.js';
+import { go, onBack } from '../nav.js';
+import { pauseMenu } from '../pause.js';
 import { profile, save, addActivity } from '../store.js';
 import { icon } from '../icons.js';
 import { speak, sfx, haptic, stopSpeak } from '../audio.js';
@@ -10,7 +11,7 @@ import { overLimit } from '../screens/timeout.js';
 import { DEMO, DEMO_MAX } from '../demo.js';
 import { demoUpgrade } from '../screens/shared.js';
 import { makeRng } from '../rng.js';
-import { cheer, ribbon, flashRibbon, RIBBON_WORDS, selfieButton, breakStreak } from '../cheer.js';
+import { cheer, ribbon, flashRibbon, RIBBON_WORDS, selfieButton, breakStreak, winBar } from '../cheer.js';
 import { shade } from '../brand.js';
 import { lockNotice } from '../notice.js';
 import { GAMES, GAME_LEVELS, chapterOf } from './registry.js';
@@ -21,9 +22,11 @@ const pid = () => profile()?.id;
 const vars = (g) => `--gc:${g.c};--ga:${g.bg[0]};--gb:${g.bg[1]};--gd:${g.bg[2]};--gl:${shade(g.c, 0.82)}`;
 const starRow = (k, cls = '') => h('span', { class: `gm-stars ${cls}` }, ...[1, 2, 3].map((i) => h('i', { class: i <= k ? 'on' : '' }, icon('star'))));
 
-function topBar(title, back, right = null) {
+function topBar(title, back, right = null, onPause = null) {
   return h('header', { class: 'gm-top' },
-    h('button', { class: 'gm-round', type: 'button', 'aria-label': 'Kembali', onclick: () => { sfx.tap(); go(back); } }, icon('back')),
+    onPause
+      ? h('button', { class: 'gm-round gm-pausebtn', type: 'button', 'aria-label': 'Jeda', onclick: () => { sfx.tap(); onPause(); } }, icon('pause'))
+      : h('button', { class: 'gm-round', type: 'button', 'aria-label': 'Kembali', onclick: () => { sfx.tap(); go(back); } }, icon('back')),
     h('div', { class: 'gm-title' }, title),
     right || h('span', { class: 'gm-round ghost' }));
 }
@@ -74,7 +77,9 @@ export async function playScreen(id, n, onClean) {
   const later = (fn, ms) => { const t = setTimeout(() => { if (alive) fn(); }, ms); timers.push(t); return t; };
   const scr = h('div', { class: `gm-screen gm-play gm-${id}`, style: vars(g) }, h('div', { class: 'gm-bg', 'aria-hidden': 'true' }));
   const sayBtn = h('button', { class: 'gm-round say', type: 'button', 'aria-label': 'Dengar semula', onclick: () => { sfx.tap(); if (lastSay) speak(lastSay, { mood: lastMood }); } }, icon('sound'));
-  scr.appendChild(topBar(h('span', { class: 'gm-chip' }, h('img', { src: g.img, alt: '' }), `Level ${n}`), `/g/${id}`, sayBtn));
+  const openPause = () => { if (finished || !alive) return false; pauseMenu({ map: `/g/${id}`, mapLabel: 'Peta level', restart: `/g/${id}/${n}` }); return true; };
+  const unBack = onBack(openPause);
+  scr.appendChild(topBar(h('span', { class: 'gm-chip' }, h('img', { src: g.img, alt: '' }), `Level ${n}`), `/g/${id}`, sayBtn, openPause));
   const dots = h('div', { class: 'gm-dots' });
   const bubble = h('div', { class: 'gm-bubble', role: 'status' });
   const stage = h('div', { class: 'gm-stage' });
@@ -119,10 +124,7 @@ export async function playScreen(id, n, onClean) {
       ribbon(st === 3 ? 'Hebat!' : st === 2 ? 'Syabas!' : 'Tahniah!', { sub: `Level ${n} Selesai!`, stars: st }),
       selfieButton(`${g.n} · Level ${n}`),
       res.first && n % 10 === 0 ? h('div', { class: 'gm-unlock' }, icon('medal'), `Bab "${g.chapters[chapterOf(n)]}" tamat!`) : null,
-      h('div', { class: 'gm-win-btns' },
-        h('button', { class: 'gm-btn', type: 'button', 'aria-label': 'Main semula', onclick: () => { sfx.tap(); go(`/g/${id}/${n}`); } }, icon('replay')),
-        h('button', { class: 'gm-btn', type: 'button', 'aria-label': 'Peta level', onclick: () => { sfx.tap(); go(`/g/${id}`); } }, icon('map')),
-        h('button', { class: 'gm-btn go', type: 'button', 'aria-label': nextN ? 'Level seterusnya' : 'Kembali ke peta', onclick: () => { sfx.tap(); go(nextN ? `/g/${id}/${nextN}` : `/g/${id}`); } }, nextN ? 'Seterusnya' : 'Peta', icon('next'))));
+      winBar({ next: nextN ? () => go(`/g/${id}/${nextN}`) : null, replay: () => go(`/g/${id}/${n}`), map: () => go(`/g/${id}`) }));
     scr.appendChild(h('div', { class: 'gm-win-back' }, box));
   }
 
@@ -130,7 +132,7 @@ export async function playScreen(id, n, onClean) {
   let last = Date.now();
   const ticker = setInterval(() => { const now = Date.now(); if (document.visibilityState === 'visible' && p) { addActivity(p, { time: Math.min(10, (now - last) / 1000) }); save(); } last = now; }, 5000);
   const gameClean = mod.play(ctx) || (() => {});
-  onClean(() => { unfit(); alive = false; clearInterval(ticker); timers.forEach(clearTimeout); try { gameClean(); } catch { /* */ } stopSpeak(); document.querySelectorAll('.gm-ghost').forEach((e) => e.remove()); globalThis.__gmPlay = null; });
+  onClean(() => { unfit(); unBack(); alive = false; clearInterval(ticker); timers.forEach(clearTimeout); try { gameClean(); } catch { /* */ } stopSpeak(); document.querySelectorAll('.gm-ghost').forEach((e) => e.remove()); globalThis.__gmPlay = null; });
   return scr;
 }
 

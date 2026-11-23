@@ -139,7 +139,7 @@ try {
   };
   await play(0, 1, 'Level 1 (gambar→perkataan)');
   // isi kotak sebenar dengan ketikan: level 2 tanpa autosolve
-  await page.click('.ts-win .ts-btn.go');
+  await page.click('.ts-win .bj-next', { force: true });
   await page.waitForFunction(() => location.hash === '#/silang/main/0/2' && !document.querySelector('.ts-win') && document.querySelector('.ts-slot-pz'));
   for (let i = 0; i < 20 && !(await page.locator('.ts-win').count()); i++) {
     const need = await page.evaluate(() => { const r = window.__tsPlay.level.rounds; const pz = document.querySelector('.ts-slot-pz'); if (!pz) return null; const slots = [...pz.querySelectorAll('.ts-slot')]; const k = slots.findIndex((s) => !s.classList.contains('filled')); const ri = [...document.querySelectorAll('.ts-dots i')].findIndex((d) => d.classList.contains('cur')); return k >= 0 ? r[ri].word[k] : null; });

@@ -162,6 +162,14 @@ try {
     const st = await playLevel(id, 1);
     ok(st >= 1, `${GAMES[id].n}: level 1 dimainkan hingga tamat & disimpan (${st} bintang)`);
   }
+  // skrin kejayaan: butang Seterusnya besar & kelihatan tanpa tatal (telefon kecil juga)
+  for (const [w, hgt] of [[412, 860], [360, 640]]) {
+    await page.setViewportSize({ width: w, height: hgt });
+    await page.waitForTimeout(400);
+    const vis = await page.evaluate(() => { const e = document.querySelector('.gm-win .bj-next'); if (!e) return false; const r = e.getBoundingClientRect(); const m = document.querySelector('.gm-win .bj-mini'); return r.top >= 0 && r.bottom <= innerHeight && r.height >= 56 && (!m || m.getBoundingClientRect().height < r.height); });
+    ok(vis, `skrin kejayaan ${w}×${hgt}: "Seterusnya" besar & kelihatan tanpa tatal; "Main lagi" lebih kecil`);
+  }
+  await page.setViewportSize({ width: 412, height: 860 });
   // bab lain: buka semua level dan main satu level setiap bab
   await page.evaluate(() => { const id = window.__dc.getState().currentId; const d = JSON.parse(localStorage.getItem('dc-games-v1') || '{}'); for (const g of ['robot', 'kedai', 'makmal', 'wuduk', 'lompat', 'bina', 'pemburu', 'guling', 'imbang']) { d[id][g] ||= { stars: {} }; for (let i = 1; i <= 29; i++) d[id][g].stars[i] ||= 1; } localStorage.setItem('dc-games-v1', JSON.stringify(d)); });
   await page.goto(`http://localhost:${PORT}/index.html#/`);

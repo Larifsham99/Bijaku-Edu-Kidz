@@ -224,6 +224,12 @@ Dilindungi soalan darab yang sukar dijawab oleh kanak-kanak.
   - **Anak lama diam:** bunyi ting-ting, kemudian arahan diulang.
   - **Arahan soalan, isi pelajaran, Bismillah dan doa** kekal bersuara.
 - **Nama huruf** disebut ikut sebutan sekolah Malaysia: A "ei", B "bi", C "si", E "i", I "ai", U "yu", W "dabel yu", Z "zed". Penukaran dibuat oleh `normalizeMalay()` untuk semua huruf tunggal.
+- **Skrin kejayaan:** butang **Seterusnya** besar, berdenyut dan melekat di bawah kad, jadi sentiasa kelihatan tanpa tatal. Tangan kecil menunjuk ke butang itu selepas 2.8 saat. "Main lagi", "Peta" dan "Rumah" dibuat kecil di bawahnya supaya anak tidak tertekan ulang. Komponen ini ialah `winBar()` dalam `js/cheer.js`, digunakan oleh semua permainan.
+- **Jeda, Rumah & butang kembali telefon.** Navigasi dalam aplikasi menggantikan entri sejarah, jadi tiada "undo" berantai (`js/nav.js`).
+  - **Butang ⏸** dalam setiap permainan membuka menu: Sambung, Rumah, Peta, Mula semula (`js/pause.js`).
+  - **Kembali semasa bermain:** membuka menu jeda.
+  - **Kembali di skrin lain:** pergi ke skrin induk (peta, kemudian Rumah).
+  - **Kembali di skrin utama:** dialog "Mahu keluar dari BIJAKU?".
 - **Muat satu skrin:** setiap skrin bermain (15 permainan asal & permainan baharu) setinggi skrin. Papan permainan dikecilkan secara automatik dengan `js/fit.js` (CSS `zoom`, minimum 50%) jika kandungan lebih tinggi daripada ruang. Puzzle mengira saiz ikut ketinggian papan.
 - **Panggilan, bukan nama:** aplikasi tidak menyebut nama anak. Setiap profil memilih panggilan: Abang, Adik, Kakak, Baby, Manja atau Intan Payung. Pilihan dibuat semasa pendaftaran dan boleh ditukar di Ruang Ibu Bapa → Profil. Lalainya "Adik". "Baby" disebut "beybi" oleh suara peranti supaya tidak tersalah sebut. Nama masih dipaparkan untuk membezakan profil.
 - **Suara:** semua arahan dibacakan dalam Bahasa Melayu. Aplikasi memilih suara wanita Bahasa Melayu yang terbaik pada peranti (melalui Web Speech API), dengan gaya lembut keibuan dan jeda semula jadi antara ayat.

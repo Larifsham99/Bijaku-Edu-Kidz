@@ -1,13 +1,14 @@
 // Skrin permainan: menjalankan pusingan level, maklum balas, bintang & ganjaran
 import { h, emo, clear, sleep, toast, confetti, modal } from '../ui.js';
 import { modeArt } from '../data/modeart.js';
-import { go } from '../nav.js';
+import { go, onBack } from '../nav.js';
+import { pauseMenu } from '../pause.js';
 import { ENGINES } from '../engines/index.js';
 import { MODES, generateLevel, makeRound, TIERS } from '../modes/index.js';
 import { PRAISE, ENCOURAGE, ISLAMIC_PRAISE, ISLAMIC_ENCOURAGE } from '../data/content.js';
 import { speak, stopSpeak, sfx, playSound, speakWord, haptic, voicePack } from '../audio.js';
 import { TALK, pick, echoable } from '../talk.js';
-import { ribbon, selfieButton, praiseGate, breakStreak, getStreak } from '../cheer.js';
+import { ribbon, selfieButton, praiseGate, breakStreak, getStreak, winBar } from '../cheer.js';
 import { icon } from '../icons.js';
 import { profile, settings, save, recordSkill, addActivity, modeProg, isUnlocked, callOf } from '../store.js';
 import { awardLevel, addStars, checkBadges } from '../rewards.js';
@@ -54,7 +55,7 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
   const scr = h('div', { class: 'screen play-fit' });
   const progress = h('div', { class: 'progress' }, rounds.map(() => h('i')));
   const replay = h('button', { class: 'btn-round rb-sky', type: 'button', 'aria-label': 'Dengar arahan semula' }, icon('sound'));
-  const exitBtn = h('button', { class: 'btn-round rb-red', type: 'button', 'aria-label': 'Keluar' }, icon('close'));
+  const exitBtn = h('button', { class: 'btn-round rb-pause', type: 'button', 'aria-label': 'Jeda' }, icon('pause'));
   const starPill = h('span', { class: 'pill star-pill' }, icon('star'), h('b', {}, '0'));
   scr.appendChild(h('div', { class: 'play-head' }, exitBtn, h('div', { class: 'ph-mid' }, h('div', { class: 'play-title' }, title), progress), starPill, replay));
   const g = guide(charId, '');
@@ -199,13 +200,18 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     onComplete({ stars, results, totalMistakes, scr });
   }
   replay.addEventListener('click', () => { sfx.tap(); g.repeat(); });
-  exitBtn.addEventListener('click', () => {
-    sfx.tap();
-    confirmBox('Mahu berhenti bermain?', () => go(exitTo), { yes: 'Ya, keluar', no: 'Teruskan', emoji: '🏠' });
-  });
+  // jeda: butang ⏸ atau butang kembali telefon -> Sambung / Rumah / Peta / Mula semula
+  const openPause = () => {
+    if (stopped || api._done && idx >= rounds.length - 1) return false;
+    clearTimeout(idleTimer);
+    pauseMenu({ onResume: () => { if (!stopped && !api._done) armIdle(false); }, map: exitTo, restart: location.hash.slice(1) || null });
+    return true;
+  };
+  exitBtn.addEventListener('click', () => { sfx.tap(); openPause(); });
+  const unBack = onBack(openPause);
   const ses = {
     el: scr,
-    stop() { stopped = true; unfit(); clearInterval(ticker); clearTimeout(idleTimer); if (engine?.cleanup) engine.cleanup(); },
+    stop() { stopped = true; unfit(); unBack(); clearInterval(ticker); clearTimeout(idleTimer); if (engine?.cleanup) engine.cleanup(); },
     // digunakan oleh ujian automatik untuk menyelesaikan pusingan
     async solveRound() { if (engine?.solve) await engine.solve(); },
     // jalan keluar jika berlaku ralat tidak dijangka dalam satu pusingan
@@ -264,11 +270,12 @@ function showLevelDone({ p, mode, level, stars, rewards, totalMistakes, special 
     h('p', {}, msg),
     selfieButton(`${mode.n} · Level ${level}`),
     h('div', { class: 'reward-list' }, rewards.map((r) => h('span', { class: 'pill', style: r.big ? { background: '#fff3c4' } : null }, r.e === '🪙' ? icon('coin') : emo(r.e), r.n))),
-    h('div', { class: 'row' },
-      h('button', { class: 'btn ghost', type: 'button', onclick: () => { m.close(); go('/mod/' + mode.id); } }, icon('map'), 'Peta'),
-      h('button', { class: 'btn blue', type: 'button', onclick: () => { m.close(); go(`/main/${mode.id}/${level}`); } }, icon('replay'), 'Main lagi'),
-      level < 50 ? h('button', { class: 'btn green', type: 'button', onclick: () => { m.close(); go(`/main/${mode.id}/${level + 1}`); } }, 'Seterusnya', icon('next')) : null),
-    rewards.find((r) => r.cert) ? h('button', { class: 'btn purple', type: 'button', onclick: () => { m.close(); go('/sijil/' + mode.id); } }, emo('📜'), 'Lihat sijil') : null);
+    rewards.find((r) => r.cert) ? h('button', { class: 'btn purple', type: 'button', onclick: () => { m.close(); go('/sijil/' + mode.id); } }, emo('📜'), 'Lihat sijil') : null,
+    winBar({
+      next: level < 50 ? () => { m.close(); go(`/main/${mode.id}/${level + 1}`); } : null,
+      replay: () => { m.close(); go(`/main/${mode.id}/${level}`); },
+      map: () => { m.close(); go('/mod/' + mode.id); },
+    }));
   const m = modal(content, { dismissable: false });
 }
 

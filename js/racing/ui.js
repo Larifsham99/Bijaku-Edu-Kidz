@@ -2,8 +2,8 @@
 //  CILIK RACING — skrin & HUD (DOM). Semua elemen berawalan .rc-
 // =====================================================================
 import { h, clear, sleep } from '../ui.js';
-import { ribbon, selfieButton, praiseGate, breakStreak } from '../cheer.js';
-import { go } from '../nav.js';
+import { ribbon, selfieButton, praiseGate, breakStreak, winBar } from '../cheer.js';
+import { go, onBack } from '../nav.js';
 import { lockNotice } from '../notice.js';
 import { profile, save, addActivity } from '../store.js';
 import { speak, stopSpeak, playSound, hasSound, haptic, sfx } from '../audio.js';
@@ -541,12 +541,15 @@ export function raceScreen(wi, n, onClean) {
       h('button', { class: 'rc-btn green big', type: 'button', onclick: () => resumeRace() }, icon('play'), 'Teruskan'),
       h('div', { class: 'rc-row' },
         h('button', { class: 'rc-btn', type: 'button', onclick: () => { pauseEl.remove(); restart(); } }, icon('replay'), 'Ulang'),
-        h('button', { class: 'rc-btn', type: 'button', onclick: () => { pauseEl.remove(); go(`/lumba/dunia/${wi}`); } }, icon('map'), 'Peta')),
+        h('button', { class: 'rc-btn', type: 'button', onclick: () => { pauseEl.remove(); go(`/lumba/dunia/${wi}`); } }, icon('map'), 'Peta'),
+        h('button', { class: 'rc-btn', type: 'button', onclick: () => { pauseEl.remove(); go('/'); } }, icon('home'), 'Rumah')),
       h('div', { class: 'rc-row' },
         tog('Muzik', () => rp.music !== false, (v) => { rp.music = v; }),
         tog('Bantuan elak', () => !!rp.assist, (v) => { rp.assist = v; race.assist = v; }))));
     root.appendChild(pauseEl);
   }
+  // butang kembali telefon: buka / tutup menu rehat
+  onBack(() => { if (ended) return false; if (pauseEl) resumeRace(); else openPause(); return true; });
   function resumeRace() {
     pauseEl?.remove(); pauseEl = null; paused = false; last = performance.now();
     if (started && !ended) { snd.engineStart(); if (rp.music !== false) snd.musicStart(world, wi + 7); }
@@ -586,10 +589,7 @@ export function raceScreen(wi, n, onClean) {
       h('div', { class: 'rc-res-meta' }, h('span', {}, `Level ${n} · ${world.n}`), h('span', {}, level.objective)),
       rewards.length ? h('div', { class: 'rc-rewards' }, ...rewards) : null,
       selfieButton(`Cilik Racing · ${world.n}`),
-      h('div', { class: 'rc-row' },
-        h('button', { class: 'rc-btn', type: 'button', 'aria-label': 'Ulang', onclick: () => { snd.rsfx.pop(); restart(); } }, icon('replay'), 'Ulang'),
-        h('button', { class: 'rc-btn', type: 'button', onclick: () => { snd.rsfx.pop(); go(`/lumba/dunia/${wi}`); } }, icon('map'), 'Peta'),
-        next ? h('button', { class: 'rc-btn green big', type: 'button', onclick: () => { snd.rsfx.pop(); go(`/lumba/main/${next.wi}/${next.n}`); } }, 'Seterusnya', icon('next')) : null));
+      winBar({ next: next ? () => go(`/lumba/main/${next.wi}/${next.n}`) : null, replay: () => restart(), map: () => go(`/lumba/dunia/${wi}`) }));
     root.appendChild(h('div', { class: 'rc-result-back' }, box));
     const extra = res.newCars.length ? ` Kamu dapat kereta baharu, ${res.newCars[0].say}!` : res.champion ? ' Kamu dapat trofi juara!' : res.newMedals.length ? ` Kamu dapat ${res.newMedals[0].medal.n.toLowerCase()}!` : '';
     speak((level.special ? `Tahniah! Kamu juara ${world.n}!` : stars === 3 ? 'Hebat! Kamu berjaya!' : 'Yeay! Kita menang!') + extra, { mood: 'pujian' });

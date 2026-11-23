@@ -14,7 +14,7 @@ import { CHAPTERS, LEVELS_PER_CHAPTER } from './data.js';
 import { buildLevel, TOTAL, isPlate } from './levels.js';
 import { artSvg } from './art.js';
 import { sfx, unlock } from './sound.js';
-import { cheer, ribbon, flashRibbon, RIBBON_WORDS, selfieButton } from '../cheer.js';
+import { cheer, ribbon, flashRibbon, RIBBON_WORDS, selfieButton, winBar } from '../cheer.js';
 const praiseWord = () => RIBBON_WORDS[Math.floor(Math.random() * RIBBON_WORDS.length)];
 import * as S from './store.js';
 
@@ -232,10 +232,7 @@ export function playScreen(ci, n, onClean) {
       level.master ? h('div', { class: 'ts-win-sticker' }, art(c.icon, 120), h('span', { class: 'ts-medal big' }, icon('medal'))) : h('div', { class: 'ts-win-board' }, ...level.words.slice(0, 3).map((w) => h('span', { class: 'ts-win-word' }, ...[...w].map((ch, i) => tile(ch, { cls: 'mini', attrs: { style: `--tc:${tileColor(ch)};animation-delay:${0.2 + i * 0.05}s` } }))))),
       h('div', { class: 'ts-win-stars' }, ...[1, 2, 3].map((k) => h('span', { class: `ts-bigstar ${k <= st ? 'on' : ''}`, style: { animationDelay: `${0.3 + k * 0.25}s` } }, icon('star')))),
       res.openedChapter !== null ? h('div', { class: 'ts-unlocked' }, icon('lock'), art(CHAPTERS[res.openedChapter].icon, 46, 'mini'), h('b', {}, CHAPTERS[res.openedChapter].n)) : null,
-      h('div', { class: 'ts-win-btns' },
-        h('button', { class: 'ts-btn', type: 'button', 'aria-label': 'Main semula', onclick: () => { sfx.tap(); go(`/silang/main/${ci}/${n}`); } }, icon('replay')),
-        h('button', { class: 'ts-btn', type: 'button', 'aria-label': 'Peta chapter', onclick: () => { sfx.tap(); go(`/silang/bab/${ci}`); } }, icon('map')),
-        n < LEVELS_PER_CHAPTER ? h('button', { class: 'ts-btn go', type: 'button', 'aria-label': 'Level seterusnya', onclick: () => { sfx.tap(); go(`/silang/main/${ci}/${n + 1}`); } }, icon('next')) : h('button', { class: 'ts-btn go', type: 'button', 'aria-label': 'Semua chapter', onclick: () => { sfx.tap(); go('/silang'); } }, icon('next'))));
+      winBar({ next: () => go(n < LEVELS_PER_CHAPTER ? `/silang/main/${ci}/${n + 1}` : '/silang'), replay: () => go(`/silang/main/${ci}/${n}`), map: () => go(`/silang/bab/${ci}`) }));
     [1, 2, 3].forEach((k) => { if (k <= st) later(() => sfx.star(k - 1), 300 + k * 250); });
     if (level.master) later(() => sfx.sticker(), 1300);
     if (res.openedChapter !== null) later(() => sfx.unlock(), 1800);

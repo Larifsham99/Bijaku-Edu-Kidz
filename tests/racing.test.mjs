@@ -137,10 +137,10 @@ try {
     ok(st >= 1, `${label}: dimainkan hingga garisan penamat dan disimpan (${st} bintang)`);
   };
   await race(0, 1, 'Litar Kampung L1');
-  await page.click('.rc-result button:has-text("Seterusnya")');
+  await page.click('.rc-result .bj-next', { force: true });
   await page.waitForSelector('.rc-result', { timeout: 60000 });
   ok(true, 'butang Seterusnya membuka level 2 dan boleh ditamatkan');
-  await page.click('.rc-result button:has-text("Ulang")');
+  await page.click('.rc-result .bj-mini:has-text("Main lagi")');
   await page.waitForSelector('.rc-result', { timeout: 60000 });
   ok(true, 'butang Ulang memainkan semula level yang sama');
   // buka beberapa level dengan pit, memori & level juara

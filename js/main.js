@@ -17,7 +17,8 @@ import { shopScreen } from './screens/shop.js';
 import { parentScreen } from './screens/parent.js';
 import { timeoutScreen, overLimit } from './screens/timeout.js';
 import { MODES } from './modes/index.js';
-import { go } from './nav.js';
+import { go, clearBack, runBack, parentOf } from './nav.js';
+import { exitDialog, pauseOpen, closePause } from './pause.js';
 import { applyTheme, ensureThemeFields } from './theme.js';
 import { DEMO } from './demo.js';
 import { addProfile } from './store.js';
@@ -118,8 +119,11 @@ function lazyScreen(load) {
   return el;
 }
 
-let routed = false;
+let routed = false, curHash = '', skipHash = false;
 function route() {
+  if (skipHash) { skipHash = false; if (location.hash === curHash) return; }
+  curHash = location.hash;
+  clearBack();
   if (routed) { try { sfx.swish(); } catch { /* */ } } routed = true;
   stopPlay();
   stopRacing();
@@ -169,11 +173,38 @@ function route() {
   app.appendChild(el);
 }
 
+function handleBack(path) {
+  // tutup lapisan yang terbuka dahulu
+  if (pauseOpen()) { closePause(true); return; }
+  const ex = document.querySelector('.bj-exit-back'); if (ex) { ex.remove(); return; }
+  const mb = document.querySelector('.modal-back'); if (mb && !mb.querySelector('.bj-winbar')) { mb.remove(); return; }
+  if (runBack()) return; // skrin permainan: menu jeda
+  const parent = parentOf(path);
+  if (parent === null) exitDialog();
+  else go(parent);
+}
+
 async function boot() {
   try { installCompat(); } catch { /* */ } // pelayar lama: aspect-ratio dll.
   await initStore();
   loadVoicePack(); // pakej suara neural (jika dipasang)
   addEventListener('hashchange', route);
+  // ---- butang kembali telefon: bukan "undo" berantai ----
+  // Sejarah: [akar] -> [atas]. Navigasi dalam aplikasi menggantikan [atas] (nav.go).
+  // Tekan kembali = kembali ke [akar]: kita tangkap, pulihkan [atas] dan buat tindakan yang sesuai.
+  try {
+    history.replaceState({ bj: 'root' }, '', location.href);
+    history.pushState({ bj: 'top' }, '', location.href);
+  } catch { /* */ }
+  addEventListener('popstate', (e) => {
+    if (e.state?.bj !== 'root') return; // entri pautan biasa: biar hashchange mengurus
+    if (window.__bjLeaving) { window.__bjLeaving = false; try { history.back(); } catch { /* */ } return; }
+    const here = curHash || '#/';
+    try { history.pushState({ bj: 'top' }, '', here); } catch { /* */ }
+    if (location.hash !== here) { /* tidak berlaku: pushState mengembalikan url */ }
+    skipHash = true; setTimeout(() => { skipHash = false; }, 0);
+    handleBack(here.slice(1) || '/');
+  });
   // bunyi suis (Ruang Ibu Bapa, tetapan): semua kotak semak
   addEventListener('change', (e) => { const el = e.target; if (el instanceof HTMLInputElement && el.type === 'checkbox') { try { sfx.toggle(el.checked); } catch { /* */ } } }, true);
   // buka kunci audio pada sentuhan pertama
