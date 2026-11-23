@@ -182,7 +182,7 @@ export default {
       if (ri === 0) {
         ctx.say(ch === 2 ? 'Kutip semua bateri dahulu, kemudian bawa robot ke bintang. Susun anak panah, kemudian tekan Jalan!'
           : ch === 1 ? 'Ada halangan di papan. Susun anak panah supaya robot sampai ke bintang tanpa terlanggar!'
-            : n === 1 ? 'Bantu robot sampai ke bintang! Tekan anak panah untuk menyusun arahan, kemudian tekan Jalan.' : 'Bawa robot ke bintang. Susun anak panah, kemudian tekan Jalan!');
+            : n === 1 ? 'Bantu robot ambil bintang! Tekan anak panah. Kemudian tekan Jalan.' : 'Bawa robot ke bintang. Susun anak panah, kemudian tekan Jalan!');
       } else ctx.say('Satu lagi! Bawa robot ke bintang.');
     }
     startRound();

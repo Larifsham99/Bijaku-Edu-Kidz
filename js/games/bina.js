@@ -303,7 +303,7 @@ export default {
 
     globalThis.__gmPlay && (globalThis.__gmPlay.solve = () => { built.clear(); model.blocks.forEach(([x, y, z, c]) => built.set(keyOf(x, y, z), c)); updateCount(); check(); });
     const intro = ch === 0
-      ? (n === 1 ? 'Jom jadi arkitek! Bina sama seperti pelan. Pilih warna blok, kemudian tekan petak pada pulau untuk meletak blok.' : Hmax > 1 ? `Bina ${model.n}! Ada ${TINGKAT[Hmax - 1]} tingkat. Tekan anak panah untuk naik tingkat.` : `Bina ${model.n} seperti pelan!`)
+      ? (n === 1 ? 'Jom bina! Pilih blok. Kemudian tekan pulau. Ikut gambar pelan, ya.' : Hmax > 1 ? `Bina ${model.n}! Ada ${TINGKAT[Hmax - 1]} tingkat. Tekan anak panah untuk naik tingkat.` : `Bina ${model.n} seperti pelan!`)
       : ch === 1 ? (n === 11 ? 'Sekarang tiada pelan tingkat. Lihat model 3D yang berputar, kemudian bina sama sepertinya!' : `Lihat model 3D, kemudian bina ${model.n}!`)
         : (n === 21 ? 'Cabaran Arkitek! Binaan lebih besar. Putar paparan dan teliti setiap tingkat.' : `Cabaran Arkitek: bina ${model.n}!`);
     ctx.say(intro);

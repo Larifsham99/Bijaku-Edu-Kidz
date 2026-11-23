@@ -18,13 +18,15 @@ export const EXTRAS = {
 // Permainan baharu Fasa 2+ (rangka kongsi js/games)
 Object.values(GAMES).forEach((g) => { EXTRAS[g.id] = { id: g.id, n: g.n, c: g.c, img: g.img, sub: g.sub, route: `/g/${g.id}`, cls: '', bg: g.bg, isNew: true }; });
 
+// Susunan: asas pembelajaran dahulu; dalam setiap rak, yang paling mudah di kiri.
+// Aksi 3D (paling mencabar untuk kanak-kanak kecil) di akhir.
 export const SHELVES = [
-  { t: 'Aksi 3D', ids: ['guling', 'imbang', 'lompat', 'bina'] },
-  { t: 'Huruf & Nombor', ids: ['abc', 'nombor', 'kedai', 'kelas', 'silang'] },
+  { t: 'Huruf & Nombor', ids: ['abc', 'nombor', 'kelas', 'kedai', 'silang'] },
   { t: 'Islam & Akhlak', ids: ['soleh', 'wuduk', 'akhlak'] },
-  { t: 'Minda Pintar', ids: ['robot', 'puzzle', 'ingatan', 'bayang', 'minda', 'maze'] },
-  { t: 'Kreatif & Bunyi', ids: ['warna', 'seni', 'bunyi'] },
-  { t: 'Sains & Dunia Sekeliling', ids: ['makmal', 'pemburu', 'harian', 'haiwan', 'misi', 'lumba'] },
+  { t: 'Kreatif & Bunyi', ids: ['warna', 'bunyi', 'seni'] },
+  { t: 'Sains & Dunia Sekeliling', ids: ['haiwan', 'harian', 'makmal', 'pemburu', 'misi', 'lumba'] },
+  { t: 'Minda Pintar', ids: ['ingatan', 'bayang', 'puzzle', 'maze', 'minda', 'robot'] },
+  { t: 'Aksi 3D', ids: ['lompat', 'bina', 'guling', 'imbang'] },
 ];
 
 export const ALL_IDS = SHELVES.flatMap((s) => s.ids);

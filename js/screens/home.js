@@ -12,7 +12,8 @@ import { speak, sfx, voicePack } from '../audio.js';
 import { limitSeconds } from './timeout.js';
 import { DEMO, DEMO_MAX, SALES_URL } from '../demo.js';
 import { BRAND, brandLogo, shade } from '../brand.js';
-import { EXTRAS, SHELVES, gameInfo, openGame, gameArt, isOff, lockIc } from './catalog.js';
+import { EXTRAS, SHELVES, ALL_IDS, gameInfo, openGame, gameArt, isOff, lockIc } from './catalog.js';
+import { recommend, REASONS } from '../recommend.js';
 import { pathHeroInfo, startNode, DOMAINS } from './path.js';
 
 const greet = (name) => {
@@ -148,6 +149,22 @@ export function homeScreen() {
     quick('q-pink', 'kain', 'Kostum', () => go('/kedai')),
     quick('q-green', 'wau', 'Main Bebas', () => go('/bebas'))));
 
+  // ---- cadangan bercahaya (ikut rekod permainan anak) ----
+  const recs = recommend(p, ALL_IDS.filter((id) => !isOff(id)));
+  const recIds = new Set(recs.map((r) => r.id));
+  if (recs.length) {
+    scr.appendChild(h('section', { class: 'bj-recs', 'aria-label': 'Cadangan untuk kamu' },
+      h('h2', { class: 'bj-recs-t' }, h('span', { class: 'bj-recs-spark', 'aria-hidden': 'true' }, '✨'), 'Cadangan untuk kamu'),
+      h('div', { class: 'bj-recs-row' }, ...recs.map(({ id, why }, i) => {
+        const g = gameInfo(id, p);
+        const style = `--c:${g.c};--a:${shade(g.c, 0.22)};--b:${shade(g.c, -0.08)};--d:${shade(g.c, -0.4)};--i:${i}`;
+        return h('button', { class: `bj-rec why-${why}`, type: 'button', style, 'aria-label': `${REASONS[why].t}: ${g.n}`, onclick: () => openGame(g) },
+          h('span', { class: 'bj-rec-why' }, h('span', { class: 'emo' }, REASONS[why].e), REASONS[why].t),
+          h('span', { class: 'bj-tile-art' }, gameArt(g)),
+          h('span', { class: 'name' }, g.n));
+      }))));
+  }
+
   // ---- rak kategori ----
   SHELVES.forEach((s) => {
     const row = h('div', { class: 'bj-shelf-row' });
@@ -156,12 +173,12 @@ export function homeScreen() {
       const off = isOff(id);
       const style = `--c:${g.c};--a:${shade(g.c, 0.22)};--b:${shade(g.c, -0.08)};--d:${shade(g.c, -0.4)}`;
       if (g.extra) {
-        row.appendChild(h('button', { class: `bj-tile bj-xtile ${off ? 'locked' : ''}`, type: 'button', style, 'aria-label': g.n, onclick: () => openGame(g) },
+        row.appendChild(h('button', { class: `bj-tile bj-xtile ${off ? 'locked' : ''} ${recIds.has(id) ? 'bj-glow' : ''}`, type: 'button', style, 'aria-label': g.n, onclick: () => openGame(g) },
           h('span', { class: 'bj-new' }, off ? 'DIKUNCI' : 'BAHARU'),
           h('span', { class: 'bj-tile-art' }, gameArt(g)), h('span', { class: 'name' }, g.n), h('span', { class: 'meta' }, icon('play'), 'Jom main'), off ? lockIc() : null));
         return;
       }
-      row.appendChild(h('button', { class: `bj-tile mode-card ${off ? 'locked' : ''}`, type: 'button', style: `${style};--p:${Math.round((g.done / 50) * 100)}`, 'aria-label': `${g.n}, ${g.done} daripada 50 level`, onclick: () => openGame(g) },
+      row.appendChild(h('button', { class: `bj-tile mode-card ${off ? 'locked' : ''} ${recIds.has(id) ? 'bj-glow' : ''}`, type: 'button', style: `${style};--p:${Math.round((g.done / 50) * 100)}`, 'aria-label': `${g.n}, ${g.done} daripada 50 level`, onclick: () => openGame(g) },
         g.done >= 50 ? h('span', { class: 'done-badge' }, icon('medal')) : null,
         h('span', { class: 'bj-tile-art' }, gameArt(g)),
         h('span', { class: 'name' }, g.n),

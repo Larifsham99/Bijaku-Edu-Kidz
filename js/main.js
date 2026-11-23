@@ -1,7 +1,8 @@
 // =====================================================================
 //  DUNIA CILIK — titik mula aplikasi & penghala (router)
 // =====================================================================
-import { initStore, profile, getState, settings, flush } from './store.js';
+import { initStore, profile, getState, settings, flush, save } from './store.js';
+import { markPlayed } from './recommend.js';
 import { unlockAudio, startMusic, loadVoicePack, speak, sfx } from './audio.js';
 import { clear } from './ui.js';
 import { homeScreen, onboardingScreen, profilesScreen } from './screens/home.js';
@@ -149,6 +150,9 @@ function route() {
   if (p && overLimit(p) && parts[0] !== 'ibubapa') { app.appendChild(timeoutScreen()); return; }
   // Laluan Bijak: selepas langkah selesai, sebarang navigasi kembali ke laluan
   if (pathIntercept(path)) return;
+  // rekod permainan yang dibuka (untuk cadangan bercahaya di skrin utama)
+  const playedId = parts[0] === 'main' ? parts[1] : parts[0] === 'g' && parts[2] ? parts[1] : parts[0] === 'lumba' && parts[1] === 'main' ? 'lumba' : parts[0] === 'silang' && parts[1] === 'main' ? 'silang' : parts[0] === 'akhlak' && parts[1] === 'kisah' ? 'akhlak' : null;
+  if (playedId && p) { markPlayed(p, playedId); save(); }
   let el;
   switch (parts[0]) {
     case undefined: el = homeScreen(); break;

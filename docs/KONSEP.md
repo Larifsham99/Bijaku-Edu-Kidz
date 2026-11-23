@@ -224,6 +224,15 @@ Dilindungi soalan darab yang sukar dijawab oleh kanak-kanak.
   - **Anak lama diam:** bunyi ting-ting, kemudian arahan diulang.
   - **Arahan soalan, isi pelajaran, Bismillah dan doa** kekal bersuara.
 - **Nama huruf** disebut ikut sebutan sekolah Malaysia: A "ei", B "bi", C "si", E "i", I "ai", U "yu", W "dabel yu", Z "zed". Penukaran dibuat oleh `normalizeMalay()` untuk semua huruf tunggal.
+- **Cadangan bercahaya** (`js/recommend.js`): 3 kad bercahaya "Cadangan untuk kamu" di skrin utama. Kad yang sama turut bercahaya dalam rak.
+  - **▶️ Teruskan!:** permainan terakhir dimainkan, jika masih ada level.
+  - **💪 Jom latih!:** kemahiran paling lemah, iaitu ketepatan cubaan pertama yang rendah.
+  - **✨ Baru untuk kamu:** belum pernah dicuba, ikut susunan kesesuaian umur (3–4 vs 5–6 tahun).
+  - **Baki kad:** permainan yang paling jarang dimainkan.
+  - Permainan dikunci ibu bapa tidak dicadangkan. Rekod dibuka-main disimpan dalam `profile.played`.
+- **Tangan penunjuk** (`js/coach.js`): pada level 1 Kedai, Robot dan Bina Dunia, tangan menunjuk langkah demi langkah (cth. duit → Bayar) sehingga anak menekan.
+- **Arahan:** ayat dipendekkan kepada langkah ringkas, contohnya "Tekan duit. Kemudian tekan Bayar!". Soalan doa kini mendahului maksud doa.
+- **Susunan rak:** asas pembelajaran dahulu, yang mudah di kiri; Aksi 3D di akhir.
 - **Skrin kejayaan:** butang **Seterusnya** besar, berdenyut dan melekat di bawah kad, jadi sentiasa kelihatan tanpa tatal. Tangan kecil menunjuk ke butang itu selepas 2.8 saat. "Main lagi", "Peta" dan "Rumah" dibuat kecil di bawahnya supaya anak tidak tertekan ulang. Komponen ini ialah `winBar()` dalam `js/cheer.js`, digunakan oleh semua permainan.
 - **Jeda, Rumah & butang kembali telefon.** Navigasi dalam aplikasi menggantikan entri sejarah, jadi tiada "undo" berantai (`js/nav.js`).
   - **Butang ⏸** dalam setiap permainan membuka menu: Sambung, Rumah, Peta, Mula semula (`js/pause.js`).

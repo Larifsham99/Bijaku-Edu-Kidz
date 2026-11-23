@@ -17,6 +17,14 @@ import { lockNotice } from '../notice.js';
 import { GAMES, GAME_LEVELS, chapterOf } from './registry.js';
 import * as S from './store.js';
 import { autoFit } from '../fit.js';
+import { coach } from '../coach.js';
+
+// Langkah tangan penunjuk pada level 1 (permainan berbilang langkah)
+const COACH = {
+  kedai: ['.kd-notes .kd-note', '.kd-pay'],
+  robot: ['.rb-arrow', '.rb-ctl.run'],
+  bina: ['.bd-pal button', '.bd-build'],
+};
 
 const pid = () => profile()?.id;
 const vars = (g) => `--gc:${g.c};--ga:${g.bg[0]};--gb:${g.bg[1]};--gd:${g.bg[2]};--gl:${shade(g.c, 0.82)}`;
@@ -132,7 +140,8 @@ export async function playScreen(id, n, onClean) {
   let last = Date.now();
   const ticker = setInterval(() => { const now = Date.now(); if (document.visibilityState === 'visible' && p) { addActivity(p, { time: Math.min(10, (now - last) / 1000) }); save(); } last = now; }, 5000);
   const gameClean = mod.play(ctx) || (() => {});
-  onClean(() => { unfit(); unBack(); alive = false; clearInterval(ticker); timers.forEach(clearTimeout); try { gameClean(); } catch { /* */ } stopSpeak(); document.querySelectorAll('.gm-ghost').forEach((e) => e.remove()); globalThis.__gmPlay = null; });
+  const unCoach = n === 1 && COACH[id] && !globalThis.__gmFast ? coach(scr, COACH[id], { delay: 2200 }) : () => {};
+  onClean(() => { unfit(); unBack(); unCoach(); alive = false; clearInterval(ticker); timers.forEach(clearTimeout); try { gameClean(); } catch { /* */ } stopSpeak(); document.querySelectorAll('.gm-ghost').forEach((e) => e.remove()); globalThis.__gmPlay = null; });
   return scr;
 }
 

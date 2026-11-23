@@ -120,7 +120,7 @@ export default {
 
       const names = rd.items.map((x) => `${x.it[1]} ${rm(x.p)}`).join(', dan ');
       if (rd.items.length > 1) ctx.say(`${cname} mahu beli ${names}. Berapa jumlahnya? Bayar dengan tepat!`);
-      else if (n === 1 && ri === 0) ctx.say(`${cname} mahu beli ${names}. Tekan duit di dompet untuk bayar. Kemudian tekan Bayar!`);
+      else if (n === 1 && ri === 0) ctx.say(`${cname} mahu beli ${names}. Tekan duit. Kemudian tekan Bayar!`);
       else ctx.say(`${cname} mahu beli ${names}. Bayar dengan tepat!`);
     }
     startRound();

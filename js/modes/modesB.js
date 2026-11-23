@@ -307,7 +307,7 @@ export const soleh = {
     doaBila(r, L) {
       const d = r.pick(DOA_Q.filter((x) => (L <= 20 ? ['bismillah', 'lepasmakan', 'tidur', 'ilmu', 'keluartandas'].includes(x.id) : true)));
       const pool = DOA_Q.map((x) => ({ e: x.e, lbl: x.sit, say: x.sit, id: x.id, wide: true }));
-      return choiceRound({ skill: 'soleh.doa', say: `Doa ini bermaksud: ${d.makna}. Bilakah kita membacanya?`, show: { k: 'doa', ar: d.ar, rumi: d.rumi, makna: d.makna, src: d.src }, options: options(r, pool, pool.find((p) => p.id === d.id), L <= 25 ? 2 : 3), answer: pool.find((p) => p.id === d.id), sayOnTap: true });
+      return choiceRound({ skill: 'soleh.doa', say: `Bila kita baca doa ini? Maksudnya: ${d.makna}.`, show: { k: 'doa', ar: d.ar, rumi: d.rumi, makna: d.makna, src: d.src }, options: options(r, pool, pool.find((p) => p.id === d.id), L <= 25 ? 2 : 3), answer: pool.find((p) => p.id === d.id), sayOnTap: true });
     },
     doaPilih(r, L) {
       const d = r.pick(DOA_Q);
