@@ -68,6 +68,12 @@ try {
   ok(await page.locator('.sf-thumb').count() === 1, 'foto disimpan dalam Album Selfie (peranti sahaja)');
   const size = await page.evaluate(async () => { const m = await import('/js/selfie.js'); const l = await m.listPhotos(); return l[0].blob.size; });
   ok(size > 5000 && size < 250000, `saiz foto kecil (${Math.round(size / 1024)} KB)`);
+  // selfie dari tetingkap modal permainan asal (lapisan mesti di atas modal)
+  await page.evaluate(() => { const m = document.createElement('div'); m.className = 'modal-back'; m.id = 'ujimodal'; m.innerHTML = '<div class="modal"><button id="ujisf">x</button></div>'; document.body.appendChild(m); import('/js/selfie.js').then((s) => s.openSelfie('Ujian modal')); });
+  await page.waitForFunction(() => document.querySelector('.sf-video')?.readyState >= 2, null, { timeout: 10000 });
+  const topEl = await page.evaluate(() => { const r = document.querySelector('.sf-shot').getBoundingClientRect(); const e = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2); return e?.className || ''; });
+  ok(/sf-shot/.test(topEl), `butang kamera boleh ditekan walaupun dibuka dari tetingkap modal (atas: ${topEl})`);
+  await page.click('.sf-x'); await page.evaluate(() => document.getElementById('ujimodal')?.remove());
   // Pemburu Warna: mod kamera
   await page.evaluate(() => window.__dc.go('/g/pemburu/1'));
   await page.waitForSelector('.pw-intro');

@@ -110,14 +110,27 @@ export async function openSelfie(label = 'Juara hari ini!') {
   const count = h('div', { class: 'sf-count' });
   const flash = h('div', { class: 'sf-flash' });
   const msg = h('div', { class: 'sf-msg' }, 'Membuka kamera…');
-  const stage = h('div', { class: 'sf-stage' }, video, over, guide, count, flash, msg);
+  const tapHint = h('button', { class: 'sf-tapshot', type: 'button', 'aria-label': 'Ambil gambar', onclick: (e) => { e.stopPropagation(); capture(); } }, h('span', { class: 'emo' }, '📸'));
+  const stage = h('div', { class: 'sf-stage', onclick: () => capture() }, video, over, guide, count, flash, msg, tapHint);
   const filters = h('div', { class: 'sf-filters' });
   const shot = h('button', { class: 'sf-shot', type: 'button', 'aria-label': 'Ambil gambar', onclick: () => capture() });
-  const close = () => { stopped = true; stopCamera(stream); root.remove(); document.removeEventListener('visibilitychange', onVis); };
+  const close = () => { stopped = true; stopCamera(stream); root.remove(); document.removeEventListener('visibilitychange', onVis); removeEventListener('resize', fit); window.visualViewport?.removeEventListener('resize', fit); };
   const root = h('div', { class: 'sf-root', role: 'dialog', 'aria-label': 'Selfie Juara' },
     h('div', { class: 'sf-top' }, h('button', { class: 'sf-x', type: 'button', 'aria-label': 'Tutup', onclick: () => { sfx.tap(); close(); } }, icon('close')), h('b', {}, '📸 Selfie Juara'), h('span')),
     stage, filters, h('div', { class: 'sf-bar' }, shot));
   document.body.appendChild(root);
+  // muatkan kotak kamera dalam ruang skrin yang BENAR-BENAR kelihatan (bar alamat pelayar telefon)
+  function fit() {
+    const vh = window.visualViewport?.height || window.innerHeight;
+    root.style.height = `${vh}px`;
+    const others = [...root.children].filter((c) => c !== stage && !c.hidden).reduce((a, c) => a + c.offsetHeight, 0);
+    const gaps = 10 * root.children.length + 24;
+    const hAvail = Math.max(180, vh - others - gaps);
+    const w = Math.max(150, Math.min(root.clientWidth - 24, 420, hAvail * 0.75));
+    stage.style.width = `${Math.floor(w)}px`;
+  }
+  addEventListener('resize', fit); window.visualViewport?.addEventListener('resize', fit);
+  requestAnimationFrame(fit);
   const drawOverlay = () => { const g = over.getContext('2d'); g.clearRect(0, 0, W, H); FILTERS[fi].draw(g, W, H); };
   FILTERS.forEach((f, i) => filters.appendChild(h('button', { class: `sf-f ${i === fi ? 'on' : ''}`, type: 'button', 'aria-label': `Filter ${f.n}`, onclick: (e) => { fi = i; sfx.pop(); drawOverlay(); filters.querySelectorAll('.sf-f').forEach((b) => b.classList.remove('on')); e.currentTarget.classList.add('on'); } }, h('span', { class: 'emo' }, f.e), h('small', {}, f.n))));
   drawOverlay();
@@ -128,8 +141,8 @@ export async function openSelfie(label = 'Juara hari ini!') {
       stream = await openCamera('user', 640);
       if (stopped) { stopCamera(stream); return; }
       video.srcObject = stream; await video.play().catch(() => {});
-      msg.textContent = ''; msg.hidden = true;
-      speak('Letakkan muka kamu dalam bulatan, kemudian tekan butang kamera!');
+      msg.textContent = ''; msg.hidden = true; fit();
+      speak('Letakkan muka kamu dalam bulatan, kemudian ketik skrin atau tekan butang kamera!');
     } catch (e) {
       msg.textContent = cameraMessage(e.code); msg.hidden = false; shot.disabled = true;
       speak(cameraMessage(e.code));
@@ -137,7 +150,7 @@ export async function openSelfie(label = 'Juara hari ini!') {
   }
   async function capture() {
     if (busy || !stream) return;
-    busy = true; shot.disabled = true;
+    busy = true; shot.disabled = true; tapHint.hidden = true;
     for (const n of [3, 2, 1]) { count.textContent = n; count.classList.remove('pop'); void count.offsetWidth; count.classList.add('pop'); beep(n === 1 ? 880 : 660); await new Promise((r) => setTimeout(r, 700)); if (stopped) return; }
     count.textContent = '';
     const c = h('canvas', { width: W, height: H }); const g = c.getContext('2d');
@@ -150,7 +163,7 @@ export async function openSelfie(label = 'Juara hari ini!') {
     stopCamera(stream); stream = null; // jimat bateri: kamera ditutup serta-merta
     const blob = await new Promise((r) => c.toBlob(r, 'image/jpeg', 0.78));
     const url = URL.createObjectURL(blob);
-    clear(stage); filters.hidden = true;
+    clear(stage); filters.hidden = true; stage.onclick = null; requestAnimationFrame(fit);
     stage.appendChild(h('img', { class: 'sf-photo', src: url, alt: 'Selfie juara' }));
     sfx.reward?.();
     speak('Cantiknya! Simpan dalam album?', { mood: 'pujian' });
