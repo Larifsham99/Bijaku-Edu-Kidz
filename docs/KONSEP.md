@@ -25,6 +25,14 @@
 - Langkah yang sudah dimainkan secara bebas dikira selesai automatik.
 - Ruang Ibu Bapa → **🧭 Panduan**: cara guna, matlamat harian, kemajuan 6 bidang, cadangan ikut umur.
 
+## Kamera: Selfie Juara & Pemburu Warna (ringan & selamat)
+
+- **Selfie Juara** (`js/selfie.js`, dimuat malas): butang "📸 Selfie Juara" pada setiap skrin kejayaan (15 permainan asal, Teka Silang, Racing, Taman Akhlak, permainan baharu, peti harta Laluan Bijak). 5 bingkai comel dilukis dengan kanvas (Juara, Graduan, Pelangi, Angkasawan, Bunga), kiraan 3-2-1, bunyi pengatup. Tiada pengecaman wajah/ML.
+- Kamera dibuka **hanya apabila butang ditekan**, resolusi rendah, **ditutup serta-merta** selepas gambar diambil atau apabila aplikasi disembunyikan.
+- Foto JPEG kecil (≈20–70 KB) dalam **IndexedDB peranti sahaja**, maks. 30 setiap anak (yang lama dipadam), tiada muat naik. Album di Koleksi → 📸 Album Selfie. Dipadam bersama set semula profil.
+- **Pemburu Warna** (`js/games/pemburu.js`): kamera belakang, sampel 24×24 piksel di tengah 6 kali sesaat, pengelas HSV (11 warna); tahan 1 saat untuk menangkap. Mod gambar automatik jika tiada kamera / tidak dibenarkan / ditutup ibu bapa.
+- Ruang Ibu Bapa → Tetapan → suis **Kamera** (mematikan selfie & mod kamera).
+
 ## Jenama: BIJAKU oleh Mawar Ikhlas
 
 - **Nama aplikasi:** BIJAKU (bi-ja-ku, "bijakku"). **Syarikat:** Mawar Ikhlas (ditulis "oleh Mawar Ikhlas").

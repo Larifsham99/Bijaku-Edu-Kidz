@@ -10,7 +10,7 @@ import { overLimit } from '../screens/timeout.js';
 import { DEMO, DEMO_MAX } from '../demo.js';
 import { demoUpgrade } from '../screens/shared.js';
 import { makeRng } from '../rng.js';
-import { cheer, ribbon, flashRibbon, RIBBON_WORDS } from '../cheer.js';
+import { cheer, ribbon, flashRibbon, RIBBON_WORDS, selfieButton } from '../cheer.js';
 import { shade } from '../brand.js';
 import { GAMES, GAME_LEVELS, chapterOf } from './registry.js';
 import * as S from './store.js';
@@ -108,6 +108,7 @@ export async function playScreen(id, n, onClean) {
       h('div', { class: 'gm-rays', 'aria-hidden': 'true' }),
       h('img', { class: 'gm-win-art', src: g.img, alt: '' }),
       ribbon(st === 3 ? 'Hebat!' : st === 2 ? 'Syabas!' : 'Tahniah!', { sub: `Level ${n} Selesai!`, stars: st }),
+      selfieButton(`${g.n} · Level ${n}`),
       res.first && n % 10 === 0 ? h('div', { class: 'gm-unlock' }, icon('medal'), `Bab "${g.chapters[chapterOf(n)]}" tamat!`) : null,
       h('div', { class: 'gm-win-btns' },
         h('button', { class: 'gm-btn', type: 'button', 'aria-label': 'Main semula', onclick: () => { sfx.tap(); go(`/g/${id}/${n}`); } }, icon('replay')),

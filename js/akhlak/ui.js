@@ -2,7 +2,7 @@
 //  TAMAN AKHLAK — skrin (kelas berawalan .ak-)
 // =====================================================================
 import { h, clear } from '../ui.js';
-import { ribbon } from '../cheer.js';
+import { ribbon, selfieButton } from '../cheer.js';
 import { go } from '../nav.js';
 import { profile, save, addActivity } from '../store.js';
 import { speak, stopSpeak, sfx, haptic } from '../audio.js';
@@ -136,6 +136,7 @@ export function storyScreen(id, onClean) {
           h('span', { class: 'ak-seed', html: '<svg viewBox="-20 -40 40 46" width="64" height="72"><ellipse cx="0" cy="2" rx="16" ry="4" fill="#8a5d36"/><path d="M0 0V-22" stroke="#2f9e6a" stroke-width="3"/>' + [0, 72, 144, 216, 288].map((r) => `<ellipse cx="0" cy="-30" rx="5" ry="8" fill="${PLANTS[CATS[st.cat].plant].c}" transform="rotate(${r} 0 -24)" stroke="#fff" stroke-width=".6"/>`).join('') + '<circle cy="-24" r="3" fill="#ffd43b"/></svg>' }),
           h('div', {}, h('small', {}, 'Pengajaran'), h('b', {}, st.lesson), res.first ? h('span', { class: 'ak-planted' }, `${PLANTS[CATS[st.cat].plant].n} ditanam di kebun!`) : null),
           h('div', { class: 'ak-lesson-btns' },
+            selfieButton(`Taman Akhlak · ${st.n}`),
             h('button', { class: 'ak-btn', type: 'button', onclick: () => { sfx.tap(); go('/akhlak/kebun'); } }, 'Lihat kebun'),
             STORIES[idx + 1] ? h('button', { class: 'ak-btn go', type: 'button', onclick: () => { sfx.tap(); go(`/akhlak/kisah/${STORIES[idx + 1].id}`); } }, 'Kisah seterusnya', icon('next')) : null)));
       lessonEl.classList.add('show');

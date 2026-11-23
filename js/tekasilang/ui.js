@@ -13,7 +13,7 @@ import { CHAPTERS, LEVELS_PER_CHAPTER } from './data.js';
 import { buildLevel, TOTAL, isPlate } from './levels.js';
 import { artSvg } from './art.js';
 import { sfx, unlock } from './sound.js';
-import { cheer, ribbon, flashRibbon, RIBBON_WORDS } from '../cheer.js';
+import { cheer, ribbon, flashRibbon, RIBBON_WORDS, selfieButton } from '../cheer.js';
 const praiseWord = () => RIBBON_WORDS[Math.floor(Math.random() * RIBBON_WORDS.length)];
 import * as S from './store.js';
 
@@ -227,6 +227,7 @@ export function playScreen(ci, n, onClean) {
     const box = h('div', { class: `ts-win ${level.master ? 'master' : ''}` },
       h('div', { class: 'ts-rays' }),
       ribbon(level.master ? 'Tahniah!' : st === 3 ? 'Hebat!' : st === 2 ? 'Syabas!' : 'Bagus!', { sub: level.master ? 'Chapter Selesai!' : 'Tahap Selesai!' }),
+      selfieButton(`Teka Silang · ${c.n}`),
       level.master ? h('div', { class: 'ts-win-sticker' }, art(c.icon, 120), h('span', { class: 'ts-medal big' }, icon('medal'))) : h('div', { class: 'ts-win-board' }, ...level.words.slice(0, 3).map((w) => h('span', { class: 'ts-win-word' }, ...[...w].map((ch, i) => tile(ch, { cls: 'mini', attrs: { style: `--tc:${tileColor(ch)};animation-delay:${0.2 + i * 0.05}s` } }))))),
       h('div', { class: 'ts-win-stars' }, ...[1, 2, 3].map((k) => h('span', { class: `ts-bigstar ${k <= st ? 'on' : ''}`, style: { animationDelay: `${0.3 + k * 0.25}s` } }, icon('star')))),
       res.openedChapter !== null ? h('div', { class: 'ts-unlocked' }, icon('lock'), art(CHAPTERS[res.openedChapter].icon, 46, 'mini'), h('b', {}, CHAPTERS[res.openedChapter].n)) : null,

@@ -15,7 +15,7 @@ import { STICKERS } from '../data/content.js';
 import { icon } from '../icons.js';
 import { speak, sfx } from '../audio.js';
 import { DEMO, DEMO_MAX } from '../demo.js';
-import { ribbon, cheer } from '../cheer.js';
+import { ribbon, cheer, selfieButton } from '../cheer.js';
 import { EXTRAS } from './catalog.js';
 import { tabBar } from './home.js';
 
@@ -39,7 +39,7 @@ const POOL = {
   nombor: [['nombor', 1, 1], ['warna', 1, 1], ['kedai', 2, 3], ['kelas', 3, 3]],
   islam: [['soleh', 1, 1], ['akhlak', 1, 1], ['wuduk', 2, 2]],
   minda: [['puzzle', 1, 1], ['ingatan', 1, 1], ['robot', 2, 4], ['bayang', 2, 2], ['maze', 2, 2], ['minda', 3, 4]],
-  sains: [['haiwan', 1, 1], ['harian', 1, 1], ['makmal', 2, 3], ['misi', 4, 5]],
+  sains: [['haiwan', 1, 1], ['harian', 1, 1], ['makmal', 2, 3], ['pemburu', 3, 4], ['misi', 4, 5]],
   kreatif: [['seni', 1, 1], ['bina', 2, 3]],
   seronok: [['lumba', 1, 1], ['lompat', 2, 3]],
 };
@@ -225,7 +225,7 @@ export function pathScreen() {
     sfx.reward(); confetti(30);
     const back = h('div', { class: 'lp-pop', onclick: () => { back.remove(); go('/laluan'); } },
       h('div', { class: 'lp-pop-box' }, h('div', { class: 'lp-pop-chest', html: CHEST(true) }), ribbon(big ? 'Tahniah!' : 'Hebat!', { sub: big ? 'Unit selesai!' : 'Peti harta dibuka!' }),
-        h('div', { class: 'lp-pop-r' }, h('span', {}, icon('coin'), `+${coins}`), h('span', { class: 'emo' }, stk)), h('button', { class: 'btn green', type: 'button' }, 'Teruskan')));
+        h('div', { class: 'lp-pop-r' }, h('span', {}, icon('coin'), `+${coins}`), h('span', { class: 'emo' }, stk)), selfieButton(big ? `Unit ${parseInt(cid, 10)} selesai!` : 'Peti harta Laluan Bijak'), h('button', { class: 'btn green', type: 'button' }, 'Teruskan')));
     document.body.appendChild(back);
     speak(big ? `Tahniah! Unit selesai. Kamu dapat ${coins} syiling dan satu pelekat!` : `Hebat! Kamu dapat ${coins} syiling dan satu pelekat!`, { mood: 'pujian' });
   }

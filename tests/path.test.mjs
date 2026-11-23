@@ -89,7 +89,7 @@ try {
   await page.waitForSelector('.lp-pop');
   const coins1 = await page.evaluate(() => window.__dc.getState().profiles[0].coins);
   ok(coins1 === coins0 + 15, 'peti harta selepas 5 langkah: +15 syiling & pelekat');
-  await page.click('.lp-pop button');
+  await page.click('.lp-pop button:has-text("Teruskan")');
   await page.waitForSelector('.lp-chest.open');
   ok(await page.locator('.lp-goal.done').count() === 1, 'matlamat harian tercapai dipaparkan');
   // semua jenis langkah (modul berasingan) dikesan selesai

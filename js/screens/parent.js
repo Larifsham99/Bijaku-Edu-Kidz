@@ -8,6 +8,7 @@ const resetRacing = (id) => {
   import('../tekasilang/store.js').then((m) => m.resetSilang(id)).catch(() => {}); // Teka Silang Cilik
   import('../akhlak/store.js').then((m) => m.resetAkhlak(id)).catch(() => {}); // Taman Akhlak
   import('../games/store.js').then((m) => m.resetGames(id)).catch(() => {}); // permainan baharu (Fasa 2+)
+  import('../selfie.js').then((m) => m.deleteAllPhotos(id)).catch(() => {}); // Album Selfie
 };
 import { getState, profile, settings, save, flush, levelsDone, totalLevelsDone, totalPlaySeconds, mastery, MASTERY_LABEL, addProfile, deleteProfile, updateProfile, switchProfile, resetProfileProgress, exportData, highestUnlocked } from '../store.js';
 import { MODE_LIST, MODES, ALL_SKILLS } from '../modes/index.js';
@@ -254,6 +255,7 @@ function tetapanTab() {
       sel([[0, 'Tiada had'], [10, '10 minit'], [15, '15 minit'], [20, '20 minit'], [30, '30 minit'], [45, '45 minit'], [60, '1 jam'], [90, '1 jam 30 minit']], s.timeLimit, (v) => { s.timeLimit = +v; save(); toast('Disimpan', 'good', '✅'); }))));
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '🔊 Bunyi & suara'),
     toggle('Kesan bunyi', s.sound, (v) => { s.sound = v; save(); }),
+    toggle('Kamera (Selfie Juara & Pemburu Warna)', s.camera !== false, (v) => { s.camera = v; save(); }, 'Kamera hanya dibuka apabila anak menekan butang. Foto disimpan dalam peranti ini sahaja, tidak dimuat naik.'),
     toggle('Muzik latar', s.music, (v) => { s.music = v; save(); v ? startMusic() : stopMusic(); }),
     toggle('Suara arahan (Bahasa Melayu)', s.voice, (v) => { s.voice = v; save(); }, voiceInfo()),
     toggle('Ucapan Islamik', s.islamic !== false, (v) => { s.islamic = v; save(); }, 'Salam, Bismillah sebelum bermula, Alhamdulillah apabila berjaya, dan Doa Hari Ini di halaman utama.'),
@@ -270,7 +272,7 @@ function tetapanTab() {
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '🔐 Akses aplikasi'),
     toggle('Kedai kostum perlu kebenaran ibu bapa', s.lockShop, (v) => { s.lockShop = v; save(); }, 'Syiling hanya mata wang permainan. Tiada pembelian wang sebenar dalam aplikasi ini.'),
     h('div', { class: 'muted', style: { fontSize: '14px', margin: '10px 0 4px' } }, 'Mod permainan yang dibenarkan:'),
-    ...[...MODE_LIST, { id: 'lumba', e: '🏎️', n: 'Cilik Racing' }, { id: 'silang', e: '🧩', n: 'Teka Silang Cilik' }, { id: 'akhlak', e: '🌷', n: 'Taman Akhlak' }, { id: 'kedai', e: '🛒', n: 'Kedai Runcit Cilik' }, { id: 'makmal', e: '🧪', n: 'Makmal Cilik' }, { id: 'wuduk', e: '💧', n: 'Jom Berwuduk' }, { id: 'robot', e: '🤖', n: 'Robot Kod Cilik' }, { id: 'lompat', e: '🟩', n: 'Lompat Blok' }, { id: 'bina', e: '🧱', n: 'Bina Dunia' }].map((m) => toggle(`${m.e} ${m.n}`, !s.disabledModes.includes(m.id), (v) => { s.disabledModes = v ? s.disabledModes.filter((x) => x !== m.id) : [...s.disabledModes, m.id]; save(); }))));
+    ...[...MODE_LIST, { id: 'lumba', e: '🏎️', n: 'Cilik Racing' }, { id: 'silang', e: '🧩', n: 'Teka Silang Cilik' }, { id: 'akhlak', e: '🌷', n: 'Taman Akhlak' }, { id: 'kedai', e: '🛒', n: 'Kedai Runcit Cilik' }, { id: 'makmal', e: '🧪', n: 'Makmal Cilik' }, { id: 'wuduk', e: '💧', n: 'Jom Berwuduk' }, { id: 'robot', e: '🤖', n: 'Robot Kod Cilik' }, { id: 'lompat', e: '🟩', n: 'Lompat Blok' }, { id: 'bina', e: '🧱', n: 'Bina Dunia' }, { id: 'pemburu', e: '📷', n: 'Pemburu Warna' }].map((m) => toggle(`${m.e} ${m.n}`, !s.disabledModes.includes(m.id), (v) => { s.disabledModes = v ? s.disabledModes.filter((x) => x !== m.id) : [...s.disabledModes, m.id]; save(); }))));
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '💾 Data'),
     h('p', { class: 'muted', style: { fontSize: '14px' } }, 'Semua kemajuan disimpan secara automatik dalam peranti ini sahaja (IndexedDB). Tiada data dihantar ke internet.'),
     h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start' } },

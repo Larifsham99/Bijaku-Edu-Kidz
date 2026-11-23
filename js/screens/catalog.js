@@ -24,7 +24,7 @@ export const SHELVES = [
   { t: 'Islam & Akhlak', ids: ['soleh', 'wuduk', 'akhlak'] },
   { t: 'Minda Pintar', ids: ['robot', 'puzzle', 'ingatan', 'bayang', 'minda', 'maze'] },
   { t: 'Kreatif & Bunyi', ids: ['warna', 'seni', 'bunyi'] },
-  { t: 'Sains & Dunia Sekeliling', ids: ['makmal', 'harian', 'haiwan', 'misi', 'lumba'] },
+  { t: 'Sains & Dunia Sekeliling', ids: ['makmal', 'pemburu', 'harian', 'haiwan', 'misi', 'lumba'] },
 ];
 
 export const ALL_IDS = SHELVES.flatMap((s) => s.ids);

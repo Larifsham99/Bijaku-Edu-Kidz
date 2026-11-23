@@ -2,7 +2,7 @@
 //  CILIK RACING — skrin & HUD (DOM). Semua elemen berawalan .rc-
 // =====================================================================
 import { h, clear, sleep } from '../ui.js';
-import { ribbon } from '../cheer.js';
+import { ribbon, selfieButton } from '../cheer.js';
 import { go } from '../nav.js';
 import { profile, save, addActivity } from '../store.js';
 import { speak, stopSpeak, playSound, hasSound, haptic } from '../audio.js';
@@ -584,6 +584,7 @@ export function raceScreen(wi, n, onClean) {
       ribbon(level.special ? 'JUARA!' : stars === 3 ? 'Hebat!' : stars === 2 ? 'Syabas!' : 'Tahniah!', { sub: level.special ? `Juara ${world.n}!` : stars >= 2 ? 'Kamu berjaya!' : 'Kamu sampai!', stars }),
       h('div', { class: 'rc-res-meta' }, h('span', {}, `Level ${n} · ${world.n}`), h('span', {}, level.objective)),
       rewards.length ? h('div', { class: 'rc-rewards' }, ...rewards) : null,
+      selfieButton(`Cilik Racing · ${world.n}`),
       h('div', { class: 'rc-row' },
         h('button', { class: 'rc-btn', type: 'button', 'aria-label': 'Ulang', onclick: () => { snd.rsfx.pop(); restart(); } }, icon('replay'), 'Ulang'),
         h('button', { class: 'rc-btn', type: 'button', onclick: () => { snd.rsfx.pop(); go(`/lumba/dunia/${wi}`); } }, icon('map'), 'Peta'),

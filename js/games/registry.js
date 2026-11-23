@@ -42,6 +42,12 @@ export const GAMES = {
     chapters: ['Ikut Pelan', 'Lihat 3D', 'Arkitek Cilik'],
     load: () => import('./bina.js'),
   },
+  pemburu: {
+    id: 'pemburu', n: 'Pemburu Warna', c: '#ff5fa2', img: 'visual-assets/games/pemburu.svg',
+    sub: 'Guna kamera, cari warna di rumah!', bg: ['#ff9cc6', '#f0568f', '#a8285f'],
+    chapters: ['Warna Asas', 'Warna Campuran', 'Pemburu Pakar'],
+    load: () => import('./pemburu.js'),
+  },
 };
 export const GAME_IDS = Object.keys(GAMES);
 export const chapterOf = (n) => Math.min(2, Math.floor((n - 1) / 10));

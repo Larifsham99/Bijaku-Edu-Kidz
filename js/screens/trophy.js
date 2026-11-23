@@ -9,11 +9,13 @@ import { BADGES, TROPHY_E, TROPHY_NAMES } from '../rewards.js';
 import { topbar, avatarEl } from './shared.js';
 import { speak, sfx } from '../audio.js';
 import { todayKey } from '../ui.js';
+import { icon } from '../icons.js';
 
 export function trophyScreen(tab = 'trofi') {
   const p = profile();
   const scr = h('div', { class: 'screen' });
   scr.appendChild(topbar('🏆 Koleksi Saya', '/'));
+  scr.appendChild(h('button', { class: 'bj-album-link', type: 'button', onclick: () => { sfx.tap(); go('/album'); } }, h('span', { class: 'emo' }, '📸'), h('span', {}, h('b', {}, 'Album Selfie'), h('small', {}, 'Gambar kejayaan kamu')), icon('next')));
   const tabs = [['trofi', '🏆 Trofi'], ['pelekat', '🌈 Pelekat'], ['lencana', '🎖️ Lencana'], ['sijil', '📜 Sijil'], ['bintang', '⭐ Bintang']];
   scr.appendChild(h('div', { class: 'tabs' }, tabs.map(([id, n]) => h('button', { class: tab === id ? 'on' : '', type: 'button', onclick: () => { sfx.tap(); go('/trofi/' + id); } }, n))));
   const body = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px' } });

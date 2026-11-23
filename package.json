@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "python3 -m http.server 8080",
-    "test": "node tests/generators.test.mjs && node tests/voice.test.mjs && node tests/voicepack.test.mjs && node tests/e2e.test.mjs && node tests/upgrade.test.mjs && node tests/racing.test.mjs && node tests/silang.test.mjs && node tests/akhlak.test.mjs && node tests/games.test.mjs && node tests/path.test.mjs",
+    "test": "node tests/generators.test.mjs && node tests/voice.test.mjs && node tests/voicepack.test.mjs && node tests/e2e.test.mjs && node tests/upgrade.test.mjs && node tests/racing.test.mjs && node tests/silang.test.mjs && node tests/akhlak.test.mjs && node tests/games.test.mjs && node tests/path.test.mjs && node tests/camera.test.mjs",
+    "test:camera": "node tests/camera.test.mjs",
     "test:path": "node tests/path.test.mjs",
     "test:games": "node tests/games.test.mjs",
     "test:gen": "node tests/generators.test.mjs",

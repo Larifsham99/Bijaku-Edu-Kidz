@@ -9,6 +9,8 @@ import { speak } from './audio.js';
 import { settings } from './store.js';
 import { PRAISE, ENCOURAGE, ISLAMIC_PRAISE, ISLAMIC_ENCOURAGE } from './data/content.js';
 import { TALK } from './talk.js';
+import { cameraAllowed, cameraSupported } from './camera.js';
+import { sfx } from './audio.js';
 
 const pick = (a) => a[Math.floor(Math.random() * a.length)];
 const islamic = () => settings().islamic !== false;
@@ -58,3 +60,9 @@ const WINGS = `<svg viewBox="0 0 220 90">
   <path d="M110 4l11 22 24 3.5-17.5 17 4 24L110 59l-21.5 11.5 4-24L75 29.5 99 26z" fill="#ffd23f" stroke="#e08a00" stroke-width="3" stroke-linejoin="round"/>
   <path d="M100 30l6-1" stroke="#fff6c9" stroke-width="4" stroke-linecap="round"/>
 </svg>`;
+
+// Butang "Selfie Juara" pada skrin kejayaan. Modul kamera dimuat hanya apabila ditekan.
+export function selfieButton(label = 'Juara hari ini!') {
+  if (!cameraAllowed() || !cameraSupported()) return null;
+  return h('button', { class: 'bj-selfie-btn', type: 'button', onclick: (e) => { e.stopPropagation(); sfx.tap(); import('./selfie.js').then((m) => m.openSelfie(label)); } }, h('span', { class: 'emo' }, '📸'), 'Selfie Juara');
+}

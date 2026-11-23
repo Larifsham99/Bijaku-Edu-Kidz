@@ -37,6 +37,8 @@ jobs:
         run: node tests/games.test.mjs --data
       - name: Sahkan kurikulum Laluan Bijak
         run: node tests/path.test.mjs --data
+      - name: Sahkan pengelas warna kamera & Pemburu Warna
+        run: node tests/camera.test.mjs --data
 
   deploy:
     needs: test

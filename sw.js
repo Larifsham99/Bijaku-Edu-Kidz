@@ -1,5 +1,5 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-bf22f80671';
+const VERSION = 'dunia-cilik-28c74c251e';
 const ASSETS = [
   './',
   './index.html',
@@ -20,6 +20,7 @@ const ASSETS = [
   './js/akhlak/ui.js',
   './js/audio.js',
   './js/brand.js',
+  './js/camera.js',
   './js/cheer.js',
   './js/data/art.js',
   './js/data/content.js',
@@ -40,6 +41,7 @@ const ASSETS = [
   './js/games/lompat.js',
   './js/games/main.js',
   './js/games/makmal.js',
+  './js/games/pemburu.js',
   './js/games/registry.js',
   './js/games/robot.js',
   './js/games/shell.js',
@@ -79,6 +81,7 @@ const ASSETS = [
   './js/screens/timeout.js',
   './js/screens/trophy.js',
   './js/screens/world.js',
+  './js/selfie.js',
   './js/store.js',
   './js/talk.js',
   './js/tekasilang/art.js',
@@ -100,6 +103,7 @@ const ASSETS = [
   './visual-assets/games/kedai.svg',
   './visual-assets/games/lompat.svg',
   './visual-assets/games/makmal.svg',
+  './visual-assets/games/pemburu.svg',
   './visual-assets/games/robot.svg',
   './visual-assets/games/wuduk.svg',
   './visual-assets/icons/bunyi.svg',

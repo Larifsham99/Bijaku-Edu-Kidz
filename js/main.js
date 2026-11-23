@@ -109,6 +109,14 @@ function racingView(args) {
 const app = document.getElementById('app');
 
 
+// skrin yang dimuat secara malas (cth. Album Selfie)
+function lazyScreen(load) {
+  const el = document.createElement('div');
+  el.style.display = 'contents';
+  load().then((scr) => { if (el.isConnected) el.appendChild(scr); }).catch(() => { el.innerHTML = '<div class="screen center"><p>Tidak dapat dibuka.</p><a class="btn green" href="#/">Kembali</a></div>'; });
+  return el;
+}
+
 function route() {
   stopPlay();
   stopRacing();
@@ -140,6 +148,7 @@ function route() {
     case 'profil': el = profilesScreen(); break;
     case 'dunia': el = worldScreen(); break;
     case 'laluan': el = pathScreen(); break;
+    case 'album': el = lazyScreen(() => import('./selfie.js').then((mm) => mm.albumScreen())); break;
     case 'mod': el = MODES[parts[1]] ? modeScreen(parts[1]) : homeScreen(); break;
     case 'main': el = MODES[parts[1]] ? playScreen(parts[1], Math.max(1, Math.min(50, +parts[2] || 1))) : homeScreen(); break;
     case 'harian': el = parts[1] !== undefined ? dailyPlayScreen(+parts[1]) : dailyScreen(); break;
