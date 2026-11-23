@@ -119,7 +119,9 @@ export function runTiltGame(ctx, opt) {
     if (rec && b0) later(() => { tsfx.record(); pop('Rekod baharu!', 'trophy'); }, 300);
     haptic([20, 40, 20, 40, 60]); pauseBtn.hidden = true;
     ctx.good({ speakIt: false, flash: false });
-    say(`${opt.winText} Masa: ${time.toFixed(1)} saat${rec && b0 ? ', rekod baharu!' : '.'}`, 'pujian');
+    // masa dipaparkan sahaja (tidak disebut: nilainya berbeza setiap kali)
+    say(`${opt.winText}${rec && b0 ? ' Rekod baharu!' : ''}`, 'pujian');
+    pop(`⏱ ${time.toFixed(1)} s`);
     later(() => ctx.done(), 1700);
   }
   // ---------- gelung ----------
