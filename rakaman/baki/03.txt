@@ -1,16 +1,4 @@
-[warmly] Jom surih huruf el guna jari.
-
-
-Jom surih huruf ti guna jari.
-
-
-Jom warnakan epal!
-
-
-Jom warnakan kereta!
-
-
-Jom warnakan kucing!
+[warmly] Jom warnakan kucing!
 
 
 Kawan kita, angkasawan, perlukan permata.
@@ -254,3 +242,12 @@ Udang tinggal di mana, ya?
 
 
 Unta tinggal di mana, ya?
+
+
+Warnakan badan kereta dengan warna merah.
+
+
+Warnakan bas ikut warna kegemaran kamu!
+
+
+Warnakan bendera dengan warna merah.

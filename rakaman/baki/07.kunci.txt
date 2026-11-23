@@ -1,7 +1,3 @@
-Kutip satu kek cawan!
-Hutan Haiwan, level tujuh.
-Cari ketam!
-Hutan Haiwan, level lapan.
 Siapa yang tinggal di darat dan tidak boleh terbang?
 Hutan Haiwan, level sembilan.
 Hutan Haiwan, level sepuluh.
@@ -82,3 +78,5 @@ Hutan Haiwan, level empat puluh lapan.
 Hutan Haiwan, level empat puluh sembilan.
 Hutan Haiwan, level lima puluh.
 Udang suka makan apa?
+Bandar Warna.
+Bangunan mainan, lampu isyarat dan jalan pelangi.

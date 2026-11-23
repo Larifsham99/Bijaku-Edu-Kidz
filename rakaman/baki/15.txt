@@ -1,13 +1,4 @@
-[warmly] Ingat urutan ini: kura-kura, oren, pisang.
-
-
-Berapa kura-kura?
-
-
-Pulau Juara, level tiga puluh enam.
-
-
-Pulau Juara, level tiga puluh tujuh.
+[warmly] Pulau Juara, level tiga puluh tujuh.
 
 
 Pulau Juara, level tiga puluh lapan.
@@ -179,3 +170,12 @@ Kumpul lapan pingat untuk pelekat ini.
 
 
 Kumpul sepuluh pingat untuk pelekat ini.
+
+
+Buka satu dunia untuk rim ini.
+
+
+Buka dua dunia untuk rim ini.
+
+
+Buka tiga dunia untuk rim ini.

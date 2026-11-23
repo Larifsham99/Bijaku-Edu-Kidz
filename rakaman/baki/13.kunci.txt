@@ -1,6 +1,3 @@
-Negeri Gula-gula, level tiga puluh sembilan.
-Negeri Gula-gula, level empat puluh.
-Negeri Gula-gula, level empat puluh satu.
 Negeri Gula-gula, level empat puluh dua.
 Negeri Gula-gula, level empat puluh tiga.
 Berapa epal?
@@ -68,3 +65,7 @@ Tapak Binaan Cilik, level tiga puluh lima.
 Ada enam bintang.
 Tapak Binaan Cilik, level tiga puluh enam.
 Ada enam anak ayam.
+Tapak Binaan Cilik, level tiga puluh tujuh.
+Ada sembilan bunga.
+Tapak Binaan Cilik, level tiga puluh lapan.
+Ada empat epal.

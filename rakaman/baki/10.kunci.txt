@@ -1,6 +1,3 @@
-Ingat urutan ini: kek cawan, bunga, strawberi, ikan.
-Taman Dinosor, level empat puluh dua.
-Ingat urutan ini: kereta, bola, pisang, kumbang.
 Taman Dinosor, level empat puluh tiga.
 Taman Dinosor, level empat puluh empat.
 Ingat urutan ini: kek cawan, kereta, oren, ikan.
@@ -73,3 +70,7 @@ Pulau Ombak, level tiga puluh empat.
 Pulau Ombak, level tiga puluh lima.
 Kutip lima bintang!
 Cari beruang!
+Pulau Ombak, level tiga puluh enam.
+Pulau Ombak, level tiga puluh tujuh.
+Pulau Ombak, level tiga puluh lapan.
+Cari zebra!

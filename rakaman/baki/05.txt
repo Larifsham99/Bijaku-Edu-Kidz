@@ -1,16 +1,4 @@
-[warmly] Litar Kampung, level tiga puluh.
-
-
-Wang bermula dengan huruf apa?
-
-
-Jom eja wau.
-
-
-Litar Kampung, level tiga puluh satu.
-
-
-Cari gambar yang bermula dengan huruf o!
+[warmly] Cari gambar yang bermula dengan huruf o!
 
 
 Cari nombor tiga!
@@ -254,3 +242,15 @@ Lembah Buah, level lima belas.
 
 
 Cari buah!
+
+
+Cari nanas!
+
+
+Lembah Buah, level enam belas.
+
+
+Lembah Buah, level tujuh belas.
+
+
+Lembah Buah, level lapan belas.

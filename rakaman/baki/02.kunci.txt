@@ -1,7 +1,3 @@
-Mana bayang ikan yu?
-Mana bayang lebah?
-Mana bentuk bulatan?
-Mana bentuk segi empat sama?
 Mana bentuk segi empat tepat?
 Mana gaun?
 Mana gurita?
@@ -88,3 +84,7 @@ Jom cari huruf S!
 Jom kira, ada berapa biji pisang?
 Jom surih huruf C guna jari.
 Jom surih huruf H guna jari.
+Jom surih huruf L guna jari.
+Jom surih huruf T guna jari.
+Jom warnakan epal!
+Jom warnakan kereta!

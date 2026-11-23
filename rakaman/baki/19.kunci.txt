@@ -1,8 +1,3 @@
-Kamu dapat kereta baharu, Tomato Turbo!
-Pisang Kilat
-Kereta baharu, Pisang Kilat!
-Kamu dapat kereta baharu, Pisang Kilat!
-Komet Biru
 Kereta baharu, Komet Biru!
 Kamu dapat kereta baharu, Komet Biru!
 Roda Dino
@@ -66,7 +61,7 @@ Rim pelangi
 Kamu dapat pingat gangsa!
 Kamu dapat pingat perak!
 Kamu dapat pingat emas!
-Bilakah kita membacanya?
+Bila kita baca doa ini?
 Mengucap dua kalimah syahadah
 Beriman kepada kitab-kitab
 Beriman kepada rasul-rasul
@@ -93,3 +88,9 @@ Nabi Yaakub
 Rukun Iman ada berapa perkara?
 Terus tidur
 Beg sekolah
+Ketawa
+Maksudnya: Wahai Tuhanku, tambahkanlah ilmuku.
+Rukun Islam ada berapa perkara?
+Sin
+Ini huruf Jim.
+Maksudnya: Aku memohon keampunan-Mu.

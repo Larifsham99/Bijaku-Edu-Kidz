@@ -1,13 +1,4 @@
-[warmly] Angkasa Ria, level tiga puluh lima.
-
-
-Apa yang kita nampak di langit pada waktu malam?
-
-
-Angkasa Ria, level tiga puluh enam.
-
-
-Angkasa Ria, level tiga puluh tujuh.
+[warmly] Angkasa Ria, level tiga puluh tujuh.
 
 
 Angkasa Ria, level tiga puluh lapan.
@@ -197,3 +188,12 @@ Negeri Gula-gula, level tiga puluh lapan.
 
 
 Kutip empat kura-kura!
+
+
+Negeri Gula-gula, level tiga puluh sembilan.
+
+
+Negeri Gula-gula, level empat puluh.
+
+
+Negeri Gula-gula, level empat puluh satu.

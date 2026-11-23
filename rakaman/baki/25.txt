@@ -1,16 +1,4 @@
-[warmly] Kumpulan mana yang lebih banyak epal?
-
-
-Kumpulan mana yang lebih banyak pokok?
-
-
-Kumpulan mana yang lebih banyak telur?
-
-
-Kumpulan mana yang lebih sedikit belon?
-
-
-Kumpulan mana yang lebih sedikit ikan?
+[warmly] Kumpulan mana yang lebih sedikit ikan?
 
 
 Kumpulan mana yang lebih sedikit oren?
@@ -254,3 +242,15 @@ Semut bermula dengan huruf apa, ya?
 
 
 Siapa yang berbunyi, Kukuruyuk!
+
+
+Siapa yang berbunyi, Ngiau, ngiau!
+
+
+Singa suka makan apa, ya?
+
+
+Susun objek ke dalam kumpulannya.
+
+
+Tangan bermula dengan huruf apa, ya?

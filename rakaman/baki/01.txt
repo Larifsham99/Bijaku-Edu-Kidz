@@ -34,19 +34,10 @@ Terbaik, Abang!
 Hai Adik!
 
 
-Selamat datang ke Bijaku, Adik!
-
-
 Pandainya, Adik!
 
 
 Terbaik, Adik!
-
-
-Hai Kakak!
-
-
-Selamat datang ke Bijaku, Kakak!
 
 
 Pandainya, Kakak!
@@ -281,3 +272,15 @@ Mana bayang burung helang?
 
 
 Mana bayang burung?
+
+
+Mana bayang ikan yu?
+
+
+Mana bayang lebah?
+
+
+Mana bentuk bulatan?
+
+
+Mana bentuk segi empat sama?

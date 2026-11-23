@@ -1,8 +1,3 @@
-Warnakan matahari ikut warna kegemaran kamu!
-Warnakan sirip dengan warna kuning.
-Warnakan sirip dengan warna merah.
-Yang mana satu bukan alat dapur?
-Ada berapa buih dalam bakul?
 Ada dua anjing yang menyorok.
 Ada dua arnab yang menyorok.
 Ada dua biji pisang.
@@ -78,3 +73,14 @@ Ini aiskrim.
 Ini awan.
 Ini bas.
 Ini bola.
+Ini ceri.
+Ini coklat.
+Ini dram.
+Ini epal.
+Ini feri.
+Ini gelas.
+Ini gitar.
+Ini huruf B besar.
+Ini huruf C besar.
+Ini huruf F besar.
+Ini huruf I besar.

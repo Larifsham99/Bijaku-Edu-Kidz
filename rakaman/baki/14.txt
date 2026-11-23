@@ -1,16 +1,4 @@
-[warmly] Tapak Binaan Cilik, level tiga puluh tujuh.
-
-
-Ada sembilan bunga.
-
-
-Tapak Binaan Cilik, level tiga puluh lapan.
-
-
-Ada empat epal.
-
-
-Tapak Binaan Cilik, level tiga puluh sembilan.
+[warmly] Tapak Binaan Cilik, level tiga puluh sembilan.
 
 
 Tapak Binaan Cilik, level empat puluh.
@@ -215,3 +203,12 @@ Pulau Juara, level tiga puluh empat.
 
 
 Pulau Juara, level tiga puluh lima.
+
+
+Ingat urutan ini: kura-kura, oren, pisang.
+
+
+Berapa kura-kura?
+
+
+Pulau Juara, level tiga puluh enam.

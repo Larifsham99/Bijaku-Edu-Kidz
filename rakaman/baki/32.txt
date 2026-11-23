@@ -1,157 +1,226 @@
-[cheerfully] Sijil pencapaian Cari Bayang untuk Adik.
+[warmly] Lihat model 3di, kemudian bina Robot!
 
 
-Sijil pencapaian Maze Pengembaraan untuk Adik.
+Lihat model 3di, kemudian bina Surau Kecil!
 
 
-Sijil pencapaian Kehidupan Harian untuk Adik.
+Lihat model 3di, kemudian bina Kapal!
 
 
-Sijil pencapaian Bijak Mengelaskan untuk Adik.
+Lihat model 3di, kemudian bina Menara Jam!
 
 
-Sijil pencapaian Si Cilik Soleh untuk Adik.
+Lihat model 3di, kemudian bina Rumah Dua Tingkat!
 
 
-Sijil pencapaian Dunia Haiwan untuk Adik.
+Cabaran Arkitek!
 
 
-Sijil pencapaian Asah Minda untuk Adik.
+Binaan lebih besar.
 
 
-Sijil pencapaian Misi Pengembaraan untuk Adik.
+Putar paparan dan teliti setiap tingkat.
 
 
-Sijil pencapaian ei, bi, si Ceria untuk Kakak.
+Cabaran Arkitek: bina Istana Kecil!
 
 
-Sijil pencapaian Dunia Nombor untuk Kakak.
+Cabaran Arkitek: bina Kereta Api!
 
 
-Sijil pencapaian Warna dan Bentuk untuk Kakak.
+Cabaran Arkitek: bina Pokok Besar!
 
 
-Sijil pencapaian Teka Bunyi untuk Kakak.
+Cabaran Arkitek: bina Roket Besar!
 
 
-Sijil pencapaian Pazel Pintar untuk Kakak.
+Cabaran Arkitek: bina Piramid Tangga!
 
 
-Sijil pencapaian Ingatan Hebat untuk Kakak.
+Cabaran Arkitek: bina Robot Besar!
 
 
-Sijil pencapaian Seni dan Mewarna untuk Kakak.
+Cabaran Arkitek: bina Taman Bunga!
 
 
-Sijil pencapaian Cari Bayang untuk Kakak.
+Cabaran Arkitek: bina Kapal Layar Besar!
 
 
-Sijil pencapaian Maze Pengembaraan untuk Kakak.
+Cabaran Arkitek: bina Istana Mawar!
 
 
-Sijil pencapaian Kehidupan Harian untuk Kakak.
+Jom jadi Pemburu Warna!
 
 
-Sijil pencapaian Bijak Mengelaskan untuk Kakak.
+Tekan Buka kamera.
 
 
-Sijil pencapaian Si Cilik Soleh untuk Kakak.
+Tekan gambar yang berwarna merah.
 
 
-Sijil pencapaian Dunia Haiwan untuk Kakak.
+Tekan gambar yang berwarna kuning.
 
 
-Sijil pencapaian Asah Minda untuk Kakak.
+Tekan gambar yang berwarna hijau.
 
 
-Sijil pencapaian Misi Pengembaraan untuk Kakak.
+Tekan gambar yang berwarna biru.
 
 
-Sijil pencapaian ei, bi, si Ceria untuk Beybi.
+Tekan gambar yang berwarna coklat.
 
 
-Sijil pencapaian Dunia Nombor untuk Beybi.
+Tekan gambar yang berwarna ungu.
 
 
-Sijil pencapaian Warna dan Bentuk untuk Beybi.
+Tekan gambar yang berwarna merah jambu.
 
 
-Sijil pencapaian Teka Bunyi untuk Beybi.
+Tekan gambar yang berwarna oren.
 
 
-Sijil pencapaian Pazel Pintar untuk Beybi.
+Tekan gambar yang berwarna putih.
 
 
-Sijil pencapaian Ingatan Hebat untuk Beybi.
+Tekan gambar yang berwarna hitam.
 
 
-Sijil pencapaian Seni dan Mewarna untuk Beybi.
+Pegang telefon dengan selesa, seperti sedang membaca.
 
 
-Sijil pencapaian Cari Bayang untuk Beybi.
+Tok, tok, tok!
 
 
-Sijil pencapaian Maze Pengembaraan untuk Beybi.
+Datuk datang ke rumah.
 
 
-Sijil pencapaian Kehidupan Harian untuk Beybi.
+Mimi nampak Datuk di pintu.
 
 
-Sijil pencapaian Bijak Mengelaskan untuk Beybi.
+Apa yang Mimi patut buat?
 
 
-Sijil pencapaian Si Cilik Soleh untuk Beybi.
+Nasi sudah terhidang.
 
 
-Sijil pencapaian Dunia Haiwan untuk Beybi.
+Bobo lapar.
 
 
-Sijil pencapaian Asah Minda untuk Beybi.
+Bobo mahu mula makan.
 
 
-Sijil pencapaian Misi Pengembaraan untuk Beybi.
+Bagaimana Bobo patut makan?
 
 
-Sijil pencapaian ei, bi, si Ceria untuk Manja.
+Coco ada dua keping biskut.
 
 
-Sijil pencapaian Dunia Nombor untuk Manja.
+Dino tidak ada bekal hari ini.
 
 
-Sijil pencapaian Warna dan Bentuk untuk Manja.
+Apa yang Coco patut buat?
 
 
-Sijil pencapaian Teka Bunyi untuk Manja.
+Lala habis minum air kotak.
 
 
-Sijil pencapaian Pazel Pintar untuk Manja.
+Kotak kosong ada di tangan Lala.
 
 
-Sijil pencapaian Ingatan Hebat untuk Manja.
+Di mana Lala patut buang kotak itu?
 
 
-Sijil pencapaian Seni dan Mewarna untuk Manja.
+Dino sudah siap basuh tangan.
 
 
-Sijil pencapaian Cari Bayang untuk Manja.
+Tetapi air paip masih mengalir.
 
 
-Sijil pencapaian Maze Pengembaraan untuk Manja.
+Apa yang Dino patut buat?
 
 
-Sijil pencapaian Kehidupan Harian untuk Manja.
+Bobo membina menara blok yang tinggi.
 
 
-Sijil pencapaian Bijak Mengelaskan untuk Manja.
+Alamak!
 
 
-Sijil pencapaian Si Cilik Soleh untuk Manja.
+Lala terlanggar menara itu.
 
 
-Sijil pencapaian Dunia Haiwan untuk Manja.
+Apa yang Lala patut buat?
 
 
-Sijil pencapaian Asah Minda untuk Manja.
+Ibu membawa banyak pinggan.
 
 
-Sijil pencapaian Misi Pengembaraan untuk Manja.
+Pinggan itu berat.
+
+
+Bola Bobo terkena pasu bunga.
+
+
+Pasu itu pecah.
+
+
+Ayah bertanya, siapa yang pecahkan pasu?
+
+
+Apa yang Bobo patut jawab?
+
+
+Ada seekor kucing kecil di taman.
+
+
+Kucing itu kelihatan lapar.
+
+
+Ramai orang sedang beratur untuk membayar.
+
+
+Dino mahu membayar juga.
+
+
+Nenek memberi Lala sebuah hadiah.
+
+
+Hadiah itu berbalut cantik.
+
+
+Apa yang Lala patut katakan?
+
+
+Hari sudah malam.
+
+
+Mimi sudah gosok gigi dan mahu tidur.
+
+
+Apa yang Mimi buat sebelum tidur?
+
+
+Hidung Bobo gatal.
+
+
+Bobo mahu bersin.
+
+
+Apa yang Bobo patut buat?
+
+
+Cikgu sedang bercerita di hadapan kelas.
+
+
+Kawan-kawan duduk dengan baik.
+
+
+Dino berlari, kemudian terjatuh.
+
+
+Lutut Dino sakit.
+
+
+Dino sudah selesai bermain.
+
+
+Mainan bersepah di atas lantai.

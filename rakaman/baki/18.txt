@@ -1,31 +1,4 @@
-[gently] Itu Piring terbang.
-
-
-Itu Bumi.
-
-
-Itu belon.
-
-
-Itu Bulan.
-
-
-Itu Matahari.
-
-
-Itu Bakar.
-
-
-Itu Lolipop.
-
-
-Itu Donat.
-
-
-Itu Susu.
-
-
-Itu Kentang goreng.
+[gently] Itu Kentang goreng.
 
 
 Itu Air bergas.
@@ -56,9 +29,6 @@ Jom rehatkan mata, Abang!
 
 
 Jom rehatkan mata, Adik!
-
-
-Jom rehatkan mata, Kakak!
 
 
 Jom rehatkan mata, Beybi!
@@ -551,3 +521,18 @@ Tomato Turbo.
 
 
 Kereta baharu, Tomato Turbo!
+
+
+Kamu dapat kereta baharu, Tomato Turbo!
+
+
+Pisang Kilat.
+
+
+Kereta baharu, Pisang Kilat!
+
+
+Kamu dapat kereta baharu, Pisang Kilat!
+
+
+Komet Biru.

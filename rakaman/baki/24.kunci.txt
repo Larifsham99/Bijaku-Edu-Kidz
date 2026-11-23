@@ -1,14 +1,3 @@
-Ini ceri.
-Ini coklat.
-Ini dram.
-Ini epal.
-Ini feri.
-Ini gelas.
-Ini gitar.
-Ini huruf B besar.
-Ini huruf C besar.
-Ini huruf F besar.
-Ini huruf I besar.
 Ini huruf N besar.
 Ini huruf V besar.
 Ini istana.
@@ -83,3 +72,7 @@ Kumpulan mana yang ada sembilan biji epal?
 Kumpulan mana yang ada sepuluh biji oren?
 Kumpulan mana yang ada tiga biji belon?
 Kumpulan mana yang ada tujuh biji telur?
+Kumpulan mana yang lebih banyak epal?
+Kumpulan mana yang lebih banyak pokok?
+Kumpulan mana yang lebih banyak telur?
+Kumpulan mana yang lebih sedikit belon?

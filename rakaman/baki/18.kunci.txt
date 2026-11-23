@@ -1,12 +1,3 @@
-Itu Piring terbang.
-Itu Bumi.
-Itu belon.
-Itu Bulan.
-Itu Matahari.
-Itu Bakar.
-Itu Lolipop.
-Itu Donat.
-Itu Susu.
 Itu Kentang goreng.
 Itu Air bergas.
 Itu Gula-gula.
@@ -18,7 +9,6 @@ Cari huruf H.
 Itu Ketuk dan minta izin.
 Jom rehatkan mata, Abang!
 Jom rehatkan mata, Adik!
-Jom rehatkan mata, Kakak!
 Jom rehatkan mata, Beybi!
 Jom rehatkan mata, Manja!
 Jom rehatkan mata, Intan Payung!
@@ -183,3 +173,8 @@ V
 H
 Tomato Turbo
 Kereta baharu, Tomato Turbo!
+Kamu dapat kereta baharu, Tomato Turbo!
+Pisang Kilat
+Kereta baharu, Pisang Kilat!
+Kamu dapat kereta baharu, Pisang Kilat!
+Komet Biru

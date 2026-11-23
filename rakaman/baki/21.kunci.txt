@@ -1,8 +1,3 @@
-Jom susun pazel dinosor comel.
-Jom susun pazel pelangi ceria.
-Jom tolong Kura-kura berkemas!
-Jom tolong Mimi berkemas!
-Tekan semua benda yang warnanya biru.
 Yang mana satu bukan alat muzik?
 Ada berapa bintang laut dalam bakul?
 Ada berapa pisang dalam bakul?
@@ -87,3 +82,13 @@ Cari lima kuntum bunga, kemudian tekan.
 Di mana Beri biru?
 Di mana Burung helang?
 Di mana Ceri?
+Di mana Ikan paus?
+Di mana Penguin?
+Di mana Pisang?
+Di mana Sotong?
+Di mana Strawberi?
+Di mana Udang?
+Di mana Zirafah?
+Dua biji dah diambil.
+Gaul
+Gelap

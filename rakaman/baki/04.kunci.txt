@@ -1,6 +1,3 @@
-Warnakan badan kereta dengan warna merah.
-Warnakan bas ikut warna kegemaran kamu!
-Warnakan bendera dengan warna merah.
 Warnakan buah epal dengan warna merah.
 Warnakan hidung dengan warna merah jambu.
 Yang mana satu bukan tumbuhan?
@@ -88,3 +85,7 @@ Litar Kampung, level dua puluh lapan.
 Litar Kampung, level dua puluh sembilan.
 Berapa bunga?
 Cari huruf T!
+Litar Kampung, level tiga puluh.
+Wang bermula dengan huruf apa?
+Jom eja wau.
+Litar Kampung, level tiga puluh satu.

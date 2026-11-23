@@ -1,13 +1,4 @@
-[warmly] Warnakan roket ikut warna kegemaran kamu!
-
-
-Warnakan sayap atas kanan dengan warna ungu.
-
-
-Warnakan sayap atas kiri dengan warna ungu.
-
-
-Warnakan sinar dengan warna oren.
+[warmly] Warnakan sinar dengan warna oren.
 
 
 Warnakan sirip dulu, ya.
@@ -94,6 +85,9 @@ Cuu, cuu!
 Di untuk Daun.
 
 
+Datang lagi esok ya!
+
+
 Di mana Ayam?
 
 
@@ -127,6 +121,9 @@ Ji untuk Gajah.
 Heish untuk Harimau.
 
 
+Hai Kakak!
+
+
 Ai untuk Ikan.
 
 
@@ -136,10 +133,19 @@ Jei untuk Jam.
 Jambatan.
 
 
-Jom dapatkan versi penuh Dunia Cilik!
+Jom dapatkan versi penuh Bijaku!
+
+
+Jom rehatkan mata, Kakak!
+
+
+Jom teroka Dunia Bijaku!
 
 
 Kei untuk Kucing.
+
+
+Kamu suka dipanggil apa?
 
 
 Kek.
@@ -211,6 +217,9 @@ Pak, pak, pak!
 Permainan ini sedang dikunci oleh ibu bapa.
 
 
+Pilih satu pulau.
+
+
 Pokok besar.
 
 
@@ -238,7 +247,10 @@ Sarapan.
 Sekolah.
 
 
-Sembilan ekor rama-rama, tambah satu ekor lagi.
+Selamat datang ke Bijaku, Kakak!
+
+
+Semua cabaran hari ini sudah selesai.
 
 
 Siput.

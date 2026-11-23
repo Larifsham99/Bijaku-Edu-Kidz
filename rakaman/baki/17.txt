@@ -1,31 +1,4 @@
-[gently] Itu bukan pensel.
-
-
-Itu Lari.
-
-
-Itu Menjerit.
-
-
-Itu bukan el.
-
-
-Itu o.
-
-
-Itu Ceri.
-
-
-Itu Epal.
-
-
-Itu Katil.
-
-
-Itu Gajah.
-
-
-Itu Kereta api.
+[gently] Itu Kereta api.
 
 
 Itu warna merah jambu.
@@ -461,3 +434,30 @@ Itu Planet.
 
 
 Itu Komet.
+
+
+Itu Piring terbang.
+
+
+Itu Bumi.
+
+
+Itu belon.
+
+
+Itu Bulan.
+
+
+Itu Matahari.
+
+
+Itu Bakar.
+
+
+Itu Lolipop.
+
+
+Itu Donat.
+
+
+Itu Susu.

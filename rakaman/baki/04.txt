@@ -1,13 +1,4 @@
-[warmly] Warnakan badan kereta dengan warna merah.
-
-
-Warnakan bas ikut warna kegemaran kamu!
-
-
-Warnakan bendera dengan warna merah.
-
-
-Warnakan buah epal dengan warna merah.
+[warmly] Warnakan buah epal dengan warna merah.
 
 
 Warnakan hidung dengan warna merah jambu.
@@ -266,3 +257,15 @@ Berapa bunga?
 
 
 Cari huruf ti!
+
+
+Litar Kampung, level tiga puluh.
+
+
+Wang bermula dengan huruf apa?
+
+
+Jom eja wau.
+
+
+Litar Kampung, level tiga puluh satu.

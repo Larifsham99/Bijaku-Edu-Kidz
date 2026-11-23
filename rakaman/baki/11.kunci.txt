@@ -1,7 +1,3 @@
-Pulau Ombak, level tiga puluh enam.
-Pulau Ombak, level tiga puluh tujuh.
-Pulau Ombak, level tiga puluh lapan.
-Cari zebra!
 Pulau Ombak, level tiga puluh sembilan.
 Cari bentuk berlian!
 Kutip lima telur!
@@ -78,3 +74,6 @@ tiga tambah dua, jadi berapa?
 Angkasa Ria, level tiga puluh tiga.
 Angkasa Ria, level tiga puluh empat.
 Kutip dua berlian!
+Angkasa Ria, level tiga puluh lima.
+Apa yang kita nampak di langit pada waktu malam?
+Angkasa Ria, level tiga puluh enam.

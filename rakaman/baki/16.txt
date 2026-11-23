@@ -1,13 +1,4 @@
-[warmly] Buka satu dunia untuk rim ini.
-
-
-Buka dua dunia untuk rim ini.
-
-
-Buka tiga dunia untuk rim ini.
-
-
-Buka lima dunia untuk rim ini.
+[warmly] Buka lima dunia untuk rim ini.
 
 
 Buka tujuh dunia untuk rim ini.
@@ -38,9 +29,6 @@ Selamat petang, Adik!
 
 
 Selamat malam, Adik!
-
-
-Ini Laluan Bijak, Adik!
 
 
 Selamat pagi, Kakak!
@@ -416,3 +404,30 @@ Itu Aiskrim.
 
 
 Cari huruf el.
+
+
+Itu bukan pensel.
+
+
+Itu Lari.
+
+
+Itu Menjerit.
+
+
+Itu bukan el.
+
+
+Itu o.
+
+
+Itu Ceri.
+
+
+Itu Epal.
+
+
+Itu Katil.
+
+
+Itu Gajah.

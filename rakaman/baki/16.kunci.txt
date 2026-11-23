@@ -1,6 +1,3 @@
-Buka satu dunia untuk rim ini.
-Buka dua dunia untuk rim ini.
-Buka tiga dunia untuk rim ini.
 Buka lima dunia untuk rim ini.
 Buka tujuh dunia untuk rim ini.
 Selamat pagi, Abang!
@@ -12,7 +9,6 @@ Selamat pagi, Adik!
 Selamat tengah hari, Adik!
 Selamat petang, Adik!
 Selamat malam, Adik!
-Ini Laluan Bijak, Adik!
 Selamat pagi, Kakak!
 Selamat tengah hari, Kakak!
 Selamat petang, Kakak!
@@ -138,3 +134,12 @@ Itu Yu.
 Itu Cacing.
 Itu Aiskrim.
 Cari huruf L.
+Itu bukan pensel.
+Itu Lari.
+Itu Menjerit.
+Itu bukan L.
+Itu O.
+Itu Ceri.
+Itu Epal.
+Itu Katil.
+Itu Gajah.

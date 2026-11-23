@@ -1,19 +1,4 @@
-[cheerfully] Kamu dapat kereta baharu, Tomato Turbo!
-
-
-Pisang Kilat.
-
-
-Kereta baharu, Pisang Kilat!
-
-
-Kamu dapat kereta baharu, Pisang Kilat!
-
-
-Komet Biru.
-
-
-Kereta baharu, Komet Biru!
+[cheerfully] Kereta baharu, Komet Biru!
 
 
 Kamu dapat kereta baharu, Komet Biru!
@@ -202,7 +187,7 @@ Kamu dapat pingat perak!
 Kamu dapat pingat emas!
 
 
-[softly] Bilakah kita membacanya?
+[softly] Bila kita baca doa ini?
 
 
 Mengucap dua kalimah syahadah.
@@ -281,3 +266,21 @@ Terus tidur.
 
 
 Beg sekolah.
+
+
+Ketawa.
+
+
+Maksudnya: Wahai Tuhanku, tambahkanlah ilmuku.
+
+
+Rukun Islam ada berapa perkara?
+
+
+Sin.
+
+
+Ini huruf Jim.
+
+
+Maksudnya: Aku memohon keampunan-Mu.

@@ -1,12 +1,3 @@
-Itu bukan pensel.
-Itu Lari.
-Itu Menjerit.
-Itu bukan L.
-Itu O.
-Itu Ceri.
-Itu Epal.
-Itu Katil.
-Itu Gajah.
 Itu Kereta api.
 Itu warna merah jambu.
 Itu warna kuning.
@@ -153,3 +144,12 @@ Itu Feri.
 Itu bukan Berlian.
 Itu Planet.
 Itu Komet.
+Itu Piring terbang.
+Itu Bumi.
+Itu belon.
+Itu Bulan.
+Itu Matahari.
+Itu Bakar.
+Itu Lolipop.
+Itu Donat.
+Itu Susu.

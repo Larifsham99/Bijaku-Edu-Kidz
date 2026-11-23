@@ -1,34 +1,4 @@
-[warmly] Di mana Ikan paus?
-
-
-Di mana Penguin?
-
-
-Di mana Pisang?
-
-
-Di mana Sotong?
-
-
-Di mana Strawberi?
-
-
-Di mana Udang?
-
-
-Di mana Zirafah?
-
-
-Dua biji dah diambil.
-
-
-Gaul.
-
-
-Gelap.
-
-
-Huruf eks kecil.
+[warmly] Huruf eks kecil.
 
 
 Ikan bermula dengan huruf apa, ya?
@@ -263,3 +233,18 @@ Warnakan kelopak dengan warna merah jambu.
 
 
 Warnakan layar dengan warna putih.
+
+
+Warnakan matahari ikut warna kegemaran kamu!
+
+
+Warnakan sirip dengan warna kuning.
+
+
+Warnakan sirip dengan warna merah.
+
+
+Yang mana satu bukan alat dapur?
+
+
+Ada berapa buih dalam bakul?

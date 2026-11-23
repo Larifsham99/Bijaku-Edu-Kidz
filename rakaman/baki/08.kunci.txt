@@ -1,5 +1,3 @@
-Bandar Warna.
-Bangunan mainan, lampu isyarat dan jalan pelangi.
 Selesaikan sepuluh level di Hutan Haiwan dahulu, ya.
 Bandar Warna, level satu.
 Bandar Warna, level dua.
@@ -73,3 +71,6 @@ Bandar Warna, level empat puluh sembilan.
 Bandar Warna, level lima puluh.
 Taman Dinosor.
 Dinosor comel, telur dan gunung berapi.
+Selesaikan sepuluh level di Bandar Warna dahulu, ya.
+Taman Dinosor, level satu.
+Taman Dinosor, level dua.

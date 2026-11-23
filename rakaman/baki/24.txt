@@ -1,37 +1,4 @@
-[warmly] Ini ceri.
-
-
-Ini coklat.
-
-
-Ini dram.
-
-
-Ini epal.
-
-
-Ini feri.
-
-
-Ini gelas.
-
-
-Ini gitar.
-
-
-Ini huruf bi besar.
-
-
-Ini huruf si besar.
-
-
-Ini huruf ef besar.
-
-
-Ini huruf ai besar.
-
-
-Ini huruf en besar.
+[warmly] Ini huruf en besar.
 
 
 Ini huruf vi besar.
@@ -251,3 +218,15 @@ Kumpulan mana yang ada tiga biji belon?
 
 
 Kumpulan mana yang ada tujuh biji telur?
+
+
+Kumpulan mana yang lebih banyak epal?
+
+
+Kumpulan mana yang lebih banyak pokok?
+
+
+Kumpulan mana yang lebih banyak telur?
+
+
+Kumpulan mana yang lebih sedikit belon?

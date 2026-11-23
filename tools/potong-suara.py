@@ -6,6 +6,7 @@
 #  python3 tools/potong-suara.py SKRIP.txt AUDIO.mp3 [SKRIP2.txt AUDIO2.mp3 ...]
 #      --semak   hanya laporan, tidak menulis klip
 #  python3 tools/potong-suara.py --auto 01.mp3 02.mp3 ...  (padan ikut nombor dengan rakaman/baki/NN.txt)
+#  MP3 daripada skrip lama 30 bahagian: tambah --folder=rakaman/baki-30
 #  Jika SKRIP.kunci.txt wujud, setiap barisnya ialah ayat sebenar bagi baris skrip
 #  yang sama (untuk skrip yang ditulis dengan ejaan sebutan, cth. huruf).
 #
@@ -159,7 +160,8 @@ def auto_pairs(files, folder='rakaman/baki'):
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     check = '--semak' in sys.argv
-    pairs = auto_pairs(args) if '--auto' in sys.argv else list(zip(args[0::2], args[1::2]))
+    folder = next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--folder=')), 'rakaman/baki')
+    pairs = auto_pairs(args, folder) if '--auto' in sys.argv else list(zip(args[0::2], args[1::2]))
     cat = {}
     if os.path.exists(f'{DIR}/catalog.json'):
         for it in json.load(open(f'{DIR}/catalog.json', encoding='utf-8'))['items']:

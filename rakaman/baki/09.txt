@@ -1,13 +1,4 @@
-[warmly] Selesaikan sepuluh level di Bandar Warna dahulu, ya.
-
-
-Taman Dinosor, level satu.
-
-
-Taman Dinosor, level dua.
-
-
-Selepas itu, apa pula?
+[warmly] Selepas itu, apa pula?
 
 
 Taman Dinosor, level tiga.
@@ -188,3 +179,12 @@ Ingat urutan ini: oren, strawberi, belon.
 
 
 Taman Dinosor, level empat puluh satu.
+
+
+Ingat urutan ini: kek cawan, bunga, strawberi, ikan.
+
+
+Taman Dinosor, level empat puluh dua.
+
+
+Ingat urutan ini: kereta, bola, pisang, kumbang.

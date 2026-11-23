@@ -1,7 +1,3 @@
-Jom surih huruf L guna jari.
-Jom surih huruf T guna jari.
-Jom warnakan epal!
-Jom warnakan kereta!
 Jom warnakan kucing!
 Kawan kita, angkasawan, perlukan permata.
 Kawan kita, ayam, perlukan telur.
@@ -84,3 +80,6 @@ Tolong kumpul tiga strawberi untuk Coco.
 Tolong kumpul tiga telur untuk Mimi.
 Udang tinggal di mana, ya?
 Unta tinggal di mana, ya?
+Warnakan badan kereta dengan warna merah.
+Warnakan bas ikut warna kegemaran kamu!
+Warnakan bendera dengan warna merah.

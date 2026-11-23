@@ -1,16 +1,4 @@
-[warmly] Mana bayang ikan yu?
-
-
-Mana bayang lebah?
-
-
-Mana bentuk bulatan?
-
-
-Mana bentuk segi empat sama?
-
-
-Mana bentuk segi empat tepat?
+[warmly] Mana bentuk segi empat tepat?
 
 
 Mana gaun?
@@ -266,3 +254,15 @@ Jom surih huruf si guna jari.
 
 
 Jom surih huruf Heish guna jari.
+
+
+Jom surih huruf el guna jari.
+
+
+Jom surih huruf ti guna jari.
+
+
+Jom warnakan epal!
+
+
+Jom warnakan kereta!

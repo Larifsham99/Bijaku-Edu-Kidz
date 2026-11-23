@@ -1,7 +1,3 @@
-Siapa yang berbunyi, Ngiau, ngiau!
-Singa suka makan apa, ya?
-Susun objek ke dalam kumpulannya.
-Tangan bermula dengan huruf apa, ya?
 Tekan gambar untuk dengar namanya.
 Tekan gambar untuk mendengar bunyinya.
 Tekan semua benda yang warnanya coklat.
@@ -62,3 +58,6 @@ Warnakan pintu dengan warna coklat.
 Warnakan pintu dulu, ya.
 Warnakan rama-rama ikut warna kegemaran kamu!
 Warnakan roda dulu, ya.
+Warnakan roket ikut warna kegemaran kamu!
+Warnakan sayap atas kanan dengan warna ungu.
+Warnakan sayap atas kiri dengan warna ungu.

@@ -1,43 +1,295 @@
-[cheerfully] Sijil pencapaian ei, bi, si Ceria untuk Intan Payung.
+[warmly] Bobo ikut ayah ke masjid.
 
 
-Sijil pencapaian Dunia Nombor untuk Intan Payung.
+Ramai orang sedang beribadah.
 
 
-Sijil pencapaian Warna dan Bentuk untuk Intan Payung.
+Bagaimana Bobo patut berkelakuan?
 
 
-Sijil pencapaian Teka Bunyi untuk Intan Payung.
+Nenek sedang demam.
 
 
-Sijil pencapaian Pazel Pintar untuk Intan Payung.
+Ibu mengajak Coco pergi menziarahi nenek.
 
 
-Sijil pencapaian Ingatan Hebat untuk Intan Payung.
+Adik menangis kerana mainannya hilang.
 
 
-Sijil pencapaian Seni dan Mewarna untuk Intan Payung.
+Daun pokok bunga di taman layu.
 
 
-Sijil pencapaian Cari Bayang untuk Intan Payung.
+Hari sangat panas.
 
 
-Sijil pencapaian Maze Pengembaraan untuk Intan Payung.
+Ada kawan baru di kelas.
 
 
-Sijil pencapaian Kehidupan Harian untuk Intan Payung.
+Kawan baru itu memakai cermin mata.
 
 
-Sijil pencapaian Bijak Mengelaskan untuk Intan Payung.
+Pakcik jiran sedang lalu di hadapan rumah.
 
 
-Sijil pencapaian Si Cilik Soleh untuk Intan Payung.
+Mimi terjumpa sebatang pensel di lantai.
 
 
-Sijil pencapaian Dunia Haiwan untuk Intan Payung.
+Pensel itu milik Lala.
 
 
-Sijil pencapaian Asah Minda untuk Intan Payung.
+Azan berkumandang.
 
 
-Sijil pencapaian Misi Pengembaraan untuk Intan Payung.
+Sudah masuk waktu solat.
+
+
+Bobo sedang bermain.
+
+
+Dino mengambil nasi yang terlalu banyak.
+
+
+Dino sudah kenyang.
+
+
+Apa yang terbaik untuk lain kali?
+
+
+Ayah memanggil Lala dari dapur.
+
+
+Bagaimana Lala patut menjawab?
+
+
+Mimi ada bola baharu.
+
+
+Coco juga mahu bermain.
+
+
+Ada tabung derma di masjid.
+
+
+Ibu memberi Coco sekeping syiling.
+
+
+Apa yang Coco mahu buat?
+
+
+Bobo baru pulang dari bermain di luar.
+
+
+Tangan Bobo kotor.
+
+
+Apa yang Bobo buat sebelum makan?
+
+
+Dino sedang bermain buaian.
+
+
+Lala juga mahu naik buaian.
+
+
+Selamat datang ke Taman Akhlak!
+
+
+Jom pilih kebaikan, dan kebun kamu akan mekar.
+
+
+[gently] Cuba cari warna biru.
+
+
+Cuba cari warna coklat.
+
+
+Cuba cari warna hijau.
+
+
+Cuba cari warna hitam.
+
+
+Cuba cari warna kuning.
+
+
+Cuba cari warna merah jambu.
+
+
+Cuba cari warna merah.
+
+
+Cuba cari warna oren.
+
+
+Cuba cari warna putih.
+
+
+Cuba cari warna ungu.
+
+
+Ini warna biru.
+
+
+Ini warna coklat.
+
+
+Ini warna hijau.
+
+
+Ini warna hitam.
+
+
+Ini warna kuning.
+
+
+Ini warna merah jambu.
+
+
+Ini warna merah.
+
+
+Ini warna oren.
+
+
+Ini warna putih.
+
+
+Ini warna ungu.
+
+
+Hmm, kalau begitu, ada orang yang rasa sedih.
+
+
+Cuba pilih yang lain, ya.
+
+
+Hmm, kita makan dengan tangan kanan, ya.
+
+
+Hmm, taman jadi kotor.
+
+
+Hmm, air jadi membazir.
+
+
+Hmm, itu tidak benar.
+
+
+Hmm, kucing jadi takut dan sakit.
+
+
+Hmm, nanti Mimi penat esok.
+
+
+Hmm, kawan boleh jatuh sakit.
+
+
+Hmm, nanti ada orang tersadung.
+
+
+Hmm, pokok jadi rosak.
+
+
+Hmm, itu bukan milik kita.
+
+
+Hmm, waktu solat sudah tiba.
+
+
+Hmm, makanan jadi membazir.
+
+
+Hmm, hari ini kita mahu bersedekah.
+
+
+Hmm, kuman boleh masuk ke perut.
+
+
+[cheerfully] Wisel.
+
+
+Angin.
+
+
+Telefon.
+
+
+Beriman kepada malaikat.
+
+
+Beri biru.
+
+
+Dram.
+
+
+Beriman kepada Allah.
+
+
+Guruh.
+
+
+Hujan.
+
+
+Tepuk tangan.
+
+
+Loceng pintu.
+
+
+Menunaikan zakat.
+
+
+Huruf vi kecil.
+
+
+Bangun tidur.
+
+
+Dengan nama Allah.
+
+
+Anak ayam.
+
+
+Dal.
+
+
+Huruf ar kecil.
+
+
+Aku memohon keampunan-Mu.
+
+
+Huruf ai kecil.
+
+
+Anak kuda.
+
+
+Huruf en kecil.
+
+
+Huruf yu kecil.
+
+
+Huruf wai kecil.
+
+
+Masuk tandas.
+
+
+Feri.
+
+
+Kaf.
+
+
+Nabi Soleh.
+
+
+Zho.
+
+
+Doa untuk ibu bapa.

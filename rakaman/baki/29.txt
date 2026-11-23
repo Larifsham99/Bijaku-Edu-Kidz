@@ -1,310 +1,172 @@
-[cheerfully] Hujan.
+[warmly] Lala mahu beli kuih lima ringgit.
 
 
-Tepuk tangan.
+Dino mahu beli teh lima ringgit.
 
 
-Loceng pintu.
+Dino mahu beli lobak merah empat ringgit.
 
 
-Menunaikan zakat.
+Coco mahu beli nanas empat ringgit.
 
 
-Huruf vi kecil.
+Bobo mahu beli mangga lima ringgit.
 
 
-Bangun tidur.
+Dino mahu beli oren lima ringgit.
 
 
-Dengan nama Allah.
+Mimi mahu beli madu lima ringgit.
 
 
-Anak ayam.
+Bobo mahu beli madu empat ringgit.
 
 
-Dal.
+Coco mahu beli telur tujuh ringgit.
 
 
-Huruf ar kecil.
+Dino mahu beli oren enam ringgit.
 
 
-Aku memohon keampunan-Mu.
+Mimi mahu beli oren lapan ringgit.
 
 
-Huruf ai kecil.
+Dino mahu beli pisang tiga ringgit.
 
 
-Anak kuda.
+Lala mahu beli teh sembilan ringgit.
 
 
-Huruf en kecil.
+Mimi mahu beli lobak merah tiga ringgit.
 
 
-Huruf yu kecil.
+Dino mahu beli tembikai tiga ringgit.
 
 
-Huruf wai kecil.
+Lala mahu beli beras empat ringgit.
 
 
-Masuk tandas.
+Bobo mahu beli lobak merah lima ringgit.
 
 
-Feri.
+Mimi mahu beli roti lapan ringgit.
 
 
-Kaf.
+Lala mahu beli kurma lapan ringgit.
 
 
-Nabi Soleh.
+Coco mahu beli tembikai dua ringgit.
 
 
-Zho.
+Coco mahu beli kelapa sembilan ringgit.
 
 
-Doa untuk ibu bapa.
+Mimi mahu beli madu lapan ringgit.
 
 
-Huruf si kecil.
+Lala mahu beli lobak merah sepuluh ringgit.
 
 
-Nabi Hud.
+Dino mahu beli jagung enam ringgit.
 
 
-Segala puji bagi Allah.
+Mimi mahu beli kuih sembilan ringgit.
 
 
-Seluar.
+Coco mahu beli tembikai enam ringgit.
 
 
-Tong sampah.
+Mimi mahu beli kek sepuluh ringgit.
 
 
-But.
+Lala mahu beli garam sepuluh ringgit.
 
 
-Ketuk dan minta izin.
+Dino mahu beli tembikai sepuluh ringgit.
 
 
-Nabi Yahya.
+Coco mahu beli kelapa sepuluh ringgit.
 
 
-Terima kasih.
+Coco mahu beli susu dua belas ringgit.
 
 
-Bawang putih.
+Mimi mahu beli anggur dua belas ringgit.
 
 
-Belon.
+Bobo mahu beli susu enam ringgit.
 
 
-Belon udara.
+Bobo mahu beli lobak merah tujuh ringgit.
 
 
-Brokoli.
+Dino mahu beli oren tiga belas ringgit.
 
 
-Kentang.
+Coco mahu beli kurma tujuh ringgit.
 
 
-Lada benggala.
+Bobo mahu beli tembikai sebelas ringgit.
 
 
-Mendengar.
+Coco mahu beli mangga sepuluh ringgit.
 
 
-Minta maaf.
+Lala mahu beli susu lima belas ringgit.
 
 
-Nyamuk.
+Dino mahu beli gula lima belas ringgit.
 
 
-Padang rumput.
+Lala mahu beli epal lima belas ringgit.
 
 
-Salam.
+Coco mahu beli kuih sembilan ringgit.
 
 
-Sawi.
+Coco mahu beli garam enam belas ringgit.
 
 
-Timun.
+Bobo mahu beli nanas dua belas ringgit.
 
 
-Tomato.
+Lala mahu beli pisang lapan ringgit.
 
 
-Wah, berlian!
+Coco mahu beli gula tujuh ringgit.
 
 
-Wah, bintang!
+Mimi mahu beli mi sembilan ringgit.
 
 
-Wah, bulan!
+Lala mahu beli mangga lapan ringgit.
 
 
-Wah, hati!
+Coco mahu beli nanas tiga ringgit, dan lobak merah satu ringgit.
 
 
-Wah, ikan!
+Berapa jumlahnya?
 
 
-Wah, pokok!
+Bobo mahu beli ikan empat ringgit, dan kek dua ringgit.
 
 
-Wah, rama-rama!
+Mimi mahu beli mi empat ringgit, dan madu empat ringgit.
 
 
-Wah, rumah!
+Bobo mahu beli kelapa tiga ringgit, dan pisang lima ringgit.
 
 
-Wah, segi empat!
+Mimi mahu beli oren empat ringgit, dan kurma dua ringgit.
 
 
-Wah, segi tiga!
+Lala mahu beli telur empat ringgit, dan roti lima ringgit.
 
 
-Yu.
+Bobo mahu beli anggur dua ringgit, dan nanas dua ringgit.
 
 
-Kamu sudah tamatkan semua level ei, bi, si Ceria!
+Dino mahu beli kelapa satu ringgit, dan lobak merah empat ringgit.
 
 
-Kamu sudah tamatkan semua level Asah Minda!
-
-
-Kamu sudah tamatkan semua level Bijak Mengelaskan!
-
-
-Kamu sudah tamatkan semua level Cari Bayang!
-
-
-Kamu sudah tamatkan semua level Dunia Haiwan!
-
-
-Kamu sudah tamatkan semua level Dunia Nombor!
-
-
-Kamu sudah tamatkan semua level Ingatan Hebat!
-
-
-Kamu sudah tamatkan semua level Kehidupan Harian!
-
-
-Kamu sudah tamatkan semua level Maze Pengembaraan!
-
-
-Kamu sudah tamatkan semua level Misi Pengembaraan!
-
-
-Kamu sudah tamatkan semua level Pazel Pintar!
-
-
-Kamu sudah tamatkan semua level Seni dan Mewarna!
-
-
-Kamu sudah tamatkan semua level Si Cilik Soleh!
-
-
-Kamu sudah tamatkan semua level Teka Bunyi!
-
-
-Kamu sudah tamatkan semua level Warna dan Bentuk!
-
-
-Tema Batik Laut!
-
-
-Tema Kampung Ceria!
-
-
-Tema Klasik Lembut!
-
-
-Tema Kuih-muih!
-
-
-Tema Malam Bulan!
-
-
-Tema Songket Diraja!
-
-
-Tema Taman Masjid!
-
-
-Wah, bot!
-
-
-Wah, payung!
-
-
-[softly] Mula dari kanan.
-
-
-Membasuh muka (dengan niat).
-
-
-Menunaikan solat lima waktu.
-
-
-Susun rukun Iman mengikut urutan.
-
-
-Membasuh kedua-dua kaki hingga buku lali.
-
-
-Susun rukun Islam mengikut urutan.
-
-
-Cari pasangan huruf hijaiyah yang sama.
-
-
-Menunaikan haji bagi yang mampu.
-
-
-Tonton televisyen.
-
-
-Beriman kepada hari akhirat.
-
-
-Qof.
-
-
-Wahai Tuhanku, ampunkanlah aku dan kedua ibu bapaku.
-
-
-Wahai Tuhanku, tambahkanlah ilmuku.
-
-
-Ghain.
-
-
-Mim.
-
-
-Nabi Ishak.
-
-
-Nun.
-
-
-Wau.
-
-
-Dengan nama-Mu ya Allah, aku mati dan aku hidup.
-
-
-Doa ini bermaksud: Dengan nama Allah, aku bertawakal kepada Allah; tiada daya dan kekuatan melainkan dengan Allah.
-
-
-Pilih doa sebelum memulakan sesuatu, atau sebelum makan.
-
-
-Sebelum makan, kita membaca,.
-
-
-Fa.
-
-
-Ha (simpul).
+Lala mahu beli susu tiga ringgit, dan mi tiga ringgit.

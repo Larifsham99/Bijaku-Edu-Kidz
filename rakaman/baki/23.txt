@@ -1,19 +1,4 @@
-[warmly] Warnakan matahari ikut warna kegemaran kamu!
-
-
-Warnakan sirip dengan warna kuning.
-
-
-Warnakan sirip dengan warna merah.
-
-
-Yang mana satu bukan alat dapur?
-
-
-Ada berapa buih dalam bakul?
-
-
-Ada dua anjing yang menyorok.
+[warmly] Ada dua anjing yang menyorok.
 
 
 Ada dua arnab yang menyorok.
@@ -236,3 +221,36 @@ Ini bas.
 
 
 Ini bola.
+
+
+Ini ceri.
+
+
+Ini coklat.
+
+
+Ini dram.
+
+
+Ini epal.
+
+
+Ini feri.
+
+
+Ini gelas.
+
+
+Ini gitar.
+
+
+Ini huruf bi besar.
+
+
+Ini huruf si besar.
+
+
+Ini huruf ef besar.
+
+
+Ini huruf ai besar.

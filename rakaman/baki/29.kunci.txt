@@ -1,104 +1,58 @@
-Hujan
-Tepuk tangan
-Loceng pintu
-Menunaikan zakat
-Huruf V kecil
-Bangun tidur
-Dengan nama Allah
-Anak ayam
-Dal
-Huruf R kecil
-Aku memohon keampunan-Mu
-Huruf I kecil
-Anak kuda
-Huruf N kecil
-Huruf U kecil
-Huruf Y kecil
-Masuk tandas
-Feri
-Kaf
-Nabi Soleh
-Zho
-Doa untuk ibu bapa
-Huruf C kecil
-Nabi Hud
-Segala puji bagi Allah
-Seluar
-Tong sampah
-But
-Ketuk dan minta izin
-Nabi Yahya
-Terima kasih
-Bawang putih
-Belon
-Belon udara
-Brokoli
-Kentang
-Lada benggala
-Mendengar
-Minta maaf
-Nyamuk
-Padang rumput
-Salam
-Sawi
-Timun
-Tomato
-Wah, berlian!
-Wah, bintang!
-Wah, bulan!
-Wah, hati!
-Wah, ikan!
-Wah, pokok!
-Wah, rama-rama!
-Wah, rumah!
-Wah, segi empat!
-Wah, segi tiga!
-Yu
-Kamu sudah tamatkan semua level A, B, C Ceria!
-Kamu sudah tamatkan semua level Asah Minda!
-Kamu sudah tamatkan semua level Bijak Mengelaskan!
-Kamu sudah tamatkan semua level Cari Bayang!
-Kamu sudah tamatkan semua level Dunia Haiwan!
-Kamu sudah tamatkan semua level Dunia Nombor!
-Kamu sudah tamatkan semua level Ingatan Hebat!
-Kamu sudah tamatkan semua level Kehidupan Harian!
-Kamu sudah tamatkan semua level Maze Pengembaraan!
-Kamu sudah tamatkan semua level Misi Pengembaraan!
-Kamu sudah tamatkan semua level Pazel Pintar!
-Kamu sudah tamatkan semua level Seni dan Mewarna!
-Kamu sudah tamatkan semua level Si Cilik Soleh!
-Kamu sudah tamatkan semua level Teka Bunyi!
-Kamu sudah tamatkan semua level Warna dan Bentuk!
-Tema Batik Laut!
-Tema Kampung Ceria!
-Tema Klasik Lembut!
-Tema Kuih-muih!
-Tema Malam Bulan!
-Tema Songket Diraja!
-Tema Taman Masjid!
-Wah, bot!
-Wah, payung!
-Mula dari kanan.
-Membasuh muka (dengan niat)
-Menunaikan solat lima waktu
-Susun rukun Iman mengikut urutan.
-Membasuh kedua-dua kaki hingga buku lali
-Susun rukun Islam mengikut urutan.
-Cari pasangan huruf hijaiyah yang sama.
-Menunaikan haji bagi yang mampu
-Tonton televisyen
-Beriman kepada hari akhirat
-Qof
-Wahai Tuhanku, ampunkanlah aku dan kedua ibu bapaku
-Wahai Tuhanku, tambahkanlah ilmuku
-Ghain
-Mim
-Nabi Ishak
-Nun
-Wau
-Dengan nama-Mu ya Allah, aku mati dan aku hidup
-Doa ini bermaksud: Dengan nama Allah, aku bertawakal kepada Allah; tiada daya dan kekuatan melainkan dengan Allah.
-Pilih doa sebelum memulakan sesuatu / sebelum makan.
-Sebelum makan, kita membaca,
-Fa
-Ha (simpul)
+Lala mahu beli kuih lima ringgit.
+Dino mahu beli teh lima ringgit.
+Dino mahu beli lobak merah empat ringgit.
+Coco mahu beli nanas empat ringgit.
+Bobo mahu beli mangga lima ringgit.
+Dino mahu beli oren lima ringgit.
+Mimi mahu beli madu lima ringgit.
+Bobo mahu beli madu empat ringgit.
+Coco mahu beli telur tujuh ringgit.
+Dino mahu beli oren enam ringgit.
+Mimi mahu beli oren lapan ringgit.
+Dino mahu beli pisang tiga ringgit.
+Lala mahu beli teh sembilan ringgit.
+Mimi mahu beli lobak merah tiga ringgit.
+Dino mahu beli tembikai tiga ringgit.
+Lala mahu beli beras empat ringgit.
+Bobo mahu beli lobak merah lima ringgit.
+Mimi mahu beli roti lapan ringgit.
+Lala mahu beli kurma lapan ringgit.
+Coco mahu beli tembikai dua ringgit.
+Coco mahu beli kelapa sembilan ringgit.
+Mimi mahu beli madu lapan ringgit.
+Lala mahu beli lobak merah sepuluh ringgit.
+Dino mahu beli jagung enam ringgit.
+Mimi mahu beli kuih sembilan ringgit.
+Coco mahu beli tembikai enam ringgit.
+Mimi mahu beli kek sepuluh ringgit.
+Lala mahu beli garam sepuluh ringgit.
+Dino mahu beli tembikai sepuluh ringgit.
+Coco mahu beli kelapa sepuluh ringgit.
+Coco mahu beli susu dua belas ringgit.
+Mimi mahu beli anggur dua belas ringgit.
+Bobo mahu beli susu enam ringgit.
+Bobo mahu beli lobak merah tujuh ringgit.
+Dino mahu beli oren tiga belas ringgit.
+Coco mahu beli kurma tujuh ringgit.
+Bobo mahu beli tembikai sebelas ringgit.
+Coco mahu beli mangga sepuluh ringgit.
+Lala mahu beli susu lima belas ringgit.
+Dino mahu beli gula lima belas ringgit.
+Lala mahu beli epal lima belas ringgit.
+Coco mahu beli kuih sembilan ringgit.
+Coco mahu beli garam enam belas ringgit.
+Bobo mahu beli nanas dua belas ringgit.
+Lala mahu beli pisang lapan ringgit.
+Coco mahu beli gula tujuh ringgit.
+Mimi mahu beli mi sembilan ringgit.
+Lala mahu beli mangga lapan ringgit.
+Coco mahu beli nanas tiga ringgit, dan lobak merah satu ringgit.
+Berapa jumlahnya?
+Bobo mahu beli ikan empat ringgit, dan kek dua ringgit.
+Mimi mahu beli mi empat ringgit, dan madu empat ringgit.
+Bobo mahu beli kelapa tiga ringgit, dan pisang lima ringgit.
+Mimi mahu beli oren empat ringgit, dan kurma dua ringgit.
+Lala mahu beli telur empat ringgit, dan roti lima ringgit.
+Bobo mahu beli anggur dua ringgit, dan nanas dua ringgit.
+Dino mahu beli kelapa satu ringgit, dan lobak merah empat ringgit.
+Lala mahu beli susu tiga ringgit, dan mi tiga ringgit.

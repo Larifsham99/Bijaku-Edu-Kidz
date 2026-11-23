@@ -10,11 +10,8 @@ Selamat datang ke Bijaku, Abang!
 Pandainya, Abang!
 Terbaik, Abang!
 Hai Adik!
-Selamat datang ke Bijaku, Adik!
 Pandainya, Adik!
 Terbaik, Adik!
-Hai Kakak!
-Selamat datang ke Bijaku, Kakak!
 Pandainya, Kakak!
 Terbaik, Kakak!
 Hai Beybi!
@@ -93,3 +90,7 @@ Mahu melukis gambar.
 Mana ayam?
 Mana bayang burung helang?
 Mana bayang burung?
+Mana bayang ikan yu?
+Mana bayang lebah?
+Mana bentuk bulatan?
+Mana bentuk segi empat sama?
