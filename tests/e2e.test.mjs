@@ -38,7 +38,8 @@ try {
   await page.click('text=Seterusnya');
   await page.click('text=5 tahun');
   ok(await page.locator('.call-pick [data-call]').count() === 6, '6 pilihan panggilan (Abang, Adik, Kakak, Baby, Manja, Intan Payung)');
-  await page.evaluate(() => { window.__said = []; const o = speechSynthesis.speak.bind(speechSynthesis); speechSynthesis.speak = (u) => { window.__said.push(u.text); o(u); }; });
+  // rekod semua ayat yang dihantar kepada enjin suara (termasuk yang dipotong oleh ayat seterusnya)
+  await page.evaluate(() => { window.__said = []; const prev = globalThis.__dcCapture; globalThis.__dcCapture = { push: (x) => { window.__said.push(x.text); prev?.push(x); } }; });
   await page.click('.call-pick [data-call="kakak"]');
   await page.click('text=Seterusnya');
   await page.click('text=Coco si Arnab');
