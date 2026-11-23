@@ -10,11 +10,12 @@ import { overLimit } from '../screens/timeout.js';
 import { DEMO, DEMO_MAX } from '../demo.js';
 import { demoUpgrade } from '../screens/shared.js';
 import { makeRng } from '../rng.js';
-import { cheer, ribbon, flashRibbon, RIBBON_WORDS, selfieButton } from '../cheer.js';
+import { cheer, ribbon, flashRibbon, RIBBON_WORDS, selfieButton, breakStreak } from '../cheer.js';
 import { shade } from '../brand.js';
 import { lockNotice } from '../notice.js';
 import { GAMES, GAME_LEVELS, chapterOf } from './registry.js';
 import * as S from './store.js';
+import { autoFit } from '../fit.js';
 
 const pid = () => profile()?.id;
 const vars = (g) => `--gc:${g.c};--ga:${g.bg[0]};--gb:${g.bg[1]};--gd:${g.bg[2]};--gl:${shade(g.c, 0.82)}`;
@@ -77,6 +78,8 @@ export async function playScreen(id, n, onClean) {
   const dots = h('div', { class: 'gm-dots' });
   const bubble = h('div', { class: 'gm-bubble', role: 'status' });
   const stage = h('div', { class: 'gm-stage' });
+  scr.classList.add('gm-fit');
+  const unfit = autoFit(stage);
   scr.append(dots, bubble, stage);
 
   const ctx = {
@@ -95,7 +98,7 @@ export async function playScreen(id, n, onClean) {
       if (flash) flashRibbon(RIBBON_WORDS[Math.floor(Math.random() * RIBBON_WORDS.length)], { parent: scr, ms: 1000 });
     },
     miss({ quiet = false } = {}) {
-      misses++; roundMiss++; sfx.wrong(); haptic(30);
+      misses++; roundMiss++; sfx.boing(); haptic(30); breakStreak();
       if (!quiet && roundMiss % 2 === 0) cheer('try');
     },
     done() { if (!finished) { finished = true; later(finish, 500); } },
@@ -127,7 +130,7 @@ export async function playScreen(id, n, onClean) {
   let last = Date.now();
   const ticker = setInterval(() => { const now = Date.now(); if (document.visibilityState === 'visible' && p) { addActivity(p, { time: Math.min(10, (now - last) / 1000) }); save(); } last = now; }, 5000);
   const gameClean = mod.play(ctx) || (() => {});
-  onClean(() => { alive = false; clearInterval(ticker); timers.forEach(clearTimeout); try { gameClean(); } catch { /* */ } stopSpeak(); document.querySelectorAll('.gm-ghost').forEach((e) => e.remove()); globalThis.__gmPlay = null; });
+  onClean(() => { unfit(); alive = false; clearInterval(ticker); timers.forEach(clearTimeout); try { gameClean(); } catch { /* */ } stopSpeak(); document.querySelectorAll('.gm-ghost').forEach((e) => e.remove()); globalThis.__gmPlay = null; });
   return scr;
 }
 

@@ -21,14 +21,30 @@ export const RIBBON_WORDS = ['Hebat!', 'Tahniah!', 'Syabas!', 'Terbaik!', 'Bijak
 export const praiseText = () => (islamic() && Math.random() < 0.2 ? pick(ISLAMIC_PRAISE) : pick(PRAISE));
 export const encourageText = () => (islamic() && Math.random() < 0.25 ? pick(ISLAMIC_ENCOURAGE) : pick(ENCOURAGE));
 
+// ---- PENAPIS PUJIAN ----
+// Kanak-kanak cepat bosan jika setiap jawapan dipuji dengan suara yang sama.
+// Ganjaran berubah-ubah lebih berkesan: suara pujian hanya sekali-sekala
+// (jawapan pertama, rentetan 3/5/8, atau selepas beberapa jawapan senyap);
+// selebihnya kesan bunyi "yeay" + reben/visual.
+let streak = 0, quiet = 0;
+export function praiseGate() {
+  streak++; quiet++;
+  const say = streak === 1 || streak === 3 || streak === 5 || streak % 8 === 0 || quiet >= 4;
+  if (say) quiet = 0;
+  return say;
+}
+export const getStreak = () => streak;
+export function breakStreak() { streak = 0; }
+
 // kind: 'good' (jawapan betul) | 'try' (cuba lagi) | 'done' (level selesai)
 export function cheer(kind = 'good', { perfect = false } = {}) {
   (globalThis.__cheers ||= []).push(kind); // untuk ujian
-  if (kind === 'try') return speak(encourageText(), { mood: 'galakan' });
+  if (kind === 'try') { breakStreak(); return speak(encourageText(), { mood: 'galakan' }); }
   if (kind === 'done') {
     const msg = perfect ? pick(TALK.doneAll) : pick(TALK.done);
     return speak(`${islamic() ? 'Alhamdulillah! ' : ''}${msg}`, { mood: 'pujian' });
   }
+  if (!praiseGate()) { sfx.yay(); if (streak >= 3) setTimeout(() => sfx.streak(streak), 320); return Promise.resolve(); }
   return speak(praiseText(), { mood: 'pujian' });
 }
 

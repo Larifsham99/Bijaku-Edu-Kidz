@@ -68,7 +68,7 @@ export function runTiltGame(ctx, opt) {
 
   const burst = (x, y, z, c, nn = 12, star = false, sp = 2.5) => { for (let i = 0; i < nn; i++) { const a = Math.random() * Math.PI * 2, u = Math.random() * sp; parts.push({ x, y, z, vx: Math.cos(a) * u, vy: Math.sin(a) * u, vz: 1 + Math.random() * 2.5, life: 0.6 + Math.random() * 0.4, c, s: 0.06, star }); } };
   function say(t, mood) { ctx.say(t, mood); }
-  function pop(t, ic) { msg.textContent = ''; if (ic) msg.append(ico(ic)); msg.append(t); msg.classList.remove('on'); void msg.offsetWidth; msg.classList.add('on'); speak(t, { mood: 'pujian' }); }
+  function pop(t, ic) { msg.textContent = ''; if (ic) msg.append(ico(ic)); msg.append(t); msg.classList.remove('on'); void msg.offsetWidth; msg.classList.add('on'); }
 
   function events() {
     for (const [k, v] of body.events.splice(0)) {

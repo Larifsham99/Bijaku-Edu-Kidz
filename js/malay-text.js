@@ -43,6 +43,8 @@ const SINGKATAN = [
 const LEKSIKON = [
   [/\bpuzzle\b/gi, 'pazel'], [/\bdinosaur\b/gi, 'dinosor'],
 ];
+// Nama huruf mengikut sebutan sekolah di Malaysia (KSPK)
+export const HURUF = { A: 'ei', B: 'bi', C: 'si', D: 'di', E: 'i', F: 'ef', G: 'ji', H: 'eic', I: 'ai', J: 'je', K: 'ke', L: 'el', M: 'em', N: 'en', O: 'o', P: 'pi', Q: 'kiu', R: 'ar', S: 'es', T: 'ti', U: 'yu', V: 'vi', W: 'dabel yu', X: 'eks', Y: 'wai', Z: 'zed' };
 // Kekalkan huruf besar di awal perkataan semasa menggantikan
 const keepCase = (src, w) => (src[0] === src[0].toUpperCase() ? w[0].toUpperCase() + w.slice(1) : w);
 const UNIT = [[/(\d)\s?kg\b/g, '$1 kilogram'], [/(\d)\s?km\b/g, '$1 kilometer'], [/(\d)\s?cm\b/g, '$1 sentimeter'], [/(\d)\s?ml\b/g, '$1 mililiter']];
@@ -75,13 +77,16 @@ export function normalizeMalay(input) {
   t = t.replace(/(\d)\s?\+\s?(?=\d)/g, '$1 tambah ').replace(/(\d)\s?[−-]\s?(?=\d)/g, '$1 tolak ').replace(/(\d)\s?[×x]\s?(?=\d)/g, '$1 darab ').replace(/(\d)\s?÷\s?(?=\d)/g, '$1 bahagi ').replace(/\s?=\s?/g, ' sama dengan ');
   // perpuluhan: 1.5 -> satu perpuluhan lima
   t = t.replace(/\b(\d+)\.(\d+)\b/g, (m, a, b) => `${nombor(a)} perpuluhan ${b.split('').map((d) => SATU[d]).join(' ')}`);
+  // huruf tunggal (A, b, "huruf E") -> nama huruf Bahasa Melayu Malaysia supaya enjin suara
+  // tidak membaca "E" sebagai "e" pepet atau "A" sebagai "ah"
+  t = t.replace(/(^|[\s,(“"'])([A-Za-z])(?=$|[\s,!?;:)”"']|\.(?![A-Za-z]))/g, (m, pre, c) => pre + HURUF[c.toUpperCase()]);
   // nombor bulat (buang pemisah ribu 1,000)
   t = t.replace(/\b\d{1,3}(?:,\d{3})+\b/g, (m) => m.replace(/,/g, ''));
   t = t.replace(/\b\d+\b/g, (m) => nombor(m));
   // simbol lain
   t = t.replace(/&/g, ' dan ').replace(/@/g, ' di ').replace(/[·•➜→|]/g, ',').replace(/[“”"«»]/g, '').replace(/…|\.{3}/g, ', ');
   // Akronim dieja huruf demi huruf; perkataan HURUF BESAR lain -> huruf kecil
-  t = t.replace(/\b(ABC|PdPC|KSPK)\b/g, (m) => m.split('').join(', '));
+  t = t.replace(/\b(ABC|PdPC|KSPK)\b/g, (m) => m.split('').map((c) => HURUF[c.toUpperCase()]).join(', '));
   t = t.replace(/\b([A-Z])([A-Z]{2,})\b/g, (m, a, b) => a + b.toLowerCase());
   return t.replace(/\s+([,.!?])/g, '$1').replace(/\s+/g, ' ').trim();
 }

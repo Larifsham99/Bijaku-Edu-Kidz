@@ -48,7 +48,12 @@ eq('Tekan SEMUA huruf', 'Tekan Semua huruf');
 eq('Berat 1.5 kg', 'Berat satu perpuluhan lima kilogram');
 eq('Jarak 3km', 'Jarak tiga kilometer');
 eq('Hebat! ⭐🎉', 'Hebat!');
-eq('Jom main ABC Ceria!', 'Jom main A, B, C Ceria!');
+eq('Jom main ABC Ceria!', 'Jom main ei, bi, si Ceria!');
+// nama huruf ikut sebutan sekolah Malaysia
+eq('Ini huruf E. Mana satu lagi huruf E?', 'Ini huruf i. Mana satu lagi huruf i?');
+eq('Tekan semua huruf vokal. A, E, I, O, U.', 'Tekan semua huruf vokal. ei, i, ai, o, yu.');
+eq('Cari huruf W.', 'Cari huruf dabel yu.');
+eq('Allah s.w.t. Maha Esa', 'Allah s.w.t. Maha Esa');
 
 console.log(fails ? `\n✗ ${fails} kegagalan` : '\n✓ Ujian suara lulus');
 process.exit(fails ? 1 : 0);

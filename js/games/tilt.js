@@ -82,8 +82,8 @@ export function createTilt(host) {
   addEventListener('keydown', kd); addEventListener('keyup', ku);
 
   // ---------- butang tetapan ----------
-  const modeBtn = h('button', { class: 'tj-btn', type: 'button', onclick: () => { sfx.tap(); haptic(10); setMode(s.mode === 'tilt' ? 'joy' : 'tilt'); if (s.mode === 'tilt' && !s.sensorOK) start(); speak(s.mode === 'tilt' ? 'Kawalan senget telefon.' : 'Kawalan joystick.'); } });
-  const calBtn = h('button', { class: 'tj-btn cal', type: 'button', 'aria-label': 'Kalibrasi', onclick: () => { sfx.pop(); haptic([10, 40, 10]); calBtn.classList.remove('spin'); void calBtn.offsetWidth; calBtn.classList.add('spin'); calibrate(); flash('Posisi neutral ditetapkan!'); speak('Posisi neutral ditetapkan.'); } }, ico('target'), h('small', {}, 'Kalibrasi'));
+  const modeBtn = h('button', { class: 'tj-btn', type: 'button', onclick: () => { sfx.tap(); haptic(10); setMode(s.mode === 'tilt' ? 'joy' : 'tilt'); if (s.mode === 'tilt' && !s.sensorOK) start(); flash(s.mode === 'tilt' ? 'Kawalan senget telefon' : 'Kawalan joystick'); } });
+  const calBtn = h('button', { class: 'tj-btn cal', type: 'button', 'aria-label': 'Kalibrasi', onclick: () => { sfx.pop(); haptic([10, 40, 10]); calBtn.classList.remove('spin'); void calBtn.offsetWidth; calBtn.classList.add('spin'); calibrate(); flash('Posisi neutral ditetapkan!'); } }, ico('target'), h('small', {}, 'Kalibrasi'));
   // kepekaan: tolok 5 bar berwarna (hijau → oren)
   const gauge = h('span', { class: 'tj-gauge', 'aria-hidden': 'true' }, ...[1, 2, 3, 4, 5].map((i) => h('i', { style: `--i:${i}` })));
   const sensLbl = h('b', { class: 'tj-sr' }, s.sens);

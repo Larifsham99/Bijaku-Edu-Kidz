@@ -150,7 +150,8 @@ export function maze(stage, r, api) {
   addEventListener('keydown', onKey);
   // kawalan: seret watak / leret / ketik petak bersebelahan
   let dragging = false;
-  const cellAt = (e) => { const b = wrap.getBoundingClientRect(); return [Math.floor((e.clientX - b.left) / cs), Math.floor((e.clientY - b.top) / cs)]; };
+  // saiz petak sebenar di skrin (tahan zoom 'muat skrin')
+  const cellAt = (e) => { const b = wrap.getBoundingClientRect(); const k = cs * (b.width / (wrap.offsetWidth || b.width)); return [Math.floor((e.clientX - b.left) / k), Math.floor((e.clientY - b.top) / k)]; };
   wrap.addEventListener('pointerdown', (e) => { e.preventDefault(); dragging = true; wrap.setPointerCapture?.(e.pointerId); stepToward(cellAt(e)); });
   wrap.addEventListener('pointermove', (e) => { if (dragging) stepToward(cellAt(e)); });
   const stop = () => { dragging = false; };

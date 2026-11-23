@@ -268,7 +268,7 @@ export function draw(stage, r, api, { free = false } = {}) {
   clr.addEventListener('click', () => { g.fillStyle = '#fff'; g.fillRect(0, 0, cv.width, cv.height); ink = 0; });
   sizes.append(er, clr);
   let drawing = false, last = null;
-  const pt = (e) => { const b = cv.getBoundingClientRect(); return [(e.clientX - b.left) * scale, (e.clientY - b.top) * scale]; };
+  const pt = (e) => { const b = cv.getBoundingClientRect(); return [((e.clientX - b.left) / b.width) * cv.width, ((e.clientY - b.top) / b.height) * cv.height]; };
   const line = (a, b2) => {
     g.strokeStyle = eraser ? '#fff' : colorById(pal.get()).hex; g.lineWidth = (eraser ? 30 : size) * scale; g.lineCap = 'round'; g.lineJoin = 'round';
     g.beginPath(); g.moveTo(...a); g.lineTo(...b2); g.stroke();

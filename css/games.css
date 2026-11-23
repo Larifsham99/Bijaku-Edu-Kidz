@@ -517,3 +517,9 @@ html:has(.gm-screen) body { background: var(--gl, #fff6e5); }
 @media (max-height: 640px) { .tg-full .gm-top { min-height: 42px; } .tg-full .gm-round { width: 42px; height: 42px; } .tg-full .gm-bubble { -webkit-line-clamp: 1; max-height: calc(1.3em + 12px); } .tt-pad { width: 84px; height: 84px; } .tt-arrow { height: 56px; } .tg-rart { width: 60px; height: 60px; } }
 @media (orientation: landscape) and (max-height: 520px) { .tg-full .gm-bubble { display: none; } .tg-ctl { left: auto; right: 8px; width: auto; align-items: flex-end; } .tj-bar { flex-direction: column; align-items: flex-end; } .tj-joy { position: fixed; left: max(16px, env(safe-area-inset-left)); bottom: 16px; } }
 @media (prefers-reduced-motion: reduce) { .tg-view.hurt, .tg-rart, .tg-start, .tg-rph, .tt-arrow .tt-phone { animation: none !important; } }
+
+/* ---------- MUAT SATU SKRIN (semua skrin permainan) ---------- */
+.gm-screen.gm-fit { height: 100vh; height: 100dvh; max-height: 100vh; max-height: 100dvh; flex: none; overflow: hidden; gap: 8px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+.gm-fit .gm-stage { flex: 1 1 0; min-height: 0; overflow: hidden; }
+.gm-fit .gm-bubble { flex: none; }
+.gm-fit .gm-dots { flex: none; }

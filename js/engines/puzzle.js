@@ -41,7 +41,8 @@ export function puzzle(stage, r, api) {
   const avail = Math.min((stage.clientWidth || 360) - 24, 380);
   const n0 = r.rows * r.cols;
   // ambil kira ketinggian skrin juga (telefon landskap)
-  const maxH = Math.max(170, (innerHeight || 700) - 230);
+  // papan + dulang kepingan mesti muat dalam papan permainan (tanpa tatal)
+  const maxH = Math.max(150, Math.min((innerHeight || 700) - 230, (stage.clientHeight || 600) * 0.46));
   const W = Math.max(170, Math.min(avail, maxH, n0 <= 4 ? 260 : n0 <= 6 ? 300 : 340));
   const H = W;
   const url = picture(r.pic);
@@ -104,7 +105,7 @@ export function puzzle(stage, r, api) {
 
 // Gambar dengan satu bahagian hilang: pilih kepingan yang betul
 function missing(stage, r, api) {
-  const W = Math.min((stage.clientWidth || 360) - 24, 300), H = W;
+  const W = Math.max(150, Math.min((stage.clientWidth || 360) - 24, 300, (stage.clientHeight || 600) * 0.5)), H = W;
   const url = picture(r.pic);
   const board = h('div', { class: 'puzzle-board', style: { gridTemplateColumns: `repeat(${r.cols}, ${W / r.cols}px)`, gridTemplateRows: `repeat(${r.rows}, ${H / r.rows}px)`, gap: '0' } });
   const n = r.rows * r.cols;

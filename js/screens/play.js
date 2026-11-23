@@ -7,7 +7,7 @@ import { MODES, generateLevel, makeRound, TIERS } from '../modes/index.js';
 import { PRAISE, ENCOURAGE, ISLAMIC_PRAISE, ISLAMIC_ENCOURAGE } from '../data/content.js';
 import { speak, stopSpeak, sfx, playSound, speakWord, haptic, voicePack } from '../audio.js';
 import { TALK, pick, echoable } from '../talk.js';
-import { ribbon, selfieButton } from '../cheer.js';
+import { ribbon, selfieButton, praiseGate, breakStreak, getStreak } from '../cheer.js';
 import { icon } from '../icons.js';
 import { profile, settings, save, recordSkill, addActivity, modeProg, isUnlocked, callOf } from '../store.js';
 import { awardLevel, addStars, checkBadges } from '../rewards.js';
@@ -17,6 +17,7 @@ import { todayKey } from '../ui.js';
 import { dailySet, DAILY_REWARD } from './daily.js';
 import { demoLocked } from '../demo.js';
 import { demoUpgrade } from './shared.js';
+import { autoFit } from '../fit.js';
 
 let active = null; // sesi aktif (untuk pembersihan dan ujian)
 export function stopPlay() {
@@ -26,6 +27,7 @@ export function stopPlay() {
 export const currentSession = () => active;
 
 const pickOf = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const later2 = (fn, ms) => setTimeout(() => { if (active) fn(); }, ms);
 const islamic = () => settings().islamic !== false;
 // Pujian & galakan: campuran ucapan biasa dan ucapan Islamik (jika dihidupkan)
 const praiseText = () => (islamic() && Math.random() < 0.2 ? pick(ISLAMIC_PRAISE) : pick(PRAISE));
@@ -49,7 +51,7 @@ function flyStar(from, to, done) {
 function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
   const p = profile();
   const st = settings();
-  const scr = h('div', { class: 'screen' });
+  const scr = h('div', { class: 'screen play-fit' });
   const progress = h('div', { class: 'progress' }, rounds.map(() => h('i')));
   const replay = h('button', { class: 'btn-round rb-sky', type: 'button', 'aria-label': 'Dengar arahan semula' }, icon('sound'));
   const exitBtn = h('button', { class: 'btn-round rb-red', type: 'button', 'aria-label': 'Keluar' }, icon('close'));
@@ -60,6 +62,7 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
   const stage = h('div', { class: 'stage' });
   if (color) stage.style.setProperty('--mc', color);
   scr.appendChild(stage);
+  const unfit = autoFit(stage);
 
   let idx = 0, stars = 0, stopped = false, engine = null;
   let roundStart = 0, mistakes = 0, attempts = 0, totalMistakes = 0;
@@ -94,13 +97,14 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
       mistakes++; attempts++; totalMistakes++;
       if (soft) { sfx.bump(); return mistakes; }
       haptic([30, 40, 30]);
-      sfx.wrong();
-      // seperti cikgu: sebut apa yang dipilih, kemudian pujuk dengan lembut
-      const e = echoable(echo);
-      // selepas beberapa kali salah, ganti "cuba lagi" dengan petunjuk lembut
+      breakStreak();
+      // salah kali pertama: bunyi "boing" lembut + goyang sahaja (tanpa ucapan);
+      // salah berulang: pujukan ringkas atau petunjuk dengan suara
+      sfx.boing();
       const tail = hint ? pick(TALK.hint) : pick(TALK.retry);
-      const msg = e ? `${e}? ${pick(TALK.notThis)} ${tail}` : hint ? `${encourageText()} ${pick(TALK.hint)}` : encourageText();
-      toast(e ? tail : msg, 'try', '🤗');
+      if (mistakes < 2 && !hint) { toast(tail, 'try', '🤗'); return mistakes; }
+      const msg = hint ? `${encourageText()} ${pick(TALK.hint)}` : encourageText();
+      toast(msg, 'try', '🤗');
       g.say(msg, '', { voice: true, mood: 'galakan' });
       return mistakes;
     },
@@ -120,16 +124,20 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
       flyStar(stage, starPill, () => { starPill.querySelector('b').textContent = stars; starPill.classList.remove('bump'); void starPill.offsetWidth; starPill.classList.add('bump'); });
       haptic(25);
       progress.children[idx].className = 'ok';
-      sfx.correct();
+      sfx.correct(); later2(() => sfx.zip(), 120);
       const praise = praiseText();
       toast(praise, 'good', '⭐');
-      // sebut semula jawapan yang betul, kemudian puji: "Kucing! Pandainya!"
+      // sebut semula jawapan yang betul (pengukuhan isi pelajaran: "Kucing!");
+      // suara pujian hanya sekali-sekala, selebihnya bunyi "yeay" (lihat praiseGate)
       const e = echoable(echo);
-      const spoken = speak(e ? `${e}! ${praise}` : praise, { mood: 'pujian' });
+      const talk = praiseGate();
+      if (!talk) { later2(() => sfx.yay(), 260); if (getStreak() >= 3) later2(() => sfx.streak(getStreak()), 620); }
+      const line = talk ? (e ? `${e}! ${praise}` : praise) : e ? `${e}!` : '';
+      const spoken = line ? speak(line, { mood: 'pujian' }) : Promise.resolve();
       confetti(12, ['⭐', '✨', '🌟']);
       save();
       // tunggu pujian habis (maksimum ~4 saat) supaya soalan seterusnya tidak memotongnya
-      Promise.all([sleep(1500), Promise.race([spoken, sleep(4000)])]).then(() => { if (!stopped) next(); });
+      Promise.all([sleep(1300), Promise.race([spoken, sleep(4000)])]).then(() => { if (!stopped) next(); });
     },
     _done: false,
   };
@@ -146,10 +154,11 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     // doa & kandungan agama dibaca dengan nada tenang
     const mood = String(r.skill || '').startsWith('soleh.') ? 'tenang' : 'arahan';
     // penyambung semula jadi antara soalan; mulakan level dengan Bismillah
+    // penyambung antara soalan kini bunyi (desiran / gendang pusingan akhir), bukan ayat berulang
     let lead = '';
     if (idx === 0 && islamic()) { toast('Bismillah', 'good', '🤲'); lead = 'Bismillah.'; }
-    else if (isLast) lead = pick(TALK.last);
-    else if (idx > 0 && Math.random() < 0.45) lead = pick(TALK.next);
+    else if (isLast) { sfx.lastRound(); toast('Pusingan terakhir!', 'good', '🥁'); }
+    else if (idx > 0) sfx.whoosh();
     g.say(lead ? `${lead} ${r.say}` : r.say, sub, { mood });
     armIdle();
     const fn = ENGINES[r.type];
@@ -170,7 +179,9 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
     idleTimer = setTimeout(() => {
       if (stopped || api._done || idleCount >= 2 || document.visibilityState !== 'visible') return;
       idleCount++;
-      g.say(`${pick(TALK.idle)} ${rounds[idx].say}`, '', { mood: 'galakan' });
+      // kali pertama: ting-ting + ulang arahan sahaja; kali kedua: pujukan lembut
+      sfx.ping();
+      later2(() => g.say(idleCount === 1 ? rounds[idx].say : `${pick(TALK.idle)} ${rounds[idx].say}`, '', { mood: 'galakan' }), 450);
       armIdle(false);
     }, 16000);
   }
@@ -194,7 +205,7 @@ function session({ title, charId, color, rounds, onComplete, exitTo, tag }) {
   });
   const ses = {
     el: scr,
-    stop() { stopped = true; clearInterval(ticker); clearTimeout(idleTimer); if (engine?.cleanup) engine.cleanup(); },
+    stop() { stopped = true; unfit(); clearInterval(ticker); clearTimeout(idleTimer); if (engine?.cleanup) engine.cleanup(); },
     // digunakan oleh ujian automatik untuk menyelesaikan pusingan
     async solveRound() { if (engine?.solve) await engine.solve(); },
     // jalan keluar jika berlaku ralat tidak dijangka dalam satu pusingan

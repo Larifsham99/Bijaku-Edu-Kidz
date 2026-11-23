@@ -495,7 +495,7 @@ export default {
 
     globalThis.__gmPlay && (globalThis.__gmPlay.solve = () => { auto = { plan: null }; });
     const intro = course.ch === 0
-      ? (n === 1 ? `Tekan anak panah untuk melompat, ${pname}! Bawa watak kamu ke trofi. Jangan jatuh ke dalam air!` : course.tiles.size && [...course.tiles.values()].some((x) => x.kind === 'crumble') ? 'Blok retak akan runtuh. Jangan berhenti di atasnya, terus lompat!' : 'Lompat ke trofi! Kutip permata biru kalau boleh.')
+      ? (n === 1 ? 'Tekan anak panah untuk melompat! Bawa watak kamu ke trofi. Jangan jatuh ke dalam air!' : course.tiles.size && [...course.tiles.values()].some((x) => x.kind === 'crumble') ? 'Blok retak akan runtuh. Jangan berhenti di atasnya, terus lompat!' : 'Lompat ke trofi! Kutip permata biru kalau boleh.')
       : course.ch === 1 ? (n === 11 ? 'Pulau Lava! Tunggu platform kayu datang dekat, lompat naik, kemudian lompat turun di blok seterusnya.' : 'Hati-hati dengan duri dan lava! Tunggu masa yang sesuai, baru lompat.')
         : (n === 21 ? 'Pulau Awan! Pijak spring merah untuk melompat jauh ke hadapan.' : 'Cabaran terakhir! Platform, duri, spring dan blok retak. Kamu boleh!');
     ctx.say(intro);

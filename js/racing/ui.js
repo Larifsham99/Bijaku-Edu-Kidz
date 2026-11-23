@@ -2,11 +2,11 @@
 //  CILIK RACING — skrin & HUD (DOM). Semua elemen berawalan .rc-
 // =====================================================================
 import { h, clear, sleep } from '../ui.js';
-import { ribbon, selfieButton } from '../cheer.js';
+import { ribbon, selfieButton, praiseGate, breakStreak } from '../cheer.js';
 import { go } from '../nav.js';
 import { lockNotice } from '../notice.js';
 import { profile, save, addActivity } from '../store.js';
-import { speak, stopSpeak, playSound, hasSound, haptic } from '../audio.js';
+import { speak, stopSpeak, playSound, hasSound, haptic, sfx } from '../audio.js';
 import { icon } from '../icons.js';
 import { shapeSvg, NUM_WORDS } from '../data/content.js';
 import { overLimit } from '../screens/timeout.js';
@@ -430,11 +430,11 @@ export function raceScreen(wi, n, onClean) {
         break;
       case 'memory': openMemory(e.task); break;
       case 'memoryHide': closeMemory(); speak('Sekarang, kutip ikut urutan!'); break;
-      case 'correct': snd.rsfx.ok(); haptic([10, 40, 10]); speak(pick(PRAISE), { mood: 'pujian' }); showBanner(pick(['Hebat!', 'Betul!', 'Turbo!', 'Terbaik!']), 'good'); break;
+      case 'correct': snd.rsfx.ok(); haptic([10, 40, 10]); if (praiseGate()) speak(pick(PRAISE), { mood: 'pujian' }); else setTimeout(() => sfx.yay(), 200); showBanner(pick(['Hebat!', 'Betul!', 'Turbo!', 'Terbaik!']), 'good'); break;
       case 'wrong': {
         snd.rsfx.no();
         const nm = e.obj?.opt?.n || e.obj?.spec?.n;
-        speak(`${nm ? `Itu ${nm}. ` : ''}${pick(RETRY)}${e.attempt >= 2 ? ' Ikut anak panah, ya.' : ''}`, { mood: 'galakan' });
+        breakStreak(); speak(`${nm ? `Itu ${nm}. ` : ''}${pick(RETRY)}${e.attempt >= 2 ? ' Ikut anak panah, ya.' : ''}`, { mood: 'galakan' });
         break;
       }
       case 'collect':
@@ -446,13 +446,13 @@ export function raceScreen(wi, n, onClean) {
         break;
       case 'bump':
         snd.rsfx.bump(); haptic(30);
-        if (race.t - lastBumpSay > 7) { lastBumpSay = race.t; speak('Ops, hampir! Jom cuba laluan sebelah.', { mood: 'galakan' }); }
+        if (race.t - lastBumpSay > 7) { lastBumpSay = race.t; sfx.boing(); }
         break;
       case 'pit': openPit(e.task); break;
       case 'done': snd.rsfx.check(); break;
-      case 'refill': speak('Kutip lagi, ya!'); break;
-      case 'finalLap': showBanner('Pusingan Akhir!', 'big'); speak('Pusingan akhir! Kita dah hampir sampai!'); break;
-      case 'finishSpawn': if (!level.special) speak('Garisan penamat di depan!'); break;
+      case 'refill': sfx.ping(); break;
+      case 'finalLap': showBanner('Pusingan Akhir!', 'big'); sfx.lastRound(); break;
+      case 'finishSpawn': if (!level.special) sfx.whoosh(); break;
       case 'finish': finish(); break;
       default: break;
     }
@@ -518,7 +518,7 @@ export function raceScreen(wi, n, onClean) {
       const opts = task.opts.map((o, i) => {
         const b = h('button', { class: 'rc-pat-opt', type: 'button' }, specEl(o));
         b.addEventListener('click', () => {
-          if (i === task.ans) { snd.rsfx.ok(); clear(slot); slot.appendChild(specEl(o)); slot.classList.add('on'); speak(pick(PRAISE), { mood: 'pujian' }); opts.forEach((x) => { x.disabled = true; }); later(close, 1100); }
+          if (i === task.ans) { snd.rsfx.ok(); clear(slot); slot.appendChild(specEl(o)); slot.classList.add('on'); if (praiseGate()) speak(pick(PRAISE), { mood: 'pujian' }); else sfx.yay(); opts.forEach((x) => { x.disabled = true; }); later(close, 1100); }
           else { mist++; snd.rsfx.no(); b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); speak('Cuba lagi. Lihat coraknya.', { mood: 'galakan' }); if (mist >= 2) opts[task.ans].classList.add('hint'); }
         });
         return b;

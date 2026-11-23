@@ -322,6 +322,28 @@ export const sfx = {
   step() { if (!sfxOn()) return; tone({ type: 'sine', f: 440, f2: 520, dur: 0.05, vol: 0.08 }); },
   bump() { if (!sfxOn()) return; tone({ type: 'sine', f: 140, f2: 90, dur: 0.12, vol: 0.2 }); },
   pop() { if (!sfxOn()) return; tone({ type: 'sine', f: 300, f2: 900, dur: 0.08, vol: 0.18 }); },
+  // ---- pek maklum balas kanak-kanak (ganti ucapan berulang) ----
+  // "yeay" tanpa suara: pop-pop-ding + kilauan (pujian bunyi, pelbagai supaya tidak membosankan)
+  yay() {
+    if (!sfxOn()) return;
+    const v = Math.floor(Math.random() * 3);
+    const sets = [[659, 784, 1047, 1319], [523, 659, 880, 1175], [587, 740, 988, 1319]][v];
+    sets.forEach((f, i) => tone({ type: 'triangle', f, t: i * 0.07, dur: 0.18, vol: 0.16 }));
+    tone({ type: 'sine', f: 300, f2: 900, dur: 0.07, vol: 0.12 });
+    for (let i = 0; i < 6; i++) tone({ type: 'sine', f: 1800 + Math.random() * 1600, t: 0.25 + i * 0.045, dur: 0.09, vol: 0.035 });
+  },
+  // rentetan betul: nada makin tinggi ikut bilangan
+  streak(k = 1) { if (!sfxOn()) return; const b = 523 * 2 ** (Math.min(8, k) / 12); [0, 4, 7, 12].forEach((s, i) => tone({ type: 'square', f: b * 2 ** (s / 12), t: i * 0.06, dur: 0.12, vol: 0.05, filter: { type: 'lowpass', f: 3000 } })); },
+  // salah: "boing" kartun yang lembut, tidak menakutkan
+  boing() { if (!sfxOn()) return; tone({ type: 'sine', f: 330, f2: 160, dur: 0.28, vol: 0.18, vib: { rate: 16, depth: 30 } }); tone({ type: 'triangle', f: 196, t: 0.05, dur: 0.15, vol: 0.06 }); },
+  // antara soalan: desiran naik
+  whoosh() { if (!sfxOn()) return; noise({ dur: 0.22, vol: 0.06, a: 0.04, filter: { type: 'bandpass', f: 600, f2: 2400, q: 1.3 } }); tone({ type: 'sine', f: 440, f2: 880, t: 0.08, dur: 0.1, vol: 0.05 }); },
+  // pusingan terakhir: gendang bergulung + simbal kecil
+  lastRound() { if (!sfxOn()) return; noise({ dur: 0.7, vol: 0.08, a: 0.05, filter: { type: 'bandpass', f: 220, q: 2 }, lfo: { rate: 24, depth: 0.8 } }); noise({ t: 0.7, dur: 0.4, vol: 0.07, filter: { type: 'highpass', f: 5000 } }); tone({ type: 'triangle', f: 784, t: 0.7, dur: 0.25, vol: 0.12 }); },
+  // anak lama diam: ting-ting lembut menarik perhatian
+  ping() { if (!sfxOn()) return; tone({ type: 'sine', f: 1319, dur: 0.12, vol: 0.09 }); tone({ type: 'sine', f: 1568, t: 0.16, dur: 0.18, vol: 0.08 }); },
+  // bintang terbang ke kiraan
+  zip() { if (!sfxOn()) return; tone({ type: 'sine', f: 900, f2: 2200, dur: 0.18, vol: 0.06 }); },
   // peralihan skrin: desiran lembut
   swish() { if (!sfxOn()) return; noise({ dur: 0.16, vol: 0.035, a: 0.03, filter: { type: 'bandpass', f: 900, f2: 2600, q: 1.2 } }); tone({ type: 'sine', f: 520, f2: 700, t: 0.05, dur: 0.07, vol: 0.04 }); },
   // suis hidup / mati

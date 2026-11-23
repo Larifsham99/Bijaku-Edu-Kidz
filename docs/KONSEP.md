@@ -216,6 +216,15 @@ Dilindungi soalan darab yang sukar dijawab oleh kanak-kanak.
 
 ## 7. Suara & percakapan
 
+- **Kurang cakap, lebih bunyi.** Ganjaran yang berubah-ubah lebih berkesan untuk kanak-kanak, dan pujian suara yang sama setiap kali cepat membosankan.
+  - **Pujian bersuara:** hanya pada jawapan pertama, rentetan 3/5/8, atau selepas 4 jawapan senyap (`praiseGate()` dalam `js/cheer.js`).
+  - **Jawapan betul lain:** bunyi "yeay" (3 variasi) dan bunyi rentetan yang makin tinggi. Jawapan yang betul masih disebut ("Kucing!") untuk pengukuhan isi pelajaran.
+  - **Salah kali pertama:** bunyi "boing" lembut sahaja. Pujukan atau petunjuk bersuara hanya selepas salah berulang.
+  - **Penyambung antara soalan:** "Okey, jom seterusnya" diganti bunyi desiran, dan "pusingan terakhir" diganti bunyi gendang.
+  - **Anak lama diam:** bunyi ting-ting, kemudian arahan diulang.
+  - **Arahan soalan, isi pelajaran, Bismillah dan doa** kekal bersuara.
+- **Nama huruf** disebut ikut sebutan sekolah Malaysia: A "ei", B "bi", C "si", E "i", I "ai", U "yu", W "dabel yu", Z "zed". Penukaran dibuat oleh `normalizeMalay()` untuk semua huruf tunggal.
+- **Muat satu skrin:** setiap skrin bermain (15 permainan asal & permainan baharu) setinggi skrin. Papan permainan dikecilkan secara automatik dengan `js/fit.js` (CSS `zoom`, minimum 50%) jika kandungan lebih tinggi daripada ruang. Puzzle mengira saiz ikut ketinggian papan.
 - **Panggilan, bukan nama:** aplikasi tidak menyebut nama anak. Setiap profil memilih panggilan: Abang, Adik, Kakak, Baby, Manja atau Intan Payung. Pilihan dibuat semasa pendaftaran dan boleh ditukar di Ruang Ibu Bapa → Profil. Lalainya "Adik". "Baby" disebut "beybi" oleh suara peranti supaya tidak tersalah sebut. Nama masih dipaparkan untuk membezakan profil.
 - **Suara:** semua arahan dibacakan dalam Bahasa Melayu. Aplikasi memilih suara wanita Bahasa Melayu yang terbaik pada peranti (melalui Web Speech API), dengan gaya lembut keibuan dan jeda semula jadi antara ayat.
 - **Penormal teks Bahasa Melayu:** nombor, tarikh, masa, RM, peratus, pecahan, ordinal, unit, singkatan dan simbol dibaca dengan betul.
