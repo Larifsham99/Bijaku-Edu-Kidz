@@ -207,7 +207,7 @@ export function runTiltGame(ctx, opt) {
   let pauseBox = null;
   function pause() {
     if (!running || won || paused) return;
-    paused = true; tsfx.pause(); haptic(10);
+    paused = true; tsfx.pause(); haptic(10); tTime.textContent = time.toFixed(1);
     const btn = (cls, ic, label, fn) => h('button', { class: `tg-pb ${cls}`, type: 'button', onclick: fn }, ico(ic), h('span', {}, label));
     pauseBox = h('div', { class: 'tg-pausebox' }, h('div', { class: 'tg-pcard' },
       h('b', {}, 'Rehat sekejap'),
