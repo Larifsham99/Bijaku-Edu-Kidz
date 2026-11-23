@@ -1,7 +1,7 @@
 // Had masa bermain yang ditetapkan oleh ibu bapa
 import { h, emo, todayKey, later } from '../ui.js';
 import { go } from '../nav.js';
-import { settings, todayPlaySeconds, profile, save } from '../store.js';
+import { settings, todayPlaySeconds, profile, save, callOf } from '../store.js';
 import { parentGate } from './shared.js';
 import { speak } from '../audio.js';
 
@@ -14,7 +14,7 @@ export function overLimit(p) { return todayPlaySeconds(p) >= limitSeconds(p); }
 
 export function timeoutScreen() {
   const p = profile();
-  later(() => speak(`Masa bermain hari ini sudah tamat. Jom rehatkan mata, ${p.name}! Kita main lagi esok.`), 300);
+  later(() => speak(`Masa bermain hari ini sudah tamat. Jom rehatkan mata, ${callOf(p)}! Kita main lagi esok.`), 300);
   return h('div', { class: 'screen' }, h('div', { class: 'timeout' },
     h('div', { class: 'emo float' }, '😴'),
     h('h1', { style: { margin: 0, fontSize: '40px' } }, 'Masa Rehat!'),

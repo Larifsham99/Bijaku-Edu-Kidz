@@ -8,7 +8,7 @@
 // =====================================================================
 import { h, todayKey, confetti } from '../ui.js';
 import { go } from '../nav.js';
-import { profile, settings, save } from '../store.js';
+import { profile, settings, save, callOf } from '../store.js';
 import { MODES } from '../modes/index.js';
 import { modeArt } from '../data/modeart.js';
 import { STICKERS } from '../data/content.js';
@@ -241,7 +241,7 @@ export function pathScreen() {
       if (st.todayCount === st.goal) { setTimeout(() => { sfx.reward(); speak('Syabas! Matlamat hari ini tercapai. Kamu memang rajin!', { mood: 'pujian' }); }, 600); }
       else { cheer('good'); setTimeout(() => speak(st.todayCount < st.goal ? `Lagi ${st.goal - st.todayCount} langkah untuk capai matlamat hari ini!` : 'Jom sambung langkah seterusnya!'), 1300); }
     } else if (!Object.values(s.seen).some((d) => d !== 'awal') && cur === 0) {
-      speak(`Ini Laluan Bijak, ${p.name}! Setiap hari, ikut ${st.goal} langkah. Tekan bulatan yang bersinar untuk mula.`);
+      speak(`Ini Laluan Bijak, ${callOf(p)}! Setiap hari, ikut ${st.goal} langkah. Tekan bulatan yang bersinar untuk mula.`);
     } else speak(st.todayCount >= st.goal ? 'Matlamat hari ini sudah tercapai. Hebat!' : `Jom! ${gameName(st.node?.g || 'abc')} sedang menunggu.`);
   }, 60);
   return scr;

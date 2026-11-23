@@ -10,7 +10,7 @@ const resetRacing = (id) => {
   import('../games/store.js').then((m) => m.resetGames(id)).catch(() => {}); // permainan baharu (Fasa 2+)
   import('../selfie.js').then((m) => m.deleteAllPhotos(id)).catch(() => {}); // Album Selfie
 };
-import { getState, profile, settings, save, flush, levelsDone, totalLevelsDone, totalPlaySeconds, mastery, MASTERY_LABEL, addProfile, deleteProfile, updateProfile, switchProfile, resetProfileProgress, exportData, highestUnlocked } from '../store.js';
+import { getState, profile, settings, save, flush, levelsDone, totalLevelsDone, totalPlaySeconds, mastery, MASTERY_LABEL, addProfile, deleteProfile, updateProfile, switchProfile, resetProfileProgress, exportData, highestUnlocked, PANGGILAN, callLabel } from '../store.js';
 import { MODE_LIST, MODES, ALL_SKILLS } from '../modes/index.js';
 import { AVATARS } from '../data/content.js';
 import { domainProgress, DOMAINS, UNIT_NAMES, UNITS, gameName } from './path.js';
@@ -317,17 +317,21 @@ function tetapanTab() {
 const MODULE_KEYS = ['dc-racing-v1', 'dc-silang-v1', 'dc-akhlak-v1', 'dc-games-v1', 'bj-path-v1'];
 
 function profileForm(initial, onSave, title) {
-  let av = initial.avatar || 'mimi';
+  let av = initial.avatar || 'mimi', call = initial.call || 'adik';
   const name = h('input', { type: 'text', maxlength: '16', value: initial.name || '', 'aria-label': 'Nama' });
   const age = h('select', {}, [3, 4, 5, 6].map((a) => h('option', { value: a, selected: a === (initial.age || 4) }, `${a} tahun`)));
   const avs = h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start' } });
   const drawAv = () => avs.replaceChildren(...AVATARS.filter((a) => a.cost === 0 || (initial.owned?.avatars || []).includes(a.id)).map((a) => h('button', { class: `coll-item ${a.id === av ? 'on' : ''}`, type: 'button', style: { padding: '6px' }, onclick: () => { av = a.id; drawAv(); } }, h('span', { class: 'emo', style: { fontSize: '34px' } }, a.e))));
   drawAv();
+  const calls = h('div', { class: 'row-wrap call-pick', style: { justifyContent: 'flex-start' } });
+  const drawCall = () => calls.replaceChildren(...PANGGILAN.map((c) => h('button', { class: `btn small ${c.id === call ? 'green' : 'ghost'}`, type: 'button', 'data-call': c.id, onclick: () => { call = c.id; sfx.tap(); speak(`Hai ${c.s || c.n}!`); drawCall(); } }, `${c.e} ${c.n}`)));
+  drawCall();
   return h('div', { class: 'panel', style: { display: 'flex', flexDirection: 'column', gap: '10px' } }, h('h3', {}, title),
     h('div', { class: 'field' }, h('label', {}, 'Nama anak'), name),
     h('div', { class: 'field' }, h('label', {}, 'Umur'), age),
+    h('div', { class: 'field' }, h('label', {}, 'Panggilan (disebut oleh aplikasi, bukan nama)'), calls),
     h('div', { class: 'field' }, h('label', {}, 'Avatar'), avs),
-    h('div', {}, h('button', { class: 'btn small green', type: 'button', onclick: () => { if (!name.value.trim()) { toast('Sila isi nama', 'try', '✏️'); return; } onSave({ name: name.value.trim(), age: +age.value, avatar: av }); } }, 'Simpan')));
+    h('div', {}, h('button', { class: 'btn small green', type: 'button', onclick: () => { if (!name.value.trim()) { toast('Sila isi nama', 'try', '✏️'); return; } onSave({ name: name.value.trim(), age: +age.value, avatar: av, call }); } }, 'Simpan')));
 }
 
 function profilTab() {
@@ -337,7 +341,7 @@ function profilTab() {
   st.profiles.forEach((p) => {
     wrap.appendChild(h('div', { class: 'panel', style: { display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' } },
       avatarEl(p),
-      h('div', { style: { flex: 1, minWidth: '160px' } }, h('div', { style: { fontWeight: 800, fontSize: '20px' } }, p.name, p.id === st.currentId ? ' (aktif)' : ''), h('div', { class: 'muted' }, `${p.age} tahun · ${totalLevelsDone(p)} level · ⭐ ${p.stars}`)),
+      h('div', { style: { flex: 1, minWidth: '160px' } }, h('div', { style: { fontWeight: 800, fontSize: '20px' } }, p.name, p.id === st.currentId ? ' (aktif)' : ''), h('div', { class: 'muted' }, `${p.age} tahun · dipanggil "${callLabel(p)}" · ${totalLevelsDone(p)} level · ⭐ ${p.stars}`)),
       h('div', { class: 'row-wrap' },
         p.id !== st.currentId ? h('button', { class: 'btn small blue', type: 'button', onclick: () => { switchProfile(p.id); go('/ibubapa/profil'); } }, 'Guna') : null,
         h('button', { class: 'btn small ghost', type: 'button', onclick: () => { const f = profileForm(p, (d) => { updateProfile(p.id, d); toast('Disimpan', 'good', '✅'); go('/ibubapa/profil'); }, `Sunting ${p.name}`); wrap.prepend(f); f.scrollIntoView({ behavior: 'smooth' }); } }, 'Sunting'),

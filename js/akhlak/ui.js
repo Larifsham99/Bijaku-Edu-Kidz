@@ -5,7 +5,7 @@ import { h, clear } from '../ui.js';
 import { ribbon, selfieButton } from '../cheer.js';
 import { go } from '../nav.js';
 import { lockNotice } from '../notice.js';
-import { profile, save, addActivity } from '../store.js';
+import { profile, save, addActivity, callOf } from '../store.js';
 import { speak, stopSpeak, sfx, haptic } from '../audio.js';
 import { icon } from '../icons.js';
 import { parentGate } from '../screens/shared.js';
@@ -170,7 +170,7 @@ export function gardenScreen() {
   const scr = h('div', { class: 'ak-screen ak-kebun' });
   scr.appendChild(top('Kebun Amal', '/akhlak', h('div', { class: 'ak-pills' }, pill(flowerIc(), a.plants.length, 'Bunga'), pill(fruitIc(), a.deedsTotal, 'Buah amal'))));
   const garden = h('div', { class: 'ak-garden-big', html: gardenSvg(a, { highlight: a.plants.length - 1 }) });
-  garden.addEventListener('click', () => { sfx.pop(); speak(`Kebun ${p?.name || 'kamu'} ada ${a.plants.length} bunga dan ${a.deedsTotal} buah kebaikan. Teruskan berbuat baik!`, { mood: 'pujian' }); });
+  garden.addEventListener('click', () => { sfx.pop(); speak(`Kebun ${p ? callOf(p) : 'kamu'} ada ${a.plants.length} bunga dan ${a.deedsTotal} buah kebaikan. Teruskan berbuat baik!`, { mood: 'pujian' }); });
   scr.appendChild(garden);
   const count = {}; a.plants.forEach((pl) => { count[pl.type] = (count[pl.type] || 0) + 1; });
   scr.appendChild(h('div', { class: 'ak-legend' }, ...Object.entries(CATS).map(([, cat]) => h('div', { class: 'ak-leg' },

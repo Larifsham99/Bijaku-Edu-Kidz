@@ -9,7 +9,7 @@ import { speak, stopSpeak, sfx, playSound, speakWord, haptic, voicePack } from '
 import { TALK, pick, echoable } from '../talk.js';
 import { ribbon, selfieButton } from '../cheer.js';
 import { icon } from '../icons.js';
-import { profile, settings, save, recordSkill, addActivity, modeProg, isUnlocked } from '../store.js';
+import { profile, settings, save, recordSkill, addActivity, modeProg, isUnlocked, callOf } from '../store.js';
 import { awardLevel, addStars, checkBadges } from '../rewards.js';
 import { guide, confirmBox } from './shared.js';
 import { overLimit } from './timeout.js';
@@ -243,7 +243,7 @@ function showLevelDone({ p, mode, level, stars, rewards, totalMistakes, special 
   // supaya suara kekal konsisten apabila pakej suara rakaman digunakan)
   const alh = settings().islamic !== false;
   const msg = totalMistakes === 0 ? pick(TALK.doneAll) : pick(TALK.done);
-  const nameLine = !voicePack() && Math.random() < 0.35 ? ` ${pick(TALK.doneName(p.name))}` : '';
+  const nameLine = !voicePack() && Math.random() < 0.35 ? ` ${pick(TALK.doneName(callOf(p)))}` : '';
   speak(`${alh ? 'Alhamdulillah! ' : ''}${msg}${nameLine}`, { mood: 'pujian' });
   const content = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' } },
     h('div', { class: 'win-head' },

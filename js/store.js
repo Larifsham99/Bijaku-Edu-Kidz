@@ -65,10 +65,19 @@ export function defaultSettings() {
   };
 }
 
-export function newProfile({ name, age, avatar }) {
+// Panggilan mesra: aplikasi tidak menyebut nama anak, sebaliknya panggilan pilihan ibu bapa.
+// `s` = ejaan untuk suara (TTS), cth. "baby" dibaca "beybi" supaya tidak tersalah sebut.
+export const PANGGILAN = [
+  { id: 'abang', n: 'Abang', e: '👦' }, { id: 'adik', n: 'Adik', e: '🧒' }, { id: 'kakak', n: 'Kakak', e: '👧' },
+  { id: 'baby', n: 'Baby', s: 'Beybi', e: '👶' }, { id: 'manja', n: 'Manja', e: '🥰' }, { id: 'intan', n: 'Intan Payung', e: '💎' },
+];
+const callRec = (p) => PANGGILAN.find((c) => c.id === p?.call) || PANGGILAN[1];
+export const callOf = (p) => callRec(p).s || callRec(p).n; // untuk disebut
+export const callLabel = (p) => callRec(p).n; // untuk dipaparkan
+export function newProfile({ name, age, avatar, call }) {
   return {
     id: 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
-    name: name || 'Cilik', age: age || 4, avatar: avatar || 'mimi',
+    name: name || 'Cilik', age: age || 4, avatar: avatar || 'mimi', call: PANGGILAN.some((c) => c.id === call) ? call : 'adik',
     createdAt: Date.now(),
     stars: 0, coins: 0, totalStarsEarned: 0,
     modes: {}, // modeId -> { done: {lvl: stars}, plays: n, time: s }
@@ -215,7 +224,7 @@ export function exportData() { return JSON.stringify(state, null, 2); }
 export function resetProfileProgress(id) {
   const p = state.profiles.find((x) => x.id === id);
   if (!p) return;
-  const fresh = newProfile({ name: p.name, age: p.age, avatar: p.avatar });
+  const fresh = newProfile({ name: p.name, age: p.age, avatar: p.avatar, call: p.call });
   Object.assign(p, { ...fresh, id: p.id, createdAt: p.createdAt });
   save();
 }

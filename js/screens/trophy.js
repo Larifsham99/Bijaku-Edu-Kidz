@@ -2,7 +2,7 @@
 import { h, emo } from '../ui.js';
 import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
-import { profile } from '../store.js';
+import { profile, callOf } from '../store.js';
 import { MODE_LIST, MODES } from '../modes/index.js';
 import { STICKERS } from '../data/content.js';
 import { BADGES, TROPHY_E, TROPHY_NAMES } from '../rewards.js';
@@ -68,7 +68,7 @@ export function certScreen(modeId) {
     scr.appendChild(h('div', { class: 'panel center' }, 'Sijil ini belum dibuka. Tamatkan 50 level dahulu!', h('div', {}, h('button', { class: 'btn', type: 'button', onclick: () => go(m ? '/mod/' + m.id : '/') }, 'Main sekarang'))));
     return scr;
   }
-  speak(`Sijil pencapaian ${m.n} untuk ${p.name}. Tahniah!`);
+  speak(`Sijil pencapaian ${m.n} untuk ${callOf(p)}. Tahniah!`);
   scr.appendChild(h('div', { class: 'cert', id: 'cert' },
     h('div', { class: 'emo', style: { fontSize: '60px' } }, '🏅'),
     h('h2', {}, 'SIJIL PENCAPAIAN'),

@@ -215,6 +215,8 @@ Dilindungi soalan darab yang sukar dijawab oleh kanak-kanak.
 - **Butang:** gaya 3D. Gambar kandungan dipaparkan sebagai pelekat.
 
 ## 7. Suara & percakapan
+
+- **Panggilan, bukan nama:** aplikasi tidak menyebut nama anak. Setiap profil memilih panggilan: Abang, Adik, Kakak, Baby, Manja atau Intan Payung. Pilihan dibuat semasa pendaftaran dan boleh ditukar di Ruang Ibu Bapa → Profil. Lalainya "Adik". "Baby" disebut "beybi" oleh suara peranti supaya tidak tersalah sebut. Nama masih dipaparkan untuk membezakan profil.
 - **Suara:** semua arahan dibacakan dalam Bahasa Melayu. Aplikasi memilih suara wanita Bahasa Melayu yang terbaik pada peranti (melalui Web Speech API), dengan gaya lembut keibuan dan jeda semula jadi antara ayat.
 - **Penormal teks Bahasa Melayu:** nombor, tarikh, masa, RM, peratus, pecahan, ordinal, unit, singkatan dan simbol dibaca dengan betul.
 - **Ekspresi mengikut konteks:** arahan lembut, pujian ceria, galakan memujuk, dan doa tenang.

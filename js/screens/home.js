@@ -2,7 +2,7 @@
 import { h, emo, later } from '../ui.js';
 import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
-import { profile, getState, settings, addProfile, switchProfile, levelsDone, highestUnlocked, playerLevel, todayPlaySeconds } from '../store.js';
+import { profile, getState, settings, addProfile, switchProfile, levelsDone, highestUnlocked, playerLevel, todayPlaySeconds, PANGGILAN, callOf } from '../store.js';
 import { MODE_LIST, MODES } from '../modes/index.js';
 import { AVATARS, CHARACTERS, DOA } from '../data/content.js';
 import { icon } from '../icons.js';
@@ -62,7 +62,7 @@ export function homeScreen() {
   const lv = playerLevel(p);
   const d = dailySet(p);
   const scr = h('div', { class: 'screen bj-home' }, h('div', { class: 'bj-stage', 'aria-hidden': 'true' }));
-  later(() => speak(voicePack() && settings().voiceEngine !== 'peranti' ? greet('') : greet(p.name)), 400);
+  later(() => speak(voicePack() && settings().voiceEngine !== 'peranti' ? greet('') : greet(callOf(p))), 400);
   if (!pathHeroInfo(p).st.cur) later(() => speak('Tekan butang Mula untuk memulakan Laluan Bijak!'), 3200);
 
   // ---- kepala: logo, bintang, pemain ----
@@ -194,7 +194,7 @@ export function tabBar(on) {
 
 // ---------------- PENDAFTARAN PERTAMA ----------------
 export function onboardingScreen({ addMode = false } = {}) {
-  let step = 0, name = '', age = 4, avatar = 'mimi';
+  let step = 0, name = '', age = 4, avatar = 'mimi', call = 'adik';
   const scr = h('div', { class: 'screen' });
   const body = h('div', { style: { display: 'flex', flexDirection: 'column', gap: '18px', alignItems: 'center', textAlign: 'center' } });
   if (DEMO) scr.appendChild(h('div', { class: 'panel', style: { display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', justifyContent: 'center', textAlign: 'center' } },
@@ -222,17 +222,19 @@ export function onboardingScreen({ addMode = false } = {}) {
       body.append(
         h('div', { class: 'guide' }, h('div', { class: 'bubble' }, `Hai ${name}! Berapa umur kamu?`)),
         h('div', { class: 'row-wrap' }, [3, 4, 5, 6].map((a) => h('button', { class: `btn big ${a === age ? 'green' : 'ghost'}`, type: 'button', onclick: () => { age = a; sfx.tap(); render(); } }, `${a} tahun`))),
+        h('div', { class: 'guide' }, h('div', { class: 'bubble' }, 'Kamu suka dipanggil apa?', h('small', {}, 'Aplikasi akan memanggil anak dengan panggilan ini (nama tidak disebut).'))),
+        h('div', { class: 'row-wrap call-pick' }, PANGGILAN.map((c) => h('button', { class: `btn ${c.id === call ? 'green' : 'ghost'}`, type: 'button', 'data-call': c.id, onclick: () => { call = c.id; sfx.tap(); speak(`Hai ${c.s || c.n}!`); render(); } }, emo(c.e), c.n))),
         nextBtn);
       nextBtn.disabled = false;
-      speak(`Hai ${name}! Berapa umur kamu?`);
+      speak('Berapa umur kamu? Kamu suka dipanggil apa?');
     } else {
       body.append(
         h('div', { class: 'guide' }, h('div', { class: 'bubble' }, 'Pilih kawan bermain kamu!')),
         h('div', { class: 'grid-coll', style: { width: '100%', maxWidth: '640px' } }, AVATARS.filter((a) => a.cost === 0).map((a) => h('button', { class: `coll-item ${a.id === avatar ? 'on' : ''}`, type: 'button', onclick: () => { avatar = a.id; sfx.tap(); speak(CHARACTERS.find((c) => c.id === a.id)?.n || a.n); render(); } }, h('span', { class: 'emo', 'data-avatar': a.id }, a.e), h('span', { class: 'lbl' }, CHARACTERS.find((c) => c.id === a.id)?.n || a.n)))),
         h('button', { class: 'btn big green', type: 'button', onclick: () => {
-          addProfile({ name, age, avatar });
+          const np = addProfile({ name, age, avatar, call });
           sfx.win();
-          speak(`Selamat datang ke ${BRAND.say}, ${name}!`);
+          speak(`Selamat datang ke ${BRAND.say}, ${callOf(np)}!`);
           go('/');
         } }, emo('🚀'), 'Jom Mula!'));
       if (!addMode) speak('Pilih kawan bermain kamu!');
@@ -248,7 +250,7 @@ export function profilesScreen() {
   const st = getState();
   const scr = h('div', { class: 'screen' });
   scr.appendChild(h('div', { class: 'topbar' }, h('button', { class: 'btn-round', type: 'button', 'aria-label': 'Kembali', onclick: () => go('/') }, '⬅️'), h('div', { class: 'title' }, 'Siapa yang bermain?'), h('div', { class: 'spacer' })));
-  scr.appendChild(h('div', { class: 'grid-coll' }, st.profiles.map((p) => h('button', { class: `coll-item ${p.id === st.currentId ? 'on' : ''}`, type: 'button', style: { padding: '18px 8px' }, onclick: () => { switchProfile(p.id); sfx.tap(); speak(`Hai ${p.name}!`); go('/'); } },
+  scr.appendChild(h('div', { class: 'grid-coll' }, st.profiles.map((p) => h('button', { class: `coll-item ${p.id === st.currentId ? 'on' : ''}`, type: 'button', style: { padding: '18px 8px' }, onclick: () => { switchProfile(p.id); sfx.tap(); speak(`Hai ${callOf(p)}!`); go('/'); } },
     avatarEl(p), h('span', { class: 'lbl', style: { fontSize: '18px' } }, p.name), h('span', { class: 'lbl muted' }, `⭐ ${p.stars}`)))));
   scr.appendChild(h('div', { class: 'row-wrap' }, h('button', { class: 'btn ghost', type: 'button', onclick: () => parentGate(() => go('/ibubapa/profil'), { reason: 'Profil baharu ditambah melalui Ruang Ibu Bapa.' }) }, emo('➕'), 'Tambah profil (ibu bapa)')));
   return scr;
