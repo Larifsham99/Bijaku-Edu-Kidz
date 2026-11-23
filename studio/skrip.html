@@ -10,7 +10,7 @@ main{max-width:900px;margin:0 auto;padding:12px 16px 60px;display:grid;gap:10px}
 button{font:inherit;font-weight:700;border:0;border-radius:14px;padding:9px 14px;cursor:pointer}.copy{background:#2f9e6a;color:#fff}.see{background:#ece6fa;color:var(--ink)}.tick{background:#fff;border:2px solid #d9d3ea}
 pre{width:100%;white-space:pre-wrap;background:#f8f6ff;border-radius:12px;padding:10px;max-height:260px;overflow:auto;display:none;margin:6px 0 0;font-size:13px}.part.open pre{display:block}
 </style></head><body>
-<header><div style="display:inline-block;background:#2f9e6a;color:#fff;font-weight:800;padding:4px 12px;border-radius:99px;margin-bottom:6px">VERSI 2026-11-23 17:09 · 40 bahagian · H = "Heish"</div><h1>Skrip ElevenLabs: baki 3346 ayat</h1><p>40 bahagian · 98,769 aksara (± kredit). Tekan "Salin", paste ke ElevenLabs v3, jana, muat turun MP3. Penting: namakan setiap fail MP3 ikut nombor bahagian (cth. 07.mp3) supaya klip dipadankan dengan betul. Tanda ✓ selepas siap.</p></header>
+<header><div style="display:inline-block;background:#2f9e6a;color:#fff;font-weight:800;padding:4px 12px;border-radius:99px;margin-bottom:6px">VERSI 2026-11-23 17:11 · 40 bahagian · H = "Heish"</div><h1>Skrip ElevenLabs: baki 3346 ayat</h1><p>40 bahagian · 98,769 aksara (± kredit). Tekan "Salin", paste ke ElevenLabs v3, jana, muat turun MP3. Penting: namakan setiap fail MP3 ikut nombor bahagian (cth. 07.mp3) supaya klip dipadankan dengan betul. Tanda ✓ selepas siap.</p></header>
 <main><div class="part" data-id="01"><b>Bahagian 01</b><span>96 ayat · 2497 aksara</span><button class="copy" type="button">Salin</button><button class="see" type="button">Lihat</button><button class="tick" type="button">✓</button><pre>[warmly] Assalamualaikum, Abang!
 
 
@@ -10010,9 +10010,9 @@ Sijil pencapaian Asah Minda untuk Intan Payung.
 Sijil pencapaian Misi Pengembaraan untuk Intan Payung.
 </pre></div></main>
 <script>
-const done=new Set(JSON.parse(localStorage.getItem('dc-skrip-siap')||'[]'));
+const done=new Set(JSON.parse(localStorage.getItem('dc-skrip-siap-2026-11-23 17:11')||'[]'));
 document.querySelectorAll('.part').forEach((el)=>{const id=el.dataset.id;const txt=el.querySelector('pre').textContent;el.classList.toggle('done',done.has(id));
 el.querySelector('.copy').onclick=async(e)=>{try{await navigator.clipboard.writeText(txt);e.target.textContent='Disalin ✓';}catch{el.classList.add('open');const r=document.createRange();r.selectNodeContents(el.querySelector('pre'));getSelection().removeAllRanges();getSelection().addRange(r);e.target.textContent='Pilih & salin';}setTimeout(()=>{e.target.textContent='Salin'},1600)};
 el.querySelector('.see').onclick=()=>el.classList.toggle('open');
-el.querySelector('.tick').onclick=()=>{done.has(id)?done.delete(id):done.add(id);el.classList.toggle('done',done.has(id));try{localStorage.setItem('dc-skrip-siap',JSON.stringify([...done]))}catch{}};});
+el.querySelector('.tick').onclick=()=>{done.has(id)?done.delete(id):done.add(id);el.classList.toggle('done',done.has(id));try{localStorage.setItem('dc-skrip-siap-2026-11-23 17:11',JSON.stringify([...done]))}catch{}};});
 </script></body></html>

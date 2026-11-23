@@ -140,11 +140,11 @@ pre{width:100%;white-space:pre-wrap;background:#f8f6ff;border-radius:12px;paddin
 <header><div style="display:inline-block;background:#2f9e6a;color:#fff;font-weight:800;padding:4px 12px;border-radius:99px;margin-bottom:6px">VERSI ${VERSI} · ${parts.length} bahagian · H = "${LETTER.H}"</div><h1>Skrip ElevenLabs: baki ${list.length} ayat</h1><p>${parts.length} bahagian · ${total.toLocaleString('ms')} aksara (± kredit). Tekan "Salin", paste ke ElevenLabs v3, jana, muat turun MP3. Penting: namakan setiap fail MP3 ikut nombor bahagian (cth. 07.mp3) supaya klip dipadankan dengan betul. Tanda ✓ selepas siap.</p></header>
 <main>${pages.map((p) => `<div class="part" data-id="${p.id}"><b>Bahagian ${p.id}</b><span>${p.n} ayat · ${p.chars} aksara</span><button class="copy" type="button">Salin</button><button class="see" type="button">Lihat</button><button class="tick" type="button">✓</button><pre>${esc(p.txt)}</pre></div>`).join('\n')}</main>
 <script>
-const done=new Set(JSON.parse(localStorage.getItem('dc-skrip-siap')||'[]'));
+const done=new Set(JSON.parse(localStorage.getItem('dc-skrip-siap-${VERSI}')||'[]'));
 document.querySelectorAll('.part').forEach((el)=>{const id=el.dataset.id;const txt=el.querySelector('pre').textContent;el.classList.toggle('done',done.has(id));
 el.querySelector('.copy').onclick=async(e)=>{try{await navigator.clipboard.writeText(txt);e.target.textContent='Disalin ✓';}catch{el.classList.add('open');const r=document.createRange();r.selectNodeContents(el.querySelector('pre'));getSelection().removeAllRanges();getSelection().addRange(r);e.target.textContent='Pilih & salin';}setTimeout(()=>{e.target.textContent='Salin'},1600)};
 el.querySelector('.see').onclick=()=>el.classList.toggle('open');
-el.querySelector('.tick').onclick=()=>{done.has(id)?done.delete(id):done.add(id);el.classList.toggle('done',done.has(id));try{localStorage.setItem('dc-skrip-siap',JSON.stringify([...done]))}catch{}};});
+el.querySelector('.tick').onclick=()=>{done.has(id)?done.delete(id):done.add(id);el.classList.toggle('done',done.has(id));try{localStorage.setItem('dc-skrip-siap-${VERSI}',JSON.stringify([...done]))}catch{}};});
 </script></body></html>
 `);
 console.log(`${list.length} ayat baki -> ${parts.length} bahagian, ${total} aksara (rakaman/baki/, studio/skrip.html)`);
