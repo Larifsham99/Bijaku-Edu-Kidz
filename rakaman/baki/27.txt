@@ -1,4 +1,232 @@
-[warmly] Rintik, rintik,.
+[warmly] Warnakan roket ikut warna kegemaran kamu!
+
+
+Warnakan sayap atas kanan dengan warna ungu.
+
+
+Warnakan sayap atas kiri dengan warna ungu.
+
+
+Warnakan sinar dengan warna oren.
+
+
+Warnakan sirip dulu, ya.
+
+
+Warnakan strawberi ikut warna kegemaran kamu!
+
+
+Warnakan tembikai ikut warna kegemaran kamu!
+
+
+Warnakan tengah bunga dengan warna kuning.
+
+
+Wuuuush!
+
+
+Yang mana satu bukan pakaian?
+
+
+Yang mana satu bukan sukan?
+
+
+Zirafah tinggal di mana, ya?
+
+
+Ei untuk Ayam.
+
+
+Ada dua cabaran menunggu kamu hari ini!
+
+
+Ada empat cabaran menunggu kamu hari ini!
+
+
+Ada lima cabaran menunggu kamu hari ini!
+
+
+Ada satu cabaran menunggu kamu hari ini!
+
+
+Ada tiga cabaran menunggu kamu hari ini!
+
+
+Aiskrim.
+
+
+Anak pokok.
+
+
+Awan.
+
+
+Bi untuk Bola.
+
+
+Bagus, kamu semakin bijak.
+
+
+Bawang.
+
+
+Biji benih.
+
+
+Buuuu!
+
+
+Si untuk Cendawan.
+
+
+Cendawan.
+
+
+Cik, cik, cik!
+
+
+Coco si Arnab.
+
+
+Cuu, cuu!
+
+
+Di untuk Daun.
+
+
+Di mana Ayam?
+
+
+Di mana Burung?
+
+
+Di mana Nanas?
+
+
+Ding, dong!
+
+
+Dua puluh empat.
+
+
+Dum, dum, tak!
+
+
+Dum, dum!
+
+
+i untuk Epal.
+
+
+Ef untuk Feri.
+
+
+Ji untuk Gajah.
+
+
+Heish untuk Harimau.
+
+
+Ai untuk Ikan.
+
+
+Jei untuk Jam.
+
+
+Jambatan.
+
+
+Jom dapatkan versi penuh Dunia Cilik!
+
+
+Kei untuk Kucing.
+
+
+Kek.
+
+
+Kepompong.
+
+
+Kutip semua barang dulu, ya.
+
+
+Kutip semua bintang dulu, ya.
+
+
+Kutip semua buih dulu, ya.
+
+
+Kutip semua cendawan dulu, ya.
+
+
+Kutip semua epal dulu, ya.
+
+
+Kutip semua jagung dulu, ya.
+
+
+Kutip semua komet dulu, ya.
+
+
+Kutip semua lobak merah dulu, ya.
+
+
+Kutip semua permata dulu, ya.
+
+
+Kutip semua tiram dulu, ya.
+
+
+El untuk Lebah.
+
+
+Lobak.
+
+
+Em untuk Monyet.
+
+
+En untuk Nanas.
+
+
+Nombor lapan.
+
+
+Nombor lima belas.
+
+
+o untuk Oren.
+
+
+Orang utan.
+
+
+Pi untuk Pisang.
+
+
+Pak, pak, pak!
+
+
+Permainan ini sedang dikunci oleh ibu bapa.
+
+
+Pokok besar.
+
+
+Pokok kecil.
+
+
+Priiit!
+
+
+Prok, prok, prok!
+
+
+Ar untuk Rama-rama.
+
+
+Rintik, rintik,.
 
 
 Es untuk Siput.
@@ -47,174 +275,3 @@ Tamatkan semua level Ingatan Hebat untuk mendapat sijil.
 
 
 Tamatkan semua level Kehidupan Harian untuk mendapat sijil.
-
-
-Tamatkan semua level Maze Pengembaraan untuk mendapat sijil.
-
-
-Tamatkan semua level Misi Pengembaraan untuk mendapat sijil.
-
-
-Tamatkan semua level Pazel Pintar untuk mendapat sijil.
-
-
-Tamatkan semua level Seni dan Mewarna untuk mendapat sijil.
-
-
-Tamatkan semua level Si Cilik Soleh untuk mendapat sijil.
-
-
-Tamatkan semua level Teka Bunyi untuk mendapat sijil.
-
-
-Tamatkan semua level Warna dan Bentuk untuk mendapat sijil.
-
-
-Terung.
-
-
-Tik, tok, tik, tok!
-
-
-Yu untuk Ular.
-
-
-Ular.
-
-
-Ulat.
-
-
-Vi untuk Van.
-
-
-Violin.
-
-
-Dabel yu untuk Wau.
-
-
-Wang.
-
-
-Warnakan api dulu, ya.
-
-
-Warnakan badan bas dulu, ya.
-
-
-Warnakan badan bot dulu, ya.
-
-
-Warnakan badan dulu, ya.
-
-
-Warnakan badan ikan dulu, ya.
-
-
-Warnakan badan kereta dulu, ya.
-
-
-Warnakan badan roket dulu, ya.
-
-
-Warnakan batang dulu, ya.
-
-
-Warnakan batang pokok dulu, ya.
-
-
-Warnakan belon kanan dulu, ya.
-
-
-Warnakan belon kiri dulu, ya.
-
-
-Warnakan belon tengah dulu, ya.
-
-
-Warnakan bendera dulu, ya.
-
-
-Warnakan buah dulu, ya.
-
-
-Warnakan buah epal dulu, ya.
-
-
-Warnakan buah strawberi dulu, ya.
-
-
-Warnakan bumbung dulu, ya.
-
-
-Warnakan cangkerang dulu, ya.
-
-
-Warnakan cerobong dulu, ya.
-
-
-Warnakan dinding dulu, ya.
-
-
-Warnakan ekor dulu, ya.
-
-
-Warnakan hidung dulu, ya.
-
-
-Warnakan hujung pisang dulu, ya.
-
-
-Warnakan isi tembikai dulu, ya.
-
-
-Warnakan kaki dulu, ya.
-
-
-Warnakan kepala dulu, ya.
-
-
-Warnakan kulit tembikai dulu, ya.
-
-
-Warnakan laut dulu, ya.
-
-
-Warnakan layar dulu, ya.
-
-
-Warnakan mata dulu, ya.
-
-
-Warnakan matahari dulu, ya.
-
-
-Warnakan muka kucing dulu, ya.
-
-
-Warnakan pisang dulu, ya.
-
-
-Warnakan sayap atas kanan dulu, ya.
-
-
-Warnakan sayap atas kiri dulu, ya.
-
-
-Warnakan sayap bawah kanan dulu, ya.
-
-
-Warnakan sayap bawah kiri dulu, ya.
-
-
-Warnakan sinar dulu, ya.
-
-
-Warnakan tangkai dulu, ya.
-
-
-Warnakan telinga kanan dulu, ya.
-
-
-Warnakan telinga kiri dulu, ya.

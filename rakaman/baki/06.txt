@@ -1,4 +1,79 @@
-[warmly] Lembah Buah, level dua puluh sembilan.
+[warmly] Cari nanas!
+
+
+Lembah Buah, level enam belas.
+
+
+Lembah Buah, level tujuh belas.
+
+
+Lembah Buah, level lapan belas.
+
+
+Pilih yang paling besar!
+
+
+Cari anggur!
+
+
+Lembah Buah, level sembilan belas.
+
+
+Kutip empat rama-rama!
+
+
+Lembah Buah, level dua puluh.
+
+
+Empat tambah satu, jadi berapa?
+
+
+Lembah Buah, level dua puluh satu.
+
+
+Cari benda berwarna merah!
+
+
+Lembah Buah, level dua puluh dua.
+
+
+Cari beri biru!
+
+
+Cari haiwan!
+
+
+Lembah Buah, level dua puluh tiga.
+
+
+Lembah Buah, level dua puluh empat.
+
+
+Cari benda berwarna biru!
+
+
+Kutip empat pisang!
+
+
+Lembah Buah, level dua puluh lima.
+
+
+Cari kiwi!
+
+
+Lembah Buah, level dua puluh enam.
+
+
+Lembah Buah, level dua puluh tujuh.
+
+
+Lima tambah dua, jadi berapa?
+
+
+Lembah Buah, level dua puluh lapan.
+
+
+Lembah Buah, level dua puluh sembilan.
 
 
 Lembah Buah, level tiga puluh.
@@ -170,81 +245,3 @@ Siapa ibunya?
 
 
 Hutan Haiwan, level enam.
-
-
-Kutip satu kek cawan!
-
-
-Hutan Haiwan, level tujuh.
-
-
-Cari ketam!
-
-
-Hutan Haiwan, level lapan.
-
-
-Siapa yang tinggal di darat dan tidak boleh terbang?
-
-
-Hutan Haiwan, level sembilan.
-
-
-Hutan Haiwan, level sepuluh.
-
-
-Itik suka makan apa?
-
-
-Hutan Haiwan, level sebelas.
-
-
-Cari gajah!
-
-
-Hutan Haiwan, level dua belas.
-
-
-Kutip tiga kek cawan!
-
-
-Hutan Haiwan, level tiga belas.
-
-
-Siapa yang tinggal di dalam air?
-
-
-Hutan Haiwan, level empat belas.
-
-
-Hutan Haiwan, level lima belas.
-
-
-Hutan Haiwan, level enam belas.
-
-
-Zebra suka makan apa?
-
-
-Cari kuda!
-
-
-Hutan Haiwan, level tujuh belas.
-
-
-Ini anak itik.
-
-
-Cari rama-rama!
-
-
-Hutan Haiwan, level lapan belas.
-
-
-Cari kambing!
-
-
-Hutan Haiwan, level sembilan belas.
-
-
-Cari unta!

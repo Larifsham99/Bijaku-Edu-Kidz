@@ -1,4 +1,73 @@
-[warmly] Ingat urutan ini: kura-kura, bunga, kereta, telur.
+[warmly] Ingat urutan ini: kura-kura, oren, pisang.
+
+
+Berapa kura-kura?
+
+
+Pulau Juara, level tiga puluh enam.
+
+
+Pulau Juara, level tiga puluh tujuh.
+
+
+Pulau Juara, level tiga puluh lapan.
+
+
+Pulau Juara, level tiga puluh sembilan.
+
+
+Jom eja unta.
+
+
+Pulau Juara, level empat puluh.
+
+
+Ada sembilan anak ayam.
+
+
+Pulau Juara, level empat puluh satu.
+
+
+Pulau Juara, level empat puluh dua.
+
+
+Pulau Juara, level empat puluh tiga.
+
+
+Cari arnab!
+
+
+Pulau Juara, level empat puluh empat.
+
+
+Jom eja singa.
+
+
+Pulau Juara, level empat puluh lima.
+
+
+Pulau Juara, level empat puluh enam.
+
+
+Jom eja bola.
+
+
+Pulau Juara, level empat puluh tujuh.
+
+
+Cari singa!
+
+
+Ada lapan epal.
+
+
+Pulau Juara, level empat puluh lapan.
+
+
+Pulau Juara, level empat puluh sembilan.
+
+
+Ingat urutan ini: kura-kura, bunga, kereta, telur.
 
 
 Pulau Juara, level lima puluh.
@@ -110,147 +179,3 @@ Kumpul lapan pingat untuk pelekat ini.
 
 
 Kumpul sepuluh pingat untuk pelekat ini.
-
-
-Buka satu dunia untuk rim ini.
-
-
-Buka dua dunia untuk rim ini.
-
-
-Buka tiga dunia untuk rim ini.
-
-
-Buka lima dunia untuk rim ini.
-
-
-Buka tujuh dunia untuk rim ini.
-
-
-[gently] Itu i.
-
-
-Itu es.
-
-
-Itu Pokok.
-
-
-Itu Helikopter.
-
-
-Itu tiga.
-
-
-Itu dua.
-
-
-Itu bukan oren.
-
-
-Itu Oren.
-
-
-Itu Biru.
-
-
-Itu bukan bintang.
-
-
-Cari huruf yu.
-
-
-Cari huruf bi.
-
-
-Cari huruf ai.
-
-
-Itu Kanan.
-
-
-Itu Kiri.
-
-
-Itu kei.
-
-
-Itu bi.
-
-
-Itu Topi.
-
-
-Itu Nyamuk.
-
-
-Itu lima.
-
-
-Itu Merah.
-
-
-Itu Ungu.
-
-
-Itu bukan belon.
-
-
-Itu bukan telur.
-
-
-Itu Coklat.
-
-
-Itu yu.
-
-
-Itu Heish.
-
-
-Itu ef.
-
-
-Cari huruf ei.
-
-
-Cari huruf pi.
-
-
-Itu empat.
-
-
-Itu Terus masuk.
-
-
-Itu ei.
-
-
-Itu jei.
-
-
-Itu satu.
-
-
-Itu enam.
-
-
-Itu bukan pisang.
-
-
-Itu Roti.
-
-
-Itu Roket.
-
-
-Itu Monyet.
-
-
-Itu bukan ef.
-
-
-Itu pi.
-
-
-Itu zed.

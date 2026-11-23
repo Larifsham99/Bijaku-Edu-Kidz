@@ -22,7 +22,7 @@ const PRIORITY = { pujian: 3, galakan: 2, tenang: 1, arahan: 0 };
 // L = level tempat ayat muncul (untuk keutamaan); core = ayat teras yang didengar di mana-mana
 function add(text, mood = 'arahan', { L = 99, core = false } = {}) {
   if (!text) return;
-  for (const s of splitSentences(normalizeMalay(text))) {
+  for (const s of splitSentences(normalizeMalay(text, { letters: false }))) {
     let k = clipKey(s);
     if (!k || !/[a-z]/i.test(k)) continue;
     // ayat yang hanya berbeza tanda baca akhir berkongsi satu rakaman (aplikasi mencari kedua-duanya)

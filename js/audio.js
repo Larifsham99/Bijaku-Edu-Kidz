@@ -6,7 +6,7 @@
 //  - Muzik latar ringan
 // =====================================================================
 import { settings } from './store.js';
-import { normalizeMalay, splitSentences, clipKey } from './malay-text.js';
+import { normalizeMalay, splitSentences, clipKey, letterize } from './malay-text.js';
 
 let ctx = null;
 let master = null;
@@ -210,7 +210,8 @@ export function speak(text, { lang, rate, interrupt = true, mood = 'arahan' } = 
     const id = speakSeq;
     const vp = voiceParams(mood);
     const r = rate || vp.rate;
-    const parts = lang === 'en' ? [String(text)] : splitSentences(normalizeMalay(text));
+    // kunci rakaman guna huruf asal; suara peranti guna nama huruf (A -> ei, H -> heish)
+    const parts = lang === 'en' ? [String(text)] : splitSentences(normalizeMalay(text, { letters: false }));
     if (globalThis.__dcCapture && lang !== 'en') parts.forEach((p) => globalThis.__dcCapture.push({ text: p, mood }));
     return parts.reduce((p, part, i) => p.then(async () => {
       if (id !== speakSeq) return;
@@ -221,7 +222,7 @@ export function speak(text, { lang, rate, interrupt = true, mood = 'arahan' } = 
         const ok = await playClip(file, { rate: vp.base / 0.88, id });
         if (ok !== false) return;
       }
-      if (typeof speechSynthesis !== 'undefined') await sayOne(part, { lang, rate: r, pitch: vp.pitch, id });
+      if (typeof speechSynthesis !== 'undefined') await sayOne(lang === 'en' ? part : letterize(part), { lang, rate: r, pitch: vp.pitch, id });
     }), Promise.resolve()).catch(() => {});
   } catch { return Promise.resolve(); }
 }

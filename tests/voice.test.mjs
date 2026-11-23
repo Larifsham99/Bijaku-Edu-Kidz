@@ -53,6 +53,7 @@ eq('Jom main ABC Ceria!', 'Jom main ei, bi, si Ceria!');
 eq('Ini huruf E. Mana satu lagi huruf E?', 'Ini huruf i. Mana satu lagi huruf i?');
 eq('Tekan semua huruf vokal. A, E, I, O, U.', 'Tekan semua huruf vokal. ei, i, ai, o, yu.');
 eq('Cari huruf W.', 'Cari huruf dabel yu.');
+eq('Huruf H dan huruf K.', 'Huruf heish dan huruf kei.');
 eq('Allah s.w.t. Maha Esa', 'Allah s.w.t. Maha Esa');
 
 console.log(fails ? `\n✗ ${fails} kegagalan` : '\n✓ Ujian suara lulus');

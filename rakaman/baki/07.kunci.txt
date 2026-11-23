@@ -1,3 +1,29 @@
+Kutip satu kek cawan!
+Hutan Haiwan, level tujuh.
+Cari ketam!
+Hutan Haiwan, level lapan.
+Siapa yang tinggal di darat dan tidak boleh terbang?
+Hutan Haiwan, level sembilan.
+Hutan Haiwan, level sepuluh.
+Itik suka makan apa?
+Hutan Haiwan, level sebelas.
+Cari gajah!
+Hutan Haiwan, level dua belas.
+Kutip tiga kek cawan!
+Hutan Haiwan, level tiga belas.
+Siapa yang tinggal di dalam air?
+Hutan Haiwan, level empat belas.
+Hutan Haiwan, level lima belas.
+Hutan Haiwan, level enam belas.
+Zebra suka makan apa?
+Cari kuda!
+Hutan Haiwan, level tujuh belas.
+Ini anak itik.
+Cari rama-rama!
+Hutan Haiwan, level lapan belas.
+Cari kambing!
+Hutan Haiwan, level sembilan belas.
+Cari unta!
 Hutan Haiwan, level dua puluh.
 Cari katak!
 Hutan Haiwan, level dua puluh satu.
@@ -56,27 +82,3 @@ Hutan Haiwan, level empat puluh lapan.
 Hutan Haiwan, level empat puluh sembilan.
 Hutan Haiwan, level lima puluh.
 Udang suka makan apa?
-Bandar Warna.
-Bangunan mainan, lampu isyarat dan jalan pelangi.
-Selesaikan sepuluh level di Hutan Haiwan dahulu, ya.
-Bandar Warna, level satu.
-Bandar Warna, level dua.
-Cari bentuk segi empat sama!
-Bandar Warna, level tiga.
-Bandar Warna, level empat.
-Apa yang datang seterusnya?
-Bandar Warna, level lima.
-Bandar Warna, level enam.
-Bandar Warna, level tujuh.
-Cari bentuk bintang!
-Bandar Warna, level lapan.
-Bandar Warna, level sembilan.
-Bandar Warna, level sepuluh.
-Bandar Warna, level sebelas.
-Cari benda berwarna oren!
-Bandar Warna, level dua belas.
-Cari bentuk hati!
-Bandar Warna, level tiga belas.
-Bandar Warna, level empat belas.
-Bandar Warna, level lima belas.
-Berapa pisang?

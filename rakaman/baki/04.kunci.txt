@@ -1,3 +1,32 @@
+Warnakan badan kereta dengan warna merah.
+Warnakan bas ikut warna kegemaran kamu!
+Warnakan bendera dengan warna merah.
+Warnakan buah epal dengan warna merah.
+Warnakan hidung dengan warna merah jambu.
+Yang mana satu bukan tumbuhan?
+Gunung
+Mahkota
+Main lagi
+Makan kentang goreng
+Nombor empat
+Nombor tujuh
+Udang kecil
+Yoyo
+Litar Kampung.
+Rumah kampung, sawah dan pokok kelapa.
+Level juara!
+Sedia?
+Litar Kampung, level satu.
+Cari huruf E!
+Litar Kampung, level dua.
+Cari gambar yang bermula dengan huruf H!
+Litar Kampung, level tiga.
+Cari nombor dua!
+Litar Kampung, level empat.
+Kutip satu oren!
+Elak halangan di hadapan!
+Litar Kampung, level lima.
+Pilih laluan warna biru!
 Kutip dua bintang!
 Litar Kampung, level enam.
 Jom eja ubi.
@@ -59,26 +88,3 @@ Litar Kampung, level dua puluh lapan.
 Litar Kampung, level dua puluh sembilan.
 Berapa bunga?
 Cari huruf T!
-Litar Kampung, level tiga puluh.
-Wang bermula dengan huruf apa?
-Jom eja wau.
-Litar Kampung, level tiga puluh satu.
-Cari gambar yang bermula dengan huruf O!
-Cari nombor tiga!
-Kutip dua huruf I!
-Litar Kampung, level tiga puluh dua.
-Jom eja rusa.
-Litar Kampung, level tiga puluh tiga.
-Jom eja kuda.
-Cari gambar yang bermula dengan huruf A!
-Litar Kampung, level tiga puluh empat.
-Litar Kampung, level tiga puluh lima.
-Litar Kampung, level tiga puluh enam.
-Cari huruf G!
-Tangan bermula dengan huruf apa?
-Litar Kampung, level tiga puluh tujuh.
-Cari gambar yang bermula dengan huruf Y!
-Litar Kampung, level tiga puluh lapan.
-Cari nombor lapan!
-Pilih laluan warna hijau!
-Litar Kampung, level tiga puluh sembilan.

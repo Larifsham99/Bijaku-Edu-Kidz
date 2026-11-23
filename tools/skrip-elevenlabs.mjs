@@ -13,6 +13,7 @@ import { normalizeMalay, splitSentences, clipKey } from '../js/malay-text.js';
 import { RC_WORLDS, CARS, PAINTS, STICKERS_RC, RIMS, MEDALS } from '../js/racing/data.js';
 import { buildLevel } from '../js/racing/levels.js';
 import { NUM_WORDS } from '../js/data/content.js';
+globalThis.localStorage ||= { d: {}, getItem(k) { return this.d[k] ?? null; }, setItem(k, v) { this.d[k] = String(v); }, removeItem(k) { delete this.d[k]; } };
 
 const VERSI = new Date().toISOString().slice(0, 16).replace('T', ' ');
 const MAX = 2500; // aksara setiap bahagian (paling stabil untuk Eleven v3; < had 3,000 sekali jana)
@@ -29,7 +30,7 @@ const have = new Set(Object.keys(man).map(base));
 const items = new Map(); // base -> { text, mood, order }
 let order = 0;
 const add = (text, mood = 'arahan', pri = 5) => {
-  for (const s of splitSentences(normalizeMalay(String(text)))) {
+  for (const s of splitSentences(normalizeMalay(String(text), { letters: false }))) {
     const t = s.trim();
     if (!t || /Aisyah/.test(t)) continue;
     const k = base(t);
@@ -67,6 +68,25 @@ for (const p of PAINTS) { R(`Cat ${p.n.toLowerCase()}`, 'pujian'); if (p.need) R
 for (const s of STICKERS_RC) { R(`Pelekat ${s.n.toLowerCase()}`, 'pujian'); if (s.need) R(`Kumpul ${NUM_WORDS[s.need] || s.need} pingat untuk pelekat ini.`); }
 for (const r of RIMS) { R(`Rim ${r.n.toLowerCase()}`, 'pujian'); R(`Buka ${NUM_WORDS[r.need] || r.need} dunia untuk rim ini.`); }
 for (const m of MEDALS) R(`Kamu dapat ${m.n.toLowerCase()}!`, 'pujian');
+
+// 3) modul baharu (permainan Fasa 2+, Teka Silang, Taman Akhlak) — tangkapan pelayar
+//    node tools/tangkap-modul.mjs  ->  audio/ms-MY/modul-capture.json
+if (existsSync('audio/ms-MY/modul-capture.json')) {
+  for (const c of JSON.parse(readFileSync('audio/ms-MY/modul-capture.json', 'utf8'))) add(c.text, c.mood || 'arahan', 3);
+}
+// 4) panggilan mesra (Abang, Adik, Kakak, Baby, Manja, Intan Payung)
+{
+  const { PANGGILAN } = await import('../js/store.js').catch(() => ({ PANGGILAN: null }));
+  const calls = (PANGGILAN || []).map((c) => c.s || c.n);
+  const { MODES } = await import('../js/modes/index.js');
+  for (const c of calls) {
+    add(`Hai ${c}!`, 'pujian', 1); add(`Assalamualaikum, ${c}!`, 'arahan', 1);
+    for (const w of ['Selamat pagi', 'Selamat tengah hari', 'Selamat petang', 'Selamat malam']) add(`${w}, ${c}!`, 'arahan', 2);
+    add(`Selamat datang ke Bijaku, ${c}!`, 'pujian', 1); add(`Pandainya, ${c}!`, 'pujian', 1); add(`Terbaik, ${c}!`, 'pujian', 1);
+    add(`Ini Laluan Bijak, ${c}!`, 'arahan', 2); add(`Jom rehatkan mata, ${c}!`, 'galakan', 2);
+    for (const m of Object.values(MODES)) add(`Sijil pencapaian ${m.n} untuk ${c}.`, 'pujian', 4);
+  }
+}
 
 // ---------- tukar ke ejaan sebutan ----------
 const speakable = (t) => {

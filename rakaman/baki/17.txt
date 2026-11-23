@@ -1,4 +1,304 @@
-[gently] Itu bukan kereta.
+[gently] Itu bukan pensel.
+
+
+Itu Lari.
+
+
+Itu Menjerit.
+
+
+Itu bukan el.
+
+
+Itu o.
+
+
+Itu Ceri.
+
+
+Itu Epal.
+
+
+Itu Katil.
+
+
+Itu Gajah.
+
+
+Itu Kereta api.
+
+
+Itu warna merah jambu.
+
+
+Itu warna kuning.
+
+
+Itu Strawberi.
+
+
+Itu bukan ikan.
+
+
+Itu Kucing.
+
+
+Itu Ikan paus.
+
+
+Itu Bas.
+
+
+Itu Sotong.
+
+
+Itu Lada benggala.
+
+
+Itu bukan strawberi.
+
+
+Itu Teksi.
+
+
+Itu Unta.
+
+
+Itu Sawi.
+
+
+Itu bukan epal.
+
+
+Itu Ikan lumba-lumba.
+
+
+Itu Beruang.
+
+
+Itu Traktor.
+
+
+Itu warna ungu.
+
+
+Itu warna coklat.
+
+
+Itu Bawang putih.
+
+
+Itu Lori.
+
+
+Itu Kiwi.
+
+
+Itu Kelapa.
+
+
+Itu Beri biru.
+
+
+Itu Lembu.
+
+
+Itu Semut.
+
+
+Itu Lemon.
+
+
+Itu Anggur.
+
+
+Itu bukan rama-rama.
+
+
+Itu Tembikai.
+
+
+Itu Jagung.
+
+
+Itu warna biru.
+
+
+Itu warna merah.
+
+
+Itu Anak ayam.
+
+
+Itu Kelawar.
+
+
+Itu Kereta.
+
+
+Itu Kumbang.
+
+
+Itu warna oren.
+
+
+Itu Pic.
+
+
+Itu Pisang.
+
+
+Itu Kapal terbang.
+
+
+Itu Penguin.
+
+
+Itu Kereta polis.
+
+
+Itu Kereta bomba.
+
+
+Itu Timun.
+
+
+Itu Burung helang.
+
+
+Itu Kura-kura.
+
+
+Itu Brokoli.
+
+
+Itu warna hijau.
+
+
+Itu Mangga.
+
+
+Itu Cendawan.
+
+
+Itu Kentang.
+
+
+Itu Pear.
+
+
+Itu Bola.
+
+
+Itu Lebah.
+
+
+Itu Kunci.
+
+
+Itu Ambulans.
+
+
+Itu Udang.
+
+
+Itu Ikan yu.
+
+
+Itu Zirafah.
+
+
+Itu Rama-rama.
+
+
+Itu Kuda.
+
+
+Itu Daging.
+
+
+Itu bukan kek cawan.
+
+
+Itu Ketam.
+
+
+Itu Gurita.
+
+
+Itu Katak.
+
+
+Itu Ayam.
+
+
+Itu Burung hantu.
+
+
+Itu Itik.
+
+
+Itu Zebra.
+
+
+Itu Rumput.
+
+
+Itu Buah-buahan.
+
+
+Itu Madu.
+
+
+Itu Kambing.
+
+
+Itu Anjing.
+
+
+Itu Singa.
+
+
+Itu Buluh.
+
+
+Itu Udang kecil.
+
+
+Itu Serangga.
+
+
+Itu Harimau.
+
+
+Itu Tulang.
+
+
+Itu bukan bola.
+
+
+Itu bukan anak ayam.
+
+
+Itu Keju.
+
+
+Itu Lobak merah.
+
+
+Itu Daun.
+
+
+Itu Panda.
+
+
+Itu bukan kumbang.
+
+
+Itu Biri-biri.
+
+
+Itu bukan kereta.
 
 
 Itu Arnab.
@@ -161,369 +461,3 @@ Itu Planet.
 
 
 Itu Komet.
-
-
-Itu Piring terbang.
-
-
-Itu Bumi.
-
-
-Itu belon.
-
-
-Itu Bulan.
-
-
-Itu Matahari.
-
-
-Itu Bakar.
-
-
-Itu Lolipop.
-
-
-Itu Donat.
-
-
-Itu Susu.
-
-
-Itu Kentang goreng.
-
-
-Itu Air bergas.
-
-
-Itu Gula-gula.
-
-
-Itu Air kosong.
-
-
-Itu Nasi.
-
-
-Itu kosong.
-
-
-Itu Bercakap dengan sopan.
-
-
-Cari huruf Heish.
-
-
-Itu Ketuk dan minta izin.
-
-
-[cheerfully] Jam.
-
-
-Kaki.
-
-
-Lengan.
-
-
-Pear.
-
-
-Tangan.
-
-
-Anggur.
-
-
-Nanas.
-
-
-Kelapa.
-
-
-Mangga.
-
-
-Mulut.
-
-
-Gosok gigi.
-
-
-Kereta.
-
-
-Lidah.
-
-
-Strawberi.
-
-
-Ombak.
-
-
-Otak.
-
-
-Lobak merah.
-
-
-Telinga.
-
-
-Ceri.
-
-
-Anak anjing.
-
-
-Buluh.
-
-
-Cuci tangan.
-
-
-Madu.
-
-
-Ro.
-
-
-Anak biri-biri.
-
-
-Anak panda.
-
-
-Huruf kiu kecil.
-
-
-Jim.
-
-
-Rumput.
-
-
-Ba.
-
-
-Bas.
-
-
-Bot laju.
-
-
-Bunga.
-
-
-Daging.
-
-
-Huruf em kecil.
-
-
-Lori.
-
-
-Tsa.
-
-
-Tulang.
-
-
-Keju.
-
-
-Semut.
-
-
-Ain.
-
-
-Baju.
-
-
-Bulan.
-
-
-Huruf ei kecil.
-
-
-Huruf di kecil.
-
-
-Huruf kei kecil.
-
-
-Huruf el kecil.
-
-
-Basikal.
-
-
-Kanan.
-
-
-Keluar tandas.
-
-
-Kiri.
-
-
-Laut.
-
-
-Nabi Adam.
-
-
-Nabi Ismail.
-
-
-Sebelum tidur.
-
-
-Tangan hingga siku.
-
-
-Alif.
-
-
-Anak itik.
-
-
-Anak lembu.
-
-
-Huruf bi kecil.
-
-
-Huruf ef kecil.
-
-
-Huruf ji kecil.
-
-
-Kapal.
-
-
-Kapal layar.
-
-
-Kunci.
-
-
-Mandi.
-
-
-Muka.
-
-
-Nabi Ibrahim.
-
-
-Nabi Idris.
-
-
-Roket.
-
-
-Sampan.
-
-
-Sebelum belajar.
-
-
-Sod.
-
-
-Syin.
-
-
-Topi.
-
-
-Cuci dengan sabun.
-
-
-Huruf pi kecil.
-
-
-Kaki hingga buku lali.
-
-
-Keluar rumah.
-
-
-Potong kuku.
-
-
-Sarung tangan.
-
-
-Selipar.
-
-
-Stoking.
-
-
-Telur.
-
-
-Traktor.
-
-
-Zai.
-
-
-Anak gajah.
-
-
-Cili.
-
-
-Dua puluh lima.
-
-
-Gaun.
-
-
-Huruf jei kecil.
-
-
-Jaket.
-
-
-Kolam.
-
-
-Payung terjun.
-
-
-Sarang.
-
-
-Selepas makan.
-
-
-Yarhamukallah.
-
-
-Huruf i kecil.
-
-
-Kepala.
-
-
-Nabi Isa.
-
-
-Nabi Yunus.
-
-
-Dhod.
-
-
-Jagung.
-
-
-Nabi Ilyasa.

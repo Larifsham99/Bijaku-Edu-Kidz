@@ -1,3 +1,25 @@
+Selesaikan sepuluh level di Bandar Warna dahulu, ya.
+Taman Dinosor, level satu.
+Taman Dinosor, level dua.
+Selepas itu, apa pula?
+Taman Dinosor, level tiga.
+Taman Dinosor, level empat.
+Ingat urutan ini: bunga, kek cawan, bola.
+Taman Dinosor, level lima.
+Taman Dinosor, level enam.
+Semua ini buah-buahan, kecuali satu.
+Cari yang lain!
+Taman Dinosor, level tujuh.
+Taman Dinosor, level lapan.
+Taman Dinosor, level sembilan.
+Taman Dinosor, level sepuluh.
+Ingat urutan ini: bintang, kek cawan, bola.
+Taman Dinosor, level sebelas.
+Taman Dinosor, level dua belas.
+Semua ini haiwan, kecuali satu.
+Taman Dinosor, level tiga belas.
+Ingat urutan ini: bunga, anak ayam, kumbang.
+Taman Dinosor, level empat belas.
 Ingat urutan ini: pensel, telur, belon.
 Taman Dinosor, level lima belas.
 Taman Dinosor, level enam belas.
@@ -40,20 +62,3 @@ Taman Dinosor, level tiga puluh sembilan.
 Taman Dinosor, level empat puluh.
 Ingat urutan ini: oren, strawberi, belon.
 Taman Dinosor, level empat puluh satu.
-Ingat urutan ini: kek cawan, bunga, strawberi, ikan.
-Taman Dinosor, level empat puluh dua.
-Ingat urutan ini: kereta, bola, pisang, kumbang.
-Taman Dinosor, level empat puluh tiga.
-Taman Dinosor, level empat puluh empat.
-Ingat urutan ini: kek cawan, kereta, oren, ikan.
-Taman Dinosor, level empat puluh lima.
-Taman Dinosor, level empat puluh enam.
-Ingat urutan ini: strawberi, rama-rama, telur, anak ayam.
-Taman Dinosor, level empat puluh tujuh.
-Taman Dinosor, level empat puluh lapan.
-Taman Dinosor, level empat puluh sembilan.
-Ingat urutan ini: strawberi, anak ayam, epal, pensel.
-Taman Dinosor, level lima puluh.
-Ingat urutan ini: oren, anak ayam, pensel, ikan.
-Pulau Ombak.
-Pantai, penyu, batu karang dan rumah api.

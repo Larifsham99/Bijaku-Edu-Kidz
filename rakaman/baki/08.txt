@@ -1,4 +1,76 @@
-[warmly] Bandar Warna, level enam belas.
+[warmly] Bandar Warna.
+
+
+Bangunan mainan, lampu isyarat dan jalan pelangi.
+
+
+Selesaikan sepuluh level di Hutan Haiwan dahulu, ya.
+
+
+Bandar Warna, level satu.
+
+
+Bandar Warna, level dua.
+
+
+Cari bentuk segi empat sama!
+
+
+Bandar Warna, level tiga.
+
+
+Bandar Warna, level empat.
+
+
+Apa yang datang seterusnya?
+
+
+Bandar Warna, level lima.
+
+
+Bandar Warna, level enam.
+
+
+Bandar Warna, level tujuh.
+
+
+Cari bentuk bintang!
+
+
+Bandar Warna, level lapan.
+
+
+Bandar Warna, level sembilan.
+
+
+Bandar Warna, level sepuluh.
+
+
+Bandar Warna, level sebelas.
+
+
+Cari benda berwarna oren!
+
+
+Bandar Warna, level dua belas.
+
+
+Cari bentuk hati!
+
+
+Bandar Warna, level tiga belas.
+
+
+Bandar Warna, level empat belas.
+
+
+Bandar Warna, level lima belas.
+
+
+Berapa pisang?
+
+
+Bandar Warna, level enam belas.
 
 
 Bandar Warna, level tujuh belas.
@@ -149,69 +221,3 @@ Taman Dinosor.
 
 
 Dinosor comel, telur dan gunung berapi.
-
-
-Selesaikan sepuluh level di Bandar Warna dahulu, ya.
-
-
-Taman Dinosor, level satu.
-
-
-Taman Dinosor, level dua.
-
-
-Selepas itu, apa pula?
-
-
-Taman Dinosor, level tiga.
-
-
-Taman Dinosor, level empat.
-
-
-Ingat urutan ini: bunga, kek cawan, bola.
-
-
-Taman Dinosor, level lima.
-
-
-Taman Dinosor, level enam.
-
-
-Semua ini buah-buahan, kecuali satu.
-
-
-Cari yang lain!
-
-
-Taman Dinosor, level tujuh.
-
-
-Taman Dinosor, level lapan.
-
-
-Taman Dinosor, level sembilan.
-
-
-Taman Dinosor, level sepuluh.
-
-
-Ingat urutan ini: bintang, kek cawan, bola.
-
-
-Taman Dinosor, level sebelas.
-
-
-Taman Dinosor, level dua belas.
-
-
-Semua ini haiwan, kecuali satu.
-
-
-Taman Dinosor, level tiga belas.
-
-
-Ingat urutan ini: bunga, anak ayam, kumbang.
-
-
-Taman Dinosor, level empat belas.

@@ -1,4 +1,145 @@
-[warmly] Warnakan belon kiri dengan warna merah.
+[warmly] Siapa yang berbunyi, Ngiau, ngiau!
+
+
+Singa suka makan apa, ya?
+
+
+Susun objek ke dalam kumpulannya.
+
+
+Tangan bermula dengan huruf apa, ya?
+
+
+Tekan gambar untuk dengar namanya.
+
+
+Tekan gambar untuk mendengar bunyinya.
+
+
+Tekan semua benda yang warnanya coklat.
+
+
+Tekan semua benda yang warnanya kuning.
+
+
+Tekan semua huruf Heish yang kamu nampak!
+
+
+Tekan semua huruf ai yang kamu nampak!
+
+
+Tekan semua huruf pi yang kamu nampak!
+
+
+Tekan semua huruf ti yang kamu nampak!
+
+
+Tekan semua huruf vi yang kamu nampak!
+
+
+Tekan semua huruf wai yang kamu nampak!
+
+
+Tekan semua huruf zed yang kamu nampak!
+
+
+Tembikai bermula dengan huruf apa, ya?
+
+
+Tiada markah, main sahaja!
+
+
+Tiada markah, tiada had!
+
+
+Tiga batang pensel, tambah enam batang lagi.
+
+
+Tiga biji epal, tambah tiga biji lagi.
+
+
+Tiga biji kek cawan, tambah lima biji lagi.
+
+
+Tiga biji telur, tambah satu biji lagi.
+
+
+Tiga ekor rama-rama, tambah dua ekor lagi.
+
+
+Ting, ting, ting!
+
+
+Tolong kumpul empat bintang laut untuk Kura-kura.
+
+
+Tolong kumpul empat epal untuk Mimi.
+
+
+Tolong kumpul empat jagung untuk Mimi.
+
+
+Tolong kumpul empat kacang untuk Coco.
+
+
+Tolong kumpul empat pisang untuk Coco.
+
+
+Tolong kumpul empat telur untuk Mimi.
+
+
+Tolong kumpul lima bintang untuk Roket Dino.
+
+
+Tolong kumpul lima buih untuk Kura-kura.
+
+
+Tolong kumpul lima bulan untuk Roket Dino.
+
+
+Tolong kumpul lima cendawan untuk Coco.
+
+
+Tolong kumpul lima kacang untuk Coco.
+
+
+Tolong kumpul lima komet untuk Roket Dino.
+
+
+Tolong kumpul lima kulit kerang untuk Kura-kura.
+
+
+Tujuh biji dah diambil.
+
+
+Tujuh biji epal, tambah dua biji lagi.
+
+
+Tujuh biji kek cawan, tambah dua biji lagi.
+
+
+Ubi bermula dengan huruf apa, ya?
+
+
+Uk uk ak ak!
+
+
+Van.
+
+
+Violin bermula dengan huruf apa, ya?
+
+
+Vrooom!
+
+
+Warnakan badan bot dengan warna coklat.
+
+
+Warnakan badan dengan warna coklat.
+
+
+Warnakan belon kiri dengan warna merah.
 
 
 Warnakan belon tengah dengan warna kuning.
@@ -47,231 +188,3 @@ Warnakan rama-rama ikut warna kegemaran kamu!
 
 
 Warnakan roda dulu, ya.
-
-
-Warnakan roket ikut warna kegemaran kamu!
-
-
-Warnakan sayap atas kanan dengan warna ungu.
-
-
-Warnakan sayap atas kiri dengan warna ungu.
-
-
-Warnakan sinar dengan warna oren.
-
-
-Warnakan sirip dulu, ya.
-
-
-Warnakan strawberi ikut warna kegemaran kamu!
-
-
-Warnakan tembikai ikut warna kegemaran kamu!
-
-
-Warnakan tengah bunga dengan warna kuning.
-
-
-Wuuuush!
-
-
-Yang mana satu bukan pakaian?
-
-
-Yang mana satu bukan sukan?
-
-
-Zirafah tinggal di mana, ya?
-
-
-Ei untuk Ayam.
-
-
-Ada dua cabaran menunggu kamu hari ini!
-
-
-Ada empat cabaran menunggu kamu hari ini!
-
-
-Ada lima cabaran menunggu kamu hari ini!
-
-
-Ada satu cabaran menunggu kamu hari ini!
-
-
-Ada tiga cabaran menunggu kamu hari ini!
-
-
-Aiskrim.
-
-
-Anak pokok.
-
-
-Awan.
-
-
-Bi untuk Bola.
-
-
-Bagus, kamu semakin bijak.
-
-
-Bawang.
-
-
-Biji benih.
-
-
-Buuuu!
-
-
-Si untuk Cendawan.
-
-
-Cendawan.
-
-
-Cik, cik, cik!
-
-
-Coco si Arnab.
-
-
-Cuu, cuu!
-
-
-Di untuk Daun.
-
-
-Di mana Ayam?
-
-
-Di mana Burung?
-
-
-Di mana Nanas?
-
-
-Ding, dong!
-
-
-Dua puluh empat.
-
-
-Dum, dum, tak!
-
-
-Dum, dum!
-
-
-i untuk Epal.
-
-
-Ef untuk Feri.
-
-
-Ji untuk Gajah.
-
-
-Heish untuk Harimau.
-
-
-Ai untuk Ikan.
-
-
-Jei untuk Jam.
-
-
-Jambatan.
-
-
-Jom dapatkan versi penuh Dunia Cilik!
-
-
-Kei untuk Kucing.
-
-
-Kek.
-
-
-Kepompong.
-
-
-Kutip semua barang dulu, ya.
-
-
-Kutip semua bintang dulu, ya.
-
-
-Kutip semua buih dulu, ya.
-
-
-Kutip semua cendawan dulu, ya.
-
-
-Kutip semua epal dulu, ya.
-
-
-Kutip semua jagung dulu, ya.
-
-
-Kutip semua komet dulu, ya.
-
-
-Kutip semua lobak merah dulu, ya.
-
-
-Kutip semua permata dulu, ya.
-
-
-Kutip semua tiram dulu, ya.
-
-
-El untuk Lebah.
-
-
-Lobak.
-
-
-Em untuk Monyet.
-
-
-En untuk Nanas.
-
-
-Nombor lapan.
-
-
-Nombor lima belas.
-
-
-o untuk Oren.
-
-
-Orang utan.
-
-
-Pi untuk Pisang.
-
-
-Pak, pak, pak!
-
-
-Permainan ini sedang dikunci oleh ibu bapa.
-
-
-Pokok besar.
-
-
-Pokok kecil.
-
-
-Priiit!
-
-
-Prok, prok, prok!
-
-
-Ar untuk Rama-rama.

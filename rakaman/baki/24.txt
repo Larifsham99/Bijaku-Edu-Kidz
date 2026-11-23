@@ -1,4 +1,205 @@
-[warmly] Kawan kita, ikan lumba-lumba, perlukan dua buih.
+[warmly] Ini ceri.
+
+
+Ini coklat.
+
+
+Ini dram.
+
+
+Ini epal.
+
+
+Ini feri.
+
+
+Ini gelas.
+
+
+Ini gitar.
+
+
+Ini huruf bi besar.
+
+
+Ini huruf si besar.
+
+
+Ini huruf ef besar.
+
+
+Ini huruf ai besar.
+
+
+Ini huruf en besar.
+
+
+Ini huruf vi besar.
+
+
+Ini istana.
+
+
+Ini jambatan.
+
+
+Ini kek.
+
+
+Ini orang utan.
+
+
+Ini pokok.
+
+
+Ini semut.
+
+
+Ini siput.
+
+
+Ini tangan.
+
+
+Ini tembikai.
+
+
+Ini ubi.
+
+
+Ini ular.
+
+
+Ini violin.
+
+
+Ini wang.
+
+
+Istana.
+
+
+Jambatan bermula dengan huruf apa, ya?
+
+
+Jom cari huruf en!
+
+
+Jom cari huruf eks!
+
+
+Jom kira, ada berapa ekor ikan?
+
+
+Jom kira, ada berapa kuntum bunga?
+
+
+Jom lengkapkan perkataan awan.
+
+
+Jom lengkapkan perkataan bas.
+
+
+Jom lengkapkan perkataan bola.
+
+
+Jom lengkapkan perkataan ceri.
+
+
+Jom lengkapkan perkataan dram.
+
+
+Jom lengkapkan perkataan feri.
+
+
+Jom lengkapkan perkataan gelas.
+
+
+Jom lengkapkan perkataan gitar.
+
+
+Jom lengkapkan perkataan ikan.
+
+
+Jom lengkapkan perkataan istana.
+
+
+Jom lengkapkan perkataan kek.
+
+
+Jom lengkapkan perkataan lori.
+
+
+Jom lengkapkan perkataan pokok.
+
+
+Jom lengkapkan perkataan siput.
+
+
+Jom lengkapkan perkataan ular.
+
+
+Jom lengkapkan perkataan wang.
+
+
+Jom surih huruf i guna jari.
+
+
+Jom surih huruf ai guna jari.
+
+
+Jom surih huruf vi guna jari.
+
+
+Jom surih huruf dabel yu guna jari.
+
+
+Jom surih nombor tujuh guna jari.
+
+
+Jom warnakan bunga!
+
+
+Jom warnakan matahari!
+
+
+Jom warnakan rama-rama!
+
+
+Jom warnakan rumah!
+
+
+Jom warnakan strawberi!
+
+
+Kalau warna merah campur dengan kuning, jadi warna apa?
+
+
+Katak tinggal di mana, ya?
+
+
+Kawan kita, angkasawan, perlukan dua bintang.
+
+
+Kawan kita, ayam, perlukan dua lobak merah.
+
+
+Kawan kita, biri-biri, perlukan dua telur.
+
+
+Kawan kita, biri-biri, perlukan telur.
+
+
+Kawan kita, burung kakak tua, perlukan dua kacang.
+
+
+Kawan kita, burung kakak tua, perlukan pisang.
+
+
+Kawan kita, gurita, perlukan buih.
+
+
+Kawan kita, ikan lumba-lumba, perlukan dua buih.
 
 
 Kawan kita, kawan angkasa, perlukan komet.
@@ -50,204 +251,3 @@ Kumpulan mana yang ada tiga biji belon?
 
 
 Kumpulan mana yang ada tujuh biji telur?
-
-
-Kumpulan mana yang lebih banyak epal?
-
-
-Kumpulan mana yang lebih banyak pokok?
-
-
-Kumpulan mana yang lebih banyak telur?
-
-
-Kumpulan mana yang lebih sedikit belon?
-
-
-Kumpulan mana yang lebih sedikit ikan?
-
-
-Kumpulan mana yang lebih sedikit oren?
-
-
-Kumpulan mana yang lebih sedikit pisang?
-
-
-Kutip semua bintang laut dulu, ya.
-
-
-Kutip semua bulan dulu, ya.
-
-
-Kutip semua pisang dulu, ya.
-
-
-Kutip semua telur dulu, ya.
-
-
-Lantai kotor.
-
-
-Lima biji belon, tambah dua biji lagi.
-
-
-Lima biji epal, tambah empat biji lagi.
-
-
-Lima ekor anak ayam, tambah satu ekor lagi.
-
-
-Lori bermula dengan huruf apa, ya?
-
-
-Lukis apa sahaja dengan jari kamu!
-
-
-Lukis belon!
-
-
-Lukis bintang di langit!
-
-
-Lukis matahari yang ceria!
-
-
-Lukis pelangi yang berwarna-warni!
-
-
-Lukis rumah kamu!
-
-
-Lukis seekor ikan!
-
-
-Main apa sahaja yang kamu suka.
-
-
-Makan lagi.
-
-
-Mana bayang ayam?
-
-
-Mana bayang gurita?
-
-
-Mana bayang kelapa?
-
-
-Mana bayang kereta bomba?
-
-
-Mana bayang kura-kura?
-
-
-Mana bayang panda?
-
-
-Mana bayang penguin?
-
-
-Mana bayang pisang?
-
-
-Mana bayang rama-rama?
-
-
-Mana bentuk berlian?
-
-
-Mana bentuk bujur?
-
-
-Mana biri-biri?
-
-
-Mana huruf bi kecil?
-
-
-Mana huruf si kecil?
-
-
-Mana huruf ef kecil?
-
-
-Mana huruf ai kecil?
-
-
-Mana huruf en kecil?
-
-
-Mana huruf vi kecil?
-
-
-Mana ikan?
-
-
-Mana nombor lapan?
-
-
-Mana nombor lima belas?
-
-
-Mana seluar?
-
-
-Mana zebra?
-
-
-Mbeee!
-
-
-Mula dengan jei, ya.
-
-
-Mula dengan pi, ya.
-
-
-Mula dengan kiu, ya.
-
-
-Mula dengan ar, ya.
-
-
-Mula dengan ti, ya.
-
-
-Mula dengan dabel yu, ya.
-
-
-Mula dengan eks, ya.
-
-
-Niu, niu, niu!
-
-
-Nombor apa sebelum lapan?
-
-
-Nombor apa sebelum lima?
-
-
-Nombor apa selepas lima?
-
-
-Nombor apa selepas tiga belas?
-
-
-Orang utan bermula dengan huruf apa, ya?
-
-
-Pakai baju.
-
-
-Panda suka makan apa, ya?
-
-
-Payung.
-
-
-Penguin tinggal di mana, ya?
-
-
-Pilih gambar dan bilangan kepingan.

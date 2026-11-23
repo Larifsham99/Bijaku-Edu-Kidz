@@ -1,4 +1,250 @@
-[softly] Menunaikan solat lima waktu.
+[cheerfully] Hujan.
+
+
+Tepuk tangan.
+
+
+Loceng pintu.
+
+
+Menunaikan zakat.
+
+
+Huruf vi kecil.
+
+
+Bangun tidur.
+
+
+Dengan nama Allah.
+
+
+Anak ayam.
+
+
+Dal.
+
+
+Huruf ar kecil.
+
+
+Aku memohon keampunan-Mu.
+
+
+Huruf ai kecil.
+
+
+Anak kuda.
+
+
+Huruf en kecil.
+
+
+Huruf yu kecil.
+
+
+Huruf wai kecil.
+
+
+Masuk tandas.
+
+
+Feri.
+
+
+Kaf.
+
+
+Nabi Soleh.
+
+
+Zho.
+
+
+Doa untuk ibu bapa.
+
+
+Huruf si kecil.
+
+
+Nabi Hud.
+
+
+Segala puji bagi Allah.
+
+
+Seluar.
+
+
+Tong sampah.
+
+
+But.
+
+
+Ketuk dan minta izin.
+
+
+Nabi Yahya.
+
+
+Terima kasih.
+
+
+Bawang putih.
+
+
+Belon.
+
+
+Belon udara.
+
+
+Brokoli.
+
+
+Kentang.
+
+
+Lada benggala.
+
+
+Mendengar.
+
+
+Minta maaf.
+
+
+Nyamuk.
+
+
+Padang rumput.
+
+
+Salam.
+
+
+Sawi.
+
+
+Timun.
+
+
+Tomato.
+
+
+Wah, berlian!
+
+
+Wah, bintang!
+
+
+Wah, bulan!
+
+
+Wah, hati!
+
+
+Wah, ikan!
+
+
+Wah, pokok!
+
+
+Wah, rama-rama!
+
+
+Wah, rumah!
+
+
+Wah, segi empat!
+
+
+Wah, segi tiga!
+
+
+Yu.
+
+
+Kamu sudah tamatkan semua level ei, bi, si Ceria!
+
+
+Kamu sudah tamatkan semua level Asah Minda!
+
+
+Kamu sudah tamatkan semua level Bijak Mengelaskan!
+
+
+Kamu sudah tamatkan semua level Cari Bayang!
+
+
+Kamu sudah tamatkan semua level Dunia Haiwan!
+
+
+Kamu sudah tamatkan semua level Dunia Nombor!
+
+
+Kamu sudah tamatkan semua level Ingatan Hebat!
+
+
+Kamu sudah tamatkan semua level Kehidupan Harian!
+
+
+Kamu sudah tamatkan semua level Maze Pengembaraan!
+
+
+Kamu sudah tamatkan semua level Misi Pengembaraan!
+
+
+Kamu sudah tamatkan semua level Pazel Pintar!
+
+
+Kamu sudah tamatkan semua level Seni dan Mewarna!
+
+
+Kamu sudah tamatkan semua level Si Cilik Soleh!
+
+
+Kamu sudah tamatkan semua level Teka Bunyi!
+
+
+Kamu sudah tamatkan semua level Warna dan Bentuk!
+
+
+Tema Batik Laut!
+
+
+Tema Kampung Ceria!
+
+
+Tema Klasik Lembut!
+
+
+Tema Kuih-muih!
+
+
+Tema Malam Bulan!
+
+
+Tema Songket Diraja!
+
+
+Tema Taman Masjid!
+
+
+Wah, bot!
+
+
+Wah, payung!
+
+
+[softly] Mula dari kanan.
+
+
+Membasuh muka (dengan niat).
+
+
+Menunaikan solat lima waktu.
 
 
 Susun rukun Iman mengikut urutan.
@@ -62,153 +308,3 @@ Fa.
 
 
 Ha (simpul).
-
-
-Hamzah.
-
-
-Lagu.
-
-
-Lam.
-
-
-Nabi Lut.
-
-
-Susun huruf hijaiyah mengikut urutan, bermula dengan Ba.
-
-
-Susun nama nabi mengikut urutan, bermula dengan Nabi Soleh.
-
-
-Ya Allah, aku berlindung kepada-Mu daripada syaitan lelaki dan perempuan.
-
-
-Apabila menerima hadiah, kita ucapkan,.
-
-
-Apakah rukun Iman yang pertama?
-
-
-Apakah rukun Islam yang kedua?
-
-
-Cari huruf Ain!
-
-
-Cari huruf Ro!
-
-
-Doa ini bermaksud: Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami, dan kepada-Nya kami kembali.
-
-
-Doa ini bermaksud: Wahai Tuhanku, ampunkanlah aku dan kedua ibu bapaku.
-
-
-Masuk ke tandas, kita mulakan dengan kaki,.
-
-
-Nabi Ayub.
-
-
-Nabi Yusuf.
-
-
-Pilih doa bangun tidur.
-
-
-Pilih doa doa untuk ibu bapa.
-
-
-Pilih doa sebelum belajar.
-
-
-Pilih doa sebelum tidur.
-
-
-Sebelum masuk bilik orang, kita,.
-
-
-Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami, dan kepada-Nya kami kembali.
-
-
-Selepas makan, kita mengucap,.
-
-
-Susun huruf hijaiyah mengikut urutan, bermula dengan Alif.
-
-
-Susun huruf hijaiyah mengikut urutan, bermula dengan Zho.
-
-
-Susun nama nabi mengikut urutan, bermula dengan Nabi Ismail.
-
-
-Tho.
-
-
-Ya.
-
-
-Apabila berjumpa kawan, kita memberi,.
-
-
-Apabila bersalah, kita ucapkan,.
-
-
-Apabila orang tua bercakap, kita,.
-
-
-Apakah rukun Iman yang kedua?
-
-
-Apakah rukun Iman yang ketiga?
-
-
-Apakah rukun Islam yang keempat?
-
-
-Apakah rukun Islam yang kelima?
-
-
-Apakah rukun Islam yang ketiga?
-
-
-Cari huruf Alif!
-
-
-Cari huruf Dal!
-
-
-Cari huruf Kaf!
-
-
-Cari huruf Sod!
-
-
-Cari huruf Zho!
-
-
-Dengan nama Allah, aku bertawakal kepada Allah; tiada daya dan kekuatan melainkan dengan Allah.
-
-
-Dengar dan cari: Nabi Hud.
-
-
-Dengar dan cari: Nabi Ibrahim.
-
-
-Dengar dan cari: Nabi Ilyasa.
-
-
-Dengar dan cari: Nabi Isa.
-
-
-Dengar dan cari: Nabi Soleh.
-
-
-Dengar dan cari: Nabi Yahya.
-
-
-Diam sahaja.

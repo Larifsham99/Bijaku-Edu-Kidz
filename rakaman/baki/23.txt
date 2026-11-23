@@ -1,4 +1,175 @@
-[warmly] Cari tiga ekor kumbang, kemudian tekan.
+[warmly] Warnakan matahari ikut warna kegemaran kamu!
+
+
+Warnakan sirip dengan warna kuning.
+
+
+Warnakan sirip dengan warna merah.
+
+
+Yang mana satu bukan alat dapur?
+
+
+Ada berapa buih dalam bakul?
+
+
+Ada dua anjing yang menyorok.
+
+
+Ada dua arnab yang menyorok.
+
+
+Ada dua biji pisang.
+
+
+Ada dua biri-biri yang menyorok.
+
+
+Ada dua ikan lumba-lumba yang menyorok.
+
+
+Ada dua kuntum bunga.
+
+
+Ada dua roket yang menyorok.
+
+
+Ada dua zirafah yang menyorok.
+
+
+Ada empat beruang yang menyorok.
+
+
+Ada empat biji telur.
+
+
+Ada empat kereta api yang menyorok.
+
+
+Ada empat kuda yang menyorok.
+
+
+Ada empat lembu yang menyorok.
+
+
+Ada empat mangga yang menyorok.
+
+
+Ada empat payung terjun yang menyorok.
+
+
+Ada empat pear yang menyorok.
+
+
+Ada empat sampan yang menyorok.
+
+
+Ada lapan biji epal.
+
+
+Ada lima biji bola.
+
+
+Ada sembilan ekor rama-rama.
+
+
+Ada sepuluh biji epal.
+
+
+Ada tiga ayam yang menyorok.
+
+
+Ada tiga batang pensel.
+
+
+Ada tiga biji kek cawan.
+
+
+Ada tiga biji pisang.
+
+
+Ada tiga buah bintang.
+
+
+Ada tiga burung hantu yang menyorok.
+
+
+Ada tiga gurita yang menyorok.
+
+
+Ada tiga kambing yang menyorok.
+
+
+Ada tiga kapal layar yang menyorok.
+
+
+Ada tiga kereta bomba yang menyorok.
+
+
+Ada tiga kereta yang menyorok.
+
+
+Ada tiga kura-kura yang menyorok.
+
+
+Ada tiga lembu yang menyorok.
+
+
+Ada tiga lori yang menyorok.
+
+
+Ada tiga mangga yang menyorok.
+
+
+Ada tiga singa yang menyorok.
+
+
+Aiskrim bermula dengan huruf apa, ya?
+
+
+Ambil berus.
+
+
+Apa yang hilang?
+
+
+Baca doa.
+
+
+Bahan.
+
+
+Beee!
+
+
+Bila kita bangun tidur?
+
+
+Bzzzz!
+
+
+Cari dua buah kereta, kemudian tekan.
+
+
+Cari empat biji strawberi, kemudian tekan.
+
+
+Cari enam ekor kura-kura, kemudian tekan.
+
+
+Cari lima ekor ikan, kemudian tekan.
+
+
+Cari lima ekor rama-rama, kemudian tekan.
+
+
+Cari tiga batang pensel, kemudian tekan.
+
+
+Cari tiga buah kereta, kemudian tekan.
+
+
+Cari tiga ekor kumbang, kemudian tekan.
 
 
 Coklat bermula dengan huruf apa, ya?
@@ -65,204 +236,3 @@ Ini bas.
 
 
 Ini bola.
-
-
-Ini ceri.
-
-
-Ini coklat.
-
-
-Ini dram.
-
-
-Ini epal.
-
-
-Ini feri.
-
-
-Ini gelas.
-
-
-Ini gitar.
-
-
-Ini huruf bi besar.
-
-
-Ini huruf si besar.
-
-
-Ini huruf ef besar.
-
-
-Ini huruf ai besar.
-
-
-Ini huruf en besar.
-
-
-Ini huruf vi besar.
-
-
-Ini istana.
-
-
-Ini jambatan.
-
-
-Ini kek.
-
-
-Ini orang utan.
-
-
-Ini pokok.
-
-
-Ini semut.
-
-
-Ini siput.
-
-
-Ini tangan.
-
-
-Ini tembikai.
-
-
-Ini ubi.
-
-
-Ini ular.
-
-
-Ini violin.
-
-
-Ini wang.
-
-
-Istana.
-
-
-Jambatan bermula dengan huruf apa, ya?
-
-
-Jom cari huruf en!
-
-
-Jom cari huruf eks!
-
-
-Jom kira, ada berapa ekor ikan?
-
-
-Jom kira, ada berapa kuntum bunga?
-
-
-Jom lengkapkan perkataan awan.
-
-
-Jom lengkapkan perkataan bas.
-
-
-Jom lengkapkan perkataan bola.
-
-
-Jom lengkapkan perkataan ceri.
-
-
-Jom lengkapkan perkataan dram.
-
-
-Jom lengkapkan perkataan feri.
-
-
-Jom lengkapkan perkataan gelas.
-
-
-Jom lengkapkan perkataan gitar.
-
-
-Jom lengkapkan perkataan ikan.
-
-
-Jom lengkapkan perkataan istana.
-
-
-Jom lengkapkan perkataan kek.
-
-
-Jom lengkapkan perkataan lori.
-
-
-Jom lengkapkan perkataan pokok.
-
-
-Jom lengkapkan perkataan siput.
-
-
-Jom lengkapkan perkataan ular.
-
-
-Jom lengkapkan perkataan wang.
-
-
-Jom surih huruf i guna jari.
-
-
-Jom surih huruf ai guna jari.
-
-
-Jom surih huruf vi guna jari.
-
-
-Jom surih huruf dabel yu guna jari.
-
-
-Jom surih nombor tujuh guna jari.
-
-
-Jom warnakan bunga!
-
-
-Jom warnakan matahari!
-
-
-Jom warnakan rama-rama!
-
-
-Jom warnakan rumah!
-
-
-Jom warnakan strawberi!
-
-
-Kalau warna merah campur dengan kuning, jadi warna apa?
-
-
-Katak tinggal di mana, ya?
-
-
-Kawan kita, angkasawan, perlukan dua bintang.
-
-
-Kawan kita, ayam, perlukan dua lobak merah.
-
-
-Kawan kita, biri-biri, perlukan dua telur.
-
-
-Kawan kita, biri-biri, perlukan telur.
-
-
-Kawan kita, burung kakak tua, perlukan dua kacang.
-
-
-Kawan kita, burung kakak tua, perlukan pisang.
-
-
-Kawan kita, gurita, perlukan buih.
