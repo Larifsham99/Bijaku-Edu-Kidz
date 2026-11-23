@@ -87,13 +87,24 @@ try {
     globalThis.DeviceOrientationEvent.requestPermission = async () => 'denied';
     window.__fakeOri = setInterval(() => { const e = new Event('deviceorientation'); e.beta = 25; e.gamma = 0; dispatchEvent(e); }, 16);
   });
-  await page.click('.tg-start');
+  await page.click('.tg-start', { force: true });
   await page.waitForTimeout(1600);
   ok(await page.locator('.tg-ready').count() === 0, 'lapisan "Level N / tekan Mula" hilang selepas Mula ditekan');
+  await page.waitForTimeout(2600); // kiraan 3-2-1-Jom!
+  ok(await page.locator('.tg-count').count() === 0, 'kiraan 3-2-1-Jom! dipaparkan lalu hilang');
+  ok(await page.evaluate(() => document.scrollingElement.scrollHeight <= innerHeight + 1), 'permainan muat dalam satu skrin (tiada tatal)');
+  await page.click('.tg-pause');
+  await page.waitForSelector('.tg-pausebox');
+  const t1 = await page.evaluate(() => document.querySelector('.tg-hud b').textContent);
+  await page.waitForTimeout(800);
+  ok(await page.evaluate(() => document.querySelector('.tg-hud b').textContent) === t1, 'butang jeda menghentikan masa');
+  await page.click('.tg-pb.go');
+  await page.waitForSelector('.tg-pausebox', { state: 'detached' });
+  ok(true, 'sambung selepas jeda');
   ok(await page.locator('.tj-joy').evaluate((e) => e.hidden), 'sensor senget dikesan & digunakan walaupun kebenaran tidak "granted"');
   await page.evaluate(() => { const e = new Event('deviceorientation'); clearInterval(window.__fakeOri); window.__fakeOri = setInterval(() => { const ev = new Event('deviceorientation'); ev.beta = 15; ev.gamma = 0; dispatchEvent(ev); }, 16); void e; });
   await page.waitForTimeout(1500);
-  ok(parseInt(await page.evaluate(() => document.querySelector('.tg-prog i').style.width), 10) > 0, 'senget telefon ke depan menggolek bola ke hadapan');
+  ok(parseInt(await page.evaluate(() => document.querySelector('.tg-fill').style.width), 10) > 0, 'senget telefon ke depan menggolek bola ke hadapan');
   await page.evaluate(() => clearInterval(window.__fakeOri));
   // tetapan kepekaan disimpan
   const s0 = await page.evaluate(() => localStorage.getItem('bj-tilt-v1'));

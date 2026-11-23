@@ -5,13 +5,15 @@
 // =====================================================================
 import { h } from '../ui.js';
 import { icon } from '../icons.js';
-import { sfx, speak } from '../audio.js';
+import { sfx, speak, haptic } from '../audio.js';
+import { ico } from './tiltui.js';
 
 const KEY = 'bj-tilt-v1';
 const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch { return {}; } };
 const save = (o) => { try { localStorage.setItem(KEY, JSON.stringify({ ...load(), ...o })); } catch { /* */ } };
 const MAXDEG = [30, 24, 19, 15, 12]; // sensitiviti 1 (lembut) … 5 (laju)
 const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
+const synth4 = (k) => sfx.note(k + 1);
 
 export function createTilt(host) {
   const pref = load();
@@ -80,14 +82,19 @@ export function createTilt(host) {
   addEventListener('keydown', kd); addEventListener('keyup', ku);
 
   // ---------- butang tetapan ----------
-  const modeBtn = h('button', { class: 'tj-btn', type: 'button', onclick: () => { sfx.tap(); setMode(s.mode === 'tilt' ? 'joy' : 'tilt'); if (s.mode === 'tilt' && !s.sensorOK) start(); speak(s.mode === 'tilt' ? 'Kawalan senget telefon.' : 'Kawalan joystick.'); } });
-  const calBtn = h('button', { class: 'tj-btn', type: 'button', 'aria-label': 'Kalibrasi', onclick: () => { sfx.pop(); calibrate(); flash('Posisi neutral ditetapkan!'); speak('Posisi neutral ditetapkan.'); } }, '🎯', h('small', {}, 'Kalibrasi'));
-  const sensLbl = h('b', {}, s.sens);
-  const sensBox = h('span', { class: 'tj-sens' }, h('small', {}, 'Sensitiviti'), h('button', { type: 'button', 'aria-label': 'Kurang sensitif', onclick: () => { setSens(s.sens - 1); sensLbl.textContent = s.sens; sfx.tap(); } }, '−'), sensLbl, h('button', { type: 'button', 'aria-label': 'Lebih sensitif', onclick: () => { setSens(s.sens + 1); sensLbl.textContent = s.sens; sfx.tap(); } }, '+'));
+  const modeBtn = h('button', { class: 'tj-btn', type: 'button', onclick: () => { sfx.tap(); haptic(10); setMode(s.mode === 'tilt' ? 'joy' : 'tilt'); if (s.mode === 'tilt' && !s.sensorOK) start(); speak(s.mode === 'tilt' ? 'Kawalan senget telefon.' : 'Kawalan joystick.'); } });
+  const calBtn = h('button', { class: 'tj-btn cal', type: 'button', 'aria-label': 'Kalibrasi', onclick: () => { sfx.pop(); haptic([10, 40, 10]); calBtn.classList.remove('spin'); void calBtn.offsetWidth; calBtn.classList.add('spin'); calibrate(); flash('Posisi neutral ditetapkan!'); speak('Posisi neutral ditetapkan.'); } }, ico('target'), h('small', {}, 'Kalibrasi'));
+  // kepekaan: tolok 5 bar berwarna (hijau → oren)
+  const gauge = h('span', { class: 'tj-gauge', 'aria-hidden': 'true' }, ...[1, 2, 3, 4, 5].map((i) => h('i', { style: `--i:${i}` })));
+  const sensLbl = h('b', { class: 'tj-sr' }, s.sens);
+  const drawSens = () => { sensLbl.textContent = s.sens; [...gauge.children].forEach((e, i) => e.classList.toggle('on', i < s.sens)); };
+  const chg = (d) => { setSens(s.sens + d); drawSens(); synth4(s.sens); haptic(8); };
+  const sensBox = h('span', { class: 'tj-sens' }, h('button', { type: 'button', 'aria-label': 'Kurang sensitif', onclick: () => chg(-1) }, '−'), h('span', { class: 'tj-sv' }, gauge, h('small', {}, 'Kepekaan'), sensLbl), h('button', { type: 'button', 'aria-label': 'Lebih sensitif', onclick: () => chg(1) }, '+'));
+  drawSens();
   const bar = h('div', { class: 'tj-bar' }, modeBtn, calBtn, sensBox);
   const note = h('div', { class: 'tj-flash' });
   function flash(t) { note.textContent = t; note.classList.remove('on'); void note.offsetWidth; note.classList.add('on'); }
-  function syncUI() { modeBtn.textContent = ''; modeBtn.append(s.mode === 'tilt' ? '📱' : '🕹️', h('small', {}, s.mode === 'tilt' ? 'Senget' : 'Joystick')); calBtn.hidden = s.mode !== 'tilt'; }
+  function syncUI() { modeBtn.textContent = ''; modeBtn.append(ico(s.mode === 'tilt' ? 'phone' : 'joy'), h('small', {}, s.mode === 'tilt' ? 'Senget' : 'Joystick')); calBtn.hidden = s.mode !== 'tilt'; host.classList.toggle('joy', s.mode === 'joy'); }
   syncUI();
   host.append(bar, joy, note);
 
@@ -108,16 +115,20 @@ export function createTilt(host) {
 
 // ---------- tutorial interaktif ----------
 export function tutorial(host, tilt, { title, onDone }) {
-  const steps = [['kiri', (v) => v.x < -0.55, '⬅️'], ['kanan', (v) => v.x > 0.55, '➡️'], ['depan', (v) => v.y > 0.55, '⬆️'], ['belakang', (v) => v.y < -0.55, '⬇️']];
+  const steps = [['kiri', (v) => v.x < -0.55, 'l'], ['kanan', (v) => v.x > 0.55, 'r'], ['depan', (v) => v.y > 0.55, 'f'], ['belakang', (v) => v.y < -0.55, 'b']];
   let i = -1, raf = 0;
-  const arrow = h('div', { class: 'tt-arrow' });
+  // ilustrasi telefon yang menyenget + anak panah arah
+  const arrow = h('div', { class: 'tt-arrow' }, h('span', { class: 'tt-phone' }, ico('phone')), h('span', { class: 'tt-dir' }, ico('arrow')));
+  arrow.dataset.d = 'hold';
+  const pips = h('div', { class: 'tt-steps' }, ...steps.map(() => h('i')));
+  const goal = h('i', { class: 'tt-goal' });
   const txt = h('b', {});
   const sub = h('small', {});
   const dot = h('i', { class: 'tt-dot' });
-  const pad = h('div', { class: 'tt-pad' }, dot);
+  const pad = h('div', { class: 'tt-pad' }, goal, dot);
   const skip = h('button', { class: 'tt-skip', type: 'button', onclick: () => finish() }, 'Langkau');
   const go = h('button', { class: 'gm-btn go', type: 'button' }, icon('play'), 'Mula');
-  const box = h('div', { class: 'tt-box' }, h('div', { class: 'tt-card' }, h('small', { class: 'tt-k' }, title), arrow, txt, sub, pad, go, skip));
+  const box = h('div', { class: 'tt-box' }, h('div', { class: 'tt-card' }, h('small', { class: 'tt-k' }, title), arrow, txt, sub, pad, pips, go, skip));
   host.append(box);
   const say = (a, b) => { txt.textContent = a; sub.textContent = b || ''; speak(a); };
   say('Pegang telefon dengan selesa, seperti sedang membaca.', 'Kemudian tekan Mula. Kedudukan ini menjadi posisi neutral.');
@@ -129,16 +140,17 @@ export function tutorial(host, tilt, { title, onDone }) {
       if (!box.isConnected) return;
       const v = tilt.read(1 / 60);
       dot.style.transform = `translate(${v.x * 46}px, ${-v.y * 46}px)`;
-      if (i >= 0 && i < steps.length && steps[i][1](v)) { sfx.correct(); next(); }
+      if (i >= 0 && i < steps.length && steps[i][1](v)) { sfx.correct(); haptic(20); pips.children[i]?.classList.add('on'); pad.classList.remove('ok'); void pad.offsetWidth; pad.classList.add('ok'); next(); }
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
   };
   function next() {
     i++;
-    if (i >= steps.length) { say('Hebat! Kamu sudah pandai mengawal.', ''); setTimeout(finish, 900); return; }
+    if (i >= steps.length) { arrow.dataset.d = 'ok'; goal.dataset.d = ''; say('Hebat! Kamu sudah pandai mengawal.', ''); sfx.reward(); setTimeout(finish, 1100); return; }
     const [d, , e] = steps[i];
-    arrow.textContent = e;
+    arrow.dataset.d = e; goal.dataset.d = e; pips.children[i]?.classList.add('cur');
+    box.classList.toggle('joy', tilt.s.mode !== 'tilt');
     say(tilt.s.mode === 'tilt' ? `Sengetkan telefon ke ${d}.` : `Seret bulatan ke ${d}.`, tilt.s.mode === 'tilt' ? '' : 'Telefon ini tiada sensor senget, jadi kita guna joystick.');
   }
   function finish() { cancelAnimationFrame(raf); box.remove(); onDone?.(); }

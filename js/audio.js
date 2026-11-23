@@ -322,6 +322,10 @@ export const sfx = {
   step() { if (!sfxOn()) return; tone({ type: 'sine', f: 440, f2: 520, dur: 0.05, vol: 0.08 }); },
   bump() { if (!sfxOn()) return; tone({ type: 'sine', f: 140, f2: 90, dur: 0.12, vol: 0.2 }); },
   pop() { if (!sfxOn()) return; tone({ type: 'sine', f: 300, f2: 900, dur: 0.08, vol: 0.18 }); },
+  // peralihan skrin: desiran lembut
+  swish() { if (!sfxOn()) return; noise({ dur: 0.16, vol: 0.035, a: 0.03, filter: { type: 'bandpass', f: 900, f2: 2600, q: 1.2 } }); tone({ type: 'sine', f: 520, f2: 700, t: 0.05, dur: 0.07, vol: 0.04 }); },
+  // suis hidup / mati
+  toggle(on) { if (!sfxOn()) return; tone({ type: 'triangle', f: on ? 620 : 520, f2: on ? 930 : 360, dur: 0.08, vol: 0.12 }); noise({ dur: 0.03, vol: 0.05, filter: { type: 'highpass', f: 3000 } }); },
   note(i) { if (!sfxOn()) return; const sc = [262, 330, 392, 523, 587, 659, 784, 880]; tone({ type: 'triangle', f: sc[i % sc.length], dur: 0.35, vol: 0.22 }); },
 };
 

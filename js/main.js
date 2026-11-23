@@ -2,7 +2,7 @@
 //  DUNIA CILIK — titik mula aplikasi & penghala (router)
 // =====================================================================
 import { initStore, profile, getState, settings, flush } from './store.js';
-import { unlockAudio, startMusic, loadVoicePack, speak } from './audio.js';
+import { unlockAudio, startMusic, loadVoicePack, speak, sfx } from './audio.js';
 import { clear } from './ui.js';
 import { homeScreen, onboardingScreen, profilesScreen } from './screens/home.js';
 import { worldScreen } from './screens/world.js';
@@ -118,7 +118,9 @@ function lazyScreen(load) {
   return el;
 }
 
+let routed = false;
 function route() {
+  if (routed) { try { sfx.swish(); } catch { /* */ } } routed = true;
   stopPlay();
   stopRacing();
   stopSilang();
@@ -172,6 +174,8 @@ async function boot() {
   await initStore();
   loadVoicePack(); // pakej suara neural (jika dipasang)
   addEventListener('hashchange', route);
+  // bunyi suis (Ruang Ibu Bapa, tetapan): semua kotak semak
+  addEventListener('change', (e) => { const el = e.target; if (el instanceof HTMLInputElement && el.type === 'checkbox') { try { sfx.toggle(el.checked); } catch { /* */ } } }, true);
   // buka kunci audio pada sentuhan pertama
   const first = () => {
     unlockAudio();
