@@ -46,13 +46,13 @@ const KID = `<svg class="wd-kid" viewBox="0 0 200 330" aria-label="Kanak-kanak s
   <g data-part="tanganKiri" class="wd-part"><path d="M142 120q22 14 26 60" stroke="#2fb380" stroke-width="22" stroke-linecap="round" fill="none"/><path d="M167 168q3 18 0 36" stroke="#f8cfa8" stroke-width="18" stroke-linecap="round" fill="none"/></g>
   <g data-part="tapak" class="wd-part"><circle cx="33" cy="212" r="14" fill="#f8cfa8"/><circle cx="167" cy="212" r="14" fill="#f8cfa8"/></g>
   <rect x="90" y="92" width="20" height="18" fill="#f2c193"/>
-  <g data-part="telinga" class="wd-part"><ellipse cx="56" cy="62" rx="9" ry="13" fill="#f2c193"/><ellipse cx="144" cy="62" rx="9" ry="13" fill="#f2c193"/></g>
+  <g data-part="telinga" class="wd-part"><ellipse class="wd-hit" cx="52" cy="62" rx="14" ry="18" fill="transparent"/><ellipse class="wd-hit" cx="148" cy="62" rx="14" ry="18" fill="transparent"/><ellipse cx="56" cy="62" rx="9" ry="13" fill="#f2c193"/><ellipse cx="144" cy="62" rx="9" ry="13" fill="#f2c193"/></g>
   <g data-part="muka" class="wd-part"><ellipse cx="100" cy="62" rx="44" ry="42" fill="#f8cfa8"/></g>
   <g data-part="kepala" class="wd-part"><path d="M56 56q0-46 44-46t44 46q-10-22-44-24-34 2-44 24z" fill="#3b2a1e"/></g>
   <circle cx="82" cy="60" r="6" fill="#2b2350"/><circle cx="118" cy="60" r="6" fill="#2b2350"/><circle cx="84" cy="58" r="2" fill="#fff"/><circle cx="120" cy="58" r="2" fill="#fff"/>
   <ellipse cx="72" cy="76" rx="7" ry="4" fill="#ff8fab" opacity=".55"/><ellipse cx="128" cy="76" rx="7" ry="4" fill="#ff8fab" opacity=".55"/>
-  <g data-part="hidung" class="wd-part"><ellipse cx="100" cy="72" rx="6" ry="5" fill="#eab28a"/></g>
-  <g data-part="mulut" class="wd-part"><path d="M88 84q12 12 24 0" fill="#e8596e"/><path d="M88 84q12 6 24 0" fill="#fff"/></g>
+  <g data-part="hidung" class="wd-part"><circle class="wd-hit" cx="100" cy="72" r="11" fill="transparent"/><ellipse cx="100" cy="72" rx="6" ry="5" fill="#eab28a"/></g>
+  <g data-part="mulut" class="wd-part"><ellipse class="wd-hit" cx="100" cy="90" rx="18" ry="9" fill="transparent"/><path d="M88 84q12 12 24 0" fill="#e8596e"/><path d="M88 84q12 6 24 0" fill="#fff"/></g>
   <defs><linearGradient id="wdKain" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4dabf7" stop-opacity=".25"/><stop offset="1" stop-color="#1c7ed6" stop-opacity=".35"/></linearGradient></defs>
 </svg>`;
 const PAIP = '<svg class="wd-paip" viewBox="0 0 100 100" aria-hidden="true"><rect x="0" y="18" width="62" height="18" rx="6" fill="#adb5bd"/><rect x="48" y="18" width="18" height="38" rx="6" fill="#ced4da"/><rect x="22" y="6" width="18" height="14" rx="4" fill="#4dabf7"/><path d="M57 56v40" stroke="#74c0fc" stroke-width="9" stroke-linecap="round" opacity=".85" class="wd-stream"/></svg>';
@@ -96,6 +96,12 @@ export default {
       kidBox.addEventListener('click', (e) => {
         const s = lv.steps[si];
         if (!s?.part) return;
+        // jari kanak-kanak besar: terima sentuhan berhampiran bahagian yang diminta (hidung/mulut kecil)
+        const want = kidBox.querySelector(`.wd-part[data-part="${s.part}"]`);
+        if (want) {
+          const near = [...want.children].some((sh) => { const r = sh.getBoundingClientRect(); const pad = Math.max(16, Math.min(r.width, r.height) * 0.5); return e.clientX >= r.left - pad && e.clientX <= r.right + pad && e.clientY >= r.top - pad && e.clientY <= r.bottom + pad; });
+          if (near) { splash(want); return; }
+        }
         const part = e.target.closest('.wd-part');
         if (!part) return;
         if (part.dataset.part !== s.part) { sfx.bump(); ctx.miss({ quiet: true }); ctx.say(`Bukan di situ. ${s.n}.`, 'galakan'); return; }

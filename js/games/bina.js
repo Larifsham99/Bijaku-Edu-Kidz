@@ -208,12 +208,12 @@ export default {
     const keyOf = (x, y, z) => `${x},${y},${z}`;
     const setOf = () => new Set(built.keys());
     function updateCount() { countEl.textContent = `${built.size}/${model.blocks.length}`; }
-    function tapCell(x, y) {
+    function tapCell(x, y, z = layer) {
       if (won) return;
-      const k = keyOf(x, y, layer);
+      const k = keyOf(x, y, z);
       if (tool === 'padam') {
         if (!built.has(k)) { bsfx.bump(); return; }
-        if (built.has(keyOf(x, y, layer + 1))) { bsfx.bump(); ctx.say('Buang blok di atas dahulu, ya.', 'galakan'); return; }
+        if (built.has(keyOf(x, y, z + 1))) { bsfx.bump(); ctx.say('Buang blok di atas dahulu, ya.', 'galakan'); return; }
         history.push(['del', k, built.get(k)]); built.delete(k); bsfx.remove(); pops.push({ k, t0: performance.now(), out: true });
       } else {
         if (built.get(k) === color) { bsfx.bump(); return; }
@@ -248,10 +248,39 @@ export default {
       later(() => ctx.done(), 2600);
     }
     // ---------- input ketik ----------
+    // pilih blok yang kelihatan di bawah jari (muka atas & sisi), paling hadapan dahulu.
+    // Untuk Padam: anak boleh terus tekan mana-mana bahagian blok, di tingkat mana pun.
+    const inPoly = (px, py, pts) => { let c = false; for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) { const [xi, yi] = pts[i], [xj, yj] = pts[j]; if ((yi > py) !== (yj > py) && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) c = !c; } return c; };
+    function pickBlock(v, sx, sy) {
+      const P = (x, y, z) => bIso.proj(v, x, y, z);
+      let best = null, bestKey = -Infinity, near = null, nearD = Infinity;
+      built.forEach((c, k) => {
+        const [x, y, z] = k.split(',').map(Number);
+        const faces = [
+          [P(x, y, z + 1), P(x + 1, y, z + 1), P(x + 1, y + 1, z + 1), P(x, y + 1, z + 1)],
+          [P(x, y, z), P(x + 1, y, z), P(x + 1, y, z + 1), P(x, y, z + 1)], [P(x + 1, y, z), P(x + 1, y + 1, z), P(x + 1, y + 1, z + 1), P(x + 1, y, z + 1)],
+          [P(x + 1, y + 1, z), P(x, y + 1, z), P(x, y + 1, z + 1), P(x + 1, y + 1, z + 1)], [P(x, y + 1, z), P(x, y, z), P(x, y, z + 1), P(x, y + 1, z + 1)],
+        ];
+        const d = P(x + 0.5, y + 0.5, 0)[2];
+        const order = d * 100 + z; // sama seperti susunan lukisan: yang terakhir dilukis = paling hadapan
+        if (faces.some((f) => inPoly(sx, sy, f)) && order > bestKey) { bestKey = order; best = [x, y, z]; }
+        const [cx, cy] = P(x + 0.5, y + 0.5, z + 0.6);
+        const dist = Math.hypot(cx - sx, cy - sy);
+        if (dist < nearD) { nearD = dist; near = [x, y, z]; }
+      });
+      // toleransi jari kecil: blok terdekat dalam ~0.7 unit
+      return best || (near && nearD < v.u * 0.7 ? near : null);
+    }
     bCv.addEventListener('pointerup', (e) => {
       const r = bCv.getBoundingClientRect();
       const v = bIso.view(N, ang, Hmax + 1);
-      const [fx, fy] = bIso.unproj(v, e.clientX - r.left, e.clientY - r.top, layer);
+      const sx = e.clientX - r.left, sy = e.clientY - r.top;
+      if (tool === 'padam') {
+        const b = pickBlock(v, sx, sy);
+        if (b) { tapCell(b[0], b[1], b[2]); return; }
+        bsfx.bump(); return;
+      }
+      const [fx, fy] = bIso.unproj(v, sx, sy, layer);
       const x = Math.floor(fx), y = Math.floor(fy);
       if (x < 0 || y < 0 || x >= N || y >= N) return;
       tapCell(x, y);
