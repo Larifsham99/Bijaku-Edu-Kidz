@@ -1,5 +1,5 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-8787bd766a';
+const VERSION = 'dunia-cilik-9edc619e90';
 const ASSETS = [
   './',
   './index.html',
@@ -40,6 +40,8 @@ const ASSETS = [
   './js/engines/puzzle.js',
   './js/games/bina.js',
   './js/games/blocksfx.js',
+  './js/games/guling.js',
+  './js/games/imbang.js',
   './js/games/kedai.js',
   './js/games/lompat.js',
   './js/games/main.js',
@@ -49,6 +51,11 @@ const ASSETS = [
   './js/games/robot.js',
   './js/games/shell.js',
   './js/games/store.js',
+  './js/games/tilt.js',
+  './js/games/tiltgame.js',
+  './js/games/tiltlevels.js',
+  './js/games/tiltrender.js',
+  './js/games/tiltworld.js',
   './js/games/wuduk.js',
   './js/icons.js',
   './js/main.js',
@@ -104,6 +111,8 @@ const ASSETS = [
   './fonts/baloo2-latin.woff2',
   './visual-assets/akhlak/kebun.svg',
   './visual-assets/games/bina.svg',
+  './visual-assets/games/guling.svg',
+  './visual-assets/games/imbang.svg',
   './visual-assets/games/kedai.svg',
   './visual-assets/games/lompat.svg',
   './visual-assets/games/makmal.svg',

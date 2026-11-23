@@ -48,7 +48,7 @@ try {
   ok(await page.locator('.bj-shelf').count() === 6, '6 rak kategori permainan');
   await page.click('.bj-tab:has-text("Dunia")');
   await page.waitForSelector('.bj-isle');
-  ok(await page.locator('.bj-isle').count() === 25, 'Dunia BIJAKU: 25 pulau permainan');
+  ok(await page.locator('.bj-isle').count() === 27, 'Dunia BIJAKU: 27 pulau permainan');
   await page.locator('.bj-isle', { hasText: 'Dunia Nombor' }).click();
   await page.waitForFunction(() => location.hash === '#/mod/nombor');
   ok(true, 'pulau membuka permainan');

@@ -41,7 +41,7 @@ const POOL = {
   minda: [['puzzle', 1, 1], ['ingatan', 1, 1], ['robot', 2, 4], ['bayang', 2, 2], ['maze', 2, 2], ['minda', 3, 4]],
   sains: [['haiwan', 1, 1], ['harian', 1, 1], ['makmal', 2, 3], ['pemburu', 3, 4], ['misi', 4, 5]],
   kreatif: [['seni', 1, 1], ['bina', 2, 3]],
-  seronok: [['lumba', 1, 1], ['lompat', 2, 3]],
+  seronok: [['lumba', 1, 1], ['lompat', 2, 3], ['guling', 3, 4], ['imbang', 4, 5]],
 };
 const SLOTS = ['bahasa', 'nombor', 'islam', 'minda', 'sains', 'bahasa', 'nombor', 'kreatif', 'islam', 'seronok'];
 export const UNIT_NAMES = ['Langkah Pertama', 'Kawan Baharu', 'Dunia Warna', 'Si Pintar', 'Penjelajah Cilik', 'Kembara Huruf', 'Wira Nombor', 'Hati Mulia', 'Saintis Kecil', 'Arkitek Muda', 'Juara Minda', 'Bintang Bijak', 'Pulau Ilmu', 'Pengembara Hebat', 'Cendekia Cilik', 'Raja Teka-teki', 'Budi Bahasa', 'Pakar Kira', 'Penemu Hebat', 'Bijak Sejati', 'Wira Kebaikan', 'Puncak Ilmu', 'Legenda Cilik', 'Juara BIJAKU'];

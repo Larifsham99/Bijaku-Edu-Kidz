@@ -13,7 +13,7 @@ const fs = await import('node:fs');
 let failures = 0;
 const ok = (c, m) => { if (c) console.log('✓ ' + m); else { failures++; console.log('✗ ' + m); } };
 
-ok(GAME_IDS.length === 7 && GAME_IDS.every((id) => GAMES[id].chapters.length === 3 && fs.existsSync(GAMES[id].img)), '7 permainan baharu berdaftar, 3 bab setiap satu, ilustrasi kad wujud');
+ok(GAME_IDS.length === 9 && GAME_IDS.every((id) => GAMES[id].chapters.length === 3 && fs.existsSync(GAMES[id].img)), '9 permainan baharu berdaftar, 3 bab setiap satu, ilustrasi kad wujud');
 
 // ---------- Robot: setiap teka-teki boleh diselesaikan & penyelesaian disahkan dengan simulasi ----------
 const DIRS = { atas: [0, -1], bawah: [0, 1], kiri: [-1, 0], kanan: [1, 0] };
@@ -141,7 +141,7 @@ async function playLevel(id, n) {
   await page.waitForFunction(([gid, k]) => window.__gmPlay?.id === gid && window.__gmPlay?.n === k && !document.querySelector('.gm-win') && document.querySelector('.gm-stage')?.children.length, [id, n], { timeout: 10000 });
   for (let i = 0; i < 16 && !(await page.locator('.gm-win').count()); i++) {
     await page.evaluate(() => window.__gmPlay?.solve?.());
-    await page.waitForTimeout(id === 'robot' ? 900 : id === 'lompat' ? 6000 : 500);
+    await page.waitForTimeout(id === 'robot' ? 900 : id === 'lompat' ? 6000 : id === 'guling' || id === 'imbang' ? 9000 : 500);
     await page.waitForFunction(() => document.querySelector('.gm-win') || !document.querySelector('.rb-board.running'), null, { timeout: 15000 });
     await page.waitForTimeout(id === 'wuduk' ? 400 : 1900);
   }
@@ -163,11 +163,11 @@ try {
     ok(st >= 1, `${GAMES[id].n}: level 1 dimainkan hingga tamat & disimpan (${st} bintang)`);
   }
   // bab lain: buka semua level dan main satu level setiap bab
-  await page.evaluate(() => { const id = window.__dc.getState().currentId; const d = JSON.parse(localStorage.getItem('dc-games-v1') || '{}'); for (const g of ['robot', 'kedai', 'makmal', 'wuduk', 'lompat', 'bina', 'pemburu']) { d[id][g] ||= { stars: {} }; for (let i = 1; i <= 29; i++) d[id][g].stars[i] ||= 1; } localStorage.setItem('dc-games-v1', JSON.stringify(d)); });
+  await page.evaluate(() => { const id = window.__dc.getState().currentId; const d = JSON.parse(localStorage.getItem('dc-games-v1') || '{}'); for (const g of ['robot', 'kedai', 'makmal', 'wuduk', 'lompat', 'bina', 'pemburu', 'guling', 'imbang']) { d[id][g] ||= { stars: {} }; for (let i = 1; i <= 29; i++) d[id][g].stars[i] ||= 1; } localStorage.setItem('dc-games-v1', JSON.stringify(d)); });
   await page.goto(`http://localhost:${PORT}/index.html#/`);
   await page.reload();
   await page.waitForSelector('.mode-card');
-  for (const [id, n] of [['pemburu', 14], ['pemburu', 25], ['lompat', 9], ['lompat', 14], ['lompat', 27], ['bina', 12], ['bina', 22], ['robot', 15], ['robot', 28], ['kedai', 14], ['kedai', 26], ['makmal', 4], ['makmal', 16], ['makmal', 27], ['wuduk', 7], ['wuduk', 13], ['wuduk', 22], ['wuduk', 30]]) {
+  for (const [id, n] of [['guling', 14], ['imbang', 22], ['pemburu', 14], ['pemburu', 25], ['lompat', 9], ['lompat', 14], ['lompat', 27], ['bina', 12], ['bina', 22], ['robot', 15], ['robot', 28], ['kedai', 14], ['kedai', 26], ['makmal', 4], ['makmal', 16], ['makmal', 27], ['wuduk', 7], ['wuduk', 13], ['wuduk', 22], ['wuduk', 30]]) {
     const st = await playLevel(id, n);
     ok(st >= 1, `${GAMES[id].n} L${n} (${GAMES[id].chapters[Math.min(2, Math.floor((n - 1) / 10))]}) dimainkan hingga tamat`);
   }
@@ -181,7 +181,7 @@ try {
   // Dunia: pulau baharu
   await page.evaluate(() => window.__dc.go('/dunia'));
   await page.waitForSelector('.bj-isle');
-  ok(await page.locator('.bj-isle').count() === 25, 'Dunia BIJAKU: 25 pulau');
+  ok(await page.locator('.bj-isle').count() === 27, 'Dunia BIJAKU: 27 pulau');
   // kunci ibu bapa
   await page.evaluate(() => { window.__dc.getState().settings.disabledModes.push('robot'); window.__dc.go('/'); });
   await page.waitForSelector('.mode-card');

@@ -19,7 +19,7 @@ export const EXTRAS = {
 Object.values(GAMES).forEach((g) => { EXTRAS[g.id] = { id: g.id, n: g.n, c: g.c, img: g.img, sub: g.sub, route: `/g/${g.id}`, cls: '', bg: g.bg, isNew: true }; });
 
 export const SHELVES = [
-  { t: 'Dunia Blok 3D', ids: ['lompat', 'bina'] },
+  { t: 'Aksi 3D', ids: ['guling', 'imbang', 'lompat', 'bina'] },
   { t: 'Huruf & Nombor', ids: ['abc', 'nombor', 'kedai', 'kelas', 'silang'] },
   { t: 'Islam & Akhlak', ids: ['soleh', 'wuduk', 'akhlak'] },
   { t: 'Minda Pintar', ids: ['robot', 'puzzle', 'ingatan', 'bayang', 'minda', 'maze'] },

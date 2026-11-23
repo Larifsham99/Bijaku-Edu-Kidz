@@ -48,6 +48,18 @@ export const GAMES = {
     chapters: ['Warna Asas', 'Warna Campuran', 'Pemburu Pakar'],
     load: () => import('./pemburu.js'),
   },
+  guling: {
+    id: 'guling', n: 'Bola Guling', c: '#3d8bff', img: 'visual-assets/games/guling.svg',
+    sub: 'Senget telefon, golek bola ke penamat!', bg: ['#7cc4ff', '#3d8bff', '#1f4fb0'],
+    chapters: ['Taman Guli', 'Pulau Terapung', 'Kota Spiral'],
+    load: () => import('./guling.js'),
+  },
+  imbang: {
+    id: 'imbang', n: 'Titian Imbang', c: '#ff9f1c', img: 'visual-assets/games/imbang.svg',
+    sub: 'Seimbangkan Si Bulat di atas titian!', bg: ['#ffc96b', '#ff9f1c', '#b86400'],
+    chapters: ['Titi Kayu', 'Papan Bergoyang', 'Puncak Ribut'],
+    load: () => import('./imbang.js'),
+  },
 };
 export const GAME_IDS = Object.keys(GAMES);
 export const chapterOf = (n) => Math.min(2, Math.floor((n - 1) / 10));

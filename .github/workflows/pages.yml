@@ -41,6 +41,8 @@ jobs:
         run: node tests/camera.test.mjs --data
       - name: Sahkan polyfill pelayar lama
         run: node tests/compat.test.mjs --data
+      - name: Sahkan fizik permainan senget (60 level)
+        run: node tests/tilt.test.mjs --data
 
   deploy:
     needs: test

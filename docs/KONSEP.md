@@ -33,6 +33,23 @@
 - **Pemburu Warna** (`js/games/pemburu.js`): kamera belakang, sampel 24×24 piksel di tengah 6 kali sesaat, pengelas HSV (11 warna); tahan 1 saat untuk menangkap. Mod gambar automatik jika tiada kamera / tidak dibenarkan / ditutup ibu bapa.
 - Ruang Ibu Bapa → Tetapan → suis **Kamera** (mematikan selfie & mod kamera).
 
+## Permainan senget (sensor gerakan): Bola Guling & Titian Imbang
+
+- **Bola Guling** (`js/games/guling.js`): guli digolek dengan menyenget telefon. Graviti, cerun, momentum, geseran, lantunan kecil dan putaran guli yang kelihatan. Trek berliku, spiral, jambatan, terowong, ramp dan lompatan, papan bergerak, pulau terapung dan bumper. Kutip syiling dan 3 bintang; ada checkpoint dan rekod masa. 3 bab: Taman Guli, Pulau Terapung, Kota Spiral.
+- **Titian Imbang** (`js/games/imbang.js`): watak "Si Bulat" berjalan di titian sempit. Ia panik, bergoyang dan melambai tangan apabila hampir jatuh. Titian makin sempit, ada tangga, papan jongkang yang bertindak balas pada kedudukan watak, jambatan bergoyang, papan bergerak dan penolak. 3 bab: Titi Kayu, Papan Bergoyang, Puncak Ribut.
+- **Enjin kongsi:**
+  - `tiltworld.js`: fizik 120 Hz, kepingan OBB bergerak/condong, autopilot dan `simulate()`.
+  - `tiltlevels.js`: penjana 30 level setiap permainan dengan kesukaran meningkat.
+  - `tiltrender.js`: kamera perspektif 2.5D yang mengikut dengan lancar, bayang, kabus, parallax, partikel dan jejak gerak.
+  - `tiltgame.js`: HUD, checkpoint, jatuh (berpusing, kamera mengikut, respawn), bunyi.
+- **Kawalan** (`tilt.js`):
+  - DeviceOrientation, termasuk kebenaran iOS; ikut orientasi skrin.
+  - Butang 🎯 Kalibrasi; kepekaan 5 tahap; zon mati.
+  - Joystick sentuh sebagai sandaran automatik jika tiada sensor (juga anak panah/WASD).
+  - Tutorial interaktif kali pertama (kiri, kanan, depan, belakang).
+  - Tetapan disimpan dalam `bj-tilt-v1`.
+- **Ujian:** `tests/tilt.test.mjs --data` mensimulasi kesemua 60 level dengan autopilot. Ujian ini memastikan setiap level boleh ditamatkan dan kesukaran meningkat. Ujian pelayar pula menyemak tutorial, joystick, HUD, penamat dan rekod.
+
 ## Keserasian peranti & level berkunci
 
 - **Pelayar lama** (Chrome < 111 / Safari < 16.2, dan Chrome < 88 / iOS < 15): `js/compat.js` + `css/compat.css`.
