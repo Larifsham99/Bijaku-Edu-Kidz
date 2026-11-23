@@ -82,6 +82,19 @@ try {
   await page.evaluate(() => window.__dc.go('/g/guling/1'));
   await page.waitForSelector('.tg-ready', { timeout: 8000 });
   ok(await page.locator('.tt-box').count() === 0, 'tutorial tidak diulang; skrin Mula + kalibrasi');
+  // sensor wujud walaupun requestPermission() tidak memberi 'granted' (Chrome baharu) → kekal mod senget
+  await page.evaluate(() => {
+    globalThis.DeviceOrientationEvent.requestPermission = async () => 'denied';
+    window.__fakeOri = setInterval(() => { const e = new Event('deviceorientation'); e.beta = 25; e.gamma = 0; dispatchEvent(e); }, 16);
+  });
+  await page.click('.tg-start');
+  await page.waitForTimeout(1600);
+  ok(await page.locator('.tg-ready').count() === 0, 'lapisan "Level N / tekan Mula" hilang selepas Mula ditekan');
+  ok(await page.locator('.tj-joy').evaluate((e) => e.hidden), 'sensor senget dikesan & digunakan walaupun kebenaran tidak "granted"');
+  await page.evaluate(() => { const e = new Event('deviceorientation'); clearInterval(window.__fakeOri); window.__fakeOri = setInterval(() => { const ev = new Event('deviceorientation'); ev.beta = 15; ev.gamma = 0; dispatchEvent(ev); }, 16); void e; });
+  await page.waitForTimeout(1500);
+  ok(parseInt(await page.evaluate(() => document.querySelector('.tg-prog i').style.width), 10) > 0, 'senget telefon ke depan menggolek bola ke hadapan');
+  await page.evaluate(() => clearInterval(window.__fakeOri));
   // tetapan kepekaan disimpan
   const s0 = await page.evaluate(() => localStorage.getItem('bj-tilt-v1'));
   await page.locator('.tj-sens button, .tj-sens .tj-btn').last().click({ force: true });

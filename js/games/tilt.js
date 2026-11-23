@@ -33,22 +33,31 @@ export function createTilt(host) {
     s.tx = curve(clamp(dz(lr - s.cal.lr) / m, -1, 1));
     s.ty = curve(clamp(-dz(fb - s.cal.fb) / m, -1, 1));
   };
+  let listening = false;
   async function start() {
+    // iOS (dan Chrome baharu) ada requestPermission: mesti dalam sentuhan pengguna.
+    // Keputusan "denied" tidak dipercayai sepenuhnya: kita tetap dengar sensor dan
+    // hanya tukar ke joystick jika tiada data sensor sebenar.
     try {
       if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-        const r = await DeviceOrientationEvent.requestPermission(); // iOS: mesti dalam sentuhan pengguna
-        if (r !== 'granted') { setMode('joy'); return false; }
+        await Promise.race([DeviceOrientationEvent.requestPermission().catch(() => null), new Promise((r) => setTimeout(r, 4000))]);
       }
     } catch { /* */ }
-    addEventListener('deviceorientation', onOri);
-    await new Promise((r) => setTimeout(r, 900));
-    if (!s.sensorOK && s.mode === 'tilt') setMode('joy');
+    if (!listening) { listening = true; addEventListener('deviceorientation', onOri); }
+    try { screen.orientation?.lock?.('portrait').catch(() => {}); } catch { /* */ }
+    for (let i = 0; i < 12 && !s.sensorOK; i++) await new Promise((r) => setTimeout(r, 100));
+    if (!s.sensorOK && s.mode === 'tilt') setMode('joy', false);
+    else if (s.sensorOK && s.mode === 'joy' && !load().mode) setMode('tilt', false);
     return s.sensorOK;
   }
   function calibrate() { if (s.raw) { s.cal = { ...s.raw }; save({ cal: s.cal }); } s.x = s.y = s.tx = s.ty = 0; }
-  function setMode(m) { s.mode = m; save({ mode: m }); joy.hidden = m !== 'joy'; s.tx = s.ty = 0; syncUI(); }
+  // simpan pilihan hanya apabila pengguna sendiri menukar (bukan sandaran automatik)
+  function setMode(m, persist = true) { s.mode = m; if (persist) save({ mode: m }); joy.hidden = m !== 'joy'; s.tx = s.ty = 0; syncUI(); }
   function setSens(v) { s.sens = clamp(v | 0, 1, 5); save({ sens: s.sens }); }
 
+  // skrin berpusing (potret <-> landskap): tetapkan semula posisi neutral secara automatik
+  const onRot = () => { s.cal = null; s.x = s.y = s.tx = s.ty = 0; };
+  screen.orientation?.addEventListener?.('change', onRot); addEventListener('orientationchange', onRot);
   // ---------- joystick sentuh ----------
   const knob = h('i', { class: 'tj-knob' });
   const joy = h('div', { class: 'tj-joy', 'aria-label': 'Joystick' }, knob);
@@ -93,7 +102,7 @@ export function createTilt(host) {
       s.x += (tx - s.x) * k; s.y += (ty - s.y) * k;
       return { x: s.x, y: s.y };
     },
-    destroy() { s.alive = false; removeEventListener('deviceorientation', onOri); removeEventListener('keydown', kd); removeEventListener('keyup', ku); },
+    destroy() { s.alive = false; removeEventListener('deviceorientation', onOri); screen.orientation?.removeEventListener?.('change', onRot); removeEventListener('orientationchange', onRot); removeEventListener('keydown', kd); removeEventListener('keyup', ku); },
   };
 }
 

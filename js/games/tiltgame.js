@@ -141,15 +141,22 @@ export function runTiltGame(ctx, opt) {
   // ---------- mula ----------
   const tutKey = `bj-tilt-tut-${opt.id}`;
   let seen = false; try { seen = !!localStorage.getItem(tutKey); } catch { /* */ }
+  // skrin kekal menyala semasa bermain (anak tidak menyentuh skrin ketika menyenget)
+  let lock = null;
+  const wake = async () => { try { if (!lock && navigator.wakeLock && document.visibilityState === 'visible') { lock = await navigator.wakeLock.request('screen'); lock.addEventListener?.('release', () => { lock = null; }); } } catch { /* */ } };
+  const onVis = () => { if (document.visibilityState === 'visible' && running) wake(); };
+  document.addEventListener('visibilitychange', onVis);
   const begin = () => {
-    running = true; last = performance.now();
+    running = true; last = performance.now(); wake();
     say(opt.intro(n), 'arahan');
   };
   if (!seen) {
     tutorial(view, tilt, { title: opt.title, onDone: () => { try { localStorage.setItem(tutKey, '1'); } catch { /* */ } begin(); } });
   } else {
-    const go = h('button', { class: 'gm-btn go tg-start', type: 'button', onclick: async () => { go.remove(); await tilt.start(); tilt.calibrate(); begin(); } }, icon('play'), 'Mula');
-    view.append(h('div', { class: 'tg-ready' }, h('b', {}, `Level ${n}`), h('small', {}, 'Pegang telefon dengan selesa, kemudian tekan Mula.'), go));
+    let ready = null;
+    const go = h('button', { class: 'gm-btn go tg-start', type: 'button', onclick: async () => { ready.remove(); await tilt.start(); tilt.calibrate(); begin(); } }, icon('play'), 'Mula');
+    ready = h('div', { class: 'tg-ready' }, h('b', {}, `Level ${n}`), h('small', {}, 'Pegang telefon dengan selesa, kemudian tekan Mula.'), go);
+    view.append(ready);
     speak('Pegang telefon dengan selesa, kemudian tekan Mula.');
   }
   raf = requestAnimationFrame(frame);
@@ -159,5 +166,5 @@ export function runTiltGame(ctx, opt) {
     if (!ap) { ap = { i: 0 }; speed = globalThis.__gmFast ? 8 : 3; }
     if (!running && !won) begin();
   });
-  return () => { cancelAnimationFrame(raf); ro.disconnect(); tilt.destroy(); };
+  return () => { cancelAnimationFrame(raf); ro.disconnect(); tilt.destroy(); document.removeEventListener('visibilitychange', onVis); try { lock?.release(); } catch { /* */ } lock = null; };
 }
