@@ -12,6 +12,7 @@ import { demoUpgrade } from '../screens/shared.js';
 import { makeRng } from '../rng.js';
 import { cheer, ribbon, flashRibbon, RIBBON_WORDS, selfieButton } from '../cheer.js';
 import { shade } from '../brand.js';
+import { lockNotice } from '../notice.js';
 import { GAMES, GAME_LEVELS, chapterOf } from './registry.js';
 import * as S from './store.js';
 
@@ -36,6 +37,7 @@ export function mapScreen(id) {
   scr.appendChild(h('button', { class: 'gm-hero', type: 'button', 'aria-label': `Main level ${next}`, onclick: () => { sfx.tap(); go(`/g/${id}/${next}`); } },
     h('img', { class: 'gm-hero-art', src: g.img, alt: '' }),
     h('span', { class: 'gm-hero-txt' }, h('small', {}, `${S.levelsDone(gp)} / ${GAME_LEVELS} level`), h('b', {}, g.n), h('span', {}, g.sub), h('span', { class: 'gm-go' }, icon('play'), `Level ${next}`))));
+  scr.appendChild(h('p', { class: 'gm-note' }, '🔒 Level dibuka satu demi satu. Kemajuan disimpan dalam peranti ini.'));
   speak(S.levelsDone(gp) ? `${g.n}. Jom sambung level ${next}!` : `Selamat datang ke ${g.n}! ${g.sub}`);
   g.chapters.forEach((cn, ci) => {
     const grid = h('div', { class: 'gm-grid' });
@@ -44,7 +46,7 @@ export function mapScreen(id) {
       const open = S.levelOpen(gp, n);
       const demoLock = DEMO && n > DEMO_MAX;
       grid.appendChild(h('button', { class: `gm-lv ${st ? 'done' : ''} ${open ? '' : 'locked'} ${n === next ? 'cur' : ''}`, type: 'button', 'aria-label': `Level ${n}${open ? '' : ', dikunci'}`, onclick: () => {
-        if (!open) { sfx.bump?.(); speak('Selesaikan level sebelum ini dahulu, ya.'); return; }
+        if (!open) { lockNotice(`Level ${n} masih berkunci.`, { action: () => go(`/g/${id}/${next}`), actionLabel: `Main level ${next}` }); return; }
         if (demoLock) { demoUpgrade(); return; }
         sfx.tap(); go(`/g/${id}/${n}`);
       } }, h('b', {}, n), open ? starRow(st, 'sm') : h('span', { class: 'gm-lock' }, icon('lock'))));
@@ -59,7 +61,11 @@ export async function playScreen(id, n, onClean) {
   const g = GAMES[id];
   const gp = S.gprof(pid(), id);
   const p = profile();
-  if (!g || n < 1 || n > GAME_LEVELS || !S.levelOpen(gp, n)) { uiLater(() => go(`/g/${id}`), 0); return h('div'); }
+  if (!g || n < 1 || n > GAME_LEVELS || !S.levelOpen(gp, n)) {
+    const first = Array.from({ length: GAME_LEVELS }, (_, i) => i + 1).find((k) => !gp.stars[k]) || 1;
+    uiLater(() => { go(`/g/${id}`); if (g && n >= 1 && n <= GAME_LEVELS) setTimeout(() => lockNotice(`Level ${n} belum dibuka.`, { action: () => go(`/g/${id}/${first}`), actionLabel: `Main level ${first}` }), 300); }, 0);
+    return h('div');
+  }
   if (DEMO && n > DEMO_MAX) { uiLater(() => { go(`/g/${id}`); demoUpgrade(); }, 0); return h('div'); }
   const mod = (await g.load()).default;
   let alive = true, misses = 0, roundMiss = 0, lastSay = '', lastMood = 'arahan', finished = false;

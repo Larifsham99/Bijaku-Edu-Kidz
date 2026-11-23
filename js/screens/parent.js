@@ -14,6 +14,7 @@ import { getState, profile, settings, save, flush, levelsDone, totalLevelsDone, 
 import { MODE_LIST, MODES, ALL_SKILLS } from '../modes/index.js';
 import { AVATARS } from '../data/content.js';
 import { domainProgress, DOMAINS, UNIT_NAMES, UNITS, gameName } from './path.js';
+import { FEATURES, browserInfo } from '../compat.js';
 import { parentGate, parentOkRecently, lockParent, avatarEl, confirmBox } from './shared.js';
 import { speak, voiceInfo, startMusic, stopMusic, sfx, malayVoices, refreshVoice, VOICE_RATES, VOICE_PITCHES, VOICE_EXPR, voicePack, downloadVoicePack, isFemaleVoice, isMaleVoice, isQualityVoice } from '../audio.js';
 
@@ -39,7 +40,7 @@ export function parentScreen(tab = 'ringkasan') {
     scr.appendChild(h('div', { class: 'row-wrap' }, h('b', {}, 'Profil anak:'), sel));
   }
   scr.appendChild(h('div', { class: 'tabs' }, TABS.map(([id, n]) => h('button', { class: tab === id ? 'on' : '', type: 'button', onclick: () => go('/ibubapa/' + id) }, n))));
-  if (!p) { scr.appendChild(profilTab()); return scr; }
+  if (!p && tab !== 'tetapan') { scr.appendChild(profilTab()); return scr; }
   const body = { panduan: panduanTab, ringkasan: ringkasanTab, kemahiran: kemahiranTab, aktiviti: aktivitiTab, tetapan: tetapanTab, profil: profilTab }[tab] || ringkasanTab;
   scr.appendChild(body(p));
   return scr;
@@ -101,7 +102,8 @@ function panduanTab(p) {
     h('ul', { class: 'guide-steps' },
       h('li', {}, h('b', {}, '3–4 tahun: '), 'huruf, nombor, warna, bunyi dan cerita akhlak. Teka Silang (perlu membaca) dibuka lewat dalam laluan.'),
       h('li', {}, h('b', {}, '5–6 tahun: '), 'laluan memperkenalkan Teka Silang, Robot Kod Cilik, Kedai Runcit dan Makmal lebih awal untuk persediaan Tahun 1.'),
-      h('li', {}, 'Laluan menyesuaikan diri dengan umur dalam profil anak. Tukar umur di tab Profil jika perlu.'))));
+      h('li', {}, 'Laluan menyesuaikan diri dengan umur dalam profil anak. Tukar umur di tab Profil jika perlu.'),
+      h('li', {}, h('b', {}, 'Kemajuan disimpan dalam setiap peranti. '), 'Di telefon/tablet lain, level bermula dari 1 (level seterusnya berkunci sehingga level sebelumnya tamat). Pindahkan kemajuan melalui Tetapan → Data → Simpan & Pulihkan sandaran.'))));
   return wrap;
 }
 
@@ -275,11 +277,15 @@ function tetapanTab() {
     ...[...MODE_LIST, { id: 'lumba', e: '🏎️', n: 'Cilik Racing' }, { id: 'silang', e: '🧩', n: 'Teka Silang Cilik' }, { id: 'akhlak', e: '🌷', n: 'Taman Akhlak' }, { id: 'kedai', e: '🛒', n: 'Kedai Runcit Cilik' }, { id: 'makmal', e: '🧪', n: 'Makmal Cilik' }, { id: 'wuduk', e: '💧', n: 'Jom Berwuduk' }, { id: 'robot', e: '🤖', n: 'Robot Kod Cilik' }, { id: 'lompat', e: '🟩', n: 'Lompat Blok' }, { id: 'bina', e: '🧱', n: 'Bina Dunia' }, { id: 'pemburu', e: '📷', n: 'Pemburu Warna' }].map((m) => toggle(`${m.e} ${m.n}`, !s.disabledModes.includes(m.id), (v) => { s.disabledModes = v ? s.disabledModes.filter((x) => x !== m.id) : [...s.disabledModes, m.id]; save(); }))));
   wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '💾 Data'),
     h('p', { class: 'muted', style: { fontSize: '14px' } }, 'Semua kemajuan disimpan secara automatik dalam peranti ini sahaja (IndexedDB). Tiada data dihantar ke internet.'),
+    h('p', { class: 'muted', style: { fontSize: '14px' } }, h('b', {}, 'Main di peranti lain? '), 'Peranti baharu bermula dari level 1. Untuk memindahkan kemajuan: tekan "Simpan sandaran" di sini, hantar fail itu ke peranti baharu, kemudian tekan "Pulihkan sandaran" di sana. Semua permainan, Laluan Bijak & syiling dipindahkan.'),
     h('div', { class: 'row-wrap', style: { justifyContent: 'flex-start' } },
       h('button', { class: 'btn small blue', type: 'button', onclick: () => {
         flush();
-        const blob = new Blob([exportData()], { type: 'application/json' });
-        const a = h('a', { href: URL.createObjectURL(blob), download: `dunia-cilik-sandaran-${todayKey()}.json` });
+        // sertakan kemajuan modul berasingan (Racing, Teka Silang, Taman Akhlak, permainan baharu, Laluan Bijak)
+        const full = JSON.parse(exportData()); full._modules = {};
+        MODULE_KEYS.forEach((k) => { const v = localStorage.getItem(k); if (v) full._modules[k] = v; });
+        const blob = new Blob([JSON.stringify(full)], { type: 'application/json' });
+        const a = h('a', { href: URL.createObjectURL(blob), download: `bijaku-sandaran-${todayKey()}.json` });
         document.body.appendChild(a); a.click(); a.remove();
       } }, '⬇ Simpan sandaran'),
       (() => {
@@ -292,14 +298,23 @@ function tetapanTab() {
             confirmBox('Pulihkan sandaran? Data semasa akan diganti.', () => {
               const st = getState();
               st.profiles = data.profiles; st.settings = { ...st.settings, ...data.settings }; st.currentId = data.currentId || data.profiles[0]?.id || null;
-              save(); flush(); toast('Sandaran dipulihkan', 'good', '✅'); go('/ibubapa/ringkasan');
+              Object.entries(data._modules || {}).forEach(([k, v]) => { if (MODULE_KEYS.includes(k) && typeof v === 'string') { try { localStorage.setItem(k, v); } catch { /* */ } } });
+              save(); flush(); toast('Sandaran dipulihkan', 'good', '✅');
+              setTimeout(() => { location.hash = '/ibubapa/ringkasan'; location.reload(); }, 700);
             });
           } catch { toast('Fail sandaran tidak sah', 'try', '⚠️'); }
         });
         return h('span', {}, inp, h('button', { class: 'btn small ghost', type: 'button', onclick: () => inp.click() }, '⬆ Pulihkan sandaran'));
       })())));
+  // Semak peranti: ciri pelayar yang diperlukan
+  const bi = browserInfo();
+  wrap.appendChild(h('div', { class: 'panel' }, h('h3', {}, '📱 Semak Peranti'),
+    h('p', { class: 'muted', style: { fontSize: '14px' } }, `${bi.name}${bi.os ? ' · ' + bi.os : ''}`),
+    bi.old ? h('p', { class: 'dev-warn' }, '⚠️ Pelayar ini agak lama. BIJAKU sudah menyesuaikan diri, tetapi untuk prestasi terbaik kemas kini Chrome (Play Store) atau iOS kepada versi 15 ke atas.') : null,
+    h('ul', { class: 'dev-list' }, FEATURES().map(([n, okv, fb]) => h('li', { class: okv ? 'ok' : 'no' }, h('span', {}, okv ? '✅' : '⚠️'), h('b', {}, n), !okv && fb ? h('small', {}, fb) : null)))));
   return wrap;
 }
+const MODULE_KEYS = ['dc-racing-v1', 'dc-silang-v1', 'dc-akhlak-v1', 'dc-games-v1', 'bj-path-v1'];
 
 function profileForm(initial, onSave, title) {
   let av = initial.avatar || 'mimi';

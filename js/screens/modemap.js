@@ -2,6 +2,7 @@
 import { h, emo, later } from '../ui.js';
 import { modeArt } from '../data/modeart.js';
 import { go } from '../nav.js';
+import { lockNotice } from '../notice.js';
 import { profile, isUnlocked, levelsDone, highestUnlocked, mastery, MASTERY_LABEL } from '../store.js';
 import { MODES, TIERS } from '../modes/index.js';
 import { topbar, guide } from './shared.js';
@@ -56,7 +57,7 @@ export function modeScreen(modeId) {
           L % 5 === 0 ? h('span', { class: 'gift emo' }, '🎁') : null,
           h('button', { class: cls.join(' '), type: 'button', style: `--c:${m.c}`, 'aria-label': `Level ${L}${un ? '' : ' berkunci'}`, onclick: () => {
             if (demoLock) { sfx.tap(); demoUpgrade(); return; }
-            if (!un) { sfx.bump(); speak('Selesaikan level sebelumnya dahulu, ya.'); return; }
+            if (!un) { lockNotice(`Level ${L} masih berkunci.`, { action: () => go(`/main/${modeId}/${cur}`), actionLabel: `Main level ${cur}` }); return; }
             sfx.tap(); go(`/main/${modeId}/${L}`);
           } }, un ? L : icon('lock')),
           h('span', { class: 'lv-stars' }, st !== undefined ? [icon('star'), icon('star'), icon('star')] : null));

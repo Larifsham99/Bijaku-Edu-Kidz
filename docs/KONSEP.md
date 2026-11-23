@@ -33,6 +33,16 @@
 - **Pemburu Warna** (`js/games/pemburu.js`): kamera belakang, sampel 24×24 piksel di tengah 6 kali sesaat, pengelas HSV (11 warna); tahan 1 saat untuk menangkap. Mod gambar automatik jika tiada kamera / tidak dibenarkan / ditutup ibu bapa.
 - Ruang Ibu Bapa → Tetapan → suis **Kamera** (mematikan selfie & mod kamera).
 
+## Keserasian peranti & level berkunci
+
+- **Pelayar lama** (Chrome < 111 / Safari < 16.2, dan Chrome < 88 / iOS < 15): `js/compat.js` + `css/compat.css`.
+  - `aspect-ratio` tiada → tinggi dikira dengan JS (senarai pemilih dijana dalam `js/compat-rules.js`; ujian memastikan senarai sentiasa lengkap). Tanpa ini papan Robot Kod Cilik setinggi 0 px.
+  - `color-mix()` tiada → kelas `html.no-color-mix` + warna sandaran (huruf Teka Silang, nombor level, blok Bina Dunia, logo). Nota: deklarasi `color-mix()` yang mengandungi `var()` tidak dibuang tetapi menjadi lutsinar, jadi sandaran mesti menang dalam lata.
+  - Pelayar terlalu lama (tiada modul ES / `||=`) → mesej "kemas kini pelayar" pada skrin pembuka.
+  - Ruang Ibu Bapa → Tetapan → **📱 Semak Peranti**: versi pelayar & ciri yang disokong.
+- **Level berkunci**: notis bertulis `lockNotice()` (bukan suara sahaja) dengan butang terus ke level yang betul, untuk semua permainan; pautan terus ke level berkunci kembali ke peta dengan notis.
+- **Kemajuan per peranti**: sandaran kini merangkumi semua modul (Racing, Teka Silang, Taman Akhlak, permainan baharu, Laluan Bijak). Pulihkan boleh dibuat dari skrin pendaftaran pertama ("Pindah dari peranti lain?").
+
 ## Jenama: BIJAKU oleh Mawar Ikhlas
 
 - **Nama aplikasi:** BIJAKU (bi-ja-ku, "bijakku"). **Syarikat:** Mawar Ikhlas (ditulis "oleh Mawar Ikhlas").

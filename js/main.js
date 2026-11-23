@@ -7,6 +7,7 @@ import { clear } from './ui.js';
 import { homeScreen, onboardingScreen, profilesScreen } from './screens/home.js';
 import { worldScreen } from './screens/world.js';
 import { pathScreen, pathIntercept } from './screens/path.js';
+import { installCompat } from './compat.js';
 import { modeScreen } from './screens/modemap.js';
 import { playScreen, dailyPlayScreen, stopPlay, currentSession } from './screens/play.js';
 import { dailyScreen } from './screens/daily.js';
@@ -67,7 +68,7 @@ function gamesView(args) {
     .catch((err) => {
       console.warn('Permainan baharu:', err);
       if (tok !== gamesToken) return;
-      el.innerHTML = '<div class="screen" style="text-align:center;padding:40px 16px"><h2>Permainan ini belum dapat dibuka.</h2><p>Permainan lain masih boleh dimainkan seperti biasa.</p><a class="btn green" href="#/">Kembali</a></div>';
+      el.innerHTML = '<div class="screen" style="text-align:center;padding:40px 16px"><h2>Permainan ini belum dapat dibuka.</h2><p>Semak sambungan internet (kali pertama), atau kemas kini pelayar Chrome / Safari kepada versi terkini. Ibu bapa boleh semak di Ruang Ibu Bapa → Tetapan → Semak Peranti.</p><a class="btn green" href="#/">Kembali</a></div>';
     });
   return el;
 }
@@ -167,6 +168,7 @@ function route() {
 }
 
 async function boot() {
+  try { installCompat(); } catch { /* */ } // pelayar lama: aspect-ratio dll.
   await initStore();
   loadVoicePack(); // pakej suara neural (jika dipasang)
   addEventListener('hashchange', route);

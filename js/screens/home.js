@@ -214,7 +214,8 @@ export function onboardingScreen({ addMode = false } = {}) {
           setTimeout(() => inp.focus(), 50);
           return inp;
         })(),
-        nextBtn);
+        nextBtn,
+        addMode ? null : h('button', { class: 'btn small ghost', type: 'button', style: { marginTop: '6px' }, onclick: () => parentGate(() => go('/ibubapa/tetapan'), { reason: 'Pindah kemajuan dari peranti lain melalui fail sandaran.' }) }, '📲 Pindah dari peranti lain? Pulihkan sandaran'));
       nextBtn.disabled = !name;
       speak('Hai! Siapa nama kamu?');
     } else if (step === 1) {

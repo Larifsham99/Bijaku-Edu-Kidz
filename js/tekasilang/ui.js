@@ -4,6 +4,7 @@
 // =====================================================================
 import { h, clear } from '../ui.js';
 import { go } from '../nav.js';
+import { lockNotice } from '../notice.js';
 import { profile, save, addActivity } from '../store.js';
 import { icon } from '../icons.js';
 import { overLimit } from '../screens/timeout.js';
@@ -112,7 +113,7 @@ export function homeScreen() {
     const open = S.chapterOpen(t, ci), done = S.chapterDone(t, c.id);
     grid.appendChild(h('button', { class: `ts-chap ${open ? '' : 'locked'}`, type: 'button', style: `--cc:${c.c};--cc2:${c.c2}`, 'aria-label': `${c.n}, ${done} daripada 30`, onclick: () => {
       unlock();
-      if (!open) { sfx.wrong(); wobble(grid.children[ci]); return; }
+      if (!open) { wobble(grid.children[ci]); lockNotice(`Bab ${c.n} masih berkunci.`, { sub: `Tamatkan 10 level dalam bab ${CHAPTERS[ci - 1].n} dahulu. Kemajuan disimpan dalam peranti ini.`, action: () => go(`/silang/bab/${ci - 1}`), actionLabel: `Buka ${CHAPTERS[ci - 1].n}` }); return; }
       sfx.tap(); go(`/silang/bab/${ci}`);
     } },
       h('span', { class: 'ts-chap-num' }, String(ci + 1)),
@@ -146,7 +147,7 @@ export function chapterScreen(ci) {
     const row = Math.floor((n - 1) / 5), col = row % 2 ? 4 - ((n - 1) % 5) : (n - 1) % 5;
     const b = h('button', { class: `ts-lv ${st ? 'done' : ''} ${open ? '' : 'locked'} ${open && !st ? 'cur' : ''} ${n === 30 ? 'master' : ''}`, type: 'button', style: { gridRow: row + 1, gridColumn: col + 1 }, 'aria-label': `Level ${n}`, onclick: () => {
       unlock();
-      if (!open) { sfx.wrong(); wobble(b); return; }
+      if (!open) { wobble(b); const nx = Array.from({ length: LEVELS_PER_CHAPTER }, (_, k) => k + 1).find((k) => S.levelOpen(t, ci, k) && !S.stars(t, c.id, k)) || 1; lockNotice(`Level ${n} masih berkunci.`, { action: () => go(`/silang/main/${ci}/${nx}`), actionLabel: `Main level ${nx}` }); return; }
       if (demoLock) { demoUpgrade(); return; }
       sfx.tap(); go(`/silang/main/${ci}/${n}`);
     } },
@@ -180,7 +181,7 @@ export function stickerScreen() {
 // =====================================================================
 export function playScreen(ci, n, onClean) {
   const t = tp(), c = CHAPTERS[ci], p = profile();
-  if (!c || n < 1 || n > LEVELS_PER_CHAPTER || !S.levelOpen(t, ci, n)) { later(() => go('/silang'), 0); return h('div'); }
+  if (!c || n < 1 || n > LEVELS_PER_CHAPTER || !S.levelOpen(t, ci, n)) { later(() => { go('/silang'); if (c) setTimeout(() => lockNotice(`${c.n} level ${n} belum dibuka.`, { sub: 'Level & bab dibuka satu demi satu. Kemajuan disimpan dalam peranti ini.' }), 300); }, 0); return h('div'); }
   if (DEMO && (ci > 0 || n > DEMO_MAX)) { later(() => { go('/silang/bab/0'); demoUpgrade(); }, 0); return h('div'); }
   const level = buildLevel(ci, n);
   const scr = h('div', { class: `ts-screen ts-play ${level.master ? 'is-master' : ''}`, style: `--cc:${c.c};--cc2:${c.c2}` });

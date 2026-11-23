@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/ui3.css">
   <link rel="stylesheet" href="css/ui4.css">
   <link rel="stylesheet" href="css/bijaku.css">
+  <link rel="stylesheet" href="css/compat.css">
 </head>
 <body>
   <div id="app" aria-live="polite">
@@ -26,6 +27,8 @@
   </div>
   <div id="overlay"></div>
   <noscript>Sila hidupkan JavaScript untuk bermain BIJAKU.</noscript>
+  <script nomodule>document.getElementById('app').innerHTML='<div class="boot"><div class="boot-text" style="font-size:22px;padding:24px;text-align:center">Pelayar ini terlalu lama untuk BIJAKU.<br>Sila kemas kini Chrome, atau guna iPhone/iPad iOS 15 ke atas.</div></div>';</script>
+  <script>try { new Function('var a; a ||= 1; return a?.b ?? 1;'); } catch (e) { document.getElementById('app').innerHTML = '<div class="boot"><div class="boot-text" style="font-size:22px;padding:24px;text-align:center">Pelayar ini terlalu lama untuk BIJAKU.<br>Sila kemas kini Chrome (versi 85 ke atas), atau guna iPhone/iPad iOS 15 ke atas.</div></div>'; }</script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,79 @@
+/* =====================================================================
+   KESERASIAN PELAYAR LAMA (dimuat selepas semua CSS utama)
+   color-mix() tidak disokong (Chrome < 111, Safari < 16.2): deklarasi dengan
+   color-mix() diabaikan oleh pelayar, jadi warna sandaran di bawah digunakan.
+   Tanpa ini: huruf Teka Silang & nombor level (teks putih) tidak kelihatan,
+   blok warna Bina Dunia lutsinar, logo BIJAKU hilang.
+   ===================================================================== */
+/* Pelayar tanpa color-mix(): js/compat.js menambah kelas html.no-color-mix.
+   Pemilih diawali kelas itu supaya MENANG dalam lata (deklarasi color-mix() yang
+   mengandungi var() tidak dibuang, tetapi menjadi lutsinar ketika dikira). */
+html.no-color-mix .bj-word i { background: var(--c); box-shadow: inset 0 .1em 0 rgba(255, 255, 255, .45), inset 0 -.16em 0 rgba(0, 0, 0, .16), 0 .17em 0 rgba(0, 0, 0, .3); }
+html.no-color-mix .ts-tile { background: var(--tc); box-shadow: inset 0 3px 0 rgba(255, 255, 255, .45), inset 0 -5px 0 rgba(0, 0, 0, .18), 0 5px 0 rgba(0, 0, 0, .3), 0 9px 12px rgba(43, 35, 80, .22); }
+html.no-color-mix .ts-tile.mini { box-shadow: inset 0 2px 0 rgba(255, 255, 255, .45), inset 0 -3px 0 rgba(0, 0, 0, .18), 0 3px 0 rgba(0, 0, 0, .3); }
+html.no-color-mix .ts-lv { background: var(--cc); box-shadow: inset 0 -5px 0 rgba(0, 0, 0, .15), 0 6px 0 rgba(0, 0, 0, .28), 0 10px 16px rgba(43, 35, 80, .18); }
+html.no-color-mix .ts-lv.done { background: linear-gradient(180deg, #8ce99a, #2f9e6a); box-shadow: inset 0 -5px 0 rgba(0, 0, 0, .15), 0 6px 0 #1f7a50; }
+html.no-color-mix .ts-lv.locked { background: linear-gradient(180deg, #f1edf9, #d9d3ea); box-shadow: 0 6px 0 #c9c1de; }
+html.no-color-mix .ts-lv.master { background: radial-gradient(circle at 35% 30%, #fff2a8, #f5c542 55%, #c99512); box-shadow: 0 6px 0 #a07000; }
+html.no-color-mix .ts-cell { background: #f3f0fb; }
+html.no-color-mix .ts-cell.filled { background: none; }
+html.no-color-mix .ts-clue.on { background: #fff3bf; }
+html.no-color-mix .ts-clue.ok { background: #e6fcf0; }
+html.no-color-mix .gm-bg { background: linear-gradient(180deg, var(--gl, #fff6e5), #fffaf2 70%); }
+html.no-color-mix .gm-lv { background: #fff; box-shadow: inset 0 -5px 0 rgba(0, 0, 0, .06), 0 6px 0 rgba(0, 0, 0, .14); }
+html.no-color-mix .gm-lv.done { background: linear-gradient(180deg, var(--ga), var(--gb)); box-shadow: inset 0 3px 0 rgba(255, 255, 255, .4), 0 6px 0 var(--gd); }
+html.no-color-mix .gm-lv.locked { background: #efedf5; box-shadow: 0 5px 0 #d9d5e6; }
+html.no-color-mix .rb-arrow { box-shadow: inset 0 4px 0 rgba(255, 255, 255, .35), 0 6px 0 rgba(0, 0, 0, .28); }
+html.no-color-mix .bd-cube { background: var(--c); }
+html.no-color-mix .wd-slot { border-color: #b9c8ff; }
+html.no-color-mix .lp-disc { background: #fff; box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .08), 0 8px 0 rgba(0, 0, 0, .25), 0 12px 16px rgba(0, 0, 0, .12); }
+html.no-color-mix .lp-node.done .lp-disc { background: radial-gradient(circle at 50% 35%, #fff9db, #ffd43b); box-shadow: inset 0 -6px 0 #e0a800, 0 8px 0 #b07c00; }
+html.no-color-mix .lp-node.lock .lp-disc { background: #ece9f3; box-shadow: inset 0 -6px 0 #dcd7e8, 0 8px 0 #c6c0d6; }
+html.no-color-mix .lp-node.cur .lp-disc { animation: none; box-shadow: 0 0 0 5px var(--c), 0 8px 0 rgba(0, 0, 0, .25); }
+html.no-color-mix .mode-card::before { background: var(--songket) 0 0 / 26px 26px, var(--c) !important; }
+html.no-color-mix .mode-card { box-shadow: 0 8px 0 rgba(0, 0, 0, .18), var(--toy-shadow) !important; }
+html.no-color-mix .mode-card:active { box-shadow: 0 2px 0 rgba(0, 0, 0, .18) !important; }
+html.no-color-mix .drop-zone.hover { background: #eef2ff; }
+html.no-color-mix .ak-pill.cat { background: #fff; }
+html.no-color-mix .ak-story.done { box-shadow: 0 0 0 3px #51cf66, 0 6px 0 rgba(0, 0, 0, .15); }
+/* inset tidak disokong (Chrome < 87, Safari < 14.1): lapisan penuh skrin */
+@supports not (inset: 0) {
+#overlay,
+#scene,
+.ak-actors,
+.ak-bg,
+.ak-lock,
+.bj-flash,
+.bj-path,
+.bj-sky,
+.bj-stage,
+.dots-pad .reveal,
+.draw-pad canvas,
+.gm-bg,
+.gm-win-back,
+.lp-bg,
+.lp-pop,
+.mcard .f, .mcard .b,
+.mk-objs,
+.modal-back,
+.mode-card .mc-ring,
+.pw-reticle i,
+.pw-video,
+.rc-canvas,
+.rc-hero-bg,
+.rc-hud,
+.rc-lock,
+.rc-path-svg,
+.rc-pause-back, .rc-result-back,
+.rc-pit,
+.rc-race,
+.rc-tut,
+.sf-count,
+.sf-flash,
+.sf-over,
+.sf-video,
+.sf-view,
+.ts-lock,
+.ts-win-back,
+.wd-drops { top: 0; right: 0; bottom: 0; left: 0; }
+}

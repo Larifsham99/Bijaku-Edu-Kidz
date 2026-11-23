@@ -4,6 +4,7 @@
 import { h, clear } from '../ui.js';
 import { ribbon, selfieButton } from '../cheer.js';
 import { go } from '../nav.js';
+import { lockNotice } from '../notice.js';
 import { profile, save, addActivity } from '../store.js';
 import { speak, stopSpeak, sfx, haptic } from '../audio.js';
 import { icon } from '../icons.js';
@@ -62,7 +63,7 @@ export function listScreen() {
     const open = S.storyOpen(a, i), done = S.storyDone(a, st.id);
     const good = st.choices.find((c) => c.good);
     grid.appendChild(h('button', { class: `ak-story ${done ? 'done' : ''} ${open ? '' : 'locked'}`, type: 'button', style: `--pc:${PLANTS[CATS[st.cat].plant].ui || PLANTS[CATS[st.cat].plant].c}`, onclick: () => {
-      if (!open) { sfx.bump(); speak('Selesaikan kisah sebelum ini dahulu, ya.'); return; }
+      if (!open) { const nx = STORIES.find((s2, k) => S.storyOpen(a, k) && !S.storyDone(a, s2.id)); lockNotice('Kisah ini masih berkunci.', { sub: 'Tamatkan kisah yang terbuka dahulu. Kemajuan disimpan dalam peranti ini.', action: nx ? () => go(`/akhlak/kisah/${nx.id}`) : null, actionLabel: nx ? `Baca: ${nx.n}` : '' }); return; }
       sfx.tap(); go(`/akhlak/kisah/${st.id}`);
     } },
       h('span', { class: 'ak-story-num' }, String(i + 1)),

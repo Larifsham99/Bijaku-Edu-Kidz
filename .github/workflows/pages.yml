@@ -39,6 +39,8 @@ jobs:
         run: node tests/path.test.mjs --data
       - name: Sahkan pengelas warna kamera & Pemburu Warna
         run: node tests/camera.test.mjs --data
+      - name: Sahkan polyfill pelayar lama
+        run: node tests/compat.test.mjs --data
 
   deploy:
     needs: test

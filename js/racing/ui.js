@@ -4,6 +4,7 @@
 import { h, clear, sleep } from '../ui.js';
 import { ribbon, selfieButton } from '../cheer.js';
 import { go } from '../nav.js';
+import { lockNotice } from '../notice.js';
 import { profile, save, addActivity } from '../store.js';
 import { speak, stopSpeak, playSound, hasSound, haptic } from '../audio.js';
 import { icon } from '../icons.js';
@@ -153,7 +154,7 @@ export function mapScreen() {
     const medals = MEDALS.map((m) => h('span', { class: `rc-medal ${done >= m.at ? 'on' : ''}`, style: `--m:${m.c}`, title: m.n }, icon('medal')));
     list.appendChild(h('button', { class: `rc-wcard ${open ? '' : 'locked'} ${wi % 2 ? 'r' : 'l'}`, type: 'button', style: `--acc:${w.accent}`, onclick: () => {
       snd.rsfx.pop();
-      if (!open) { speak(`Selesaikan sepuluh level di ${RC_WORLDS[wi - 1].n} dahulu, ya.`); return; }
+      if (!open) { lockNotice(`${w.n} masih berkunci.`, { sub: `Tamatkan 10 level di ${RC_WORLDS[wi - 1].n} dahulu. Kemajuan disimpan dalam peranti ini.`, action: () => go(`/lumba/dunia/${wi - 1}`), actionLabel: `Buka ${RC_WORLDS[wi - 1].n}` }); return; }
       speak(w.n); go(`/lumba/dunia/${wi}`);
     } },
       h('span', { class: 'rc-wc-num' }, String(wi + 1)),
@@ -202,7 +203,7 @@ export function worldScreen(wi) {
     const big = L === 50;
     const node = h('button', { class: `rc-node ${st ? 'done' : ''} ${unlocked ? '' : 'locked'} ${isCur ? 'cur' : ''} ${big ? 'boss' : ''} ${L % 10 === 0 && !big ? 'ten' : ''}`, type: 'button', style: { left: `${q.x}%`, top: `${q.y}px` }, 'aria-label': `Level ${L}`, onclick: () => {
       snd.unlock(); snd.rsfx.pop();
-      if (!unlocked) { speak('Selesaikan level sebelum ini dahulu, ya.'); return; }
+      if (!unlocked) { lockNotice(`Level ${L} masih berkunci.`, { sub: 'Tamatkan level sebelum ini dahulu. Kemajuan disimpan dalam peranti ini.' }); return; }
       if (demoLock) { demoUpgrade(); return; }
       go(`/lumba/main/${wi}/${L}`);
     } },
