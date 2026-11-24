@@ -10,7 +10,7 @@ await new Promise((r) => setTimeout(r, 700));
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 360, height: 640 }, isMobile: true, hasTouch: true });
 const p = await ctx.newPage(); const errs = []; p.on('pageerror', (e) => errs.push(e.message));
-await ctx.addInitScript(() => { globalThis.__gmFast = true; });
+await ctx.addInitScript(() => { globalThis.__gmFast = true; globalThis.__dcCapture = { push: (x) => (window.__said ||= []).push(x.text) }; });
 await p.goto('http://localhost:8784/index.html');
 await p.fill('input[aria-label="Nama pemain"]', 'Uji');
 await p.click('text=Seterusnya'); await p.click('text=Seterusnya'); await p.click('text=Jom Mula!');
@@ -21,8 +21,8 @@ await p.reload(); await p.waitForSelector('.mode-card');
 await p.evaluate(() => window.__dc.go('/g/wuduk/1')); await p.waitForTimeout(1500);
 await p.click('.wd-say'); await p.waitForTimeout(1800);
 for (let i = 0; i < 3; i++) { const r = await p.evaluate(() => { const q = document.querySelector('.wd-part[data-part="tapak"] circle').getBoundingClientRect(); return [q.left + q.width / 2, q.top + q.height / 2]; }); await p.mouse.click(r[0], r[1]); await p.waitForTimeout(300); }
-await p.waitForTimeout(900);
-const info = async () => p.evaluate(() => (document.querySelector('.wd-card')?.textContent || '').slice(0, 60) + ' | ' + (document.querySelector('.gm-bubble')?.textContent || ''));
+await p.waitForTimeout(1600); // "Tiga!" disebut, kemudian langkah seterusnya
+const info = async () => p.evaluate(() => (document.querySelector('.wd-card')?.textContent || '').slice(0, 160) + ' | ' + (document.querySelector('.gm-bubble')?.textContent || ''));
 for (const part of ['mulut', 'hidung']) {
   for (let i = 0; i < 3; i++) {
     const r = await p.evaluate((pt) => { const e = document.querySelector(`.wd-part[data-part="${pt}"] :not(.wd-hit)`); const q = e.getBoundingClientRect(); return [q.left + q.width / 2, q.top + q.height / 2, q.width, q.height]; }, part);
@@ -31,8 +31,10 @@ for (const part of ['mulut', 'hidung']) {
   }
   const after = await info();
   ok(/3\/3|Alhamdulillah/.test(after), `Wuduk: 3 ketikan tersasar 9px dari ${part} tetap dikira`);
-  await p.waitForTimeout(800);
+  await p.waitForTimeout(1600);
 }
+const said = await p.evaluate(() => window.__said || []);
+ok(said.filter((s) => s === 'Tiga!').length >= 2 && !said.some((s) => /undefined/.test(s)), `Wuduk: kiraan ketiga disebut ("Satu", "Dua", "Tiga!")`);
 // BINA: letak blok, kemudian padam dengan tekan pada muka atas blok
 await p.evaluate(() => window.__dc.go('/g/bina/1')); await p.waitForTimeout(1500);
 const cv = await p.locator('.bd-build').boundingBox();

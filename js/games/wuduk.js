@@ -107,8 +107,10 @@ export default {
         if (part.dataset.part !== s.part) { sfx.bump(); ctx.miss({ quiet: true }); ctx.say(`Bukan di situ. ${s.n}.`, 'galakan'); return; }
         splash(part);
       });
+      let finishing = false;
       function splash(part) {
         const s = lv.steps[si];
+        if (finishing) return; // kiraan terakhir sedang disebut
         count++;
         sfx.drop();
         const kr = kidBox.getBoundingClientRect(), pr = part.getBoundingClientRect();
@@ -118,8 +120,9 @@ export default {
         }
         part.classList.remove('wet'); void part.getBoundingClientRect(); part.classList.add('wet');
         const chip = card.querySelector('.wd-count b'); if (chip) chip.textContent = `${count}/${s.taps}`;
-        if (count >= s.taps) stepDone();
-        else speak(['Satu', 'Dua', 'Tiga'][count - 1]);
+        // sebut setiap kiraan, termasuk yang terakhir ("Tiga!"), kemudian baru ke langkah seterusnya
+        if (s.taps > 1) speak(['Satu', 'Dua', 'Tiga'][count - 1] + (count >= s.taps ? '!' : ''), { mood: count >= s.taps ? 'pujian' : 'arahan' });
+        if (count >= s.taps) { finishing = true; later(stepDone, s.taps > 1 && !globalThis.__gmFast ? 750 : 0); } // dibuka semula oleh showStep
       }
       function stepDone() {
         const s = lv.steps[si];
@@ -131,7 +134,7 @@ export default {
       }
       function showStep() {
         const s = lv.steps[si];
-        count = 0;
+        count = 0; finishing = false;
         ctx.round(si);
         [...list.children].forEach((li, i) => li.classList.toggle('cur', i === si));
         parts().forEach((p) => p.classList.toggle('glow', p.dataset.part === s.part));
