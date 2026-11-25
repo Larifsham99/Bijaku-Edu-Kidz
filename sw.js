@@ -1,6 +1,8 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
 // Laman lain di domain yang sama (cth. Kid-Kuiz) mempunyai cache sendiri: jangan padam.
 const PREFIX = 'bijaku-edu-kidz-';
+// cari dalam cache sendiri sahaja, bukan cache laman lain
+const own = (req, opts) => caches.open(VERSION).then((c) => c.match(req, opts));
 const VERSION = 'bijaku-edu-kidz-123a046805';
 const ASSETS = [
   './',
@@ -156,15 +158,15 @@ self.addEventListener('fetch', (e) => {
   if (url.pathname.includes('/jualan/') || url.pathname.includes('/studio/') || url.searchParams.has('demo')) return;
   // Manifest pakej suara: rangkaian dahulu (supaya pakej baharu dikesan), cache sebagai sandaran luar talian
   if (url.pathname.endsWith('/audio/ms-MY/manifest.json')) {
-    e.respondWith(fetch(req).then((res) => { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); return res; }).catch(() => caches.match(req)));
+    e.respondWith(fetch(req).then((res) => { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); return res; }).catch(() => own(req)));
     return;
   }
   // Katalog hanya untuk alat pembangunan
   if (url.pathname.endsWith('/audio/ms-MY/catalog.json')) return;
   e.respondWith(
-    caches.match(req, { ignoreSearch: true }).then((hit) => hit || fetch(req).then((res) => {
+    own(req, { ignoreSearch: true }).then((hit) => hit || fetch(req).then((res) => {
       if (res.ok) { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); }
       return res;
-    }).catch(() => caches.match('./index.html')))
+    }).catch(() => own('./index.html')))
   );
 });
