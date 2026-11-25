@@ -39,7 +39,7 @@ function doaCard() {
     h('div', { class: 'doa-ar', dir: 'rtl', lang: 'ar' }, d.ar),
     h('div', { class: 'doa-rumi' }, d.rumi),
     h('div', { class: 'doa-makna' }, `“${d.makna}”`),
-    h('div', { class: 'doa-src' }, `Sumber: ${d.src} · tekan untuk dengar maksud`));
+    h('div', { class: 'doa-src' }, `Sumber: ${d.src}`));
 }
 
 // Cadangan permainan seterusnya: mod terakhir dimainkan atau mod pertama yang belum selesai
@@ -63,7 +63,7 @@ export function homeScreen() {
   const lv = playerLevel(p);
   const d = dailySet(p);
   const scr = h('div', { class: 'screen bj-home' }, h('div', { class: 'bj-stage', 'aria-hidden': 'true' }));
-  later(() => speak(voicePack() && settings().voiceEngine !== 'peranti' ? greet('') : greet(callOf(p))), 400);
+  later(() => speak(greet('')), 400);
   if (!pathHeroInfo(p).st.cur) later(() => speak('Tekan butang Mula untuk memulakan Laluan Bijak!'), 3200);
 
   // ---- kepala: logo, bintang, pemain ----

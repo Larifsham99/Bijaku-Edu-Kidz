@@ -6,7 +6,8 @@
 //  - Muzik latar ringan
 // =====================================================================
 import { settings } from './store.js';
-import { normalizeMalay, splitSentences, clipKey, letterize } from './malay-text.js';
+import { normalizeMalay, splitSentences, clipKey } from './malay-text.js';
+import { greetingParts, isAllowed, readingMs } from './sambutan.js';
 
 let ctx = null;
 let master = null;
@@ -120,18 +121,20 @@ export function speechText(t) { return normalizeMalay(t); }
 // daripada fail audio; ayat lain jatuh balik ke suara peranti.
 let pack = null;
 const clipCache = new Map();
-export async function loadVoicePack(base = 'audio/ms-MY/') {
+let packReady = Promise.resolve();
+export function loadVoicePack(base) { packReady = fetchPack(base); return packReady; }
+async function fetchPack(base = 'audio/ms-MY/') {
   try {
     const r = await fetch(base + 'manifest.json', { cache: 'no-cache' });
     if (!r.ok) return null;
     const m = await r.json();
     if (!m || !m.clips || !Object.keys(m.clips).length) return null;
-    pack = { base, voice: m.voice, clips: m.clips, count: Object.keys(m.clips).length };
+    const clips = Object.fromEntries(Object.entries(m.clips).filter(([k]) => isAllowed(k)));
+    pack = { base, voice: m.voice, clips, count: Object.keys(clips).length };
     return pack;
   } catch { return null; }
 }
 export const voicePack = () => pack;
-const usePack = () => pack && prefs().voiceEngine !== 'peranti';
 async function clipUrl(file) {
   if (clipCache.has(file)) return clipCache.get(file);
   const res = await fetch(pack.base + file); // fetch penuh (bukan julat) supaya boleh di-cache untuk luar talian
@@ -150,6 +153,18 @@ function findClip(sentence) {
   return null;
 }
 let currentAudio = null;
+// Pelayar menyekat bunyi sebelum skrin disentuh: simpan pujian, mainkan pada sentuhan pertama
+let waiting = [];
+function retryOnTouch(file, rate) {
+  if (!waiting.length) {
+    addEventListener('click', async () => {
+      const list = waiting; waiting = [];
+      const id = ++speakSeq;
+      for (const c of list) await playClip(c.file, { rate: c.rate, id });
+    }, { once: true, capture: true });
+  }
+  waiting.push({ file, rate });
+}
 function playClip(file, { rate, id }) {
   return new Promise((resolve) => {
     if (id !== speakSeq) return resolve();
@@ -162,7 +177,7 @@ function playClip(file, { rate, id }) {
       let done = false;
       const fin = () => { if (!done) { done = true; resolve(); } };
       a.onended = fin; a.onerror = fin;
-      a.play().catch(fin);
+      a.play().catch((e) => { if (e?.name === 'NotAllowedError') retryOnTouch(file, rate); fin(); });
     }).catch(() => resolve(false));
   });
 }
@@ -179,50 +194,25 @@ export async function downloadVoicePack(onProgress) {
 }
 
 let speakSeq = 0;
-function sayOne(text, { lang, rate, pitch, id }) {
-  return new Promise((resolve) => {
-    if (id !== speakSeq || typeof speechSynthesis === 'undefined') return resolve();
-    const u = new SpeechSynthesisUtterance(text);
-    if (lang === 'en') {
-      u.lang = 'en-GB';
-      const en = speechSynthesis.getVoices().filter((v) => /^en/i.test(v.lang)).sort((a, b) => (FEMALE.test(b.name) - FEMALE.test(a.name)))[0];
-      if (en) u.voice = en;
-    } else {
-      if (!voice) voice = pickVoice();
-      if (voice) u.voice = voice;
-      u.lang = voice ? voice.lang : 'ms-MY';
-    }
-    u.rate = rate; u.pitch = pitch; u.volume = 1;
-    let done = false;
-    const fin = () => { if (!done) { done = true; resolve(); } };
-    u.onend = fin; u.onerror = fin;
-    // jaga-jaga jika onend tidak dipanggil
-    setTimeout(fin, 700 + text.length * 120);
-    speechSynthesis.speak(u);
-  });
-}
 // mood: 'arahan' | 'pujian' | 'galakan' | 'tenang'
-export function speak(text, { lang, rate, interrupt = true, mood = 'arahan' } = {}) {
+// Versi kesan bunyi: hanya pujian yang dirakam disebut (lihat sambutan.js).
+export function speak(text, { lang, interrupt = true, mood = 'arahan' } = {}) {
   const s = prefs();
   if (!s.voice || !text) return Promise.resolve();
   try {
+    if (globalThis.__dcCapture && lang !== 'en') splitSentences(normalizeMalay(text, { letters: false })).forEach((p) => globalThis.__dcCapture.push({ text: p, mood }));
+    const parts = lang === 'en' ? [] : greetingParts(text);
+    // teks senyap: jangan potong pujian yang sedang dimainkan, beri masa membaca sahaja
+    if (!parts.length) return new Promise((r) => setTimeout(r, readingMs(text) * (globalThis.__dcTimeScale ?? 1)));
     if (interrupt) stopSpeak();
     const id = speakSeq;
-    const vp = voiceParams(mood);
-    const r = rate || vp.rate;
-    // kunci rakaman guna huruf asal; suara peranti guna nama huruf (A -> ei, H -> heish)
-    const parts = lang === 'en' ? [String(text)] : splitSentences(normalizeMalay(text, { letters: false }));
-    if (globalThis.__dcCapture && lang !== 'en') parts.forEach((p) => globalThis.__dcCapture.push({ text: p, mood }));
+    const rate = voiceParams(mood).base / 0.88;
     return parts.reduce((p, part, i) => p.then(async () => {
-      if (id !== speakSeq) return;
+      await packReady;
+      if (id !== speakSeq || !pack) return;
       if (i > 0) await new Promise((res) => setTimeout(res, 160)); // jeda semula jadi antara ayat
-      const file = lang !== 'en' && usePack() ? findClip(part) : null;
-      if (file) {
-        // klip neural sudah mengandungi ekspresi; hanya kelajuan pilihan ibu bapa digunakan
-        const ok = await playClip(file, { rate: vp.base / 0.88, id });
-        if (ok !== false) return;
-      }
-      if (typeof speechSynthesis !== 'undefined') await sayOne(lang === 'en' ? part : letterize(part), { lang, rate: r, pitch: vp.pitch, id });
+      const file = findClip(part);
+      if (file) await playClip(file, { rate, id });
     }), Promise.resolve()).catch(() => {});
   } catch { return Promise.resolve(); }
 }

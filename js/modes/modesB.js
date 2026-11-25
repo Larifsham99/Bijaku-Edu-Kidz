@@ -250,7 +250,7 @@ export const soleh = {
     nabiDengar(r, L) {
       const pool = C.NABI.slice(0, Math.min(25, 8 + L)).map((n) => ({ t: `Nabi ${n}`, say: `Nabi ${n}`, id: n, wide: true }));
       const a = r.pick(pool);
-      return choiceRound({ skill: 'soleh.nabi', say: `Dengar dan cari: ${a.say}.`, show: { k: 'big', e: '🔊', say: a.say }, options: options(r, pool, a, L <= 20 ? 2 : 3), answer: a, sayOnTap: true });
+      return choiceRound({ skill: 'soleh.nabi', say: `Cari: ${a.say}.`, show: { k: 'big', e: '🔊', say: a.say }, options: options(r, pool, a, L <= 20 ? 2 : 3), answer: a, sayOnTap: true });
     },
     nabiBilangan(r, L) {
       return choiceRound({ skill: 'soleh.nabi', say: 'Berapakah bilangan nabi dan rasul yang wajib kita ketahui?', show: { k: 'big', e: '📿' }, options: options(r, [5, 6, 10, 25, 30].map((n) => T(n)), T(25), 3), answer: T(25) });

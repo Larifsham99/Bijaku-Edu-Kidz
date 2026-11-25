@@ -1,5 +1,4 @@
-// Ujian pakej suara: ayat yang ada klip dimainkan daripada fail audio,
-// ayat lain jatuh balik ke suara peranti; tetapan "Suara peranti" mematikan klip.
+// Ujian versi kesan bunyi: hanya pujian yang dirakam disebut; suara peranti tidak digunakan.
 // Memerlukan sekurang-kurangnya satu klip dalam audio/ms-MY/manifest.json.
 import { createRequire } from 'node:module';
 import { spawn } from 'node:child_process';
@@ -24,14 +23,15 @@ await pg.goto('http://localhost:8811/index.html');
 await pg.fill('input[aria-label="Nama pemain"]', 'Ali');
 await pg.click('text=Seterusnya'); await pg.click('text=Seterusnya'); await pg.click('text=Jom Mula!');
 await pg.waitForSelector('.mode-card');
-const sentence = man.clips[keys[0]] && keys[0];
 const run = async (text) => pg.evaluate(async (t) => { window.__log = []; await window.__dc.speak(t); return window.__log; }, text);
-let log = await run(`${sentence} Ini ayat tanpa rakaman.`);
-ok(log[0] === 'klip:blob:', `ayat berklip dimainkan daripada fail audio (${sentence})`);
-ok(log[1] === 'tts:Ini ayat tanpa rakaman.', 'ayat tanpa klip jatuh balik ke suara peranti');
-await pg.evaluate(() => { window.__dc.getState().settings.voiceEngine = 'peranti'; });
-log = await run(sentence);
-ok(log.length === 1 && log[0].startsWith('tts:'), 'tetapan "Suara peranti" menggunakan suara telefon');
+let log = await run('Kucing! Hebat!');
+ok(log.length === 1 && log[0] === 'klip:blob:', 'hanya pujian disebut, jawapan tidak');
+for (const t of ['Assalamualaikum, Kakak! Selamat pagi. Jom belajar sambil bermain!', 'Jom, kita mula!', 'Jom cari huruf A!', 'Tak apa, cuba lagi.', 'Doa sebelum makan. Maksudnya, ya Allah.', 'Bismillah.', keys.find((k) => k.startsWith('jom tolong'))]) {
+  log = await run(t);
+  ok(log.length === 0, `senyap: ${t}`);
+}
+log = await pg.evaluate(async () => { window.__log = []; const p = window.__dc.speak('Alhamdulillah! Syabas, dah habis satu level!'); window.__dc.speak('Jom cari huruf B!'); await p; return window.__log; });
+ok(log.length === 2, 'arahan senyap tidak memotong pujian');
 ok(errs.length === 0, 'tiada ralat JavaScript ' + errs.join(' | '));
 await b.close(); srv.kill();
 console.log(fails ? `\n✗ ${fails} kegagalan` : '\n✓ Ujian pakej suara lulus');

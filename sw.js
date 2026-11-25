@@ -1,5 +1,7 @@
 // Service worker: sokongan luar talian (cache-first) untuk semua kandungan aplikasi
-const VERSION = 'dunia-cilik-955621722d';
+// Laman lain di domain yang sama (cth. Kid-Kuiz) mempunyai cache sendiri: jangan padam.
+const PREFIX = 'bijaku-edu-kidz-';
+const VERSION = 'bijaku-edu-kidz-123a046805';
 const ASSETS = [
   './',
   './index.html',
@@ -84,6 +86,7 @@ const ASSETS = [
   './js/recommend.js',
   './js/rewards.js',
   './js/rng.js',
+  './js/sambutan.js',
   './js/screens/catalog.js',
   './js/screens/daily.js',
   './js/screens/free.js',
@@ -143,7 +146,7 @@ self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(ASSETS.map((u) => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', (e) => {
-  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith(PREFIX) && k !== VERSION).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
 });
 self.addEventListener('fetch', (e) => {
   const req = e.request;
