@@ -412,6 +412,7 @@ export function startMusic() {
   play();
   musicTimer = setInterval(play, 16 * beat * 1000);
 }
+export const musicPlaying = () => !!musicTimer;
 export function stopMusic() {
   clearInterval(musicTimer); musicTimer = null;
   if (musicGain) { try { musicGain.disconnect(); } catch { /* */ } musicGain = null; }

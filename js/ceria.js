@@ -47,6 +47,16 @@ export const ceria = {
   hop() { log('hop'); T({ type: 'sine', f: 260, f2: 820, dur: 0.16, vol: 0.12, vib: { rate: 18, depth: 20 } }); },
   // bintang masuk ke kiraan
   starPling() { log('star'); const f = NOTE(pick([84, 86, 88, 91])); T({ type: 'triangle', f, dur: 0.16, vol: 0.09 }); T({ type: 'sine', f: f * 2, t: 0.05, dur: 0.22, vol: 0.04 }); },
+  // jingle pembuka BIJAKU: gendang kecil, gambang mendaki, kemudian "ta-da!" berkilau
+  intro() {
+    log('intro');
+    for (let i = 0; i < 6; i++) N({ t: i * 0.05, dur: 0.04, vol: 0.05 + i * 0.01, filter: { type: 'bandpass', f: 900, q: 2 } });
+    [72, 76, 79, 84, 79, 84, 88].forEach((n, i) => T({ type: 'triangle', f: NOTE(n), t: 0.32 + i * 0.11, dur: 0.22, vol: 0.13 }));
+    [79, 84, 88, 91].forEach((n) => T({ type: 'triangle', f: NOTE(n), t: 1.18, dur: 0.9, vol: 0.08 }));
+    T({ type: 'sine', f: NOTE(48), t: 1.18, dur: 0.9, vol: 0.1 });
+    T({ type: 'sine', f: 300, f2: 900, t: 1.12, dur: 0.08, vol: 0.08 });
+    for (let i = 0; i < 9; i++) T({ type: 'sine', f: rnd(2200, 4400), t: 1.22 + i * 0.06, dur: 0.1, vol: 0.03 });
+  },
   // konfeti: letupan kecil berderai
   popcorn(n = 6) { log('popcorn'); for (let i = 0; i < n; i++) { const t = i * rnd(0.06, 0.12); T({ type: 'sine', f: rnd(500, 900), f2: rnd(1400, 2200), t, dur: 0.05, vol: 0.06 }); } ceria.sparkle(4, 0.025); },
 };

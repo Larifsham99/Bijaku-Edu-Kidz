@@ -224,7 +224,7 @@ function tetapanTab() {
     toggle('Kesan bunyi', s.sound, (v) => { s.sound = v; save(); }),
     toggle('Sentuhan ceria', s.cuteTaps !== false, (v) => { s.cuteTaps = v; save(); }, 'Gelembung dan kilauan apabila anak menyentuh ruang kosong di menu.'),
     toggle('Kamera (Selfie Juara & Pemburu Warna)', s.camera !== false, (v) => { s.camera = v; save(); }, 'Kamera hanya dibuka apabila anak menekan butang. Foto disimpan dalam peranti ini sahaja, tidak dimuat naik.'),
-    toggle('Muzik latar', s.music, (v) => { s.music = v; save(); v ? startMusic() : stopMusic(); }),
+    toggle('Muzik latar', s.music, (v) => { s.music = v; save(); v ? startMusic() : stopMusic(); }, 'Dimainkan di menu sahaja; berhenti semasa anak bermain.'),
     toggle('Suara pujian', s.voice, (v) => { s.voice = v; save(); }, 'Versi ini hanya menyebut pujian. Arahan dan soalan dipaparkan sebagai teks.'),
     toggle('Ucapan Islamik', s.islamic !== false, (v) => { s.islamic = v; save(); }, 'Salam, Bismillah sebelum bermula, Alhamdulillah apabila berjaya, dan Doa Hari Ini di halaman utama.'),
     toggle('Getaran apabila menjawab', s.vibrate !== false, (v) => { s.vibrate = v; save(); }, 'Untuk telefon Android yang menyokong getaran.'),

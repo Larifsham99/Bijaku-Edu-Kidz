@@ -20,9 +20,16 @@ const got = () => pg.evaluate(() => ({ names: globalThis.__ceria || [], osc: win
 const settle = () => pg.waitForTimeout(250);
 
 await pg.goto('http://localhost:8813/index.html');
+// sentuhan pertama: jingle pembuka, kemudian muzik latar di menu
+await reset();
+await pg.mouse.click(6, 300);
+await settle();
+ok((await got()).names.includes('intro'), 'jingle pembuka dimainkan pada sentuhan pertama');
+await pg.waitForTimeout(2600);
+ok(await pg.evaluate(async () => (await import('/js/audio.js')).musicPlaying()), 'muzik latar bermula di menu');
 // maskot di halaman pendaftaran
 await reset();
-await pg.locator('.emo.float[data-avatar="dino"]').click();
+await pg.locator('.emo.float[data-avatar="dino"]').click({ force: true }); // maskot sentiasa terapung
 await settle();
 let g = await got();
 ok(g.names.includes('mascot:dino') && g.osc > 0, 'maskot Dino bersuara apabila disentuh');
@@ -66,6 +73,7 @@ ok(g.names.includes('popcorn') && g.names.includes('star'), 'konfeti berderai & 
 await pg.evaluate(() => { location.hash = '/main/abc/1'; });
 await pg.waitForSelector('.stage');
 await pg.waitForTimeout(800);
+ok(!(await pg.evaluate(async () => (await import('/js/audio.js')).musicPlaying())), 'muzik berhenti semasa bermain');
 await reset();
 await pg.mouse.click(4, 400);
 await settle();

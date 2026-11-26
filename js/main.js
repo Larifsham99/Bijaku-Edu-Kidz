@@ -3,8 +3,8 @@
 // =====================================================================
 import { initStore, profile, getState, settings, flush, save } from './store.js';
 import { markPlayed } from './recommend.js';
-import { unlockAudio, startMusic, loadVoicePack, speak, sfx } from './audio.js';
-import { initCeria } from './ceria.js';
+import { unlockAudio, startMusic, stopMusic, musicPlaying, loadVoicePack, speak, sfx } from './audio.js';
+import { initCeria, ceria } from './ceria.js';
 import { clear } from './ui.js';
 import { homeScreen, onboardingScreen, profilesScreen } from './screens/home.js';
 import { worldScreen } from './screens/world.js';
@@ -26,6 +26,15 @@ import { DEMO } from './demo.js';
 import { addProfile } from './store.js';
 
 let pendingReload = false;
+// Muzik latar di menu sahaja: berhenti semasa bermain (supaya anak fokus)
+// dan dalam Cilik Racing / Teka Silang yang ada muzik sendiri.
+let audioReady = false;
+const musicless = () => inGame() || /^#\/(lumba|silang)/.test(location.hash);
+function syncMusic() {
+  if (!audioReady) return;
+  if (!settings().music || musicless()) stopMusic();
+  else if (!musicPlaying()) startMusic();
+}
 const inGame = () => /^#\/(main|harian\/|lumba\/main|silang\/main|akhlak\/kisah\/|g\/[a-z]+\/\d)/.test(location.hash);
 
 // CILIK RACING: modul terasing yang dimuat secara malas. Jika ia gagal dimuat,
@@ -132,6 +141,7 @@ function route() {
   stopSilang();
   stopAkhlak();
   stopGames();
+  syncMusic();
   const path = (location.hash || '#/').slice(1) || '/';
   const parts = path.split('/').filter(Boolean);
   clear(app);
@@ -232,12 +242,17 @@ async function boot() {
   // bunyi suis (Ruang Ibu Bapa, tetapan): semua kotak semak
   addEventListener('change', (e) => { const el = e.target; if (el instanceof HTMLInputElement && el.type === 'checkbox') { try { sfx.toggle(el.checked); } catch { /* */ } } }, true);
   // buka kunci audio pada sentuhan pertama
+  // sentuhan pertama: jingle pembuka BIJAKU (di menu), kemudian muzik latar
   const first = () => {
+    if (audioReady) return;
+    audioReady = true;
     unlockAudio();
-    if (settings().music) startMusic();
-    removeEventListener('pointerdown', first);
+    const intro = !inGame() && settings().sound !== false;
+    if (intro) ceria.intro();
+    setTimeout(syncMusic, intro ? 2300 : 0);
   };
-  addEventListener('pointerdown', first);
+  addEventListener('pointerdown', first, { once: true });
+  addEventListener('click', first, { once: true });
   route();
   if (!DEMO && 'serviceWorker' in navigator && location.protocol !== 'file:') {
     // Kemas kini automatik: apabila versi baharu diterbitkan, ia diaktifkan terus

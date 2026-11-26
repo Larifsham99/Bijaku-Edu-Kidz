@@ -51,7 +51,7 @@ function idbSet(key, val) {
 
 export function defaultSettings() {
   return {
-    sound: true, cuteTaps: true, music: false, voice: true, voiceRate: 0.9, vibrate: true,
+    sound: true, cuteTaps: true, music: true, voice: true, voiceRate: 0.9, vibrate: true,
     voiceStyle: 'lembut', // (lama) gaya suara
     voiceRateLvl: 'sederhana', voicePitchLvl: 'sederhana', voiceExpr: 'sederhana', // kawalan suara
     voiceEngine: 'auto', // 'auto' = suara neural jika pakej dipasang, 'peranti' = suara telefon

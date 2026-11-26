@@ -3,7 +3,7 @@
 const PREFIX = 'bijaku-edu-kidz-';
 // cari dalam cache sendiri sahaja, bukan cache laman lain
 const own = (req, opts) => caches.open(VERSION).then((c) => c.match(req, opts));
-const VERSION = 'bijaku-edu-kidz-9064379faf';
+const VERSION = 'bijaku-edu-kidz-e4ca3eae07';
 const ASSETS = [
   './',
   './index.html',

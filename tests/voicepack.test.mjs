@@ -26,10 +26,14 @@ await pg.waitForSelector('.mode-card');
 const run = async (text) => pg.evaluate(async (t) => { window.__log = []; await window.__dc.speak(t); return window.__log; }, text);
 let log = await run('Kucing! Hebat!');
 ok(log.length === 1 && log[0] === 'klip:blob:', 'hanya pujian disebut, jawapan tidak');
-for (const t of ['Assalamualaikum, Kakak! Selamat pagi. Jom belajar sambil bermain!', 'Jom, kita mula!', 'Jom cari huruf A!', 'Tak apa, cuba lagi.', 'Doa sebelum makan. Maksudnya, ya Allah.', 'Bismillah.', keys.find((k) => k.startsWith('jom tolong'))]) {
+for (const t of ['Assalamualaikum, Kakak! Selamat pagi. Jom belajar sambil bermain!', 'Jom, kita mula!', 'Jom cari huruf A!', 'Bukan yang itu.', 'Doa sebelum makan. Maksudnya, ya Allah.', 'Bismillah.', keys.find((k) => k.startsWith('jom tolong'))]) {
   log = await run(t);
   ok(log.length === 0, `senyap: ${t}`);
 }
+log = await run('Tak apa, sayang. Kita cuba lagi, ya?');
+ok(log.length === 2, 'pujukan jawapan salah disebut');
+log = await run('Bagus, cuba sekali lagi! Psst, cuba yang bersinar itu.');
+ok(log.length === 2, 'pujukan + petunjuk disebut');
 log = await pg.evaluate(async () => { window.__log = []; const p = window.__dc.speak('Alhamdulillah! Syabas, dah habis satu level!'); window.__dc.speak('Jom cari huruf B!'); await p; return window.__log; });
 ok(log.length === 2, 'arahan senyap tidak memotong pujian');
 ok(errs.length === 0, 'tiada ralat JavaScript ' + errs.join(' | '));
