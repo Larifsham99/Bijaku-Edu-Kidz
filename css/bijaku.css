@@ -545,3 +545,10 @@ html:has(.lp-screen) body { background: #e9f8ff; }
 .bj-exit-toast { position: fixed; left: 50%; bottom: max(90px, calc(env(safe-area-inset-bottom) + 80px)); z-index: 2600; transform: translateX(-50%); white-space: nowrap; display: flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 99px; background: rgba(28, 23, 71, .9); color: #fff; font-weight: 800; font-size: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, .3); animation: bjToastIn .25s ease, bjToastOut .4s ease 2.1s forwards; pointer-events: none; }
 @keyframes bjToastIn { from { opacity: 0; transform: translate(-50%, 16px); } }
 @keyframes bjToastOut { to { opacity: 0; transform: translate(-50%, 10px); } }
+
+/* ---------- Pek bunyi ceria: kilauan & goyang (ceria.js) ---------- */
+.ceria-spark { position: fixed; z-index: 2000; pointer-events: none; font-family: var(--emoji); font-size: 22px; transform: translate(-50%, -50%); animation: ceriaSpark .65s ease-out forwards; }
+@keyframes ceriaSpark { 0% { opacity: 1; transform: translate(-50%, -50%) scale(.4); } 60% { opacity: 1; } 100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.15); } }
+.ceria-wiggle { animation: ceriaWiggle .6s ease !important; }
+@keyframes ceriaWiggle { 0%, 100% { transform: none; } 20% { transform: rotate(-10deg) scale(1.12); } 45% { transform: rotate(9deg) scale(1.08); } 70% { transform: rotate(-5deg); } }
+@media (prefers-reduced-motion: reduce) { .ceria-spark, .ceria-wiggle { animation: none !important; } }

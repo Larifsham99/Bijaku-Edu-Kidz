@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "python3 -m http.server 8080",
-    "test": "node tests/generators.test.mjs && node tests/voice.test.mjs && node tests/voicepack.test.mjs && node tests/e2e.test.mjs && node tests/upgrade.test.mjs && node tests/racing.test.mjs && node tests/silang.test.mjs && node tests/akhlak.test.mjs && node tests/games.test.mjs && node tests/path.test.mjs && node tests/camera.test.mjs && node tests/compat.test.mjs && node tests/tilt.test.mjs && node tests/nav.test.mjs && node tests/sentuh.test.mjs",
+    "test": "node tests/generators.test.mjs && node tests/voice.test.mjs && node tests/voicepack.test.mjs && node tests/ceria.test.mjs && node tests/e2e.test.mjs && node tests/upgrade.test.mjs && node tests/racing.test.mjs && node tests/silang.test.mjs && node tests/akhlak.test.mjs && node tests/games.test.mjs && node tests/path.test.mjs && node tests/camera.test.mjs && node tests/compat.test.mjs && node tests/tilt.test.mjs && node tests/nav.test.mjs && node tests/sentuh.test.mjs",
     "test:nav": "node tests/nav.test.mjs",
     "test:tilt": "node tests/tilt.test.mjs",
     "test:compat": "node tests/compat.test.mjs",

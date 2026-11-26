@@ -37,6 +37,7 @@ export function toast(text, kind = 'good', emoji = '') {
 }
 
 export function confetti(n = 28, set = ['⭐', '🎉', '✨', '🌟', '🎈', '💖']) {
+  dispatchEvent(new CustomEvent('bj-confetti', { detail: n })); // bunyi berderai (ceria.js)
   for (let i = 0; i < n; i++) {
     const c = h('div', { class: 'confetti' }, set[i % set.length]);
     c.style.left = Math.random() * 100 + 'vw';

@@ -45,7 +45,7 @@ function flyStar(from, to, done) {
     s.style.transform = `translate(${b.left + b.width / 2 - (a.left + a.width / 2)}px, ${b.top + b.height / 2 - (a.top + Math.min(a.height / 2, 200))}px) scale(.55) rotate(360deg)`;
     s.style.opacity = '0.4';
   }));
-  setTimeout(() => { s.remove(); done(); }, 780);
+  setTimeout(() => { s.remove(); dispatchEvent(new Event('bj-star')); done(); }, 780);
 }
 
 // Enjin sesi umum: menjalankan senarai pusingan dalam satu skrin

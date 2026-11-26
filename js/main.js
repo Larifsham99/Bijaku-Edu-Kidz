@@ -4,6 +4,7 @@
 import { initStore, profile, getState, settings, flush, save } from './store.js';
 import { markPlayed } from './recommend.js';
 import { unlockAudio, startMusic, loadVoicePack, speak, sfx } from './audio.js';
+import { initCeria } from './ceria.js';
 import { clear } from './ui.js';
 import { homeScreen, onboardingScreen, profilesScreen } from './screens/home.js';
 import { worldScreen } from './screens/world.js';
@@ -208,6 +209,7 @@ async function boot() {
   try { installCompat(); } catch { /* */ } // pelayar lama: aspect-ratio dll.
   await initStore();
   loadVoicePack(); // pakej suara neural (jika dipasang)
+  initCeria(); // bunyi sentuhan comel
   addEventListener('hashchange', route);
   // ---- butang kembali telefon: bukan "undo" berantai ----
   // Sejarah: [akar] -> [atas]. Navigasi dalam aplikasi menggantikan [atas] (nav.go).
